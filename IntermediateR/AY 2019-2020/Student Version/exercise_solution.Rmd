@@ -1,0 +1,195 @@
+---
+title: "Worked Solutions to Exercises"
+author: "Allison Theobold"
+date: "October 14, 2019"
+output: html_document
+---
+
+
+__Exercise 11:__ Recursive `for-loop`!  
+
+Read in the BlackfootFish dataset and modify the code to write a `for-loop` to 
+find the indices needed to sample every $7^{th}$ row from the dataset, starting 
+with the $1^{st}$ row, until you've sampled 1900 rows. 
+
+\vspace{0.5cm}
+
+```{r e7, tidy = TRUE, eval = FALSE}
+library(tidyverse)
+
+BlackfootFish <- read_csv("data/BlackfootFish.csv")
+
+size <- 1900
+
+samps <- rep(NA, 1900)
+## Initializing the samps vector, for storing indicies
+
+samps[1] <- 1
+## Setting first sample index to 1 (first row)
+
+# Code snippet: samps[i] <- samps[i-1] + 7  
+# The i-th sample is the i-1 sample plus 7 
+# e.g. The 2nd sample is the 1st sample plus 7
+
+for(i in 2:size){
+  samps[i] <- samps[i-1] + 7
+}
+
+testing <- BlackfootFish[samps, ]
+## Extracts only the rows of the dataframe in samps
+training <- BlackfootFish[-samps, ]
+## Excludes everything EXCEPT the rows in samps
+```
+
+
+__Exercise 13:__ Modify the code snippet above to instead refer to a temporary 
+variable `x`.    
+
+\vspace{0.25cm}
+
+```{r temporary, tidy = TRUE}
+# Substitute BlackfootFish$length for x everywhere! 
+# By not using BlackfootFish$x, you are able to use this function with ANY dataset 
+
+(x - min(x, na.rm = TRUE)) / 
+  (max(x, na.rm = TRUE) - min(x, na.rm = TRUE))
+
+```
+
+
+__Exercise 14:__ Create another intermediate variable called `rng` that contains 
+the range of the intermediate variable `x`, using the `range()` function. Make 
+sure that you specify the `na.rm()` option to ignore any NAs in the input vector. 
+
+\vspace{0.25cm}
+
+```{r, eval = FALSE, tidy = TRUE}
+# Create rng = the range of x 
+rng <- range(x, na.rm = TRUE)
+
+
+# Rewrite the code snippet from Excercise 13 to now 
+# refer to rng instead of min(x) and max(x)
+# rng[1] is the minimum 
+# rng[2] is the maximum 
+
+(x - rng[1]) / (rng[2] - rng[1])
+
+```
+
+
+__Exercise 15:__ Using the template above, write a function that rescales a 
+vector to be between 0 and 1. The function should take a single argument, `x`.   
+
+\vspace{0.25cm}
+
+```{r function, tidy = TRUE}
+# Use the function template to create a function named rescale01 that perfoms the 
+# process outlined above, using the intermediate variables you previously defined
+
+scale_norm <- function(x){
+  rng <- range(x)
+  (x - rng[1]) / (rng[2] - rng[1])
+}
+
+```
+
+
+__Exercise 16:__ Test your function on a simple vector, with the same name as 
+your function's input. What do you expect the values of the test to be after you
+input it into your function? 
+
+\vspace{0.25cm}
+
+```{r test, tidy = TRUE}
+# Test your function out on a simple vector named x
+x <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+
+scale_norm(x)
+# Looks correct! The minimum (1) becomes 0 and the maximum (10) becomes 1. 
+```
+
+
+__Exercise 17:__ Test your function on the `length` column of the BlackfootFish 
+dataset. Inspect the rescaled values. Do they look correct?  
+
+\vspace{0.25cm}
+
+```{r test2, tidy = TRUE}
+
+# Test your function out on the BlackfootFish data
+scale_length <- scale_norm(BlackfootFish$length)
+
+summary(scale_length)
+# Looks right! 
+```
+
+
+__Exercise 18: Putting it All Together!__
+
+```{r, eval = FALSE, tidy = TRUE}
+
+matrix <- data.frame(l = BlackfootFish$length, w = BlackfootFish$weight)
+
+```
+
+\vspace{0.5cm}
+
+Now, given the matrix of fish lengths and weights above, use the tools from the 
+workshop (`for loop`, function, conditional and relational statements) to:  
+
+* compute the condition index of each fish 
+* remove the fish from the dataset whose condition index is NA or less than 2
+
+
+__Condition Function__
+
+```{r, eval = FALSE}
+condition <- function(l, w){
+  ## function to compute condition number of fish 
+  ## data = dataframe, with columns named l & w  
+  
+  ## checks if weight OR length are NA before computing condition
+  ifelse(is.na(w) == FALSE | is.na(l) == FALSE, 
+         c <- ((w^(1/3))/l)*50, ## if both are NOT an NA, then the condition is calculated and stored in c
+         c <- NA ## if either are NA, then an NA is stored in c
+  )
+    return(c)
+    ## the value of c is returned
+}
+```
+
+
+__For Loop Approach__ 
+
+```{r}
+## looping over the number of rows in the dataset (first entry of dim, e.g. dim[1]) 
+## calculating the condition of each row 
+## adding that to the condition column 
+
+matrix$condition <- rep(NA, dim(matrix)[1])
+## Creating a new column called condition
+
+for(i in 1:dim(matrix)[1]){
+  matrix$condition[i] <- condition(l = matrix$l[i], w = matrix$w[i])
+}
+
+## subseting the data to not have conditions with NA or less than 2
+clean_matrix <- subset(matrix, is.na(condition) != TRUE | condition < 2)
+
+```
+
+
+__Vectorized Approach__ 
+
+```{r}
+## using the function to create a new column in the matrix dataframe
+## directly using the length and weight columns in the function call = vectorized!
+matrix$condition <- condition(matrix$l, matrix$w)
+
+## subseting the data to not have conditions with NA or less than 2
+clean_matrix <- subset(matrix, is.na(condition) != TRUE | condition < 2)
+
+```
+
+
