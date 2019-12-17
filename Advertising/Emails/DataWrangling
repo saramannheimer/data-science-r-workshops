@@ -1,0 +1,29 @@
+Hello all, 
+
+This is a reminder that you signed-up for the Data Wrangling in R workshop today
+from 2:30-5:00. The workshop will be held in the Heathcote Classroom in the 
+basement of the Library (by the bathrooms). 
+
+The workshop will cover how to use the dplyr and tidyr packages for data 
+wrangling tasks. In dplyr we will cover topics of selecting columns, filtering 
+rows, creating and/or modifying columns, and how to create a linear process out 
+of the data wrangling steps. Then, we will go over how we can use dplyr to join
+different datasets together. Using tidyr we will reshape a data frame from 
+long to wide format and back. 
+
+The materials for the workshop are available through the RStudio Cloud at the 
+Data Wrangling workspace (http://bit.ly/data-wrangle). If you have not accessed 
+the RStudio Cloud before, you will need to create a log-in or use your GitHub 
+or Google log-in. Then you will need to direct to the workspace (using the 
+above link) and click on the blue "Join Workspace" button. Once you are inside,
+the workshop materials are available through the Projects tab. 
+
+ADD BLERB ABOUT ATTENDEES TAKING THE PRE-WORKSHOP SURVEY
+
+We would encourage you to bring a dataset you are working with to the workshop.
+Then, if time permits, you can use the tools from the workshop to wrangle your 
+data into a tidy format, suitable for visualization or analyses! 
+
+Looking forward to seeing everyone! 
+
+YOUR SIGNATURE HERE!
