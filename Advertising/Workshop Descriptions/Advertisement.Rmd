@@ -7,22 +7,22 @@ output: pdf_document
 # *R for Data Science*
 Workshops co-organized by the Library, Department of Mathematical Sciences, and Statistical Consulting & Research Services
 
-# *Introduction to R and RStudio*  
+## *Introduction to R and RStudio*  
 
 In this workshop we will introduce one of the most used languages of data analytics, `R`, as well as an interface for working with `R`, `RStudio`. We will cover how to import data into `R`, as well as, data inspection, extraction, manipulation, summarization, and visualization. Additionally, there will be a discussion of how the many packages developed for `R` can be accessed and used. The workshop will be presented in `RStudio`. 
 
-# *\LaTeX for Data Analytics*  
+## *\LaTeX for Data Analytics*  
 
 \LaTeX, a document preparation system widely used by the Mathematics community, also holds a place at the table for producing documents for data analytics. We will cover the layout of \LaTeX documents, typesetting mathematical environments, including figures, including citations and footnotes, and formatting references and a table of contents. The workshop will be presented using __ShareLaTeX__, but any \LaTeX compiling software or `RStudio` will suffice.   
 
-# *Intermediate R*  
+## *Intermediate R*  
 
 This workshop is designed for those who are familiar with `R`, but would like to learn new tricks or a refresher on fundamental concepts. The workshop will cover relational statements, logicals, loops, and functions. These concepts will be first presented conceptually, with computational practice afterward. The workshop will be presented in `RStudio`, but `R` will suffice. 
 
-# *Data Wrangling in R*
+## *Data Wrangling in R*
 
 In this workshop, you will learn how to manipulate data in R using the dplyr and tidyr packages. These concepts will be presented in an interactive format, integrating computational practice throughout the workshop. The workshop will be presented in the RStudio Cloud.
 
-# *Data Visualization in R*
+## *Data Visualization in R*
 
 The ability to create meaningful and attractive data visualizations is an essential skill of data-intensive research. This workshop will give you an overview of the grammar of graphics plotting concepts from the ggplot2 package. These concepts will be presented in an interactive format, integrating computational practice throughout the workshop. The workshop will be presented in the RStudio Cloud.
