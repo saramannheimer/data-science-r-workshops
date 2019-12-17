@@ -4,6 +4,8 @@ author: ""
 date: ""
 output: pdf_document
 ---
+# *R for Data Science*
+Workshops co-organized by the Library, Department of Mathematical Sciences, and Statistical Consulting & Research Services
 
 # *Introduction to R and RStudio*  
 
@@ -17,4 +19,10 @@ In this workshop we will introduce one of the most used languages of data analyt
 
 This workshop is designed for those who are familiar with `R`, but would like to learn new tricks or a refresher on fundamental concepts. The workshop will cover relational statements, logicals, loops, and functions. These concepts will be first presented conceptually, with computational practice afterward. The workshop will be presented in `RStudio`, but `R` will suffice. 
 
+# *Data Wrangling in R*
 
+In this workshop, you will learn how to manipulate data in R using the dplyr and tidyr packages. These concepts will be presented in an interactive format, integrating computational practice throughout the workshop. The workshop will be presented in the RStudio Cloud.
+
+# *Data Visualization in R*
+
+The ability to create meaningful and attractive data visualizations is an essential skill of data-intensive research. This workshop will give you an overview of the grammar of graphics plotting concepts from the ggplot2 package. These concepts will be presented in an interactive format, integrating computational practice throughout the workshop. The workshop will be presented in the RStudio Cloud.
