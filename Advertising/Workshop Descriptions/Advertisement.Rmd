@@ -9,15 +9,12 @@ Workshops co-organized by the Library, Department of Mathematical Sciences, and 
 
 ## *Introduction to R and RStudio*  
 
-In this workshop we will introduce one of the most used languages of data analytics, `R`, as well as an interface for working with `R`, `RStudio`. We will cover how to import data into `R`, as well as, data inspection, extraction, manipulation, summarization, and visualization. Additionally, there will be a discussion of how the many packages developed for `R` can be accessed and used. The workshop will be presented in `RStudio`. 
+This workshop will start with the building blocks of creating and exploring the data structures available in R. Then we'll learn some basic tools for inspecting, extracting, manipulating, summarizing, and visualizing data. We will also discuss accessing and using R packages, and how to use R's built-in help interface. The workshop will be presented in the RStudio Cloud.
 
-## *\LaTeX for Data Analytics*  
-
-\LaTeX, a document preparation system widely used by the Mathematics community, also holds a place at the table for producing documents for data analytics. We will cover the layout of \LaTeX documents, typesetting mathematical environments, including figures, including citations and footnotes, and formatting references and a table of contents. The workshop will be presented using __ShareLaTeX__, but any \LaTeX compiling software or `RStudio` will suffice.   
 
 ## *Intermediate R*  
 
-This workshop is designed for those who are familiar with `R`, but would like to learn new tricks or a refresher on fundamental concepts. The workshop will cover relational statements, logicals, loops, and functions. These concepts will be first presented conceptually, with computational practice afterward. The workshop will be presented in `RStudio`, but `R` will suffice. 
+Extend your knowledge of R with relational and logical operators, conditional statements, loops, and functions. These concepts will be first presented conceptually, with computational practice afterward. The workshop will be presented in the RStudio Cloud.
 
 ## *Data Wrangling in R*
 
