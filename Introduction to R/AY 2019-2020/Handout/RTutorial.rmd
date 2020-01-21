@@ -1,6 +1,6 @@
 ---
 title: "Introduction to R"
-author: "Allison Theobold & The Carpentries"
+author: "Data & Software Carpentry"
 output:
   pdf_document:
     fig_height: 3
@@ -164,7 +164,7 @@ __Remarks:__
 right to objects on the left. So, after executing `year <- 6`, the value of 
 `year` is `6`. The arrow can be read as `6` goes into `year`. For historical reasons,
 you can also use = for assignments, but not in every context. Because of the 
-slight differences in syntax, it is good practice to always use `<-` for 
+slight differences in syntax, it is best practice to always use `<-` for 
 assignments.  
 
     + In RStudio, typing Alt at the same time as the - key will write `<-` in a 
@@ -187,6 +187,14 @@ assignments.
     + You should not name your object the same as any common functions you may 
     use (`mean`, `sd,` etc.)  
     
+* Using a consistent coding style makes your code clearer to read for your 
+future self and your collaborators. In `R`, three popular style guides are 
+Google's (https://google.github.io/styleguide/Rguide.html), Jean Fan's 
+(https://jef.works/R-style-guide/) and the tidyverse's 
+(https://style.tidyverse.org/). The tidyverse's is very comprehensive and may 
+seem overwhelming at first, but you'd be surprised what good code writing habits
+can do for your collaborations!
+
 
 ## Clean Code 
 
@@ -233,21 +241,20 @@ x %% 3
 \vspace{0.25cm}
 
 We can also overwrite an object's value, so that it has a new value. In the code
-below we give `x` a new value of 2 and use that to create a new object `y`. 
+below create a new object `y` and then we give `x` a new value of 2. 
 
 \vspace{0.25cm}
 
 ```{r}
-x <- 2 
-
 y <-  x + 6
+
+x <- 2 
 
 ```
 
 \vspace{0.25cm}
 
-**Exercise 1:** Change the value of `x` to back to 6 and see what the value of 
-`y` is. Did it change from before?  
+**Exercise 1:** What is the current value of `y`? 12 or 8?  
 
 # Working with Different Data Types 
 
@@ -266,7 +273,8 @@ temps
 \vspace{0.25cm}
 
 To make a vector of characters, you are required to use quotation marks (" ") to 
-indicate to `R` that the value you are using is not an object. 
+indicate to `R` that the value you are using is not an object you already 
+created in `R`. 
 
 \vspace{0.25cm}
 
@@ -290,7 +298,7 @@ class(animals)
 
 \vspace{0.25cm}
 
-**Exercise 2:** Create a vector that contains decimal valued numbers. Then check
+**Exercise 2:** Create a vector, named `dec`, that contains decimal valued numbers. Then check
 what data type does that vector contain?
 
 ```{r}
@@ -401,7 +409,8 @@ This will help you understand the structure of data.frames (coming up next)!
 * Choose the __From CSV__ option  
 * Click on the __Browse__ button  
 * Direct the computer to where you saved the BlackfootFish data file, click __open__  
-* It will bring up a preview of the data  
+* It will bring up a preview of the data 
+* Uncheck the box labeled "Strings as factors"  
 * Click on the __Import__ button  
 
 Notice the code that outputs in the console (the bottom left square). This is 
@@ -483,6 +492,11 @@ Here are some:
     + `glimpse(data)`: similar information to `str`, but neater output  
     + `summary(data)`: summary statistics for each column  
   
+\vspace{0.5cm}
+
+*Note:* Many of these are generic functions that will work on other data types, 
+not just on `data.frame`s. 
+
 \newpage
 
 # Dataframes 
@@ -540,27 +554,6 @@ str(years)
 
 ## Practice:
 
-The following is a preview of the matrix `x`: 
-
-```{r, echo = FALSE}
-x <- as.matrix(cbind(c(1, 5, 9, 13),
-                     c(2, 6, 10, 14), 
-                     c(3, 7, 11, 15), 
-                     c(4, 8, 12, 16)))
-
-x
-```
-
-\vspace{0.25cm}
-
-**Exercise 4:** What would be output if you entered: `x[3, ]`?  
-
-\vspace{0.25cm}
-
-**Exercise 5:** What would you input to get an output of 4?
-
-\vspace{1.5cm}
-
 The following is a preview of the dataframe `df`: 
 
 ```{r, echo = FALSE}
@@ -575,13 +568,17 @@ df
 
 \vspace{0.25cm}
 
+**Exercise 4:** What would be output if you entered: `df[3, ]`?  
+
+\vspace{0.25cm}
+
 **Exercise 6:** What would you input to get an output of `2015`? Can you 
 think of two ways to do it?
 
 \vspace{0.25cm}
 
-**Exercise 7:** How would you pull off only columns `x` and `z`? Can you 
-think of two ways to do it?
+**Exercise 7:** How would you pull off only columns `x` and `y`? What about 
+pulling off only columns `x` and `z`?
 
 \vspace{0.25cm}
 
@@ -601,11 +598,18 @@ s[]
 
 \vspace{0.25cm}
 
-**Exercise 10:** What would you input to get an output of `[1] 22 49`? 
-
-\vspace{0.25cm}
-
 # Changing Data Type  
+
+By default, when building or importing a data frame, the columns that contain 
+characters (i.e. text) are coerced (= converted) into factors. Depending on what
+you want to do with the data, you may want to keep these columns as character. 
+To do so, read.csv() and read.table() have an argument called stringsAsFactors 
+which can be set to FALSE. This is what happened when we unchecked the 
+"stringsAsFactors" box when importing our data. 
+
+In most cases, it is preferable to set stringsAsFactors = FALSE when importing 
+data and to convert as a factor only the columns that require this data type. 
+But what is a factor? 
 
 Consider the variables species and section. These variables represent a
 broader class of what we call categorical variables. In `R` there are two ways 
@@ -1100,5 +1104,46 @@ workshop to investigate your own data!
 <p style="text-align: right; font-size: small;">Workshop build on: 
 `r format(Sys.time())`</p>
 
+\pagebreak
+
+# Instructor Biographies 
+
+## Allison Theobold
+![](images/bio/Allison Theobold.jpg)
+
+Allison Theobold, originally from Grand Junction, CO, is a sixth-year graduate 
+student studying Statistics Education at Montana State University. Allison holds
+a Master's degree in Statistics from Montana State University, and will be 
+defending her dissertation in April of this year. Recognized by both the 
+Department of Mathematical Sciences and the College of Letters and Sciences as 
+an outstanding graduate researcher, Allison's passion for teaching statistical 
+computing is infectious. Allison has taught Introduction and Intermediate 
+Statistics to undergraduate and graduate students, while also completing two 
+years of statistical consulting for diverse groups at Montana State. Her 
+experiences as a teacher and consultant established an interest in preparing 
+researchers in the sciences with the computational tools necessary to implement 
+statistics.
 
 
+## Elijah Meyer 
+![](images/bio/Elijah Meyer.jpg)
+
+Elijah was born and raised in Great Falls, Montana and currently holds a 
+Master's degree in Statistics from Montana State University. His early research 
+involved sports statistics, focusing in on Fitbit data and Disc Golf 
+visualizations. His recent work includes research on Graduate Teaching 
+Assistants (GTAs) and program development to help better support GTAs when 
+teaching statistics. Many of these projects were presented to audiences at the 
+Joint Statistical Meetings, Cascadia Symposium of Statistics in Sports, and 
+United States Conference on Teaching Statistics 2019. He is currently pursuing a
+Ph.D. in statistics with a focus on statistics education.
+
+## Kelly Loucks
+![](images/bio/Kelly Loucks.JPG)
+
+Kelly is from Charlotte, North Carolina and is a second-year Master's student 
+studying Statistics. She previously earned her Bachelor's degree in Mathematics 
+with a concentration in Statistics from Appalachian State University. She has 
+worked on research for the United States Forest Service and taught Introduction 
+to Statistics. She enjoys skiing, hiking, ice climbing, and mountain biking in 
+her free time.
