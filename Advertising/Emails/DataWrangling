@@ -1,8 +1,17 @@
 Hello all, 
 
-This is a reminder that you signed-up for the Data Wrangling in R workshop today
-from 2:30-5:00. The workshop will be held in the Heathcote Classroom in the 
-basement of the Library (by the bathrooms). 
+This is a reminder that you signed-up for the Data Visualization in R workshop 
+today from <INSERT TIME HERE>. The workshop will be held in the <INSERT LOCATION 
+HERE, WITH DIRECTIONS>. Registration for the workshop is full and there are 
+quite a few individuals on the waitlist, so please respond if registered but 
+will not be attending! We do ask that, if you are on the waitlist, you please 
+wait outside the classroom, until we know that all of the registrants have 
+arrived. 
+
+For those of you on the waitlist, we will be broadcasting the workshop via 
+WebEx. You are welcome to log-in to WebEx and watch the video from the basement 
+of the library. That way, if you have questions, you can type a message and a 
+workshop helper can scamper out to talk with you.
 
 The workshop will cover how to use the dplyr and tidyr packages for data 
 wrangling tasks. In dplyr we will cover topics of selecting columns, filtering 
@@ -18,12 +27,15 @@ or Google log-in. Then you will need to direct to the workspace (using the
 above link) and click on the blue "Join Workspace" button. Once you are inside,
 the workshop materials are available through the Projects tab. 
 
-ADD BLERB ABOUT ATTENDEES TAKING THE PRE-WORKSHOP SURVEY
+To keep these workshops funded for the foreseeable future, we request that you 
+take a few minutes to fill out this pre-workshop survey. For question 3, the 
+Data Wrangling workshop you are attending is a component of the Data 
+Carpentry Ecology workshop. 
 
-We would encourage you to bring a dataset you are working with to the workshop.
-Then, if time permits, you can use the tools from the workshop to wrangle your 
-data into a tidy format, suitable for visualization or analyses! 
+<INSERT LINK TO CARPENTRIES SURVEYS HERE>
 
-Looking forward to seeing everyone! 
+
+Looking forward to seeing everyone for this final workshop! 
+
 
 YOUR SIGNATURE HERE!

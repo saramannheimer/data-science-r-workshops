@@ -1,21 +1,35 @@
 Hello everyone,  
  
-This is an email to remind you that you are signed up for the Intermediate R 
-workshop tomorrow (Thursday) from 2:30 to 5pm in the ILS room at the Library. 
+This is a reminder that you signed-up for the Data Visualization in R workshop 
+today from <INSERT TIME HERE>. The workshop will be held in the <INSERT LOCATION 
+HERE, WITH DIRECTIONS>. Registration for the workshop is full and there are 
+quite a few individuals on the waitlist, so please respond if registered but 
+will not be attending! We do ask that, if you are on the waitlist, you please 
+wait outside the classroom, until we know that all of the registrants have 
+arrived. 
+
+For those of you on the waitlist, we will be broadcasting the workshop via 
+WebEx. You are welcome to log-in to WebEx and watch the video from the basement 
+of the library. That way, if you have questions, you can type a message and a 
+workshop helper can scamper out to talk with you.
+
 The workshop will cover relational and conditional statements, looping, and 
-user-defined functions. The workshop will be presented in the RStudio Cloud, an
-interface for collaborating with RStudio. 
+user-defined functions. 
 
- 
-The workshop materials can be accessed here: https://rstudio.cloud/project/46127, 
-but you will need to create a login or use your Google sign-in. Note: RStudio 
-Cloud interacts best with Google Chrome (other browsers have trouble updating 
-the content).  
+The materials for the workshop are available through the RStudio Cloud at the 
+Intermediate R workspace (http://bit.ly/intermediate-R). If you have not 
+accessed the RStudio Cloud before, you will need to create a log-in or use your 
+GitHub or Google log-in. Then you will need to direct to the workspace (using 
+the above link) and click on the blue "Join Workspace" button. Once you are 
+inside, the workshop materials are available through the Projects tab. 
 
-ADD BLERB ABOUT ATTENDEES TAKING THE PRE-WORKSHOP SURVEY
+To keep these workshops funded for the foreseeable future, we request that you 
+take a few minutes to fill out this pre-workshop survey. For question 3, the 
+Intermediate R workshop you are attending is a component of the Software  
+Carpentry, R for Reproducible Research workshop. 
 
-Please let me know if you have any issues downloading these materials. Looking 
-forward to seeing everyone tomorrow!
+<INSERT LINK TO CARPENTRIES SURVEYS HERE>
 
+Looking forward to seeing everyone tomorrow!
 
 YOUR SIGNATURE HERE!

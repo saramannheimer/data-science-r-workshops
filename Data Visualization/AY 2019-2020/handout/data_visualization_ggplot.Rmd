@@ -1,11 +1,12 @@
 ---
 title: "Data visualization with ggplot2"
-author: "Data Carpentry contributors & Allison Theobold, Elijah Meyer, Kelly Loucks"
+author: "Data Carpentry"
 output:
   html_document:
     df_print: paged
-    fig_width: 5
     fig_height: 4
+    fig_width: 5
+  pdf_document: default
 ---
 
 ------------
@@ -13,7 +14,7 @@ output:
 > ### Learning Objectives
 >
 > * Produce scatter plots, boxplots, density plots, and time series plots using 
->   ggplot2.
+>   `ggplot2`.
 > * Set universal and local plot settings.
 > * Describe what aesthetics are and how they are used by ggplot.
 > * Describe what faceting is and apply faceting to a ggplot.
@@ -24,33 +25,125 @@ output:
 
 --------------
 
-We start by loading the required packages. **`ggplot2`** is included in the 
-**`tidyverse`** package.
-
-```{r load-package, message = FALSE}
-library(tidyverse)
-```
-
-Let's load the data we finished working with in the *Data Wrangling in `R`* 
-workshop. 
-
-```{r load-data}
-surveys_complete <- read_csv("../data/surveys_complete.csv")
-```
-
-## Plotting with **`ggplot2`**
+# Data Visualization using **`ggplot2`** 
 
 **`ggplot2`** is a plotting package that makes it simple to create complex plots
 from data in a data frame. It provides a more programmatic interface for
 specifying what variables to plot, how they are displayed, and general visual
-properties. Therefore, we only need minimal changes if the underlying data change
-or if we decide to change from a bar plot to a scatter plot. This helps in 
-creating publication quality plots with minimal amounts of adjustments and 
+properties. Therefore, we only need minimal changes if the underlying data 
+change or if we decide to change from a bar plot to a scatter plot. This helps 
+in creating publication quality plots with minimal amounts of adjustments and 
 tweaking.
 
-**`ggplot2`** functions like data in the 'long' format, i.e., a column for every
-dimension, and a row for every observation. Well-structured data will save you 
-lots of time when making figures with **`ggplot2`**
+Packages in `R` are basically sets of additional functions that let you do more
+stuff. The functions we've been using so far, like `str()` or `mean()`,
+come built into `R`; packages give you access to more of them. Before you use a
+package for the first time you need to install it on your machine, and then you
+should import it in every subsequent `R` session when you need it. You should
+already have installed the **`tidyverse`** package. This is an
+"umbrella-package" that installs several packages useful for data analysis which
+work together well such as **`tidyr`**, **`dplyr`**, **`ggplot2`**, 
+**`readr`**, **`forcats`**, etc.
+
+The **`tidyverse`** package tries to address common issues that arise when
+doing data analysis with some of the functions that come with `R`. 
+
+1. The `tidyverse` solves complex problems by combining many simple pieces.
+
+> No matter how complex and polished the individual operations are, 
+> it is often the quality of the glue that most directly determines 
+> the power of the system.
+> - Hal Abelson
+
+2. The `tidyverse` is written for people to read! 
+
+> Computer efficiency is a secondary concern because the 
+> bottleneck in most data analysis is thinking time, not computing time.
+> - Hadley Wickham
+
+If we haven't already done so, we can type `install.packages("tidyverse")` 
+straight into the console. In fact, it's better to write this in the console 
+than in our script for any package, as there's no need to re-install packages 
+every time we run the script.
+
+Then, to load the package type:
+
+\vspace{0.5cm}
+
+```{r, message = FALSE}
+## load the tidyverse packages
+library(tidyverse)
+```
+
+To learn more about **`ggplot2`** after the workshop, you may want
+to check out this
+[**`ggplot2`** reference website (link)](https://ggplot2.tidyverse.org/reference/) 
+and this [handy cheatsheet on **`ggplot2`** (link)](https://rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf).
+
+# Data for the Workshop 
+
+We have seen in our previous lesson that when building or importing a data 
+frame, the columns that contain characters (i.e., text) are coerced 
+(=converted) into the `factor` data type. We had to set **`stringsAsFactors`** 
+to **`FALSE`** to avoid this hidden argument to convert our data type. 
+
+This time we will use the **`tidyverse`** package to read the data and avoid 
+having to set **`stringsAsFactors`** to **`FALSE`**
+
+We'll read in our data using the `read_csv()` function, from the tidyverse 
+package **`readr`**, instead of `read.csv()`.
+
+\vspace{0.5cm}
+
+```{r, results = 'hide'}
+surveys <- read_csv("../data/surveys.csv")
+```
+
+\vspace{0.5cm}
+
+You will see the message `Parsed with column specification`, followed by each 
+column name and its data type. When you execute `read_csv` on a data file, it 
+looks through the first 1000 rows of each column and guesses the data type for 
+each column as it reads it into `R`. For example, in this dataset, `read_csv` 
+reads `weight` as `col_double` (a numeric data type), and `species` as 
+`col_character`. 
+
+\vspace{0.5cm}
+
+
+```{r, results = 'hide'}
+## inspect the data
+str(surveys)
+```
+
+\vspace{0.5cm}
+
+```{r, eval = FALSE}
+## preview the data
+View(surveys)
+```
+
+\vspace{0.5cm}
+
+Notice that the class of the data is now `tbl_df`
+
+This is referred to as a "tibble". Tibbles tweak some of the behaviors of the 
+data frame objects we introduced in the previous episode. The data structure is
+very similar to a data frame. For our purposes the only differences are that:
+
+1. In addition to displaying the data type of each column under its name, it
+   only prints the first few rows of data and only as many columns as fit on one
+   screen.
+2. Columns of class `character` are never converted into factors.
+
+
+## Plotting with **`ggplot2`**
+
+`ggplot2` functions like data in the 'long' format, i.e., a column for every 
+dimension, and a row for every observation. There are other data formats, which 
+we will discuss in the _Data Wrangling in `R`_ workshop, as well as how to 
+covert from one data format to another. Well-structured data will save you 
+lots of time when making figures with `ggplot2` and when working in `R`!
 
 `ggplot` graphics are built step by step by adding new elements. Adding layers 
 in this fashion allows for extensive flexibility and customization of plots.
@@ -63,9 +156,9 @@ for different types of plots:
 - use the `ggplot()` function and bind the plot to a specific data frame using 
 the `data` argument
 
-```{rs}
-ggplot(data = surveys_complete) 
-## Creates a blank ggplot, referencing the surveys_complete dataset
+```{r}
+ggplot(data = surveys) 
+## Creates a blank ggplot, referencing the surveys dataset
 ```
 
 - define a mapping (using the aesthetic (`aes`) function), by selecting the 
@@ -73,9 +166,10 @@ variables to be plotted and specifying how to present them in the graph, e.g. as
 x/y positions or characteristics such as size, shape, color, etc.
 
 ```{r}
-ggplot(data = surveys_complete, 
+ggplot(data = surveys, 
        mapping = aes(x = weight, y = hindfoot_length))
 ## Creates a blank ggplot, with the variables mapped to the x- and y-axis
+## ggplot knows where the variables live, since you have defined the data to use
 ```
 
 - add 'geoms' -- graphical representations of the data in the plot (points,
@@ -91,37 +185,16 @@ To add a geom to the plot use the `+` operator. Because we have two continuous
 variables in the data, let's use `geom_point()` first:
 
 ```{r first-ggplot}
-ggplot(data = surveys_complete, 
+ggplot(data = surveys, 
        mapping = aes(x = weight, y = hindfoot_length)) +
   geom_point()
 ```
 
-The `+` in the **`ggplot2`** package is particularly useful because it allows 
-you to modify existing `ggplot` objects. This means you can easily set up plot
-templates and conveniently explore different types of plots, so the above
-plot can also be generated with code like this:
-
-```{r, first-ggplot-with-plus}
-# Assign plot to a variable
-surveys_plot <- ggplot(data = surveys_complete, 
-                       mapping = aes(x = weight, y = hindfoot_length))
-
-# Add a specific type of plot (geom) to the defined variables 
-surveys_plot + 
-    geom_point()
-```
-
-**Notes**
-
-- Anything you put in the `ggplot()` function can be seen by any geom layers
-  that you add (i.e., these are universal plot settings). This includes the 
-  x- and y-axis mapping you set up in `aes()`.
-- You can also specify mappings for a given geom independently of the
-  mappings defined globally in the `ggplot()` function.
-- The `+` sign used to add new layers must be placed at the end of the line 
-containing the *previous* layer. If, instead, the `+` sign is added at the 
-beginning of the line containing the new layer, **`ggplot2`** will not add the 
-new layer and will return an error message.
+You can think of the `+` sign as adding layers to the plot. 
+Each `+` sign must be placed at the end of the line containing the *previous* 
+layer. If, instead, the `+` sign is added at the beginning of the line 
+containing the new layer, **`ggplot2`** will not add the new layer and will 
+return an error message.
 
 ```{r, ggplot-with-plus-position, eval = FALSE}
 # This is the correct syntax for adding layers
@@ -139,7 +212,7 @@ Building plots with **`ggplot2`** is typically an iterative process. We start by
 defining the dataset we'll use, lay out the axes, and choose a geom:
 
 ```{r create-ggplot-object}
-ggplot(data = surveys_complete, 
+ggplot(data = surveys, 
        mapping = aes(x = weight, y = hindfoot_length)) +
     geom_point()
 ```
@@ -147,8 +220,8 @@ ggplot(data = surveys_complete,
 Then, we start modifying this plot to extract more information from it. For
 instance, we can add transparency (`alpha`) to avoid overplotting:
 
-```{r adding-transparency}
-ggplot(data = surveys_complete, 
+```{r adding-transparency, results = 'hold'}
+ggplot(data = surveys, 
        mapping = aes(x = weight, y = hindfoot_length)) +
     geom_point(alpha = 0.1)
     ## alpha reduces the opacity of the points 
@@ -159,7 +232,7 @@ ggplot(data = surveys_complete,
 We can also add colors for all the points:
 
 ```{r adding-colors}
-ggplot(data = surveys_complete, 
+ggplot(data = surveys, 
        mapping = aes(x = weight, y = hindfoot_length)) +
     geom_point(alpha = 0.1, color = "blue")
 ```
@@ -177,24 +250,33 @@ different options for plotting:
 * an NA, to draw nothing
 
 Reference for shapes in integers and characters:  
-https://ggplot2.tidyverse.org/articles/ggplot2-specs.html
+https://ggplot2.tidyverse.org/articles/ggplot2-specs.html  
 
-> Assign one of these aesthetics to the `geom_point` aspect of your plot. 
-> What happened? 
+>
+> Modify the previous code chunk to assign one of these aesthetics to the 
+> `geom_point` aspect of your plot. What happened? 
+>
 
 ## Piping the Data In  
 
 Because **`ggplot2`** lives in the `tidyverse`, it is expected to work well with 
 other packages in the `tidyverse`. Because of this, the first argument to 
-creating a `ggplot` is the dataset you wish to be working with. Since the data 
-is the first argument, we can use our familiar pipe operator (`%>%`) to pipe the
-data into the `ggplot()` function!  
+creating a `ggplot` is the dataset you wish to be working with. The pipe 
+operator sends the output of one function directly into the next function,
+which is useful when you need to do many things to the same dataset. Since the 
+dataset we wish to use is the first argument to `ggplot()`, we can use the pipe 
+operator to pipe the data into the `ggplot()` function!  
+
+Pipes in `R` look like `%>%` and are made available via the **`magrittr`** 
+package, installed automatically with the **`tidyverse`**. If you use RStudio, 
+you can type the pipe with <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>M</kbd> if
+you have a PC or <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>M</kbd> if you have a
+Mac.
 
 This would instead look like this:  
 
-
 ```{r}
-surveys_complete %>%  
+surveys %>%  
   ## data to be used in the ggplot  
   ggplot(mapping = aes(x = weight, y = hindfoot_length)) + 
   ## uses the data piped in as the first arguement to ggplot() 
@@ -220,29 +302,35 @@ color with **`species_id`**:
 
 
 ```{r color-by-species-1}
-surveys_complete %>% 
+surveys %>% 
   ggplot(mapping = aes(x = weight, y = hindfoot_length)) +
-    geom_point(alpha = 0.1, aes(color = species_id))
+    geom_point(alpha = 0.1, aes(color = species_id)) 
+
 ```
+
+**Note:** When specifying an `alpha` for a scatterplot, it automatically uses 
+that __same__ `alpha` in the legend. To remedy this you can add:  
+
+```
+guides(colour = guide_legend(override.aes = list(alpha = 1)))
+```
+to your plot. This customizes the legend appearance, similar to what we will 
+see in the customization section. 
+
+\vspace{0.5cm}
 
 We can also specify the colors directly inside the mapping provided in the 
 `ggplot()` function. This will be seen by **any** geom layers and the mapping 
 will be determined by the x- and y-axis set up in `aes()`.
 
 ```{r color-by-species-2}
-surveys_complete %>% 
+surveys %>% 
   ggplot(mapping = aes(x = weight, y = hindfoot_length, color = species_id)) +
     geom_point(alpha = 0.1)
 ```
 
 Notice that we can change the geom layer and colors will be still determined by
 **`species_id`**
-
-```{r color-by-species-3}
-surveys_complete %>% 
-  ggplot(mapping = aes(x = weight, y = hindfoot_length, color = species_id)) +
-    geom_point(alpha = 0.1)
-```
 
 ### Local Aesthetics versus Global Aesthetics 
 
@@ -255,8 +343,8 @@ your color aesthetics.
 
 **Globally** 
 
-```{r, warning = FALSE}
-surveys_complete %>% 
+```{r, warning = FALSE, results = 'hold'}
+surveys %>% 
   ggplot(mapping = aes(x = weight, y = hindfoot_length, color = species_id)) +
   geom_jitter(alpha = 0.1) + 
   geom_smooth()
@@ -266,8 +354,8 @@ surveys_complete %>%
 
 **Locally**  
 
-```{r, warning = FALSE}
-surveys_complete %>% 
+```{r, warning = FALSE, results = 'hold'}
+surveys %>% 
   ggplot(mapping = aes(x = weight, y = hindfoot_length)) +
   geom_jitter(aes(color = species_id), alpha = 0.1) + 
   geom_smooth()
@@ -303,7 +391,7 @@ surveys_complete %>%
 We can use boxplots to visualize the distribution of weight within each species:
 
 ```{r boxplot}
-surveys_complete %>% 
+surveys %>% 
   ggplot(mapping = aes(x = species_id, y = weight)) +
     geom_boxplot()
 ```
@@ -311,8 +399,8 @@ surveys_complete %>%
 By adding points to boxplot, we can have a better idea of the number of
 measurements and their distribution:
 
-```{r boxplot-with-points}
-surveys_complete %>% 
+```{r boxplot-with-points, results = 'hold'}
+surveys %>% 
   ggplot(mapping = aes(x = species_id, y = weight)) +
     geom_boxplot(alpha = 0) + 
     ## alpha = 0 eliminates the black (outlier) points, so they're not plotted twice
@@ -320,7 +408,7 @@ surveys_complete %>%
     ## alpha = 0.3 decreases the opacity of the points, to not be too busy
 ```
 
->Notice how the boxplot layer is behind the jitter layer? What do you need to
+> Notice how the boxplot layer is behind the jitter layer? What do you need to
 > change in the code to put the boxplot in front of the points such that it's not
 > hidden?
 
@@ -336,7 +424,7 @@ surveys_complete %>%
 
 ```{r, eval = FALSE, echo = FALSE}
 ##  Start with the boxplot we created:
-ggplot(data = surveys_complete, mapping = aes(x = species_id, y = weight)) +
+ggplot(data = surveys, mapping = aes(x = species_id, y = weight)) +
   geom_boxplot(alpha = 0) +
   geom_jitter(alpha = 0.3, color = "tomato")
 
@@ -350,12 +438,12 @@ ggplot(data = surveys_complete, mapping = aes(x = species_id, y = weight)) +
 > observations. For example, it may be worth changing the scale of the axis to
 > better distribute the observations in the space of the plot. Changing the 
 > scale of the axes is done similarly to adding/modifying other components 
-> (i.e., by incrementally adding commands). 
+> (i.e., with `+`). 
 > Try plotting weight on the log (base 10) scale; see `scale_y_log10()`.
 
 ```{r boxplot-challenge, echo = FALSE, eval = FALSE}
 ##  Start with the boxplot we created:
-ggplot(data = surveys_complete, mapping = aes(x = species_id, y = weight)) +
+ggplot(data = surveys, mapping = aes(x = species_id, y = weight)) +
   geom_boxplot(alpha = 0) +
   geom_jitter(alpha = 0.3, color = "tomato") 
 
@@ -408,7 +496,7 @@ species, years, plots, etc. and produce a single density plot:
 
 
 ```{r}
-surveys_complete %>% 
+surveys %>% 
   ggplot(mapping = aes(x = weight)) + 
   geom_density()
   
@@ -419,7 +507,7 @@ a `fill = <COLOR>` argument to `geom_density()` we can produce a nicer looking
 plot:  
 
 ```{r}
-surveys_complete %>% 
+surveys %>% 
   ggplot(mapping = aes(x = weight)) + 
   geom_density(fill = "sky blue")
   
@@ -434,7 +522,7 @@ you a warning.
 > Do you get an error like this when you use `hist()` in base `R`? 
 
 ```{r, warning = FALSE, message = FALSE}
-surveys_complete %>% 
+surveys %>% 
   ggplot(mapping = aes(x = weight)) + 
   geom_histogram(fill = "sky blue")
   
@@ -452,13 +540,13 @@ density plot.
 
 At first glimpse, you would think that a bar plot would be simple to create, but
 bar plots reveal a subtle nuance of the plots we have created thus far. The 
-following bar chart displays the total number of rodents in the `surveys_complete` 
+following bar chart displays the total number of rodents in the `surveys` 
 dataset, grouped by their species ID. 
 
 \vspace{0.5cm}
 
 ```{r}
-surveys_complete %>% 
+surveys %>% 
   ggplot(mapping = aes(x = species_id)) + 
   geom_bar()
 ```
@@ -466,7 +554,7 @@ surveys_complete %>%
 \vspace{0.5cm}
 
 The x-axis displays the levels of `species_id`, a variable in the 
-`surveys_complete` dataset. On the y-axis `count` is displayed, but `count` is 
+`surveys` dataset. On the y-axis `count` is displayed, but `count` is 
 **not** a variable in our dataset! Where did `count` come from? Graphs, such as
 the scatterplots, display the raw values of your data. Other graphs, like bar 
 charts and boxplots, calculate new values (from your data) to plot. 
@@ -479,7 +567,7 @@ those summaries in a tidy box, with "outliers" (data over 1.5*IQR from min/max)
 plotted as points.  
 
 * Smoothers (as used in `geom_smooth`) fit a model to your data (you can 
-specify, but we used the `loess` default) and then plot the predictions from 
+specify, but we used the `gam` default) and then plot the predictions from 
 that model (with associated confidence intervals).  
 
 
@@ -501,7 +589,7 @@ the same output as above:
 \vspace{0.5cm}
 
 ```{r}
-surveys_complete %>% 
+surveys %>% 
   ggplot(mapping = aes(x = species_id)) + 
   stat_count()
 ```
@@ -515,7 +603,7 @@ code to override the `count` stat:
 \vspace{0.5cm}
 
 ```{r}
-surveys_complete %>% 
+surveys %>% 
   ggplot(mapping = aes(x = species_id)) + 
   geom_bar(aes(y = ..prop.., group = 1))
 ```
@@ -523,12 +611,12 @@ surveys_complete %>%
 \vspace{0.5cm}
 
 > Why do we need to set `group = 1` in the above proportion bar chart? 
-> In other words, what is wrong with the plot below?**   
+> In other words, what is wrong with the plot below?  
 
 \vspace{0.5cm}
 
 ```{r}
-surveys_complete %>% 
+surveys %>% 
   ggplot(aes(x = species_id)) + 
   geom_bar(aes(y = ..prop..))
 ```
@@ -548,7 +636,7 @@ slightly unsatisfying result.
 \vspace{0.5cm}
 
 ```{r}
-surveys_complete %>% 
+surveys %>% 
   ggplot(mapping = aes(x = species_id, color = species_id)) + 
   geom_bar()
 ```
@@ -573,11 +661,11 @@ the bars. Run these two lines of code and see how they differ.
 \vspace{0.5cm}
 
 ```{r}
-surveys_complete %>% 
+surveys %>% 
   ggplot(mapping = aes(x = species_id, fill = sex)) + 
   geom_bar()
 
-surveys_complete %>% 
+surveys %>% 
   ggplot(mapping = aes(x = species_id, fill = sex)) + 
   geom_bar(position = "fill")
 ```
@@ -595,7 +683,7 @@ to directly compare individual values.
 \vspace{0.5cm}
 
 ```{r}
-surveys_complete %>% 
+surveys %>% 
   ggplot(mapping = aes(x = species_id, fill = sex)) + 
   geom_bar(position = "dodge")
 ```
@@ -605,11 +693,11 @@ surveys_complete %>%
 
 Let's calculate number of counts per year for each genus. 
 
-*Remember from Data Wrangling:* First we need to group the data and count 
+*What you will see in Data Wrangling:* First we need to group the data and count 
 records within each group!  
 
 ```{r}
-yearly_counts <- surveys_complete %>%
+yearly_counts <- surveys %>%
   count(year, genus) 
  ## counts the number of observations (rows) for each year, genus combination
 ```
@@ -670,12 +758,13 @@ yearly_counts %>%
 ```
 
 Now we would like to split the line in each plot by the sex of the rodent 
-caputured. To do that we need to make counts in the data frame grouped by `year`,
+captured. To do that we need to make counts in the data frame grouped by `year`,
 `species_id`, and `sex`:
 
 ```{r}
-yearly_sex_counts <- surveys_complete %>%
+yearly_sex_counts <- surveys %>%
   count(year, species_id, sex)
+## counts the number of observations (rows) for each year, species, sex combination
 ```
 
 We can now make the faceted plot by splitting further by sex using `color` 
@@ -690,7 +779,7 @@ yearly_sex_counts %>%
 
 You can also organize the panels only by rows (or only by columns):
 
-```{r average-weight-time-facet-sex-rows, fig.height = 8.5, fig.width = 8}
+```{r average-weight-time-facet-sex-rows, fig.height = 8.5, fig.width = 8, results='hold'}
 yearly_sex_counts %>% 
   ggplot(mapping = aes(x = year, y = n, color = sex)) +
   geom_line() +
@@ -698,7 +787,7 @@ yearly_sex_counts %>%
   # One column, facet by rows
 ```
 
-```{r average-weight-time-facet-sex-columns, fig.width = 9.5, fig.height = 5}
+```{r average-weight-time-facet-sex-columns, fig.width = 9.5, fig.height = 5, results='hold'}
 yearly_sex_counts %>% 
   ggplot(mapping = aes(x = year, y = n, color = sex)) +
     geom_line() +
@@ -783,14 +872,13 @@ additional themes.
 
 ```{r}
 ## To get you started:  
-yearly_weight <- surveys_complete %>% 
+yearly_weight <- surveys %>% 
   group_by(year, species_id) %>%
   ## Variables to group by!
   summarize(avg_weight = mean(weight))
 
 
 ```
-
 
 # Customization
 
@@ -832,11 +920,11 @@ yearly_sex_counts %>%
     ## sets ALL the text on the plot to be size 16
 ```
 
-> Tip: Wrapping Titles  
-> Sometimes the titles we wish to have for our plots are longer than the space 
-> originally allotted. If you create a title and the text is running off the plot
-> you can add a `\n` inside your title to force a line break 
-> (`\n` stands for new line).  
+**Tip:** Wrapping Titles  
+Sometimes the titles we wish to have for our plots are longer than the space 
+originally allotted. If you create a title and the text is running off the plot
+you can add a `\n` inside your title to force a line break 
+(`\n` stands for new line).  
 
 ## Label & Plot Fonts 
 
@@ -925,7 +1013,7 @@ grey_theme <- theme(axis.text.x = element_text(size = 12, angle = 60,
                     text = element_text(size = 16))
 
 # create a boxplot and adds theme object to the plot
-surveys_complete %>% 
+surveys %>% 
   ggplot(aes(x = species_id, y = hindfoot_length)) +
     geom_boxplot() +
     grey_theme
@@ -951,7 +1039,7 @@ cbPalette_grey <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#007
 # The palette with black:
 cbbPalette_blk <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
 
-surveys_complete %>% 
+surveys %>% 
   ggplot(aes(x = species_id, y = hindfoot_length, color = genus)) +
   geom_boxplot() +
   grey_theme + 
@@ -980,7 +1068,7 @@ you specify the name of the palette you wish to use (e.g. `scale_color_aaas()`)
 >   (see http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/).
 
 
-## Arranging and exporting plots
+## Arranging and Exporting Plots
 
 Faceting is a great tool for splitting one plot into multiple plots, but 
 sometimes you may want to produce a single figure that contains multiple plots 
@@ -991,7 +1079,7 @@ package allows us to combine separate ggplots into a single figure using
 ```{r gridarrange-example, message = FALSE, fig.width = 10}
 library(gridExtra)
 
-spp_weight_boxplot <- surveys_complete %>% 
+spp_weight_boxplot <- surveys %>% 
   ggplot(aes(x = genus, y = weight)) +
   geom_violin() +
   geom_point(color = "tomato") + 
@@ -1081,6 +1169,74 @@ ggsave("fig/combo_plot_abun_weight.png", combo_plot, width = 10, dpi = 300)
 ```
 
 \vspace{4cm}
+
+# Instructor Biographies 
+
+## Allison Theobold
+![](images/bio/Allison Theobold.jpg)
+
+Allison Theobold, originally from Grand Junction, CO, is a sixth-year graduate 
+student studying Statistics Education at Montana State University. Allison 
+graduated from Colorado Mesa University in 2014, earned a Master's degree in 
+Statistics from Montana State University, and will be defending her dissertation
+in April of this year. Recognized by both the Department of Mathematical 
+Sciences and the College of Letters and Sciences as an outstanding graduate 
+teacher and researcher, Allison's passion for teaching data science is 
+infectious. Allison has taught Introduction and Intermediate Statistics to 
+undergraduate and graduate students, while also completing two years of 
+statistical consulting for diverse groups at Montana State. Her experiences as a
+teacher and consultant established an interest in preparing researchers in the 
+sciences with the computational tools necessary to implement statistics.
+
+
+## Elijah Meyer 
+![](images/bio/Elijah Meyer.jpg)
+
+Elijah was born and raised in Great Falls, Montana and currently holds a 
+Master's degree in Statistics from Montana State University. His early research 
+involved sports statistics, focusing in on Fitbit data and Disc Golf 
+visualizations. His recent work includes research on Graduate Teaching 
+Assistants (GTAs) and program development to help better support GTAs when 
+teaching statistics. Many of these projects were presented to audiences at the 
+Joint Statistical Meetings, Cascadia Symposium of Statistics in Sports, and 
+United States Conference on Teaching Statistics 2019. He is currently pursuing a
+Ph.D. in statistics with a focus on statistics education.
+
+## Moses Obri
+![](images/bio/Moses Obri.jpg)
+
+## Sara Mannheimer 
+![](images/bio/Sara Mannheimer.jpg)
+
+# Helper Biographies 
+
+## Kelly Loucks
+![](images/bio/Kelly Loucks.jpg)
+
+## Mark Greenwood 
+![](images/bio/Mark Greenwood.jpg)
+
+Mark Greenwood is originally from Iowa City, Iowa. He graduated from Luther 
+College in 1996 and earned Master's and PhD degrees in Statistics from the 
+University of Wyoming in 2000 and 2004, respectively. He has been at Montana 
+State University since 2004 and is a Professor of Statistics in the Department 
+of Mathematical Sciences along with Director of Statistical Consulting and 
+Research Services. His research has spanned a wide variety of areas with 
+applications in environmental and clinical areas being main focus areas and 
+methodological work in clustering and functional data analysis being primary 
+areas of research interest. Since 2014, Dr. Greenwood has been working on 
+Multiple Sclerosis research, mostly focused disability scale development and 
+proteomics of cerebro-spinal fluid. He has also written a textbook called 
+"Intermediate Statistics with R". When not teaching or supervising student 
+research and the work done in SCRS, Mark enjoys hiking, road biking, and fly 
+fishing. 
+
+# Workshop Supporters
+
+These workshops are made possible by the generous support of the Montana State
+University Library and the Statistical Consulting and Research Services. 
+
+\vspace{5cm}
 
 <p style="text-align: right; font-size: small;">Workshop build on: 
 `r format(Sys.time())`</p>

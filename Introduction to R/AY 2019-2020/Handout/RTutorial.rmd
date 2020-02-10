@@ -1137,13 +1137,3 @@ teaching statistics. Many of these projects were presented to audiences at the
 Joint Statistical Meetings, Cascadia Symposium of Statistics in Sports, and 
 United States Conference on Teaching Statistics 2019. He is currently pursuing a
 Ph.D. in statistics with a focus on statistics education.
-
-## Kelly Loucks
-![](images/bio/Kelly Loucks.JPG)
-
-Kelly is from Charlotte, North Carolina and is a second-year Master's student 
-studying Statistics. She previously earned her Bachelor's degree in Mathematics 
-with a concentration in Statistics from Appalachian State University. She has 
-worked on research for the United States Forest Service and taught Introduction 
-to Statistics. She enjoys skiing, hiking, ice climbing, and mountain biking in 
-her free time.

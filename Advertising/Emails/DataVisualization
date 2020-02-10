@@ -1,10 +1,19 @@
 Hi all, 
 
 This is a reminder that you signed-up for the Data Visualization in R workshop 
-today from 2:30-5:00. The workshop will be held in the Heathcote Classroom in 
-the basement of the Library (by the basement bathrooms). 
+today from <INSERT TIME HERE>. The workshop will be held in the <INSERT LOCATION 
+HERE, WITH DIRECTIONS>. Registration for the workshop is full and there are 
+quite a few individuals on the waitlist, so please respond if registered but 
+will not be attending! We do ask that, if you are on the waitlist, you please 
+wait outside the classroom, until we know that all of the registrants have 
+arrived. 
 
-The workshop will cover how to use the ggplotpackage to easily create a variety 
+For those of you on the waitlist, we will be broadcasting the workshop via 
+WebEx. You are welcome to log-in to WebEx and watch the video from the basement 
+of the library. That way, if you have questions, you can type a message and a 
+workshop helper can scamper out to talk with you.
+
+The workshop will cover how to use the ggplot package to easily create a variety 
 of different data visualizations. We will cover how to create visualizations for
 one and two variables, and how to incorporate further variables using additional
 plotting aesthetics. Finally, we will discuss how to make customizations for 
@@ -12,16 +21,21 @@ your plots, arrange multiple plots on a page, and export plots for future
 publications. 
 
 The materials for the workshop are available through the RStudio Cloud at the 
-Data Wrangling workspace (http://bit.ly/data-vizz). If you have not accessed the
-RStudio Cloud before, you will need to create a log-in or use your GitHub or 
+Data Visualization workspace (http://bit.ly/data-vizz). If you have not accessed
+the RStudio Cloud before, you will need to create a log-in or use your GitHub or 
 Google log-in. Then you will need to direct to the workspace (using the above 
 link) and click on the blue "Join Workspace" button. Once you are inside, the 
 workshop materials are available through the Projects tab. 
 
-ADD BLERB ABOUT ATTENDEES TAKING THE PRE-WORKSHOP SURVEY
+To keep these workshops funded for the foreseeable future, we request that you 
+take a few minutes to fill out this pre-workshop survey. For question 3, the 
+Data Visualization workshop you are attending is a component of the Data 
+Carpentry Ecology workshop. 
+
+<INSERT LINK TO CARPENTRIES SURVEYS HERE>
 
 
-Looking forward to seeing everyone for this final workshop! 
+Looking forward to seeing everyone at the workshop! 
 
 
 YOUR SIGNATURE HERE!

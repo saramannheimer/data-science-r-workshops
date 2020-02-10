@@ -2,7 +2,9 @@
 title: "Solutions to Practice Problems"
 author: "Allison Theobold"
 date: "1/21/2020"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 # Exercise 1 

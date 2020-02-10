@@ -1,12 +1,17 @@
 Hello everyone,  
  
-This is an email to remind you that you are signed up for the Introduction to R
-(for data analytics) workshop tomorrow from 2:30 to 5pm in the Heathcote 
-classroom at the Library. The Heathcote classroom is located in the basement of
-the Library, by the restrooms. We will try to have signs directing you there! 
-If, for any reason, you will not be able to attend the workshop, please let me
-know, as there is a waitlist to get into the workshop. 
+This is a reminder that you signed-up for the Introduction to R workshop 
+tomorrow from <INSERT TIME HERE>. The workshop will be held in the 
+<INSERT LOCATION HERE, WITH DIRECTIONS>. Registration for the workshop is full 
+and there are quite a few individuals on the waitlist, so please respond if 
+registered but will not be attending! We do ask that, if you are on the 
+waitlist, you please wait outside the classroom, until we know that all of the
+registrants have arrived. 
 
+For those of you on the waitlist, we will be broadcasting the workshop via 
+WebEx. You are welcome to log-in to WebEx and watch the video from the basement 
+of the library. That way, if you have questions, you can type a message and a 
+workshop helper can scamper out to talk with you.
 
 The workshop will cover the basics of working with different classes of objects,
 loading data into R, inspecting, extracting, manipulating, summarizing, and 
@@ -23,9 +28,12 @@ browsers have trouble updating the content).  Once you've logged in:
 
 Now, you're all set for the workshop! 
 
+To keep these workshops funded for the foreseeable future, we request that you 
+take a few minutes to fill out this pre-workshop survey. For question 3, the 
+Data Visualization workshop you are attending is a component of the Data 
+Carpentry Ecology workshop. 
 
-ADD BLERB ABOUT ATTENDEES TAKING THE PRE-WORKSHOP SURVEY
-
+<INSERT LINK TO CARPENTRIES SURVEYS HERE>
 
 Please let me know if you have any issues downloading these materials. Looking 
 forward to seeing everyone tomorrow!
