@@ -1313,6 +1313,12 @@ Ph.D. in statistics with a focus on statistics education.
 ## Sara Mannheimer 
 ![](images/bio/Sara Mannheimer.jpg)
 
+Sara Mannheimer is Assistant Professor and Data Librarian at Montana State 
+University, where she helps shape practices and theories for curation, 
+publication, and preservation of data. Her research is rooted in the examination
+of the social, ethical, and technical issues that arise as a result of our 
+data-driven world.
+
 </br>
 
 # Helper Biographies 
