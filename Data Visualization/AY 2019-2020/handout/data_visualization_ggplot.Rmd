@@ -4,8 +4,8 @@ author: "Data Carpentry"
 output:
   html_document:
     df_print: paged
-    fig_height: 4
-    fig_width: 5
+    fig_height: 6
+    fig_width: 7
   pdf_document: default
 ---
 
@@ -78,7 +78,7 @@ library(tidyverse)
 To learn more about **`ggplot2`** after the workshop, you may want
 to check out this
 [**`ggplot2`** reference website (link)](https://ggplot2.tidyverse.org/reference/) 
-and this [handy cheatsheet on **`ggplot2`** (link)](https://rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf).
+and this [handy cheatsheet on **`ggplot2`** (link)](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf).
 
 # Data for the Workshop 
 
@@ -872,11 +872,12 @@ additional themes.
 
 ```{r}
 ## To get you started:  
-yearly_weight <- surveys %>% 
+yearly_species_weight <- surveys %>% 
   group_by(year, species_id) %>%
   ## Variables to group by!
   summarize(avg_weight = mean(weight))
 
+## Your ggplot code for the plot goes here!
 
 ```
 
@@ -904,9 +905,10 @@ yearly_sex_counts %>%
 ```
 
 The axes have more informative names, but their readability can be improved by
-increasing the font size. This can be done with the generic `theme()` function:
+increasing the font size. This can be done with the generic `theme()` function. 
 
-```{r number-species-year-with-right-labels-xfont-size}
+
+```{r number-species-year-with-right-labels-xfont-size, results = "hold"}
 yearly_sex_counts %>% 
   ggplot(mapping = aes(x = year, y = n, color = sex)) +
     geom_line() +
@@ -920,7 +922,10 @@ yearly_sex_counts %>%
     ## sets ALL the text on the plot to be size 16
 ```
 
-**Tip:** Wrapping Titles  
+Notice the `theme_bw()` is function for a **specific** theme and `theme()` is a
+generic function for a **variety** of different themes!  
+
+**Tip: Wrapping Titles**    
 Sometimes the titles we wish to have for our plots are longer than the space 
 originally allotted. If you create a title and the text is running off the plot
 you can add a `\n` inside your title to force a line break 
@@ -934,90 +939,127 @@ the [**`extrafont`** package](https://github.com/wch/extrafont), and follow the
 instructions included in the README for this package.
 
 After our manipulations, you may notice that the values on the x-axis are still 
-not properly readable. Let's change the orientation of the labels and adjust 
-them vertically and horizontally so they don't overlap. You can use a 90-degree
-angle, or experiment to find the appropriate angle for diagonally oriented
-labels using the `hjust` and `vjust` options in the text theme. 
+not properly readable. Let's swap the orientation of the labels, so the reader 
+doesn't have to tilt their head when reading our plot! The `coord_flip()` 
+function easily changes the x- and y-axis. 
 
-The value of `hjust` and `vjust` are defined between 0 and 1. 
-
-`hjust` controls horizontal justification: 
-
-- 0 means right-justified (text on right)
-- 1 means left-justified (text on left)
-
-`vjust` controls vertical justification:   
-
-- 0 means top-justified (text above)
-- 1 means bottom-justified (text below)
-
-`angle` controls the angle of the text with the x-axis  
-- The angle is defined from x-axis, such that:  
-
-    * angles from 0-90 rotate the text counter-clockwise
-    * negative angles rotate clockwise (from 0 to -90)
-
-
-An example should make this more clear:
-
-```{r}
-
-td <- expand.grid(
-    hjust = c(0, 0.5, 1),
-    vjust = c(0, 0.5, 1),
-    angle = c(0, 45, 90),
-    text = "text"
-)
-
-ggplot(td, aes(x = hjust, y = vjust)) + 
-    geom_point() +
-    geom_text(aes(label = text, angle = angle, hjust = hjust, vjust = vjust)) + 
-    facet_wrap(vars(angle), nrow = 1) +
-    scale_x_continuous(breaks = c(0, 0.5, 1), expand = c(0, 0.2)) +
-    scale_y_continuous(breaks = c(0, 0.5, 1), expand = c(0, 0.2))
-```
-
-This should give you a rough idea of how you can combine `hjust`, `vjust`, and 
-`angle` together in your text specification to align your axis labels to not 
-overlap!  
-
-Let's give it a try.  
-
-```{r number-species-year-with-theme}
+```{r }
 yearly_sex_counts %>% 
   ggplot(mapping = aes(x = year, y = n, color = sex)) +
     geom_line() +
     facet_wrap(vars(species_id)) +
-    labs(title = "Observed Genera Through Time",
-        x = "Year of Observation",
+    labs(title = "Observed Genera by \n Year of Observation",
+        x = "",
         y = "Number of Rodents", 
         color = "Sex") +
-    theme_bw() +
-    theme(axis.text.x = element_text(size = 12, angle = 60, 
-                                     hjust = 0.5, vjust = 0.5),
-          ## theme specific to x-axis text
-          axis.text.y = element_text(colour = "grey20", size = 12),
-          ## theme specific to y-axis text 
-          text = element_text(size = 16))
-          ## theme for all other text on plot (title, legend, facets, etc.)
+  theme_bw() +
+  theme(text = element_text(size = 16)) + 
+  coord_flip()
+    
 ```
 
-If you like the changes you created better than the default theme, you can save them as
-an object to be able to easily apply them to other plots you may create:
+This definitely makes the reader tilt their head less! But, the text on the 
+x-axis is a bit too large to separate the numbers. We can specify the text size 
+for each element of the plot independently, if we so wish. This would look 
+something like this:  
 
-```{r boxplot-grey-custom-theme}
-# define custom theme and store in an object to be added to ggplots
-grey_theme <- theme(axis.text.x = element_text(size = 12, angle = 60, 
-                                               hjust = 0.5, vjust = 0.5),
-                    axis.text.y = element_text(colour = "grey20", size = 12),
-                    text = element_text(size = 16))
-
-# create a boxplot and adds theme object to the plot
-surveys %>% 
-  ggplot(aes(x = species_id, y = hindfoot_length)) +
-    geom_boxplot() +
-    grey_theme
+```{r }
+yearly_sex_counts %>% 
+  ggplot(mapping = aes(x = year, y = n, color = sex)) +
+    geom_line() +
+    facet_wrap(vars(species_id)) +
+    labs(title = "Observed Genera by Year of Observation",
+        x = "",
+        y = "Number of Rodents", 
+        color = "Sex") +
+  theme_bw() +
+  theme(axis.text.x = element_text(size = 10), 
+        axis.text.y = element_text(size = 12), 
+        axis.title.x = element_text(size = 14),
+        legend.text = element_text(size = 12),
+        legend.title = element_text(size = 12),
+        plot.title = element_text(size = 16)) + 
+  coord_flip()
+    
 ```
+
+## Legend Position
+
+By default in `ggplot2` the legend is positioned on the right hand side. 
+However, you are able to change the position of the legend to the left hand 
+side, the top of the plot, or the bottom of the plot. 
+
+This is done by adding a `legend.position` theme to the plot's theme's. 
+
+```{r }
+yearly_sex_counts %>% 
+  ggplot(mapping = aes(x = year, y = n, color = sex)) +
+    geom_line() +
+    facet_wrap(vars(species_id)) +
+    labs(title = "Observed Genera by Year of Observation by",
+        x = "",
+        y = "Number of Rodents", 
+        color = "Sex") +
+  theme_bw() +
+  theme(axis.text.x = element_text(size = 10), 
+        axis.text.y = element_text(size = 12), 
+        axis.title.x = element_text(size = 14),
+        legend.text = element_text(size = 12),
+        legend.title = element_text(size = 14),
+        plot.title = element_text(size = 14), 
+        legend.position = "top") + 
+  coord_flip()
+    
+```
+
+## Removing Grid Lines 
+
+By default, the background of a `ggplot` contains both minor and major 
+gridlines. These can make the plot look a bit busy and difficult for the reader 
+to follow. As you may have guessed, to remove these gridlines, we add another
+theme to our plot. 
+
+This looks like this:
+
+```{r }
+yearly_sex_counts %>% 
+  ggplot(mapping = aes(x = year, y = n, color = sex)) +
+    geom_line() +
+    facet_wrap(vars(species_id)) +
+    labs(title = "Observed Genera by Year of Observation by",
+        x = "",
+        y = "Number of Rodents", 
+        color = "Sex") +
+  theme(axis.text.x = element_text(size = 10), 
+        axis.text.y = element_text(size = 12), 
+        axis.title.x = element_text(size = 14),
+        legend.text = element_text(size = 12),
+        legend.title = element_text(size = 14),
+        plot.title = element_text(size = 14), 
+        legend.position = "top", 
+        ## New themes for the grid lines
+        axis.line = element_line(colour = "black"),
+        ## 
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.border = element_blank(), 
+        panel.background = element_blank()) + 
+  coord_flip()
+    
+```
+
+Let's break these options down!  
+
+- The `axis.line` option declares what color the x- and y-axis lines should be. 
+(Change it to a different color, if you don't believe me!)
+- The `panel.grid.major` removes the major grid (the one associated with the 
+ticks from the x- and y-axis).  
+- The `panel.grid.minor` removes the minor grid (the one *between* the x- and 
+y-axis ticks).  
+- The `panel.border` removes the border around the plot.  
+- The `panel.background` performs a similar action to `theme_bw()`, but it keeps 
+the border around the facet labels.    
+
 
 ## Changing Colors 
 
@@ -1026,9 +1068,11 @@ don't worry! There are many other color palettes available to use!
 
 You can change the colors used by `ggplot()` a few different ways.  
 
-1. Add the `scale_color_manual()` or `scale_fill_manual()` functions to your 
+### Manual Specification 
+
+Add the `scale_color_manual()` or `scale_fill_manual()` functions to your 
 plot and directly specify the colors you want to use, by:  
-- defining a vector of colors right there (e.g. c("blue", "black", "red", "green")) 
+- defining a vector of colors right there (e.g. `c("blue", "black", "red", "green")`) 
 - creating a vector of colors and storing it in an object and calling on it 
 (see below)
 
@@ -1037,21 +1081,24 @@ plot and directly specify the colors you want to use, by:
 cbPalette_grey <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
 
 # The palette with black:
-cbbPalette_blk <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+cbPalette_blk <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
 
 surveys %>% 
   ggplot(aes(x = species_id, y = hindfoot_length, color = genus)) +
   geom_boxplot() +
-  grey_theme + 
   scale_color_manual(values = cbPalette_grey)
 ```
 
-2. Install a package and use it's available color scales. Popular options 
+### Package Specification 
+
+Install a package and use it's available color scales. Popular options 
 include:  
 - `RColorBrewer`: using `scale_fill_brewer()` or `scale_colour_brewer()` 
+
 - `viridis`: using `scale_colour_viridis_d()` for discrete data, 
 `scale_colour_viridis_c()` for continuous data, with an inside 
 argument of `option = <COLOR>` for your chosen color scheme  
+
 - `ggsci`: using `scale_color_<PALNAME>()` or `scale_fill_<PALNAME>()`, where
 you specify the name of the palette you wish to use (e.g. `scale_color_aaas()`)
 
@@ -1076,13 +1123,13 @@ using different variables or even different data frames. The **`gridExtra`**
 package allows us to combine separate ggplots into a single figure using 
 `grid.arrange()`:
 
-```{r gridarrange-example, message = FALSE, fig.width = 10}
+```{r gridarrange-example, message = FALSE, fig.width = 10, results = 'hold'}
 library(gridExtra)
 
 spp_weight_boxplot <- surveys %>% 
   ggplot(aes(x = genus, y = weight)) +
   geom_violin() +
-  geom_point(color = "tomato") + 
+  geom_jitter(color = "tomato", width = 0.2, alpha = 0.2) + 
   scale_y_log10() +
   labs(x = "Genus", y = "Weight (g)") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
@@ -1101,7 +1148,7 @@ In addition to the `ncol` and `nrow` arguments, used to make simple arrangements
 there are tools for [constructing more complex layouts](https://cran.r-project.org/web/packages/gridExtra/vignettes/arrangeGrob.html). 
 
 
-For more assistance arranging plots with `grid.arrage()` I find the following 
+For more assistance arranging plots with `grid.arrage()`. I find the following 
 vignette **very** helpful! 
 
 https://cran.r-project.org/web/packages/egg/vignettes/Ecosystem.html
@@ -1168,7 +1215,57 @@ ggsave("fig/combo_plot_abun_weight.png", combo_plot, width = 10, dpi = 300)
 
 ```
 
-\vspace{4cm}
+</br>
+</br>
+</br>
+
+# Tips for Creating Visually Appealing Data Visualizations 
+
+![](images/glamour_of_graphics.JPG)
+
+One of my favorite references when I am creating plots are the slides from Will 
+Chase's presentation at the 2020 RStudio Conference [(link)](https://www.williamrchase.com/slides/assets/player/KeynoteDHTMLPlayer.html#0). 
+Will is a graphic designer and lays out some interesting "best practices" for 
+creating graphics that we can explore. His suggestions are for three components 
+of the plot: layout, typography, and color. Here are some big take-aways that I 
+use when I create a plot!  
+
+- Titles should be top-left aligned (usually). 
+
+![](images/alignment.JPG)
+
+- Don't make people tilt their head!
+
+![](images/tilt.JPG)
+
+- Don't use borders!
+
+- Remove grids and lighten as much as possible -- don't use minor grid lines. 
+
+![](images/grids.JPG)
+
+- Legends suck, so find clever ways to eliminate them. 
+
+![](images/legend.JPG)
+
+- White space is like garlic; take the amount you think you need and triple it.  
+
+- Fonts matter!  
+
+![](images/fonts.JPG)
+
+- Colors are hard, so think about them carefully!  
+
+</br>
+</br>
+</br>
+
+
+# Happy plotting!  
+
+</br>
+</br>
+</br>
 
 # Instructor Biographies 
 
@@ -1188,6 +1285,8 @@ statistical consulting for diverse groups at Montana State. Her experiences as a
 teacher and consultant established an interest in preparing researchers in the 
 sciences with the computational tools necessary to implement statistics.
 
+</br>
+</br>
 
 ## Elijah Meyer 
 ![](images/bio/Elijah Meyer.jpg)
@@ -1202,16 +1301,35 @@ Joint Statistical Meetings, Cascadia Symposium of Statistics in Sports, and
 United States Conference on Teaching Statistics 2019. He is currently pursuing a
 Ph.D. in statistics with a focus on statistics education.
 
+</br>
+</br>
+
 ## Moses Obri
 ![](images/bio/Moses Obri.jpg)
 
+</br>
+</br>
+
 ## Sara Mannheimer 
 ![](images/bio/Sara Mannheimer.jpg)
+
+</br>
 
 # Helper Biographies 
 
 ## Kelly Loucks
 ![](images/bio/Kelly Loucks.jpg)
+
+Kelly is from Charlotte, North Carolina and is a second-year Master's student 
+studying Statistics. She previously earned her Bachelor's degree in Mathematics
+with a concentration in Statistics from Appalachian State University. She has 
+worked on research for the United States Forest Service and has taught 
+Introduction to Statistics (216). Her current research is on predicting 
+avalanches on the Seward Highway in Alaska. She enjoys skiing, hiking, ice 
+climbing, and mountain biking in her free time. 
+
+</br>
+</br>
 
 ## Mark Greenwood 
 ![](images/bio/Mark Greenwood.jpg)
@@ -1230,6 +1348,9 @@ proteomics of cerebro-spinal fluid. He has also written a textbook called
 "Intermediate Statistics with R". When not teaching or supervising student 
 research and the work done in SCRS, Mark enjoys hiking, road biking, and fly 
 fishing. 
+
+</br>
+</br>
 
 # Workshop Supporters
 
