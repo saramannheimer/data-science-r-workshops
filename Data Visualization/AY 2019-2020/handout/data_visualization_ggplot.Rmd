@@ -1161,10 +1161,16 @@ library(gridExtra)
 spp_weight_boxplot <- surveys %>% 
   ggplot(aes(x = genus, y = weight)) +
   geom_violin() +
-  geom_jitter(color = "tomato", width = 0.2, alpha = 0.2) + 
+  geom_jitter(color = "tomato", width = 0.2, alpha = 0.1) + 
   scale_y_log10() +
-  labs(x = "Genus", y = "Weight (g)") +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  ## log (base 10) transforms the y-axis variable
+  ## (helps to make the plot less skewed)
+  labs(x = "Genus", 
+       y = expression(Log[10](Weight))) +
+  coord_flip() + 
+  theme(axis.text.y = element_text(size = 12), 
+        axis.text.x = element_text(size = 12), 
+        text = element_text(size = 16))
 
 spp_count_plot <- yearly_counts %>% 
   ggplot(aes(x = year, y = n, color = genus)) +
