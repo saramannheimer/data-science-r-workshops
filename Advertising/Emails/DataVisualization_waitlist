@@ -1,0 +1,42 @@
+Hi all, 
+
+This is a reminder that you are on the waitlist for the Data Visualization in R
+workshop <INSERT DATE AND TIME HERE>. The workshop will be held in <LOCATION OF 
+WORKSHOP AND DIRECTIONS HERE>. As you may have guessed, registration for the 
+workshop is full, and there are a large number of people on the waitlist. We 
+have requested that anyone who registered that cannot attend cancel their 
+registration, which will automatically bump people on the waitlist into the 
+registration. If you do not receive an email notifying you that you are no 
+longer on the waitlist, we request that you please wait outside the classroom, 
+until we know that all of the registrants have arrived. 
+
+We will be broadcasting the workshop via WebEx. Thus, if there are no seats 
+available once everyone has arrived, you are welcome to log-in to WebEx and 
+watch the video from the basement of the library. That way, if you have 
+questions, you can type a message and a workshop helper can scamper out to talk 
+with you.
+
+The workshop will cover how to use the ggplot2 package to easily create a 
+variety of different data visualizations. We will cover how to create 
+visualizations for one and two variables, and how to incorporate further 
+variables using additional plotting aesthetics. Finally, we will discuss how to 
+make customizations for your plots, arrange multiple plots on a page, and export
+plots for future publications. 
+
+The materials for the workshop are available through the RStudio Cloud at the 
+Data Visualization workspace <INSERT LINK TO MATERIALS HERE>. If you have not 
+accessed the RStudio Cloud before, you will need to create a log-in or use your
+GitHub or Google log-in. Then you will need to direct to the workspace (using 
+the above link) and click on the blue "Join Workspace" button. Once you are 
+inside, the workshop materials are available through the Projects tab. 
+
+If this is your first time attending a workshop this semester, we request that 
+you take a few minutes to fill out this pre-workshop survey. For question 3, the
+Data Visualization workshop you are attending is a component of the Data 
+Carpentry Ecology workshop series. 
+
+<INSERT LINK TO CARPENTRIES SURVEY HERE>
+
+Looking forward to seeing everyone at the workshop! 
+
+<YOUR SIGNATURE HERE>
