@@ -25,6 +25,12 @@ output:
 
 --------------
 
+# Warm-up 
+
+![](images/scatterplot_warmup.png)
+
+- Describe the qualities of this plot. 
+
 # Data Visualization using **`ggplot2`** 
 
 **`ggplot2`** is a plotting package that makes it simple to create complex plots

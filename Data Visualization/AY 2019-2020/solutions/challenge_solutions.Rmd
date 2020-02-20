@@ -1,0 +1,222 @@
+---
+title: "Solutions (or Methods of Completing) to Challenges"
+author: "Allison Theobold & Elijah Meyer"
+date: "February 19, 2020"
+output: html_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, include = FALSE}
+library(tidyverse)
+
+surveys <- read_csv("../data/surveys.csv")
+```
+
+# Challenge 1
+
+> Modify the previous code chunk to assign one of these aesthetics to the 
+> `geom_point` aspect of your plot. What happened? 
+
+```{r}
+ggplot(data = surveys, 
+       mapping = aes(x = weight, y = hindfoot_length)) +
+    geom_point(alpha = 0.1, color = "blue", 
+               shape = ".") 
+## This makes really tiny points!
+```
+
+# Challenge 2
+
+> Part 1: 
+> Inspect the `geom_point` help file to see what other aesthetics are available. 
+> Map a new variable from the dataset to another aesthetic in your plot. 
+> What happened? 
+> Does the aesthetic change if you use a continuous variable versus a 
+> categorical/discrete variable?  
+
+```{r}
+surveys %>% 
+  ggplot(mapping = aes(x = weight, y = hindfoot_length)) +
+  geom_point(aes(shape = species_id), alpha = 0.1) 
+## Shape is a bad choice for a categorical variable with lots of values!
+## You get an error saying that it can only do up to 6 different shapes. 
+
+surveys %>% 
+  ggplot(mapping = aes(x = weight, y = hindfoot_length)) +
+  geom_point(aes(size = species_id), alpha = 0.1) 
+## Size is a bad choice for discrete data (categorical variables)
+
+# surveys %>% 
+#   ggplot(mapping = aes(x = weight, y = hindfoot_length)) +
+#   geom_point(aes(shape = year), alpha = 0.1) 
+## This code will give you an error, you cannot use a continuous variable for shape
+
+surveys %>% 
+  ggplot(mapping = aes(x = weight, y = hindfoot_length)) +
+  geom_point(aes(size = year), alpha = 0.1) 
+## This looks much better than using a discrete variable with size!
+
+## The BEST possible options to map variables to are:
+## color, shape, size, or group
+
+## Stroke or alpha are not great, since they are hard to see
+```
+
+> Part 2:
+> Use what you just learned to create a scatter plot of `weight` over
+> `plot_id` with data from different plot types being showed in different 
+> colors. 
+
+```{r}
+surveys %>% 
+  ggplot(mapping = aes(x = weight, y = plot_id)) +
+  geom_jitter(aes(color = plot_type), alpha = 0.1)
+
+```
+
+> Is this a good way to show this type of data?
+
+No, because it looks like plot_id is a categorical variable and weight is 
+continuous. A more "traditional" method for displaying this type of 
+relationship is a boxplot or (the better choice) a violin plot. 
+
+# Challenge 3
+
+> Part 1: 
+> Replace the box plot with a violin plot. For help see `geom_violin()`.
+
+```{r}
+surveys %>% 
+  ggplot(mapping = aes(x = species_id, y = weight)) +
+    geom_violin() + 
+    geom_jitter(alpha = 0.2, color = "tomato")
+```
+
+> Part 2:
+> So far, we've looked at the distribution of weight within species. Let's try 
+> making a new plot to explore the distribution of another variable within each 
+> species.
+>
+> Create a boxplot for `hindfoot_length`. Overlay the boxplot layer on a jitter
+> layer to show actual measurements.
+
+```{r}
+surveys %>% 
+  ggplot(mapping = aes(x = species_id, y = hindfoot_length)) +
+    geom_jitter(alpha = 0.3, color = "tomato") +
+    geom_boxplot(alpha = 0) 
+
+## Put boxplot second to have it in the front and the points in the back!
+
+```
+
+> Now, add color to the data points on your boxplot according to the plot from 
+> which the sample was taken (`plot_id`).
+>
+> *Hint:* Check the class for `plot_id`. If `plot_id` was a character instead, 
+> how would the graph be different?  
+
+```{r}
+surveys %>% 
+  ggplot(mapping = aes(x = species_id, y = hindfoot_length)) +
+  geom_jitter(alpha = 0.3, mapping = aes(color = plot_id)) +
+  geom_boxplot(alpha = 0) 
+
+## Checking the data type for plot_id
+class(surveys$plot_id)
+
+## Creating a new variable named plot_id_chr
+## which is the character version of plot_id
+surveys <- surveys %>% 
+  mutate(plot_id_chr = as.character(plot_id))
+
+## Using new character plot_id to make a boxplot
+surveys %>% 
+  ggplot(mapping = aes(x = species_id, y = hindfoot_length)) +
+  geom_jitter(alpha = 0.3, mapping = aes(color = plot_id_chr)) +  
+  geom_boxplot(alpha = 0) 
+
+```
+
+When plot_id is an integer, ggplot labels the points with a gradient of colors. 
+When plot_id is a character, ggplot labels each plot with its own color (shown in the legend).
+
+# Challenge 4
+
+> Use the `bins` argument to play around with the number of bins in your 
+> histogram. Compare your chosen number of bins with your neighbors! 
+
+
+```{r}
+surveys %>% 
+  ggplot(aes(x = weight)) + 
+  geom_histogram(fill = "sky blue" , bins = 50)
+
+```
+
+# Challenge 5
+
+> Why do we need to set `group = 1` in the above proportion bar chart? 
+> In other words, what is wrong with the plot below?  
+
+We need to set group = 1 because otherwise, it takes the proportion of the group 
+versus the group total, which will always be 100%. This is not what we want!
+
+Instead, we want the proportion of the group relative to the total, so we need 
+to specify that it needs to consider all of these species to be part of one 
+group. 
+
+# Challenge 6
+
+> Change the above code so that each bar is filled with a different color. 
+
+```{r}
+surveys %>% 
+  ggplot(mapping = aes(x = species_id, fill = species_id)) + 
+  geom_bar()
+```
+
+# Challenge 7
+
+> Use what you just learned to create a plot that depicts how the average weight
+> of each species changes through the years. 
+> Play around with which variable you facet by versus plot by! 
+
+```{r}
+## To get you started:  
+yearly_species_weight <- surveys %>% 
+  group_by(year, species_id) %>%
+  ## Variables to group by!
+  summarize(avg_weight = mean(weight))
+
+yearly_species_weight %>% 
+ggplot(mapping = aes(x = year, y = avg_weight, color = species_id)) +
+    geom_line()
+
+## Coloring by species id
+
+yearly_species_weight %>% 
+ggplot(mapping = aes(x = year, y = avg_weight)) +
+    geom_line() + 
+  facet_wrap(vars(species_id))
+
+## Facetting by species id
+```
+
+# Challenge 8
+
+> Use what you just learned to add the plotting background theme 
+> of your choosing to the plot you made in Challenge 7!
+
+```{r}
+yearly_species_weight %>% 
+  ggplot(mapping = aes(x = year, y = avg_weight, color = species_id)) +
+  geom_line() + 
+  theme_classic()
+
+## Removes all grid lines in back!
+```
+
