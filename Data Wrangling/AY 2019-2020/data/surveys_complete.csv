@@ -6,6 +6,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 67,8,19,1977,7,DM,M,35,36,1977-08-19,Fri,Rodent Exclosure,Dipodomys,merriami,Rodent
 68,8,19,1977,8,DO,F,32,52,1977-08-19,Fri,Control,Dipodomys,ordii,Rodent
 69,8,19,1977,2,PF,M,15,8,1977-08-19,Fri,Control,Perognathus,flavus,Rodent
+70,8,19,1977,3,OX,F,21,22,1977-08-19,Fri,Long-term Krat Exclosure,Onychomys,sp.,Rodent
 71,8,19,1977,7,DM,F,36,35,1977-08-19,Fri,Rodent Exclosure,Dipodomys,merriami,Rodent
 74,8,19,1977,8,PF,M,12,7,1977-08-19,Fri,Control,Perognathus,flavus,Rodent
 75,8,19,1977,8,DM,F,32,22,1977-08-19,Fri,Control,Dipodomys,merriami,Rodent
@@ -83,6 +84,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 234,9,13,1977,9,DM,M,35,45,1977-09-13,Tue,Spectab exclosure,Dipodomys,merriami,Rodent
 235,9,13,1977,13,DM,F,37,45,1977-09-13,Tue,Short-term Krat Exclosure,Dipodomys,merriami,Rodent
 238,9,13,1977,2,PE,M,20,19,1977-09-13,Tue,Control,Peromyscus,eremicus,Rodent
+242,9,13,1977,2,OX,M,19,22,1977-09-13,Tue,Control,Onychomys,sp.,Rodent
 243,10,16,1977,6,DM,F,38,44,1977-10-16,Sun,Short-term Krat Exclosure,Dipodomys,merriami,Rodent
 244,10,16,1977,22,DM,F,36,42,1977-10-16,Sun,Control,Dipodomys,merriami,Rodent
 245,10,16,1977,2,DM,M,37,39,1977-10-16,Sun,Control,Dipodomys,merriami,Rodent
@@ -4656,6 +4658,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 6606,9,19,1982,17,DM,F,36,28,1982-09-19,Sun,Control,Dipodomys,merriami,Rodent
 6607,9,19,1982,24,PE,M,20,18,1982-09-19,Sun,Rodent Exclosure,Peromyscus,eremicus,Rodent
 6608,9,19,1982,18,DM,M,36,45,1982-09-19,Sun,Short-term Krat Exclosure,Dipodomys,merriami,Rodent
+6609,9,19,1982,19,OX,M,21,24,1982-09-19,Sun,Long-term Krat Exclosure,Onychomys,sp.,Rodent
 6610,9,19,1982,22,DM,M,37,47,1982-09-19,Sun,Control,Dipodomys,merriami,Rodent
 6611,9,19,1982,17,DM,F,36,39,1982-09-19,Sun,Control,Dipodomys,merriami,Rodent
 6612,9,19,1982,20,OT,F,22,25,1982-09-19,Sun,Short-term Krat Exclosure,Onychomys,torridus,Rodent
@@ -7073,6 +7076,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 9206,5,27,1984,12,NL,F,32,129,1984-05-27,Sun,Control,Neotoma,albigula,Rodent
 9207,5,27,1984,20,DO,F,36,24,1984-05-27,Sun,Short-term Krat Exclosure,Dipodomys,ordii,Rodent
 9208,5,27,1984,22,DS,F,50,119,1984-05-27,Sun,Control,Dipodomys,spectabilis,Rodent
+9209,5,27,1984,14,OX,M,20,18,1984-05-27,Sun,Control,Onychomys,sp.,Rodent
 9210,5,27,1984,16,DM,F,36,24,1984-05-27,Sun,Rodent Exclosure,Dipodomys,merriami,Rodent
 9212,5,27,1984,24,DM,F,36,50,1984-05-27,Sun,Rodent Exclosure,Dipodomys,merriami,Rodent
 9213,5,27,1984,18,DM,M,38,50,1984-05-27,Sun,Short-term Krat Exclosure,Dipodomys,merriami,Rodent
@@ -7297,6 +7301,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 9473,8,25,1984,22,PP,M,22,15,1984-08-25,Sat,Control,Chaetodipus,penicillatus,Rodent
 9474,8,25,1984,12,DM,F,36,44,1984-08-25,Sat,Control,Dipodomys,merriami,Rodent
 9475,8,25,1984,18,NL,M,29,109,1984-08-25,Sat,Short-term Krat Exclosure,Neotoma,albigula,Rodent
+9476,8,25,1984,14,PH,M,27,31,1984-08-25,Sat,Control,Perognathus,hispidus,Rodent
 9477,8,25,1984,17,NL,M,31,108,1984-08-25,Sat,Control,Neotoma,albigula,Rodent
 9478,8,25,1984,24,DM,M,37,39,1984-08-25,Sat,Rodent Exclosure,Dipodomys,merriami,Rodent
 9479,8,25,1984,23,RM,M,16,11,1984-08-25,Sat,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
@@ -7315,6 +7320,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 9499,8,26,1984,4,DM,M,35,45,1984-08-26,Sun,Control,Dipodomys,merriami,Rodent
 9500,8,26,1984,1,DM,M,34,37,1984-08-26,Sun,Spectab exclosure,Dipodomys,merriami,Rodent
 9501,8,26,1984,11,NL,F,32,131,1984-08-26,Sun,Control,Neotoma,albigula,Rodent
+9502,8,26,1984,5,PH,M,28,29,1984-08-26,Sun,Rodent Exclosure,Perognathus,hispidus,Rodent
 9503,8,26,1984,11,DM,M,36,40,1984-08-26,Sun,Control,Dipodomys,merriami,Rodent
 9505,8,26,1984,8,OL,M,21,35,1984-08-26,Sun,Control,Onychomys,leucogaster,Rodent
 9506,8,26,1984,15,NL,M,34,216,1984-08-26,Sun,Long-term Krat Exclosure,Neotoma,albigula,Rodent
@@ -7380,6 +7386,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 9573,9,30,1984,3,NL,M,35,222,1984-09-30,Sun,Long-term Krat Exclosure,Neotoma,albigula,Rodent
 9574,9,30,1984,8,DO,M,35,40,1984-09-30,Sun,Control,Dipodomys,ordii,Rodent
 9575,9,30,1984,13,DO,M,36,46,1984-09-30,Sun,Short-term Krat Exclosure,Dipodomys,ordii,Rodent
+9576,9,30,1984,3,PH,F,26,28,1984-09-30,Sun,Long-term Krat Exclosure,Perognathus,hispidus,Rodent
 9577,9,30,1984,3,DM,F,35,34,1984-09-30,Sun,Long-term Krat Exclosure,Dipodomys,merriami,Rodent
 9578,9,30,1984,8,DO,F,35,65,1984-09-30,Sun,Control,Dipodomys,ordii,Rodent
 9579,9,30,1984,4,DM,F,34,40,1984-09-30,Sun,Control,Dipodomys,merriami,Rodent
@@ -7429,6 +7436,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 9628,10,20,1984,14,DM,F,36,41,1984-10-20,Sat,Control,Dipodomys,merriami,Rodent
 9629,10,20,1984,6,DM,F,37,38,1984-10-20,Sat,Short-term Krat Exclosure,Dipodomys,merriami,Rodent
 9630,10,20,1984,12,DM,F,35,39,1984-10-20,Sat,Control,Dipodomys,merriami,Rodent
+9631,10,20,1984,21,PH,F,25,25,1984-10-20,Sat,Long-term Krat Exclosure,Perognathus,hispidus,Rodent
 9632,10,20,1984,17,DM,F,35,42,1984-10-20,Sat,Control,Dipodomys,merriami,Rodent
 9633,10,20,1984,20,OL,F,20,28,1984-10-20,Sat,Short-term Krat Exclosure,Onychomys,leucogaster,Rodent
 9634,10,20,1984,20,DM,M,36,39,1984-10-20,Sat,Short-term Krat Exclosure,Dipodomys,merriami,Rodent
@@ -7447,6 +7455,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 9648,10,20,1984,12,RM,F,19,20,1984-10-20,Sat,Control,Reithrodontomys,megalotis,Rodent
 9651,10,20,1984,17,OT,F,18,24,1984-10-20,Sat,Control,Onychomys,torridus,Rodent
 9652,10,20,1984,19,PF,M,15,8,1984-10-20,Sat,Long-term Krat Exclosure,Perognathus,flavus,Rodent
+9653,10,20,1984,21,PH,F,25,23,1984-10-20,Sat,Long-term Krat Exclosure,Perognathus,hispidus,Rodent
 9654,10,20,1984,17,DO,F,35,52,1984-10-20,Sat,Control,Dipodomys,ordii,Rodent
 9655,10,20,1984,18,NL,M,30,135,1984-10-20,Sat,Short-term Krat Exclosure,Neotoma,albigula,Rodent
 9656,10,20,1984,20,OT,F,20,25,1984-10-20,Sat,Short-term Krat Exclosure,Onychomys,torridus,Rodent
@@ -7517,6 +7526,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 9726,12,30,1984,20,DO,M,33,50,1984-12-30,Sun,Short-term Krat Exclosure,Dipodomys,ordii,Rodent
 9727,12,30,1984,24,DM,M,37,49,1984-12-30,Sun,Rodent Exclosure,Dipodomys,merriami,Rodent
 9728,12,30,1984,14,DM,M,36,51,1984-12-30,Sun,Control,Dipodomys,merriami,Rodent
+9729,12,30,1984,21,PH,F,25,32,1984-12-30,Sun,Long-term Krat Exclosure,Perognathus,hispidus,Rodent
 9730,12,30,1984,18,DM,M,35,51,1984-12-30,Sun,Short-term Krat Exclosure,Dipodomys,merriami,Rodent
 9731,12,30,1984,23,RM,M,16,17,1984-12-30,Sun,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 9732,12,30,1984,12,DM,F,36,46,1984-12-30,Sun,Control,Dipodomys,merriami,Rodent
@@ -8472,6 +8482,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 10754,9,21,1985,12,DM,F,35,40,1985-09-21,Sat,Control,Dipodomys,merriami,Rodent
 10755,9,21,1985,24,DM,M,32,22,1985-09-21,Sat,Rodent Exclosure,Dipodomys,merriami,Rodent
 10756,9,21,1985,12,DM,M,38,53,1985-09-21,Sat,Control,Dipodomys,merriami,Rodent
+10757,9,21,1985,21,PH,M,26,30,1985-09-21,Sat,Long-term Krat Exclosure,Perognathus,hispidus,Rodent
 10758,9,21,1985,22,DM,F,38,44,1985-09-21,Sat,Control,Dipodomys,merriami,Rodent
 10760,9,21,1985,20,NL,F,30,162,1985-09-21,Sat,Short-term Krat Exclosure,Neotoma,albigula,Rodent
 10762,9,21,1985,17,DO,M,36,59,1985-09-21,Sat,Control,Dipodomys,ordii,Rodent
@@ -8687,6 +8698,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 11002,11,16,1985,22,DM,F,38,38,1985-11-16,Sat,Control,Dipodomys,merriami,Rodent
 11003,11,16,1985,24,DM,M,37,41,1985-11-16,Sat,Rodent Exclosure,Dipodomys,merriami,Rodent
 11004,11,16,1985,14,DM,M,35,40,1985-11-16,Sat,Control,Dipodomys,merriami,Rodent
+11005,11,16,1985,21,PH,M,25,34,1985-11-16,Sat,Long-term Krat Exclosure,Perognathus,hispidus,Rodent
 11007,11,16,1985,17,NL,F,32,168,1985-11-16,Sat,Control,Neotoma,albigula,Rodent
 11008,11,16,1985,6,DO,F,35,50,1985-11-16,Sat,Short-term Krat Exclosure,Dipodomys,ordii,Rodent
 11009,11,16,1985,14,OT,M,18,16,1985-11-16,Sat,Control,Onychomys,torridus,Rodent
@@ -8808,6 +8820,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 11138,12,7,1985,16,RM,F,17,9,1985-12-07,Sat,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 11139,12,7,1985,14,OL,M,22,20,1985-12-07,Sat,Control,Onychomys,leucogaster,Rodent
 11140,12,7,1985,22,DM,M,33,51,1985-12-07,Sat,Control,Dipodomys,merriami,Rodent
+11141,12,7,1985,21,PH,M,26,34,1985-12-07,Sat,Long-term Krat Exclosure,Perognathus,hispidus,Rodent
 11142,12,7,1985,24,RM,F,18,9,1985-12-07,Sat,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 11143,12,7,1985,12,DM,F,36,40,1985-12-07,Sat,Control,Dipodomys,merriami,Rodent
 11144,12,7,1985,22,DM,F,37,43,1985-12-07,Sat,Control,Dipodomys,merriami,Rodent
@@ -8931,6 +8944,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 11277,3,8,1986,14,DM,M,38,49,1986-03-08,Sat,Control,Dipodomys,merriami,Rodent
 11278,3,8,1986,6,DO,M,37,55,1986-03-08,Sat,Short-term Krat Exclosure,Dipodomys,ordii,Rodent
 11279,3,8,1986,6,PE,M,19,20,1986-03-08,Sat,Short-term Krat Exclosure,Peromyscus,eremicus,Rodent
+11280,3,8,1986,21,PH,M,27,39,1986-03-08,Sat,Long-term Krat Exclosure,Perognathus,hispidus,Rodent
 11282,3,8,1986,22,DS,M,51,12,1986-03-08,Sat,Control,Dipodomys,spectabilis,Rodent
 11283,3,8,1986,19,RM,F,16,10,1986-03-08,Sat,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 11284,3,9,1986,2,DM,M,38,44,1986-03-09,Sun,Control,Dipodomys,merriami,Rodent
@@ -12225,6 +12239,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 15118,11,6,1988,5,RM,M,16,10,1988-11-06,Sun,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 15119,11,6,1988,2,DO,M,36,48,1988-11-06,Sun,Control,Dipodomys,ordii,Rodent
 15120,11,6,1988,14,DM,M,37,44,1988-11-06,Sun,Control,Dipodomys,merriami,Rodent
+15121,11,6,1988,11,PH,M,26,33,1988-11-06,Sun,Control,Perognathus,hispidus,Rodent
 15122,11,6,1988,8,DS,M,51,166,1988-11-06,Sun,Control,Dipodomys,spectabilis,Rodent
 15123,11,6,1988,7,RM,F,16,15,1988-11-06,Sun,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 15124,11,6,1988,4,DM,F,35,44,1988-11-06,Sun,Control,Dipodomys,merriami,Rodent
@@ -13244,6 +13259,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 16214,6,4,1989,10,RM,M,17,11,1989-06-04,Sun,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 16219,7,3,1989,12,RF,M,19,15,1989-07-03,Mon,Control,Reithrodontomys,fulvescens,Rodent
 16234,7,3,1989,1,DM,M,37,42,1989-07-03,Mon,Spectab exclosure,Dipodomys,merriami,Rodent
+16235,7,3,1989,12,OX,M,21,20,1989-07-03,Mon,Control,Onychomys,sp.,Rodent
 16254,7,3,1989,1,DO,F,37,47,1989-07-03,Mon,Spectab exclosure,Dipodomys,ordii,Rodent
 16264,7,3,1989,12,RF,F,18,14,1989-07-03,Mon,Control,Reithrodontomys,fulvescens,Rodent
 16314,7,4,1989,13,RF,F,18,13,1989-07-04,Tue,Short-term Krat Exclosure,Reithrodontomys,fulvescens,Rodent
@@ -13496,6 +13512,8 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 16595,11,4,1989,22,DM,M,37,50,1989-11-04,Sat,Control,Dipodomys,merriami,Rodent
 16596,11,4,1989,21,RM,M,17,10,1989-11-04,Sat,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 16597,11,4,1989,21,OT,M,20,35,1989-11-04,Sat,Long-term Krat Exclosure,Onychomys,torridus,Rodent
+16598,11,4,1989,21,BA,M,13,7,1989-11-04,Sat,Long-term Krat Exclosure,Baiomys,taylori,Rodent
+16599,11,4,1989,21,BA,M,12,6,1989-11-04,Sat,Long-term Krat Exclosure,Baiomys,taylori,Rodent
 16600,11,4,1989,6,PE,F,21,25,1989-11-04,Sat,Short-term Krat Exclosure,Peromyscus,eremicus,Rodent
 16601,11,4,1989,19,PF,F,15,7,1989-11-04,Sat,Long-term Krat Exclosure,Perognathus,flavus,Rodent
 16602,11,4,1989,6,OT,F,20,28,1989-11-04,Sat,Short-term Krat Exclosure,Onychomys,torridus,Rodent
@@ -13521,6 +13539,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 16626,11,4,1989,1,NL,F,33,156,1989-11-04,Sat,Spectab exclosure,Neotoma,albigula,Rodent
 16627,11,4,1989,24,RF,F,17,12,1989-11-04,Sat,Rodent Exclosure,Reithrodontomys,fulvescens,Rodent
 16628,11,4,1989,12,OT,F,21,27,1989-11-04,Sat,Control,Onychomys,torridus,Rodent
+16629,11,4,1989,22,PH,F,26,29,1989-11-04,Sat,Control,Perognathus,hispidus,Rodent
 16630,11,4,1989,21,RM,M,14,7,1989-11-04,Sat,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 16631,11,4,1989,17,DM,M,37,38,1989-11-04,Sat,Control,Dipodomys,merriami,Rodent
 16632,11,4,1989,20,RM,F,16,8,1989-11-04,Sat,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
@@ -13547,6 +13566,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 16656,11,4,1989,19,PE,F,22,23,1989-11-04,Sat,Long-term Krat Exclosure,Peromyscus,eremicus,Rodent
 16657,11,4,1989,6,PE,M,22,24,1989-11-04,Sat,Short-term Krat Exclosure,Peromyscus,eremicus,Rodent
 16658,11,4,1989,12,OT,M,23,24,1989-11-04,Sat,Control,Onychomys,torridus,Rodent
+16659,11,4,1989,19,SF,M,27,50,1989-11-04,Sat,Long-term Krat Exclosure,Sigmodon,fulviventer,Rodent
 16660,11,4,1989,22,DM,M,37,50,1989-11-04,Sat,Control,Dipodomys,merriami,Rodent
 16661,11,5,1989,9,DO,M,36,51,1989-11-05,Sun,Spectab exclosure,Dipodomys,ordii,Rodent
 16662,11,5,1989,3,RM,F,17,10,1989-11-05,Sun,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
@@ -13556,6 +13576,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 16666,11,5,1989,9,DO,F,36,48,1989-11-05,Sun,Spectab exclosure,Dipodomys,ordii,Rodent
 16667,11,5,1989,14,DM,M,36,46,1989-11-05,Sun,Control,Dipodomys,merriami,Rodent
 16668,11,5,1989,3,RM,F,17,13,1989-11-05,Sun,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
+16669,11,5,1989,11,SF,F,27,46,1989-11-05,Sun,Control,Sigmodon,fulviventer,Rodent
 16670,11,5,1989,8,OT,F,21,18,1989-11-05,Sun,Control,Onychomys,torridus,Rodent
 16671,11,5,1989,9,DM,M,38,55,1989-11-05,Sun,Spectab exclosure,Dipodomys,merriami,Rodent
 16672,11,5,1989,3,OT,F,20,24,1989-11-05,Sun,Long-term Krat Exclosure,Onychomys,torridus,Rodent
@@ -13624,6 +13645,8 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 16741,12,4,1989,6,OL,M,22,31,1989-12-04,Mon,Short-term Krat Exclosure,Onychomys,leucogaster,Rodent
 16742,12,4,1989,7,PE,M,21,20,1989-12-04,Mon,Rodent Exclosure,Peromyscus,eremicus,Rodent
 16743,12,4,1989,1,OT,F,21,19,1989-12-04,Mon,Spectab exclosure,Onychomys,torridus,Rodent
+16744,12,4,1989,21,SF,M,38,49,1989-12-04,Mon,Long-term Krat Exclosure,Sigmodon,fulviventer,Rodent
+16745,12,4,1989,12,SF,F,27,82,1989-12-04,Mon,Control,Sigmodon,fulviventer,Rodent
 16746,12,4,1989,6,PF,M,16,7,1989-12-04,Mon,Short-term Krat Exclosure,Perognathus,flavus,Rodent
 16747,12,4,1989,12,OT,M,22,24,1989-12-04,Mon,Control,Onychomys,torridus,Rodent
 16748,12,4,1989,19,RM,F,16,8,1989-12-04,Mon,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
@@ -13662,6 +13685,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 16786,12,4,1989,19,RM,F,17,9,1989-12-04,Mon,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 16787,12,4,1989,17,RM,F,17,13,1989-12-04,Mon,Control,Reithrodontomys,megalotis,Rodent
 16788,12,4,1989,1,DO,M,36,56,1989-12-04,Mon,Spectab exclosure,Dipodomys,ordii,Rodent
+16789,12,4,1989,22,PH,F,27,32,1989-12-04,Mon,Control,Perognathus,hispidus,Rodent
 16790,12,4,1989,23,RM,F,16,10,1989-12-04,Mon,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 16791,12,4,1989,21,RM,F,17,12,1989-12-04,Mon,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 16792,12,4,1989,21,RM,F,17,13,1989-12-04,Mon,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
@@ -13690,6 +13714,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 16816,12,5,1989,2,PE,F,21,20,1989-12-05,Tue,Control,Peromyscus,eremicus,Rodent
 16817,12,5,1989,4,DM,F,37,39,1989-12-05,Tue,Control,Dipodomys,merriami,Rodent
 16818,12,5,1989,5,RM,F,17,8,1989-12-05,Tue,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
+16819,12,5,1989,11,SF,F,26,47,1989-12-05,Tue,Control,Sigmodon,fulviventer,Rodent
 16820,12,5,1989,16,RM,F,17,9,1989-12-05,Tue,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 16821,12,5,1989,4,DM,F,37,43,1989-12-05,Tue,Control,Dipodomys,merriami,Rodent
 16822,12,5,1989,8,RM,M,16,8,1989-12-05,Tue,Control,Reithrodontomys,megalotis,Rodent
@@ -13723,6 +13748,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 16851,12,5,1989,11,DM,M,37,46,1989-12-05,Tue,Control,Dipodomys,merriami,Rodent
 16852,12,5,1989,14,PE,M,21,14,1989-12-05,Tue,Control,Peromyscus,eremicus,Rodent
 16853,12,5,1989,14,RM,F,17,10,1989-12-05,Tue,Control,Reithrodontomys,megalotis,Rodent
+16854,12,5,1989,3,BA,M,14,8,1989-12-05,Tue,Long-term Krat Exclosure,Baiomys,taylori,Rodent
 16855,12,5,1989,10,RM,M,17,10,1989-12-05,Tue,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 16856,12,5,1989,9,DM,F,37,45,1989-12-05,Tue,Spectab exclosure,Dipodomys,merriami,Rodent
 16857,12,5,1989,4,DM,M,37,46,1989-12-05,Tue,Control,Dipodomys,merriami,Rodent
@@ -13752,13 +13778,18 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 16882,1,6,1990,23,RM,F,17,9,1990-01-06,Sat,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 16883,1,6,1990,12,RM,M,17,10,1990-01-06,Sat,Control,Reithrodontomys,megalotis,Rodent
 16884,1,6,1990,24,RM,M,17,9,1990-01-06,Sat,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
+16885,1,6,1990,12,SF,M,25,35,1990-01-06,Sat,Control,Sigmodon,fulviventer,Rodent
 16886,1,6,1990,24,SH,F,30,73,1990-01-06,Sat,Rodent Exclosure,Sigmodon,hispidus,Rodent
+16887,1,6,1990,12,SF,M,28,44,1990-01-06,Sat,Control,Sigmodon,fulviventer,Rodent
 16888,1,6,1990,17,DO,M,36,55,1990-01-06,Sat,Control,Dipodomys,ordii,Rodent
+16889,1,6,1990,21,SF,M,29,55,1990-01-06,Sat,Long-term Krat Exclosure,Sigmodon,fulviventer,Rodent
 16890,1,6,1990,12,OT,M,22,23,1990-01-06,Sat,Control,Onychomys,torridus,Rodent
 16891,1,6,1990,12,DO,F,36,53,1990-01-06,Sat,Control,Dipodomys,ordii,Rodent
 16893,1,6,1990,12,OT,F,21,24,1990-01-06,Sat,Control,Onychomys,torridus,Rodent
 16894,1,6,1990,1,OT,F,21,20,1990-01-06,Sat,Spectab exclosure,Onychomys,torridus,Rodent
+16895,1,6,1990,12,SF,F,27,75,1990-01-06,Sat,Control,Sigmodon,fulviventer,Rodent
 16896,1,6,1990,12,RM,M,19,11,1990-01-06,Sat,Control,Reithrodontomys,megalotis,Rodent
+16897,1,6,1990,21,SF,F,29,46,1990-01-06,Sat,Long-term Krat Exclosure,Sigmodon,fulviventer,Rodent
 16898,1,6,1990,23,RM,M,18,11,1990-01-06,Sat,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 16899,1,6,1990,17,DO,M,36,47,1990-01-06,Sat,Control,Dipodomys,ordii,Rodent
 16900,1,6,1990,19,RM,M,17,10,1990-01-06,Sat,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
@@ -13808,6 +13839,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 16948,1,7,1990,4,DM,M,37,34,1990-01-07,Sun,Control,Dipodomys,merriami,Rodent
 16949,1,7,1990,9,DO,M,36,42,1990-01-07,Sun,Spectab exclosure,Dipodomys,ordii,Rodent
 16950,1,7,1990,3,RM,M,18,10,1990-01-07,Sun,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
+16951,1,7,1990,5,BA,F,13,9,1990-01-07,Sun,Rodent Exclosure,Baiomys,taylori,Rodent
 16952,1,7,1990,4,DM,M,37,50,1990-01-07,Sun,Control,Dipodomys,merriami,Rodent
 16953,1,7,1990,11,DO,F,35,38,1990-01-07,Sun,Control,Dipodomys,ordii,Rodent
 16954,1,7,1990,11,DM,M,36,46,1990-01-07,Sun,Control,Dipodomys,merriami,Rodent
@@ -13840,11 +13872,13 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 16986,1,29,1990,1,DM,F,37,37,1990-01-29,Mon,Spectab exclosure,Dipodomys,merriami,Rodent
 16988,1,29,1990,19,PE,M,21,23,1990-01-29,Mon,Long-term Krat Exclosure,Peromyscus,eremicus,Rodent
 16989,1,29,1990,7,PE,M,21,21,1990-01-29,Mon,Rodent Exclosure,Peromyscus,eremicus,Rodent
+16990,1,29,1990,12,SF,M,28,48,1990-01-29,Mon,Control,Sigmodon,fulviventer,Rodent
 16991,1,29,1990,24,PE,M,22,24,1990-01-29,Mon,Rodent Exclosure,Peromyscus,eremicus,Rodent
 16994,1,29,1990,1,DM,M,37,45,1990-01-29,Mon,Spectab exclosure,Dipodomys,merriami,Rodent
 16995,1,29,1990,12,NL,F,31,197,1990-01-29,Mon,Control,Neotoma,albigula,Rodent
 16996,1,29,1990,20,RM,F,17,9,1990-01-29,Mon,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 16997,1,29,1990,7,PE,F,21,23,1990-01-29,Mon,Rodent Exclosure,Peromyscus,eremicus,Rodent
+16998,1,29,1990,21,SF,F,26,50,1990-01-29,Mon,Long-term Krat Exclosure,Sigmodon,fulviventer,Rodent
 16999,1,29,1990,6,PF,M,17,7,1990-01-29,Mon,Short-term Krat Exclosure,Perognathus,flavus,Rodent
 17001,1,29,1990,7,RM,F,17,9,1990-01-29,Mon,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 17002,1,29,1990,6,PF,F,16,9,1990-01-29,Mon,Short-term Krat Exclosure,Perognathus,flavus,Rodent
@@ -13858,8 +13892,10 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 17013,1,29,1990,6,RM,F,17,9,1990-01-29,Mon,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 17014,1,29,1990,18,RF,F,18,12,1990-01-29,Mon,Short-term Krat Exclosure,Reithrodontomys,fulvescens,Rodent
 17016,1,29,1990,12,OT,M,22,22,1990-01-29,Mon,Control,Onychomys,torridus,Rodent
+17017,1,29,1990,21,SF,F,27,46,1990-01-29,Mon,Long-term Krat Exclosure,Sigmodon,fulviventer,Rodent
 17021,1,29,1990,18,PE,F,22,19,1990-01-29,Mon,Short-term Krat Exclosure,Peromyscus,eremicus,Rodent
 17023,1,29,1990,19,PF,F,17,7,1990-01-29,Mon,Long-term Krat Exclosure,Perognathus,flavus,Rodent
+17024,1,29,1990,22,PH,F,28,33,1990-01-29,Mon,Control,Perognathus,hispidus,Rodent
 17029,1,29,1990,17,RM,M,17,10,1990-01-29,Mon,Control,Reithrodontomys,megalotis,Rodent
 17030,1,29,1990,7,RM,F,17,9,1990-01-29,Mon,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 17031,1,29,1990,22,OT,M,22,21,1990-01-29,Mon,Control,Onychomys,torridus,Rodent
@@ -13947,9 +13983,11 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 17124,2,24,1990,18,PE,M,21,22,1990-02-24,Sat,Short-term Krat Exclosure,Peromyscus,eremicus,Rodent
 17125,2,24,1990,6,PF,M,15,7,1990-02-24,Sat,Short-term Krat Exclosure,Perognathus,flavus,Rodent
 17126,2,24,1990,12,DO,F,34,27,1990-02-24,Sat,Control,Dipodomys,ordii,Rodent
+17127,2,24,1990,12,SF,F,26,81,1990-02-24,Sat,Control,Sigmodon,fulviventer,Rodent
 17128,2,24,1990,12,DO,M,36,59,1990-02-24,Sat,Control,Dipodomys,ordii,Rodent
 17129,2,24,1990,7,RM,M,17,11,1990-02-24,Sat,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 17130,2,24,1990,6,PF,F,15,7,1990-02-24,Sat,Short-term Krat Exclosure,Perognathus,flavus,Rodent
+17131,2,24,1990,12,SF,M,26,48,1990-02-24,Sat,Control,Sigmodon,fulviventer,Rodent
 17132,2,24,1990,20,RM,F,17,12,1990-02-24,Sat,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 17133,2,24,1990,12,NL,F,33,194,1990-02-24,Sat,Control,Neotoma,albigula,Rodent
 17134,2,24,1990,6,RM,M,16,8,1990-02-24,Sat,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
@@ -13971,6 +14009,8 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 17150,2,24,1990,17,DO,M,37,55,1990-02-24,Sat,Control,Dipodomys,ordii,Rodent
 17151,2,24,1990,1,DO,M,36,43,1990-02-24,Sat,Spectab exclosure,Dipodomys,ordii,Rodent
 17152,2,24,1990,12,OL,F,21,33,1990-02-24,Sat,Control,Onychomys,leucogaster,Rodent
+17153,2,24,1990,12,SF,M,25,36,1990-02-24,Sat,Control,Sigmodon,fulviventer,Rodent
+17155,2,24,1990,22,PH,F,27,33,1990-02-24,Sat,Control,Perognathus,hispidus,Rodent
 17156,2,24,1990,24,PE,F,22,17,1990-02-24,Sat,Rodent Exclosure,Peromyscus,eremicus,Rodent
 17157,2,24,1990,1,OL,M,21,36,1990-02-24,Sat,Spectab exclosure,Onychomys,leucogaster,Rodent
 17158,2,24,1990,18,RM,F,17,15,1990-02-24,Sat,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
@@ -13988,6 +14028,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 17171,2,25,1990,4,DM,M,37,43,1990-02-25,Sun,Control,Dipodomys,merriami,Rodent
 17172,2,25,1990,3,SH,F,29,67,1990-02-25,Sun,Long-term Krat Exclosure,Sigmodon,hispidus,Rodent
 17173,2,25,1990,3,OT,F,21,23,1990-02-25,Sun,Long-term Krat Exclosure,Onychomys,torridus,Rodent
+17174,2,25,1990,5,BA,M,14,7,1990-02-25,Sun,Rodent Exclosure,Baiomys,taylori,Rodent
 17176,2,25,1990,9,DO,F,36,49,1990-02-25,Sun,Spectab exclosure,Dipodomys,ordii,Rodent
 17177,2,25,1990,13,OT,M,20,21,1990-02-25,Sun,Short-term Krat Exclosure,Onychomys,torridus,Rodent
 17178,2,25,1990,2,DO,F,36,36,1990-02-25,Sun,Control,Dipodomys,ordii,Rodent
@@ -14001,6 +14042,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 17187,2,25,1990,3,PE,M,21,21,1990-02-25,Sun,Long-term Krat Exclosure,Peromyscus,eremicus,Rodent
 17188,2,25,1990,4,DM,M,37,49,1990-02-25,Sun,Control,Dipodomys,merriami,Rodent
 17189,2,25,1990,8,DM,F,37,41,1990-02-25,Sun,Control,Dipodomys,merriami,Rodent
+17190,2,25,1990,5,BA,F,14,7,1990-02-25,Sun,Rodent Exclosure,Baiomys,taylori,Rodent
 17191,2,25,1990,10,RF,F,18,14,1990-02-25,Sun,Rodent Exclosure,Reithrodontomys,fulvescens,Rodent
 17192,2,25,1990,11,DO,M,36,50,1990-02-25,Sun,Control,Dipodomys,ordii,Rodent
 17193,2,25,1990,8,DM,M,37,50,1990-02-25,Sun,Control,Dipodomys,merriami,Rodent
@@ -14063,8 +14105,10 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 17254,3,29,1990,12,RM,M,16,10,1990-03-29,Thu,Control,Reithrodontomys,megalotis,Rodent
 17255,3,29,1990,22,DM,F,39,39,1990-03-29,Thu,Control,Dipodomys,merriami,Rodent
 17256,3,29,1990,24,RM,F,17,11,1990-03-29,Thu,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
+17257,3,29,1990,12,SF,M,28,52,1990-03-29,Thu,Control,Sigmodon,fulviventer,Rodent
 17258,3,29,1990,19,PF,F,16,7,1990-03-29,Thu,Long-term Krat Exclosure,Perognathus,flavus,Rodent
 17259,3,29,1990,24,PE,F,21,19,1990-03-29,Thu,Rodent Exclosure,Peromyscus,eremicus,Rodent
+17260,3,29,1990,12,SF,M,30,58,1990-03-29,Thu,Control,Sigmodon,fulviventer,Rodent
 17261,3,29,1990,21,RM,F,17,11,1990-03-29,Thu,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 17262,3,29,1990,19,PE,M,21,22,1990-03-29,Thu,Long-term Krat Exclosure,Peromyscus,eremicus,Rodent
 17263,3,29,1990,17,PE,F,20,21,1990-03-29,Thu,Control,Peromyscus,eremicus,Rodent
@@ -14076,6 +14120,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 17269,3,29,1990,17,DO,F,36,44,1990-03-29,Thu,Control,Dipodomys,ordii,Rodent
 17270,3,29,1990,1,DO,M,36,46,1990-03-29,Thu,Spectab exclosure,Dipodomys,ordii,Rodent
 17271,3,29,1990,19,RM,F,16,9,1990-03-29,Thu,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
+17272,3,29,1990,22,PH,F,27,34,1990-03-29,Thu,Control,Perognathus,hispidus,Rodent
 17274,3,29,1990,12,DO,M,35,35,1990-03-29,Thu,Control,Dipodomys,ordii,Rodent
 17275,3,29,1990,18,NL,F,34,110,1990-03-29,Thu,Short-term Krat Exclosure,Neotoma,albigula,Rodent
 17276,3,29,1990,12,OT,F,20,24,1990-03-29,Thu,Control,Onychomys,torridus,Rodent
@@ -14173,6 +14218,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 17370,4,24,1990,19,RM,M,17,10,1990-04-24,Tue,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 17371,4,24,1990,19,RM,F,17,10,1990-04-24,Tue,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 17372,4,24,1990,18,PE,F,21,24,1990-04-24,Tue,Short-term Krat Exclosure,Peromyscus,eremicus,Rodent
+17374,4,24,1990,1,BA,M,14,7,1990-04-24,Tue,Spectab exclosure,Baiomys,taylori,Rodent
 17375,4,24,1990,18,OT,M,21,26,1990-04-24,Tue,Short-term Krat Exclosure,Onychomys,torridus,Rodent
 17376,4,24,1990,19,PF,F,16,7,1990-04-24,Tue,Long-term Krat Exclosure,Perognathus,flavus,Rodent
 17377,4,24,1990,23,RM,F,17,8,1990-04-24,Tue,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
@@ -14196,6 +14242,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 17396,4,24,1990,19,PE,M,22,24,1990-04-24,Tue,Long-term Krat Exclosure,Peromyscus,eremicus,Rodent
 17397,4,24,1990,23,PE,M,22,24,1990-04-24,Tue,Rodent Exclosure,Peromyscus,eremicus,Rodent
 17398,4,24,1990,18,PF,M,16,7,1990-04-24,Tue,Short-term Krat Exclosure,Perognathus,flavus,Rodent
+17399,4,24,1990,22,PH,F,27,34,1990-04-24,Tue,Control,Perognathus,hispidus,Rodent
 17400,4,24,1990,18,RM,F,16,8,1990-04-24,Tue,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 17401,4,24,1990,19,RM,M,17,9,1990-04-24,Tue,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 17402,4,24,1990,1,DM,M,37,45,1990-04-24,Tue,Spectab exclosure,Dipodomys,merriami,Rodent
@@ -14228,6 +14275,8 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 17433,4,26,1990,6,PP,M,22,18,1990-04-26,Thu,Short-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 17434,4,26,1990,6,PP,F,21,17,1990-04-26,Thu,Short-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 17435,4,26,1990,6,OL,F,20,10,1990-04-26,Thu,Short-term Krat Exclosure,Onychomys,leucogaster,Rodent
+17436,4,26,1990,11,SF,M,21,47,1990-04-26,Thu,Control,Sigmodon,fulviventer,Rodent
+17437,4,26,1990,11,SF,M,21,54,1990-04-26,Thu,Control,Sigmodon,fulviventer,Rodent
 17439,4,26,1990,3,PP,F,22,18,1990-04-26,Thu,Long-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 17440,4,26,1990,4,DM,F,37,39,1990-04-26,Thu,Control,Dipodomys,merriami,Rodent
 17441,4,26,1990,8,DM,F,37,39,1990-04-26,Thu,Control,Dipodomys,merriami,Rodent
@@ -14273,12 +14322,14 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 17483,4,26,1990,11,DM,F,37,53,1990-04-26,Thu,Control,Dipodomys,merriami,Rodent
 17484,4,26,1990,9,DM,M,36,28,1990-04-26,Thu,Spectab exclosure,Dipodomys,merriami,Rodent
 17485,4,26,1990,6,RM,F,17,10,1990-04-26,Thu,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
+17486,4,26,1990,3,BA,M,14,7,1990-04-26,Thu,Long-term Krat Exclosure,Baiomys,taylori,Rodent
 17489,5,23,1990,1,DM,M,36,40,1990-05-23,Wed,Spectab exclosure,Dipodomys,merriami,Rodent
 17490,5,23,1990,7,RM,F,16,9,1990-05-23,Wed,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 17491,5,23,1990,12,DM,F,37,43,1990-05-23,Wed,Control,Dipodomys,merriami,Rodent
 17492,5,23,1990,1,DM,F,36,48,1990-05-23,Wed,Spectab exclosure,Dipodomys,merriami,Rodent
 17493,5,23,1990,19,PF,F,14,6,1990-05-23,Wed,Long-term Krat Exclosure,Perognathus,flavus,Rodent
 17494,5,23,1990,18,PE,M,21,22,1990-05-23,Wed,Short-term Krat Exclosure,Peromyscus,eremicus,Rodent
+17495,5,23,1990,19,SF,M,27,68,1990-05-23,Wed,Long-term Krat Exclosure,Sigmodon,fulviventer,Rodent
 17496,5,23,1990,12,DM,M,37,48,1990-05-23,Wed,Control,Dipodomys,merriami,Rodent
 17497,5,23,1990,12,OT,F,21,24,1990-05-23,Wed,Control,Onychomys,torridus,Rodent
 17498,5,23,1990,18,RM,F,15,9,1990-05-23,Wed,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
@@ -14288,12 +14339,14 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 17502,5,23,1990,19,RM,F,18,14,1990-05-23,Wed,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 17503,5,23,1990,18,NL,F,32,143,1990-05-23,Wed,Short-term Krat Exclosure,Neotoma,albigula,Rodent
 17504,5,23,1990,19,PE,F,20,21,1990-05-23,Wed,Long-term Krat Exclosure,Peromyscus,eremicus,Rodent
+17505,5,23,1990,22,PH,F,26,34,1990-05-23,Wed,Control,Perognathus,hispidus,Rodent
 17506,5,23,1990,12,DO,M,36,48,1990-05-23,Wed,Control,Dipodomys,ordii,Rodent
 17507,5,23,1990,22,DM,M,36,50,1990-05-23,Wed,Control,Dipodomys,merriami,Rodent
 17508,5,23,1990,19,PF,F,15,7,1990-05-23,Wed,Long-term Krat Exclosure,Perognathus,flavus,Rodent
 17509,5,23,1990,23,PE,M,20,20,1990-05-23,Wed,Rodent Exclosure,Peromyscus,eremicus,Rodent
 17510,5,23,1990,19,RM,F,17,11,1990-05-23,Wed,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 17511,5,23,1990,1,DO,M,36,48,1990-05-23,Wed,Spectab exclosure,Dipodomys,ordii,Rodent
+17514,5,24,1990,21,SF,F,26,51,1990-05-24,Thu,Long-term Krat Exclosure,Sigmodon,fulviventer,Rodent
 17515,5,24,1990,11,DO,M,36,51,1990-05-24,Thu,Control,Dipodomys,ordii,Rodent
 17516,5,24,1990,8,DM,M,36,32,1990-05-24,Thu,Control,Dipodomys,merriami,Rodent
 17517,5,24,1990,9,DM,F,35,45,1990-05-24,Thu,Spectab exclosure,Dipodomys,merriami,Rodent
@@ -14340,6 +14393,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 17563,5,25,1990,4,DM,M,36,40,1990-05-25,Fri,Control,Dipodomys,merriami,Rodent
 17564,5,25,1990,14,DM,M,35,30,1990-05-25,Fri,Control,Dipodomys,merriami,Rodent
 17565,5,25,1990,14,DM,M,34,44,1990-05-25,Fri,Control,Dipodomys,merriami,Rodent
+17566,5,25,1990,3,BA,F,14,10,1990-05-25,Fri,Long-term Krat Exclosure,Baiomys,taylori,Rodent
 17567,5,25,1990,3,PF,F,15,7,1990-05-25,Fri,Long-term Krat Exclosure,Perognathus,flavus,Rodent
 17568,5,25,1990,4,DS,M,50,116,1990-05-25,Fri,Control,Dipodomys,spectabilis,Rodent
 17569,5,25,1990,14,DM,M,36,31,1990-05-25,Fri,Control,Dipodomys,merriami,Rodent
@@ -14357,6 +14411,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 17583,6,21,1990,18,PP,M,24,11,1990-06-21,Thu,Short-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 17584,6,21,1990,6,PF,M,15,7,1990-06-21,Thu,Short-term Krat Exclosure,Perognathus,flavus,Rodent
 17585,6,21,1990,12,DO,F,35,40,1990-06-21,Thu,Control,Dipodomys,ordii,Rodent
+17586,6,21,1990,21,SF,F,24,53,1990-06-21,Thu,Long-term Krat Exclosure,Sigmodon,fulviventer,Rodent
 17587,6,21,1990,24,PE,M,20,21,1990-06-21,Thu,Rodent Exclosure,Peromyscus,eremicus,Rodent
 17588,6,21,1990,12,OT,F,20,27,1990-06-21,Thu,Control,Onychomys,torridus,Rodent
 17589,6,21,1990,17,DO,M,36,60,1990-06-21,Thu,Control,Dipodomys,ordii,Rodent
@@ -14386,6 +14441,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 17613,6,22,1990,3,PF,M,15,7,1990-06-22,Fri,Long-term Krat Exclosure,Perognathus,flavus,Rodent
 17614,6,22,1990,10,RM,M,17,9,1990-06-22,Fri,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 17615,6,22,1990,14,DM,F,33,19,1990-06-22,Fri,Control,Dipodomys,merriami,Rodent
+17616,6,22,1990,3,BA,F,14,8,1990-06-22,Fri,Long-term Krat Exclosure,Baiomys,taylori,Rodent
 17617,6,22,1990,9,DM,M,33,21,1990-06-22,Fri,Spectab exclosure,Dipodomys,merriami,Rodent
 17618,6,22,1990,14,DM,M,34,18,1990-06-22,Fri,Control,Dipodomys,merriami,Rodent
 17619,6,22,1990,11,DO,F,36,50,1990-06-22,Fri,Control,Dipodomys,ordii,Rodent
@@ -14448,8 +14504,10 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 17677,7,21,1990,18,PP,F,21,9,1990-07-21,Sat,Short-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 17678,7,21,1990,17,OT,M,20,24,1990-07-21,Sat,Control,Onychomys,torridus,Rodent
 17679,7,21,1990,18,PP,F,20,10,1990-07-21,Sat,Short-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
+17680,7,21,1990,22,PH,F,28,32,1990-07-21,Sat,Control,Perognathus,hispidus,Rodent
 17681,7,21,1990,21,RM,M,16,10,1990-07-21,Sat,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 17682,7,21,1990,12,DM,F,37,46,1990-07-21,Sat,Control,Dipodomys,merriami,Rodent
+17683,7,21,1990,22,PH,F,25,18,1990-07-21,Sat,Control,Perognathus,hispidus,Rodent
 17684,7,21,1990,6,PP,F,21,17,1990-07-21,Sat,Short-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 17685,7,21,1990,22,DM,F,37,39,1990-07-21,Sat,Control,Dipodomys,merriami,Rodent
 17686,7,21,1990,17,DO,M,36,59,1990-07-21,Sat,Control,Dipodomys,ordii,Rodent
@@ -14527,6 +14585,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 17768,8,16,1990,17,DO,M,37,47,1990-08-16,Thu,Control,Dipodomys,ordii,Rodent
 17771,8,17,1990,3,PP,M,22,20,1990-08-17,Fri,Long-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 17772,8,17,1990,13,OT,M,22,27,1990-08-17,Fri,Short-term Krat Exclosure,Onychomys,torridus,Rodent
+17773,8,17,1990,3,BA,F,15,9,1990-08-17,Fri,Long-term Krat Exclosure,Baiomys,taylori,Rodent
 17774,8,17,1990,2,DO,F,36,49,1990-08-17,Fri,Control,Dipodomys,ordii,Rodent
 17775,8,17,1990,4,DM,F,37,40,1990-08-17,Fri,Control,Dipodomys,merriami,Rodent
 17776,8,17,1990,13,OT,F,21,14,1990-08-17,Fri,Short-term Krat Exclosure,Onychomys,torridus,Rodent
@@ -14615,6 +14674,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 17932,10,16,1990,11,DM,M,37,48,1990-10-16,Tue,Control,Dipodomys,merriami,Rodent
 17933,10,16,1990,2,DO,F,37,44,1990-10-16,Tue,Control,Dipodomys,ordii,Rodent
 17934,10,16,1990,8,DM,M,37,52,1990-10-16,Tue,Control,Dipodomys,merriami,Rodent
+17935,10,16,1990,3,BA,F,13,8,1990-10-16,Tue,Long-term Krat Exclosure,Baiomys,taylori,Rodent
 17936,10,16,1990,9,DM,M,37,47,1990-10-16,Tue,Spectab exclosure,Dipodomys,merriami,Rodent
 17937,10,16,1990,8,DM,F,35,40,1990-10-16,Tue,Control,Dipodomys,merriami,Rodent
 17938,10,16,1990,4,DM,F,36,40,1990-10-16,Tue,Control,Dipodomys,merriami,Rodent
@@ -14758,6 +14818,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 18082,12,15,1990,21,RM,F,17,12,1990-12-15,Sat,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 18083,12,15,1990,12,RM,M,16,9,1990-12-15,Sat,Control,Reithrodontomys,megalotis,Rodent
 18084,12,15,1990,12,OL,M,21,31,1990-12-15,Sat,Control,Onychomys,leucogaster,Rodent
+18085,12,15,1990,19,BA,F,14,8,1990-12-15,Sat,Long-term Krat Exclosure,Baiomys,taylori,Rodent
 18086,12,15,1990,2,DO,F,37,44,1990-12-15,Sat,Control,Dipodomys,ordii,Rodent
 18087,12,15,1990,22,DM,F,37,40,1990-12-15,Sat,Control,Dipodomys,merriami,Rodent
 18088,12,15,1990,21,RM,M,18,12,1990-12-15,Sat,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
@@ -14803,6 +14864,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 18129,12,16,1990,8,DM,F,36,40,1990-12-16,Sun,Control,Dipodomys,merriami,Rodent
 18130,12,16,1990,14,DM,M,36,44,1990-12-16,Sun,Control,Dipodomys,merriami,Rodent
 18131,12,16,1990,5,RM,M,17,9,1990-12-16,Sun,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
+18132,12,16,1990,3,BA,F,13,8,1990-12-16,Sun,Long-term Krat Exclosure,Baiomys,taylori,Rodent
 18133,12,16,1990,6,RM,M,17,10,1990-12-16,Sun,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 18134,12,16,1990,14,DM,M,37,40,1990-12-16,Sun,Control,Dipodomys,merriami,Rodent
 18135,12,16,1990,3,OT,F,21,27,1990-12-16,Sun,Long-term Krat Exclosure,Onychomys,torridus,Rodent
@@ -14918,6 +14980,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 18249,1,11,1991,17,NL,M,31,162,1991-01-11,Fri,Control,Neotoma,albigula,Rodent
 18250,1,11,1991,24,RM,M,12,9,1991-01-11,Fri,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 18251,1,11,1991,20,PF,M,15,7,1991-01-11,Fri,Short-term Krat Exclosure,Perognathus,flavus,Rodent
+18252,1,12,1991,3,BA,F,14,9,1991-01-12,Sat,Long-term Krat Exclosure,Baiomys,taylori,Rodent
 18253,1,12,1991,15,PF,M,15,7,1991-01-12,Sat,Long-term Krat Exclosure,Perognathus,flavus,Rodent
 18254,1,12,1991,13,RM,F,16,10,1991-01-12,Sat,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 18255,1,12,1991,14,DM,M,36,46,1991-01-12,Sat,Control,Dipodomys,merriami,Rodent
@@ -14985,6 +15048,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 18320,2,16,1991,1,DM,M,36,44,1991-02-16,Sat,Spectab exclosure,Dipodomys,merriami,Rodent
 18321,2,16,1991,21,RM,M,17,9,1991-02-16,Sat,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 18322,2,16,1991,23,RM,F,16,11,1991-02-16,Sat,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
+18323,2,16,1991,19,BA,F,14,18,1991-02-16,Sat,Long-term Krat Exclosure,Baiomys,taylori,Rodent
 18324,2,16,1991,20,RM,F,17,12,1991-02-16,Sat,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 18325,2,16,1991,1,DM,M,36,45,1991-02-16,Sat,Spectab exclosure,Dipodomys,merriami,Rodent
 18326,2,16,1991,20,RM,M,15,9,1991-02-16,Sat,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
@@ -15128,6 +15192,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 18472,3,13,1991,22,DS,F,54,128,1991-03-13,Wed,Control,Dipodomys,spectabilis,Rodent
 18473,3,13,1991,1,DM,M,37,49,1991-03-13,Wed,Spectab exclosure,Dipodomys,merriami,Rodent
 18474,3,13,1991,2,RM,F,17,12,1991-03-13,Wed,Control,Reithrodontomys,megalotis,Rodent
+18475,3,13,1991,19,SF,M,28,64,1991-03-13,Wed,Long-term Krat Exclosure,Sigmodon,fulviventer,Rodent
 18476,3,13,1991,2,RM,M,16,10,1991-03-13,Wed,Control,Reithrodontomys,megalotis,Rodent
 18477,3,13,1991,17,DO,F,36,49,1991-03-13,Wed,Control,Dipodomys,ordii,Rodent
 18478,3,13,1991,12,DM,F,37,41,1991-03-13,Wed,Control,Dipodomys,merriami,Rodent
@@ -15156,6 +15221,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 18506,3,14,1991,13,RM,F,16,10,1991-03-14,Thu,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 18507,3,14,1991,3,RM,F,17,10,1991-03-14,Thu,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 18508,3,14,1991,9,DM,F,33,49,1991-03-14,Thu,Spectab exclosure,Dipodomys,merriami,Rodent
+18509,3,14,1991,3,BA,F,14,8,1991-03-14,Thu,Long-term Krat Exclosure,Baiomys,taylori,Rodent
 18510,3,14,1991,4,DM,F,37,46,1991-03-14,Thu,Control,Dipodomys,merriami,Rodent
 18511,3,14,1991,9,DM,F,33,39,1991-03-14,Thu,Spectab exclosure,Dipodomys,merriami,Rodent
 18512,3,14,1991,13,RM,M,17,10,1991-03-14,Thu,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
@@ -15211,6 +15277,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 18569,4,19,1991,17,DM,F,36,51,1991-04-19,Fri,Control,Dipodomys,merriami,Rodent
 18571,4,19,1991,18,NL,F,31,76,1991-04-19,Fri,Short-term Krat Exclosure,Neotoma,albigula,Rodent
 18572,4,19,1991,18,RM,M,15,11,1991-04-19,Fri,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
+18574,4,19,1991,19,BA,F,12,12,1991-04-19,Fri,Long-term Krat Exclosure,Baiomys,taylori,Rodent
 18575,4,19,1991,23,RM,M,16,12,1991-04-19,Fri,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 18576,4,19,1991,18,NL,F,30,69,1991-04-19,Fri,Short-term Krat Exclosure,Neotoma,albigula,Rodent
 18577,4,19,1991,24,RM,F,16,12,1991-04-19,Fri,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
@@ -15226,6 +15293,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 18600,4,21,1991,1,DM,M,36,41,1991-04-21,Sun,Spectab exclosure,Dipodomys,merriami,Rodent
 18601,4,21,1991,3,PP,M,23,23,1991-04-21,Sun,Long-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 18603,4,21,1991,7,RM,M,16,8,1991-04-21,Sun,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
+18604,4,21,1991,3,BA,F,13,10,1991-04-21,Sun,Long-term Krat Exclosure,Baiomys,taylori,Rodent
 18605,4,21,1991,3,OL,F,19,26,1991-04-21,Sun,Long-term Krat Exclosure,Onychomys,leucogaster,Rodent
 18606,4,21,1991,13,PE,F,21,34,1991-04-21,Sun,Short-term Krat Exclosure,Peromyscus,eremicus,Rodent
 18608,4,21,1991,13,RM,M,17,13,1991-04-21,Sun,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
@@ -15275,6 +15343,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 18662,5,13,1991,1,PP,F,41,15,1991-05-13,Mon,Spectab exclosure,Chaetodipus,penicillatus,Rodent
 18663,5,13,1991,2,DO,F,36,51,1991-05-13,Mon,Control,Dipodomys,ordii,Rodent
 18665,5,13,1991,12,OT,F,20,28,1991-05-13,Mon,Control,Onychomys,torridus,Rodent
+18666,5,13,1991,19,BA,F,12,7,1991-05-13,Mon,Long-term Krat Exclosure,Baiomys,taylori,Rodent
 18667,5,13,1991,17,DM,F,35,42,1991-05-13,Mon,Control,Dipodomys,merriami,Rodent
 18668,5,13,1991,7,RM,M,14,12,1991-05-13,Mon,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 18669,5,13,1991,2,DO,F,34,40,1991-05-13,Mon,Control,Dipodomys,ordii,Rodent
@@ -15293,6 +15362,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 18683,5,13,1991,17,DO,F,36,54,1991-05-13,Mon,Control,Dipodomys,ordii,Rodent
 18685,5,14,1991,3,PP,M,20,24,1991-05-14,Tue,Long-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 18686,5,14,1991,14,DM,F,35,52,1991-05-14,Tue,Control,Dipodomys,merriami,Rodent
+18687,5,14,1991,3,BA,F,11,8,1991-05-14,Tue,Long-term Krat Exclosure,Baiomys,taylori,Rodent
 18688,5,14,1991,11,PP,F,22,19,1991-05-14,Tue,Control,Chaetodipus,penicillatus,Rodent
 18690,5,14,1991,6,PP,M,22,16,1991-05-14,Tue,Short-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 18691,5,14,1991,8,DM,M,37,45,1991-05-14,Tue,Control,Dipodomys,merriami,Rodent
@@ -15359,6 +15429,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 18764,6,13,1991,2,DO,F,26,45,1991-06-13,Thu,Control,Dipodomys,ordii,Rodent
 18765,6,13,1991,22,PE,F,17,21,1991-06-13,Thu,Control,Peromyscus,eremicus,Rodent
 18766,6,13,1991,17,DO,M,29,45,1991-06-13,Thu,Control,Dipodomys,ordii,Rodent
+18768,6,13,1991,18,BA,F,12,9,1991-06-13,Thu,Short-term Krat Exclosure,Baiomys,taylori,Rodent
 18769,6,13,1991,7,RM,F,15,11,1991-06-13,Thu,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 18770,6,13,1991,1,DO,F,27,44,1991-06-13,Thu,Spectab exclosure,Dipodomys,ordii,Rodent
 18771,6,13,1991,1,DO,M,36,56,1991-06-13,Thu,Spectab exclosure,Dipodomys,ordii,Rodent
@@ -15366,6 +15437,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 18775,6,14,1991,4,DM,M,34,25,1991-06-14,Fri,Control,Dipodomys,merriami,Rodent
 18776,6,14,1991,8,DM,M,37,46,1991-06-14,Fri,Control,Dipodomys,merriami,Rodent
 18777,6,14,1991,4,DM,M,37,39,1991-06-14,Fri,Control,Dipodomys,merriami,Rodent
+18778,6,14,1991,3,BA,F,12,9,1991-06-14,Fri,Long-term Krat Exclosure,Baiomys,taylori,Rodent
 18779,6,14,1991,8,PP,F,20,16,1991-06-14,Fri,Control,Chaetodipus,penicillatus,Rodent
 18780,6,14,1991,3,NL,M,30,126,1991-06-14,Fri,Long-term Krat Exclosure,Neotoma,albigula,Rodent
 18781,6,14,1991,9,DM,F,35,46,1991-06-14,Fri,Spectab exclosure,Dipodomys,merriami,Rodent
@@ -15406,11 +15478,13 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 18825,7,12,1991,1,DM,M,35,51,1991-07-12,Fri,Spectab exclosure,Dipodomys,merriami,Rodent
 18826,7,12,1991,18,PP,F,21,24,1991-07-12,Fri,Short-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 18827,7,12,1991,12,DM,M,35,32,1991-07-12,Fri,Control,Dipodomys,merriami,Rodent
+18828,7,12,1991,19,BA,F,14,11,1991-07-12,Fri,Long-term Krat Exclosure,Baiomys,taylori,Rodent
 18829,7,12,1991,7,RM,F,14,13,1991-07-12,Fri,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 18830,7,12,1991,18,PP,M,20,16,1991-07-12,Fri,Short-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 18831,7,12,1991,17,PP,M,23,17,1991-07-12,Fri,Control,Chaetodipus,penicillatus,Rodent
 18832,7,12,1991,20,PP,M,21,14,1991-07-12,Fri,Short-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 18833,7,12,1991,12,DM,F,35,34,1991-07-12,Fri,Control,Dipodomys,merriami,Rodent
+18834,7,12,1991,19,SF,M,26,100,1991-07-12,Fri,Long-term Krat Exclosure,Sigmodon,fulviventer,Rodent
 18835,7,12,1991,22,DS,F,49,113,1991-07-12,Fri,Control,Dipodomys,spectabilis,Rodent
 18836,7,12,1991,22,PF,M,14,9,1991-07-12,Fri,Control,Perognathus,flavus,Rodent
 18837,7,12,1991,1,DO,M,35,46,1991-07-12,Fri,Spectab exclosure,Dipodomys,ordii,Rodent
@@ -15429,6 +15503,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 18850,7,12,1991,22,DM,M,37,46,1991-07-12,Fri,Control,Dipodomys,merriami,Rodent
 18852,7,12,1991,17,NL,F,22,160,1991-07-12,Fri,Control,Neotoma,albigula,Rodent
 18853,7,12,1991,17,DO,F,37,37,1991-07-12,Fri,Control,Dipodomys,ordii,Rodent
+18855,7,13,1991,3,BA,F,14,13,1991-07-13,Sat,Long-term Krat Exclosure,Baiomys,taylori,Rodent
 18856,7,13,1991,9,DM,M,35,35,1991-07-13,Sat,Spectab exclosure,Dipodomys,merriami,Rodent
 18857,7,13,1991,3,OT,F,16,16,1991-07-13,Sat,Long-term Krat Exclosure,Onychomys,torridus,Rodent
 18858,7,13,1991,14,DM,M,35,32,1991-07-13,Sat,Control,Dipodomys,merriami,Rodent
@@ -15443,6 +15518,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 18867,7,13,1991,4,DM,M,34,31,1991-07-13,Sat,Control,Dipodomys,merriami,Rodent
 18869,7,13,1991,4,DM,M,35,26,1991-07-13,Sat,Control,Dipodomys,merriami,Rodent
 18870,7,13,1991,9,DM,F,30,27,1991-07-13,Sat,Spectab exclosure,Dipodomys,merriami,Rodent
+18871,7,13,1991,10,RO,F,14,11,1991-07-13,Sat,Rodent Exclosure,Reithrodontomys,montanus,Rodent
 18872,7,13,1991,16,RM,M,22,11,1991-07-13,Sat,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 18873,7,13,1991,13,OT,M,16,24,1991-07-13,Sat,Short-term Krat Exclosure,Onychomys,torridus,Rodent
 18874,7,13,1991,5,PP,F,22,16,1991-07-13,Sat,Rodent Exclosure,Chaetodipus,penicillatus,Rodent
@@ -15468,6 +15544,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 18895,7,13,1991,5,PP,F,21,16,1991-07-13,Sat,Rodent Exclosure,Chaetodipus,penicillatus,Rodent
 18896,7,13,1991,4,PP,F,21,14,1991-07-13,Sat,Control,Chaetodipus,penicillatus,Rodent
 18897,7,13,1991,11,DM,M,37,58,1991-07-13,Sat,Control,Dipodomys,merriami,Rodent
+18898,7,13,1991,15,SF,F,36,52,1991-07-13,Sat,Long-term Krat Exclosure,Sigmodon,fulviventer,Rodent
 18900,7,13,1991,4,DM,M,35,35,1991-07-13,Sat,Control,Dipodomys,merriami,Rodent
 18901,7,13,1991,3,PP,F,19,19,1991-07-13,Sat,Long-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 18902,7,13,1991,4,OT,M,27,21,1991-07-13,Sat,Control,Onychomys,torridus,Rodent
@@ -15492,16 +15569,19 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 18924,8,7,1991,1,DO,M,37,52,1991-08-07,Wed,Spectab exclosure,Dipodomys,ordii,Rodent
 18925,8,7,1991,12,OT,F,19,46,1991-08-07,Wed,Control,Onychomys,torridus,Rodent
 18926,8,7,1991,18,PP,M,22,18,1991-08-07,Wed,Short-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
+18927,8,7,1991,23,SF,F,30,199,1991-08-07,Wed,Rodent Exclosure,Sigmodon,fulviventer,Rodent
 18928,8,7,1991,7,RM,F,16,13,1991-08-07,Wed,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 18930,8,7,1991,1,DO,M,38,57,1991-08-07,Wed,Spectab exclosure,Dipodomys,ordii,Rodent
 18931,8,7,1991,20,NL,F,32,124,1991-08-07,Wed,Short-term Krat Exclosure,Neotoma,albigula,Rodent
 18934,8,7,1991,20,PF,M,14,9,1991-08-07,Wed,Short-term Krat Exclosure,Perognathus,flavus,Rodent
+18935,8,7,1991,18,BA,F,14,10,1991-08-07,Wed,Short-term Krat Exclosure,Baiomys,taylori,Rodent
 18936,8,7,1991,1,DO,M,36,46,1991-08-07,Wed,Spectab exclosure,Dipodomys,ordii,Rodent
 18937,8,7,1991,12,DM,M,36,37,1991-08-07,Wed,Control,Dipodomys,merriami,Rodent
 18938,8,7,1991,12,DM,M,38,38,1991-08-07,Wed,Control,Dipodomys,merriami,Rodent
 18939,8,7,1991,24,PE,M,12,11,1991-08-07,Wed,Rodent Exclosure,Peromyscus,eremicus,Rodent
 18940,8,7,1991,17,DO,M,37,51,1991-08-07,Wed,Control,Dipodomys,ordii,Rodent
 18941,8,7,1991,20,PE,M,20,22,1991-08-07,Wed,Short-term Krat Exclosure,Peromyscus,eremicus,Rodent
+18942,8,7,1991,19,SF,F,29,84,1991-08-07,Wed,Long-term Krat Exclosure,Sigmodon,fulviventer,Rodent
 18943,8,7,1991,2,DO,F,37,49,1991-08-07,Wed,Control,Dipodomys,ordii,Rodent
 18944,8,7,1991,12,OT,M,20,29,1991-08-07,Wed,Control,Onychomys,torridus,Rodent
 18945,8,7,1991,17,DM,F,37,65,1991-08-07,Wed,Control,Dipodomys,merriami,Rodent
@@ -15564,6 +15644,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 19012,8,8,1991,5,RM,F,16,10,1991-08-08,Thu,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 19013,9,9,1991,2,DO,F,37,48,1991-09-09,Mon,Control,Dipodomys,ordii,Rodent
 19014,9,9,1991,18,OT,F,20,21,1991-09-09,Mon,Short-term Krat Exclosure,Onychomys,torridus,Rodent
+19015,9,9,1991,19,BA,F,7,11,1991-09-09,Mon,Long-term Krat Exclosure,Baiomys,taylori,Rodent
 19016,9,9,1991,1,OT,F,19,29,1991-09-09,Mon,Spectab exclosure,Onychomys,torridus,Rodent
 19017,9,9,1991,2,OT,M,22,22,1991-09-09,Mon,Control,Onychomys,torridus,Rodent
 19018,9,9,1991,1,DO,M,37,53,1991-09-09,Mon,Spectab exclosure,Dipodomys,ordii,Rodent
@@ -15648,6 +15729,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 19106,10,10,1991,7,PE,M,20,23,1991-10-10,Thu,Rodent Exclosure,Peromyscus,eremicus,Rodent
 19107,10,10,1991,2,DO,F,34,50,1991-10-10,Thu,Control,Dipodomys,ordii,Rodent
 19108,10,10,1991,21,PP,F,25,30,1991-10-10,Thu,Long-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
+19109,10,10,1991,20,BA,F,13,6,1991-10-10,Thu,Short-term Krat Exclosure,Baiomys,taylori,Rodent
 19110,10,10,1991,7,PE,F,20,20,1991-10-10,Thu,Rodent Exclosure,Peromyscus,eremicus,Rodent
 19111,10,10,1991,12,DM,F,33,42,1991-10-10,Thu,Control,Dipodomys,merriami,Rodent
 19112,10,10,1991,12,DM,M,36,46,1991-10-10,Thu,Control,Dipodomys,merriami,Rodent
@@ -15659,9 +15741,11 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 19118,10,10,1991,7,RM,F,16,13,1991-10-10,Thu,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 19119,10,10,1991,17,PF,F,14,7,1991-10-10,Thu,Control,Perognathus,flavus,Rodent
 19120,10,10,1991,18,RM,M,17,7,1991-10-10,Thu,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
+19121,10,10,1991,2,BA,M,13,6,1991-10-10,Thu,Control,Baiomys,taylori,Rodent
 19122,10,10,1991,1,DO,M,36,53,1991-10-10,Thu,Spectab exclosure,Dipodomys,ordii,Rodent
 19123,10,10,1991,1,DM,M,34,52,1991-10-10,Thu,Spectab exclosure,Dipodomys,merriami,Rodent
 19124,10,10,1991,2,OT,M,20,24,1991-10-10,Thu,Control,Onychomys,torridus,Rodent
+19125,10,10,1991,20,SO,F,30,80,1991-10-10,Thu,Short-term Krat Exclosure,Sigmodon,ochrognathus,Rodent
 19126,10,10,1991,1,PP,F,20,14,1991-10-10,Thu,Spectab exclosure,Chaetodipus,penicillatus,Rodent
 19127,10,10,1991,18,OT,M,21,25,1991-10-10,Thu,Short-term Krat Exclosure,Onychomys,torridus,Rodent
 19128,10,10,1991,17,DO,F,36,50,1991-10-10,Thu,Control,Dipodomys,ordii,Rodent
@@ -15745,7 +15829,9 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 19214,11,13,1991,1,DM,M,36,51,1991-11-13,Wed,Spectab exclosure,Dipodomys,merriami,Rodent
 19215,11,13,1991,2,OL,F,18,25,1991-11-13,Wed,Control,Onychomys,leucogaster,Rodent
 19216,11,13,1991,1,DM,M,36,52,1991-11-13,Wed,Spectab exclosure,Dipodomys,merriami,Rodent
+19217,11,13,1991,2,SO,F,21,42,1991-11-13,Wed,Control,Sigmodon,ochrognathus,Rodent
 19219,11,13,1991,7,RM,M,16,9,1991-11-13,Wed,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
+19220,11,13,1991,19,BA,F,14,10,1991-11-13,Wed,Long-term Krat Exclosure,Baiomys,taylori,Rodent
 19221,11,13,1991,1,DO,M,36,56,1991-11-13,Wed,Spectab exclosure,Dipodomys,ordii,Rodent
 19222,11,13,1991,22,OT,M,26,26,1991-11-13,Wed,Control,Onychomys,torridus,Rodent
 19223,11,13,1991,2,OT,F,20,24,1991-11-13,Wed,Control,Onychomys,torridus,Rodent
@@ -15772,14 +15858,18 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 19246,11,13,1991,19,PF,F,14,7,1991-11-13,Wed,Long-term Krat Exclosure,Perognathus,flavus,Rodent
 19247,11,13,1991,19,OT,M,20,22,1991-11-13,Wed,Long-term Krat Exclosure,Onychomys,torridus,Rodent
 19248,11,13,1991,18,RM,F,16,12,1991-11-13,Wed,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
+19249,11,13,1991,19,BA,M,12,8,1991-11-13,Wed,Long-term Krat Exclosure,Baiomys,taylori,Rodent
 19250,11,13,1991,7,PE,M,20,23,1991-11-13,Wed,Rodent Exclosure,Peromyscus,eremicus,Rodent
 19251,11,13,1991,2,OT,M,19,25,1991-11-13,Wed,Control,Onychomys,torridus,Rodent
+19252,11,13,1991,19,SF,M,27,60,1991-11-13,Wed,Long-term Krat Exclosure,Sigmodon,fulviventer,Rodent
 19253,11,13,1991,7,PE,F,21,21,1991-11-13,Wed,Rodent Exclosure,Peromyscus,eremicus,Rodent
 19254,11,13,1991,1,DO,F,34,50,1991-11-13,Wed,Spectab exclosure,Dipodomys,ordii,Rodent
 19255,11,14,1991,9,DM,F,35,38,1991-11-14,Thu,Spectab exclosure,Dipodomys,merriami,Rodent
+19256,11,14,1991,3,BA,F,16,9,1991-11-14,Thu,Long-term Krat Exclosure,Baiomys,taylori,Rodent
 19257,11,14,1991,9,DM,F,35,37,1991-11-14,Thu,Spectab exclosure,Dipodomys,merriami,Rodent
 19258,11,14,1991,11,RM,M,16,9,1991-11-14,Thu,Control,Reithrodontomys,megalotis,Rodent
 19259,11,14,1991,17,DM,M,36,51,1991-11-14,Thu,Control,Dipodomys,merriami,Rodent
+19260,11,14,1991,21,BA,M,14,7,1991-11-14,Thu,Long-term Krat Exclosure,Baiomys,taylori,Rodent
 19261,11,14,1991,21,RM,F,16,10,1991-11-14,Thu,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 19262,11,14,1991,3,PE,M,19,24,1991-11-14,Thu,Long-term Krat Exclosure,Peromyscus,eremicus,Rodent
 19264,11,14,1991,9,DM,M,37,42,1991-11-14,Thu,Spectab exclosure,Dipodomys,merriami,Rodent
@@ -15788,16 +15878,21 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 19267,11,14,1991,9,OT,M,21,24,1991-11-14,Thu,Spectab exclosure,Onychomys,torridus,Rodent
 19268,11,14,1991,11,OT,M,20,24,1991-11-14,Thu,Control,Onychomys,torridus,Rodent
 19269,11,14,1991,20,RM,M,17,12,1991-11-14,Thu,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
+19270,11,14,1991,3,SO,F,27,78,1991-11-14,Thu,Long-term Krat Exclosure,Sigmodon,ochrognathus,Rodent
 19271,11,14,1991,20,RM,F,16,12,1991-11-14,Thu,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 19272,11,14,1991,21,RM,M,16,11,1991-11-14,Thu,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 19273,11,14,1991,24,RM,M,17,13,1991-11-14,Thu,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
+19274,11,14,1991,3,BA,F,12,8,1991-11-14,Thu,Long-term Krat Exclosure,Baiomys,taylori,Rodent
 19275,11,14,1991,24,PE,F,20,24,1991-11-14,Thu,Rodent Exclosure,Peromyscus,eremicus,Rodent
 19276,11,14,1991,3,PP,F,26,27,1991-11-14,Thu,Long-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 19277,11,14,1991,11,RM,M,16,9,1991-11-14,Thu,Control,Reithrodontomys,megalotis,Rodent
 19278,11,14,1991,3,OT,M,21,35,1991-11-14,Thu,Long-term Krat Exclosure,Onychomys,torridus,Rodent
 19279,11,14,1991,8,DM,M,35,45,1991-11-14,Thu,Control,Dipodomys,merriami,Rodent
+19280,11,14,1991,20,SO,M,24,38,1991-11-14,Thu,Short-term Krat Exclosure,Sigmodon,ochrognathus,Rodent
 19281,11,14,1991,3,PF,F,15,7,1991-11-14,Thu,Long-term Krat Exclosure,Perognathus,flavus,Rodent
 19282,11,14,1991,20,RM,F,17,10,1991-11-14,Thu,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
+19283,11,14,1991,3,SO,F,27,27,1991-11-14,Thu,Long-term Krat Exclosure,Sigmodon,ochrognathus,Rodent
+19284,11,14,1991,3,SO,F,24,26,1991-11-14,Thu,Long-term Krat Exclosure,Sigmodon,ochrognathus,Rodent
 19286,11,14,1991,17,DO,F,37,50,1991-11-14,Thu,Control,Dipodomys,ordii,Rodent
 19287,11,14,1991,20,PE,M,20,25,1991-11-14,Thu,Short-term Krat Exclosure,Peromyscus,eremicus,Rodent
 19288,11,14,1991,24,RM,F,16,16,1991-11-14,Thu,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
@@ -15812,11 +15907,13 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 19298,11,14,1991,3,RM,F,17,9,1991-11-14,Thu,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 19299,11,14,1991,9,RM,F,13,7,1991-11-14,Thu,Spectab exclosure,Reithrodontomys,megalotis,Rodent
 19300,11,14,1991,20,RM,M,13,9,1991-11-14,Thu,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
+19301,11,14,1991,20,SO,F,29,82,1991-11-14,Thu,Short-term Krat Exclosure,Sigmodon,ochrognathus,Rodent
 19303,11,14,1991,8,DM,M,35,43,1991-11-14,Thu,Control,Dipodomys,merriami,Rodent
 19305,11,14,1991,24,RM,M,17,10,1991-11-14,Thu,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 19306,11,14,1991,9,DM,M,37,41,1991-11-14,Thu,Spectab exclosure,Dipodomys,merriami,Rodent
 19307,11,14,1991,11,RM,F,18,10,1991-11-14,Thu,Control,Reithrodontomys,megalotis,Rodent
 19308,11,14,1991,8,DO,F,35,50,1991-11-14,Thu,Control,Dipodomys,ordii,Rodent
+19309,11,14,1991,3,SO,M,27,49,1991-11-14,Thu,Long-term Krat Exclosure,Sigmodon,ochrognathus,Rodent
 19310,11,14,1991,9,DM,M,36,41,1991-11-14,Thu,Spectab exclosure,Dipodomys,merriami,Rodent
 19311,11,14,1991,21,PP,F,15,30,1991-11-14,Thu,Long-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 19312,11,14,1991,8,DM,F,37,43,1991-11-14,Thu,Control,Dipodomys,merriami,Rodent
@@ -15883,6 +15980,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 19377,12,7,1991,19,OT,F,19,26,1991-12-07,Sat,Long-term Krat Exclosure,Onychomys,torridus,Rodent
 19378,12,7,1991,2,DM,M,36,48,1991-12-07,Sat,Control,Dipodomys,merriami,Rodent
 19379,12,7,1991,18,PF,M,15,7,1991-12-07,Sat,Short-term Krat Exclosure,Perognathus,flavus,Rodent
+19380,12,7,1991,19,BA,F,13,9,1991-12-07,Sat,Long-term Krat Exclosure,Baiomys,taylori,Rodent
 19381,12,7,1991,24,RM,F,16,11,1991-12-07,Sat,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 19382,12,7,1991,18,RM,M,16,9,1991-12-07,Sat,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 19383,12,7,1991,7,RM,F,17,10,1991-12-07,Sat,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
@@ -15909,11 +16007,13 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 19406,12,7,1991,12,RM,F,16,9,1991-12-07,Sat,Control,Reithrodontomys,megalotis,Rodent
 19407,12,7,1991,17,DO,F,36,51,1991-12-07,Sat,Control,Dipodomys,ordii,Rodent
 19408,12,7,1991,18,RM,F,16,13,1991-12-07,Sat,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
+19409,12,7,1991,19,BA,M,12,9,1991-12-07,Sat,Long-term Krat Exclosure,Baiomys,taylori,Rodent
 19411,12,7,1991,2,OL,F,20,24,1991-12-07,Sat,Control,Onychomys,leucogaster,Rodent
 19412,12,7,1991,1,DO,F,33,51,1991-12-07,Sat,Spectab exclosure,Dipodomys,ordii,Rodent
 19414,12,7,1991,19,OT,M,21,25,1991-12-07,Sat,Long-term Krat Exclosure,Onychomys,torridus,Rodent
 19415,12,7,1991,24,RM,F,17,9,1991-12-07,Sat,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 19416,12,7,1991,1,DM,M,36,42,1991-12-07,Sat,Spectab exclosure,Dipodomys,merriami,Rodent
+19418,12,7,1991,20,SO,F,28,80,1991-12-07,Sat,Short-term Krat Exclosure,Sigmodon,ochrognathus,Rodent
 19419,12,7,1991,24,RM,M,16,12,1991-12-07,Sat,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 19420,12,7,1991,1,OL,M,20,26,1991-12-07,Sat,Spectab exclosure,Onychomys,leucogaster,Rodent
 19421,12,7,1991,17,DO,F,36,30,1991-12-07,Sat,Control,Dipodomys,ordii,Rodent
@@ -15953,6 +16053,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 19458,12,7,1991,7,RM,M,17,8,1991-12-07,Sat,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 19459,12,8,1991,4,DM,F,36,40,1991-12-08,Sun,Control,Dipodomys,merriami,Rodent
 19460,12,8,1991,9,DM,F,35,37,1991-12-08,Sun,Spectab exclosure,Dipodomys,merriami,Rodent
+19461,12,8,1991,3,SO,F,25,47,1991-12-08,Sun,Long-term Krat Exclosure,Sigmodon,ochrognathus,Rodent
 19463,12,8,1991,9,OL,F,20,26,1991-12-08,Sun,Spectab exclosure,Onychomys,leucogaster,Rodent
 19464,12,8,1991,13,PF,F,16,7,1991-12-08,Sun,Short-term Krat Exclosure,Perognathus,flavus,Rodent
 19465,12,8,1991,16,RM,M,16,11,1991-12-08,Sun,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
@@ -15962,7 +16063,9 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 19469,12,8,1991,3,OL,F,21,24,1991-12-08,Sun,Long-term Krat Exclosure,Onychomys,leucogaster,Rodent
 19470,12,8,1991,9,OT,M,21,22,1991-12-08,Sun,Spectab exclosure,Onychomys,torridus,Rodent
 19471,12,8,1991,6,DM,M,36,44,1991-12-08,Sun,Short-term Krat Exclosure,Dipodomys,merriami,Rodent
+19472,12,8,1991,3,SO,F,24,44,1991-12-08,Sun,Long-term Krat Exclosure,Sigmodon,ochrognathus,Rodent
 19473,12,8,1991,13,RM,F,15,7,1991-12-08,Sun,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
+19474,12,8,1991,5,BA,F,13,8,1991-12-08,Sun,Rodent Exclosure,Baiomys,taylori,Rodent
 19475,12,8,1991,3,PE,F,20,22,1991-12-08,Sun,Long-term Krat Exclosure,Peromyscus,eremicus,Rodent
 19476,12,8,1991,4,PF,F,15,7,1991-12-08,Sun,Control,Perognathus,flavus,Rodent
 19477,12,8,1991,9,RM,M,16,7,1991-12-08,Sun,Spectab exclosure,Reithrodontomys,megalotis,Rodent
@@ -15985,6 +16088,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 19496,12,8,1991,13,RM,M,16,9,1991-12-08,Sun,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 19497,12,8,1991,3,PF,F,15,7,1991-12-08,Sun,Long-term Krat Exclosure,Perognathus,flavus,Rodent
 19498,12,8,1991,4,DM,F,36,42,1991-12-08,Sun,Control,Dipodomys,merriami,Rodent
+19499,12,8,1991,3,BA,M,13,8,1991-12-08,Sun,Long-term Krat Exclosure,Baiomys,taylori,Rodent
 19500,12,8,1991,3,NL,F,35,166,1991-12-08,Sun,Long-term Krat Exclosure,Neotoma,albigula,Rodent
 19501,12,8,1991,14,DM,M,36,40,1991-12-08,Sun,Control,Dipodomys,merriami,Rodent
 19502,12,8,1991,11,RM,F,18,10,1991-12-08,Sun,Control,Reithrodontomys,megalotis,Rodent
@@ -15999,6 +16103,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 19511,12,8,1991,8,DO,F,35,47,1991-12-08,Sun,Control,Dipodomys,ordii,Rodent
 19512,12,8,1991,15,RM,F,16,11,1991-12-08,Sun,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 19513,12,8,1991,13,OL,M,20,34,1991-12-08,Sun,Short-term Krat Exclosure,Onychomys,leucogaster,Rodent
+19514,12,8,1991,3,BA,M,14,8,1991-12-08,Sun,Long-term Krat Exclosure,Baiomys,taylori,Rodent
 19515,12,8,1991,6,RM,F,17,11,1991-12-08,Sun,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 19516,12,8,1991,9,DM,F,35,43,1991-12-08,Sun,Spectab exclosure,Dipodomys,merriami,Rodent
 19517,12,8,1991,13,PF,F,15,8,1991-12-08,Sun,Short-term Krat Exclosure,Perognathus,flavus,Rodent
@@ -16025,8 +16130,10 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 19540,1,8,1992,7,PE,M,19,20,1992-01-08,Wed,Rodent Exclosure,Peromyscus,eremicus,Rodent
 19541,1,8,1992,1,DM,M,37,53,1992-01-08,Wed,Spectab exclosure,Dipodomys,merriami,Rodent
 19542,1,8,1992,12,RM,F,16,8,1992-01-08,Wed,Control,Reithrodontomys,megalotis,Rodent
+19543,1,8,1992,19,BA,F,13,9,1992-01-08,Wed,Long-term Krat Exclosure,Baiomys,taylori,Rodent
 19544,1,8,1992,21,RM,F,14,9,1992-01-08,Wed,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 19545,1,8,1992,2,DO,F,35,46,1992-01-08,Wed,Control,Dipodomys,ordii,Rodent
+19546,1,8,1992,18,SF,M,22,35,1992-01-08,Wed,Short-term Krat Exclosure,Sigmodon,fulviventer,Rodent
 19548,1,8,1992,19,RM,M,14,12,1992-01-08,Wed,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 19549,1,8,1992,23,RM,M,16,12,1992-01-08,Wed,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 19550,1,8,1992,24,RM,F,17,10,1992-01-08,Wed,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
@@ -16045,6 +16152,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 19564,1,8,1992,1,DM,M,37,50,1992-01-08,Wed,Spectab exclosure,Dipodomys,merriami,Rodent
 19565,1,8,1992,2,DO,F,36,48,1992-01-08,Wed,Control,Dipodomys,ordii,Rodent
 19566,1,8,1992,1,DO,M,34,30,1992-01-08,Wed,Spectab exclosure,Dipodomys,ordii,Rodent
+19567,1,8,1992,19,BA,M,6,8,1992-01-08,Wed,Long-term Krat Exclosure,Baiomys,taylori,Rodent
 19569,1,8,1992,12,DM,F,37,41,1992-01-08,Wed,Control,Dipodomys,merriami,Rodent
 19570,1,8,1992,1,DO,F,36,45,1992-01-08,Wed,Spectab exclosure,Dipodomys,ordii,Rodent
 19571,1,8,1992,12,DM,M,32,38,1992-01-08,Wed,Control,Dipodomys,merriami,Rodent
@@ -16059,10 +16167,12 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 19581,1,8,1992,19,RM,M,13,9,1992-01-08,Wed,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 19582,1,8,1992,7,RM,F,17,10,1992-01-08,Wed,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 19583,1,8,1992,17,DO,F,39,51,1992-01-08,Wed,Control,Dipodomys,ordii,Rodent
+19584,1,8,1992,19,BA,F,13,7,1992-01-08,Wed,Long-term Krat Exclosure,Baiomys,taylori,Rodent
 19585,1,8,1992,7,PE,F,21,24,1992-01-08,Wed,Rodent Exclosure,Peromyscus,eremicus,Rodent
 19586,1,9,1992,3,RM,M,17,8,1992-01-09,Thu,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 19587,1,9,1992,9,DM,F,38,38,1992-01-09,Thu,Spectab exclosure,Dipodomys,merriami,Rodent
 19589,1,9,1992,5,RM,M,16,8,1992-01-09,Thu,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
+19590,1,9,1992,13,PH,F,24,29,1992-01-09,Thu,Short-term Krat Exclosure,Perognathus,hispidus,Rodent
 19591,1,9,1992,4,DM,M,36,42,1992-01-09,Thu,Control,Dipodomys,merriami,Rodent
 19593,1,9,1992,3,NL,F,32,166,1992-01-09,Thu,Long-term Krat Exclosure,Neotoma,albigula,Rodent
 19594,1,9,1992,3,PE,F,17,20,1992-01-09,Thu,Long-term Krat Exclosure,Peromyscus,eremicus,Rodent
@@ -16101,6 +16211,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 19629,1,9,1992,16,RM,F,15,13,1992-01-09,Thu,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 19630,1,9,1992,13,OT,M,20,35,1992-01-09,Thu,Short-term Krat Exclosure,Onychomys,torridus,Rodent
 19631,1,9,1992,4,OT,M,20,23,1992-01-09,Thu,Control,Onychomys,torridus,Rodent
+19633,1,9,1992,3,SO,F,24,38,1992-01-09,Thu,Long-term Krat Exclosure,Sigmodon,ochrognathus,Rodent
 19634,1,9,1992,5,OT,F,20,23,1992-01-09,Thu,Rodent Exclosure,Onychomys,torridus,Rodent
 19638,2,6,1992,7,PE,M,20,23,1992-02-06,Thu,Rodent Exclosure,Peromyscus,eremicus,Rodent
 19639,2,6,1992,2,OT,M,21,20,1992-02-06,Thu,Control,Onychomys,torridus,Rodent
@@ -16118,6 +16229,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 19652,2,6,1992,12,RM,F,16,9,1992-02-06,Thu,Control,Reithrodontomys,megalotis,Rodent
 19653,2,6,1992,18,PF,F,15,7,1992-02-06,Thu,Short-term Krat Exclosure,Perognathus,flavus,Rodent
 19654,2,6,1992,19,RM,F,16,8,1992-02-06,Thu,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
+19655,2,6,1992,2,SO,F,26,51,1992-02-06,Thu,Control,Sigmodon,ochrognathus,Rodent
 19656,2,6,1992,1,DM,M,36,52,1992-02-06,Thu,Spectab exclosure,Dipodomys,merriami,Rodent
 19657,2,6,1992,2,PE,M,20,22,1992-02-06,Thu,Control,Peromyscus,eremicus,Rodent
 19658,2,6,1992,2,OL,M,21,23,1992-02-06,Thu,Control,Onychomys,leucogaster,Rodent
@@ -16147,6 +16259,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 19687,2,7,1992,17,DM,M,36,49,1992-02-07,Fri,Control,Dipodomys,merriami,Rodent
 19688,2,7,1992,3,OT,M,22,24,1992-02-07,Fri,Long-term Krat Exclosure,Onychomys,torridus,Rodent
 19689,2,7,1992,9,DM,M,36,50,1992-02-07,Fri,Spectab exclosure,Dipodomys,merriami,Rodent
+19690,2,7,1992,20,SO,F,22,77,1992-02-07,Fri,Short-term Krat Exclosure,Sigmodon,ochrognathus,Rodent
 19691,2,7,1992,11,PE,F,21,21,1992-02-07,Fri,Control,Peromyscus,eremicus,Rodent
 19692,2,7,1992,3,PE,M,20,23,1992-02-07,Fri,Long-term Krat Exclosure,Peromyscus,eremicus,Rodent
 19693,2,7,1992,9,DM,M,38,47,1992-02-07,Fri,Spectab exclosure,Dipodomys,merriami,Rodent
@@ -16154,6 +16267,8 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 19695,2,7,1992,3,PP,M,22,17,1992-02-07,Fri,Long-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 19696,2,7,1992,8,DM,M,36,46,1992-02-07,Fri,Control,Dipodomys,merriami,Rodent
 19697,2,7,1992,9,DM,F,36,33,1992-02-07,Fri,Spectab exclosure,Dipodomys,merriami,Rodent
+19698,2,7,1992,3,BA,M,12,7,1992-02-07,Fri,Long-term Krat Exclosure,Baiomys,taylori,Rodent
+19699,2,7,1992,3,SO,M,26,49,1992-02-07,Fri,Long-term Krat Exclosure,Sigmodon,ochrognathus,Rodent
 19700,2,7,1992,11,OT,M,21,28,1992-02-07,Fri,Control,Onychomys,torridus,Rodent
 19701,2,7,1992,3,PP,F,21,12,1992-02-07,Fri,Long-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 19702,2,7,1992,3,RM,M,17,9,1992-02-07,Fri,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
@@ -16181,6 +16296,8 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 19729,2,7,1992,11,DM,F,37,37,1992-02-07,Fri,Control,Dipodomys,merriami,Rodent
 19730,2,7,1992,5,DO,M,36,55,1992-02-07,Fri,Rodent Exclosure,Dipodomys,ordii,Rodent
 19731,2,7,1992,24,PE,F,22,22,1992-02-07,Fri,Rodent Exclosure,Peromyscus,eremicus,Rodent
+19732,2,7,1992,3,SO,F,25,37,1992-02-07,Fri,Long-term Krat Exclosure,Sigmodon,ochrognathus,Rodent
+19733,2,7,1992,3,SO,F,25,39,1992-02-07,Fri,Long-term Krat Exclosure,Sigmodon,ochrognathus,Rodent
 19734,2,7,1992,11,DM,M,39,48,1992-02-07,Fri,Control,Dipodomys,merriami,Rodent
 19737,2,8,1992,14,DM,M,37,45,1992-02-08,Sat,Control,Dipodomys,merriami,Rodent
 19738,2,8,1992,14,OT,M,20,22,1992-02-08,Sat,Control,Onychomys,torridus,Rodent
@@ -16189,10 +16306,12 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 19741,2,8,1992,10,RM,F,17,10,1992-02-08,Sat,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 19742,2,8,1992,6,RM,F,17,10,1992-02-08,Sat,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 19743,2,8,1992,6,RM,M,17,10,1992-02-08,Sat,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
+19744,2,8,1992,13,PH,F,25,29,1992-02-08,Sat,Short-term Krat Exclosure,Perognathus,hispidus,Rodent
 19748,2,8,1992,13,DO,M,35,47,1992-02-08,Sat,Short-term Krat Exclosure,Dipodomys,ordii,Rodent
 19749,2,8,1992,14,DM,F,38,36,1992-02-08,Sat,Control,Dipodomys,merriami,Rodent
 19750,2,8,1992,6,RM,F,17,11,1992-02-08,Sat,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 19753,3,7,1992,18,PF,F,14,7,1992-03-07,Sat,Short-term Krat Exclosure,Perognathus,flavus,Rodent
+19755,3,7,1992,19,BA,F,14,7,1992-03-07,Sat,Long-term Krat Exclosure,Baiomys,taylori,Rodent
 19756,3,7,1992,7,PE,M,21,20,1992-03-07,Sat,Rodent Exclosure,Peromyscus,eremicus,Rodent
 19757,3,7,1992,2,DO,M,36,50,1992-03-07,Sat,Control,Dipodomys,ordii,Rodent
 19758,3,7,1992,6,PP,M,21,14,1992-03-07,Sat,Short-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
@@ -16212,6 +16331,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 19772,3,7,1992,7,RM,F,16,9,1992-03-07,Sat,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 19773,3,7,1992,23,RM,F,17,11,1992-03-07,Sat,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 19774,3,7,1992,7,RM,M,16,8,1992-03-07,Sat,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
+19775,3,7,1992,19,BA,F,14,9,1992-03-07,Sat,Long-term Krat Exclosure,Baiomys,taylori,Rodent
 19776,3,7,1992,17,DM,F,36,38,1992-03-07,Sat,Control,Dipodomys,merriami,Rodent
 19777,3,7,1992,24,RM,M,17,8,1992-03-07,Sat,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 19778,3,7,1992,4,DM,M,37,32,1992-03-07,Sat,Control,Dipodomys,merriami,Rodent
@@ -16219,6 +16339,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 19780,3,7,1992,24,PE,F,21,21,1992-03-07,Sat,Rodent Exclosure,Peromyscus,eremicus,Rodent
 19781,3,7,1992,1,DM,M,35,53,1992-03-07,Sat,Spectab exclosure,Dipodomys,merriami,Rodent
 19782,3,7,1992,11,PE,F,21,28,1992-03-07,Sat,Control,Peromyscus,eremicus,Rodent
+19783,3,7,1992,3,SO,M,25,58,1992-03-07,Sat,Long-term Krat Exclosure,Sigmodon,ochrognathus,Rodent
 19784,3,7,1992,6,PF,F,14,9,1992-03-07,Sat,Short-term Krat Exclosure,Perognathus,flavus,Rodent
 19785,3,7,1992,1,DO,M,37,43,1992-03-07,Sat,Spectab exclosure,Dipodomys,ordii,Rodent
 19786,3,7,1992,2,DO,F,35,52,1992-03-07,Sat,Control,Dipodomys,ordii,Rodent
@@ -16259,6 +16380,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 19824,3,7,1992,24,RM,F,16,7,1992-03-07,Sat,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 19825,3,7,1992,7,PE,F,20,32,1992-03-07,Sat,Rodent Exclosure,Peromyscus,eremicus,Rodent
 19826,3,7,1992,19,OL,M,20,26,1992-03-07,Sat,Long-term Krat Exclosure,Onychomys,leucogaster,Rodent
+19827,3,7,1992,3,SO,F,25,39,1992-03-07,Sat,Long-term Krat Exclosure,Sigmodon,ochrognathus,Rodent
 19828,3,8,1992,14,DM,M,39,44,1992-03-08,Sun,Control,Dipodomys,merriami,Rodent
 19829,3,8,1992,13,RM,F,17,8,1992-03-08,Sun,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 19830,3,8,1992,16,PE,M,20,22,1992-03-08,Sun,Rodent Exclosure,Peromyscus,eremicus,Rodent
@@ -16284,6 +16406,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 19854,3,8,1992,9,DM,M,37,41,1992-03-08,Sun,Spectab exclosure,Dipodomys,merriami,Rodent
 19855,3,8,1992,11,DM,F,37,35,1992-03-08,Sun,Control,Dipodomys,merriami,Rodent
 19856,3,8,1992,8,OT,M,22,24,1992-03-08,Sun,Control,Onychomys,torridus,Rodent
+19857,3,8,1992,13,PH,F,26,29,1992-03-08,Sun,Short-term Krat Exclosure,Perognathus,hispidus,Rodent
 19858,3,8,1992,5,RM,F,17,11,1992-03-08,Sun,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 19859,3,8,1992,5,OT,M,21,31,1992-03-08,Sun,Rodent Exclosure,Onychomys,torridus,Rodent
 19860,4,4,1992,21,RM,F,17,9,1992-04-04,Sat,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
@@ -16321,11 +16444,14 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 19896,4,4,1992,1,DO,F,36,49,1992-04-04,Sat,Spectab exclosure,Dipodomys,ordii,Rodent
 19897,4,4,1992,12,DM,F,37,52,1992-04-04,Sat,Control,Dipodomys,merriami,Rodent
 19898,4,4,1992,22,DM,F,32,45,1992-04-04,Sat,Control,Dipodomys,merriami,Rodent
+19899,4,4,1992,21,PH,F,27,31,1992-04-04,Sat,Long-term Krat Exclosure,Perognathus,hispidus,Rodent
 19900,4,4,1992,1,DO,F,37,55,1992-04-04,Sat,Spectab exclosure,Dipodomys,ordii,Rodent
 19901,4,4,1992,18,PF,F,15,8,1992-04-04,Sat,Short-term Krat Exclosure,Perognathus,flavus,Rodent
 19902,4,5,1992,4,DM,F,37,41,1992-04-05,Sun,Control,Dipodomys,merriami,Rodent
+19903,4,5,1992,3,SO,M,26,68,1992-04-05,Sun,Long-term Krat Exclosure,Sigmodon,ochrognathus,Rodent
 19904,4,5,1992,4,DM,M,36,47,1992-04-05,Sun,Control,Dipodomys,merriami,Rodent
 19905,4,5,1992,6,PP,M,22,19,1992-04-05,Sun,Short-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
+19906,4,5,1992,13,PH,M,22,18,1992-04-05,Sun,Short-term Krat Exclosure,Perognathus,hispidus,Rodent
 19907,4,5,1992,4,DM,M,38,49,1992-04-05,Sun,Control,Dipodomys,merriami,Rodent
 19908,4,5,1992,4,PF,F,17,6,1992-04-05,Sun,Control,Perognathus,flavus,Rodent
 19909,4,5,1992,4,DM,M,38,49,1992-04-05,Sun,Control,Dipodomys,merriami,Rodent
@@ -16335,6 +16461,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 19913,4,5,1992,11,PE,F,20,29,1992-04-05,Sun,Control,Peromyscus,eremicus,Rodent
 19914,4,5,1992,15,PP,M,23,15,1992-04-05,Sun,Long-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 19916,4,5,1992,13,DO,M,39,49,1992-04-05,Sun,Short-term Krat Exclosure,Dipodomys,ordii,Rodent
+19917,4,5,1992,13,PH,M,25,34,1992-04-05,Sun,Short-term Krat Exclosure,Perognathus,hispidus,Rodent
 19918,4,5,1992,14,DO,M,34,42,1992-04-05,Sun,Control,Dipodomys,ordii,Rodent
 19919,4,5,1992,4,DM,F,34,44,1992-04-05,Sun,Control,Dipodomys,merriami,Rodent
 19920,4,5,1992,14,DM,F,36,45,1992-04-05,Sun,Control,Dipodomys,merriami,Rodent
@@ -16374,18 +16501,22 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 19958,5,2,1992,7,PP,F,21,16,1992-05-02,Sat,Rodent Exclosure,Chaetodipus,penicillatus,Rodent
 19959,5,2,1992,22,DS,F,50,112,1992-05-02,Sat,Control,Dipodomys,spectabilis,Rodent
 19960,5,2,1992,1,PP,M,23,22,1992-05-02,Sat,Spectab exclosure,Chaetodipus,penicillatus,Rodent
+19961,5,2,1992,2,SO,F,30,82,1992-05-02,Sat,Control,Sigmodon,ochrognathus,Rodent
 19962,5,2,1992,12,DM,M,39,50,1992-05-02,Sat,Control,Dipodomys,merriami,Rodent
 19963,5,2,1992,1,DO,M,35,60,1992-05-02,Sat,Spectab exclosure,Dipodomys,ordii,Rodent
 19964,5,2,1992,2,DO,F,35,57,1992-05-02,Sat,Control,Dipodomys,ordii,Rodent
 19966,5,2,1992,17,DM,M,36,51,1992-05-02,Sat,Control,Dipodomys,merriami,Rodent
 19967,5,2,1992,22,DM,F,35,42,1992-05-02,Sat,Control,Dipodomys,merriami,Rodent
 19968,5,2,1992,20,PP,F,23,17,1992-05-02,Sat,Short-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
+19969,5,2,1992,21,PH,F,26,48,1992-05-02,Sat,Long-term Krat Exclosure,Perognathus,hispidus,Rodent
 19970,5,2,1992,23,RM,F,18,17,1992-05-02,Sat,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
+19972,5,3,1992,3,SO,F,24,28,1992-05-03,Sun,Long-term Krat Exclosure,Sigmodon,ochrognathus,Rodent
 19973,5,3,1992,9,DM,F,37,46,1992-05-03,Sun,Spectab exclosure,Dipodomys,merriami,Rodent
 19974,5,3,1992,14,DM,M,37,41,1992-05-03,Sun,Control,Dipodomys,merriami,Rodent
 19975,5,3,1992,6,PP,M,19,20,1992-05-03,Sun,Short-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 19976,5,3,1992,13,OL,F,23,31,1992-05-03,Sun,Short-term Krat Exclosure,Onychomys,leucogaster,Rodent
 19977,5,3,1992,3,PF,M,15,9,1992-05-03,Sun,Long-term Krat Exclosure,Perognathus,flavus,Rodent
+19978,5,3,1992,3,SO,F,27,105,1992-05-03,Sun,Long-term Krat Exclosure,Sigmodon,ochrognathus,Rodent
 19979,5,3,1992,9,DM,M,33,25,1992-05-03,Sun,Spectab exclosure,Dipodomys,merriami,Rodent
 19980,5,3,1992,11,DM,M,36,47,1992-05-03,Sun,Control,Dipodomys,merriami,Rodent
 19981,5,3,1992,4,DM,M,37,52,1992-05-03,Sun,Control,Dipodomys,merriami,Rodent
@@ -16440,6 +16571,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 20042,5,30,1992,1,DO,F,34,52,1992-05-30,Sat,Spectab exclosure,Dipodomys,ordii,Rodent
 20043,5,30,1992,7,RM,F,16,17,1992-05-30,Sat,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 20044,5,30,1992,22,DM,M,35,29,1992-05-30,Sat,Control,Dipodomys,merriami,Rodent
+20047,5,31,1992,3,SO,M,26,54,1992-05-31,Sun,Long-term Krat Exclosure,Sigmodon,ochrognathus,Rodent
 20048,5,31,1992,13,PF,F,14,9,1992-05-31,Sun,Short-term Krat Exclosure,Perognathus,flavus,Rodent
 20049,5,31,1992,8,DO,F,36,50,1992-05-31,Sun,Control,Dipodomys,ordii,Rodent
 20050,5,31,1992,4,DM,F,38,47,1992-05-31,Sun,Control,Dipodomys,merriami,Rodent
@@ -16538,6 +16670,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 20153,7,4,1992,3,OT,M,20,16,1992-07-04,Sat,Long-term Krat Exclosure,Onychomys,torridus,Rodent
 20154,7,4,1992,4,DM,F,37,38,1992-07-04,Sat,Control,Dipodomys,merriami,Rodent
 20155,7,4,1992,9,DM,F,33,42,1992-07-04,Sat,Spectab exclosure,Dipodomys,merriami,Rodent
+20156,7,4,1992,13,SO,F,18,74,1992-07-04,Sat,Short-term Krat Exclosure,Sigmodon,ochrognathus,Rodent
 20157,7,4,1992,8,DM,M,37,48,1992-07-04,Sat,Control,Dipodomys,merriami,Rodent
 20158,7,4,1992,15,PP,M,23,16,1992-07-04,Sat,Long-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 20159,7,4,1992,13,OL,F,19,36,1992-07-04,Sat,Short-term Krat Exclosure,Onychomys,leucogaster,Rodent
@@ -16552,6 +16685,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 20170,7,30,1992,19,PP,M,22,23,1992-07-30,Thu,Long-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 20171,7,30,1992,19,PF,M,15,10,1992-07-30,Thu,Long-term Krat Exclosure,Perognathus,flavus,Rodent
 20172,7,30,1992,17,PP,F,21,19,1992-07-30,Thu,Control,Chaetodipus,penicillatus,Rodent
+20173,7,30,1992,20,SO,F,25,41,1992-07-30,Thu,Short-term Krat Exclosure,Sigmodon,ochrognathus,Rodent
 20174,7,30,1992,7,PP,F,21,19,1992-07-30,Thu,Rodent Exclosure,Chaetodipus,penicillatus,Rodent
 20175,7,30,1992,1,DM,F,35,46,1992-07-30,Thu,Spectab exclosure,Dipodomys,merriami,Rodent
 20176,7,30,1992,12,PP,F,21,17,1992-07-30,Thu,Control,Chaetodipus,penicillatus,Rodent
@@ -16612,6 +16746,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 20237,7,31,1992,11,DM,F,37,29,1992-07-31,Fri,Control,Dipodomys,merriami,Rodent
 20238,7,31,1992,14,DM,F,34,55,1992-07-31,Fri,Control,Dipodomys,merriami,Rodent
 20239,7,31,1992,6,RM,M,17,13,1992-07-31,Fri,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
+20242,8,29,1992,24,SO,F,25,79,1992-08-29,Sat,Rodent Exclosure,Sigmodon,ochrognathus,Rodent
 20243,8,29,1992,2,PP,M,20,19,1992-08-29,Sat,Control,Chaetodipus,penicillatus,Rodent
 20244,8,29,1992,18,PF,F,16,9,1992-08-29,Sat,Short-term Krat Exclosure,Perognathus,flavus,Rodent
 20245,8,29,1992,21,PF,M,14,10,1992-08-29,Sat,Long-term Krat Exclosure,Perognathus,flavus,Rodent
@@ -16636,6 +16771,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 20264,8,29,1992,12,PP,F,20,18,1992-08-29,Sat,Control,Chaetodipus,penicillatus,Rodent
 20265,8,29,1992,17,DO,M,34,55,1992-08-29,Sat,Control,Dipodomys,ordii,Rodent
 20266,8,29,1992,18,PP,F,21,21,1992-08-29,Sat,Short-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
+20267,8,29,1992,2,SO,F,25,15,1992-08-29,Sat,Control,Sigmodon,ochrognathus,Rodent
 20268,8,29,1992,21,PP,F,24,18,1992-08-29,Sat,Long-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 20269,8,29,1992,2,DO,F,34,42,1992-08-29,Sat,Control,Dipodomys,ordii,Rodent
 20270,8,29,1992,20,PP,M,22,17,1992-08-29,Sat,Short-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
@@ -16733,6 +16869,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 20386,9,27,1992,16,RM,F,16,14,1992-09-27,Sun,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 20387,9,27,1992,10,RM,F,17,12,1992-09-27,Sun,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 20388,9,27,1992,3,OT,M,17,24,1992-09-27,Sun,Long-term Krat Exclosure,Onychomys,torridus,Rodent
+20389,9,27,1992,11,SO,F,25,72,1992-09-27,Sun,Control,Sigmodon,ochrognathus,Rodent
 20390,9,27,1992,14,DM,M,35,40,1992-09-27,Sun,Control,Dipodomys,merriami,Rodent
 20391,9,27,1992,6,RM,M,17,11,1992-09-27,Sun,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 20392,9,27,1992,14,DS,M,49,120,1992-09-27,Sun,Control,Dipodomys,spectabilis,Rodent
@@ -16764,6 +16901,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 20428,10,18,1992,23,RM,M,16,11,1992-10-18,Sun,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 20429,10,18,1992,21,PF,M,16,9,1992-10-18,Sun,Long-term Krat Exclosure,Perognathus,flavus,Rodent
 20430,10,18,1992,7,RM,M,17,13,1992-10-18,Sun,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
+20433,10,18,1992,24,SO,M,21,44,1992-10-18,Sun,Rodent Exclosure,Sigmodon,ochrognathus,Rodent
 20434,10,18,1992,19,PF,M,16,8,1992-10-18,Sun,Long-term Krat Exclosure,Perognathus,flavus,Rodent
 20436,10,18,1992,17,DM,M,36,44,1992-10-18,Sun,Control,Dipodomys,merriami,Rodent
 20437,10,18,1992,12,NL,M,31,158,1992-10-18,Sun,Control,Neotoma,albigula,Rodent
@@ -16970,6 +17108,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 20685,2,26,1993,9,DM,F,34,47,1993-02-26,Fri,Spectab exclosure,Dipodomys,merriami,Rodent
 20686,2,26,1993,5,OT,F,20,25,1993-02-26,Fri,Rodent Exclosure,Onychomys,torridus,Rodent
 20687,2,26,1993,6,RM,F,16,12,1993-02-26,Fri,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
+20688,2,26,1993,3,SF,F,26,61,1993-02-26,Fri,Long-term Krat Exclosure,Sigmodon,fulviventer,Rodent
 20689,2,26,1993,13,RM,M,15,10,1993-02-26,Fri,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 20691,3,17,1993,1,DM,M,34,45,1993-03-17,Wed,Spectab exclosure,Dipodomys,merriami,Rodent
 20692,3,17,1993,20,RM,M,15,10,1993-03-17,Wed,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
@@ -17085,6 +17224,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 20814,4,24,1993,4,DM,M,37,50,1993-04-24,Sat,Control,Dipodomys,merriami,Rodent
 20815,4,24,1993,4,PP,F,22,16,1993-04-24,Sat,Control,Chaetodipus,penicillatus,Rodent
 20816,4,24,1993,14,DM,F,34,33,1993-04-24,Sat,Control,Dipodomys,merriami,Rodent
+20817,4,24,1993,3,SO,F,35,48,1993-04-24,Sat,Long-term Krat Exclosure,Sigmodon,ochrognathus,Rodent
 20818,4,24,1993,13,PP,M,22,20,1993-04-24,Sat,Short-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 20819,4,24,1993,3,PP,F,25,18,1993-04-24,Sat,Long-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 20820,4,24,1993,4,DM,F,32,46,1993-04-24,Sat,Control,Dipodomys,merriami,Rodent
@@ -17126,6 +17266,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 20866,5,23,1993,11,OT,F,21,27,1993-05-23,Sun,Control,Onychomys,torridus,Rodent
 20867,5,23,1993,3,PP,M,26,22,1993-05-23,Sun,Long-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 20868,5,23,1993,13,OL,F,21,38,1993-05-23,Sun,Short-term Krat Exclosure,Onychomys,leucogaster,Rodent
+20869,5,23,1993,3,SO,M,26,76,1993-05-23,Sun,Long-term Krat Exclosure,Sigmodon,ochrognathus,Rodent
 20870,5,23,1993,8,DO,F,37,49,1993-05-23,Sun,Control,Dipodomys,ordii,Rodent
 20871,5,23,1993,14,DM,M,36,44,1993-05-23,Sun,Control,Dipodomys,merriami,Rodent
 20872,5,23,1993,13,OL,M,20,31,1993-05-23,Sun,Short-term Krat Exclosure,Onychomys,leucogaster,Rodent
@@ -17150,6 +17291,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 20897,6,18,1993,21,PF,M,14,7,1993-06-18,Fri,Long-term Krat Exclosure,Perognathus,flavus,Rodent
 20899,6,18,1993,24,PE,F,20,21,1993-06-18,Fri,Rodent Exclosure,Peromyscus,eremicus,Rodent
 20901,6,18,1993,17,DM,M,37,51,1993-06-18,Fri,Control,Dipodomys,merriami,Rodent
+20902,6,18,1993,18,SF,M,22,24,1993-06-18,Fri,Short-term Krat Exclosure,Sigmodon,fulviventer,Rodent
 20904,6,18,1993,24,RM,M,17,11,1993-06-18,Fri,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 20905,6,18,1993,7,PP,M,22,18,1993-06-18,Fri,Rodent Exclosure,Chaetodipus,penicillatus,Rodent
 20906,6,18,1993,24,PE,M,20,22,1993-06-18,Fri,Rodent Exclosure,Peromyscus,eremicus,Rodent
@@ -17202,6 +17344,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 20957,6,19,1993,6,PP,F,21,21,1993-06-19,Sat,Short-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 20958,6,19,1993,9,OL,F,19,25,1993-06-19,Sat,Spectab exclosure,Onychomys,leucogaster,Rodent
 20959,6,19,1993,8,OL,F,20,29,1993-06-19,Sat,Control,Onychomys,leucogaster,Rodent
+20960,6,19,1993,6,SO,M,26,35,1993-06-19,Sat,Short-term Krat Exclosure,Sigmodon,ochrognathus,Rodent
 20962,6,19,1993,11,DM,M,38,51,1993-06-19,Sat,Control,Dipodomys,merriami,Rodent
 20966,7,14,1993,21,PF,F,17,8,1993-07-14,Wed,Long-term Krat Exclosure,Perognathus,flavus,Rodent
 20967,7,14,1993,23,RM,M,16,10,1993-07-14,Wed,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
@@ -17228,6 +17371,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 20988,7,14,1993,19,PP,M,21,19,1993-07-14,Wed,Long-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 20989,7,14,1993,7,PP,F,21,15,1993-07-14,Wed,Rodent Exclosure,Chaetodipus,penicillatus,Rodent
 20990,7,14,1993,17,RM,M,16,9,1993-07-14,Wed,Control,Reithrodontomys,megalotis,Rodent
+20991,7,14,1993,18,SF,M,25,47,1993-07-14,Wed,Short-term Krat Exclosure,Sigmodon,fulviventer,Rodent
 20992,7,14,1993,2,NL,M,32,78,1993-07-14,Wed,Control,Neotoma,albigula,Rodent
 20993,7,14,1993,21,PF,M,16,6,1993-07-14,Wed,Long-term Krat Exclosure,Perognathus,flavus,Rodent
 20995,7,14,1993,12,DM,M,36,26,1993-07-14,Wed,Control,Dipodomys,merriami,Rodent
@@ -17240,6 +17384,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 21003,7,15,1993,9,DM,M,36,47,1993-07-15,Thu,Spectab exclosure,Dipodomys,merriami,Rodent
 21004,7,15,1993,3,PP,F,21,18,1993-07-15,Thu,Long-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 21005,7,15,1993,11,DM,F,37,60,1993-07-15,Thu,Control,Dipodomys,merriami,Rodent
+21006,7,15,1993,3,SO,F,15,49,1993-07-15,Thu,Long-term Krat Exclosure,Sigmodon,ochrognathus,Rodent
 21007,7,15,1993,6,PP,M,21,17,1993-07-15,Thu,Short-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 21009,7,15,1993,9,DM,F,34,19,1993-07-15,Thu,Spectab exclosure,Dipodomys,merriami,Rodent
 21010,7,15,1993,13,OL,M,19,37,1993-07-15,Thu,Short-term Krat Exclosure,Onychomys,leucogaster,Rodent
@@ -17419,6 +17564,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 21223,11,13,1993,2,DM,M,36,49,1993-11-13,Sat,Control,Dipodomys,merriami,Rodent
 21224,11,13,1993,19,RM,M,17,13,1993-11-13,Sat,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 21225,11,13,1993,19,PF,F,14,9,1993-11-13,Sat,Long-term Krat Exclosure,Perognathus,flavus,Rodent
+21226,11,13,1993,2,SO,F,25,70,1993-11-13,Sat,Control,Sigmodon,ochrognathus,Rodent
 21227,11,13,1993,12,DM,M,36,42,1993-11-13,Sat,Control,Dipodomys,merriami,Rodent
 21228,11,13,1993,1,DM,F,36,43,1993-11-13,Sat,Spectab exclosure,Dipodomys,merriami,Rodent
 21229,11,13,1993,24,RM,M,17,12,1993-11-13,Sat,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
@@ -17524,6 +17670,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 21356,2,2,1994,8,DM,M,37,47,1994-02-02,Wed,Control,Dipodomys,merriami,Rodent
 21357,2,2,1994,5,OT,M,20,22,1994-02-02,Wed,Rodent Exclosure,Onychomys,torridus,Rodent
 21359,2,2,1994,5,OL,M,20,17,1994-02-02,Wed,Rodent Exclosure,Onychomys,leucogaster,Rodent
+21360,2,2,1994,3,SO,F,36,44,1994-02-02,Wed,Long-term Krat Exclosure,Sigmodon,ochrognathus,Rodent
 21363,2,2,1994,3,RM,M,17,7,1994-02-02,Wed,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 21364,2,3,1994,15,PF,F,16,8,1994-02-03,Thu,Long-term Krat Exclosure,Perognathus,flavus,Rodent
 21365,2,3,1994,13,OT,M,20,26,1994-02-03,Thu,Short-term Krat Exclosure,Onychomys,torridus,Rodent
@@ -17690,6 +17837,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 21552,4,11,1994,11,DM,M,32,43,1994-04-11,Mon,Control,Dipodomys,merriami,Rodent
 21553,4,11,1994,10,RM,F,16,10,1994-04-11,Mon,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 21555,5,18,1994,2,DM,M,36,44,1994-05-18,Wed,Control,Dipodomys,merriami,Rodent
+21557,5,18,1994,24,SO,M,28,86,1994-05-18,Wed,Rodent Exclosure,Sigmodon,ochrognathus,Rodent
 21559,5,18,1994,19,PF,M,16,8,1994-05-18,Wed,Long-term Krat Exclosure,Perognathus,flavus,Rodent
 21560,5,18,1994,2,DM,M,36,51,1994-05-18,Wed,Control,Dipodomys,merriami,Rodent
 21561,5,18,1994,19,PF,M,16,6,1994-05-18,Wed,Long-term Krat Exclosure,Perognathus,flavus,Rodent
@@ -18277,6 +18425,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 22282,4,30,1995,16,RM,F,17,18,1995-04-30,Sun,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 22283,4,30,1995,9,DM,M,35,44,1995-04-30,Sun,Spectab exclosure,Dipodomys,merriami,Rodent
 22284,4,30,1995,11,DM,M,36,48,1995-04-30,Sun,Control,Dipodomys,merriami,Rodent
+22285,4,30,1995,9,RX,M,20,20,1995-04-30,Sun,Spectab exclosure,Reithrodontomys,sp.,Rodent
 22286,4,30,1995,11,DM,M,37,43,1995-04-30,Sun,Control,Dipodomys,merriami,Rodent
 22288,4,30,1995,14,DM,F,35,35,1995-04-30,Sun,Control,Dipodomys,merriami,Rodent
 22289,4,30,1995,6,PF,M,16,9,1995-04-30,Sun,Short-term Krat Exclosure,Perognathus,flavus,Rodent
@@ -18407,6 +18556,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 22440,7,20,1995,2,PP,F,19,15,1995-07-20,Thu,Control,Chaetodipus,penicillatus,Rodent
 22441,7,20,1995,2,PP,F,19,17,1995-07-20,Thu,Control,Chaetodipus,penicillatus,Rodent
 22442,7,20,1995,17,DM,F,32,45,1995-07-20,Thu,Control,Dipodomys,merriami,Rodent
+22443,7,20,1995,1,PH,M,26,42,1995-07-20,Thu,Spectab exclosure,Perognathus,hispidus,Rodent
 22444,7,20,1995,2,DM,F,31,37,1995-07-20,Thu,Control,Dipodomys,merriami,Rodent
 22445,7,20,1995,12,PP,F,21,11,1995-07-20,Thu,Control,Chaetodipus,penicillatus,Rodent
 22446,7,20,1995,2,PP,M,21,19,1995-07-20,Thu,Control,Chaetodipus,penicillatus,Rodent
@@ -18417,6 +18567,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 22451,7,20,1995,7,RM,F,15,9,1995-07-20,Thu,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 22452,7,20,1995,1,DO,M,34,31,1995-07-20,Thu,Spectab exclosure,Dipodomys,ordii,Rodent
 22453,7,20,1995,1,PP,M,22,22,1995-07-20,Thu,Spectab exclosure,Chaetodipus,penicillatus,Rodent
+22454,7,20,1995,1,PH,F,23,29,1995-07-20,Thu,Spectab exclosure,Perognathus,hispidus,Rodent
 22455,7,20,1995,22,DM,M,37,50,1995-07-20,Thu,Control,Dipodomys,merriami,Rodent
 22456,7,20,1995,12,DM,F,35,43,1995-07-20,Thu,Control,Dipodomys,merriami,Rodent
 22457,7,20,1995,18,PP,F,22,22,1995-07-20,Thu,Short-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
@@ -18620,6 +18771,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 22675,9,23,1995,19,PP,F,22,15,1995-09-23,Sat,Long-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 22676,9,23,1995,17,PF,F,15,7,1995-09-23,Sat,Control,Perognathus,flavus,Rodent
 22677,9,23,1995,12,PP,M,20,17,1995-09-23,Sat,Control,Chaetodipus,penicillatus,Rodent
+22678,9,23,1995,1,PH,F,25,35,1995-09-23,Sat,Spectab exclosure,Perognathus,hispidus,Rodent
 22679,9,23,1995,22,PF,F,14,9,1995-09-23,Sat,Control,Perognathus,flavus,Rodent
 22680,9,23,1995,19,PP,F,21,15,1995-09-23,Sat,Long-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 22681,9,23,1995,18,RM,M,15,10,1995-09-23,Sat,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
@@ -19045,6 +19197,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 23131,12,21,1995,22,DM,F,37,45,1995-12-21,Thu,Control,Dipodomys,merriami,Rodent
 23132,12,21,1995,1,PB,F,27,30,1995-12-21,Thu,Spectab exclosure,Chaetodipus,baileyi,Rodent
 23134,12,21,1995,22,DM,M,38,57,1995-12-21,Thu,Control,Dipodomys,merriami,Rodent
+23135,12,21,1995,24,PL,F,20,21,1995-12-21,Thu,Rodent Exclosure,Peromyscus,leucopus,Rodent
 23136,12,21,1995,2,DM,M,33,27,1995-12-21,Thu,Control,Dipodomys,merriami,Rodent
 23137,12,21,1995,17,OT,F,22,27,1995-12-21,Thu,Control,Onychomys,torridus,Rodent
 23138,12,21,1995,21,RM,M,17,12,1995-12-21,Thu,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
@@ -19056,6 +19209,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 23144,12,21,1995,2,DM,F,36,42,1995-12-21,Thu,Control,Dipodomys,merriami,Rodent
 23145,12,21,1995,12,PF,F,15,6,1995-12-21,Thu,Control,Perognathus,flavus,Rodent
 23146,12,21,1995,2,PM,M,21,23,1995-12-21,Thu,Control,Peromyscus,maniculatus,Rodent
+23147,12,21,1995,24,PL,M,20,21,1995-12-21,Thu,Rodent Exclosure,Peromyscus,leucopus,Rodent
 23148,12,21,1995,17,PF,M,16,8,1995-12-21,Thu,Control,Perognathus,flavus,Rodent
 23149,12,21,1995,21,PF,F,14,10,1995-12-21,Thu,Long-term Krat Exclosure,Perognathus,flavus,Rodent
 23150,12,21,1995,1,DO,M,36,54,1995-12-21,Thu,Spectab exclosure,Dipodomys,ordii,Rodent
@@ -19113,6 +19267,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 23216,1,27,1996,1,DM,M,36,27,1996-01-27,Sat,Spectab exclosure,Dipodomys,merriami,Rodent
 23217,1,27,1996,17,DM,M,36,25,1996-01-27,Sat,Control,Dipodomys,merriami,Rodent
 23218,1,27,1996,17,DM,M,37,25,1996-01-27,Sat,Control,Dipodomys,merriami,Rodent
+23219,1,27,1996,24,PL,F,20,21,1996-01-27,Sat,Rodent Exclosure,Peromyscus,leucopus,Rodent
 23220,1,27,1996,2,DM,F,36,47,1996-01-27,Sat,Control,Dipodomys,merriami,Rodent
 23221,1,27,1996,18,PF,F,16,9,1996-01-27,Sat,Short-term Krat Exclosure,Perognathus,flavus,Rodent
 23222,1,27,1996,1,DM,M,34,27,1996-01-27,Sat,Spectab exclosure,Dipodomys,merriami,Rodent
@@ -19146,6 +19301,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 23251,1,27,1996,17,PF,M,17,10,1996-01-27,Sat,Control,Perognathus,flavus,Rodent
 23252,1,27,1996,12,DM,F,35,40,1996-01-27,Sat,Control,Dipodomys,merriami,Rodent
 23253,1,27,1996,17,DM,M,36,58,1996-01-27,Sat,Control,Dipodomys,merriami,Rodent
+23254,1,27,1996,23,PL,F,20,24,1996-01-27,Sat,Rodent Exclosure,Peromyscus,leucopus,Rodent
 23255,1,27,1996,1,DO,F,35,53,1996-01-27,Sat,Spectab exclosure,Dipodomys,ordii,Rodent
 23256,1,27,1996,7,RM,M,12,17,1996-01-27,Sat,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 23257,1,27,1996,2,DM,M,36,50,1996-01-27,Sat,Control,Dipodomys,merriami,Rodent
@@ -19228,6 +19384,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 23337,1,28,1996,15,DM,M,38,51,1996-01-28,Sun,Long-term Krat Exclosure,Dipodomys,merriami,Rodent
 23338,1,28,1996,9,DM,M,38,43,1996-01-28,Sun,Spectab exclosure,Dipodomys,merriami,Rodent
 23339,1,28,1996,15,DM,F,37,43,1996-01-28,Sun,Long-term Krat Exclosure,Dipodomys,merriami,Rodent
+23340,1,28,1996,10,PL,F,19,20,1996-01-28,Sun,Rodent Exclosure,Peromyscus,leucopus,Rodent
 23341,2,24,1996,2,DM,F,38,55,1996-02-24,Sat,Control,Dipodomys,merriami,Rodent
 23342,2,24,1996,12,DM,F,35,45,1996-02-24,Sat,Control,Dipodomys,merriami,Rodent
 23343,2,24,1996,21,PF,M,16,10,1996-02-24,Sat,Long-term Krat Exclosure,Perognathus,flavus,Rodent
@@ -19448,6 +19605,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 23569,3,23,1996,12,RM,M,16,11,1996-03-23,Sat,Control,Reithrodontomys,megalotis,Rodent
 23570,3,23,1996,19,PM,M,21,23,1996-03-23,Sat,Long-term Krat Exclosure,Peromyscus,maniculatus,Rodent
 23571,3,23,1996,21,PF,M,16,8,1996-03-23,Sat,Long-term Krat Exclosure,Perognathus,flavus,Rodent
+23572,3,23,1996,23,PL,M,20,19,1996-03-23,Sat,Rodent Exclosure,Peromyscus,leucopus,Rodent
 23573,3,23,1996,1,OT,M,21,25,1996-03-23,Sat,Spectab exclosure,Onychomys,torridus,Rodent
 23574,3,23,1996,22,DM,M,36,53,1996-03-23,Sat,Control,Dipodomys,merriami,Rodent
 23575,3,23,1996,12,DM,M,37,49,1996-03-23,Sat,Control,Dipodomys,merriami,Rodent
@@ -19567,6 +19725,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 23696,4,14,1996,20,RM,M,17,11,1996-04-14,Sun,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 23697,4,14,1996,7,PP,F,21,21,1996-04-14,Sun,Rodent Exclosure,Chaetodipus,penicillatus,Rodent
 23698,4,14,1996,12,DM,M,37,44,1996-04-14,Sun,Control,Dipodomys,merriami,Rodent
+23699,4,14,1996,23,PL,M,21,20,1996-04-14,Sun,Rodent Exclosure,Peromyscus,leucopus,Rodent
 23700,4,14,1996,12,RM,M,18,12,1996-04-14,Sun,Control,Reithrodontomys,megalotis,Rodent
 23702,4,14,1996,21,PF,M,15,8,1996-04-14,Sun,Long-term Krat Exclosure,Perognathus,flavus,Rodent
 23703,4,14,1996,2,DM,F,36,49,1996-04-14,Sun,Control,Dipodomys,merriami,Rodent
@@ -20386,6 +20545,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 24579,10,12,1996,2,PB,M,26,26,1996-10-12,Sat,Control,Chaetodipus,baileyi,Rodent
 24580,10,12,1996,12,PF,F,16,7,1996-10-12,Sat,Control,Perognathus,flavus,Rodent
 24581,10,12,1996,12,DM,F,37,45,1996-10-12,Sat,Control,Dipodomys,merriami,Rodent
+24582,10,12,1996,24,PL,F,19,23,1996-10-12,Sat,Rodent Exclosure,Peromyscus,leucopus,Rodent
 24583,10,12,1996,17,DM,M,38,43,1996-10-12,Sat,Control,Dipodomys,merriami,Rodent
 24584,10,12,1996,22,PB,M,27,35,1996-10-12,Sat,Control,Chaetodipus,baileyi,Rodent
 24585,10,12,1996,17,PF,M,16,8,1996-10-12,Sat,Control,Perognathus,flavus,Rodent
@@ -20750,6 +20910,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 24955,2,8,1997,2,PM,M,20,23,1997-02-08,Sat,Control,Peromyscus,maniculatus,Rodent
 24956,2,8,1997,12,DM,M,36,36,1997-02-08,Sat,Control,Dipodomys,merriami,Rodent
 24957,2,8,1997,17,DM,M,38,48,1997-02-08,Sat,Control,Dipodomys,merriami,Rodent
+24959,2,8,1997,24,PL,M,21,21,1997-02-08,Sat,Rodent Exclosure,Peromyscus,leucopus,Rodent
 24960,2,8,1997,2,PM,F,20,30,1997-02-08,Sat,Control,Peromyscus,maniculatus,Rodent
 24961,2,8,1997,12,DM,M,36,42,1997-02-08,Sat,Control,Dipodomys,merriami,Rodent
 24962,2,8,1997,1,DO,M,34,45,1997-02-08,Sat,Spectab exclosure,Dipodomys,ordii,Rodent
@@ -20777,9 +20938,11 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 24984,2,8,1997,21,PF,F,15,9,1997-02-08,Sat,Long-term Krat Exclosure,Perognathus,flavus,Rodent
 24985,2,8,1997,21,PF,M,16,9,1997-02-08,Sat,Long-term Krat Exclosure,Perognathus,flavus,Rodent
 24986,2,8,1997,7,PM,F,20,26,1997-02-08,Sat,Rodent Exclosure,Peromyscus,maniculatus,Rodent
+24987,2,8,1997,24,PL,F,21,27,1997-02-08,Sat,Rodent Exclosure,Peromyscus,leucopus,Rodent
 24988,2,8,1997,1,OT,M,20,29,1997-02-08,Sat,Spectab exclosure,Onychomys,torridus,Rodent
 24989,2,8,1997,17,DM,M,38,49,1997-02-08,Sat,Control,Dipodomys,merriami,Rodent
 24990,2,8,1997,22,PB,M,28,42,1997-02-08,Sat,Control,Chaetodipus,baileyi,Rodent
+24991,2,8,1997,23,PX,F,19,20,1997-02-08,Sat,Rodent Exclosure,Chaetodipus,sp.,Rodent
 24992,2,8,1997,2,PE,M,20,22,1997-02-08,Sat,Control,Peromyscus,eremicus,Rodent
 24993,2,8,1997,12,DM,M,36,51,1997-02-08,Sat,Control,Dipodomys,merriami,Rodent
 24994,2,8,1997,12,DM,F,36,52,1997-02-08,Sat,Control,Dipodomys,merriami,Rodent
@@ -20845,6 +21008,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 25056,2,9,1997,6,RM,M,17,10,1997-02-09,Sun,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 25057,2,9,1997,11,OT,M,21,23,1997-02-09,Sun,Control,Onychomys,torridus,Rodent
 25058,2,9,1997,8,OT,F,20,23,1997-02-09,Sun,Control,Onychomys,torridus,Rodent
+25059,2,9,1997,10,PL,M,20,21,1997-02-09,Sun,Rodent Exclosure,Peromyscus,leucopus,Rodent
 25060,2,9,1997,4,DM,M,36,48,1997-02-09,Sun,Control,Dipodomys,merriami,Rodent
 25061,2,9,1997,14,DM,M,34,39,1997-02-09,Sun,Control,Dipodomys,merriami,Rodent
 25062,2,9,1997,16,RM,F,16,8,1997-02-09,Sun,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
@@ -20879,6 +21043,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 25091,2,9,1997,15,RM,F,16,10,1997-02-09,Sun,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 25092,2,9,1997,10,RM,F,17,11,1997-02-09,Sun,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 25093,2,9,1997,3,OT,F,21,24,1997-02-09,Sun,Long-term Krat Exclosure,Onychomys,torridus,Rodent
+25094,2,9,1997,9,PL,F,21,22,1997-02-09,Sun,Spectab exclosure,Peromyscus,leucopus,Rodent
 25095,2,9,1997,3,DM,M,35,47,1997-02-09,Sun,Long-term Krat Exclosure,Dipodomys,merriami,Rodent
 25096,2,9,1997,6,PF,M,16,8,1997-02-09,Sun,Short-term Krat Exclosure,Perognathus,flavus,Rodent
 25097,2,9,1997,11,DO,M,35,46,1997-02-09,Sun,Control,Dipodomys,ordii,Rodent
@@ -20906,6 +21071,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 25119,2,9,1997,9,DM,F,35,41,1997-02-09,Sun,Spectab exclosure,Dipodomys,merriami,Rodent
 25120,2,9,1997,13,PF,M,16,7,1997-02-09,Sun,Short-term Krat Exclosure,Perognathus,flavus,Rodent
 25121,2,9,1997,16,DM,M,34,47,1997-02-09,Sun,Rodent Exclosure,Dipodomys,merriami,Rodent
+25122,2,9,1997,5,RX,M,17,11,1997-02-09,Sun,Rodent Exclosure,Reithrodontomys,sp.,Rodent
 25123,2,9,1997,4,DM,M,40,48,1997-02-09,Sun,Control,Dipodomys,merriami,Rodent
 25124,2,9,1997,6,PM,M,21,22,1997-02-09,Sun,Short-term Krat Exclosure,Peromyscus,maniculatus,Rodent
 25125,2,9,1997,11,PF,M,15,7,1997-02-09,Sun,Control,Perognathus,flavus,Rodent
@@ -20917,8 +21083,10 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 25131,2,9,1997,4,DM,M,36,47,1997-02-09,Sun,Control,Dipodomys,merriami,Rodent
 25132,2,9,1997,11,DM,M,37,47,1997-02-09,Sun,Control,Dipodomys,merriami,Rodent
 25133,2,9,1997,9,DM,F,36,43,1997-02-09,Sun,Spectab exclosure,Dipodomys,merriami,Rodent
+25134,2,9,1997,14,PL,M,21,23,1997-02-09,Sun,Control,Peromyscus,leucopus,Rodent
 25135,2,9,1997,11,DM,F,38,41,1997-02-09,Sun,Control,Dipodomys,merriami,Rodent
 25136,2,9,1997,8,DO,M,36,51,1997-02-09,Sun,Control,Dipodomys,ordii,Rodent
+25137,2,9,1997,13,PX,M,20,18,1997-02-09,Sun,Short-term Krat Exclosure,Chaetodipus,sp.,Rodent
 25138,2,9,1997,13,OT,F,20,20,1997-02-09,Sun,Short-term Krat Exclosure,Onychomys,torridus,Rodent
 25139,2,9,1997,15,PF,F,16,7,1997-02-09,Sun,Long-term Krat Exclosure,Perognathus,flavus,Rodent
 25140,2,9,1997,16,DM,F,36,36,1997-02-09,Sun,Rodent Exclosure,Dipodomys,merriami,Rodent
@@ -21473,6 +21641,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 25700,5,10,1997,1,PB,F,25,42,1997-05-10,Sat,Spectab exclosure,Chaetodipus,baileyi,Rodent
 25701,5,10,1997,2,NL,F,32,144,1997-05-10,Sat,Control,Neotoma,albigula,Rodent
 25702,5,10,1997,12,DM,M,39,48,1997-05-10,Sat,Control,Dipodomys,merriami,Rodent
+25703,5,10,1997,18,SO,F,27,43,1997-05-10,Sat,Short-term Krat Exclosure,Sigmodon,ochrognathus,Rodent
 25704,5,10,1997,18,PF,F,16,8,1997-05-10,Sat,Short-term Krat Exclosure,Perognathus,flavus,Rodent
 25705,5,10,1997,17,OT,F,20,20,1997-05-10,Sat,Control,Onychomys,torridus,Rodent
 25706,5,10,1997,24,PM,F,21,26,1997-05-10,Sat,Rodent Exclosure,Peromyscus,maniculatus,Rodent
@@ -21555,6 +21724,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 25787,5,10,1997,1,OT,F,20,20,1997-05-10,Sat,Spectab exclosure,Onychomys,torridus,Rodent
 25788,5,10,1997,2,PM,F,20,13,1997-05-10,Sat,Control,Peromyscus,maniculatus,Rodent
 25789,5,10,1997,1,DO,F,34,50,1997-05-10,Sat,Spectab exclosure,Dipodomys,ordii,Rodent
+25790,5,10,1997,2,SO,F,28,100,1997-05-10,Sat,Control,Sigmodon,ochrognathus,Rodent
 25791,5,10,1997,12,NL,F,30,63,1997-05-10,Sat,Control,Neotoma,albigula,Rodent
 25792,5,10,1997,17,DM,M,36,42,1997-05-10,Sat,Control,Dipodomys,merriami,Rodent
 25793,5,10,1997,20,PF,F,15,9,1997-05-10,Sat,Short-term Krat Exclosure,Perognathus,flavus,Rodent
@@ -21575,6 +21745,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 25808,5,10,1997,18,PP,F,23,23,1997-05-10,Sat,Short-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 25809,5,10,1997,21,PP,F,24,24,1997-05-10,Sat,Long-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 25810,5,10,1997,24,PM,F,19,22,1997-05-10,Sat,Rodent Exclosure,Peromyscus,maniculatus,Rodent
+25811,5,10,1997,18,PH,M,23,22,1997-05-10,Sat,Short-term Krat Exclosure,Perognathus,hispidus,Rodent
 25812,5,10,1997,20,PP,M,23,13,1997-05-10,Sat,Short-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 25813,5,10,1997,2,DO,M,34,47,1997-05-10,Sat,Control,Dipodomys,ordii,Rodent
 25814,5,10,1997,18,RM,M,17,8,1997-05-10,Sat,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
@@ -21583,6 +21754,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 25817,5,10,1997,21,PF,F,15,7,1997-05-10,Sat,Long-term Krat Exclosure,Perognathus,flavus,Rodent
 25818,5,10,1997,22,PB,M,28,28,1997-05-10,Sat,Control,Chaetodipus,baileyi,Rodent
 25819,5,10,1997,24,RM,M,16,11,1997-05-10,Sat,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
+25820,5,10,1997,2,SO,F,22,21,1997-05-10,Sat,Control,Sigmodon,ochrognathus,Rodent
 25821,5,10,1997,19,PM,F,21,25,1997-05-10,Sat,Long-term Krat Exclosure,Peromyscus,maniculatus,Rodent
 25822,5,10,1997,18,PM,F,19,28,1997-05-10,Sat,Short-term Krat Exclosure,Peromyscus,maniculatus,Rodent
 25823,5,10,1997,20,PF,M,15,9,1997-05-10,Sat,Short-term Krat Exclosure,Perognathus,flavus,Rodent
@@ -22088,6 +22260,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 26347,7,9,1997,8,DO,M,34,38,1997-07-09,Wed,Control,Dipodomys,ordii,Rodent
 26348,7,9,1997,7,PM,F,20,27,1997-07-09,Wed,Rodent Exclosure,Peromyscus,maniculatus,Rodent
 26349,7,9,1997,19,PF,F,16,8,1997-07-09,Wed,Long-term Krat Exclosure,Perognathus,flavus,Rodent
+26350,7,9,1997,24,PL,F,21,16,1997-07-09,Wed,Rodent Exclosure,Peromyscus,leucopus,Rodent
 26351,7,9,1997,2,PB,M,27,37,1997-07-09,Wed,Control,Chaetodipus,baileyi,Rodent
 26352,7,9,1997,19,PB,M,26,39,1997-07-09,Wed,Long-term Krat Exclosure,Chaetodipus,baileyi,Rodent
 26353,7,9,1997,5,OT,M,20,26,1997-07-09,Wed,Rodent Exclosure,Onychomys,torridus,Rodent
@@ -22155,9 +22328,11 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 26417,7,9,1997,21,PP,F,23,20,1997-07-09,Wed,Long-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 26418,7,9,1997,3,PB,F,27,30,1997-07-09,Wed,Long-term Krat Exclosure,Chaetodipus,baileyi,Rodent
 26419,7,9,1997,4,DM,M,37,48,1997-07-09,Wed,Control,Dipodomys,merriami,Rodent
+26420,7,9,1997,19,PL,M,18,10,1997-07-09,Wed,Long-term Krat Exclosure,Peromyscus,leucopus,Rodent
 26421,7,9,1997,11,PM,M,20,15,1997-07-09,Wed,Control,Peromyscus,maniculatus,Rodent
 26422,7,9,1997,9,DM,M,36,47,1997-07-09,Wed,Spectab exclosure,Dipodomys,merriami,Rodent
 26423,7,9,1997,3,PB,M,27,30,1997-07-09,Wed,Long-term Krat Exclosure,Chaetodipus,baileyi,Rodent
+26424,7,9,1997,16,PL,F,22,18,1997-07-09,Wed,Rodent Exclosure,Peromyscus,leucopus,Rodent
 26425,7,9,1997,11,PB,M,26,30,1997-07-09,Wed,Control,Chaetodipus,baileyi,Rodent
 26426,7,9,1997,8,PP,F,21,15,1997-07-09,Wed,Control,Chaetodipus,penicillatus,Rodent
 26427,7,9,1997,6,OT,F,20,26,1997-07-09,Wed,Short-term Krat Exclosure,Onychomys,torridus,Rodent
@@ -22283,6 +22458,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 26554,7,29,1997,17,NL,F,32,138,1997-07-29,Tue,Control,Neotoma,albigula,Rodent
 26555,7,29,1997,22,PB,F,26,27,1997-07-29,Tue,Control,Chaetodipus,baileyi,Rodent
 26556,7,29,1997,1,DM,F,36,32,1997-07-29,Tue,Spectab exclosure,Dipodomys,merriami,Rodent
+26557,7,29,1997,7,PL,F,20,22,1997-07-29,Tue,Rodent Exclosure,Peromyscus,leucopus,Rodent
 26558,7,29,1997,12,PP,F,22,21,1997-07-29,Tue,Control,Chaetodipus,penicillatus,Rodent
 26559,7,29,1997,21,PB,M,27,26,1997-07-29,Tue,Long-term Krat Exclosure,Chaetodipus,baileyi,Rodent
 26560,7,29,1997,22,DM,M,37,51,1997-07-29,Tue,Control,Dipodomys,merriami,Rodent
@@ -22418,6 +22594,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 26698,7,30,1997,15,PM,F,20,17,1997-07-30,Wed,Long-term Krat Exclosure,Peromyscus,maniculatus,Rodent
 26699,7,30,1997,8,PP,F,20,14,1997-07-30,Wed,Control,Chaetodipus,penicillatus,Rodent
 26700,7,30,1997,15,PF,F,15,10,1997-07-30,Wed,Long-term Krat Exclosure,Perognathus,flavus,Rodent
+26701,7,30,1997,3,PL,M,21,19,1997-07-30,Wed,Long-term Krat Exclosure,Peromyscus,leucopus,Rodent
 26702,7,30,1997,6,DO,F,33,50,1997-07-30,Wed,Short-term Krat Exclosure,Dipodomys,ordii,Rodent
 26703,7,30,1997,9,DM,M,35,49,1997-07-30,Wed,Spectab exclosure,Dipodomys,merriami,Rodent
 26704,7,30,1997,8,PP,M,20,14,1997-07-30,Wed,Control,Chaetodipus,penicillatus,Rodent
@@ -22495,6 +22672,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 26784,9,27,1997,18,PM,F,20,22,1997-09-27,Sat,Short-term Krat Exclosure,Peromyscus,maniculatus,Rodent
 26785,9,27,1997,20,RM,M,16,10,1997-09-27,Sat,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 26786,9,27,1997,22,DM,M,36,55,1997-09-27,Sat,Control,Dipodomys,merriami,Rodent
+26787,9,27,1997,7,PL,F,21,16,1997-09-27,Sat,Rodent Exclosure,Peromyscus,leucopus,Rodent
 26788,9,27,1997,1,PP,F,21,15,1997-09-27,Sat,Spectab exclosure,Chaetodipus,penicillatus,Rodent
 26789,9,27,1997,2,PP,F,21,16,1997-09-27,Sat,Control,Chaetodipus,penicillatus,Rodent
 26790,9,27,1997,17,DM,M,36,48,1997-09-27,Sat,Control,Dipodomys,merriami,Rodent
@@ -22593,6 +22771,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 26886,9,28,1997,9,DO,M,34,52,1997-09-28,Sun,Spectab exclosure,Dipodomys,ordii,Rodent
 26887,9,28,1997,4,DM,M,35,50,1997-09-28,Sun,Control,Dipodomys,merriami,Rodent
 26888,9,28,1997,14,OT,M,21,21,1997-09-28,Sun,Control,Onychomys,torridus,Rodent
+26889,9,28,1997,16,PL,F,21,10,1997-09-28,Sun,Rodent Exclosure,Peromyscus,leucopus,Rodent
 26890,9,28,1997,4,DM,F,37,44,1997-09-28,Sun,Control,Dipodomys,merriami,Rodent
 26891,9,28,1997,3,PB,F,27,31,1997-09-28,Sun,Long-term Krat Exclosure,Chaetodipus,baileyi,Rodent
 26892,9,28,1997,13,PB,F,26,29,1997-09-28,Sun,Short-term Krat Exclosure,Chaetodipus,baileyi,Rodent
@@ -22624,6 +22803,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 26918,9,28,1997,14,DM,M,33,42,1997-09-28,Sun,Control,Dipodomys,merriami,Rodent
 26919,9,28,1997,3,DO,M,36,46,1997-09-28,Sun,Long-term Krat Exclosure,Dipodomys,ordii,Rodent
 26920,9,28,1997,4,OT,F,19,24,1997-09-28,Sun,Control,Onychomys,torridus,Rodent
+26921,9,28,1997,5,PL,M,22,20,1997-09-28,Sun,Rodent Exclosure,Peromyscus,leucopus,Rodent
 26922,9,28,1997,8,DM,M,35,44,1997-09-28,Sun,Control,Dipodomys,merriami,Rodent
 26923,9,28,1997,4,DM,M,36,51,1997-09-28,Sun,Control,Dipodomys,merriami,Rodent
 26924,9,28,1997,13,PM,F,17,26,1997-09-28,Sun,Short-term Krat Exclosure,Peromyscus,maniculatus,Rodent
@@ -22633,8 +22813,10 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 26928,9,28,1997,3,DO,M,36,46,1997-09-28,Sun,Long-term Krat Exclosure,Dipodomys,ordii,Rodent
 26929,9,28,1997,8,DO,M,34,45,1997-09-28,Sun,Control,Dipodomys,ordii,Rodent
 26930,9,28,1997,14,DM,M,36,48,1997-09-28,Sun,Control,Dipodomys,merriami,Rodent
+26931,9,28,1997,10,PL,F,10,19,1997-09-28,Sun,Rodent Exclosure,Peromyscus,leucopus,Rodent
 26932,9,28,1997,4,DM,M,37,48,1997-09-28,Sun,Control,Dipodomys,merriami,Rodent
 26933,9,28,1997,6,DO,M,37,51,1997-09-28,Sun,Short-term Krat Exclosure,Dipodomys,ordii,Rodent
+26934,9,28,1997,10,PL,M,21,22,1997-09-28,Sun,Rodent Exclosure,Peromyscus,leucopus,Rodent
 26935,9,28,1997,13,PB,F,26,29,1997-09-28,Sun,Short-term Krat Exclosure,Chaetodipus,baileyi,Rodent
 26936,9,28,1997,8,PP,F,21,11,1997-09-28,Sun,Control,Chaetodipus,penicillatus,Rodent
 26937,9,28,1997,14,PM,F,20,21,1997-09-28,Sun,Control,Peromyscus,maniculatus,Rodent
@@ -22665,6 +22847,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 26963,10,25,1997,7,PM,F,21,23,1997-10-25,Sat,Rodent Exclosure,Peromyscus,maniculatus,Rodent
 26964,10,25,1997,21,PM,M,20,26,1997-10-25,Sat,Long-term Krat Exclosure,Peromyscus,maniculatus,Rodent
 26965,10,25,1997,24,PM,F,20,28,1997-10-25,Sat,Rodent Exclosure,Peromyscus,maniculatus,Rodent
+26966,10,25,1997,7,PL,M,20,16,1997-10-25,Sat,Rodent Exclosure,Peromyscus,leucopus,Rodent
 26967,10,25,1997,7,PM,M,22,22,1997-10-25,Sat,Rodent Exclosure,Peromyscus,maniculatus,Rodent
 26968,10,25,1997,19,PB,M,27,37,1997-10-25,Sat,Long-term Krat Exclosure,Chaetodipus,baileyi,Rodent
 26969,10,25,1997,20,PM,M,21,23,1997-10-25,Sat,Short-term Krat Exclosure,Peromyscus,maniculatus,Rodent
@@ -22874,6 +23057,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 27182,11,22,1997,19,PB,F,26,28,1997-11-22,Sat,Long-term Krat Exclosure,Chaetodipus,baileyi,Rodent
 27183,11,22,1997,24,PM,F,20,30,1997-11-22,Sat,Rodent Exclosure,Peromyscus,maniculatus,Rodent
 27184,11,22,1997,21,PB,M,26,27,1997-11-22,Sat,Long-term Krat Exclosure,Chaetodipus,baileyi,Rodent
+27185,11,22,1997,7,PL,F,21,22,1997-11-22,Sat,Rodent Exclosure,Peromyscus,leucopus,Rodent
 27186,11,22,1997,4,DM,M,36,51,1997-11-22,Sat,Control,Dipodomys,merriami,Rodent
 27187,11,22,1997,9,DM,M,36,44,1997-11-22,Sat,Spectab exclosure,Dipodomys,merriami,Rodent
 27188,11,22,1997,15,OT,F,20,22,1997-11-22,Sat,Long-term Krat Exclosure,Onychomys,torridus,Rodent
@@ -23066,12 +23250,14 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 27383,12,29,1997,15,OT,M,20,22,1997-12-29,Mon,Long-term Krat Exclosure,Onychomys,torridus,Rodent
 27384,12,29,1997,4,DM,M,36,40,1997-12-29,Mon,Control,Dipodomys,merriami,Rodent
 27385,12,29,1997,11,DM,F,34,44,1997-12-29,Mon,Control,Dipodomys,merriami,Rodent
+27386,12,29,1997,3,PL,M,20,17,1997-12-29,Mon,Long-term Krat Exclosure,Peromyscus,leucopus,Rodent
 27387,12,29,1997,9,DM,M,35,45,1997-12-29,Mon,Spectab exclosure,Dipodomys,merriami,Rodent
 27388,12,29,1997,9,DM,F,34,37,1997-12-29,Mon,Spectab exclosure,Dipodomys,merriami,Rodent
 27389,12,29,1997,8,DM,M,35,42,1997-12-29,Mon,Control,Dipodomys,merriami,Rodent
 27390,12,29,1997,13,OT,M,20,24,1997-12-29,Mon,Short-term Krat Exclosure,Onychomys,torridus,Rodent
 27391,12,29,1997,14,DM,F,35,46,1997-12-29,Mon,Control,Dipodomys,merriami,Rodent
 27392,12,29,1997,14,DM,M,36,45,1997-12-29,Mon,Control,Dipodomys,merriami,Rodent
+27393,12,29,1997,15,PL,M,19,16,1997-12-29,Mon,Long-term Krat Exclosure,Peromyscus,leucopus,Rodent
 27394,12,29,1997,6,OT,F,21,28,1997-12-29,Mon,Short-term Krat Exclosure,Onychomys,torridus,Rodent
 27395,12,29,1997,4,DM,F,35,44,1997-12-29,Mon,Control,Dipodomys,merriami,Rodent
 27396,12,29,1997,8,DM,F,36,36,1997-12-29,Mon,Control,Dipodomys,merriami,Rodent
@@ -23154,6 +23340,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 27478,2,1,1998,11,DM,F,35,40,1998-02-01,Sun,Control,Dipodomys,merriami,Rodent
 27479,2,1,1998,4,OT,F,20,23,1998-02-01,Sun,Control,Onychomys,torridus,Rodent
 27480,2,1,1998,8,DO,F,38,48,1998-02-01,Sun,Control,Dipodomys,ordii,Rodent
+27481,2,1,1998,15,PL,M,19,18,1998-02-01,Sun,Long-term Krat Exclosure,Peromyscus,leucopus,Rodent
 27482,2,1,1998,4,DM,M,39,44,1998-02-01,Sun,Control,Dipodomys,merriami,Rodent
 27483,2,1,1998,6,PB,F,26,33,1998-02-01,Sun,Short-term Krat Exclosure,Chaetodipus,baileyi,Rodent
 27484,2,1,1998,13,PB,M,28,36,1998-02-01,Sun,Short-term Krat Exclosure,Chaetodipus,baileyi,Rodent
@@ -23209,6 +23396,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 27535,2,1,1998,6,OT,M,20,23,1998-02-01,Sun,Short-term Krat Exclosure,Onychomys,torridus,Rodent
 27536,2,1,1998,8,DO,F,35,46,1998-02-01,Sun,Control,Dipodomys,ordii,Rodent
 27537,2,1,1998,13,PM,F,21,21,1998-02-01,Sun,Short-term Krat Exclosure,Peromyscus,maniculatus,Rodent
+27538,2,1,1998,10,PL,F,20,20,1998-02-01,Sun,Rodent Exclosure,Peromyscus,leucopus,Rodent
 27539,2,1,1998,14,DM,F,35,45,1998-02-01,Sun,Control,Dipodomys,merriami,Rodent
 27540,2,1,1998,8,DM,M,36,41,1998-02-01,Sun,Control,Dipodomys,merriami,Rodent
 27541,2,1,1998,3,DO,M,35,41,1998-02-01,Sun,Long-term Krat Exclosure,Dipodomys,ordii,Rodent
@@ -23317,6 +23505,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 27789,5,2,1998,22,PB,F,25,31,1998-05-02,Sat,Control,Chaetodipus,baileyi,Rodent
 27790,5,2,1998,18,PP,F,22,19,1998-05-02,Sat,Short-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 27791,5,2,1998,17,DM,M,37,47,1998-05-02,Sat,Control,Dipodomys,merriami,Rodent
+27792,5,2,1998,7,PL,F,20,8,1998-05-02,Sat,Rodent Exclosure,Peromyscus,leucopus,Rodent
 27793,5,2,1998,1,DO,M,36,30,1998-05-02,Sat,Spectab exclosure,Dipodomys,ordii,Rodent
 27794,5,2,1998,18,RM,F,18,14,1998-05-02,Sat,Short-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 27795,5,2,1998,17,PP,F,22,19,1998-05-02,Sat,Control,Chaetodipus,penicillatus,Rodent
@@ -23325,6 +23514,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 27798,5,2,1998,18,OT,M,20,29,1998-05-02,Sat,Short-term Krat Exclosure,Onychomys,torridus,Rodent
 27799,5,2,1998,24,PM,F,20,17,1998-05-02,Sat,Rodent Exclosure,Peromyscus,maniculatus,Rodent
 27800,5,2,1998,7,PP,M,22,20,1998-05-02,Sat,Rodent Exclosure,Chaetodipus,penicillatus,Rodent
+27801,5,3,1998,15,PL,M,21,22,1998-05-03,Sun,Long-term Krat Exclosure,Peromyscus,leucopus,Rodent
 27802,5,3,1998,11,DO,M,36,59,1998-05-03,Sun,Control,Dipodomys,ordii,Rodent
 27803,5,3,1998,8,DM,M,36,49,1998-05-03,Sun,Control,Dipodomys,merriami,Rodent
 27804,5,3,1998,15,PP,F,21,18,1998-05-03,Sun,Long-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
@@ -23418,6 +23608,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 27895,5,28,1998,12,DM,M,37,48,1998-05-28,Thu,Control,Dipodomys,merriami,Rodent
 27896,5,28,1998,2,DM,F,37,45,1998-05-28,Thu,Control,Dipodomys,merriami,Rodent
 27897,5,28,1998,2,NL,M,21,110,1998-05-28,Thu,Control,Neotoma,albigula,Rodent
+27898,5,28,1998,23,PL,M,20,20,1998-05-28,Thu,Rodent Exclosure,Peromyscus,leucopus,Rodent
 27899,5,28,1998,12,DM,F,33,48,1998-05-28,Thu,Control,Dipodomys,merriami,Rodent
 27900,5,28,1998,12,DM,F,34,22,1998-05-28,Thu,Control,Dipodomys,merriami,Rodent
 27901,5,28,1998,17,DM,M,39,43,1998-05-28,Thu,Control,Dipodomys,merriami,Rodent
@@ -23474,6 +23665,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 27953,5,29,1998,14,DM,M,36,51,1998-05-29,Fri,Control,Dipodomys,merriami,Rodent
 27954,5,29,1998,4,DM,M,35,29,1998-05-29,Fri,Control,Dipodomys,merriami,Rodent
 27955,5,29,1998,6,PB,M,27,35,1998-05-29,Fri,Short-term Krat Exclosure,Chaetodipus,baileyi,Rodent
+27957,5,29,1998,9,PL,M,21,16,1998-05-29,Fri,Spectab exclosure,Peromyscus,leucopus,Rodent
 27958,5,29,1998,16,PM,F,22,26,1998-05-29,Fri,Rodent Exclosure,Peromyscus,maniculatus,Rodent
 27960,5,29,1998,14,PP,F,21,16,1998-05-29,Fri,Control,Chaetodipus,penicillatus,Rodent
 27961,5,29,1998,9,DM,M,36,45,1998-05-29,Fri,Spectab exclosure,Dipodomys,merriami,Rodent
@@ -23489,6 +23681,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 27972,5,29,1998,4,DM,M,34,48,1998-05-29,Fri,Control,Dipodomys,merriami,Rodent
 27973,5,29,1998,11,DM,M,34,46,1998-05-29,Fri,Control,Dipodomys,merriami,Rodent
 27974,5,29,1998,14,DM,F,35,39,1998-05-29,Fri,Control,Dipodomys,merriami,Rodent
+27975,5,29,1998,10,PL,M,20,13,1998-05-29,Fri,Rodent Exclosure,Peromyscus,leucopus,Rodent
 27976,5,29,1998,3,PB,F,27,41,1998-05-29,Fri,Long-term Krat Exclosure,Chaetodipus,baileyi,Rodent
 27977,5,29,1998,8,DM,F,37,48,1998-05-29,Fri,Control,Dipodomys,merriami,Rodent
 27978,5,29,1998,6,OT,F,20,18,1998-05-29,Fri,Short-term Krat Exclosure,Onychomys,torridus,Rodent
@@ -25850,6 +26043,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 30495,3,4,2000,20,NL,F,35,160,2000-03-04,Sat,Short-term Krat Exclosure,Neotoma,albigula,Rodent
 30496,3,4,2000,20,NL,F,34,208,2000-03-04,Sat,Short-term Krat Exclosure,Neotoma,albigula,Rodent
 30497,3,4,2000,24,PP,F,22,16,2000-03-04,Sat,Rodent Exclosure,Chaetodipus,penicillatus,Rodent
+30499,3,4,2000,24,PL,M,20,21,2000-03-04,Sat,Rodent Exclosure,Peromyscus,leucopus,Rodent
 30501,3,5,2000,3,NL,F,32,171,2000-03-05,Sun,Long-term Krat Exclosure,Neotoma,albigula,Rodent
 30502,3,5,2000,3,PB,F,26,43,2000-03-05,Sun,Long-term Krat Exclosure,Chaetodipus,baileyi,Rodent
 30503,3,5,2000,3,PB,F,26,29,2000-03-05,Sun,Long-term Krat Exclosure,Chaetodipus,baileyi,Rodent
@@ -27844,6 +28038,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 32705,9,23,2001,3,PB,M,27,41,2001-09-23,Sun,Long-term Krat Exclosure,Chaetodipus,baileyi,Rodent
 32706,9,23,2001,3,PB,F,26,27,2001-09-23,Sun,Long-term Krat Exclosure,Chaetodipus,baileyi,Rodent
 32707,9,23,2001,3,OT,F,21,30,2001-09-23,Sun,Long-term Krat Exclosure,Onychomys,torridus,Rodent
+32708,9,23,2001,3,PI,M,23,17,2001-09-23,Sun,Long-term Krat Exclosure,Chaetodipus,intermedius,Rodent
 32709,9,23,2001,4,PP,M,22,14,2001-09-23,Sun,Control,Chaetodipus,penicillatus,Rodent
 32710,9,23,2001,4,PP,F,22,12,2001-09-23,Sun,Control,Chaetodipus,penicillatus,Rodent
 32711,9,23,2001,4,DO,F,37,57,2001-09-23,Sun,Control,Dipodomys,ordii,Rodent
@@ -28023,6 +28218,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 32901,10,14,2001,3,OT,M,21,25,2001-10-14,Sun,Long-term Krat Exclosure,Onychomys,torridus,Rodent
 32902,10,14,2001,3,PP,F,22,15,2001-10-14,Sun,Long-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 32903,10,14,2001,3,PB,M,27,49,2001-10-14,Sun,Long-term Krat Exclosure,Chaetodipus,baileyi,Rodent
+32904,10,14,2001,3,PI,M,23,19,2001-10-14,Sun,Long-term Krat Exclosure,Chaetodipus,intermedius,Rodent
 32905,10,14,2001,3,PB,M,26,35,2001-10-14,Sun,Long-term Krat Exclosure,Chaetodipus,baileyi,Rodent
 32906,10,14,2001,3,PB,M,28,42,2001-10-14,Sun,Long-term Krat Exclosure,Chaetodipus,baileyi,Rodent
 32907,10,14,2001,3,DO,F,35,55,2001-10-14,Sun,Long-term Krat Exclosure,Dipodomys,ordii,Rodent
@@ -28459,6 +28655,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 33380,1,12,2002,21,PB,F,27,28,2002-01-12,Sat,Long-term Krat Exclosure,Chaetodipus,baileyi,Rodent
 33381,1,12,2002,21,PB,M,27,37,2002-01-12,Sat,Long-term Krat Exclosure,Chaetodipus,baileyi,Rodent
 33382,1,12,2002,21,PB,F,25,29,2002-01-12,Sat,Long-term Krat Exclosure,Chaetodipus,baileyi,Rodent
+33397,2,9,2002,1,RO,M,17,8,2002-02-09,Sat,Spectab exclosure,Reithrodontomys,montanus,Rodent
 33398,2,9,2002,1,DO,F,35,35,2002-02-09,Sat,Spectab exclosure,Dipodomys,ordii,Rodent
 33399,2,9,2002,1,PB,M,28,48,2002-02-09,Sat,Spectab exclosure,Chaetodipus,baileyi,Rodent
 33400,2,9,2002,1,DO,M,37,60,2002-02-09,Sat,Spectab exclosure,Dipodomys,ordii,Rodent
@@ -28611,6 +28808,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 33551,2,10,2002,15,RM,F,17,7,2002-02-10,Sun,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 33554,2,10,2002,15,RM,F,17,10,2002-02-10,Sun,Long-term Krat Exclosure,Reithrodontomys,megalotis,Rodent
 33555,2,10,2002,15,PB,M,27,45,2002-02-10,Sun,Long-term Krat Exclosure,Chaetodipus,baileyi,Rodent
+33556,2,10,2002,5,RO,M,15,9,2002-02-10,Sun,Rodent Exclosure,Reithrodontomys,montanus,Rodent
 33557,2,10,2002,5,RM,F,17,9,2002-02-10,Sun,Rodent Exclosure,Reithrodontomys,megalotis,Rodent
 33558,2,10,2002,16,PB,F,26,25,2002-02-10,Sun,Rodent Exclosure,Chaetodipus,baileyi,Rodent
 33559,2,10,2002,16,DM,M,36,38,2002-02-10,Sun,Rodent Exclosure,Dipodomys,merriami,Rodent
@@ -28619,6 +28817,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 33562,2,10,2002,10,DO,F,35,50,2002-02-10,Sun,Rodent Exclosure,Dipodomys,ordii,Rodent
 33563,2,10,2002,10,DO,M,34,52,2002-02-10,Sun,Rodent Exclosure,Dipodomys,ordii,Rodent
 33564,2,10,2002,10,DO,M,38,51,2002-02-10,Sun,Rodent Exclosure,Dipodomys,ordii,Rodent
+33565,2,10,2002,10,RO,F,16,8,2002-02-10,Sun,Rodent Exclosure,Reithrodontomys,montanus,Rodent
 33566,2,10,2002,7,DM,M,35,42,2002-02-10,Sun,Rodent Exclosure,Dipodomys,merriami,Rodent
 33567,2,10,2002,7,DO,M,36,62,2002-02-10,Sun,Rodent Exclosure,Dipodomys,ordii,Rodent
 33568,2,10,2002,7,DO,F,37,55,2002-02-10,Sun,Rodent Exclosure,Dipodomys,ordii,Rodent
@@ -28810,6 +29009,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 33766,4,16,2002,12,DO,M,36,48,2002-04-16,Tue,Control,Dipodomys,ordii,Rodent
 33767,4,16,2002,12,DO,M,37,42,2002-04-16,Tue,Control,Dipodomys,ordii,Rodent
 33768,4,16,2002,12,PP,F,22,16,2002-04-16,Tue,Control,Chaetodipus,penicillatus,Rodent
+33769,4,16,2002,12,PI,M,22,18,2002-04-16,Tue,Control,Chaetodipus,intermedius,Rodent
 33770,4,16,2002,12,PP,F,22,17,2002-04-16,Tue,Control,Chaetodipus,penicillatus,Rodent
 33771,4,16,2002,12,DM,M,36,44,2002-04-16,Tue,Control,Dipodomys,merriami,Rodent
 33772,4,16,2002,12,PP,F,22,17,2002-04-16,Tue,Control,Chaetodipus,penicillatus,Rodent
@@ -29301,6 +29501,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 34292,6,16,2002,3,PP,F,22,11,2002-06-16,Sun,Long-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 34293,6,16,2002,3,PB,M,26,34,2002-06-16,Sun,Long-term Krat Exclosure,Chaetodipus,baileyi,Rodent
 34294,6,16,2002,3,PP,F,22,18,2002-06-16,Sun,Long-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
+34295,6,16,2002,3,PI,M,22,21,2002-06-16,Sun,Long-term Krat Exclosure,Chaetodipus,intermedius,Rodent
 34296,6,16,2002,3,PB,M,26,36,2002-06-16,Sun,Long-term Krat Exclosure,Chaetodipus,baileyi,Rodent
 34297,6,16,2002,3,DM,M,36,53,2002-06-16,Sun,Long-term Krat Exclosure,Dipodomys,merriami,Rodent
 34298,6,16,2002,3,PP,F,22,16,2002-06-16,Sun,Long-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
@@ -29440,6 +29641,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 34437,7,13,2002,12,DO,M,37,51,2002-07-13,Sat,Control,Dipodomys,ordii,Rodent
 34439,7,13,2002,12,PP,F,21,10,2002-07-13,Sat,Control,Chaetodipus,penicillatus,Rodent
 34440,7,13,2002,12,PP,F,22,18,2002-07-13,Sat,Control,Chaetodipus,penicillatus,Rodent
+34441,7,13,2002,12,PI,M,22,20,2002-07-13,Sat,Control,Chaetodipus,intermedius,Rodent
 34442,7,13,2002,12,NL,F,33,164,2002-07-13,Sat,Control,Neotoma,albigula,Rodent
 34443,7,13,2002,12,PP,F,22,21,2002-07-13,Sat,Control,Chaetodipus,penicillatus,Rodent
 34444,7,13,2002,12,PB,F,25,23,2002-07-13,Sat,Control,Chaetodipus,baileyi,Rodent
@@ -29511,6 +29713,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 34514,7,13,2002,22,PB,F,26,30,2002-07-13,Sat,Control,Chaetodipus,baileyi,Rodent
 34515,7,13,2002,22,PB,M,26,26,2002-07-13,Sat,Control,Chaetodipus,baileyi,Rodent
 34516,7,13,2002,22,PB,M,27,29,2002-07-13,Sat,Control,Chaetodipus,baileyi,Rodent
+34517,7,13,2002,23,RO,M,17,11,2002-07-13,Sat,Rodent Exclosure,Reithrodontomys,montanus,Rodent
 34518,7,13,2002,23,DM,F,36,48,2002-07-13,Sat,Rodent Exclosure,Dipodomys,merriami,Rodent
 34519,7,13,2002,23,PE,F,20,23,2002-07-13,Sat,Rodent Exclosure,Peromyscus,eremicus,Rodent
 34520,7,13,2002,7,OT,F,20,25,2002-07-13,Sat,Rodent Exclosure,Onychomys,torridus,Rodent
@@ -29541,6 +29744,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 34546,7,14,2002,3,PB,M,27,35,2002-07-14,Sun,Long-term Krat Exclosure,Chaetodipus,baileyi,Rodent
 34547,7,14,2002,3,PP,F,21,16,2002-07-14,Sun,Long-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 34548,7,14,2002,4,PB,M,28,30,2002-07-14,Sun,Control,Chaetodipus,baileyi,Rodent
+34549,7,14,2002,4,PI,M,23,20,2002-07-14,Sun,Control,Chaetodipus,intermedius,Rodent
 34550,7,14,2002,4,PB,M,25,25,2002-07-14,Sun,Control,Chaetodipus,baileyi,Rodent
 34551,7,14,2002,4,PP,F,24,20,2002-07-14,Sun,Control,Chaetodipus,penicillatus,Rodent
 34552,7,14,2002,4,DM,F,36,47,2002-07-14,Sun,Control,Dipodomys,merriami,Rodent
@@ -29657,6 +29861,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 34670,9,8,2002,1,DO,F,36,51,2002-09-08,Sun,Spectab exclosure,Dipodomys,ordii,Rodent
 34671,9,8,2002,1,PP,F,22,18,2002-09-08,Sun,Spectab exclosure,Chaetodipus,penicillatus,Rodent
 34672,9,8,2002,2,DM,F,37,45,2002-09-08,Sun,Control,Dipodomys,merriami,Rodent
+34674,9,8,2002,12,PI,M,22,21,2002-09-08,Sun,Control,Chaetodipus,intermedius,Rodent
 34675,9,8,2002,12,DO,F,37,57,2002-09-08,Sun,Control,Dipodomys,ordii,Rodent
 34676,9,8,2002,12,DM,F,36,60,2002-09-08,Sun,Control,Dipodomys,merriami,Rodent
 34677,9,8,2002,12,NL,F,32,210,2002-09-08,Sun,Control,Neotoma,albigula,Rodent
@@ -29987,6 +30192,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 35030,11,9,2002,12,DO,M,35,38,2002-11-09,Sat,Control,Dipodomys,ordii,Rodent
 35031,11,9,2002,12,OT,M,20,24,2002-11-09,Sat,Control,Onychomys,torridus,Rodent
 35032,11,9,2002,12,PB,M,27,51,2002-11-09,Sat,Control,Chaetodipus,baileyi,Rodent
+35033,11,9,2002,12,SF,M,27,92,2002-11-09,Sat,Control,Sigmodon,fulviventer,Rodent
 35034,11,9,2002,12,DM,F,35,51,2002-11-09,Sat,Control,Dipodomys,merriami,Rodent
 35035,11,9,2002,12,PB,F,27,31,2002-11-09,Sat,Control,Chaetodipus,baileyi,Rodent
 35036,11,9,2002,12,NL,F,36,188,2002-11-09,Sat,Control,Neotoma,albigula,Rodent
@@ -30276,6 +30482,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 35331,12,8,2002,11,PB,M,26,32,2002-12-08,Sun,Control,Chaetodipus,baileyi,Rodent
 35332,12,8,2002,11,PP,M,23,17,2002-12-08,Sun,Control,Chaetodipus,penicillatus,Rodent
 35333,12,8,2002,11,PB,F,25,26,2002-12-08,Sun,Control,Chaetodipus,baileyi,Rodent
+35334,12,8,2002,11,SF,F,27,82,2002-12-08,Sun,Control,Sigmodon,fulviventer,Rodent
 35335,12,8,2002,11,DO,F,32,59,2002-12-08,Sun,Control,Dipodomys,ordii,Rodent
 35336,12,8,2002,9,PB,F,26,30,2002-12-08,Sun,Spectab exclosure,Chaetodipus,baileyi,Rodent
 35337,12,8,2002,9,OT,M,20,25,2002-12-08,Sun,Spectab exclosure,Onychomys,torridus,Rodent
@@ -30339,6 +30546,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 35399,12,29,2002,2,PB,F,27,29,2002-12-29,Sun,Control,Chaetodipus,baileyi,Rodent
 35400,12,29,2002,2,PB,M,26,36,2002-12-29,Sun,Control,Chaetodipus,baileyi,Rodent
 35401,12,29,2002,2,PP,M,21,14,2002-12-29,Sun,Control,Chaetodipus,penicillatus,Rodent
+35402,12,29,2002,2,RO,F,15,12,2002-12-29,Sun,Control,Reithrodontomys,montanus,Rodent
 35403,12,29,2002,2,PB,M,27,39,2002-12-29,Sun,Control,Chaetodipus,baileyi,Rodent
 35405,12,29,2002,2,PB,F,26,26,2002-12-29,Sun,Control,Chaetodipus,baileyi,Rodent
 35406,12,29,2002,2,PB,M,26,44,2002-12-29,Sun,Control,Chaetodipus,baileyi,Rodent
@@ -30352,8 +30560,10 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 35414,12,29,2002,12,DO,M,37,51,2002-12-29,Sun,Control,Dipodomys,ordii,Rodent
 35415,12,29,2002,12,NL,F,33,200,2002-12-29,Sun,Control,Neotoma,albigula,Rodent
 35416,12,29,2002,19,PB,F,26,26,2002-12-29,Sun,Long-term Krat Exclosure,Chaetodipus,baileyi,Rodent
+35417,12,29,2002,19,SF,M,25,45,2002-12-29,Sun,Long-term Krat Exclosure,Sigmodon,fulviventer,Rodent
 35418,12,29,2002,19,PP,M,20,15,2002-12-29,Sun,Long-term Krat Exclosure,Chaetodipus,penicillatus,Rodent
 35419,12,29,2002,19,PB,F,26,35,2002-12-29,Sun,Long-term Krat Exclosure,Chaetodipus,baileyi,Rodent
+35420,12,29,2002,19,RO,M,15,10,2002-12-29,Sun,Long-term Krat Exclosure,Reithrodontomys,montanus,Rodent
 35421,12,29,2002,19,PB,M,27,35,2002-12-29,Sun,Long-term Krat Exclosure,Chaetodipus,baileyi,Rodent
 35422,12,29,2002,19,PB,F,26,33,2002-12-29,Sun,Long-term Krat Exclosure,Chaetodipus,baileyi,Rodent
 35423,12,29,2002,19,PB,F,27,26,2002-12-29,Sun,Long-term Krat Exclosure,Chaetodipus,baileyi,Rodent
@@ -30405,6 +30615,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 35472,12,29,2002,22,PB,M,26,39,2002-12-29,Sun,Control,Chaetodipus,baileyi,Rodent
 35473,12,29,2002,22,PB,M,27,39,2002-12-29,Sun,Control,Chaetodipus,baileyi,Rodent
 35474,12,29,2002,22,OL,M,20,26,2002-12-29,Sun,Control,Onychomys,leucogaster,Rodent
+35475,12,29,2002,22,SF,M,25,50,2002-12-29,Sun,Control,Sigmodon,fulviventer,Rodent
 35476,12,29,2002,22,PB,M,27,36,2002-12-29,Sun,Control,Chaetodipus,baileyi,Rodent
 35477,12,29,2002,22,PB,F,24,30,2002-12-29,Sun,Control,Chaetodipus,baileyi,Rodent
 35479,12,29,2002,24,NL,M,32,224,2002-12-29,Sun,Rodent Exclosure,Neotoma,albigula,Rodent
@@ -30414,6 +30625,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 35483,12,29,2002,16,DO,M,36,61,2002-12-29,Sun,Rodent Exclosure,Dipodomys,ordii,Rodent
 35484,12,29,2002,16,OT,M,17,26,2002-12-29,Sun,Rodent Exclosure,Onychomys,torridus,Rodent
 35485,12,29,2002,16,DO,F,33,46,2002-12-29,Sun,Rodent Exclosure,Dipodomys,ordii,Rodent
+35487,12,29,2002,23,RO,F,14,13,2002-12-29,Sun,Rodent Exclosure,Reithrodontomys,montanus,Rodent
 35488,12,29,2002,23,PE,F,19,23,2002-12-29,Sun,Rodent Exclosure,Peromyscus,eremicus,Rodent
 35489,12,29,2002,23,PB,F,25,24,2002-12-29,Sun,Rodent Exclosure,Chaetodipus,baileyi,Rodent
 35490,12,31,2002,3,PE,F,19,19,2002-12-31,Tue,Long-term Krat Exclosure,Peromyscus,eremicus,Rodent
@@ -30456,6 +30668,7 @@ record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight,date,day_
 35536,12,31,2002,14,DM,F,35,42,2002-12-31,Tue,Control,Dipodomys,merriami,Rodent
 35537,12,31,2002,14,DM,F,36,46,2002-12-31,Tue,Control,Dipodomys,merriami,Rodent
 35538,12,31,2002,15,PB,F,26,31,2002-12-31,Tue,Long-term Krat Exclosure,Chaetodipus,baileyi,Rodent
+35539,12,31,2002,15,SF,M,26,68,2002-12-31,Tue,Long-term Krat Exclosure,Sigmodon,fulviventer,Rodent
 35540,12,31,2002,15,PB,F,26,23,2002-12-31,Tue,Long-term Krat Exclosure,Chaetodipus,baileyi,Rodent
 35541,12,31,2002,15,PB,F,24,31,2002-12-31,Tue,Long-term Krat Exclosure,Chaetodipus,baileyi,Rodent
 35542,12,31,2002,15,PB,F,26,29,2002-12-31,Tue,Long-term Krat Exclosure,Chaetodipus,baileyi,Rodent

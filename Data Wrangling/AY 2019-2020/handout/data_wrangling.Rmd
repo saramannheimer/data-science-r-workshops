@@ -1,7 +1,9 @@
 ---
-title: "Manipulating, analyzing and exporting data with the tidyverse"
-author: "Data Carpentry contributors & Allison Theobold"
-output: pdf_document
+title: "Wrangling, reorganizing, summarizing, and exporting data with the `tidyverse`"
+author: "Data Carpentry"
+output:
+  html_document:
+    df_print: paged
 ---
 
 > ## Learning Objectives
@@ -15,24 +17,26 @@ output: pdf_document
 > * Use `summarize`, `group_by`, and `count` to split a data frame into groups of observations, apply summary statistics for each group, and then combine the results.
 > * Describe the concept of a wide and a long table format and for which purpose those formats are useful.
 > * Describe what key-value pairs are.
-> * Reshape a data frame from long to wide format and back with the `spread` and `gather` commands from the **`tidyr`** package.
+> * Reshape a data frame from long to wide format and back with the `pivot_wider()` and `pivot_longer()`
+> commands from the **`tidyr`** package.
 > * Export a data frame to a .csv file.
 
 ------------
 
 # Data Manipulation using **`dplyr`** and **`tidyr`**
 
-Bracket subsetting is handy, but it can be cumbersome and difficult to read,
-especially for complicated operations. Enter **`dplyr`**. **`dplyr`** is a 
-package for making tabular data manipulation easier. It pairs nicely with 
-**`tidyr`** which enables you to swiftly convert between different data formats
-for plotting and analysis.
+<!-- Bracket subsetting is handy, but it can be cumbersome and difficult to read, -->
+<!-- especially for complicated operations. Enter **`dplyr`**.  -->
 
-Packages in R are basically sets of additional functions that let you do more
+**`dplyr`** is a package for making tabular data manipulation easier. It pairs 
+nicely with **`tidyr`** which enables you to swiftly convert between different 
+data formats for plotting and analysis.
+
+Packages in `R` are basically sets of additional functions that let you do more
 stuff. The functions we've been using so far, like `str()` or `data.frame()`,
-come built into R; packages give you access to more of them. Before you use a
+come built into `R`; packages give you access to more of them. Before you use a
 package for the first time you need to install it on your machine, and then you
-should import it in every subsequent R session when you need it. You should
+should import it in every subsequent `R` session when you need it. You should
 already have installed the **`tidyverse`** package. This is an
 "umbrella-package" that installs several packages useful for data analysis which
 work together well such as **`tidyr`**, **`dplyr`**, **`ggplot2`**, 
@@ -65,7 +69,7 @@ Then, to load the package type:
 
 \vspace{0.5cm}
 
-```{r, message = FALSE, purl = FALSE}
+```{r, message = FALSE}
 ## load the tidyverse packages -- including dplyr, tidyr, readr, stringr
 library(tidyverse)
 ```
@@ -82,17 +86,17 @@ external database. The benefits of doing this are that the data can be managed
 natively in a relational database, queries can be conducted on that database, 
 and only the results of the query are returned.
 
-This addresses a common problem with R in that all operations are conducted
+This addresses a common problem with `R` in that all operations are conducted
 in-memory and thus the amount of data you can work with is limited by available
 memory. The database connections essentially remove that limitation in that you
-can connect to a database of many hundreds of GB, conduct queries on it directly,
-and pull back into R only what you need for analysis.
+can connect to a database of many hundreds of GB, conduct queries on it 
+directly, and pull back into `R` only what you need for analysis.
 
 The package **`tidyr`** addresses the common problem of wanting to reshape your 
-data for plotting and use by different R functions. Sometimes we want data sets 
-where we have one row per measurement. Sometimes we want a data frame where each
-measurement type has its own column, and rows are instead more aggregated groups
-- like plots or aquaria. Moving back and forth between these formats is 
+data for plotting and use by different `R` functions. Sometimes we want data 
+sets where we have one row per measurement. Sometimes we want a data frame where
+each measurement type has its own column, and rows are instead more aggregated 
+groups--like plots or aquaria. Moving back and forth between these formats is 
 nontrivial, and **`tidyr`** gives you tools for this and more sophisticated data
 manipulation.
 
@@ -116,7 +120,7 @@ surveys <- read_csv("../data/surveys.csv")
 You will see the message `Parsed with column specification`, followed by each 
 column name and its data type. When you execute `read_csv` on a data file, it 
 looks through the first 1000 rows of each column and guesses the data type for 
-each column as it reads it into R. For example, in this dataset, `read_csv` 
+each column as it reads it into `R`. For example, in this dataset, `read_csv` 
 reads `weight` as `col_double` (a numeric data type), and `species` as 
 `col_character`. You have the option to specify the data type for a column 
 manually by using the `col_types` argument in `read_csv`.
@@ -126,12 +130,12 @@ manually by using the `col_types` argument in `read_csv`.
 
 ```{r, results = 'hide', purl = FALSE}
 ## inspect the data
-str(surveys)
+glimpse(surveys)
 ```
 
 \vspace{0.5cm}
 
-```{r, eval = FALSE, purl = FALSE}
+```{r, eval = FALSE}
 ## preview the data
 View(surveys)
 ```
@@ -191,11 +195,13 @@ To choose rows based on a specific criteria, use `filter()`:
 
 \vspace{0.5cm}
 
-```{r, purl = FALSE, eval = FALSE}
+```{r, eval = FALSE}
 filter(surveys, year == 1995)
 ```
 
 \vspace{0.5cm}
+
+ADDITIONAL INFORMATION ON FILTERING SHOULD GO HERE!
 
 ## Pipes
 
@@ -207,7 +213,7 @@ that as input to the next function, like this:
 
 \vspace{0.5cm}
 
-```{r, purl = FALSE, eval = FALSE}
+```{r, eval = FALSE}
 surveys2 <- filter(surveys, weight < 5)
 surveys_sml <- select(surveys2, species_id, sex, weight)
 ```
@@ -221,19 +227,19 @@ like this:
 
 \vspace{0.5cm}
 
-```{r, purl = FALSE, eval = FALSE}
+```{r, eval = FALSE}
 surveys_sml <- select(filter(surveys, weight < 5), species_id, sex, weight)
 ```
 
 \vspace{0.5cm}
 
 This is handy, but can be difficult to read if too many functions are nested, as
-R evaluates the expression from the inside out (in this case, filtering, then 
+`R` evaluates the expression from the inside out (in this case, filtering, then 
 selecting).
 
-The last option, *pipes*, are a recent addition to R. Pipes let you take
+The last option, *pipes*, are a recent addition to `R`. Pipes let you take
 the output of one function and send it directly to the next, which is useful
-when you need to do many things to the same dataset.  Pipes in R look like
+when you need to do many things to the same dataset.  Pipes in `R` look like
 `%>%` and are made available via the **`magrittr`** package, installed 
 automatically with **`dplyr`**. If you use RStudio, you can type the pipe with
 <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>M</kbd> if you have a PC or 
@@ -241,7 +247,7 @@ automatically with **`dplyr`**. If you use RStudio, you can type the pipe with
 
 \vspace{0.5cm}
 
-```{r, purl = FALSE, eval = FALSE}
+```{r, eval = FALSE}
 surveys %>%
   filter(weight < 5) %>%
   select(species_id, sex, weight)
@@ -268,7 +274,7 @@ can assign it a new name:
 
 \vspace{0.5cm}
 
-```{r, purl = FALSE, eval = FALSE}
+```{r, eval = FALSE}
 surveys_sml <- surveys %>%
   filter(weight < 5) %>%
   select(species_id, sex, weight)
@@ -305,7 +311,7 @@ To create a new column of weight in kg:
 
 \vspace{0.5cm}
 
-```{r, purl = FALSE, eval = FALSE}
+```{r, eval = FALSE}
 surveys %>%
   mutate(weight_kg = weight / 1000)
 ```
@@ -317,7 +323,7 @@ same call of `mutate()`:
 
 \vspace{0.5cm}
 
-```{r, purl = FALSE, eval = FALSE}
+```{r, eval = FALSE}
 surveys %>%
   mutate(weight_kg = weight / 1000,
          weight_lb = weight_kg * 2.2)
@@ -331,7 +337,7 @@ functions, too, as long as the **`dplyr`** or `magrittr` package is loaded).
 
 \vspace{0.5cm}
 
-```{r, purl = FALSE, eval = FALSE}
+```{r, eval = FALSE}
 surveys %>%
   mutate(weight_kg = weight / 1000) %>%
   head()
@@ -344,7 +350,7 @@ those we could insert a `filter()` in the chain:
 
 \vspace{0.5cm}
 
-```{r, purl = FALSE, eval = FALSE}
+```{r, eval = FALSE}
 surveys %>%
   filter(!is.na(weight)) %>%
   mutate(weight_kg = weight / 1000) %>%
@@ -367,7 +373,8 @@ an `NA`.
 >  In this `hindfoot_cm` column, there are no `NA`s and all values are less
 >  than 3.
 >
->  **Hint**: think about how the commands should be ordered to produce this data frame!
+>  **Hint**: think about how the commands should be ordered to produce this data
+>  frame!
 > 
 
 \vspace{0.5cm}
@@ -414,14 +421,18 @@ surveys <- surveys %>%
 ## case_when() allows for you to vectorize multiple ifelse() statements! 
 
 surveys %>% 
-  mutate(weekend = case_when(day_of_week == "Sat" | 
-                               day_of_week == "Sun" ~ "Weekend", 
+  mutate(weekend = case_when(day_of_week == "Sat" ~ "Weekend",
+                             day_of_week == "Sun" ~ "Weekend", 
                              TRUE ~ "Weekday"
                              )
          ) %>% 
   select(day_of_week, weekend) %>% 
   head()
 
+# Could have collapsed Saturday and Sunday into a single comparison using OR
+# This would look like: 
+# case_when(day_of_week == "Sat" ~ "Weekend" | day_of_week == "Sun" ~ "Weekend")
+# The | stands for "OR" in the logical statement!
 
 ```
 
@@ -444,7 +455,7 @@ to calculate the summary statistics. So to compute the mean `weight` by sex:
 
 \vspace{0.5cm}
 
-```{r, purl = FALSE, eval = FALSE}
+```{r, eval = FALSE}
 surveys %>%
   group_by(sex) %>%
   summarize(mean_weight = mean(weight, na.rm = TRUE))
@@ -459,7 +470,7 @@ You can also group by multiple columns:
 
 \vspace{0.5cm}
 
-```{r, purl = FALSE, eval = FALSE}
+```{r, eval = FALSE}
 surveys %>%
   group_by(sex, species_id) %>%
   summarize(mean_weight = mean(weight, na.rm = TRUE))
@@ -476,7 +487,7 @@ values are removed first, we can omit `na.rm = TRUE` when computing the mean:
 
 \vspace{0.5cm}
 
-```{r, purl = FALSE, eval = FALSE}
+```{r, eval = FALSE}
 surveys %>%
   filter(!is.na(weight)) %>%
   group_by(sex, species_id) %>%
@@ -492,7 +503,7 @@ display:
 
 \vspace{0.5cm}
 
-```{r, purl = FALSE, eval = FALSE}
+```{r, eval = FALSE}
 surveys %>%
   filter(!is.na(weight)) %>%
   group_by(sex, species_id) %>%
@@ -508,7 +519,7 @@ column indicating the minimum weight for each species for each sex:
 
 \vspace{0.5cm}
 
-```{r, purl = FALSE, eval = FALSE}
+```{r, eval = FALSE}
 surveys %>%
   filter(!is.na(weight)) %>%
   group_by(sex, species_id) %>%
@@ -523,7 +534,7 @@ For instance, we can sort on `min_weight` to put the lighter species first:
 
 \vspace{0.5cm}
 
-```{r, purl = FALSE, eval = FALSE}
+```{r, eval = FALSE}
 surveys %>%
   filter(!is.na(weight)) %>%
   group_by(sex, species_id) %>%
@@ -539,7 +550,7 @@ sort the results by decreasing order of mean weight:
 
 \vspace{0.5cm}
 
-```{r, purl = FALSE, eval = FALSE}
+```{r, eval = FALSE}
 surveys %>%
   filter(!is.na(weight)) %>%
   group_by(sex, species_id) %>%
@@ -559,7 +570,7 @@ each sex, we would do:
 
 \vspace{0.5cm}
 
-```{r, purl = FALSE, eval = FALSE}
+```{r, eval = FALSE}
 surveys %>%
     count(sex) 
 ```
@@ -572,7 +583,7 @@ group. In other words, `surveys %>% count()` is equivalent to:
 
 \vspace{0.5cm}
 
-```{r, purl = FALSE, eval = FALSE}
+```{r, eval = FALSE}
 surveys %>%
     group_by(sex) %>%
     summarise(count = n())
@@ -584,7 +595,7 @@ For convenience, `count()` provides the `sort` argument:
 
 \vspace{0.5cm}
 
-```{r, purl = FALSE, eval = FALSE}
+```{r, eval = FALSE}
 surveys %>%
     count(sex, sort = TRUE) 
 ```
@@ -773,7 +784,7 @@ glimpse(combined)
 
 \pagebreak 
 
-# Reshaping with `gather()` and `spread()`
+# Reshaping with `pivot_longer()` and `pivot_wider()`
 
 In the [spreadsheet
 lesson](https://datacarpentry.org/spreadsheet-ecology-lesson/01-format-data/),
@@ -807,21 +818,21 @@ average genus weight per plot instead of recordings per date.
 The opposite transformation would be to transform column names into values of
 a variable.
 
-We can do both these of transformations with two `tidyr` functions, `spread()`
-and `gather()`.
+We can do both these of transformations with two `tidyr` functions, 
+`pivot_longer()` and `pivot_wider()`.
 
-## Spreading
+## Pivoting to a Wider Table
 
-`spread()` takes three principal arguments:
+`pivot_wider()` takes three principal arguments:
 
 1. the data 
-2. the *key* column variable whose values will become new column names.  
-3. the *value* column variable whose values will fill the new column variables.
+2. the column whose values will become new column names.  
+3. the column whose values will fill the new columns.
 
 Further arguments include `fill` which, if set, fills in missing values with 
 the value provided.
 
-Let's use `spread()` to transform surveys to find the mean weight of each 
+Let's use `pivot_wider()` to transform surveys to find the mean weight of each 
 genus in each plot over the entire survey period. We use `filter()`,
 `group_by()` and `summarise()` to filter our observations and variables of 
 interest, and create a new variable for the `mean_weight`. We use the pipe as 
@@ -829,51 +840,39 @@ before too.
 
 \vspace{0.5cm}
 
-```{r, purl = FALSE, results = 'hide'}
+```{r, results = 'hide'}
 surveys_gw <- combined %>%
   filter(!is.na(weight)) %>%
   group_by(plot_id, genus) %>%
   summarize(mean_weight = mean(weight))
 
-str(surveys_gw)
+glimpse(surveys_gw)
 ```
 
 \vspace{0.5cm}
 
-This yields `surveys_gw` where the observations for each plot are spread across
-multiple rows, 196 observations of 3 variables.  
+This yields `surveys_wide` where the observations for each plot are spread 
+across multiple rows, 196 observations of 3 variables.  
 
-Using `spread()` to key on `genus` with values from `mean_weight` this becomes
-24 observations of 11 variables, one row for each plot. We again use pipes:
-
-\vspace{0.5cm}
-
-```{r, purl = FALSE, results = 'hide'}
-surveys_spread <- surveys_gw %>%
-  spread(key = genus, value = mean_weight)
-
-str(surveys_spread)
-```
+Using `pivot_wider()` to pivot on `genus` with values from `mean_weight` this 
+becomes 24 observations of 11 variables, one row for each plot. We again use 
+pipes:
 
 \vspace{0.5cm}
 
-![](../figures/spread_data_R.png)
+```{r, results = 'hide'}
+surveys_wide <- surveys_gw %>%
+  pivot_wider(names_from = genus, values_from = mean_weight)
 
-We could now plot comparisons between the weight of genera in different plots, 
-although we may wish to fill in the missing values first.
-
-```{r, purl = FALSE}
-surveys_gw %>%
-  spread(genus, mean_weight, fill = NA) %>%
-  head()
+glimpse(surveys_wide)
 ```
 
 \pagebreak
 
-## Gathering
+## Pivoting to a Longer Table
 
 The opposing situation could occur if we had been provided with data in the
-form of `surveys_spread`, where the genus names are column names, but we 
+form of `surveys_wide`, where the genus names are column names, but we 
 wish to treat them as values of a genus variable instead.
 
 In this situation we are gathering the column names and turning them into a
@@ -881,108 +880,112 @@ pair of new variables. One variable represents the column names as values, and
 the other variable contains the values previously associated with the column 
 names.
 
-`gather()` takes four principal arguments:
+`pivot_longer()` takes four principal arguments:
 
 1. the data
-2. the *key* column variable we wish to create from column names.
-3. the *values* column variable we wish to create and fill with values 
-associated with the key.
-4. the names of the columns we use to fill the key variable (or to drop).
+2. the columns we wish to pivot into a single column 
+3. the name of the new column to create to store the names of each selected column
+4. the name of the new column to create to store the data filled in each cell
 
 \vspace{0.5cm}
 
-To recreate `surveys_gw` from `surveys_spread` we would create a key called
+To recreate `surveys_gw` from `surveys_wide` we would create a key called
 `genus` and value called `mean_weight` and use all columns except `plot_id` for
 the key variable. Here we drop `plot_id` column with a minus sign.
 
 \vspace{0.5cm}
 
-```{r, purl = FALSE, results = 'hide'}
-surveys_gather <- surveys_spread %>%
-  gather(key = "genus", value = "mean_weight", -plot_id)
+```{r, results = 'hide'}
+surveys_long <- surveys_wide %>%
+  pivot_longer(cols = -plot_id, names_to = "genus", values_to = "mean_weight")
 
-str(surveys_gather)
+glimpse(surveys_long)
 ```
 
 \vspace{0.5cm}
 
-![](../figures/gather_data_R.png)
-
-Note that now the `NA` genera are included in the re-gathered format. Spreading
-and then gathering can be a useful way to balance out a dataset so every
-replicate has the same composition.
+Note that now the `NA` genera are included in the re-gathered format. Pivoting 
+your data to a wide format and then pivoting to a long format can be a useful 
+way to balance out a dataset so every replicate has the same composition.
 
 We could also have used a specification for what columns to include. This can be
 useful if you have a large number of identifying columns, and it's easier to
 specify what to gather than what to leave alone. And if the columns are in a
-row, we don't even need to list them all out - just use the `:` operator!
+row, we don't even need to list them all out `-` just use the `:` operator!
 
 \pagebreak
 
-```{r, purl = FALSE}
-surveys_spread %>%
-  gather(key = "genus", value = "mean_weight", Baiomys:Spermophilus) %>%
+```{r}
+surveys_wide %>%
+  pivot_longer(cols = Baiomys:Spermophilus, names_to = "genus", 
+               values_to = "mean_weight") %>%
   head()
 ```
 
 \vspace{0.5cm}
 
 > ## Challenge 4 {.challenge}
->
-> 1. Spread the `surveys` data frame with `year` as columns, `plot_id` 
->   as rows, and the number of genera per plot as the values. You will need to 
->   summarize before reshaping, and use the function `n_distinct()` to get the
->   number of unique genera within a particular chunk of data. It's a powerful 
->   function! See `?n_distinct` for more.
->
-> 
-> 2. Now take that data frame and `gather()` it again, so each row is a unique
->    `plot_id` by `year` combination.
->
-> 
-> 3. The `surveys` data set has two measurement columns: `hindfoot_length` and
+
+> 1. Pivot the `combined` data frame to a wide format, with `year` as columns, 
+>   `plot_id` as rows, and the number of genera per plot as the values. You will
+>   need to summarize before reshaping, and use the function `n_distinct()` to 
+>   get the number of unique genera within a particular chunk of data. It's a 
+>   powerful function! See `?n_distinct` for more.
+
+```{r}
+## Make a wide data frame by pivoting on year. 
+## Fill the values in these columns with the number of genera per plot. 
+
+
+```
+
+
+> 2. Now take that data frame and use `pivot_longer()` to pivot it to the long 
+>    format it was in before, so that each row is a unique `plot_id` by `year` 
+>    combination.
+
+```{r}
+## Now take that data frame, and make it long again, by (re)pivoting on the 
+## year columns. 
+
+
+```
+
+> 3. The `combined` data set has two measurement columns: `hindfoot_length` and
 >    `weight`.  This makes it difficult to do things like look at the 
 >    relationship between mean values of each measurement per year in different
 >    plot types. Let's walk through a common solution for this type of problem.
->    First, use `gather()` to create a dataset where we have a key column called
->    `measurement` and a `value` column that takes on the value of either 
+>    First, use `pivot_longer()` to create a dataset where we have a names column
+>    called `measurement` and a values column that takes on the value of either 
 >    `hindfoot_length` or `weight`. 
->    *Hint*: You'll need to specify which columns are being gathered.
->
-> 
-> 4. With this new data set, calculate the average of each
->    `measurement` in each `year` for each different `plot_type`. Then
->    `spread()` them into a data set with a column for `hindfoot_length` and
->    `weight`. *Hint*: You only need to specify the key and value
->    columns for `spread()`.
+>    *Hint*: You'll need to specify which columns to pivot into longer format!
 
 
 ```{r}
-## Reshaping challenges
-
-## 1. Make a wide data frame with `year` as columns, `plot_id`` as rows, and 
-## where the values are the number of genera per plot. 
-
-
-
-## 2. Now take that data frame, and make it long again, so each row is a unique
-## `plot_id` `year` combination
+## Use pivot_long() to create an even longer dataset.
+## Create a column called measurement, containing the hindfoot and weight columns
+## And a value column that takes on the value of either of these measurements 
+## Hint: You'll need to specify which columns are being used to pivot!
 
 
 
-## 3. Use gather to create a truly long dataset where we have a key column called
-## measurement and a value column that takes on the value of either 
-## hindfoot_length or weight. 
-## Hint: You'll need to specify which columns are being gathered.
+```
+
+> 4. With this new data set, calculate the average of each `measurement` in each
+>    `year` for each different `plot_type`. Then pivot these summaries into a 
+>    a data set with a column for `hindfoot_length` and `weight`. 
+>   *Hint*: This sounds like you want to pivot the data to be a wider format! 
 
 
-
-## 4. With this new truly long data set, calculate the average of each 
+```{r}
+## With this new very long data set, calculate the average of each 
 ## measurement in each year for each different plot_type. 
-## Then spread them into a wide data set with a column for hindfoot_length and
-## weight. 
-## Hint: Remember, you only need to specify the key and value columns for spread.
 
+
+
+## Now pivot these summaries into a wide data set. 
+## With a columns for hindfoot_length and weight. 
+## Filled with the summary values you calculated. 
 
 
 ```
@@ -993,15 +996,15 @@ Now that you have learned how to use **`dplyr`** to extract information from
 or summarize your raw data, you may want to export these new data sets to share
 them with your collaborators or for archival.
 
-Similar to the `read_csv()` function used for reading CSV files into R, there is
-a `write_csv()` function that generates CSV files from data frames.
+Similar to the `read_csv()` function used for reading CSV files into `R`, there
+is a `write_csv()` function that generates CSV files from data frames.
 
 Before using `write_csv()`, we are going to create a new folder, `data`,
 in our working directory that will store this generated dataset. We don't want
 to write generated datasets in the same directory as our raw data. It's good
-practice to keep them separate. The `data_raw` folder should only contain the raw,
-unaltered data, and should be left alone to make sure we don't delete or modify
-it. In contrast, our script will generate the contents of the `data`
+practice to keep them separate. The `data_raw` folder should only contain the 
+raw, unaltered data, and should be left alone to make sure we don't delete or 
+modify it. In contrast, our script will generate the contents of the `data`
 directory, so even if the files it contains are deleted, we can always
 re-generate them.
 
@@ -1017,7 +1020,7 @@ Let's start by removing observations of animals for which `weight` and
 surveys_complete <- combined %>%
   filter(!is.na(weight),           # remove missing weight
          !is.na(hindfoot_length),  # remove missing hindfoot_length
-         !is.na(sex))                # remove missing sex
+         !is.na(sex))              # remove missing sex
 ```
 
 \vspace{0.5cm}
@@ -1036,7 +1039,7 @@ observations for these more common species:
 ##  Start by removing observations for which the `species_id`, `weight`,
 ##  `hindfoot_length`, or `sex` data are missing:
 surveys_complete <- combined %>%
-    filter(species_id != "",        # remove missing species_id
+    filter(species_id != "",               # remove missing species_id
            !is.na(weight),                 # remove missing weight
            !is.na(hindfoot_length),        # remove missing hindfoot_length
            sex != "")                      # remove missing sex
@@ -1064,14 +1067,12 @@ folder.
 
 \vspace{0.5cm}
 
-```{r, purl = FALSE}
+```{r}
 write_csv(surveys_complete, path = "../data/surveys_complete.csv")
 ```
 
 
 \vspace{4cm}
 
-<p style="text-align: right; font-size: small;">Workshop build on: 
+<p style="text-align: right; font-size: small;"> Workshop build on: 
 `r format(Sys.time())`</p>
-
-
