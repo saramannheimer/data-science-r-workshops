@@ -3,8 +3,12 @@ title: "Wrangling, Reorganizing, Summarizing, and Exporting data with the `tidyv
 author: "Data Carpentry"
 output:
   html_document:
-    toc: TRUE  
-    toc_depth: 1 
+    keep_tex: yes
+    toc: yes
+    toc_depth: 1
+  pdf_document:
+    toc: yes
+    toc_depth: '1'
 ---
 
 > ## Learning Objectives
@@ -432,6 +436,7 @@ surveys <- surveys %>%
 </br>
 
 > ## Challenge 3 {.challenge}
+
 > What dates were unable to be converted? 
 > Why did that happen?  
 
@@ -454,7 +459,7 @@ If we inspect the day of week variable we created in the last code chunk, we'll
 see that it is an ordered (<ord>) factor. 
 
 > ## Challenge 4 {.challenge}
->
+
 >  What are the names of the days of the week taken from the dates?  
 
 ```{r, results = 'hide'}
@@ -492,7 +497,7 @@ surveys <- surveys %>%
 But, perhaps these days are not in the order that we want them to be in. 
 
 > ## Challenge 5 {.challenge}
->
+
 > What order did `R` put the days of the week in?
 > What datatype is `day_of_week` now? 
 
@@ -529,7 +534,6 @@ surveys <- surveys %>%
 ```
 
 > ## Challenge 6
->
 > Verify that `R` put the days in the order that you specified! 
 
 \pagebreak 
@@ -750,7 +754,6 @@ From the table above, we may learn that, for instance, there are 75 observations
 of the *albigula* species that are not specified for its sex (i.e. `NA`).
 
 > ## Challenge 8 {.challenge}
->
 > How many animals were caught in each `plot_type` surveyed?
 
 
@@ -838,7 +841,7 @@ join deletes observations that do not have a match.
 \begin{figure}[h!]
 \caption{Wickham, H. \& Grolemund, G. (2017) \emph{R for Data Science}. 
 Sebastopol, California: O'Reilly.}
-\includegraphics{../figures/inner.jpg}
+\includegraphics{figures/inner.jpg}
 \centering
 \end{figure}
 
@@ -855,7 +858,7 @@ data tables. When joining `x` with `y`, there are three types of outer join:
 \begin{figure}[h!]
 \caption{Wickham, H. \& Grolemund, G. (2017) \emph{R for Data Science}. 
 Sebastopol, California: O'Reilly.}
-\includegraphics{../figures/joins.jpg}
+\includegraphics{figures/joins.jpg}
 \centering
 \end{figure}
 
