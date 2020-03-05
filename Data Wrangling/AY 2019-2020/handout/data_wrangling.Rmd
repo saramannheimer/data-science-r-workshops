@@ -657,6 +657,25 @@ surveys %>%
 
 </br>
 
+> ## Challenge 7 {.challenge}
+>
+> 1. Use `group_by()` and `summarize()` to find the mean, min, and max hindfoot
+> length for each species (using `species_id`). Also add the number of
+> observations (hint: see `?n`).
+
+```{r}
+
+
+```
+
+> 2. What was the heaviest animal measured in each year? Return the columns 
+> `year`, `genus`, `species_id`, and `weight`.
+
+```{r}
+
+
+```
+
 ## Counting
 
 When working with data, we often want to know the number of observations found
@@ -730,28 +749,14 @@ surveys %>%
 From the table above, we may learn that, for instance, there are 75 observations
 of the *albigula* species that are not specified for its sex (i.e. `NA`).
 
-> ## Challenge {.challenge}
+> ## Challenge 8 {.challenge}
 >
-> 1. How many animals were caught in each `plot_type` surveyed?
->
-> 2. Use `group_by()` and `summarize()` to find the mean, min, and max hindfoot
-> length for each species (using `species_id`). Also add the number of
-> observations (hint: see `?n`).
->
-> 3. What was the heaviest animal measured in each year? Return the columns 
-> `year`, `genus`, `species_id`, and `weight`.
+> How many animals were caught in each `plot_type` surveyed?
 
 
 ```{r}
-## Count Challenges:
-##  1. How many animals were caught in each `plot_type` surveyed?
 
-##  2. Use `group_by()` and `summarize()` to find the mean, min, and max
-## hindfoot length for each species (using `species_id`). Also add the number of
-## observations (hint: see `?n`).
 
-##  3. What was the heaviest animal measured in each year? Return the
-##  columns `year`, `genus`, `species_id`, and `weight`.
 ```
 
 \pagebreak 
@@ -967,7 +972,23 @@ surveys_wide <- surveys_gw %>%
 glimpse(surveys_wide)
 ```
 
-\pagebreak
+> ## Challenge 9 {.challenge}
+
+> Pivot the `combined` data frame to a wide format, with `year` as columns, 
+> `plot_id` as rows, and the number of genera per plot as the values. You will
+> need to summarize before reshaping, and use the function `n_distinct()` to 
+> get the number of unique genera within a particular chunk of data. It's a 
+> powerful function! See `?n_distinct` for more.
+
+> Save the wide dataset as an object, with an intuitive name!
+
+```{r}
+## Make a wide data frame by pivoting on year. 
+## Fill the values in these columns with the number of genera per plot. 
+## Make sure to save the new dataset with an intuitive name!
+
+
+```
 
 ## Pivoting to a Longer Table
 
@@ -1022,41 +1043,30 @@ surveys_wide %>%
 
 </br>
 
-> ## Challenge 4 {.challenge}
+> ## Challenge 10 {.challenge}
 
-> 1. Pivot the `combined` data frame to a wide format, with `year` as columns, 
->   `plot_id` as rows, and the number of genera per plot as the values. You will
->   need to summarize before reshaping, and use the function `n_distinct()` to 
->   get the number of unique genera within a particular chunk of data. It's a 
->   powerful function! See `?n_distinct` for more.
+> Take the wide dataset and use `pivot_longer()` to pivot it to the long 
+> format it was in before, so that each row is a unique `plot_id` by `year` 
+> combination.
 
 ```{r}
-## Make a wide data frame by pivoting on year. 
-## Fill the values in these columns with the number of genera per plot. 
-
-
-```
-
-
-> 2. Now take that data frame and use `pivot_longer()` to pivot it to the long 
->    format it was in before, so that each row is a unique `plot_id` by `year` 
->    combination.
-
-```{r}
-## Now take that data frame, and make it long again, by (re)pivoting on the 
+## Now take the wide dataset, and make it long again, by (re)pivoting on the 
 ## year columns. 
 
 
 ```
 
-> 3. The `combined` data set has two measurement columns: `hindfoot_length` and
->    `weight`.  This makes it difficult to do things like look at the 
->    relationship between mean values of each measurement per year in different
->    plot types. Let's walk through a common solution for this type of problem.
->    First, use `pivot_longer()` to create a dataset where we have a names column
->    called `measurement` and a values column that takes on the value of either 
->    `hindfoot_length` or `weight`. 
->    *Hint*: You'll need to specify which columns to pivot into longer format!
+
+> ## Challenge 11 {.challenge}
+
+> The `combined` data set has two measurement columns: `hindfoot_length` and
+> `weight`.  This makes it difficult to do things like look at the 
+> relationship between mean values of each measurement per year in different
+> plot types. Let's walk through a common solution for this type of problem.
+> First, use `pivot_longer()` to create a dataset where we have a names column
+> called `measurement` and a values column that takes on the value of either 
+> `hindfoot_length` or `weight`. 
+> *Hint*: You'll need to specify which columns to pivot into longer format!
 
 
 ```{r}
@@ -1069,10 +1079,10 @@ surveys_wide %>%
 
 ```
 
-> 4. With this new data set, calculate the average of each `measurement` in each
->    `year` for each different `plot_type`. Then pivot these summaries into a 
->    a data set with a column for `hindfoot_length` and `weight`. 
->   *Hint*: This sounds like you want to pivot the data to be a wider format! 
+> With this new data set, calculate the average of each `measurement` in each
+> `year` for each different `plot_type`. Then pivot these summaries into a 
+> a data set with a column for `hindfoot_length` and `weight`. 
+> *Hint*: This sounds like you want to pivot the data to be a wider format! 
 
 
 ```{r}
@@ -1165,8 +1175,8 @@ folder.
 
 </br>
 
-```{r}
-write_csv(surveys_complete, path = "../data/surveys_complete.csv")
+```{r, eval = FALSE}
+write_csv(surveys_complete, path = "data/surveys_complete.csv")
 ```
 
 
