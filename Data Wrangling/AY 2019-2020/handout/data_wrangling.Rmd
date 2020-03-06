@@ -1,41 +1,56 @@
 ---
 title: "Wrangling, Reorganizing, Summarizing, and Exporting data with the `tidyverse`"
-author: "Data Carpentry"
+author: "Created by: Data Carpentry & Contributors"
 output:
   html_document:
     keep_tex: yes
     toc: yes
-    toc_depth: 1
+    toc_depth: 2
+    toc_float: yes
   pdf_document:
     toc: yes
-    toc_depth: '1'
+    toc_depth: '2'
 ---
+
+</br>
 
 > ## Learning Objectives
 >
 > * Describe the purpose of the **`dplyr`** and **`tidyr`** packages.
-> * Select certain columns in a data frame with the **`dplyr`** function `select`.
-> * Select certain rows in a data frame according to filtering conditions with the **`dplyr`** function `filter` .
-> * Link the output of one **`dplyr`** function to the input of another function with the 'pipe' operator `%>%`.
-> * Add new columns to a data frame that are functions of existing columns with `mutate`.
-> * Use the split-apply-combine concept for data analysis.
-> * Use `summarize`, `group_by`, and `count` to split a data frame into groups of observations, apply summary statistics for each group, and then combine the results.
-> * Describe the concept of a wide and a long table format and for which purpose those formats are useful.
+> * Select certain columns in a data frame with the **`dplyr`** function 
+`select`.
+> * Select certain rows in a data frame according to filtering conditions with 
+> the **`dplyr`** function `filter` .
+> * Link the output of one **`dplyr`** function to the input of another function
+with the 'pipe' operator `%>%`.
+> * Add new columns to a data frame that are functions of existing columns with 
+`mutate`.
+> * Use the split-apply-combine concept for producing data summaries.
+> * Use `summarize`, `group_by`, and `count` to split a data frame into groups 
+of observations, apply summary statistics for each group, and then combine the 
+results.
+> * Describe the concept of a wide and a long table format and for which purpose
+those formats are useful.
 > * Describe what key-value pairs are.
-> * Reshape a data frame from long to wide format and back with the `pivot_wider()` and `pivot_longer()`
-> commands from the **`tidyr`** package.
+> * Reshape a data frame from long to wide format and back with the 
+`pivot_wider()` and `pivot_longer()`commands from the **`tidyr`** package.
 > * Export a data frame to a .csv file.
 
 ------------
 
-# Data Manipulation using **`dplyr`** and **`tidyr`**
+# Data Wrangling on using **`dplyr`** and **`tidyr`**
 
 <!-- Bracket subsetting is handy, but it can be cumbersome and difficult to read, -->
 <!-- especially for complicated operations. Enter **`dplyr`**.  -->
 
-**`dplyr`** is a package for making tabular data manipulation easier. It pairs 
+**`dplyr`** is a package for making tabular data wrangling easier. It pairs 
 nicely with **`tidyr`** which enables you to swiftly convert between different 
-data formats for plotting and analysis.
+data formats for plotting and analysis. Note that we're not using "data 
+manipulation," but "data wrangling." To us, "data manipulation" is a term that 
+captures the event where a researcher manipulates their data (e.g moving 
+columns, deleting rows, merging data files) in a __non-reproducible__ manner. 
+Whereas, with data wrangling, all of these process are done, but in a 
+__reproducible__ manner, such as using an `R` script!
 
 Packages in `R` are basically sets of additional functions that let you do more
 stuff. The functions we've been using so far, like `str()` or `data.frame()`,
@@ -51,8 +66,8 @@ work together well such as **`tidyr`**, **`dplyr`**, **`ggplot2`**,
 The **`tidyverse`** package tries to address 3 common issues that arise when
 doing data analysis with some of the functions that come with R:
 
-1. The results from a base R function sometimes depend on the type of data.
-2. Using R expressions in a non standard way, which can be confusing for new
+1. The results from a base `R` function sometimes depend on the type of data.
+2. Using `R` expressions in a non standard way, which can be confusing for new
    learners.
 3. Hidden arguments, having default operations that new learners are not aware
    of.
@@ -84,7 +99,7 @@ library(tidyverse)
 ## What are **`dplyr`** and **`tidyr`**?
 
 The package **`dplyr`** provides easy tools for the most common data 
-manipulation tasks. It is built to work directly with data frames, with many 
+wrangling tasks. It is built to work directly with data frames, with many 
 common tasks optimized by being written in a compiled language (C++). An 
 additional feature is the ability to work directly with data stored in an 
 external database. The benefits of doing this are that the data can be managed 
@@ -103,19 +118,23 @@ sets where we have one row per measurement. Sometimes we want a data frame where
 each measurement type has its own column, and rows are instead more aggregated 
 groups--like plots or aquaria. Moving back and forth between these formats is 
 nontrivial, and **`tidyr`** gives you tools for this and more sophisticated data
-manipulation.
+wrangling.
 
 To learn more about **`dplyr`** and **`tidyr`** after the workshop, you may want
 to check out this
-[handy data transformation with **`dplyr`** cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf) 
-and this [one about **`tidyr`**](https://github.com/rstudio/cheatsheets/raw/master/data-import.pdf).
+[handy data transformation with **`dplyr`** cheatsheet (link)](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf) 
+and this [one about **`tidyr`** (link)](https://github.com/rstudio/cheatsheets/raw/master/data-import.pdf).
 
 We'll read in our data using the `read_csv()` function, from the tidyverse 
 package **`readr`**, instead of `read.csv()`.
 
 </br>
 
-```{r, results = 'hide', purl = FALSE}
+```{r, results = 'hide', purl = FALSE, eval = FALSE}
+surveys <- read_csv("data/surveys.csv")
+```
+
+```{r, results = 'hide', purl = FALSE, echo = FALSE}
 surveys <- read_csv("../data/surveys.csv")
 ```
 
@@ -131,7 +150,7 @@ manually by using the `col_types` argument in `read_csv`.
 
 </br>
 
-```{r, results = 'hide', purl = FALSE}
+```{r, purl = FALSE}
 ## inspect the data
 glimpse(surveys)
 ```
@@ -204,7 +223,7 @@ filter(surveys, year == 1995)
 
 </br>
 
-ADDITIONAL INFORMATION ON FILTERING SHOULD GO HERE!
+__ADDITIONAL INFORMATION ON FILTERING SHOULD GO HERE!__
 
 ## Pipes
 
@@ -270,7 +289,7 @@ in the above example, we took the data frame `surveys`, *then* we `filter`ed
 for rows with `weight < 5`, *then* we `select`ed columns `species_id`, `sex`,
 and `weight`. The **`dplyr`** functions by themselves are somewhat simple,
 but by combining them into linear workflows with the pipe, we can accomplish
-more complex manipulations of data frames.
+more complex wranglings of data frames.
 
 If we want to create a new object with this smaller version of the data, we
 can assign it a new name:
@@ -289,10 +308,10 @@ surveys_sml
 
 Note that the final data frame is the leftmost part of this expression.
 
-> ## Challenge 1 {.challenge}
->
->  Using pipes, subset the `surveys` data to include animals collected before
->  1995 and retain only the columns `year`, `sex`, and `weight`.
+> ## Challenge 1 
+> ![](figures/medium.jpg)  Using pipes, subset the `surveys` data to include 
+> animals collected on or after 1995 and retain only the columns `year`, `sex`, 
+> and `weight`.
 
 </br>
 
@@ -368,16 +387,16 @@ an `NA`.
 
 \pagebreak
 
-> ## Challenge 2 {.challenge}
->
+> ## Challenge 2 
+> ![](figures/spicy.jpg)
 >  Create a new data frame from the `surveys` data that meets the following
 >  criteria: contains only the `species_id` column and a new column called
->  `hindfoot_cm` containing the `hindfoot_length` values converted to centimeters.
->  In this `hindfoot_cm` column, there are no `NA`s and all values are less
->  than 3.
+>  `hindfoot_cm`, which contains the `hindfoot_length` values converted to 
+>  centimeters. Make sure that you only retain values in the `hindfoot_cm` 
+>  column that are not missing (not `NA`) and are less than 3.
 >
->  **Hint**: think about how the commands should be ordered to produce this data
->  frame!
+>  **Hint**: think carefully about how the commands should be ordered to produce 
+>  this data frame!
 > 
 
 </br>
@@ -436,7 +455,7 @@ surveys <- surveys %>%
 </br>
 
 > ## Challenge 3 {.challenge}
-
+> ![](figures/medium.jpg)
 > What dates were unable to be converted? 
 > Why did that happen?  
 
@@ -459,7 +478,7 @@ If we inspect the day of week variable we created in the last code chunk, we'll
 see that it is an ordered (<ord>) factor. 
 
 > ## Challenge 4 {.challenge}
-
+> ![](figures/mild.jpg)
 >  What are the names of the days of the week taken from the dates?  
 
 ```{r, results = 'hide'}
@@ -497,7 +516,7 @@ surveys <- surveys %>%
 But, perhaps these days are not in the order that we want them to be in. 
 
 > ## Challenge 5 {.challenge}
-
+> ![](figures/medium.jpg)
 > What order did `R` put the days of the week in?
 > What datatype is `day_of_week` now? 
 
@@ -534,6 +553,7 @@ surveys <- surveys %>%
 ```
 
 > ## Challenge 6
+> ![](figures/medium.jpg)
 > Verify that `R` put the days in the order that you specified! 
 
 \pagebreak 
@@ -597,7 +617,7 @@ surveys %>%
 </br>
 
 Here, again, the output from these calls doesn't run off the screen
-anymore. If you want to display more data, you can use the `print()` function
+anymore. If you want to display more data, you can use the `head()` function
 at the end of your chain with the argument `n` specifying the number of rows to
 display:
 
@@ -608,7 +628,7 @@ surveys %>%
   filter(!is.na(weight)) %>%
   group_by(sex, species_id) %>%
   summarize(mean_weight = mean(weight)) %>%
-  print(n = 15)
+  head(n = 15)
 ```
 
 \pagebreak
@@ -662,7 +682,7 @@ surveys %>%
 </br>
 
 > ## Challenge 7 {.challenge}
->
+> ![](figures/medium.jpg)
 > 1. Use `group_by()` and `summarize()` to find the mean, min, and max hindfoot
 > length for each species (using `species_id`). Also add the number of
 > observations (hint: see `?n`).
@@ -672,6 +692,7 @@ surveys %>%
 
 ```
 
+> ![](figures/hot.jpg)
 > 2. What was the heaviest animal measured in each year? Return the columns 
 > `year`, `genus`, `species_id`, and `weight`.
 
@@ -754,6 +775,7 @@ From the table above, we may learn that, for instance, there are 75 observations
 of the *albigula* species that are not specified for its sex (i.e. `NA`).
 
 > ## Challenge 8 {.challenge}
+> ![](figures/mild.jpg)
 > How many animals were caught in each `plot_type` surveyed?
 
 
@@ -890,9 +912,9 @@ glimpse(combined)
 
 # Reshaping with `pivot_longer()` and `pivot_wider()`
 
-In the [spreadsheet
-lesson](https://datacarpentry.org/spreadsheet-ecology-lesson/01-format-data/),
-we discussed how to structure our data leading to the four rules defining a tidy
+Data Carpentry's [spreadsheet
+lesson (link)](https://datacarpentry.org/spreadsheet-ecology-lesson/01-format-data/),
+discusses how to structure our data leading to the four rules defining a tidy
 dataset:
 
 1. Each variable has its own column
@@ -976,7 +998,7 @@ glimpse(surveys_wide)
 ```
 
 > ## Challenge 9 {.challenge}
-
+> ![](figures/spicy.jpg)
 > Pivot the `combined` data frame to a wide format, with `year` as columns, 
 > `plot_id` as rows, and the number of genera per plot as the values. You will
 > need to summarize before reshaping, and use the function `n_distinct()` to 
@@ -1047,7 +1069,7 @@ surveys_wide %>%
 </br>
 
 > ## Challenge 10 {.challenge}
-
+> ![](figures/spicy.jpg)
 > Take the wide dataset and use `pivot_longer()` to pivot it to the long 
 > format it was in before, so that each row is a unique `plot_id` by `year` 
 > combination.
@@ -1061,8 +1083,8 @@ surveys_wide %>%
 
 
 > ## Challenge 11 {.challenge}
-
-> The `combined` data set has two measurement columns: `hindfoot_length` and
+> ![](figures/hot.jpg)
+> 1. The `combined` data set has two measurement columns: `hindfoot_length` and
 > `weight`.  This makes it difficult to do things like look at the 
 > relationship between mean values of each measurement per year in different
 > plot types. Let's walk through a common solution for this type of problem.
@@ -1082,7 +1104,8 @@ surveys_wide %>%
 
 ```
 
-> With this new data set, calculate the average of each `measurement` in each
+> ![](figures/spicy.jpg)
+> 2. With this new data set, calculate the average of each `measurement` in each
 > `year` for each different `plot_type`. Then pivot these summaries into a 
 > a data set with a column for `hindfoot_length` and `weight`. 
 > *Hint*: This sounds like you want to pivot the data to be a wider format! 
@@ -1183,7 +1206,7 @@ write_csv(surveys_complete, path = "data/surveys_complete.csv")
 ```
 
 
-# Happy wrangling!  
+## Happy wrangling!  
 
 </br>
 </br>
