@@ -225,7 +225,7 @@ filter(surveys, year == 1995)
 
 In the code above `==` keeps all rows where the year is 1995. 
 
-Other filtering options include `!=`, which keeps all rows that are **not** a certain criteria, `,` which means **"and"**, and `|` which means **"or"**. 
+Other filtering options include `!=`, which keeps all rows that are **not** a certain criteria, `,` which means **"and"**, and `|` which means **"or"**. Filter can also do `<` for "less than", `>` for "greater than", `<=` for "less than or equal to", and `>=` for "greater than or equal to". We type these last two options the same way we would typically say them.
 
 `!=` example: 
 
@@ -262,6 +262,31 @@ filter(surveys, year == 1995 | plot_id == 3)
 </br>
 
 The code above keeps all rows where the year is 1995 or is plot id 3, i.e. year 1995 or plot 3. The rows meet either of these criteria but not both. 
+
+
+`<` example:
+
+</br>
+
+```{r, eval = FALSE}
+filter(surveys, weight < 8)
+```
+
+</br>
+
+The code above keeps all rows where weight is less than 8. 
+
+`>` example:
+
+</br>
+
+```{r, eval = FALSE}
+filter(surveys, hindfoot_length > 30)
+```
+
+</br>
+
+The code above keeps all rows where hindfoot length is greater than 30.
 
 </br>
 

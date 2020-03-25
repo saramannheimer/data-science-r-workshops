@@ -1620,7 +1620,7 @@ View(surveys)</code></pre>
 <pre class="r"><code>filter(surveys, year == 1995)</code></pre>
 <p></br></p>
 <p>In the code above <code>==</code> keeps all rows where the year is 1995.</p>
-<p>Other filtering options include <code>!=</code>, which keeps all rows that are <strong>not</strong> a certain criteria, <code>,</code> which means <strong>“and”</strong>, and <code>|</code> which means <strong>“or”</strong>.</p>
+<p>Other filtering options include <code>!=</code>, which keeps all rows that are <strong>not</strong> a certain criteria, <code>,</code> which means <strong>“and”</strong>, and <code>|</code> which means <strong>“or”</strong>. Filter can also do <code>&lt;</code> for “less than”, <code>&gt;</code> for “greater than”, <code>&lt;=</code> for “less than or equal to”, and <code>&gt;=</code> for “greater than or equal to”. We type these last two options the same way we would typically say them.</p>
 <p><code>!=</code> example:</p>
 <p></br></p>
 <pre class="r"><code>filter(surveys, year != 1995)</code></pre>
@@ -1636,6 +1636,16 @@ View(surveys)</code></pre>
 <pre class="r"><code>filter(surveys, year == 1995 | plot_id == 3)</code></pre>
 <p></br></p>
 <p>The code above keeps all rows where the year is 1995 or is plot id 3, i.e. year 1995 or plot 3. The rows meet either of these criteria but not both.</p>
+<p><code>&lt;</code> example:</p>
+<p></br></p>
+<pre class="r"><code>filter(surveys, weight &lt; 5)</code></pre>
+<p></br></p>
+<p>The code above keeps all rows where weight is less than 5.</p>
+<p><code>&gt;</code> example:</p>
+<p></br></p>
+<pre class="r"><code>filter(surveys, hindfoot_length &gt; 30)</code></pre>
+<p></br></p>
+<p>The code above keeps all rows where hindfoot length is greater than 30.</p>
 <p></br></p>
 </div>
 <div id="pipes" class="section level2">
@@ -2209,7 +2219,7 @@ surveys_complete &lt;- surveys_complete %&gt;%
 <p>These workshops are made possible by the generous support of the Montana State University Library and the Statistical Consulting and Research Services.</p>
 <p></br> </br></p>
 <p style="text-align: right; font-size: small;">
-Workshop build on: 2020-03-24 18:22:52
+Workshop build on: 2020-03-24 18:41:48
 </p>
 </div>
 
