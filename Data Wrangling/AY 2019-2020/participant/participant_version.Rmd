@@ -170,6 +170,34 @@ To choose rows based on a specific criteria, use `filter()`:
 filter(surveys, year == 1995)
 ```
 
+In the code above `==` keeps all rows where the year is 1995. 
+
+Other filtering options include `!=`, which keeps all rows that are **not** a certain criteria, `,` which means **"and"**, and `|` which means **"or"**. 
+
+`!=` example: 
+
+```{r}
+filter(surveys, year != 1995)
+```
+
+The code above keeps all rows where the year is not 1995. 
+
+`,` example:
+
+```{r}
+filter(surveys, year == 1995 , plot_id == 3)
+```
+
+The code above keeps all rows where the year is 1995 for plot id 3, i.e. year 1995 and plot 3. The rows meet both of these criteria. 
+
+
+`|` example:
+
+```{r}
+filter(surveys, year == 1995 | plot_id == 3)
+```
+
+The code above keeps all rows where the year is 1995 or is plot id 3, i.e. year 1995 or plot 3. The rows meet either of these criteria but not both. 
 
 
 ## Pipes
@@ -260,7 +288,7 @@ Note that the final data frame is the leftmost part of this expression.
 
 > ## Challenge 1 {.challenge}
 >
->  Using pipes, subset the `surveys` data to include animals collected before
+>  Using pipes, subset the `surveys` data to include animals collected on or after
 >  1995 and retain only the columns `year`, `sex`, and `weight`.
 
 

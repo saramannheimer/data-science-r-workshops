@@ -7,7 +7,7 @@ output: html_document
 
 # Challenge 1 
 
-> Using pipes, subset the `surveys` data to include animals collected before
+> Using pipes, subset the `surveys` data to include animals collected on or after
 > 1995 and retain only the columns `year`, `sex`, and `weight`.
  
  
