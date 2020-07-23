@@ -1,0 +1,178 @@
+---
+title: "Solutions to Practice Problems"
+author: "Allison Theobold"
+date: "1/21/2020"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+# Exercise 1 
+
+What is the current value of `y`? 12 or 8?  
+
+In `R`, objects are not dynamic, meaning that they do not automatically update
+if you change the value of a variable they reference. Here, the value of `y` is
+still 8, since it was created when `x` was 6. If you re-ran the line of code 
+assigning `y` to be equal to `x + 6` after changing the value of `x` to 2, then 
+`y` would be 8. 
+
+# Exercise 2
+
+Create a vector, named `dec`, that contains decimal valued numbers. Then check
+what data type does that vector contain?
+
+
+```{r}
+dec <- c(2.1, 3.2, 5.5, 7.9)
+
+class(dec)
+## a numeric data type, same default storage as integer valued vectors
+```
+
+
+# Exercise 3
+
+What happens when we try to mix different data types into one 
+vector?
+
+
+```{r}
+num_char <- c(1, 2, 3, "a")
+
+## converts everything to a character
+
+num_logic <- c(1, 2, 3, FALSE)
+
+## converts logical to a number (FALSE = 0, TRUE = 1)
+
+char_logic <- c("a", "b", "c", TRUE)
+
+## converts everything to a character
+
+guess <- c(1, 2, 3, "4")
+
+## converts everything to a character
+
+```
+
+
+The following is a preview of the dataframe `df`: 
+
+
+```{r}
+df <- data.frame(
+  x = c("H", "N", "T", "W", "V"), 
+  y = c("May", "Oct", "Mar", "Aug", "Feb"),
+  z = c(2010, 2015, 2018, 2017, 2019)
+  )
+
+df
+```
+
+
+# Exercise 4
+
+What would be output if you entered: `df[3, ]`?  
+
+The output would be the third row of `df`, so T, Mar, 2018
+
+# Exercise 5
+
+What would you input to get an output of `2015`? Can you think of two ways to do
+it?
+
+You could use `df[3, 3]` to get to the element in the third row, third column. 
+Or you could use `df$z[3]` to get to the third element in the vector `z`. 
+
+# Exercise 6 
+
+How would you pull off only columns `x` and `y`? What about pulling off only 
+columns `x` and `z`?
+
+To pull off two consecutive columns you could use: `df[1:2, ]` or 
+`df[c("x", "y"), ]`. 
+
+To pull off two non-consecutive columns you need to build a vector of columns 
+you want. Like: `df[c(1, 3), ]` or `df[c("x", "z"), ]`
+
+# Exercise 7 
+
+How would you modify the script below, to get an output of `[1] 22 24`? 
+
+```{r, eval = FALSE}
+s <- c(22, 24, 49, 18, 1, 6)
+s[1:2]
+```
+
+# Exercise 8
+
+What would be output if you entered: `s[3, ]`?  
+
+You would get an error that you used the "incorrect number of dimensions." 
+Since `s` is a vector, it only has one dimension, so you don't need a comma!
+
+# Exercise 9 
+
+Year was saved as an integer data type (1989 - 2006), but we 
+may want to consider it to be a categorical variable (a factor). Write the `R` 
+code to create a new variable called `yearF` that is a factor of `year` 
+(as you did with section and species). 
+
+```{r}
+BlackfootFish$yearF <- as.factor(BlackfootFish$year)
+```
+
+
+# Exercise 10 
+
+Now, verify that `yearF` is viewed as a categorical variable, with the same 
+levels as `year`. (hint: you have already used three functions that would do 
+this for you)  
+
+```{r}
+levels(BlackfootFish$yearF) 
+unique(BlackfootFish$year)
+```
+
+# Exercise 11 
+
+Using statistics or graphics, which year in our dataset had the most fish 
+caught?  
+
+*Visually* 
+
+```{r}
+fish_caught <- table(BlackfootFish$year)
+## tables the number of fish that were caught in each section
+
+barplot(fish_caught, 
+        xlab = "Year", ## adds axis labels to plot 
+        ylab = "Number of Fish Caught", 
+        main = "Fish Caught by Year", ## adds title to plot
+        las = 1, ## changes orientation of axis labels
+        col = "blue", ## specifies what color the bars should be
+        ylim = c(0, 4000) ## specifies what range of y-values to plot
+        )
+
+```
+
+*Numerically* 
+
+```{r}
+table(BlackfootFish$year)
+```
+
+
+**Exercise 12:** Make a boxplot of the fish weights over the different years in 
+the dataset.  
+
+
+```{r}
+boxplot(weight ~ yearF, data = BlackfootFish)
+
+## Need to use yearF, since the x-axis variable needs to be categorical!
+```
+
+
+
