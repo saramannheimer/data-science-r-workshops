@@ -8,7 +8,8 @@ runtime: shiny_prerendered
 ```{r setup, include=FALSE}
 library(learnr)
 library(tidyverse)
-knitr::opts_chunk$set(echo = FALSE)
+library(gradethis)
+knitr::opts_chunk$set(echo = FALSE, exercise.checker = gradethis::grade_learnr)
 surveys <- read_csv("data/surveys.csv")
 ```
 
@@ -192,9 +193,17 @@ manually by using the `col_types` argument in `read_csv`.
 str(surveys)
 ```
 
-```{r results='hide'}
-## preview the data
+```{r eval=FALSE, echo=TRUE}
+## Preview the data
 View(surveys)
+```
+
+```{r echo=FALSE}
+tableOutput("surveyData")
+```
+
+```{r echo=TRUE, eval=TRUE, context="server"}
+output$surveyData <- renderTable({ head(surveys, n=10) })
 ```
 
 Notice that the class of the data is now `tbl_df`
@@ -224,14 +233,26 @@ To select columns of a data frame, use `select()`. The first argument
 to this function is the data frame (`surveys`), and the subsequent
 arguments are the columns to keep.
 
-```{r, results = 'hide'}
+Modify the following code to select the `plot_id`, `species_id`, and `weight` columns from the `survey` dataset:
+
+```{r select-columns, exercise=TRUE, exercise.eval=TRUE}
+select(surveys)
+```
+
+```{r select-columns-solution}
 select(surveys, plot_id, species_id, weight)
 ```
 
 To select all columns *except* certain ones, put a "-" in front of
 the variable to exclude it.
 
-```{r, results = 'hide'}
+Modify the following code to select all columns *except* `record_id` and `species_id`:
+
+```{r donot-select-columns, exercise=TRUE, exercise.eval=TRUE}
+select(surveys)
+```
+
+```{r donot-select-columns-solution}
 select(surveys, -record_id, -species_id)
 ```
 
@@ -240,7 +261,7 @@ and `species_id`.
 
 To choose rows based on a specific criteria, use `filter()`:
 
-```{r}
+```{r filter-rows-1995, exercise=TRUE}
 filter(surveys, year == 1995)
 ```
 
@@ -248,47 +269,96 @@ In the code above `==` keeps all rows where the year is 1995.
 
 Other filtering options include `!=`, which keeps all rows that are **not** a certain criteria, `,` which means **"and"**, and `|` which means **"or"**. Filter can also do `<` for "less than", `>` for "greater than", `<=` for "less than or equal to", and `>=` for "greater than or equal to". We type these last two options the same way we would typically say them.
 
-`!=` example: 
+1.  `!=` example: 
 
-```{r}
-filter(surveys, year != 1995)
-```
+    ```{r filter-exclude-rows-example, exercise=TRUE}
+    filter(surveys, year != 1977)
+    ```
+    
+    The code above keeps all rows where the year is not 1995. 
+    
+    Modify the following code to keep all rows where the `year` is *not* 1995.
 
-The code above keeps all rows where the year is not 1995. 
+    ```{r filter-exclude-rows, exercise=TRUE, exercise.eval=TRUE}
+    filter(surveys, year != 1977)
+    ```
 
-`,` example:
+    ```{r filter-exclude-rows-solution}
+    filter(surveys, year != 1995)
+    ```
 
-```{r}
-filter(surveys, year == 1995 , plot_id == 3)
-```
+2.  `,` example:
+    
+    ```{r filter-comma-example, exercise=TRUE}
+    filter(surveys, year == 1977 , plot_id == 2)
+    ```
+    
+    The code above keeps all rows where the year is 1977 for plot id 2, i.e. year 1977 and plot 2. The rows meet **both** of these criteria. 
+    
+    Modify the following code to keep all rows where the `year` is 1995 and the `plot_id` is 3.
+  
+    ```{r filter-comma, exercise=TRUE, exercise.eval=TRUE}
+    filter(surveys, year == 1977 , plot_id == 2)
+    ```
+    
+    ```{r filter-comma-solution}
+    filter(surveys, year == 1995 , plot_id == 3)
+    ```
 
-The code above keeps all rows where the year is 1995 for plot id 3, i.e. year 1995 and plot 3. The rows meet both of these criteria. 
+3.  `|` example:
+
+    ```{r filter-or-example, exercise=TRUE}
+    filter(surveys, year == 1977 | plot_id == 2)
+    ```
+    
+    The code above keeps all rows where the year is 1977 **or** is plot id 2, i.e. year 1977 or plot 2. The rows meet **either** of these criteria but not both. 
+    
+    Modify the following code to keep all rows where the `year` is 1995 or plot id 3, but not both.
+    
+    ```{r filter-or, exercise=TRUE}
+    filter(surveys, year == 1977, plot_id == 2)
+    ```
+    
+    ```{r filter-or-solution}
+    filter(surveys, year == 1995| plot_id == 3)
+    ```
+
+4.  `<` example:
+
+    ```{r less-than-example, exercise=TRUE}
+    filter(surveys, weight < 8)
+    ```
+    
+    The code above keeps all rows where weight is less than 8. 
+    
+    Modify the following code to keep all rows where weight is less than 5.
+    
+    ```{r less-than, exercise=TRUE, exercise.eval=TRUE}
+    filter(surveys, weight < 8)
+    ```
+    
+    ```{r less-than-solution}
+    filter(surveys, weight < 5)
+    ```
 
 
-`|` example:
+5.  `>` example:
 
-```{r}
-filter(surveys, year == 1995 | plot_id == 3)
-```
-
-The code above keeps all rows where the year is 1995 or is plot id 3, i.e. year 1995 or plot 3. The rows meet either of these criteria but not both. 
-
-`<` example:
-
-```{r}
-filter(surveys, weight < 8)
-```
-
-The code above keeps all rows where weight is less than 8. 
-
-`>` example:
-
-```{r}
-filter(surveys, hindfoot_length > 30)
-```
-
-The code above keeps all rows where hindfoot length is greater than 30.
-
+    ```{r greater-than-example, exercise=TRUE}
+    filter(surveys, hindfoot_length > 30)
+    ```
+    
+    The code above keeps all rows where hindfoot length is greater than 30.
+    
+    Modify the following code to add a filter to keep all rows where hindfoot length is greater than 35.
+    
+    ```{r greater-than, exercise=TRUE, exercise.eval=TRUE}
+    filter(surveys)
+    ```
+    
+    ```{r greater-than-solution}
+    filter(surveys, hindfoot_length > 35)
+    ```
 
 ### Pipes
 
@@ -300,28 +370,20 @@ that as input to the next function, like this:
 
 
 
-```{r}
+```{r pipes-example-1, exercise=TRUE}
 surveys2 <- filter(surveys, weight < 5)
 surveys_sml <- select(surveys2, species_id, sex, weight)
 ```
-
-
 
 This is readable, but can clutter up your workspace with lots of objects that 
 you have to name individually. With multiple steps, that can be hard to keep 
 track of.
 
- 
-
 You can also nest functions (i.e. one function inside of another), like this:
 
-
-
-```{r}
+```{r pipes-example-2, exercise=TRUE}
 surveys_sml <- select(filter(surveys, weight < 5), species_id, sex, weight)
 ```
-
-
 
 This is handy, but can be difficult to read if too many functions are nested, as
 R evaluates the expression from the inside out (in this case, filtering, then 
@@ -335,15 +397,11 @@ automatically with **`dplyr`**. If you use RStudio, you can type the pipe with
 <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>M</kbd> if you have a PC or 
 <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>M</kbd> if you have a Mac.
 
-
-
-```{r}
+```{r pipes-example-3, exercise=TRUE}
 surveys %>%
   filter(weight < 5) %>%
   select(species_id, sex, weight)
 ```
-
-
 
 In the above code, we use the pipe to send the `surveys` dataset first through
 `filter()` to keep rows where `weight` is less than 5, then through `select()`
@@ -364,7 +422,7 @@ can assign it a new name:
 
 
 
-```{r}
+```{r pipe-rename-example, exercise=TRUE}
 surveys_sml <- surveys %>%
   filter(weight < 5) %>%
   select(species_id, sex, weight)
@@ -381,15 +439,21 @@ Note that the final data frame is the leftmost part of this expression.
 >  Using pipes, subset the `surveys` data to include animals collected on or after
 >  1995 and retain only the columns `year`, `sex`, and `weight`.
 
-
-
-```{r, eval=FALSE, echo=FALSE}
+```{r challenge-1, exercise=TRUE, exercise.lines = 7}
 ## Pipes Challenge:
 ##  Using pipes, subset the data to include animals collected
 ##  before 1995, and retain the columns `year`, `sex`, and `weight.`
 ```
 
+```{r challenge-1-solution}
+surveys %>%
+     filter(year >= 1995) %>%
+     select(year, sex, weight)
+```
 
+```{r challenge-1-check}
+grade_code()
+```
 
 ### Mutate
 
@@ -399,9 +463,7 @@ two columns. For this we'll use `mutate()`.
 
 To create a new column of weight in kg:
 
-
-
-```{r}
+```{r create-column, exercise=TRUE}
 surveys %>%
   mutate(weight_kg = weight / 1000)
 ```
@@ -413,7 +475,7 @@ same call of `mutate()`:
 
 
 
-```{r}
+```{r create-two-columns, exercise=TRUE}
 surveys %>%
   mutate(weight_kg = weight / 1000,
          weight_lb = weight_kg * 2.2)
@@ -427,7 +489,7 @@ functions, too, as long as the **`dplyr`** or `magrittr` package is loaded).
 
 
 
-```{r}
+```{r create-column-head, exercise=TRUE}
 surveys %>%
   mutate(weight_kg = weight / 1000) %>%
   head()
@@ -440,7 +502,7 @@ those we could insert a `filter()` in the chain:
 
 
 
-```{r}
+```{r mutate-filter, exercise=TRUE}
 surveys %>%
   filter(!is.na(weight)) %>%
   mutate(weight_kg = weight / 1000) %>%
@@ -450,35 +512,47 @@ surveys %>%
 
 
 `is.na()` is a function that determines whether something is an `NA`. The `!`
-symbol negates the result, so we're asking for every row where weight *is not* 
+symbol negates the result, so in the code above we're asking for every row where weight *is not* 
 an `NA`.
 
 > ## Challenge 2 {.challenge}
 >
->  Create a new data frame from the `surveys` data that meets the following
->  criteria: contains only the `species_id` column and a new column called
->  `hindfoot_cm` containing the `hindfoot_length` values converted to centimeters.
->  In this `hindfoot_cm` column, there are no `NA`s and all values are less
->  than 3.
+>  Create a new data frame from the `surveys` data named `surveys_hindfoot_cm`
+>  that meets the following criteria: 
+>  * contains only the `species_id` column and 
+>  * a new column called `hindfoot_cm` containing the `hindfoot_length` values 
+>    converted to centimeters.
+>  * In this `hindfoot_cm` column, there are no `NA`s and all values are less
+>    than 3.
 >
 >  **Hint**: think about how the commands should be ordered to produce this data frame!
 > 
 
 
 
-```{r} 
+```{r challenge-2, exercise=TRUE, exercise.lines = 12} 
 ## Mutate Challenge:
-##  Create a new data frame from the `surveys` data that meets the following
-##  criteria: contains only the `species_id` column and a new column called
-##  `hindfoot_cm` containing the `hindfoot_length` values converted to centimeters.
-##  In this `hindfoot_cm` column, there are no `NA`s and all values are less
-##  than 3.
+##  Create a new data frame from the `surveys` data named `surveys_hindfoot_cm`
+##  that meets the following criteria: 
+##  * contains only the `species_id` column and 
+##  * a new column called `hindfoot_cm` containing the `hindfoot_length` values 
+##    converted to centimeters.
+##  * In this `hindfoot_cm` column, there are no `NA`s and all values are less
+##    than 3.
 
 ##  Hint: think about how the commands should be ordered to produce this data frame!
 
 ```
 
+```{r challenge-2-solution}
+surveys_hindfoot_cm <- surveys %>%
+     mutate(hindfoot_cm = hindfoot_length) %>%
+     select(year, sex, weight)
+```
 
+```{r challenge-2-check}
+grade_code()
+```
  
 ### Using `lubridate` for dates 
 
