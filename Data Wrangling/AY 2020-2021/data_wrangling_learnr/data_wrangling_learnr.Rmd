@@ -502,7 +502,7 @@ those we could insert a `filter()` in the chain:
 
 
 
-```{r mutate-filter, exercise=TRUE}
+```{r mutate-filter, exercise=TRUE, exercise.eval=TRUE}
 surveys %>%
   filter(!is.na(weight)) %>%
   mutate(weight_kg = weight / 1000) %>%
@@ -524,13 +524,14 @@ an `NA`.
 >    converted to centimeters.
 >  * In this `hindfoot_cm` column, there are no `NA`s and all values are less
 >    than 3.
+>  Print out the new data frame.
 >
 >  **Hint**: think about how the commands should be ordered to produce this data frame!
 > 
 
 
 
-```{r challenge-2, exercise=TRUE, exercise.lines = 12} 
+```{r challenge-2, exercise=TRUE, exercise.lines = 12, exercise.eval=TRUE} 
 ## Mutate Challenge:
 ##  Create a new data frame from the `surveys` data named `surveys_hindfoot_cm`
 ##  that meets the following criteria: 
@@ -539,6 +540,7 @@ an `NA`.
 ##    converted to centimeters.
 ##  * In this `hindfoot_cm` column, there are no `NA`s and all values are less
 ##    than 3.
+##  Print out the new data frame.
 
 ##  Hint: think about how the commands should be ordered to produce this data frame!
 
@@ -546,8 +548,11 @@ an `NA`.
 
 ```{r challenge-2-solution}
 surveys_hindfoot_cm <- surveys %>%
-     mutate(hindfoot_cm = hindfoot_length) %>%
-     select(year, sex, weight)
+  filter(!is.na(hindfoot_length)) %>%
+  mutate(hindfoot_cm = hindfoot_length/10) %>%
+  filter(hindfoot_cm < 3) %>%
+  select(species_id, hindfoot_cm)
+surveys_hindfoot_cm
 ```
 
 ```{r challenge-2-check}
@@ -556,9 +561,9 @@ grade_code()
  
 ### Using `lubridate` for dates 
 
-```{r, message = FALSE, results = 'hide'}
+```{r lubridate-example, message = FALSE, exercise=TRUE}
 library(lubridate)
-surveys <- surveys %>% 
+surveys_dates <- surveys %>% 
   mutate(date = ymd(paste(year,
                           month,
                           day,
@@ -580,12 +585,26 @@ surveys %>%
 ```
 
 
+```{r warning=FALSE, message = FALSE, echo=FALSE, eval=TRUE}
+library(lubridate)
+surveys_dates <- surveys %>% 
+  mutate(date = ymd(paste(year,
+                          month,
+                          day,
+                          sep = "-")
+                    ),
+         day_of_week = wday(date, label = TRUE)
+         ## Creating a day of the week variable
+         ## label = TRUE prints the name, not the level! 
+         )
+```
+
 
 ### Using `dplyr` for Character Wrangling   
 
-```{r, results = 'hide'}
+```{r weekend-dates-example, exercise=TRUE}
 
-surveys %>% 
+surveys_dates %>% 
   mutate(weekend = case_when(day_of_week == "Sat" | 
                                day_of_week == "Sun" ~ "Weekend", 
                              TRUE ~ "Weekday"
@@ -593,8 +612,6 @@ surveys %>%
          ) %>% 
   select(day_of_week, weekend) %>% 
   head()
-
-
 ```
 
  
