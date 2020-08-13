@@ -1,6 +1,6 @@
 ---
 title: "Manipulating, analyzing and exporting data with the tidyverse"
-author: "Data Carpentry contributors & Allison Theobold"
+author: "Data Carpentry contributors & MSU R Workshop Leadership Team"
 output: learnr::tutorial
 runtime: shiny_prerendered
 ---
@@ -169,6 +169,33 @@ manipulation.
 To learn more about **`dplyr`** and **`tidyr`** after the workshop, you may want
 to check out this
 [handy data transformation with **`dplyr`** cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf) and this [one about **`tidyr`**](https://github.com/rstudio/cheatsheets/raw/master/data-import.pdf).
+
+### Presentation of the Survey Data
+
+```{r, echo=FALSE, purl=TRUE}
+### Presentation of the survey data
+```
+
+We are investigating the animal species diversity and weights found within plots at the Data Carpentry study
+site. The dataset is stored as a comma separated value (CSV) file.
+Each row holds information for a single animal, and the columns represent:
+
+| Column           | Description                        |
+|------------------|------------------------------------|
+| record\_id       | Unique id for the observation      |
+| month            | month of observation               |
+| day              | day of observation                 |
+| year             | year of observation                |
+| plot\_id         | ID of a particular plot            |
+| species\_id      | 2-letter code                      |
+| sex              | sex of animal ("M", "F")           |
+| hindfoot\_length | length of the hindfoot in mm       |
+| weight           | weight of the animal in grams      |
+| genus            | genus of animal                    |
+| species          | species of animal                  |
+| taxon            | e.g. Rodent, Reptile, Bird, Rabbit |
+| plot\_type       | type of plot                       |
+
 
 We'll read in our data using the `read_csv()` function, from the tidyverse 
 package **`readr`**, instead of `read.csv()`.
@@ -556,12 +583,12 @@ surveys_hindfoot_cm
 ```
 
 ```{r challenge-2-check}
-grade_code()
+grade_result()
 ```
  
 ### Using `lubridate` for dates 
 
-```{r lubridate-example, message = FALSE, exercise=TRUE}
+```{r lubridate-example, message = FALSE, exercise=TRUE, exercise.lines=20}
 library(lubridate)
 surveys_dates <- surveys %>% 
   mutate(date = ymd(paste(year,
@@ -574,16 +601,16 @@ surveys_dates <- surveys %>%
          ## label = TRUE prints the name, not the level! 
          )
 
-surveys %>% 
+surveys_dates %>% 
   filter(is.na(date) == TRUE) %>% 
   select(month, day) %>% 
   table()
 
-## What dates were unable to be converted? 
-## Why did that happen?  
-
+head(surveys_dates)
 ```
 
+-  What dates were unable to be converted? 
+-  Why did that happen?  
 
 ```{r warning=FALSE, message = FALSE, echo=FALSE, eval=TRUE}
 library(lubridate)
@@ -602,7 +629,7 @@ surveys_dates <- surveys %>%
 
 ### Using `dplyr` for Character Wrangling   
 
-```{r weekend-dates-example, exercise=TRUE}
+```{r weekend-dates-example, exercise=TRUE, exercise.setup="lubridate-example"}
 
 surveys_dates %>% 
   mutate(weekend = case_when(day_of_week == "Sat" | 
