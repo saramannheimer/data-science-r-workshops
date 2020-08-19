@@ -101,7 +101,7 @@ We'll read in our data using the `read_csv()` function, from the tidyverse
 package **`readr`**, instead of `read.csv()`.
 
 ```{r, results = 'hide', message = FALSE}
-surveys <- read_csv("data/surveys.csv")
+surveys <- read_csv("../data/surveys.csv")
 
 ```
 

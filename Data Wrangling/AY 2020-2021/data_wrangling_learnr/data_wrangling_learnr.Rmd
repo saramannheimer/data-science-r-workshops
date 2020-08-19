@@ -3,6 +3,7 @@ title: "Manipulating, analyzing and exporting data with the tidyverse"
 author: "Data Carpentry contributors & MSU R Workshop Leadership Team"
 output: learnr::tutorial
 runtime: shiny_prerendered
+css: css/bootstrap.css
 ---
 
 ```{r setup, include=FALSE}
@@ -10,6 +11,7 @@ library(learnr)
 library(tidyverse)
 library(gradethis)
 knitr::opts_chunk$set(echo = FALSE, exercise.checker = gradethis::grade_learnr)
+
 surveys <- read_csv("data/surveys.csv")
 ```
 
@@ -93,7 +95,7 @@ quiz(
 
 ------------
 
-## Data Manipulation using **`dplyr`** and **`tidyr`**
+## Data Manipulation using **`dplyr`** and **`tidyr`** Introduction
 
 Bracket subsetting is handy, but it can be cumbersome and difficult to read,
 especially for complicated operations. Enter **`dplyr`**. **`dplyr`** is a 
@@ -253,6 +255,8 @@ We're going to learn some of the most common **`dplyr`** functions:
 - `group_by()` and `summarize()`: create summary statistics on grouped data
 - `arrange()`: sort results
 - `count()`: count discrete values
+
+## Select, Filter, and Mutate
 
 ### Selecting columns and filtering rows
 
@@ -582,15 +586,20 @@ surveys_hindfoot_cm <- surveys %>%
 surveys_hindfoot_cm
 ```
 
+
+
+
 ```{r challenge-2-check}
-grade_result()
+grade_result(
+  pass_if(~ identical(.result, surveys_hindfoot_cm))
+)
 ```
  
 ### Using `lubridate` for dates 
 
 ```{r lubridate-example, message = FALSE, exercise=TRUE, exercise.lines=20}
 library(lubridate)
-surveys_dates <- surveys %>% 
+surveys3 <- surveys %>% 
   mutate(date = ymd(paste(year,
                           month,
                           day,
@@ -601,20 +610,22 @@ surveys_dates <- surveys %>%
          ## label = TRUE prints the name, not the level! 
          )
 
-surveys_dates %>% 
+surveys3 %>% 
   filter(is.na(date) == TRUE) %>% 
   select(month, day) %>% 
   table()
 
-head(surveys_dates)
+head(surveys3)
 ```
+
+#### Questions:
 
 -  What dates were unable to be converted? 
 -  Why did that happen?  
 
 ```{r warning=FALSE, message = FALSE, echo=FALSE, eval=TRUE}
 library(lubridate)
-surveys_dates <- surveys %>% 
+surveys3 <- surveys %>% 
   mutate(date = ymd(paste(year,
                           month,
                           day,
@@ -631,7 +642,7 @@ surveys_dates <- surveys %>%
 
 ```{r weekend-dates-example, exercise=TRUE, exercise.setup="lubridate-example"}
 
-surveys_dates %>% 
+surveys3 %>% 
   mutate(weekend = case_when(day_of_week == "Sat" | 
                                day_of_week == "Sun" ~ "Weekend", 
                              TRUE ~ "Weekday"
@@ -643,7 +654,7 @@ surveys_dates %>%
 
  
 
-### Split-apply-combine data analysis and the `summarise()` function
+## Split-apply-combine data analysis and the `summarise()` function
 
 Many data analysis tasks can be approached using the *split-apply-combine*
 paradigm: split the data into groups, apply some analysis to each group, and
@@ -651,7 +662,7 @@ then combine the results. **`dplyr`** makes this very easy through the use of th
 `group_by()` function.
 
 
-### The `summarize()` function
+#### The `summarize()` function
 
 `group_by()` is often used together with `summarize()`, which collapses each
 group into a single-row summary of that group.  `group_by()` takes as arguments
@@ -660,8 +671,8 @@ to calculate the summary statistics. So to compute the mean `weight` by sex:
 
 
 
-```{r}
-surveys %>%
+```{r groupby-example, exercise=TRUE}
+surveys3 %>%
   group_by(sex) %>%
   summarize(mean_weight = mean(weight, na.rm = TRUE))
 ```
@@ -675,8 +686,8 @@ You can also group by multiple columns:
 
 
 
-```{r}
-surveys %>%
+```{r groupby-example2, exercise=TRUE}
+surveys3 %>%
   group_by(sex, species_id) %>%
   summarize(mean_weight = mean(weight, na.rm = TRUE))
 ```
@@ -692,8 +703,8 @@ values are removed first, we can omit `na.rm = TRUE` when computing the mean:
 
 
 
-```{r}
-surveys %>%
+```{r groupby-example3, exercise=TRUE}
+surveys3 %>%
   filter(!is.na(weight)) %>%
   group_by(sex, species_id) %>%
   summarize(mean_weight = mean(weight))
@@ -708,8 +719,8 @@ display:
 
 
 
-```{r}
-surveys %>%
+```{r groupby-example4, exercise=TRUE}
+surveys3 %>%
   filter(!is.na(weight)) %>%
   group_by(sex, species_id) %>%
   summarize(mean_weight = mean(weight)) %>%
@@ -724,8 +735,8 @@ column indicating the minimum weight for each species for each sex:
 
 
 
-```{r}
-surveys %>%
+```{r summarize-example1, exercise=TRUE}
+surveys3 %>%
   filter(!is.na(weight)) %>%
   group_by(sex, species_id) %>%
   summarize(mean_weight = mean(weight),
@@ -739,8 +750,8 @@ For instance, we can sort on `min_weight` to put the lighter species first:
 
 
 
-```{r}
-surveys %>%
+```{r summarize-example2, exercise=TRUE}
+surveys3 %>%
   filter(!is.na(weight)) %>%
   group_by(sex, species_id) %>%
   summarize(mean_weight = mean(weight),
@@ -755,8 +766,8 @@ sort the results by decreasing order of mean weight:
 
 
 
-```{r}
-surveys %>%
+```{r summarize-example3, exercise=TRUE}
+surveys3 %>%
   filter(!is.na(weight)) %>%
   group_by(sex, species_id) %>%
   summarize(mean_weight = mean(weight),
@@ -775,8 +786,8 @@ each sex, we would do:
 
 
 
-```{r}
-surveys %>%
+```{r count-example1, exercise=TRUE}
+surveys3 %>%
     count(sex) 
 ```
 
@@ -788,8 +799,8 @@ group. In other words, `surveys %>% count()` is equivalent to:
 
 
 
-```{r}
-surveys %>%
+```{r count-example2, exercise=TRUE}
+surveys3 %>%
     group_by(sex) %>%
     summarise(count = n())
 ```
@@ -800,22 +811,22 @@ For convenience, `count()` provides the `sort` argument:
 
 
 
-```{r}
-surveys %>%
+```{r count-example3, exercise=TRUE}
+surveys3 %>%
     count(sex, sort = TRUE) 
 ```
 
 
 
-Previous example shows the use of `count()` to count the number of rows/observations 
+The previous example shows the use of `count()` to count the number of rows/observations 
 for *one* factor (i.e., `sex`). 
 If we wanted to count *combination of factors*, such as `sex` and `species`, 
 we would specify the first and the second factor as the arguments of `count()`:
 
 
 
-```{r purl = FALSE}
-surveys %>%
+```{r count-example4, exercise=TRUE}
+surveys3 %>%
   count(sex, species_id) 
 ```
 
@@ -829,7 +840,7 @@ order of the levels of the species and (ii) in descending order of the count:
 
 
 ```{r purl = FALSE}
-surveys %>%
+surveys3 %>%
   count(sex, species_id) %>%
   arrange(species_id, desc(n))
 ```
@@ -970,17 +981,17 @@ preserve the contents of `x`, even if there is not a match for them in `y`.
 
  
 
-### Joining `survey` Data  
+### Joining `surveys3` Data  
 
-To join the `survey` data with the `plots` data and `species` data, we will need
+To join the `surveys3` data with the `plots` data and `species` data, we will need
 to join statements. As we are interested in adding this information to our 
-already existing data frame, `surveys`, a left join is the most appropriate.  
+already existing data frame, `surveys3`, a left join is the most appropriate.  
 
 
 
 ```{r, warning = FALSE}
 
-combined <- surveys %>% 
+combined <- surveys3 %>% 
               left_join(plots, by = "plot_id") %>%  # adding the type of plot  
               left_join(species, by = "species_id") # adding the genus, species, and taxa 
 
@@ -1002,7 +1013,7 @@ dataset:
 
 Here we examine the fourth rule: Each type of observational unit forms a table.
 
-In `surveys` , the rows of `surveys` contain the values of variables associated
+In `surveys3` , the rows of `surveys3` contain the values of variables associated
 with each record (the unit), values such as the weight or sex of each animal 
 associated with each record. What if instead of comparing records, we 
 wanted to compare the different mean weight of each genus between plots? 
@@ -1036,7 +1047,7 @@ and `gather()`.
 Further arguments include `fill` which, if set, fills in missing values with 
 the value provided.
 
-Let's use `spread()` to transform surveys to find the mean weight of each 
+Let's use `spread()` to transform `surveys3` to find the mean weight of each 
 genus in each plot over the entire survey period. We use `filter()`,
 `group_by()` and `summarise()` to filter our observations and variables of 
 interest, and create a new variable for the `mean_weight`. We use the pipe as 
@@ -1144,7 +1155,7 @@ surveys_spread %>%
 
 > ## Challenge 4 {.challenge}
 >
-> 1. Spread the `surveys` data frame with `year` as columns, `plot_id` 
+> 1. Spread the `surveys3` data frame with `year` as columns, `plot_id` 
 >   as rows, and the number of genera per plot as the values. You will need to 
 >   summarize before reshaping, and use the function `n_distinct()` to get the
 >   number of unique genera within a particular chunk of data. It's a powerful 
@@ -1155,7 +1166,7 @@ surveys_spread %>%
 >    `plot_id` by `year` combination.
 >
 > 
-> 3. The `surveys` data set has two measurement columns: `hindfoot_length` and
+> 3. The `surveys3` data set has two measurement columns: `hindfoot_length` and
 >    `weight`.  This makes it difficult to do things like look at the 
 >    relationship between mean values of each measurement per year in different
 >    plot types. Let's walk through a common solution for this type of problem.
@@ -1229,7 +1240,7 @@ Let's start by removing observations of animals for which `weight` and
 
 
 ```{r, purl=FALSE}
-surveys_complete <- surveys %>%
+surveys_complete <- surveys3 %>%
   filter(!is.na(weight),           # remove missing weight
          !is.na(hindfoot_length),  # remove missing hindfoot_length
          !is.na(sex))                # remove missing sex
@@ -1260,7 +1271,7 @@ surveys_complete <- surveys_complete %>%
 ## Create the dataset for exporting:
 ##  Start by removing observations for which the `species_id`, `weight`,
 ##  `hindfoot_length`, or `sex` data are missing:
-surveys_complete <- surveys %>%
+surveys_complete <- surveys3 %>%
     filter(species_id != "",        # remove missing species_id
            !is.na(weight),                 # remove missing weight
            !is.na(hindfoot_length),        # remove missing hindfoot_length
