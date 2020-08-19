@@ -654,7 +654,7 @@ surveys3 %>%
 
  
 
-## Split-apply-combine data analysis and the `summarise()` function
+## Split-apply-combine data analysis
 
 Many data analysis tasks can be approached using the *split-apply-combine*
 paradigm: split the data into groups, apply some analysis to each group, and
@@ -662,7 +662,7 @@ then combine the results. **`dplyr`** makes this very easy through the use of th
 `group_by()` function.
 
 
-#### The `summarize()` function
+### The `summarize()` function
 
 `group_by()` is often used together with `summarize()`, which collapses each
 group into a single-row summary of that group.  `group_by()` takes as arguments
@@ -833,13 +833,13 @@ surveys3 %>%
 
 
 With the above code, we can proceed with `arrange()` to sort the table 
-according to a number of criteria so that we have a better comparison. 
+according to a number of criteria so that we have a better way to compare groups. 
 For instance, we might want to arrange the table above in (i) an alphabetical 
 order of the levels of the species and (ii) in descending order of the count:
 
 
 
-```{r purl = FALSE}
+```{r count-example5, exercise=TRUE}
 surveys3 %>%
   count(sex, species_id) %>%
   arrange(species_id, desc(n))
@@ -848,7 +848,8 @@ surveys3 %>%
 
 
 From the table above, we may learn that, for instance, there are 75 observations
-of the *albigula* species that are not specified for its sex (i.e. `NA`).
+of the *albigula* species (`species_id` = "NL) that are not specified for its sex (i.e. `NA`), 
+the counts for *NL* are on page 3 of the table.
 
 > ## Challenge {.challenge}
 >
@@ -1055,7 +1056,7 @@ before too.
 
 
 
-```{r, results = 'hide'}
+```{r, results = 'hide', eval=FALSE}
 surveys_gw <- combined %>%
   filter(!is.na(weight)) %>%
   group_by(plot_id, genus) %>%
@@ -1074,7 +1075,7 @@ Using `spread()` to key on `genus` with values from `mean_weight` this becomes
 
 
 
-```{r, results = 'hide'}
+```{r, results = 'hide', eval=FALSE}
 surveys_spread <- surveys_gw %>%
   spread(key = genus, value = mean_weight)
 
@@ -1088,7 +1089,7 @@ str(surveys_spread)
 We could now plot comparisons between the weight of genera in different plots, 
 although we may wish to fill in the missing values first.
 
-```{r}
+```{r, eval=FALSE}
 surveys_gw %>%
   spread(genus, mean_weight, fill = 0) %>%
   head()
@@ -1123,7 +1124,7 @@ the key variable. Here we drop `plot_id` column with a minus sign.
 
 
 
-```{r, results = 'hide'}
+```{r, results = 'hide', eval=FALSE}
 surveys_gather <- surveys_spread %>%
   gather(key = "genus", value = "mean_weight", -plot_id)
 
@@ -1145,7 +1146,7 @@ row, we don't even need to list them all out - just use the `:` operator!
 
 
 
-```{r}
+```{r, eval=FALSE}
 surveys_spread %>%
   gather(key = "genus", value = "mean_weight", Baiomys:Spermophilus) %>%
   head()
