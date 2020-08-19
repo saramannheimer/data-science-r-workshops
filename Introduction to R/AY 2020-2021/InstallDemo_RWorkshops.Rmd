@@ -187,10 +187,14 @@ quiz(caption = "Quiz - Working with Packages",
 )
 ```
 
-## Wrap up
+## Wrap up (and a backup option)
 
-Once you have completed these steps, you should be ready for the "Introduction to R" Workshop. If you had any difficulties with getting your computer set up for the workshop, please contact the workshop organizers in advance. We can either diagnose the issue via email or we can set up a time to chat and hopefully resolve the issue. We will have a backup plan for the workshops if you continue to have issues (they are rare but can occur), but hopefully you are set up and ready to harness the amazing capabilities of R via RStudio. Thanks for taking the time to prepare for your first steps in learning to use R. 
+Once you have completed these steps, you should be ready for the "Introduction to R" Workshop. If you had any difficulties with getting your computer set up for the workshop, please contact the workshop organizers in advance. We can either diagnose the issue via email or we can set up a time to chat and hopefully resolve the issue. 
 
-If you already have experience using R and RStudio and the tidyverse, the "Introduction to R" workshop may not be the best starting point for you in the R Workshops series. Feel free to email the workshop organizers if you have had some practice using RStudio in courses or other activities to discuss this. The "Introduction to R" is a very introductory workshop.
+As a backup to the preferred version of having a local installation of R and RStudio, we have an option to use a virtual windows machine that is hosted by MSU - but only if you are an MSU affiliate. We will try to have it available to you based on your NETID. If you need this option, please go to  [https://studentlabs.montana.edu/remotelabs/howto.html](https://studentlabs.montana.edu/remotelabs/howto.html), click on "Connect to virtual machine via a web browser", then follow the directions to login and use it at "remotelabs.msu.montana.edu". You should find a "CLS-STAT-REMOTE" box on the page with "Horizon". That build has a new install of R and RStudio and would operate the same way as having a local installation, but via the web browser. Note that files are not saved unless you save them in Onedrive or some other cloud service (Box, google drive, etc.). Because this is a streaming workshop, it might tax your internet connection to both stream the workshop and use this virtual desktop and so we recommend using a local installation of RStudio if at all possible.
+
+One way or another, you should be set up and ready to harness the amazing capabilities of R via RStudio. Thanks for taking the time to prepare for your first steps in learning to use R. 
+
+If you already have experience using R and RStudio and the tidyverse, the "Introduction to R" workshop may not be the best starting point for you in the R Workshops series. Feel free to email the workshop organizers if you have had some practice using RStudio in courses or other activities to discuss this. The "Introduction to R" is a very introductory workshop and more advanced workshops will follow.
 
 ## See you soon!
