@@ -1089,13 +1089,17 @@ combined <- surveys3 %>%
 combined
 ```
 
- 
+```{r echo=FALSE, eval=TRUE}
+combined <- surveys3 %>% 
+              left_join(plots, by = "plot_id") %>%  # adding the type of plot  
+              left_join(species, by = "species_id") # adding the genus, species, and taxa 
+```
 
 ## Reshaping with `gather()` and `spread()`
 
 In the [spreadsheet
 lesson](https://datacarpentry.org/spreadsheet-ecology-lesson/01-format-data/),
-we discussed how to structure our data leading to the four rules defining a tidy
+Data Carpenters discussed how to structure data leading to the four rules defining a tidy
 dataset:
 
 1. Each variable has its own column
@@ -1147,16 +1151,22 @@ before too.
 
 
 
-```{r, results = 'hide', eval=FALSE}
+```{r genus-weight-example, exercise=TRUE}
 surveys_gw <- combined %>%
   filter(!is.na(weight)) %>%
   group_by(plot_id, genus) %>%
   summarize(mean_weight = mean(weight))
 
 str(surveys_gw)
+surveys_gw
 ```
 
-
+```{r echo=FALSE, eval=TRUE}
+surveys_gw <- combined %>%
+  filter(!is.na(weight)) %>%
+  group_by(plot_id, genus) %>%
+  summarize(mean_weight = mean(weight))
+```
 
 This yields `surveys_gw` where the observations for each plot are spread across
 multiple rows, 196 observations of 3 variables.  
@@ -1166,21 +1176,28 @@ Using `spread()` to key on `genus` with values from `mean_weight` this becomes
 
 
 
-```{r, results = 'hide', eval=FALSE}
+```{r spread-example, exercise=TRUE}
 surveys_spread <- surveys_gw %>%
   spread(key = genus, value = mean_weight)
 
 str(surveys_spread)
+surveys_spread
 ```
 
+```{r echo=FALSE, eval=TRUE}
+surveys_spread <- surveys_gw %>%
+  spread(key = genus, value = mean_weight)
+```
 
+```{r fig.cap="Visualization of the relationship between the long to wide versions of the data using spread()."}
+knitr::include_graphics("images/spread_data_R.png")
+```
 
-![](images/spread_data_R.png)
 
 We could now plot comparisons between the weight of genera in different plots, 
 although we may wish to fill in the missing values first.
 
-```{r, eval=FALSE}
+```{r fill-missing-example, exercise=TRUE}
 surveys_gw %>%
   spread(genus, mean_weight, fill = 0) %>%
   head()
@@ -1215,16 +1232,22 @@ the key variable. Here we drop `plot_id` column with a minus sign.
 
 
 
-```{r, results = 'hide', eval=FALSE}
+```{r gather-example, exercise=TRUE}
 surveys_gather <- surveys_spread %>%
   gather(key = "genus", value = "mean_weight", -plot_id)
 
 str(surveys_gather)
+surveys_gather
 ```
 
+```{r echo=FALSE, eval=TRUE}
+surveys_gather <- surveys_spread %>%
+  gather(key = "genus", value = "mean_weight", -plot_id)
+```
 
-
-![](images/gather_data_R.png)
+```{r fig.cap="Visualization of the relationship between the wide to long versions of the data using gather()."}
+knitr::include_graphics("images/gather_data_R.png")
+```
 
 Note that now the `NA` genera are included in the re-gathered format. Spreading
 and then gathering can be a useful way to balance out a dataset so every
@@ -1237,7 +1260,7 @@ row, we don't even need to list them all out - just use the `:` operator!
 
 
 
-```{r, eval=FALSE}
+```{r spread-example2, exercise=TRUE}
 surveys_spread %>%
   gather(key = "genus", value = "mean_weight", Baiomys:Spermophilus) %>%
   head()
