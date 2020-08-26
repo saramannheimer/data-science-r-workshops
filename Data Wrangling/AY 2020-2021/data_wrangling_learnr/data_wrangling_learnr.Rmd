@@ -10,9 +10,12 @@ css: css/bootstrap.css
 library(learnr)
 library(tidyverse)
 library(gradethis)
-knitr::opts_chunk$set(echo = FALSE, exercise.checker = gradethis::grade_learnr)
+knitr::opts_chunk$set(echo = FALSE, exercise.checker = gradethis::grade_learnr,
+                      fig.align = "center")
 
 surveys <- read_csv("data/surveys.csv")
+plots <- read_csv("data/plots.csv")
+species <- read_csv("data/species.csv")
 ```
 
 
@@ -193,10 +196,6 @@ Each row holds information for a single animal, and the columns represent:
 | sex              | sex of animal ("M", "F")           |
 | hindfoot\_length | length of the hindfoot in mm       |
 | weight           | weight of the animal in grams      |
-| genus            | genus of animal                    |
-| species          | species of animal                  |
-| taxon            | e.g. Rodent, Reptile, Bird, Rabbit |
-| plot\_type       | type of plot                       |
 
 
 We'll read in our data using the `read_csv()` function, from the tidyverse 
@@ -204,7 +203,6 @@ package **`readr`**, instead of `read.csv()`.
 
 ```{r load-data, results = 'hide', message = FALSE, exercise=TRUE}
 surveys <- read_csv("https://raw.githubusercontent.com/saramannheimer/data-science-r-workshops/master/Data%20Wrangling/AY%202020-2021/data/surveys.csv")
-
 ```
 
 
@@ -591,7 +589,11 @@ surveys_hindfoot_cm
 
 ```{r challenge-2-check}
 grade_result(
-  pass_if(~ identical(.result, surveys_hindfoot_cm))
+  pass_if(~ identical(.result, surveys_hindfoot_cm <- surveys %>%
+  filter(!is.na(hindfoot_length)) %>%
+  mutate(hindfoot_cm = hindfoot_length/10) %>%
+  filter(hindfoot_cm < 3) %>%
+  select(species_id, hindfoot_cm)))
 )
 ```
  
@@ -848,7 +850,7 @@ surveys3 %>%
 
 
 From the table above, we may learn that, for instance, there are 75 observations
-of the *albigula* species (`species_id` = "NL) that are not specified for its sex (i.e. `NA`), 
+of the *albigula* species (`species_id` = "NL") that are not specified for its sex (i.e. `NA`), 
 the counts for *NL* are on page 3 of the table.
 
 
@@ -867,10 +869,6 @@ the counts for *NL* are on page 3 of the table.
 ```{r challenge-3-q-1, exercise=TRUE, exercise.lines = 12, exercise.eval=TRUE}
 ## Count Challenges:
 ##  1. How many animals were caught in each `plot_type` surveyed?
-
-```
-
-```{r, answer=TRUE, purl=FALSE}
 
 ```
 
@@ -963,28 +961,58 @@ The `survey` data have two other data tables they are related to: `plots` and
 `species`. Load in these data and inspect them to get an idea of how they relate
 to the `survey` data we've been working with. 
 
+```{r load-data2, results = 'hide', message = FALSE, exercise=TRUE}
+plots <- read_csv("https://raw.githubusercontent.com/saramannheimer/data-science-r-workshops/master/Data%20Wrangling/AY%202020-2021/data/plots.csv")
 
-
-```{r, message = FALSE}
-plots <- read_csv("data/plots.csv")
-
-species <- read_csv("data/species.csv")
-
+species <- read_csv("https://raw.githubusercontent.com/saramannheimer/data-science-r-workshops/master/Data%20Wrangling/AY%202020-2021/data/species.csv")
 ```
 
+Table: Columns in the `plots.csv` file:
 
+| Column           | Description                        |
+|------------------|------------------------------------|
+| plot\_id         | ID of a particular plot            |
+| plot\_type       | type of plot                       |
+
+Table: Columns in the `species.csv` file:
+
+| Column           | Description                        |
+|------------------|------------------------------------|
+| species\_id      | 2-letter code                      |
+| genus            | genus of animal                    |
+| species          | species of animal                  |
+| taxon            | e.g. Rodent, Reptile, Bird, Rabbit |
 
 The variables used to connect a pair of tables are called *keys*. A key is a 
 variable that uniquely identifies an observation in that table.  What are the 
 keys for each of the three data tables? (hint: What combination of variables 
 uniquely identifies a row in that data frame?) 
 
-- plots key:  
-
-- species key:  
-
-- surveys key: 
-
+```{r key-quiz}
+quiz(
+  question("What is the key for the plots data table?",
+    answer("plot_id",correct=TRUE),
+    answer("plot_type")
+  ),
+  question("What is the key for the species data table?",
+    answer("species_id", correct = TRUE),
+    answer("genus"),
+    answer("species"),
+    answer("taxa")
+  ),
+  question("What is the key for the surveys data table?",
+    answer("record_id", correct = TRUE),
+    answer("month"),
+    answer("day"),
+    answer("year"),
+    answer("plot_id"),
+    answer("species_id"),
+    answer("sex"),
+    answer("hindfoot_length"),
+    answer("weight")
+  )
+)
+```
 
 There are two types of keys:  
 
@@ -999,8 +1027,9 @@ hence a many-to-one relationship.
 For me, the easiest way to think about the relationships between the different 
 data tables is to draw a picture:  
 
-![Relations of survey data tables](figures/relations.jpg)
-
+```{r fig.cap="Relations of survey data tables"}
+knitr::include_graphics("images/relations.jpg")
+```
 
  
 
@@ -1020,12 +1049,10 @@ whenever their keys are equal. This join will output a new data frame that
 contains the key, the values of `x`, and the values of `y`. Importantly, this 
 join deletes observations that do not have a match. 
 
-\begin{figure}[h!]
-\caption{Wickham, H. \& Grolemund, G. (2017) \emph{R for Data Science}. 
-Sebastopol, California: O'Reilly.}
-\includegraphics{figures/inner.jpg}
-\centering
-\end{figure}
+```{r fig.cap="Wickham, H. & Grolemund, G. (2017) *R for Data Science*. Sebastopol, California: O'Reilly."}
+knitr::include_graphics("images/inner.jpg")
+```
+
 
 ### Outer Join  
 
@@ -1037,13 +1064,9 @@ data tables. When joining `x` with `y`, there are three types of outer join:
 - A *right join* keeps all of the observations in `y`.  
 - A *full join* keeps all of the observations in both `x` and `y`. 
 
-\begin{figure}[h!]
-\caption{Wickham, H. \& Grolemund, G. (2017) \emph{R for Data Science}. 
-Sebastopol, California: O'Reilly.}
-\includegraphics{figures/joins.jpg}
-\centering
-\end{figure}
-
+```{r fig.cap="Wickham, H. & Grolemund, G. (2017) *R for Data Science*. Sebastopol, California: O'Reilly."}
+knitr::include_graphics("images/joins.jpg")
+```
 
 The left join is the most common, as you typically have a data frame (`x`) that 
 you wish to add additional information to (the contents of `y`). This join will 
@@ -1059,12 +1082,11 @@ already existing data frame, `surveys3`, a left join is the most appropriate.
 
 
 
-```{r, warning = FALSE}
-
+```{r joins-example, exercise=TRUE}
 combined <- surveys3 %>% 
               left_join(plots, by = "plot_id") %>%  # adding the type of plot  
               left_join(species, by = "species_id") # adding the genus, species, and taxa 
-
+combined
 ```
 
  
@@ -1153,7 +1175,7 @@ str(surveys_spread)
 
 
 
-![](figures/spread_data_R.png)
+![](images/spread_data_R.png)
 
 We could now plot comparisons between the weight of genera in different plots, 
 although we may wish to fill in the missing values first.
@@ -1202,7 +1224,7 @@ str(surveys_gather)
 
 
 
-![](figures/gather_data_R.png)
+![](images/gather_data_R.png)
 
 Note that now the `NA` genera are included in the re-gathered format. Spreading
 and then gathering can be a useful way to balance out a dataset so every
