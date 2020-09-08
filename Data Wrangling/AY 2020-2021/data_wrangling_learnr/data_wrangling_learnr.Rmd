@@ -566,7 +566,7 @@ now() # Today's date, with time and timezone!
 ```
 
 ```{r lubridate-example2, message = FALSE, exercise=TRUE, exercise.lines=20}
-surveys3 <- surveys %>% 
+surveys_w_days <- surveys %>% 
   mutate(date = ymd(paste(year,
                           month,
                           day,
@@ -577,12 +577,12 @@ surveys3 <- surveys %>%
          ## label = TRUE prints the name, not the level! 
          )
 
-surveys3 %>% 
+surveys_w_days %>% 
   filter(is.na(date) == TRUE) %>% 
   select(month, day) %>% 
   table()
 
-head(surveys3)
+head(surveys_w_days)
 ```
 
 > ## Challenge 3 ![Medium spicy chili pepper.](images/medium.jpg) {.challenge3} 
@@ -593,7 +593,7 @@ head(surveys3)
 
 ```{r warning=FALSE, message = FALSE, echo=FALSE, eval=TRUE}
 library(lubridate)
-surveys3 <- surveys %>% 
+surveys_w_days <- surveys %>% 
   mutate(date = ymd(paste(year,
                           month,
                           day,
@@ -629,18 +629,18 @@ see that it is an ordered (<ord>) factor.
 <!-- Stuck here... how to make this a challenge and to get the answers out from what it used to be... -->
 
 ```{r challenge-4, exercise=TRUE, exercise.eval=TRUE}
-
+levels(surveys_w_days$day_of_week)
 
 ```
 
 ```{r  challenge-4-solution}
-names(surveys3$day_of_week)
+names(surveys_w_days$day_of_week)
 ```
 
 
 ```{r challenge-4-check}
 grade_result(
-  pass_if(~ identical(.result, levels(surveys3$day_of_week)))
+  pass_if(~ identical(.result, levels(surveys_w_days$day_of_week)))
 )
 ```
 
@@ -659,8 +659,21 @@ should be done with these matches.
 
 Let's look at this in action! 
 
-```{r}
-surveys3 <- surveys3 %>% 
+```{r caseWhen-example, exercise=TRUE, exercise.lines=10}
+surveys_days_full <- surveys_w_days %>% 
+  mutate(day_of_week = case_when(day_of_week == "Mon" ~ "Monday", 
+                             day_of_week == "Tue" ~ "Tuesday", 
+                             day_of_week == "Wed" ~ "Wednesday", 
+                             day_of_week == "Thu" ~ "Thursday", 
+                             day_of_week == "Fri" ~ "Friday", 
+                             day_of_week == "Sat" ~ "Saturday",
+                             day_of_week == "Sun" ~ "Sunday")
+         )
+glimpse(surveys_days_full$day_of_week)
+```
+
+```{r caseWhen-evaluated, eval=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
+surveys_days_full <- surveys_w_days %>% 
   mutate(day_of_week = case_when(day_of_week == "Mon" ~ "Monday", 
                              day_of_week == "Tue" ~ "Tuesday", 
                              day_of_week == "Wed" ~ "Wednesday", 
@@ -701,8 +714,8 @@ The function takes three arguments:
 
 This process looks like this: 
 
-```{r}
-surveys3 <- surveys3 %>% 
+```{r relevel-example, exercise=TRUE, exercise.lines=10}
+surveys_edited <- surveys_days_full %>% 
   mutate(day_of_week = fct_relevel(day_of_week, 
                                    "Monday", 
                                    "Tuesday", 
@@ -712,26 +725,30 @@ surveys3 <- surveys3 %>%
                                    "Saturday", 
                                    "Sunday")
   )
+glimpse(surveys_edited$day_of_week)
+```
 
+```{r relevel-evaluated, eval=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
+surveys_edited <- surveys_days_full %>% 
+  mutate(day_of_week = fct_relevel(day_of_week, 
+                                   "Monday", 
+                                   "Tuesday", 
+                                   "Wednesday", 
+                                   "Thursday", 
+                                   "Friday", 
+                                   "Saturday", 
+                                   "Sunday")
+  )
 ```
 
 > ## Challenge 6
 > ![](figures/medium.jpg)
 > Verify that `R` put the days in the order that you specified! 
 
-```{r weekend-dates-example, exercise=TRUE, exercise.setup="lubridate-example"}
+```{r challenge-6, exercise=TRUE, exercise.eval=TRUE}
 
-surveys3 %>% 
-  mutate(weekend = case_when(day_of_week == "Sat" | 
-                               day_of_week == "Sun" ~ "Weekend", 
-                             TRUE ~ "Weekday"
-                             )
-         ) %>% 
-  select(day_of_week, weekend) %>% 
-  head()
+
 ```
-
- 
 
 ## Split-apply-combine data analysis
 
@@ -751,7 +768,7 @@ to calculate the summary statistics. So to compute the mean `weight` by sex:
 
 
 ```{r groupby-example, exercise=TRUE}
-surveys3 %>%
+surveys_edited %>%
   group_by(sex) %>%
   summarize(mean_weight = mean(weight, na.rm = TRUE))
 ```
@@ -766,7 +783,7 @@ You can also group by multiple columns:
 
 
 ```{r groupby-example2, exercise=TRUE}
-surveys3 %>%
+surveys_edited %>%
   group_by(sex, species_id) %>%
   summarize(mean_weight = mean(weight, na.rm = TRUE))
 ```
@@ -783,7 +800,7 @@ values are removed first, we can omit `na.rm = TRUE` when computing the mean:
 
 
 ```{r groupby-example3, exercise=TRUE}
-surveys3 %>%
+surveys_edited %>%
   filter(!is.na(weight)) %>%
   group_by(sex, species_id) %>%
   summarize(mean_weight = mean(weight))
@@ -799,7 +816,7 @@ display:
 
 
 ```{r groupby-example4, exercise=TRUE}
-surveys3 %>%
+surveys_edited %>%
   filter(!is.na(weight)) %>%
   group_by(sex, species_id) %>%
   summarize(mean_weight = mean(weight)) %>%
@@ -815,7 +832,7 @@ column indicating the minimum weight for each species for each sex:
 
 
 ```{r summarize-example1, exercise=TRUE}
-surveys3 %>%
+surveys_edited %>%
   filter(!is.na(weight)) %>%
   group_by(sex, species_id) %>%
   summarize(mean_weight = mean(weight),
@@ -830,7 +847,7 @@ For instance, we can sort on `min_weight` to put the lighter species first:
 
 
 ```{r summarize-example2, exercise=TRUE}
-surveys3 %>%
+surveys_edited %>%
   filter(!is.na(weight)) %>%
   group_by(sex, species_id) %>%
   summarize(mean_weight = mean(weight),
@@ -846,7 +863,7 @@ sort the results by decreasing order of mean weight:
 
 
 ```{r summarize-example3, exercise=TRUE}
-surveys3 %>%
+surveys_edited %>%
   filter(!is.na(weight)) %>%
   group_by(sex, species_id) %>%
   summarize(mean_weight = mean(weight),
@@ -866,7 +883,7 @@ each sex, we would do:
 
 
 ```{r count-example1, exercise=TRUE}
-surveys3 %>%
+surveys_edited %>%
     count(sex) 
 ```
 
@@ -879,7 +896,7 @@ group. In other words, `surveys %>% count()` is equivalent to:
 
 
 ```{r count-example2, exercise=TRUE}
-surveys3 %>%
+surveys_edited %>%
     group_by(sex) %>%
     summarize(count = n())
 ```
@@ -891,7 +908,7 @@ For convenience, `count()` provides the `sort` argument:
 
 
 ```{r count-example3, exercise=TRUE}
-surveys3 %>%
+surveys_edited %>%
     count(sex, sort = TRUE) 
 ```
 
@@ -905,7 +922,7 @@ we would specify the first and the second factor as the arguments of `count()`:
 
 
 ```{r count-example4, exercise=TRUE}
-surveys3 %>%
+surveys_edited %>%
   count(sex, species_id) 
 ```
 
@@ -919,7 +936,7 @@ order of the levels of the species and (ii) in descending order of the count:
 
 
 ```{r count-example5, exercise=TRUE}
-surveys3 %>%
+surveys_edited %>%
   count(sex, species_id) %>%
   arrange(species_id, desc(n))
 ```
@@ -1151,23 +1168,23 @@ preserve the contents of `x`, even if there is not a match for them in `y`.
 
  
 
-### Joining `surveys3` Data  
+### Joining `surveys_edited` Data  
 
-To join the `surveys3` data with the `plots` data and `species` data, we will need
+To join the `surveys_edited` data with the `plots` data and `species` data, we will need
 to join statements. As we are interested in adding this information to our 
-already existing data frame, `surveys3`, a left join is the most appropriate.  
+already existing data frame, `surveys_edited`, a left join is the most appropriate.  
 
 
 
 ```{r joins-example, exercise=TRUE}
-combined <- surveys3 %>% 
+combined <- surveys_edited %>% 
               left_join(plots, by = "plot_id") %>%  # adding the type of plot  
               left_join(species, by = "species_id") # adding the genus, species, and taxa 
 combined
 ```
 
 ```{r echo=FALSE, eval=TRUE}
-combined <- surveys3 %>% 
+combined <- surveys_edited %>% 
               left_join(plots, by = "plot_id") %>%  # adding the type of plot  
               left_join(species, by = "species_id") # adding the genus, species, and taxa 
 ```
@@ -1404,7 +1421,7 @@ knitr::include_graphics("images/tidy-data.png")
 
 Here we examine the fourth rule: Each type of observational unit forms a table.
 
-In `surveys3` , the rows of `surveys3` contain the values of variables associated
+In `surveys_edited` , the rows of `surveys_edited` contain the values of variables associated
 with each record (the unit), values such as the weight or sex of each animal 
 associated with each record. What if instead of comparing records, we 
 wanted to compare the different mean weight of each genus between plots? 
@@ -1442,7 +1459,7 @@ the value provided.
 knitr::include_graphics("images/long_to_wide.jpg")
 ```
 
-Let's use `pivot_wider()` to transform `surveys3` to find the mean weight of each 
+Let's use `pivot_wider()` to transform `surveys_edited` to find the mean weight of each 
 genus in each plot over the entire survey period. We use `filter()`,
 `group_by()` and `summarize()` to filter our observations and variables of 
 interest, and create a new variable for the `mean_weight`. We use the pipe as 
@@ -1552,7 +1569,7 @@ surveys_wide %>%
 
 > ## Challenge 4 {.challenge}
 >
-> 1. Spread the `surveys3` data frame with `year` as columns, `plot_id` 
+> 1. Spread the `surveys_edited` data frame with `year` as columns, `plot_id` 
 >   as rows, and the number of genera per plot as the values. You will need to 
 >   summarize before reshaping, and use the function `n_distinct()` to get the
 >   number of unique genera within a particular chunk of data. It's a powerful 
@@ -1563,7 +1580,7 @@ surveys_wide %>%
 >    `plot_id` by `year` combination.
 >
 > 
-> 3. The `surveys3` data set has two measurement columns: `hindfoot_length` and
+> 3. The `surveys_edited` data set has two measurement columns: `hindfoot_length` and
 >    `weight`.  This makes it difficult to do things like look at the 
 >    relationship between mean values of each measurement per year in different
 >    plot types. Let's walk through a common solution for this type of problem.
@@ -1637,7 +1654,7 @@ Let's start by removing observations of animals for which `weight` and
 
 
 ```{r, purl=FALSE}
-surveys_complete <- surveys3 %>%
+surveys_complete <- surveys_edited %>%
   filter(!is.na(weight),           # remove missing weight
          !is.na(hindfoot_length),  # remove missing hindfoot_length
          !is.na(sex))                # remove missing sex
@@ -1668,7 +1685,7 @@ surveys_complete <- surveys_complete %>%
 ## Create the dataset for exporting:
 ##  Start by removing observations for which the `species_id`, `weight`,
 ##  `hindfoot_length`, or `sex` data are missing:
-surveys_complete <- surveys3 %>%
+surveys_complete <- surveys_edited %>%
     filter(species_id != "",        # remove missing species_id
            !is.na(weight),                 # remove missing weight
            !is.na(hindfoot_length),        # remove missing hindfoot_length
