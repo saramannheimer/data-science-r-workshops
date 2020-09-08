@@ -2,14 +2,14 @@
 title: "Wrangling, Reorganizing, Summarizing, and Exporting data with the `tidyverse`"
 author: "Created by: Data Carpentry & Contributors"
 output:
+  pdf_document:
+    toc: yes
+    toc_depth: '2'
   html_document:
     keep_tex: yes
     toc: yes
     toc_depth: 2
     toc_float: yes
-  pdf_document:
-    toc: yes
-    toc_depth: '2'
 ---
 
 </br>
