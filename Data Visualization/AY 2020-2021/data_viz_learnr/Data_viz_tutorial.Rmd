@@ -6,10 +6,10 @@ runtime: shiny_prerendered
 ---
 
 ```{r setup, include=FALSE}
-remotes::install_github("rstudio-education/gradethis")
-install.packages("tidyverse")
-install.packages("learnr")
-install.packages("ggplot2")
+# remotes::install_github("rstudio-education/gradethis")
+# install.packages("tidyverse")
+# install.packages("learnr")
+# install.packages("ggplot2")
 library(ggplot2)
 library(learnr)
 library(tidyverse)
@@ -19,9 +19,11 @@ knitr::opts_chunk$set(echo = FALSE, exercise.checker = gradethis::grade_learnr)
 surveys <- read_csv("data/surveys.csv")
 ```
 
+# Data Visualization using **`ggplot2`** 
+
 ------------
 
-> ### Learning Objectives
+> ## Learning Objectives
 >
 > * Produce scatter plots, boxplots, density plots, and time series plots using 
 >   ggplot2.
@@ -34,8 +36,6 @@ surveys <- read_csv("data/surveys.csv")
 > * Export publication ready graphics using ggsave(). 
 
 --------------
-
-# Data Visualization using **`ggplot2`** 
 
 **`ggplot2`** is a plotting package that makes it simple to create complex plots
 from data in a data frame. It provides a more programmatic interface for
@@ -89,10 +89,10 @@ to check out this
 and this [handy cheatsheet on **`ggplot2`** (link)](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf).
 
 
-### Presentation of the Survey Data
+## Presentation of the Survey Data
 
 ```{r, echo=FALSE, purl=TRUE}
-### Presentation of the survey data
+## Presentation of the survey data
 ```
 
 We are investigating the animal species diversity and weights found within plots at the Data Carpentry study
@@ -131,7 +131,7 @@ reads `weight` as `col_double` (a numeric data type), and `species` as
 str(surveys)
 ```
 
-```{r eval=FALSE, echo=TRUE}
+```{r preview-data, results = 'hide', exercise=TRUE}
 ## Preview the data
 View(surveys)
 ```
@@ -170,7 +170,8 @@ Let's go through this step by step!
 the `data` argument
 
 ```{r bind-plot, exercise=TRUE, exercise.eval=TRUE}
-ggplot(data = surveys) 
+ggplot(data = surveys)
+
 ## Creates a blank ggplot(), referencing the surveys dataset
 ```
 
@@ -181,6 +182,7 @@ x/y positions or characteristics such as size, shape, color, etc.
 ```{r define-mapping, exercise=TRUE, exercise.eval=TRUE}
 ggplot(data = surveys, 
        mapping = aes(x = weight, y = hindfoot_length))
+
 ## Creates a blank ggplot(), with the variables mapped to the x- and y-axis
 ## ggplot() knows where the variables live, since you have defined the data to use
 ```
@@ -197,10 +199,11 @@ ggplot(data = surveys,
 To add a geom to the plot use the `+` operator. Because we have two continuous 
 variables in the data, let's use `geom_point()` first:
 
-```{r, results = 'hold'}
+```{r add-to-plots, exercise=TRUE, exercise.eval=TRUE}
 ggplot(data = surveys, 
        mapping = aes(x = weight, y = hindfoot_length)) +
   geom_point()
+
  ## Adds a point for each row (observation) in the data  
 ```
 
@@ -210,23 +213,22 @@ layer. If, instead, the `+` sign is added at the beginning of the line
 containing the new layer, **`ggplot2`** will not add the new layer and will 
 return an error message.
 
-```{r, eval = FALSE}
-# This is the correct syntax for adding layers
-surveys_plot +
-  geom_point()
+```{r plus-sign, results = 'hide', exercise=TRUE}
 
 # This will not add the new layer and will return an error message
-surveys_plot
+ggplot(data = surveys, 
+       mapping = aes(x = weight, y = hindfoot_length)) 
   + geom_point()
+
 ```
 
 
-## Building Plots Iteratively 
+### Building Plots Iteratively 
 
 Building plots with **`ggplot2`** is typically an iterative process. We start by
 defining the dataset we'll use, lay out the axes, and choose a geom:
 
-```{r}
+```{r build-plot, results = 'hide', exercise=TRUE}
 ggplot(data = surveys, 
        mapping = aes(x = weight, y = hindfoot_length)) +
     geom_point()
@@ -236,7 +238,7 @@ Then, we start modifying this plot to extract more information from it. For
 instance, we can add transparency (`alpha`) to the points, to avoid 
 overplotting:
 
-```{r, results = 'hold'}
+```{r modify-plot, results = 'hide', exercise=TRUE}
 ggplot(data = surveys, 
        mapping = aes(x = weight, y = hindfoot_length)) +
     geom_point(alpha = 0.1)
@@ -247,7 +249,7 @@ ggplot(data = surveys,
 
 We can also add colors for all the points:
 
-```{r}
+```{r color-plot, results = 'hide', exercise=TRUE}
 ggplot(data = surveys, 
        mapping = aes(x = weight, y = hindfoot_length)) +
     geom_point(alpha = 0.1, color = "blue")
@@ -272,14 +274,25 @@ https://ggplot2.tidyverse.org/articles/ggplot2-specs.html
 > Modify the previous code chunk to assign one of these aesthetics to the 
 > `geom_point` aspect of your plot. What happened? 
 
-```{r}
+```{r challenge-1, exercise=TRUE, exercise.lines = 7}
 ## Your ggplot code to answer the challenge goes here!
 
 
 ```
 
 
-## Piping Data In  
+```{r challenge-1-solution}
+ggplot(data = surveys, 
+       mapping = aes(x = weight, y = hindfoot_length)) +
+    geom_point(alpha = 0.1, color = "blue", shape = "diamond")
+
+```
+
+```{r challenge-1-check}
+grade_code()
+```
+
+### Piping Data In  
 
 Because **`ggplot2`** lives in the `tidyverse`, it is expected to work well with 
 other packages in the `tidyverse`. Because of this, the first argument to 
@@ -297,7 +310,7 @@ Mac.
 
 This would instead look like this:  
 
-```{r}
+```{r pipe-example, results = 'hide', exercise=TRUE}
 surveys %>%  
   ## data to be used in the ggplot  
   ggplot(mapping = aes(x = weight, y = hindfoot_length)) + 
@@ -314,14 +327,14 @@ looks like:
 When we pipe our data in, the first argument then becomes this `mapping` 
 argument. 
 
-## Assigning More Variables to Aesthetics 
+### Assigning More Variables to Aesthetics 
 
 Or to color each species in the plot differently, you could use a vector as an
 input to the argument **color**. **`ggplot2`** will provide a different color 
 corresponding to different values in the vector. Here is an example where we 
 color with **`species_id`**:
 
-```{r}
+```{r color-example1, results = 'hide', exercise=TRUE}
 surveys %>% 
   ggplot(mapping = aes(x = weight, y = hindfoot_length)) +
     geom_point(alpha = 0.1, aes(color = species_id)) 
@@ -341,7 +354,7 @@ We can also specify the colors directly inside the mapping provided in the
 `ggplot()` function. This will be seen by **any** geom layers and the mapping 
 will be determined by the x- and y-axis set up in `aes()`.
 
-```{r}
+```{r color-example2, results = 'hide', exercise=TRUE}
 surveys %>% 
   ggplot(mapping = aes(x = weight, y = hindfoot_length, color = species_id)) +
     geom_point(alpha = 0.1)
@@ -362,7 +375,7 @@ your color aesthetics.
 
 **Globally** 
 
-```{r, warning = FALSE, results = 'hold'}
+```{r color-global, results = 'hide', exercise=TRUE}
 surveys %>% 
   ggplot(mapping = aes(x = weight, y = hindfoot_length, color = species_id)) +
   geom_jitter(alpha = 0.1) + 
@@ -390,29 +403,54 @@ surveys %>%
 > Does the aesthetic change if you use a continuous variable versus a 
 > categorical/discrete variable?  
 
-```{r}
+```{r challenge-2part1, exercise=TRUE, exercise.lines = 7}
 ## Your ggplot() code for the challenge goes here!
 
 
 ```
+
+```{r challenge-2part1-solution}
+surveys %>% 
+  ggplot(mapping = aes(x = weight, y = hindfoot_length)) +
+  geom_jitter(aes(color = plot_type), alpha = 0.1) + 
+  geom_smooth()
+
+```
+
+```{r challenge-2part1-check}
+grade_code()
+```
+
 
 > Part 2:
 > Use what you just learned to create a scatter plot of `weight` over
 > `plot_id` with data from different plot types being showed in different 
 > colors. Is this a good way to show this type of data?
 
-```{r}
+```{r challenge-2part2, exercise=TRUE, exercise.lines = 7}
 ## Your ggplot() code for the challenge goes here!
 
 
 ```
 
+```{r challenge-2part2-solution}
+surveys %>% 
+  ggplot(mapping = aes(x = weight, y = plot_id)) +
+  geom_jitter(aes(color = plot_type), alpha = 0.1) + 
+  geom_smooth()
 
-# Boxplots & Violin Plots
+```
+
+```{r challenge-2part2-check}
+grade_code()
+```
+
+
+### Boxplots & Violin Plots
 
 We can use boxplots to visualize the distribution of weight within each species:
 
-```{r}
+```{r boxplot1, results = 'hide', exercise=TRUE}
 surveys %>% 
   ggplot(mapping = aes(x = species_id, y = weight)) +
     geom_boxplot()
@@ -421,7 +459,7 @@ surveys %>%
 By adding points to boxplot, we can have a better idea of the number of
 measurements and their distribution:
 
-```{r, results = 'hold'}
+```{r boxplot2, results = 'hide', exercise=TRUE}
 surveys %>% 
   ggplot(mapping = aes(x = species_id, y = weight)) +
     geom_boxplot(alpha = 0) + 
@@ -442,18 +480,29 @@ surveys %>%
 > A superior density plot is the violin plot, where the shape 
 > (of the density of points) is drawn.
 >
-> Replace the box plot with a violin plot. For help see `geom_violin()`.
-
-```{r, eval = FALSE}
-##  Start with the boxplot we created:
-ggplot(data = surveys, mapping = aes(x = species_id, y = weight)) +
-  geom_boxplot(alpha = 0) +
-  geom_jitter(alpha = 0.3, color = "tomato")
-
-##  1. Replace the boxplot with a violin plot. For help, see geom_violin().
-
-
-```
+> Replace the box plot with a violin plot. For help see `geom_violin()`. Start with the poxplot we >created:
+>
+>ggplot(data = surveys, mapping = aes(x = species_id, y = weight)) +
+>  geom_boxplot(alpha = 0) +
+>  geom_jitter(alpha = 0.3, color = "tomato")
+>
+>```{r challenge3part1, exercise=TRUE, exercise.lines = 7}
+>##  Start with the boxplot we created
+>##  1. Replace the boxplot with a violin plot. For help, see geom_violin().
+>
+>
+>```
+>
+>```{r challenge-3part1-solution}
+>ggplot(data = surveys, mapping = aes(x = species_id, y = weight)) +
+>  geom_violin(alpha = 0) +
+>  geom_jitter(alpha = 0.3, color = "tomato")
+>
+>```
+>
+>```{r challenge-3part1-check}
+>grade_code()
+>```
 
 > Part 2:
 > So far, we've looked at the distribution of weight within species. Let's try 
@@ -463,10 +512,21 @@ ggplot(data = surveys, mapping = aes(x = species_id, y = weight)) +
 > Create a boxplot for `hindfoot_length`. Overlay the boxplot layer on a jitter
 > layer to show actual measurements.
 
-```{r}
-##  First: create boxplot for hindfoot_length` overlaid on a jitter layer.
-
-```
+>```{r challenge3part2, exercise=TRUE, exercise.lines = 7}
+>##  First: create boxplot for hindfoot_length` overlaid on a jitter layer.
+>
+>```
+>
+>```{r challenge-3part2-solution}
+>ggplot(data = surveys, mapping = aes(x = species_id, y = hindfoot_length)) +
+>  geom_boxplot(alpha = 0) +
+>  geom_jitter(alpha = 0.1, color = "tomato")
+>
+>```
+>
+>```{r challenge-3part2-check}
+>grade_code()
+>```
 
 > Now, add color to the data points on your boxplot according to the plot from 
 > which the sample was taken (`plot_id`).
@@ -474,20 +534,31 @@ ggplot(data = surveys, mapping = aes(x = species_id, y = weight)) +
 > *Hint:* Check the class for `plot_id`. If `plot_id` was a character instead, 
 > how would the graph be different?  
 
-```{r}
-## Next: add color to the data points on your boxplot according to the
-## plot from which the sample was taken (plot_id).
+>```{r challenge3part3, exercise=TRUE, exercise.lines = 7}
+>## Next: add color to the data points on your boxplot according to the
+>## plot from which the sample was taken (plot_id).
+>
+>## Hint: Check the class for plot_id`. If plot_id was a character instead, 
+>## how would the graph be different? 
+>
+>```
+>
+>```{r challenge-3part3-solution}
+>
+>ggplot(data = surveys, mapping = aes(x = species_id, y = hindfoot_length)) +
+>  geom_boxplot(alpha = 0) +
+>  geom_jitter(alpha = 0.3, color = "tomato")
+>
+>
+>```
+>
+>```{r challenge-3part3-check}
+>grade_code()
+>```
 
+## Plotting Single Variables -- Quantitative & Categorical  
 
-## Hint: Check the class for plot_id`. If plot_id was a character instead, 
-## how would the graph be different? 
-
-```
-
-
-# Plotting Single Variables -- Quantitative & Categorical  
-
-## Distribution Plots 
+### Distribution Plots 
 
 If we wish to visualize the distribution of a single quantitative variable, our 
 plot changes a bit. Unfortunately, the `geom_violin()` function only accepts 
@@ -500,7 +571,7 @@ To visualize the distribution of rodent weights we could aggregate over all
 species, years, plots, etc. and produce a single density plot:  
 
 
-```{r}
+```{r dist-plot, results = 'hide', exercise=TRUE}
 surveys %>% 
   ggplot(mapping = aes(x = weight)) + 
   geom_density()
@@ -511,7 +582,7 @@ The default is an empty density plot, which is largely unsatisfying. By adding
 a `fill = <COLOR>` argument to `geom_density()` we can produce a nicer looking 
 plot:  
 
-```{r}
+```{r dist-add-color, results = 'hide', exercise=TRUE}
 surveys %>% 
   ggplot(mapping = aes(x = weight)) + 
   geom_density(fill = "sky blue")
@@ -523,15 +594,16 @@ histogram. The same plot as above can be recreated using `geom_histogram()`
 instead of `geom_density()`. However, when you use `geom_histogram()` it gives 
 you a warning. 
 
-> What warning do you get and why?
-> Do you get an error like this when you use `hist()` in base `R`? 
-
-```{r, warning = FALSE, message = FALSE}
+```{r hist, results = 'hide', exercise=TRUE}
 surveys %>% 
   ggplot(mapping = aes(x = weight)) + 
-  geom_histogram(fill = "sky blue")
-  
+  geom_histogram()
+
 ```
+
+
+> What warning do you get and why?
+> Do you get an error like this when you use `hist()` in base `R`? 
 
 I was once told that the idea behind a good histogram was to make the plot look 
 as smooth as possible -- think trying to resemble the continuous shape of the 
@@ -544,14 +616,32 @@ density plot.
 > histogram. Compare your chosen number of bins with your neighbors! 
 
 
-## Bar Charts  
+```{r challenge-4, exercise=TRUE, exercise.lines = 7}
+## Your code to answer the challenge goes here!
+
+
+```
+
+```{r challenge-4-solution}
+
+surveys %>% 
+  ggplot(mapping = aes(x = weight)) + 
+  geom_histogram(fill = "sky blue", bins = 50)
+
+```
+
+```{r challenge-4-check}
+grade_code()
+```
+
+### Bar Charts  
 
 At first glimpse, you would think that a bar plot would be simple to create, but
 bar plots reveal a subtle nuance of the plots we have created thus far. The 
 following bar chart displays the total number of rodents in the `surveys` 
 dataset, grouped by their species ID. 
 
-```{r}
+```{r bar1, results = 'hide', exercise=TRUE}
 surveys %>% 
   ggplot(mapping = aes(x = species_id)) + 
   geom_bar()
@@ -590,7 +680,7 @@ Generally, you can use geoms and stats interchangeably. This is because every
 geom has a default stat and visa versa. For example, the following code produces
 the same output as above:  
 
-```{r}
+```{r bar2, results = 'hide', exercise=TRUE}
 surveys %>% 
   ggplot(mapping = aes(x = species_id)) + 
   stat_count()
@@ -600,7 +690,7 @@ If you so wish you could override the default stat for that geom. For example,
 if you wanted to plot a bar chart of proportions you would use the following 
 code to override the `count` stat:  
 
-```{r}
+```{r bar3, results = 'hide', exercise=TRUE}
 surveys %>% 
   ggplot(mapping = aes(x = species_id)) + 
   geom_bar(aes(y = ..prop.., group = 1))
@@ -612,14 +702,16 @@ surveys %>%
 > Why do we need to set `group = 1` in the above proportion bar chart? 
 > In other words, what is wrong with the plot below?  
 
-```{r}
+```{r bar4, results = 'hide', exercise=TRUE}
+## What is wrong with this plot? 
 surveys %>% 
   ggplot(mapping = aes(x = species_id)) + 
   geom_bar(aes(y = ..prop..))
+
 ```
 
 
-## Colored and/or Stacked Bar Charts  
+### Colored and/or Stacked Bar Charts  
 
 Another piece of visual appeal to creating a bar chart is the ability to use 
 colors to differentiate the different groups, or to plot two different variables
@@ -632,7 +724,7 @@ As we saw before, to add a color aesthetic to the plot we need to map it to a
 variable. However, if we use the `color` option that we used before we get a 
 slightly unsatisfying result.  
 
-```{r}
+```{r bar5, results = 'hide', exercise=TRUE}
 surveys %>% 
   ggplot(mapping = aes(x = species_id, color = species_id)) + 
   geom_bar()
@@ -644,10 +736,32 @@ chart, the aesthetic that we are interested in is the `fill` of the bars.
 
 ### Challenge 6 
 
-> Change the above code so that each bar is filled with a different color. 
+> Change the code below so that each bar is filled with a different color. 
+
+surveys %>% 
+  ggplot(mapping = aes(x = species_id, color = species_id)) + 
+  geom_bar()
+
+```{r challenge-6, exercise=TRUE, exercise.lines = 7}
 
 
-## Stacking Bars 
+```
+
+```{r challenge-6-solution}
+
+surveys %>% 
+  ggplot(mapping = aes(x = species_id, fill = species_id)) + 
+  geom_bar()
+
+```
+
+```{r challenge-6-check}
+grade_code()
+```
+
+
+
+### Stacking Bars 
 
 Now suppose you are interested in whether the number of rodents in each species 
 captured differs by sex. This would require for you to create a bar plot with 
@@ -660,7 +774,7 @@ Let's see how the two approaches differ. To stack bars of a second categorical
 variable we would instead use this second categorical variable as the `fill` of
 the bars. Run these two lines of code and see how they differ. 
 
-```{r, results = "hold"}
+```{r stacking, results = 'hide', exercise=TRUE}
 surveys %>% 
   ggplot(mapping = aes(x = species_id, fill = sex)) + 
   geom_bar()
@@ -675,14 +789,14 @@ the `position` argument was made explicit. What changes did this make in the
 plots? 
 
 
-# Time-series Data
+## Time-series Data
 
 Let's calculate number of counts per year for each genus. 
 
 *What you will see in Data Wrangling:* First we need to group the data and count 
 records within each group!  
 
-```{r}
+```{r timeseries1, results = 'hide', exercise=TRUE}
 yearly_counts <- surveys %>%
   count(year, genus) 
  ## counts the number of observations (rows) for each year, genus combination
@@ -691,7 +805,7 @@ yearly_counts <- surveys %>%
 Time series data can be visualized as a line plot with years on the x-axis and 
 counts on the y-axis: 
 
-```{r}
+```{r timeseries2, results = 'hide', exercise=TRUE}
 yearly_counts %>% 
   ggplot(mapping = aes(x = year, y = n)) +
      geom_line()
@@ -701,7 +815,7 @@ Unfortunately, this does not work because we plotted data for all the genera
 together. We need to tell `ggplot()` to draw a line for each genus by modifying
 the aesthetic function to include `group = genus`:
 
-```{r}
+```{r timeseries3, results = 'hide', exercise=TRUE}
 yearly_counts %>% 
   ggplot(mapping = aes(x = year, y = n, group = genus)) +
     geom_line()
@@ -711,7 +825,7 @@ Unfortunately, we can't tell what line corresponds to which genus. We will be
 able to distinguish genera in the plot if we add colors (using `color` also 
 automatically groups the data):
 
-```{r}
+```{r timeseries4, results = 'hide', exercise=TRUE}
 yearly_counts %>% 
 ggplot(mapping = aes(x = year, y = n, color = genus)) +
     geom_line()
@@ -722,7 +836,7 @@ ggplot(mapping = aes(x = year, y = n, color = genus)) +
 same grouping of observations!
 
 
-## Faceting
+### Faceting
 
 **`ggplot2`** has a special technique called *faceting* that allows the user to 
 split one plot into multiple plots based on a categorical variable included in 
@@ -735,7 +849,7 @@ cleanly fit on one page -- used for one variable
 * `facet_grid()` allows you to form a matrix of rows and columns of panels --
 used for two variables  
 
-Both geometries allow to to specify faceting variables specified within the 
+Both geometries allow you to specify faceting variables specified within the 
 `vars()` function. The `vars()` function looks at the categorical variable you 
 provide it with and outputs the unique levels (values) of that variable. 
 
@@ -744,7 +858,7 @@ This looks like: `facet_wrap(facets = vars(facet_variable))` or
 
 Let's start by using `facet_wrap()` to make a time series plot for each species:
 
-```{r}
+```{r facet1, results = 'hide', exercise=TRUE}
 yearly_counts %>% 
   ggplot(mapping = aes(x = year, y = n)) +
     geom_line() +
@@ -755,7 +869,7 @@ Now we would like to split the line in each plot by the sex of the rodent
 captured. To do that we need to make counts in the data frame grouped by `year`,
 `species_id`, and `sex`:
 
-```{r}
+```{r facet2, results = 'hide', exercise=TRUE}
 yearly_sex_counts <- surveys %>%
   count(year, species_id, sex)
 ## counts the number of observations (rows) for each year, species, sex combination
@@ -764,7 +878,7 @@ yearly_sex_counts <- surveys %>%
 We can now make the faceted plot by splitting further by sex using `color` 
 (within each panel):
 
-```{r}
+```{r facet3, results = 'hide', exercise=TRUE}
 yearly_sex_counts %>% 
   ggplot(mapping = aes(x = year, y = n, color = sex)) +
     geom_line() +
@@ -774,7 +888,7 @@ yearly_sex_counts %>%
 You can also organize the panels only by rows (or only by columns), using the 
 optional `nrow` and `ncol` arguments:
 
-```{r, fig.height = 8.5, fig.width = 8, results = 'hold'}
+```{r facet4, fig.height = 8.5, fig.width = 8, results = 'hold', exercise = TRUE}
 yearly_sex_counts %>% 
   ggplot(mapping = aes(x = year, y = n, color = sex)) +
   geom_line() +
@@ -782,7 +896,7 @@ yearly_sex_counts %>%
   # One column, facet by rows
 ```
 
-```{r, fig.width = 9.5, fig.height = 5, results = 'hold'}
+```{r facet5, fig.width = 9.5, fig.height = 5, results = 'hold', exercise = TRUE}
 yearly_sex_counts %>% 
   ggplot(mapping = aes(x = year, y = n, color = sex)) +
     geom_line() +
@@ -793,7 +907,7 @@ yearly_sex_counts %>%
 Now let's use `facet_grid()` to control how panels are organised by both rows 
 and columns:
 
-```{r, fig.width = 9.5}
+```{r facet6, fig.width = 9.5, results = 'hide', exercise=TRUE}
 yearly_sex_counts %>% 
   ggplot(mapping = aes(x = year, y = n, color = sex)) +
     geom_line() +
@@ -805,7 +919,6 @@ In earlier versions of **`ggplot2`** you need to use an interface using formulas
 to specify how plots are faceted (and this is still supported in new versions). 
 The equivalent syntax is:
 
-```r
 # facet wrap
 facet_wrap(vars(genus))    # new
 facet_wrap(~ genus)        # old
@@ -821,7 +934,6 @@ facet_grid(genus ~ .)            # old
 # grid on columns only
 facet_grid(cols = vars(genus))   # new
 facet_grid(. ~ genus)            # old
-```
 
 
 ### Challenge 7
@@ -830,20 +942,35 @@ facet_grid(. ~ genus)            # old
 > of each species changes through the years. 
 > Play around with which variable you facet by versus plot by! 
 
-```{r}
-## To get you started:  
-yearly_species_weight <- surveys %>% 
-  group_by(year, species_id) %>%
-  ## Variables to group by!
-  summarize(avg_weight = mean(weight))
+>```{r challenge-7, exercise=TRUE, exercise.lines = 7}
+>## To get you started:  
+>yearly_species_weight <- surveys %>% 
+>  group_by(year, species_id) %>%
+>  ## Variables to group by
+>  summarize(avg_weight = mean(weight))
 
-## Your ggplot() code for the plot goes here!
+>yearly_species_weight %>%
+>  ggplot(mapping = aes(x = year, y = n, color = avg_weight)) +
+>    geom_line() +
+>    facet_wrap(facets =  vars(species_id))
+>## Your ggplot() code for the plot goes here!
+>
+>```
+>
+>```{r challenge-7-solution}
+>yearly_species_weight <- surveys %>% 
+>  group_by(year, species_id) %>%
+>  ## Variables to group by
+>  summarize(avg_weight = mean(weight))
+>
+>```
+>
+>```{r challenge-7-check}
+>grade_code()
+>```
 
 
-```
-
-
-# **`ggplot2`** Themes
+## **`ggplot2`** Themes
 
 Usually plots with white background look more readable when printed. 
 Every single component of a `ggplot()` graph can be customized using the generic 
@@ -853,7 +980,7 @@ available that change the overall appearance of the graph without much effort.
 For example, we can change our previous graph to have a simpler white background 
 using the `theme_bw()` function:
 
-```{r}
+```{r themes1, results = 'hide', exercise=TRUE}
 yearly_sex_counts %>% 
  ggplot(mapping = aes(x = year, y = n, color = sex)) +
      geom_line() +
@@ -880,14 +1007,22 @@ additional themes.
 
 > Use what you just learned to add the plotting background theme 
 > of your choosing to the plot you made in Challenge 7!
+>
+>```{r challenge-8, exercise=TRUE, exercise.lines = 7}
+>## Your ggplot() code for the plot goes here!
+>
+>```
+>
+>```{r challenge-8-solution}
+>
+>
+>```
+>
+>```{r challenge-8-check}
+>grade_code()
+>```
 
-```{r}
-## Your ggplot() code for the plot goes here!
-
-
-```
-
-# Customization
+## Customization
 
 Take a look at the [**`ggplot2`** cheat sheet](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf), 
 and think of ways you could improve the plot.
@@ -898,7 +1033,7 @@ Now, let's change names of axes to something more informative than 'year'
 and 'n' and add a title to the figure. Label customizations are done using the 
 `labs()` function like so:
 
-```{r}
+```{r labels, results = 'hide', exercise=TRUE}
 yearly_sex_counts %>% 
   ggplot(mapping = aes(x = year, y = n, color = sex)) +
   geom_line() +
@@ -928,7 +1063,7 @@ In the last plot, the axes have more informative names, but their readability
 can be improved by increasing the font size. This can be done with the generic
 `theme()` function. 
 
-```{r, results = "hold"}
+```{r fonts, results = 'hide', exercise=TRUE}
 yearly_sex_counts %>% 
   ggplot(mapping = aes(x = year, y = n, color = sex)) +
   geom_line() +
@@ -951,7 +1086,7 @@ not properly readable. Let's swap the orientation of the labels, so the reader
 doesn't have to tilt their head when reading our plot! The `coord_flip()` 
 function easily changes the x- and y-axis. 
 
-```{r}
+```{r flip, results = 'hide', exercise=TRUE}
 yearly_sex_counts %>% 
   ggplot(mapping = aes(x = year, y = n, color = sex)) +
   geom_line() +
@@ -971,7 +1106,7 @@ x-axis is a bit too large to separate the numbers. We can specify the text size
 for each element of the plot independently, if we so wish. This would look 
 something like this:  
 
-```{r}
+```{r text-size, results = 'hide', exercise=TRUE}
 yearly_sex_counts %>% 
   ggplot(mapping = aes(x = year, y = n, color = sex)) +
   geom_line() +
@@ -1000,7 +1135,7 @@ side, the top of the plot, or the bottom of the plot.
 
 This is done by adding a `legend.position` theme to the plot's `theme()`'s. 
 
-```{r}
+```{r legend-pos, results = 'hide', exercise=TRUE}
 yearly_sex_counts %>% 
   ggplot(mapping = aes(x = year, y = n, color = sex)) +
     geom_line() +
@@ -1031,7 +1166,7 @@ theme to our plot.
 
 This looks like this:
 
-```{r}
+```{r remove-grid, results = 'hide', exercise=TRUE}
 yearly_sex_counts %>% 
   ggplot(mapping = aes(x = year, y = n, color = sex)) +
   geom_line() +
@@ -1088,7 +1223,7 @@ plot and directly specify the colors you want to use. You can either:
 - creating a vector of colors and storing it in an object and calling it 
 (see below)
 
-```{r}
+```{r manual-colors, results = 'hide', exercise=TRUE}
 # A color deficient friendly palette with grey:
 cbPalette_grey <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", 
                     "#0072B2", "#D55E00", "#CC79A7")
@@ -1138,7 +1273,7 @@ using different variables or even different data frames. The **`gridExtra`**
 package allows us to combine separate ggplots into a single figure using 
 `grid.arrange()`:
 
-```{r, message = FALSE, fig.width = 10, results = 'hold'}
+```{r arrange, message = FALSE, fig.width = 10, results = 'hold', exercise = TRUE}
 library(gridExtra)
 
 spp_weight_boxplot <- surveys %>% 
@@ -1181,7 +1316,7 @@ vignette **very** helpful!
 
 https://cran.r-project.org/web/packages/egg/vignettes/Ecosystem.html
 
-# Exporting Plots 
+## Exporting Plots 
 
 After creating your plot, you can save it to a file in your favorite format. The
 Export tab in the **Plot** pane in RStudio will save your plots at low 
@@ -1200,7 +1335,7 @@ dimension and resolution of your plot by adjusting the appropriate arguments:
     
 Make sure you have the `fig/` folder in your working directory.
 
-```{r, eval = FALSE}
+```{r export, results = 'hide', exercise=TRUE, eval = FALSE}
 my_plot <- ggplot(data = yearly_sex_counts, 
                   mapping = aes(x = year, y = n, color = sex)) +
               geom_line() +
@@ -1228,7 +1363,7 @@ ggsave("fig/combo_plot_abun_weight.png", combo_plot, width = 10, dpi = 300)
 > saved plot.
 
 
-# Tips for Creating Visually Appealing Data Visualizations 
+## Tips for Creating Visually Appealing Data Visualizations 
 
 ![](images/glamour_of_graphics.JPG)
 
@@ -1266,4 +1401,4 @@ use when I create a plot!
 - Colors are hard, so think about them carefully!  
 
 
-# Happy plotting!  
+## Happy plotting!  
