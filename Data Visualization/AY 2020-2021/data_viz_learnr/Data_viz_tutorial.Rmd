@@ -182,9 +182,9 @@ x/y positions or characteristics such as size, shape, color, etc.
 ```{r define-mapping, exercise=TRUE, exercise.eval=TRUE}
 ggplot(data = surveys, 
        mapping = aes(x = weight, y = hindfoot_length))
-
-## Creates a blank ggplot(), with the variables mapped to the x- and y-axis
-## ggplot() knows where the variables live, since you have defined the data to use
+#
+# Creates a blank ggplot(), with the variables mapped to the x- and y-axis
+# ggplot() knows where the variables live, since you have defined the data to use
 ```
 
 3. Add 'geoms' -- graphical representations of the data in the plot (points,
@@ -204,7 +204,7 @@ ggplot(data = surveys,
        mapping = aes(x = weight, y = hindfoot_length)) +
   geom_point()
 
- ## Adds a point for each row (observation) in the data  
+ # Adds a point for each row (observation) in the data  
 ```
 
 You can think of the `+` sign as adding layers to the plot. 
@@ -480,53 +480,57 @@ surveys %>%
 > A superior density plot is the violin plot, where the shape 
 > (of the density of points) is drawn.
 >
-> Replace the box plot with a violin plot. For help see `geom_violin()`. Start with the poxplot we >created:
->
->ggplot(data = surveys, mapping = aes(x = species_id, y = weight)) +
->  geom_boxplot(alpha = 0) +
->  geom_jitter(alpha = 0.3, color = "tomato")
->
->```{r challenge3part1, exercise=TRUE, exercise.lines = 7}
->##  Start with the boxplot we created
->##  1. Replace the boxplot with a violin plot. For help, see geom_violin().
->
->
->```
->
->```{r challenge-3part1-solution}
->ggplot(data = surveys, mapping = aes(x = species_id, y = weight)) +
->  geom_violin(alpha = 0) +
->  geom_jitter(alpha = 0.3, color = "tomato")
->
->```
->
->```{r challenge-3part1-check}
->grade_code()
->```
+> Replace the box plot with a violin plot. For help see `geom_violin()`. Start with the poxplot we > created:
+
+```
+ggplot(data = surveys, mapping = aes(x = species_id, y = weight)) +
+  geom_boxplot(alpha = 0) +
+  geom_jitter(alpha = 0.3, color = "tomato")
+```
+
+```{r challenge-3part1, exercise=TRUE, exercise.lines = 7}
+##  Start with the boxplot we created
+##  1. Replace the boxplot with a violin plot. For help, see geom_violin().
+
+
+```
+
+```{r challenge-3part1-solution}
+surveys %>% 
+  ggplot(mapping = aes(x = species_id, y = weight)) +
+    geom_violin() + 
+    geom_jitter(alpha = 0.2, color = "tomato")
+
+```
+
+```{r challenge-3part1-check}
+grade_code()
+```
 
 > Part 2:
 > So far, we've looked at the distribution of weight within species. Let's try 
 > making a new plot to explore the distribution of another variable within each 
 > species.
->
+
 > Create a boxplot for `hindfoot_length`. Overlay the boxplot layer on a jitter
 > layer to show actual measurements.
 
->```{r challenge3part2, exercise=TRUE, exercise.lines = 7}
->##  First: create boxplot for hindfoot_length` overlaid on a jitter layer.
->
->```
->
->```{r challenge-3part2-solution}
->ggplot(data = surveys, mapping = aes(x = species_id, y = hindfoot_length)) +
->  geom_boxplot(alpha = 0) +
->  geom_jitter(alpha = 0.1, color = "tomato")
->
->```
->
->```{r challenge-3part2-check}
->grade_code()
->```
+```{r challenge-3part2, exercise=TRUE, exercise.lines = 7}
+##  First: create boxplot for hindfoot_length` overlaid on a jitter layer.
+
+```
+
+```{r challenge-3part2-solution}
+surveys %>% 
+  ggplot(mapping = aes(x = species_id, y = hindfoot_length)) +
+    geom_jitter(alpha = 0.3, color = "tomato") +
+    geom_boxplot(alpha = 0) 
+
+```
+
+```{r challenge-3part2-check}
+grade_code()
+```
 
 > Now, add color to the data points on your boxplot according to the plot from 
 > which the sample was taken (`plot_id`).
@@ -534,27 +538,40 @@ surveys %>%
 > *Hint:* Check the class for `plot_id`. If `plot_id` was a character instead, 
 > how would the graph be different?  
 
->```{r challenge3part3, exercise=TRUE, exercise.lines = 7}
->## Next: add color to the data points on your boxplot according to the
->## plot from which the sample was taken (plot_id).
->
->## Hint: Check the class for plot_id`. If plot_id was a character instead, 
->## how would the graph be different? 
->
->```
->
->```{r challenge-3part3-solution}
->
->ggplot(data = surveys, mapping = aes(x = species_id, y = hindfoot_length)) +
->  geom_boxplot(alpha = 0) +
->  geom_jitter(alpha = 0.3, color = "tomato")
->
->
->```
->
->```{r challenge-3part3-check}
->grade_code()
->```
+```{r challenge-3part3, exercise=TRUE, exercise.lines = 7}
+## Next: add color to the data points on your boxplot according to the
+## plot from which the sample was taken (plot_id).
+
+## Hint: Check the class for plot_id`. If plot_id was a character instead, 
+## how would the graph be different? 
+
+```
+
+```{r challenge-3part3-solution}
+surveys %>% 
+  ggplot(mapping = aes(x = species_id, y = hindfoot_length)) +
+    geom_jitter(alpha = 0.3, mapping = aes(color = plot_id)) +
+    geom_boxplot(alpha = 0) 
+
+## Checking the data type for plot_id
+class(surveys$plot_id)
+
+## Creating a new variable named plot_id_chr
+## which is the character version of plot_id
+surveys <- surveys %>% 
+  mutate(plot_id_chr = as.character(plot_id))
+
+## Using new character plot_id to make a boxplot
+surveys %>% 
+  ggplot(mapping = aes(x = species_id, y = hindfoot_length)) +
+    geom_jitter(alpha = 0.3, mapping = aes(color = plot_id_chr)) +  
+    geom_boxplot(alpha = 0)  
+
+```
+
+```{r challenge-3part3-check}
+grade_code()
+```
 
 ## Plotting Single Variables -- Quantitative & Categorical  
 
@@ -625,8 +642,8 @@ density plot.
 ```{r challenge-4-solution}
 
 surveys %>% 
-  ggplot(mapping = aes(x = weight)) + 
-  geom_histogram(fill = "sky blue", bins = 50)
+  ggplot(aes(x = weight)) + 
+  geom_histogram(fill = "sky blue" , bins = 50)
 
 ```
 
@@ -738,9 +755,11 @@ chart, the aesthetic that we are interested in is the `fill` of the bars.
 
 > Change the code below so that each bar is filled with a different color. 
 
+```
 surveys %>% 
   ggplot(mapping = aes(x = species_id, color = species_id)) + 
   geom_bar()
+```
 
 ```{r challenge-6, exercise=TRUE, exercise.lines = 7}
 
@@ -919,6 +938,7 @@ In earlier versions of **`ggplot2`** you need to use an interface using formulas
 to specify how plots are faceted (and this is still supported in new versions). 
 The equivalent syntax is:
 
+```
 # facet wrap
 facet_wrap(vars(genus))    # new
 facet_wrap(~ genus)        # old
@@ -934,7 +954,7 @@ facet_grid(genus ~ .)            # old
 # grid on columns only
 facet_grid(cols = vars(genus))   # new
 facet_grid(. ~ genus)            # old
-
+```
 
 ### Challenge 7
 
@@ -942,32 +962,44 @@ facet_grid(. ~ genus)            # old
 > of each species changes through the years. 
 > Play around with which variable you facet by versus plot by! 
 
->```{r challenge-7, exercise=TRUE, exercise.lines = 7}
->## To get you started:  
->yearly_species_weight <- surveys %>% 
->  group_by(year, species_id) %>%
->  ## Variables to group by
->  summarize(avg_weight = mean(weight))
+```{r challenge-7, exercise=TRUE, exercise.lines = 7}
+## To get you started:  
+yearly_species_weight <- surveys %>% 
+  group_by(year, species_id) %>%
+  ## Variables to group by
+  summarize(avg_weight = mean(weight))
 
->yearly_species_weight %>%
->  ggplot(mapping = aes(x = year, y = n, color = avg_weight)) +
->    geom_line() +
->    facet_wrap(facets =  vars(species_id))
->## Your ggplot() code for the plot goes here!
->
->```
->
->```{r challenge-7-solution}
->yearly_species_weight <- surveys %>% 
->  group_by(year, species_id) %>%
->  ## Variables to group by
->  summarize(avg_weight = mean(weight))
->
->```
->
->```{r challenge-7-check}
->grade_code()
->```
+yearly_species_weight %>%
+  ggplot(mapping = aes(x = year, y = n, color = avg_weight)) +
+    geom_line() +
+    facet_wrap(facets =  vars(species_id))
+## Your ggplot() code for the plot goes here!
+
+```
+
+```{r challenge-7-solution}
+## To get you started:  
+yearly_species_weight <- surveys %>% 
+  ## Variables to group by:
+  group_by(year, species_id) %>%
+  summarize(avg_weight = mean(weight))
+
+## Coloring by species id
+yearly_species_weight %>% 
+ggplot(mapping = aes(x = year, y = avg_weight, color = species_id)) +
+    geom_line()
+
+## Faceting by species id
+yearly_species_weight %>% 
+ggplot(mapping = aes(x = year, y = avg_weight, color = species_id)) +
+    geom_line() + 
+  facet_wrap(vars(species_id))
+
+```
+
+```{r challenge-7-check}
+grade_code()
+```
 
 
 ## **`ggplot2`** Themes
@@ -1007,20 +1039,23 @@ additional themes.
 
 > Use what you just learned to add the plotting background theme 
 > of your choosing to the plot you made in Challenge 7!
->
->```{r challenge-8, exercise=TRUE, exercise.lines = 7}
->## Your ggplot() code for the plot goes here!
->
->```
->
->```{r challenge-8-solution}
->
->
->```
->
->```{r challenge-8-check}
->grade_code()
->```
+
+```{r challenge-8, exercise=TRUE, exercise.lines = 7}
+## Your ggplot() code for the plot goes here!
+
+```
+
+```{r challenge-8-solution}
+yearly_species_weight %>% 
+  ggplot(mapping = aes(x = year, y = avg_weight, color = species_id)) +
+  geom_line() + 
+  theme_classic()
+
+```
+
+```{r challenge-8-check}
+grade_code()
+```
 
 ## Customization
 
@@ -1264,6 +1299,10 @@ you specify the name of the palette you wish to use (e.g. `scale_color_aaas()`)
 > * Can you find a way to change the name of the legend? What about its labels?
 >   (see http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/).
 
+```{r challenge-9, results = 'hide', exercise = TRUE}
+## your code for the challenge goes here!
+
+```
 
 ## Arranging and Exporting Plots
 
