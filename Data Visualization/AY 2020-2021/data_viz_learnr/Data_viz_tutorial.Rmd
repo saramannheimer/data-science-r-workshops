@@ -480,12 +480,12 @@ surveys %>%
 > A superior density plot is the violin plot, where the shape 
 > (of the density of points) is drawn.
 >
-> Replace the box plot with a violin plot. For help see `geom_violin()`. Start with the poxplot we created:
-
-ggplot(data = surveys, mapping = aes(x = species_id, y = weight)) +
-  geom_boxplot(alpha = 0) +
-  geom_jitter(alpha = 0.3, color = "tomato")
-
+> Replace the box plot with a violin plot. For help see `geom_violin()`. Start with the poxplot we >created:
+>
+>ggplot(data = surveys, mapping = aes(x = species_id, y = weight)) +
+>  geom_boxplot(alpha = 0) +
+>  geom_jitter(alpha = 0.3, color = "tomato")
+>
 >```{r challenge3part1, exercise=TRUE, exercise.lines = 7}
 >##  Start with the boxplot we created
 >##  1. Replace the boxplot with a violin plot. For help, see geom_violin().
