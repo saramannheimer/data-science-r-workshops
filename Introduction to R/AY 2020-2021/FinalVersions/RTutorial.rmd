@@ -1,6 +1,6 @@
 ---
-title: "Introduction to R"
-author: "Data & Software Carpentry, with edits and reorganization by the Montana State University R Workshops Team"
+title: "Introduction to `R`"
+author: "Data & Software Carpentry, the Montana State University `R` Workshops Team"
 output:
   pdf_document:
     fig_height: 3
@@ -37,32 +37,30 @@ hence both need to be installed on your computer. Both `R` and `RStudio` are
 cross-platform, so that everyone's versions look and operate the same regardless
 of their operating system! 
 
-For this workshop, we will be making use of the RStudio that you will need to install on your computer or a virtual desktop machine (available to MSU affiliated participants). For more details on this, you have hopefully completed the steps discussed here https://greenwood-stat.shinyapps.io/InstallDemo_RWorkshops/. The short version for downloading is to first go to https://cloud.r-project.org/ to R installed and then go to https://rstudio.com/products/rstudio/download/ to install RStudio. 
+For this workshop, we will be making use of the RStudio that you will need to install on your computer or a virtual desktop machine (available to MSU affiliated participants). For more details on this, you have hopefully completed the steps discussed here https://greenwood-stat.shinyapps.io/InstallDemo_RWorkshops/. The short version for downloading is to first go to https://cloud.r-project.org/ to `R` installed and then go to https://rstudio.com/products/rstudio/download/ to install RStudio. 
 
 If you did not complete that or do not have a computer available, you can also go to a virtual windows machine that is hosted by MSU - but only if you are an MSU affiliate. We will try to have it available to you based on your NETID. If you need this option, please go to https://studentlabs.montana.edu/remotelabs/howto.html, click on “Connect to virtual machine via a web browser”, then follow the directions to login and use it at “remotelabs.msu.montana.edu”. You should find a “CLS-STAT-REMOTE” box on the page with “Horizon”. If you work in this environment, the only way to have permanent store is via some sort of cloud drive like Onedrive - the session is cleared when you exit.  
 
-However you get to it, RStudio has a panel of 4 windows, where each can be viewed at the same time and
-has multiple tabs available.  
+However you get to it, RStudio has four possible panels, where each can be viewed at the same time and has multiple tabs available.  
 
 - the __Editor__ for your scripts and documents (top-left)  
--  the `R` __Console__ (bottom-left)  
+- the `R` __Console__ (bottom-left)  
 - your __Environment (Objects/Variables)/History__ (top-right)  
 - and your __Files/Plots/Packages/Help/Viewer__ (bottom-right).
 
-```{r, out.width = "50%"}
-library(knitr)
-include_graphics("https://github.com/saramannheimer/data-science-r-workshops/blob/master/Introduction%20to%20R/AY%202020-2021/Handout/images/rstudio.png")
-```
+![RStudio layout](rstudio.png)    
+
+\newpage 
 
 
 ## Working in `R`  
 
-The document we provided for you is an Rmarkdown (.Rmd) document. It allows you to work in a reproducible fashion, with both code (placed in what are called code chunks) and descriptions of results in the same file. The grey sections that have three single quotes then `{r}` will delineate a code chunk. You can add these with Insert -> R into a .Rmd file. Type all of your code in these code chunks and other documentation and interpretation of results outside of the code chunks (like we are doing here). Although there are more complex ways to work in RStudio, you should start today with saving this .Rmd  file into a folder that also contains any data and other figures you might want to read into this document. When you do that, RStudio will know where to look to read in the data so you do not need to know the path for its physical location on your computer. Once we are done with our local work, we can also use the `Knit` button to compile our work into html, word, or PDF documents. We will demonstrate this at the end of the workshop - but this will only work if all the code "runs" and what we have provided you has some errors in it. One other great (and fairly new) feature in these files is that it does live spell-checknig - I mean spell-checking - by underlining suspect words. We will also discuss RStudio "Projects" that take this one step further in terms of organizing your work built around this markdown framework. It is important to understand the various ways to do your work in R using RStudio. 
+The document we provided for you is an Rmarkdown (.Rmd) document. It allows you to work in a reproducible fashion, with both code (placed in what are called code chunks) and descriptions of results in the same file. The grey sections that have three single quotes then `{r}` will delineate a code chunk. You can add these with Insert -> `R` into a .Rmd file. Type all of your code in these code chunks and other documentation and interpretation of results outside of the code chunks (like we are doing here). Although there are more complex ways to work in RStudio, you should start today with saving this .Rmd  file into a folder that also contains any data and other figures you might want to read into this document. When you do that, RStudio will know where to look to read in the data so you do not need to know the path for its physical location on your computer. Once we are done with our local work, we can also use the `Knit` button to compile our work into HTML, word, or PDF documents. We will demonstrate this at the end of the workshop - but this will only work if all the code "runs" and what we have provided you has some errors in it. One other great (and fairly new) feature in these files is that it does live spell-checknig - I mean spell-checking - by underlining suspect words. We will also discuss RStudio "Projects" that take this one step further in terms of organizing your work built around this markdown framework. It is important to understand the various ways to do your work in R using RStudio. 
 
 RStudio allows for you to execute commands directly from the code chunk in the 
 document by using the __Ctrl + Enter__ (on Macs, __Cmd + Return__) shortcut. If
 you place your cursor on the line in the code chunk that you would like to run 
-and hit this shortcut, R will execute that line(s) of code for you. 
+and hit this shortcut, `R` will execute that line(s) of code for you. 
 Alternatively, you can also execute code in the console (where the output of the
 commands pops up). The difference between running code in the console and in the
 document is that any code you execute in the console will be lost once you close
@@ -81,13 +79,14 @@ forgotten to close your parenthesis or a quotation. If this happens and you are
 unsure of what went wrong, click inside the console and hit the `Esc` key. 
 Then you can start over and figure out where you went wrong!
 
-
 ### Calculator  
 
 __Practice__: Enter each of the following commands and confirm that the response
-is the correct answer.  Try to do this in the console and by executing the code in the code chunk, both  line by line and all at once.
+is the correct answer.  Try to do this in the console and by executing the code in the code chunk, both line by line and all at once. 
 
-```{r}  
+\vspace{0.25cm}
+
+```{r calculator, eval = FALSE}  
 1 + 2 
 
 16*9
@@ -97,10 +96,7 @@ sqrt(2)
 20/5
 
 18.5 - 7.21
-
-3 %% 2 ## what is this doing?
 ```
-
 
 ## Creating Objects 
 
@@ -146,13 +142,7 @@ assignments.
     use (`mean`, `sd,` etc.)  
     
 * Using a consistent coding style makes your code clearer to read for your 
-future self and your collaborators. In `R`, three popular style guides are 
-Google's (https://google.github.io/styleguide/Rguide.html), Jean Fan's 
-(https://jef.works/R-style-guide/) and the tidyverse's 
-(https://style.tidyverse.org/). The tidyverse's is very comprehensive and may 
-seem overwhelming at first, but you'd be surprised what good code writing habits
-can do for your collaborations!
-
+future self and your collaborators. 
 
 ### Clean Code 
 
@@ -168,35 +158,37 @@ more comprehensive Tidyverse style guide
 to automatically check and correct for issues in your code styling. More on 
 packages to come!
 
-
 ## Working with Objects 
 
 When you assign a value to an object (like we did previously) `R` does not output
 anything by default. If you enclose the code you wrote in parenthesis, then `R` 
 will output the value of the object you created. 
 
+\vspace{0.25cm}
 
 ```{r}
 (x <- 6)
 ```
 
+\vspace{0.25cm}
 
 Once the object has been created, you can use it! Run the following lines of code:
 
+\vspace{0.25cm}
 
 ```{r}
 2.2 * x
 
 4 + x 
 
-x %% 3
-
 ```
 
+\vspace{0.25cm}
 
 We can also overwrite an object's value, so that it has a new value. In the code
 below create a new object `y` and then we give `x` a new value of 2. 
 
+\vspace{0.25cm}
 
 ```{r}
 y <-  x + 6
@@ -205,14 +197,9 @@ x <- 2
 
 ```
 
+\vspace{0.25cm}
 
 **Exercise 1:** What is the current value of `y`? 12 or 8?  
-
-```{r}
-# Exercise 1 code here!
-
-```
-
 
 ## Working with Different Data Types 
 
@@ -221,44 +208,38 @@ can be either numbers or characters, but every entry of the vector must be the
 same data type. `R` can tell that you are building a vector when you use the 
 `c()` function, which concatenates a series of entries together. 
 
-
 ```{r}
 temps <- c(50, 55, 60, 65)
 temps
 ```
 
-
 To make a vector of characters, you are required to use quotation marks (" ") to 
 indicate to `R` that the value you are using is not an object you already 
 created in `R`. 
-
 
 ```{r}
 animals <- c("cat", "dog", "bird", "fish")
 animals
 ```
 
-
 Important features of a vector is the type of data they store. Run the following
 lines of code and decide what type of data the vectors contain. 
 
-
-```{r}
+```{r, eval = FALSE}
 class(temps)
 
 class(animals)
 ```
 
-
 **Exercise 2:** Create a vector, named `dec`, that contains decimal valued numbers. Then check
 what data type does that vector contain?
-
 
 ```{r}
 # Exercise 2 code here!
 
 ```
 
+\vspace{1cm}
 
 Another possible data type is a logical (Boolean) value. This type of data  
 takes on values of `TRUE` and `FALSE`. But, we said that vectors could only be 
@@ -266,6 +247,7 @@ numbers or characters. If `TRUE` and `FALSE` don't have quotations around them,
 then they aren't characters. So, then they must be numbers. What numbers do you 
 think they are?  
 
+\vspace{0.25cm}
 
 ```{r}
 
@@ -274,10 +256,13 @@ logic <- c(TRUE, FALSE, FALSE, TRUE)
 class(logic)
 ```
 
+\vspace{0.25cm}
 
 **Exercise 3:** What happens when we try to mix different data types into one 
-vector? Speculate what will happen when we run each of the following lines of code:
+vector?
+Speculate what will happen when we run each of the following lines of code:
 
+\vspace{0.25cm}
 
 ```{r}
 num_char <- c(1, 2, 3, "a")
@@ -289,14 +274,14 @@ char_logic <- c("a", "b", "c", TRUE)
 guess <- c(1, 2, 3, "4")
 ```
 
+\vspace{0.25cm}
 
 In each of these vectors, the two types of data were *coerced* into a single 
 data type. This happens in a hierarchy, where some data types get preference 
 over others. Can we draw a diagram of the hierarchy?  
 
-
-## Lists  
-
+# Lists  
+ 
 While the elements of vectors have to be of the same data type, a list is a
 special vector in `R` that allows for you to store a variety of types of 
 objects. If you have a vector, a matrix, and/or a character, you can store all of them
@@ -307,12 +292,14 @@ components can be characters, vectors, matrices, or other data structures.
 Here, we create a list whose components are the three vectors we've been 
 working with:
 
+\vspace{0.25cm}
 
 ```{r}
 my_first_list <- list(animals, temps, logic)
 my_first_list
 ```
 
+\vspace{0.25cm}
 
 We notice that when printing a list, the output looks a bit different. There 
 are a whole bunch of brackets! Let's break them down. I like to think of a list
@@ -320,19 +307,15 @@ as a shelf with cubby holes. The cubby holes are the components of the list,
 but there are elements in each cubby.  
 
 * To get to a specific component (cubby) of a list, you use the double brackets
-next to the name of the list (e.g `my_first_list[[1]]`).  
+next to the name of the list (e.g. `my_first_list[[1]]`).  
 * To access the elements inside each cubby, you then use single square brackets 
 (e.g. `my_first_list[[1]][2]`). 
 
-<center> 
+![Examples of lists](list_example.png)
 
-![](images/list_example.JPG)
-
-</center>
-
+\vspace{2cm}
 
 ### Named Lists
-
 
 ```{r}
 my_named_list <- list(title = "statistics", 
@@ -341,11 +324,13 @@ my_named_list <- list(title = "statistics",
 my_named_list
 ```
 
+\vspace{0.25cm}
 
 We see the output for a named list is slightly different. Instead of double 
 brackets next to each component, there are now `$` and names of the variable. 
 This will help you understand the structure of data.frames (coming up next)!
 
+\vspace{0.5cm}
 
 ## Importing Data  
 
@@ -361,13 +346,16 @@ Notice the code that outputs in the console (the bottom left square). This is
 the code that you could have typed in the code chunk below to import the data 
 yourself. Copy and paste the code that was output in the code chunk below.  
 
+```{r data, echo = FALSE, message = FALSE, warning = FALSE, purl = TRUE}
+library(readr)
+BlackfootFish <- read.csv("BlackfootFish.csv",
+                          stringsAsFactors = FALSE)
 
-```{r}
 # copy and paste the code that was used by R to import the data 
 # be careful to only copy the code that is next to the > signs! 
-
-
 ```
+
+\vspace{0.25cm}
 
 The path provided can also be simplified to just include the file name - if the .Rmd and data are saved in the same folder. If you have any trouble reading in the data set, here is code that allows you to read the data from our github repository:
 
@@ -376,17 +364,28 @@ BlackfootFish <- read.csv("https://github.com/saramannheimer/data-science-r-work
 
 ```
 
+
+```{r fakeData}
+# copy and paste the code that was used by R to import the data 
+# be careful to only copy the code that is next to the > signs! 
+
+
+```
+
+\vspace{1cm}
+
 ## Structure of Data  
 
 The data we will use is organized into data tables. When you imported the 
-BlackfootFish data into RStudio was saved as an object. You are able to inspect
+BlackfootFish data into RStudio it was saved as an object. You are able to inspect
 the structure of the BlackfootFish object using functions built in to `R` 
 (no packages necessary).  
 
 Run the following code. What is output from each of the following commands?
 
+\vspace{0.25cm}
 
-```{r}
+```{r structure}
 class(BlackfootFish) ## What is the object class of the data?
 
 dim(BlackfootFish) ## What is the first number represent? What about the second number?
@@ -396,13 +395,15 @@ names(BlackfootFish) ## What does this output refer to?
 str(BlackfootFish) ## What is the structure of the data?
 ```
 
- 
+\vspace{0.5cm}
+
 ```{r}
 summary(BlackfootFish) ## What is the data type of each variable in our dataset?
 
 typeof(BlackfootFish) ## What is the storage mode of a data.frame?
 ```
 
+\vspace{0.5cm}
 
 When we inspect dataframes, or other objects in `R`, there are some general 
 functions that are useful to check the content/structure of the data. 
@@ -411,7 +412,8 @@ Here are some:
 - size:  
     + `dim(data)`: rows and columns  
     + `nrow(data)`: number of rows  
-    + `ncol(data)`: number of columns  
+    + `ncol(data)`: number of columns
+    + `length(data$variable)`: length of a vector
 
 
 - content:  
@@ -427,29 +429,25 @@ Here are some:
 
 - summary of content:  
     + `str(data)`: structure of object and information about the columns  
-    + `glimpse(data)`: similar information to `str`, but neater output  
+    + `glimpse(data)`: similar information to `str`, but neater output (requires `tibble` package) 
     + `summary(data)`: summary statistics for each column  
   
-
+\vspace{0.5cm}
 
 *Note:* Many of these are generic functions that will work on other data types, 
 not just on `data.frame`s. 
 
-
-## Dataframes 
+# Dataframes 
 
 What is a dataframe? A dataframe is a type of `R` object and is the *de facto* 
 structure of tabular data. You can create dataframes by hand, but most of us do 
 not use `R` to input our data by hand. Instead, we import our data using `R` 
-commands that read in spreadsheets (`read.csv`, `read_csv`, `read_excel` etc.). 
-A dataframe is a set of columns, where each column is a vector. Thus, columns 
-have the same data type *within* the column, but potentially different data 
-types *across* columns. 
+commands that read in spreadsheets (`read.csv`, `read_csv` (requires `readr` package), `read_excel` (requires `readxl` package), etc.). A dataframe is a set of columns, where each column is a vector. Thus, columns 
+have the same data type *within* the column, but potentially different data types *across* columns. 
 
 For example, the columns `trip`, `mark`, and `year` are integers (whole numbers),
 `weight` and `length` are numeric (numbers with decimals), and `section` and 
 `species` are characters. 
-
 
 ## Extracting Data  
 
@@ -458,8 +456,10 @@ use the `$` command. This command extracts the specified variable (on the right
 of the `$` sign) from the dataset. When this is extracted, `R` views the variable
 as a vector of entries, which is what the [1:18352] refers to.
 
+\vspace{0.25cm}
 
-```{r}  
+```{r extract, tidy = TRUE, purl = TRUE}  
+
 years <- BlackfootFish$year 
 ## extracts year from the dataset and saves it into a new variable named year
 
@@ -469,6 +469,7 @@ str(years) ## using the new variable (remember case matters!)
 
 ```
 
+\vspace{0.25cm}
 
 Another method for accessing data in the dataset is using matrix notation 
 ([row, column]). If you look to your right in the __Environment__ window, you 
@@ -477,8 +478,9 @@ notice that RStudio tells you the dimensions of the BlackfootFish data. You can
 of the columns. I could instead use bracket notation to perform the same task as
 above, using the following code.  
 
+\vspace{0.25cm}
 
-```{r}  
+```{r bracket, purl = TRUE}  
 years <- BlackfootFish[, 5] 
 ## This takes ALL rows of data but only the fifth column
 ## Same as years <- BlackfootFish[1:18352, 5]
@@ -486,13 +488,11 @@ years <- BlackfootFish[, 5]
 str(years)
 ```
 
-
 ### Practice:
 
 The following is a preview of the dataframe `df`: 
 
-
-```{r}
+```{r, echo = FALSE}
 df <- data.frame(
   x = c("H", "N", "T", "W", "V"), 
   y = c("May", "Oct", "Mar", "Aug", "Feb"),
@@ -502,30 +502,37 @@ df <- data.frame(
 df
 ```
 
+\vspace{0.25cm}
 
 **Exercise 4:** What would be output if you entered: `df[3, ]`?  
 
+\vspace{0.25cm}
 
 **Exercise 5:** What would you input to get an output of `2015`? Can you 
 think of two ways to do it?
 
+\vspace{0.25cm}
 
 **Exercise 6:** How would you pull off only columns `x` and `y`? What about 
 pulling off only columns `x` and `z`?
 
+\vspace{0.25cm}
 
 **Exercise 7:** How would you modify the script below, to get an output 
 of `[1] 22 24`? 
 
+\vspace{0.25cm}
 
 ```{r, eval = FALSE}
 s <- c(22, 24, 49, 18, 1, 6)
 s[]
 ```
 
+\vspace{0.25cm}
 
 **Exercise 8:** What would be output if you entered: `s[3, ]`?  
 
+\vspace{0.25cm}
 
 ## Changing Data Type  
 
@@ -546,12 +553,13 @@ to store this information, (1) as a series of `character` strings, or (2) as a
 characters, since you only need to store the level of the factor each 
 observation went with. 
 
-While factors are still useful in today's statistical analyses and data  visualizations, they can be tricky to deal with. When you convert a variable to a factor, for many operations you will get different results than for a character (McNamara & Horton, 2017). 
+While factors are still useful in today's statistical analyses and data  visualizations, they can be tricky to deal with. When you convert a variable to a factor, for many operations you will get different results than for a character (McNamara & Horton, 2017).  
 
 In these data, section has two levels (Johnsrud and ScottyBrown) and species has
 four levels (RBT, WCT, Bull, and Brown). If we want `R` to view these variables
 as factors instead of characters, we need to change their data type.   
 
+\vspace{0.25cm}
 
 ```{r factors, purl = TRUE}  
 unique(BlackfootFish$species) ## tells you the unique values of species
@@ -560,10 +568,10 @@ unique(BlackfootFish$section) ## tells you the unique values of section
 
 BlackfootFish$speciesF <- factor(BlackfootFish$species) 
 ## creates a new variable that is the factor version of species
+
 BlackfootFish$sectionF <- factor(BlackfootFish$section) 
 ## creates a new variable that is the factor version of section
 ```
-
 
 There is also a function that will allow for you to specify the order of the 
 levels of a factor! As we saw before, the `factor` function chooses the 
@@ -572,11 +580,14 @@ following order: Bull, Brown, RBT, and WCT.
 
 Using the `factor` function this would look like:
 
+\vspace{0.25cm}
 
 ```{r, tidy = FALSE}
 BlackfootFish$speciesF <- factor(BlackfootFish$species, 
                                 levels = c("Bull", "Brown", "RBT", "WCT"))
 ```
+
+\vspace{0.25cm}
 
 If you want to check the order and names of the levels that are being used by a factor, the `levels()` function can be useful:
 
@@ -585,7 +596,7 @@ levels(BlackfootFish$speciesF)
 
 ```
 
-### Practice:  
+## Practice:  
 
 **Exercise 9:** Year was saved as an integer data type (1989 - 2006), but we 
 may want to consider it to be a categorical variable (a factor). Write the `R` 
@@ -596,29 +607,26 @@ code to create a new variable called `yearF` that is a factor of `year`
 
 ```
 
+\vspace{0.25cm}
 
 **Exercise 10:** Now, verify that `yearF` is viewed as a categorical variable, 
 with the same levels as `year`. (hint: you have already used three functions 
 that would do this for you)  
 
-```{r}
-
-
-```
+\vspace{0.25cm}
 
 An issue with factors lies with if/when you want to change it back to a 
 number or character. In the code below I've decided that I don't want year 
 to be a factor and want to change it back to numeric. What happens when I use 
-the `as.numeric()` function on the yearF variable?  
+the `as.numeric()` function on the `yearF` variable?    
 
+\vspace{0.25cm}
 
-```{r}
-BlackfootFish$yearF <- factor(BlackfootFish$year)
+```{r, echo = FALSE}
+BlackfootFish$yearF <- as.factor(BlackfootFish$year)
 ```
 
-
-```{r}
-
+```{r factor_convert, tidy = FALSE}
 year_recover <- as.numeric(BlackfootFish$yearF)
 
 ds <- data.frame(original = BlackfootFish$yearF, 
@@ -626,9 +634,7 @@ ds <- data.frame(original = BlackfootFish$yearF,
 head(ds)
 
 tail(ds)
-
 ```
-
 
 ## Packages  
 
@@ -645,7 +651,6 @@ We're going to install a few packages that are often used.
 * Check the __Install dependencies__ box  
 * Click on the __Import__ button  
 
- 
 There will be a large amount of output coming out of the console. This output is
 `R` trying to download the package(s) you requested. Once the computer has downloaded the packages, it will tell you that 
 "`The downloaded binary packages are in`", followed by the location of the files.  
@@ -653,12 +658,14 @@ There will be a large amount of output coming out of the console. This output is
 Now that the files are downloaded, we need to load them in order to use them. 
 The following code will load each package, please run it!  
 
+\vspace{0.25cm}
 
 ```{r packages}  
 library(devtools)
 library(tidyverse)
 ```
 
+\vspace{0.25cm}
 
 Notice that when loading the `tidyverse` package that there is a large amount of
 output. This output is telling you all of the other packages that are loaded in 
@@ -670,8 +677,7 @@ like to use! Often packages that you install will need to be updated. To update
 a package you can click on the "Tools" tab, then click on "Check for Package
 Updates". This will bring up a window that will list all of the packages that 
 have newer versions than what you have. Click on the packages that you wish to 
-update, or click on the "Select All" button.
-
+update, or click on the "Select All" button.  
 
 ## Finding Help  
 
@@ -694,7 +700,8 @@ instead.
     + The output will tell you what package the function is in, as well as the 
     function's name (`package::function`).  
 
-  
+\vspace{0.25cm}    
+
 If you would like help on a particular package, say one that you just downloaded,
 then you can use the same command(s) to get help.  These commands will load up 
 a help page (in RStudio) in the Help pane. Each help page is broken down into 
@@ -734,8 +741,9 @@ value assigned to it.
 
 Suppose we wanted to create a vector of 10 zeros. To do this, we would use the `rep` function:  
 
+\vspace{0.25cm}
 
-```{r} 
+```{r rep, purl = TRUE} 
 # ?rep
 
 rep(0, times = 10) ## repeating 0 three times
@@ -747,23 +755,27 @@ rep(0, 10) ## no named arguments
 rep(10, 0) ## not what we wanted!
 ```
 
+\vspace{0.25cm}
 
 Now let's look over some other functions that are often used: 
 
+\vspace{0.25cm}
 
-```{r} 
+```{r functions, purl = TRUE, eval = FALSE} 
 
 mean(BlackfootFish$weight)  ## takes a numerical input, but there are NA's in our data
 
-mean(BlackfootFish$weight, argument here! )  ## review the help and add in the argument that removes the NA's
+mean(BlackfootFish$weight, argument here! )  ## review the help and add in the argument
+## that removes the NA's
 
-median(BlackfootFish$species) ## gives an error because the input is not the correct data type  
+median(BlackfootFish$species) ## gives an error because input is not correct data type  
 
 cor(BlackfootFish$length, BlackfootFish$weight) ## takes multiple inputs separated by a comma
 
 ## Does cor have an option to remove NA's?
 ```
 
+\vspace{0.25cm}
 
 As seen in the functions above, some functions have *optional* arguments. If 
 they are not specified by the user, then they take on their default value 
@@ -780,15 +792,18 @@ the BlackfootFish data, possibly across a variety of variables. Before we used
 function takes a dataframe and removes any NA's from that dataset. Based on the
 output below, how many rows in the BlackfootFish data have an NA present?  
 
+\vspace{0.5cm}
 
-```{r}
+```{r NA, purl = TRUE, tidy = TRUE}
 
 dim(BlackfootFish) ## gives the dimensions of the dataset in (row, column) format  
 
 dim(na.omit(BlackfootFish)) 
-## na.omit takes dataframes, matricies, and vectors and returns the object with incomplete cases removed (NA's removed)
+## na.omit takes dataframes, matricies, and vectors and returns object with incomplete cases removed 
+## incomplete cases are ones with any NA's
 ```
 
+\vspace{0.5cm}
 
 __Remark:__ The computer is using an algorithm to return a dataset with no NA 
 values anywhere in it. This algorithm goes through every row of the dataset and
@@ -802,19 +817,19 @@ row is retained
 * Once it has stepped through every row, the function outputs the "cleaned" 
 dataframe
 
-## Subsetting Data  
-
 If we wish to remove all of the NA's from the dataset, we can use the 
 `na.omit` command from above. We can save the new "clean" dataset under a new name
 (creating a new object) or under the same name as before (replacing the old 
 object with the new object).
 
+\vspace{0.25cm}
 
-```{r}
+```{r clean, tidy = TRUE}
 BlackfootFish_clean <- na.omit(BlackfootFish) 
 ## Creates a new dataframe, where the NA's have all been removed 
 ```
 
+\vspace{0.25cm}
 
 ## Data Visualization  
 
@@ -833,14 +848,14 @@ variables across several or many cases. Most often, there is a Cartesian
 coordinate system in which the x-axis represents one variable and the y-axis the
 second variable.  
 
+\vspace{0.25cm}
 
-```{r}
+```{r scatter1, tidy = FALSE}
 #?plot()
 plot(length ~ weight, 
      data = BlackfootFish_clean) 
 
 ```
-
 
 ```{r}
 plot(length ~ weight, 
@@ -855,29 +870,29 @@ plot(length ~ weight,
 ### Distribution
 
 A histogram shows how many observations fall into a given range of values of a 
-variable and can be used to visualize the distribution of a single quantitative variable.  
+variable and can be used to visualize the distribution of a single quantitative variable. 
 
-
-```{r}
+```{r hist1, purl = TRUE}
 hist(BlackfootFish_clean$length) 
 ```
 
-
-```{r}
+```{r hist2, tidy = FALSE}
 hist(BlackfootFish_clean$length, 
      freq = F) ## converts to a density plot (area adds to 1) 
 ```
 
+\vspace{0.25cm}
 
-```{r}
+```{r, eval = FALSE}
 ## Does freq need to be named?
 hist(BlackfootFish_clean$length, FALSE)
 ## Why is there an error about the "number of breaks"?
 
 ```
 
+\vspace{0.25cm}
 
-```{r}
+```{r hist3, tidy = FALSE}
 hist(BlackfootFish_clean$length, 
      freq = F, 
      xlab = "Length", ## adds x-axis label 
@@ -886,7 +901,7 @@ hist(BlackfootFish_clean$length,
 ```
 
 
-```{r}
+```{r hist4, tidy = FALSE}
 hist(BlackfootFish_clean$length, 
      freq = F, 
      nclass = 50, ## changes the number of bins 
@@ -900,23 +915,21 @@ hist(BlackfootFish_clean$length,
 
 The familiar boxplot is a simple display to use when the objective is to compare the 
 distribution of a quantitative variable across different levels of a categorical
-variable. 
+variable.  
 
-
-```{r} 
+```{r boxplot, tidy = FALSE, fig.height = 4, fig.width = 5} 
 ## What other options are available to add to your boxplot?
 boxplot(weight ~ species, 
         data = BlackfootFish_clean)
 ```
 
- 
+
 ### Bar Charts  
 
 Bar charts are an effective way to compare the frequencies of levels of a 
 categorical variable. 
 
-
-```{r}
+```{r bar, tidy = FALSE, fig.height = 5}
 
 section <- table(BlackfootFish_clean$section)
 ## tables the number of fish that were caught in each section
@@ -931,7 +944,6 @@ barplot(section,
         )
 ```
 
-
 ### Practice  
 
 **Exercise 11:**  Using statistics or graphics, which year in our dataset had the 
@@ -942,10 +954,10 @@ most fish caught?
 
 ```
 
+\vspace{0.5cm}
 
 **Exercise 12:** Make a boxplot of the fish weights over the different years in 
 the dataset.  
-
 
 ```{r}
 
@@ -953,16 +965,20 @@ the dataset.
 
 ## Knitting/compiling
 
-Hopefully at this point you have fixed all the code errors in the file we initially provided as you learned about the `R` code and functions. A final (and sometimes intermediate step) is to compile your Rmarkdown file into an html, Word, or PDF document. The compiling process will verify that the code you wrote works in the order that it is present in the document and is your reproducible result to share with colleagues and collaborators. The .Rmd is your archive of the code used to produce those results from the data.
+Hopefully at this point you have fixed all the code errors in the file we initially provided as you learned about the `R` code and functions. A final (and sometimes intermediate step) is to compile your Rmarkdown file into an HTML, Word, or PDF document. The compiling process will verify that the code you wrote works in the order that it is present in the document and is your reproducible result to share with colleagues and collaborators. The .Rmd is your archive of the code used to produce those results from the data.
 
-The html format is the least nice for printing but also has the fewest dependencies on other software to compile. Compiling to Word requires a word processing software like Microsoft Word. Compiling to PDF either requires the tinytex package in `R` or a separate installation of miktex, so often requires additional steps beyond what we want to discuss today. 
+The HTML format is the least nice for printing but also has the fewest dependencies on other software to compile. Compiling to Word requires a word processing software like Microsoft Word. Compiling to PDF either requires the tinytex package in `R` or a separate installation of miktex, so often requires additional steps beyond what we want to discuss today. 
 
 To attempt to knit to one of these formats, go to "Knit" and click on the triangle to select the "Knit to ..." version. The entire suite of code will be re-run from beginning to end and, if it works, compiled into the document type you specified.
 
- 
+## Exiting RStudio
+
+Finally, when you are done with your work and attempt to exit out of RStudio, it will ask you to save your workspace. **DO NOT DO THIS!** It will just create a cluttered workspace and could even cause you to get incorrect results. In fact, you should go into the Tools -> Global Options and then make sure that “Save workspace to .RData on exit” option on the first screen you will see is set to Never. If you save your `R` code either as a .R or (better) an R Markdown (.Rmd) file, you can re-create any results by simply re-running that code or re-knitting the file. If you find that you have lots of “stuff” in your workspace because you accidentally saved your workspace, just run `rm(list = ls())`. It will delete all the data sets from your workspace.
+
+
 ## Projects in `R`  
 
-R projects provide a way to organize all the code and data in one place and many consider these the best way to work in `R`. We chose to avoid this step and just use a single .Rmd file to expedite your first experience using R. A motivation for using projects is that it is important to organize your data and script files into the same or related locations and have different locations for different iterations of projects. If you don't do this:
+`R` projects provide a way to organize all the code and data in one place and many consider these the best way to work in `R`. We chose to avoid this step and just use a single .Rmd file to expedite your first experience using `R`. A motivation for using projects is that it is important to organize your data and script files into the same or related locations and have different locations for different iterations of projects. If you don't do this:
 
 * it is really hard to tell which version of your data is original and what
 versions are modified  
@@ -1000,8 +1016,7 @@ After this process `R` will be searching for objects (such as data) in the
 files in a self-contained system. 
  
 After saving your previous work today, you can try to create a project in a new folder on your computer. After you create the project, you can create a new .Rmd file and copy and paste the text from this document into this file. And move a copy of the BlackfootFish.csv into the project folder you created. Whenever you open this project it will take you directly to the work you have done in that project folder. It may be useful to close the project before exiting RStudio to avoid confusion in later sessions. 
- 
- 
+
 ## Terminology Used in Workshop
 
 * *Command*: A command is what `R` executes. In an `R` script file (script.R), 
@@ -1057,7 +1072,6 @@ sign, then the input.
 * *Logical Value*: TRUE and FALSE value(s) that can be used to turn off/on 
 options in functions and plots, and also to manipulate data. 
 
-
 ## Workshop Materials & Recordings Available:
 
 * email Sara Mannheimer (sara.mannheimer@montana.edu)
@@ -1080,9 +1094,15 @@ The best place to start is playing around with the code from today's workshop.
 Change parts of the code and see what happens! Better yet, use the code from the
 workshop to investigate your own data! 
 
-## Montana State University R Workshops Team
+\newpage
 
-These materials were adapted from materials generated by the Data Carpentries (https://datacarpentry.org/) and were originally developed at MSU by Dr. Allison Theobold. They are co-organized by the Montana State University Library, Department of Mathematical Sciences, and Statistical Consulting and Research Services (SCRS, https://www.montana.edu/statisticalconsulting/). SCRS is supported by Montana INBRE (National Institutes of Health, Institute of General Medical Sciences Grant Number P20GM103474)). The workshops for 2020-2021 are supported by Faculty Excellence Grants from MSU's Center for Faculty Excellence. 
+## Montana State University `R` Workshops Team
+
+These materials were adapted from materials generated by the Data Carpentries (https://datacarpentry.org/) and were originally developed at MSU by Dr. Allison Theobold. The workshop series is co-organized by the Montana State University Library, Department of Mathematical Sciences, and Statistical Consulting and Research Services (SCRS, https://www.montana.edu/statisticalconsulting/). SCRS is supported by Montana INBRE (National Institutes of Health, Institute of General Medical Sciences Grant Number P20GM103474). The workshops for 2020-2021 are supported by Faculty Excellence Grants from MSU's Center for Faculty Excellence. 
+
+Research related to the development of these workshops is to appear in:
+
+* Theobold, A., Hancock, S., & Mannheimer, S.. Data Science Workshops for Data-Intensive Environmental Science Research, _Journal of Statistics Education_. 
 
 The workshops for 2020-2021 involve modifications of materials and are being taught by:
 
@@ -1098,3 +1118,7 @@ The workshops for 2020-2021 involve modifications of materials and are being tau
 
 * Mark Greenwood is a Professor of Statistics in the Department of Mathematical Sciences at Montana State University and Director of Statistical Consulting and Research Services (https://www.montana.edu/statisticalconsulting/). His research interests have involved statistical methods and applications in environmental sciences, education, and biological sciences. Recent work has involved researching diagnostic methods for Multiple Sclerosis. His current research grants include funding from the Mountain West IDeA Clinical and Translational Research - Infrastructure Network  (National Institute of General Medical Sciences Grant 5U54GM104944-07) and a grant from the National Multiple Sclerosis Society (RG-1907-34348).
 
+<p style="text-align: right; font-size: small;">Workshop build on: 
+`r format(Sys.time())`</p>
+
+This instructional material is made available under the Creative Commons Attribution license (https://creativecommons.org/licenses/by/4.0/) (CC-BY 4.0).
