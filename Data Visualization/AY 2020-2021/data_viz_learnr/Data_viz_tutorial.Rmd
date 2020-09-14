@@ -31,12 +31,20 @@ surveys <- read_csv("data/surveys.csv")
 > * Set universal and local plot settings.
 > * Describe what aesthetics are and how they are used by ggplot().
 > * Describe what faceting is and apply faceting to a ggplot().
-> * Modify the aesthetics of an existing ggplot() plot (e.g. axis labels, color).
+> * Modify the aesthetics of an existing ggplot() plot (e.g., axis labels, color).
 > * Build multivariate and customized plots from data in a data frame.  
 > * Arrange multiple plots in a grid format using grid.arrange() from gridExtra.
 > * Export publication ready graphics using ggsave(). 
 
 --------------
+
+## Orientation of/for the workshop
+
+** This workshop assumes some basic familiarity with working in `R` such as what you might obtain in the "Introduction to R" workshop or in a statistics course that uses `R` heavily, such as STAT 217 or STAT 411/511. If you have not interacted with `R` previously, some of the assumptions of your background for this workshop might be a barrier. We would recommend getting what you can from this workshop and you can always revisit the materials at a later date after filling in some of those basic `R` skills. We all often revisit materials and discover new and deeper aspects of the content that we were not in a position to appreciate in a first exposure.
+
+** In order to focus this workshop on coding, we developed this interactive website for you to play in a set of "sandboxes" and try your hand at implementing the methods we are discussing. When each code chunk is ready to run (all can be edited, many have the code prepared for you), you can click on "Run Code". This will run `R` in the background on a server. For the "Challenges", you can get your answer graded although many have multiple "correct" answers, so don't be surprised if our "correct" answer differs from yours. The "Solution" is also provided in some cases so you can see a solution - but you will learn more by trying the challenge first before seeing the answer. Each sandbox functions independently, which means that you can pick up working at any place in the documents and re-set your work without impacting other work (this is VERY different from how `R` usually works!). Hopefully this allows you to focus on the code and what it does... The "Start over" button can be used on any individual sandbox or you can use the one on the left tile will re-set all the code chunks to the original status. 
+
+** These workshops are taught by Sara Mannheimer, Greta Linse, and Mark Greenwood and co-organized by the MSU Library, Statistical Consulting and Research Services (SCRS), and the Department of Mathematical Sciences. More details on us and other workshops are available at the end of the session.
 
 ## Data Viz Introduction
 
@@ -49,11 +57,10 @@ in creating publication quality plots with minimal amounts of adjustments and
 tweaking.
 
 Packages in `R` are basically sets of additional functions that let you do more
-stuff. The functions we've been using so far, like `str()` or `mean()`,
+stuff. The functions we've used in the previous workshop, like `str()` or `mean()`,
 come built into `R`; packages give you access to more of them. Before you use a
 package for the first time you need to install it on your machine, and then you
-should import it in every subsequent `R` session when you need it. You should
-already have installed the **`tidyverse`** package. This is an
+should import it in every subsequent `R` session when you need it. If you were to do this work in RStudio, you would need to install the **`tidyverse`** package. This is an
 "umbrella-package" that installs several packages useful for data analysis which
 work together well such as **`tidyr`**, **`dplyr`**, **`ggplot2`**, 
 **`readr`**, **`forcats`**, etc.
@@ -74,17 +81,16 @@ doing data analysis with some of the functions that come with `R`.
 > bottleneck in most data analysis is thinking time, not computing time.
 > - Hadley Wickham
 
-If we haven't already done so, we can type `install.packages("tidyverse")` 
-straight into the console. In fact, it's better to write this in the console 
-than in our script for any package, as there's no need to re-install packages 
-every time we run the script.
+In this workshop, we have already installed the `tidyverse` using `install.packages("tidyverse")`. It is important to note that there's no need to re-install packages every time we run the script.
 
-Then, to load the package type:
+Then, to load the package include code in your work with:
 
 ```{r, message = FALSE}
 ## load the tidyverse packages
 library(tidyverse)
 ```
+
+Working with packages was discussed in more detail in the "Introduction to R" workshop. We will proceed through the remaining work with the `tidyverse` package installed and loaded.
 
 To learn more about **`ggplot2`** after the workshop, you may want
 to check out this
@@ -98,9 +104,8 @@ and this [handy cheatsheet on **`ggplot2`** (link)](https://github.com/rstudio/c
 ## Presentation of the survey data
 ```
 
-We are investigating the animal species diversity and weights found within plots at the Data Carpentry study
-site. The dataset is stored as a comma separated value (CSV) file.
-Each row holds information for a single animal, and the columns represent:
+The data used in this workshop are a time-series for a small mammal community in southern Arizona. This is part of a project studying the effects of rodents and ants on the plant community that has been running for almost 40 years. The rodents are sampled on a series of 24 plots, with different experimental manipulations controlling which rodents are allowed to access which plots. This is simplified version of the full data set that has been used in over 100 publications and was provided by the Data Carpentries (https://datacarpentry.org/ecology-workshop/data/). We are going to focus on animal species diversity and weights in this workshop. The dataset is stored as a comma separated value (CSV) file.
+Each row holds information for a single animal, and the columns represent (along with some others we will not use):
 
 | Column           | Description                        |
 |------------------|------------------------------------|
@@ -132,16 +137,17 @@ reads `weight` as `col_double` (a numeric data type), and `species` as
 ```{r inspect-data, exercise=TRUE}
 ## inspect the data
 str(surveys)
+
 ```
 
 ```{r preview-data, exercise=TRUE}
-## Preview the data
-View(surveys)
+## Preview the data: View(surveys) #Or
+glimpse(surveys)
 ```
 
-Notice that the class of the data is now `tbl_df`
+You could also use `View(surveys)` or `glimpse(surveys)` when working RStudio to explore the data set further.
 
-This is referred to as a "tibble". Tibbles tweak some of the behaviors of the 
+At the top of the `str()` output, notice that the class of the data is a tibble. Tibbles tweak some of the behaviors of the 
 data frame objects we introduced in the previous workshop. The data structure is
 very similar to a data frame, so for our purposes the only differences are that:
 
@@ -156,7 +162,7 @@ very similar to a data frame, so for our purposes the only differences are that:
 `ggplot2` functions like data in the 'long' format, i.e., a column for every 
 dimension, and a row for every observation. There are other data formats, which 
 we will discuss in the _Data Wrangling in `R`_ workshop, as well as how to 
-covert from one data format to another. Well-structured data will save you 
+convert from one data format to another. Well-structured data will save you 
 lots of time when making figures with `ggplot2` and when working in `R`!
 
 `ggplot()` graphics are built step by step by adding new elements. Adding layers 
@@ -190,7 +196,7 @@ ggplot(data = surveys,
 # ggplot() knows where the variables live, since you have defined the data to use
 ```
 
-3. Add 'geoms' -- graphical representations of the data in the plot (points,
+3. Add "geoms" -- graphical representations of the data in the plot (points,
   lines, bars). **`ggplot2`** offers many different geoms; we will use some 
   common ones today, including:
   
@@ -274,7 +280,7 @@ https://ggplot2.tidyverse.org/articles/ggplot2-specs.html
 
 > ## Challenge 1
 >
-> Modify the previous code chunk to assign one of these aesthetics to the 
+> Copy and paste the code from the previous code chunk and modify it to assign one of these aesthetics to the 
 > `geom_point` aspect of your plot. 
 >
 >What happened? 
@@ -334,7 +340,7 @@ argument.
 
 ### Assigning More Variables to Aesthetics 
 
-Or to color each species in the plot differently, you could use a vector as an
+To color each species in the plot differently, you could use a vector as an
 input to the argument **color**. **`ggplot2`** will provide a different color 
 corresponding to different values in the vector. Here is an example where we 
 color with **`species_id`**:
@@ -374,7 +380,7 @@ Notice that we can change the geom layer and colors will be still determined by
 When you define aesthetics in the `ggplot()` function, those mappings hold for
 **every** aspect of your plot. 
 
-For example, if you chose to add a trend line to your plot of weight versus 
+For example, if you chose to add a smoothing line to your plot of weight versus 
 hindfoot length, you would get different lines depending on where you define 
 your color aesthetics. 
 
@@ -385,7 +391,7 @@ surveys %>%
   ggplot(mapping = aes(x = weight, y = hindfoot_length, color = species_id)) +
   geom_jitter(alpha = 0.1) + 
   geom_smooth()
-  ## trend line for each species_id -- because color is defined globally
+  ## smoothing line for each species_id -- because color is defined globally
 ```
 
 **Locally**  
@@ -395,13 +401,13 @@ surveys %>%
   ggplot(mapping = aes(x = weight, y = hindfoot_length)) +
   geom_jitter(aes(color = species_id), alpha = 0.1) + 
   geom_smooth()
-  ## one trend line -- no color defined globally
+  ## one smoothing line -- no color defined globally
 ```
 
 
 > ## Challenge 2 (Part 1)
 >
-> Inspect the `geom_point` help file to see what other aesthetics are available. 
+> Inspect the `geom_point` help file (either go to https://ggplot2.tidyverse.org/reference/geom_point.html or run `?geom_point`) to see what other aesthetics are available. 
 > Map a new variable from the dataset to another aesthetic in your plot. 
 > What happened? 
 > Does the aesthetic change if you use a continuous variable versus a 
@@ -452,7 +458,7 @@ grade_code()
 
 ### Boxplots & Violin Plots
 
-We can use boxplots to visualize the distribution of weight within each species:
+Boxplots provide a visualization of a quantitative variables across different levels of a categorical (grouping) variable. For example, we can use boxplots to visualize the distribution of weight within each species:
 
 ```{r boxplot1, exercise=TRUE}
 surveys %>% 
@@ -467,7 +473,7 @@ measurements and their distribution:
 surveys %>% 
   ggplot(mapping = aes(x = species_id, y = weight)) +
     geom_boxplot(alpha = 0) + 
-    ## alpha = 0 eliminates the black (outlier) points, so they're not plotted twice
+    ## alpha = 0 eliminates the black (possible outlier) points, so they're not plotted twice
     geom_jitter(alpha = 0.2, color = "tomato")
     ## alpha = 0.2 decreases the opacity of the points, to not be too busy
 ```
@@ -478,12 +484,12 @@ surveys %>%
 
 >## Challenge 3 (Part 1) 
 >
-> Boxplots are useful summaries, but hide the *shape* of the distribution. For
+> Boxplots are useful summaries, but hide details of the *shape* of the distribution. For
 > example, if the distribution is bimodal, we would not see it in a boxplot. 
 > A superior density plot is the violin plot, where the shape 
 > (of the density of points) is drawn.
 >
-> Replace the box plot with a violin plot. For help see `geom_violin()`. Start with the poxplot we > created:
+> Replace the box plot with a violin plot. For help see `geom_violin()`. Start with the boxplot we created:
 
 ```{r challenge-3part1-example, exercise=TRUE}
 ggplot(data = surveys, mapping = aes(x = species_id, y = weight)) +
@@ -516,8 +522,8 @@ grade_code()
 > making a new plot to explore the distribution of another variable within each 
 > species.
 
-> Create a boxplot for `hindfoot_length`. Overlay the boxplot layer on a jitter
-> layer to show actual measurements.
+> Create a boxplot for `hindfoot_length`. This time overlay the boxplot layer over a jitter
+> layer that shows the actual measurements.
 
 ```{r challenge-3part2, exercise=TRUE, exercise.lines = 7}
 ##  First: create boxplot for hindfoot_length` overlaid on a jitter layer.
@@ -581,7 +587,7 @@ grade_code()
 
 ## Plotting Single Variables
 
-### Distribution Plots (Quantiative Variables)
+### Distribution Plots (Quantitative Variables)
 
 If we wish to visualize the distribution of a single quantitative variable, our 
 plot changes a bit. Unfortunately, the `geom_violin()` function only accepts 
@@ -629,13 +635,13 @@ surveys %>%
 > Do you get an error like this when you use `hist()` in base `R`? 
 
 I was once told that the idea behind a good histogram was to make the plot look 
-as smooth as possible -- think trying to resemble the continuous shape of the 
+as smooth as possible -- think about having it resemble the continuous shape of the 
 density plot.  
 
 
 >## Challenge 4 
 >
-> Use the `bins` argument to play around with the number of bins in your 
+> Use the `bins` argument in `geom_histogram()` to play around with the number of bins in your 
 > histogram. Compare your chosen number of bins with your neighbors! 
 
 
@@ -678,13 +684,13 @@ charts and boxplots, calculate new values (from your data) to plot.
 * Bar charts and histograms bin your data and then plot the number of 
 observations that fall in each bin.  
 
-* Boxplots find summaries of your data (min, max, quantiles, median) and plot 
-those summaries in a tidy box, with "outliers" (data over 1.5*IQR from min/max)
+* Boxplots find summaries of your data (min, max, quartiles, median) and plot 
+those summaries in a tidy box, with "potential outliers" (data over 1.5*IQR from Q1 or Q3)
 plotted as points.  
 
 * Smoothers (as used in `geom_smooth`) fit a model to your data (you can 
-specify, but we used the `gam` default) and then plot the predictions from 
-that model (with associated confidence intervals).  
+specify, but we used the `gam` (generalized additive model from the `mgcv` package) default) and then plot the predicted means from 
+that model (with associated 95% confidence intervals).  
 
 
 To calculate each of these summaries of the data, `R` uses a different 
@@ -786,8 +792,7 @@ grade_code()
 
 #### Stacking Bars 
 
-Now suppose you are interested in whether the number of rodents in each species 
-captured differs by sex. This would require for you to create a bar plot with 
+Now suppose you are interested in whether the number of male and female rodents captured differs by species. This would require for you to create a bar plot with 
 two categorical variables. You have two options:  
 
 1. each of the bars for sex could be stacked within a species *OR* 
@@ -822,7 +827,7 @@ records within each group!
 ```{r timeseries1, exercise=TRUE}
 yearly_counts <- surveys %>%
   count(year, genus) 
- ## counts the number of observations (rows) for each year, genus combination
+ ## counts the number of observations (rows) for each year, genus combination and creates a new variable "n"
 ```
 
 Time series data can be visualized as a line plot with years on the x-axis and 
@@ -964,7 +969,7 @@ facet_grid(. ~ genus)            # old
 >
 > Use what you just learned to create a plot that depicts how the average weight
 > of each species changes through the years. 
-> Play around with which variable you facet by versus plot by! 
+> Play around with which variable you facet by versus plot by! (Note that you need to scroll down in the sandbox to add code to complete this challenge.) 
 
 ```{r challenge-7, exercise=TRUE, exercise.lines = 7}
 ## To get you started:  
@@ -1064,7 +1069,7 @@ grade_code()
 ## Customization
 
 Take a look at the [**`ggplot2`** cheat sheet](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf), 
-and think of ways you could improve the plot.
+and think of ways you could improve the previous plot.
 
 ### Plot Labels 
 
@@ -1290,7 +1295,7 @@ include:
 argument of `option = <COLOR>` for your chosen color scheme  
 
 - `ggsci`: using `scale_color_<PALNAME>()` or `scale_fill_<PALNAME>()`, where
-you specify the name of the palette you wish to use (e.g. `scale_color_aaas()`)
+you specify the name of the palette you wish to use (e.g., `scale_color_aaas()`)
 
 >## Challenge 9
 >
@@ -1315,7 +1320,7 @@ Faceting is a great tool for splitting one plot into multiple plots, but
 sometimes you may want to produce a single figure that contains multiple plots 
 using different variables or even different data frames. The **`gridExtra`** 
 package allows us to combine separate ggplots into a single figure using 
-`grid.arrange()`:
+`grid.arrange()` (make sure to scroll down in the window to see all the code):
 
 ```{r arrange, message = FALSE, fig.width = 10, results = 'hold', exercise = TRUE}
 library(gridExtra)
@@ -1442,6 +1447,33 @@ use when I create a plot!
 
 ![](images/fonts.JPG)
 
-- Colors are hard, so think about them carefully!  
+- Colors are hard, so think about them carefully! Remember to think about color-blind viewers.
 
 **Happy plotting!**
+
+## Suggestions for your own work
+
+The goal of this workshop was to teach you to write code in `R` to learn data visualization using `ggplot2`. The first workshop in our series contains more information on how to get started working in `R` using RStudio (see http://www.montana.edu/datascience/training/). The codechunks in this interactive document mimic the codechunks you can use on your own projects in RMarkdown but you will need to download and install both `R` and RStudio on your own computer. 
+
+## Montana State University `R` Workshops Team
+
+These materials were adapted from materials generated by the Data Carpentries (https://datacarpentry.org/) and were originally developed at MSU by Dr. Allison Theobold. The workshop series is co-organized by the Montana State University Library, Department of Mathematical Sciences, and Statistical Consulting and Research Services (SCRS, https://www.montana.edu/statisticalconsulting/). SCRS is supported by Montana INBRE (National Institutes of Health, Institute of General Medical Sciences Grant Number P20GM103474). The workshops for 2020-2021 are supported by Faculty Excellence Grants from MSU's Center for Faculty Excellence. 
+
+Research related to the development of these workshops is to appear in:
+
+* Theobold, A., Hancock, S., & Mannheimer, S.. Data Science Workshops for Data-Intensive Environmental Science Research, _Journal of Statistics Education_. 
+
+The workshops for 2020-2021 involve modifications of materials and are being taught by:
+
+### Sara Mannheimer
+
+* Sara Mannheimer is an Associate Professor and Data Librarian at Montana State University, where she helps shape practices and theories for curation, publication, and preservation of data. Her research is rooted in the examination of the social, ethical, and technical issues that arise as we—as a profession and as a society—grapple with the implications of a data-driven world. She is currently working with a library team to build a Dataset Search for institutions, funded by the National Network of Libraries of Medicine, and she is a PhD candidate at Humboldt University of Berlin, studying data stewardship practices for qualitative data reuse and big social data research.
+
+### Greta Linse
+
+* Greta Linse is the Assistant Director of Statistical Consulting and Research Services (https://www.montana.edu/statisticalconsulting/) and the Project Manager for the Human Ecology Learning and Problem Solving (HELPS) Lab (https://helpslab.montana.edu). Greta has been teaching, documenting and working with statistical software including R and RStudio for over 10 years.
+
+### Mark Greenwood
+
+* Mark Greenwood is a Professor of Statistics in the Department of Mathematical Sciences at Montana State University and Director of Statistical Consulting and Research Services (https://www.montana.edu/statisticalconsulting/). His research interests have involved statistical methods and applications in environmental sciences, education, and biological sciences. Recent work has involved researching diagnostic methods for Multiple Sclerosis. His current research grants include funding from the Mountain West IDeA Clinical and Translational Research - Infrastructure Network  (National Institute of General Medical Sciences Grant 5U54GM104944-07) and a grant from the National Multiple Sclerosis Society (RG-1907-34348); SCRS is supported by Montana INBRE (National Institutes of Health, Institute of General Medical Sciences, Grant P20GM103474).
+
