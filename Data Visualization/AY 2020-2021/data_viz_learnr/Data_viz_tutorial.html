@@ -126,7 +126,7 @@ $(document).ready(function () {
 <li>Set universal and local plot settings.</li>
 <li>Describe what aesthetics are and how they are used by ggplot().</li>
 <li>Describe what faceting is and apply faceting to a ggplot().</li>
-<li>Modify the aesthetics of an existing ggplot() plot (e.g. axis labels, color).</li>
+<li>Modify the aesthetics of an existing ggplot() plot (e.g., axis labels, color).</li>
 <li>Build multivariate and customized plots from data in a data frame.<br />
 </li>
 <li>Arrange multiple plots in a grid format using grid.arrange() from gridExtra.</li>
@@ -135,29 +135,40 @@ $(document).ready(function () {
 </blockquote>
 <hr />
 </div>
+<div id="section-orientation-offor-the-workshop" class="section level2">
+<h2>Orientation of/for the workshop</h2>
+<ul>
+<li><p>This workshop assumes some basic familiarity with working in <code>R</code> such as what you might obtain in the “Introduction to R” workshop or in a statistics course that uses <code>R</code> heavily, such as STAT 217 or STAT 411/511. If you have not interacted with <code>R</code> previously, some of the assumptions of your background for this workshop might be a barrier. We would recommend getting what you can from this workshop and you can always revisit the materials at a later date after filling in some of those basic <code>R</code> skills. We all often revisit materials and discover new and deeper aspects of the content that we were not in a position to appreciate in a first exposure.</p></li>
+<li><p>In order to focus this workshop on coding, we developed this interactive website for you to play in a set of “sandboxes” and try your hand at implementing the methods we are discussing. When each code chunk is ready to run (all can be edited, many have the code prepared for you), you can click on “Run Code”. This will run <code>R</code> in the background on a server. For the “Challenges”, you can get your answer graded although many have multiple “correct” answers, so don’t be surprised if our “correct” answer differs from yours. The “Solution” is also provided in some cases so you can see a solution - but you will learn more by trying the challenge first before seeing the answer. Each sandbox functions independently, which means that you can pick up working at any place in the documents and re-set your work without impacting other work (this is VERY different from how <code>R</code> usually works!). Hopefully this allows you to focus on the code and what it does… The “Start over” button can be used on any individual sandbox or you can use the one on the left tile will re-set all the code chunks to the original status.</p></li>
+<li><p>These workshops are taught by Sara Mannheimer, Greta Linse, and Mark Greenwood and co-organized by the MSU Library, Statistical Consulting and Research Services (SCRS), and the Department of Mathematical Sciences. More details on us and other workshops are available at the end of the session.</p></li>
+</ul>
+</div>
 <div id="section-data-viz-introduction" class="section level2">
 <h2>Data Viz Introduction</h2>
 <p><strong><code>ggplot2</code></strong> is a plotting package that makes it simple to create complex plots from data in a data frame. It provides a more programmatic interface for specifying what variables to plot, how they are displayed, and general visual properties. Therefore, we only need minimal changes if the underlying data change or if we decide to change from a bar plot to a scatter plot. This helps in creating publication quality plots with minimal amounts of adjustments and tweaking.</p>
-<p>Packages in <code>R</code> are basically sets of additional functions that let you do more stuff. The functions we’ve been using so far, like <code>str()</code> or <code>mean()</code>, come built into <code>R</code>; packages give you access to more of them. Before you use a package for the first time you need to install it on your machine, and then you should import it in every subsequent <code>R</code> session when you need it. You should already have installed the <strong><code>tidyverse</code></strong> package. This is an “umbrella-package” that installs several packages useful for data analysis which work together well such as <strong><code>tidyr</code></strong>, <strong><code>dplyr</code></strong>, <strong><code>ggplot2</code></strong>, <strong><code>readr</code></strong>, <strong><code>forcats</code></strong>, etc.</p>
+<p>Packages in <code>R</code> are basically sets of additional functions that let you do more stuff. The functions we’ve used in the previous workshop, like <code>str()</code> or <code>mean()</code>, come built into <code>R</code>; packages give you access to more of them. Before you use a package for the first time you need to install it on your machine, and then you should import it in every subsequent <code>R</code> session when you need it. If you were to do this work in RStudio, you would need to install the <strong><code>tidyverse</code></strong> package. This is an “umbrella-package” that installs several packages useful for data analysis which work together well such as <strong><code>tidyr</code></strong>, <strong><code>dplyr</code></strong>, <strong><code>ggplot2</code></strong>, <strong><code>readr</code></strong>, <strong><code>forcats</code></strong>, etc.</p>
 <p>The <strong><code>tidyverse</code></strong> package tries to address common issues that arise when doing data analysis with some of the functions that come with <code>R</code>.</p>
 <ol style="list-style-type: decimal">
 <li>The <code>tidyverse</code> solves complex problems by combining many simple pieces.</li>
 </ol>
 <blockquote>
-<p>No matter how complex and polished the individual operations are, it is often the quality of the glue that most directly determines the power of the system. - Hal Abelson</p>
+<p>“No matter how complex and polished the individual operations are, it is often the quality of the glue that most directly determines the power of the system.”</p>
+<p>— Hal Abelson</p>
 </blockquote>
 <ol start="2" style="list-style-type: decimal">
 <li>The <code>tidyverse</code> is written for people to read!</li>
 </ol>
 <blockquote>
-<p>Computer efficiency is a secondary concern because the bottleneck in most data analysis is thinking time, not computing time. - Hadley Wickham</p>
+<p>“Computer efficiency is a secondary concern because the bottleneck in most data analysis is thinking time, not computing time.”</p>
+<p>— Hadley Wickham</p>
 </blockquote>
-<p>If we haven’t already done so, we can type <code>install.packages("tidyverse")</code> straight into the console. In fact, it’s better to write this in the console than in our script for any package, as there’s no need to re-install packages every time we run the script.</p>
-<p>Then, to load the package type:</p>
+<p>In this workshop, we have already installed the <code>tidyverse</code> using <code>install.packages("tidyverse")</code>. It is important to note that there’s no need to re-install packages every time we run the script.</p>
+<p>Then, to load the package include code in your work with:</p>
+<p>Working with packages was discussed in more detail in the “Introduction to R” workshop. We will proceed through the remaining work with the <code>tidyverse</code> package installed and loaded.</p>
 <p>To learn more about <strong><code>ggplot2</code></strong> after the workshop, you may want to check out this <a href="https://ggplot2.tidyverse.org/reference/"><strong><code>ggplot2</code></strong> reference website (link)</a> and this <a href="https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf">handy cheatsheet on <strong><code>ggplot2</code></strong> (link)</a>.</p>
 <div id="section-presentation-of-the-survey-data" class="section level3">
 <h3>Presentation of the Survey Data</h3>
-<p>We are investigating the animal species diversity and weights found within plots at the Data Carpentry study site. The dataset is stored as a comma separated value (CSV) file. Each row holds information for a single animal, and the columns represent:</p>
+<p>The data used in this workshop are a time-series for a small mammal community in southern Arizona. This is part of a project studying the effects of rodents and ants on the plant community that has been running for almost 40 years. The rodents are sampled on a series of 24 plots, with different experimental manipulations controlling which rodents are allowed to access which plots. This is simplified version of the full data set that has been used in over 100 publications and was provided by the Data Carpentries (<a href="https://datacarpentry.org/ecology-workshop/data/" class="uri">https://datacarpentry.org/ecology-workshop/data/</a>). We are going to focus on animal species diversity and weights in this workshop. The dataset is stored as a comma separated value (CSV) file. Each row holds information for a single animal, and the columns represent (along with some others we will not use):</p>
 <table>
 <thead>
 <tr class="header">
@@ -216,12 +227,12 @@ str(surveys)</code></pre>
 <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":["function (label = NULL, solution_code = NULL, user_code = NULL, ","    check_code = NULL, envir_result = NULL, evaluate_result = NULL, ","    envir_prep = NULL, last_value = NULL, ...) ","{","    (utils::getFromNamespace(\"grade_learnr_\", \"gradethis\"))(label = label, ","        solution_code = solution_code, user_code = user_code, ","        check_code = check_code, envir_result = envir_result, ","        evaluate_result = evaluate_result, envir_prep = envir_prep, ","        last_value = last_value, ...)","}"]}</script>
 </div>
 <div class="tutorial-exercise" data-label="preview-data" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
-<pre class="text"><code>## Preview the data
-View(surveys)</code></pre>
+<pre class="text"><code>## Preview the data: View(surveys) #Or
+glimpse(surveys)</code></pre>
 <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":["function (label = NULL, solution_code = NULL, user_code = NULL, ","    check_code = NULL, envir_result = NULL, evaluate_result = NULL, ","    envir_prep = NULL, last_value = NULL, ...) ","{","    (utils::getFromNamespace(\"grade_learnr_\", \"gradethis\"))(label = label, ","        solution_code = solution_code, user_code = user_code, ","        check_code = check_code, envir_result = envir_result, ","        evaluate_result = evaluate_result, envir_prep = envir_prep, ","        last_value = last_value, ...)","}"]}</script>
 </div>
-<p>Notice that the class of the data is now <code>tbl_df</code></p>
-<p>This is referred to as a “tibble”. Tibbles tweak some of the behaviors of the data frame objects we introduced in the previous workshop. The data structure is very similar to a data frame, so for our purposes the only differences are that:</p>
+<p>You could also use <code>View(surveys)</code> or <code>glimpse(surveys)</code> when working in RStudio to explore the data set further.</p>
+<p>At the top of the <code>str()</code> output, notice that the class of the data is a tibble. Tibbles tweak some of the behaviors of the data frame objects we introduced in the previous workshop. The data structure is very similar to a data frame, so for our purposes the only differences are that:</p>
 <ol style="list-style-type: decimal">
 <li>In addition to displaying the data type of each column under its name, it only prints the first few rows of data and only as many columns as fit on one screen.</li>
 <li>Columns of class <code>character</code> are never converted into factors.</li>
@@ -230,23 +241,20 @@ View(surveys)</code></pre>
 </div>
 <div id="section-plotting-with-ggplot2" class="section level2">
 <h2>Plotting with <strong><code>ggplot2</code></strong></h2>
-<p><code>ggplot2</code> functions like data in the ‘long’ format, i.e., a column for every dimension, and a row for every observation. There are other data formats, which we will discuss in the <em>Data Wrangling in <code>R</code></em> workshop, as well as how to covert from one data format to another. Well-structured data will save you lots of time when making figures with <code>ggplot2</code> and when working in <code>R</code>!</p>
+<p><code>ggplot2</code> functions like data in the ‘long’ format, i.e., a column for every dimension, and a row for every observation. There are other data formats, which we will discuss in the <em>Data Wrangling in <code>R</code></em> workshop, as well as how to convert from one data format to another. Well-structured data will save you lots of time when making figures with <code>ggplot2</code> and when working in <code>R</code>!</p>
 <p><code>ggplot()</code> graphics are built step by step by adding new elements. Adding layers in this fashion allows for extensive flexibility and customization of plots.</p>
 <p>To build a <code>ggplot()</code>, we will use the following basic template that can be used for different types of plots:</p>
 <p><code>ggplot(data = &lt;DATA&gt;, mapping = aes(&lt;VARIABLE MAPPINGS&gt;)) +  &lt;GEOM_FUNCTION&gt;()</code></p>
 <p>Let’s go through this step by step!</p>
 <ol style="list-style-type: decimal">
-<li>Use the <code>ggplot()</code> function and bind the plot to a specific data frame using the <code>data</code> argument</li>
-</ol>
+<li><p>Use the <code>ggplot()</code> function and bind the plot to a specific data frame using the <code>data</code> argument</p>
 <div class="tutorial-exercise" data-label="bind-plot" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code>ggplot(data = surveys)</code></pre>
 <p><img src="Data_viz_tutorial_files/figure-html/bind-plot-1.png" width="624" /></p>
 <pre class="text"><code>## Creates a blank ggplot(), referencing the surveys dataset</code></pre>
 <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":["function (label = NULL, solution_code = NULL, user_code = NULL, ","    check_code = NULL, envir_result = NULL, evaluate_result = NULL, ","    envir_prep = NULL, last_value = NULL, ...) ","{","    (utils::getFromNamespace(\"grade_learnr_\", \"gradethis\"))(label = label, ","        solution_code = solution_code, user_code = user_code, ","        check_code = check_code, envir_result = envir_result, ","        evaluate_result = evaluate_result, envir_prep = envir_prep, ","        last_value = last_value, ...)","}"]}</script>
-</div>
-<ol start="2" style="list-style-type: decimal">
-<li>Define a mapping (using the aesthetic (<code>aes</code>) function), by selecting the variables to be plotted and specifying how to present them in the graph, e.g. as x/y positions or characteristics such as size, shape, color, etc.</li>
-</ol>
+</div></li>
+<li><p>Define a mapping (using the aesthetic (<code>aes</code>) function), by selecting the variables to be plotted and specifying how to present them in the graph, e.g. as x/y positions or characteristics such as size, shape, color, etc.</p>
 <div class="tutorial-exercise" data-label="define-mapping" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code>ggplot(data = surveys, 
        mapping = aes(x = weight, y = hindfoot_length))</code></pre>
@@ -255,17 +263,15 @@ View(surveys)</code></pre>
 # Creates a blank ggplot(), with the variables mapped to the x- and y-axis
 # ggplot() knows where the variables live, since you have defined the data to use</code></pre>
 <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":["function (label = NULL, solution_code = NULL, user_code = NULL, ","    check_code = NULL, envir_result = NULL, evaluate_result = NULL, ","    envir_prep = NULL, last_value = NULL, ...) ","{","    (utils::getFromNamespace(\"grade_learnr_\", \"gradethis\"))(label = label, ","        solution_code = solution_code, user_code = user_code, ","        check_code = check_code, envir_result = envir_result, ","        evaluate_result = evaluate_result, envir_prep = envir_prep, ","        last_value = last_value, ...)","}"]}</script>
-</div>
-<ol start="3" style="list-style-type: decimal">
-<li><p>Add ‘geoms’ – graphical representations of the data in the plot (points, lines, bars). <strong><code>ggplot2</code></strong> offers many different geoms; we will use some common ones today, including:</p>
+</div></li>
+<li><p>Add “geoms” – graphical representations of the data in the plot (points, lines, bars). <strong><code>ggplot2</code></strong> offers many different geoms; we will use some common ones today, including:</p>
 <ul>
 <li><code>geom_point()</code> for scatter plots, dot plots, etc.</li>
 <li><code>geom_boxplot()</code> for boxplots<br />
 </li>
 <li><code>geom_bar()</code> for bar charts</li>
 <li><code>geom_line()</code> for trend lines, time series, etc.</li>
-</ul></li>
-</ol>
+</ul>
 <p>To add a geom to the plot use the <code>+</code> operator. Because we have two continuous variables in the data, let’s use <code>geom_point()</code> first:</p>
 <div class="tutorial-exercise" data-label="add-to-plots" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code>ggplot(data = surveys, 
@@ -274,7 +280,8 @@ View(surveys)</code></pre>
 <p><img src="Data_viz_tutorial_files/figure-html/add-to-plots-1.png" width="624" /></p>
 <pre class="text"><code> # Adds a point for each row (observation) in the data  </code></pre>
 <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":["function (label = NULL, solution_code = NULL, user_code = NULL, ","    check_code = NULL, envir_result = NULL, evaluate_result = NULL, ","    envir_prep = NULL, last_value = NULL, ...) ","{","    (utils::getFromNamespace(\"grade_learnr_\", \"gradethis\"))(label = label, ","        solution_code = solution_code, user_code = user_code, ","        check_code = check_code, envir_result = envir_result, ","        evaluate_result = evaluate_result, envir_prep = envir_prep, ","        last_value = last_value, ...)","}"]}</script>
-</div>
+</div></li>
+</ol>
 <p>You can think of the <code>+</code> sign as adding layers to the plot. Each <code>+</code> sign must be placed at the end of the line containing the <em>previous</em> layer. If, instead, the <code>+</code> sign is added at the beginning of the line containing the new layer, <strong><code>ggplot2</code></strong> will not add the new layer and will return an error message.</p>
 <div class="tutorial-exercise" data-label="plus-sign" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code># This will not add the new layer and will return an error message
@@ -321,7 +328,7 @@ ggplot(data = surveys,
 <a href="https://ggplot2.tidyverse.org/articles/ggplot2-specs.html" class="uri">https://ggplot2.tidyverse.org/articles/ggplot2-specs.html</a></p>
 <blockquote>
 <h2 id="section-challenge-1">Challenge 1</h2>
-<p>Modify the previous code chunk to assign one of these aesthetics to the <code>geom_point</code> aspect of your plot.</p>
+<p>Copy and paste the code from the previous code chunk and modify it to assign one of these aesthetics to the <code>geom_point</code> aspect of your plot.</p>
 <p>What happened?</p>
 </blockquote>
 <div class="tutorial-exercise" data-label="challenge-1" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="7">
@@ -356,7 +363,7 @@ ggplot(data = surveys,
 </div>
 <div id="section-assigning-more-variables-to-aesthetics" class="section level3">
 <h3>Assigning More Variables to Aesthetics</h3>
-<p>Or to color each species in the plot differently, you could use a vector as an input to the argument <strong>color</strong>. <strong><code>ggplot2</code></strong> will provide a different color corresponding to different values in the vector. Here is an example where we color with <strong><code>species_id</code></strong>:</p>
+<p>To color each species in the plot differently, you could use a vector as an input to the argument <strong>color</strong>. <strong><code>ggplot2</code></strong> will provide a different color corresponding to different values in the vector. Here is an example where we color with <strong><code>species_id</code></strong>:</p>
 <div class="tutorial-exercise" data-label="color-example1" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code>surveys %&gt;% 
   ggplot(mapping = aes(x = weight, y = hindfoot_length)) +
@@ -378,14 +385,14 @@ ggplot(data = surveys,
 <div id="section-local-aesthetics-versus-global-aesthetics" class="section level3">
 <h3>Local Aesthetics versus Global Aesthetics</h3>
 <p>When you define aesthetics in the <code>ggplot()</code> function, those mappings hold for <strong>every</strong> aspect of your plot.</p>
-<p>For example, if you chose to add a trend line to your plot of weight versus hindfoot length, you would get different lines depending on where you define your color aesthetics.</p>
+<p>For example, if you chose to add a smoothing line to your plot of weight versus hindfoot length, you would get different lines depending on where you define your color aesthetics.</p>
 <p><strong>Globally</strong></p>
 <div class="tutorial-exercise" data-label="color-global" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code>surveys %&gt;% 
   ggplot(mapping = aes(x = weight, y = hindfoot_length, color = species_id)) +
   geom_jitter(alpha = 0.1) + 
   geom_smooth()
-  ## trend line for each species_id -- because color is defined globally</code></pre>
+  ## smoothing line for each species_id -- because color is defined globally</code></pre>
 <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":["function (label = NULL, solution_code = NULL, user_code = NULL, ","    check_code = NULL, envir_result = NULL, evaluate_result = NULL, ","    envir_prep = NULL, last_value = NULL, ...) ","{","    (utils::getFromNamespace(\"grade_learnr_\", \"gradethis\"))(label = label, ","        solution_code = solution_code, user_code = user_code, ","        check_code = check_code, envir_result = envir_result, ","        evaluate_result = evaluate_result, envir_prep = envir_prep, ","        last_value = last_value, ...)","}"]}</script>
 </div>
 <p><strong>Locally</strong></p>
@@ -393,7 +400,7 @@ ggplot(data = surveys,
 <p><img src="Data_viz_tutorial_files/figure-html/unnamed-chunk-3-1.png" width="624" /></p>
 <blockquote>
 <h2 id="section-challenge-2-part-1">Challenge 2 (Part 1)</h2>
-<p>Inspect the <code>geom_point</code> help file to see what other aesthetics are available. Map a new variable from the dataset to another aesthetic in your plot. What happened? Does the aesthetic change if you use a continuous variable versus a categorical/discrete variable?</p>
+<p>Inspect the <code>geom_point</code> help file (either go to <a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="uri">https://ggplot2.tidyverse.org/reference/geom_point.html</a> or run <code>?geom_point</code>) to see what other aesthetics are available. Map a new variable from the dataset to another aesthetic in your plot. What happened? Does the aesthetic change if you use a continuous variable versus a categorical/discrete variable?</p>
 </blockquote>
 <div class="tutorial-exercise" data-label="challenge-2part1" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="7">
 <pre class="text"><code>## Your ggplot() code for the challenge goes here!</code></pre>
@@ -428,7 +435,7 @@ ggplot(data = surveys,
 </div>
 <div id="section-boxplots-violin-plots" class="section level3">
 <h3>Boxplots &amp; Violin Plots</h3>
-<p>We can use boxplots to visualize the distribution of weight within each species:</p>
+<p>Boxplots provide a visualization of a quantitative variables across different levels of a categorical (grouping) variable. For example, we can use boxplots to visualize the distribution of weight within each species:</p>
 <div class="tutorial-exercise" data-label="boxplot1" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code>surveys %&gt;% 
   ggplot(mapping = aes(x = species_id, y = weight)) +
@@ -440,7 +447,7 @@ ggplot(data = surveys,
 <pre class="text"><code>surveys %&gt;% 
   ggplot(mapping = aes(x = species_id, y = weight)) +
     geom_boxplot(alpha = 0) + 
-    ## alpha = 0 eliminates the black (outlier) points, so they&#39;re not plotted twice
+    ## alpha = 0 eliminates the black (possible outlier) points, so they&#39;re not plotted twice
     geom_jitter(alpha = 0.2, color = &quot;tomato&quot;)
     ## alpha = 0.2 decreases the opacity of the points, to not be too busy</code></pre>
 <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":["function (label = NULL, solution_code = NULL, user_code = NULL, ","    check_code = NULL, envir_result = NULL, evaluate_result = NULL, ","    envir_prep = NULL, last_value = NULL, ...) ","{","    (utils::getFromNamespace(\"grade_learnr_\", \"gradethis\"))(label = label, ","        solution_code = solution_code, user_code = user_code, ","        check_code = check_code, envir_result = envir_result, ","        evaluate_result = evaluate_result, envir_prep = envir_prep, ","        last_value = last_value, ...)","}"]}</script>
@@ -450,8 +457,8 @@ ggplot(data = surveys,
 </blockquote>
 <blockquote>
 <h2 id="section-challenge-3-part-1">Challenge 3 (Part 1)</h2>
-<p>Boxplots are useful summaries, but hide the <em>shape</em> of the distribution. For example, if the distribution is bimodal, we would not see it in a boxplot. A superior density plot is the violin plot, where the shape (of the density of points) is drawn.</p>
-<p>Replace the box plot with a violin plot. For help see <code>geom_violin()</code>. Start with the poxplot we &gt; created:</p>
+<p>Boxplots are useful summaries, but hide details of the <em>shape</em> of the distribution. For example, if the distribution is bimodal, we would not see it in a boxplot. A superior density plot is the violin plot, where the shape (of the density of points) is drawn.</p>
+<p>Replace the box plot with a violin plot. For help see <code>geom_violin()</code>. Start with the boxplot we created:</p>
 </blockquote>
 <div class="tutorial-exercise" data-label="challenge-3part1-example" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code>ggplot(data = surveys, mapping = aes(x = species_id, y = weight)) +
@@ -478,7 +485,7 @@ ggplot(data = surveys,
 <p>So far, we’ve looked at the distribution of weight within species. Let’s try making a new plot to explore the distribution of another variable within each species.</p>
 </blockquote>
 <blockquote>
-<p>Create a boxplot for <code>hindfoot_length</code>. Overlay the boxplot layer on a jitter layer to show actual measurements.</p>
+<p>Create a boxplot for <code>hindfoot_length</code>. This time overlay the boxplot layer over a jitter layer that shows the actual measurements.</p>
 </blockquote>
 <div class="tutorial-exercise" data-label="challenge-3part2" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="7">
 <pre class="text"><code>##  First: create boxplot for hindfoot_length` overlaid on a jitter layer.</code></pre>
@@ -533,8 +540,8 @@ surveys %&gt;%
 </div>
 <div id="section-plotting-single-variables" class="section level2">
 <h2>Plotting Single Variables</h2>
-<div id="section-distribution-plots-quantiative-variables" class="section level3">
-<h3>Distribution Plots (Quantiative Variables)</h3>
+<div id="section-distribution-plots-quantitative-variables" class="section level3">
+<h3>Distribution Plots (Quantitative Variables)</h3>
 <p>If we wish to visualize the distribution of a single quantitative variable, our plot changes a bit. Unfortunately, the <code>geom_violin()</code> function only accepts groups, so we cannot make a violin plot with no groups. Darn it!</p>
 <p>But, a violin is simply a density plot that’s been reflected across the y-axis. So, we could likely suffice with a density plot.</p>
 <p>To visualize the distribution of rodent weights we could aggregate over all species, years, plots, etc. and produce a single density plot:</p>
@@ -561,10 +568,10 @@ surveys %&gt;%
 <blockquote>
 <p>What warning do you get and why? Do you get an error like this when you use <code>hist()</code> in base <code>R</code>?</p>
 </blockquote>
-<p>I was once told that the idea behind a good histogram was to make the plot look as smooth as possible – think trying to resemble the continuous shape of the density plot.</p>
+<p>I was once told that the idea behind a good histogram was to make the plot look as smooth as possible – think about having it resemble the continuous shape of the density plot.</p>
 <blockquote>
 <h2 id="section-challenge-4">Challenge 4</h2>
-<p>Use the <code>bins</code> argument to play around with the number of bins in your histogram. Compare your chosen number of bins with your neighbors!</p>
+<p>Use the <code>bins</code> argument in <code>geom_histogram()</code> to play around with the number of bins in your histogram. Compare your chosen number of bins with your neighbors!</p>
 </blockquote>
 <div class="tutorial-exercise" data-label="challenge-4" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="7">
 <pre class="text"><code>## Your code to answer the challenge goes here!</code></pre>
@@ -591,8 +598,8 @@ surveys %&gt;%
 <p>The x-axis displays the levels of <code>species_id</code>, a variable in the <code>surveys</code> dataset. On the y-axis <code>count</code> is displayed, but <code>count</code> is <strong>not</strong> a variable in our dataset! Where did <code>count</code> come from? Graphs, such as the scatterplots, display the raw values of your data. Other graphs, like bar charts and boxplots, calculate new values (from your data) to plot.</p>
 <ul>
 <li><p>Bar charts and histograms bin your data and then plot the number of observations that fall in each bin.</p></li>
-<li><p>Boxplots find summaries of your data (min, max, quantiles, median) and plot those summaries in a tidy box, with “outliers” (data over 1.5*IQR from min/max) plotted as points.</p></li>
-<li><p>Smoothers (as used in <code>geom_smooth</code>) fit a model to your data (you can specify, but we used the <code>gam</code> default) and then plot the predictions from that model (with associated confidence intervals).</p></li>
+<li><p>Boxplots find summaries of your data (min, max, quartiles, median) and plot those summaries in a tidy box, with “potential outliers” (data over 1.5*IQR from Q1 or Q3) plotted as points.</p></li>
+<li><p>Smoothers (as used in <code>geom_smooth</code>) fit a model to your data (you can specify, but we used the <code>gam</code> (generalized additive model from the <code>mgcv</code> package) default) and then plot the predicted means from that model (with associated 95% confidence intervals).</p></li>
 </ul>
 <p>To calculate each of these summaries of the data, <code>R</code> uses a different statistical transformation, or <em>stat</em> for short. With a bar chart this looks like the following process:</p>
 <ol style="list-style-type: decimal">
@@ -667,7 +674,7 @@ surveys %&gt;%
 </div>
 <div id="section-stacking-bars" class="section level4">
 <h4>Stacking Bars</h4>
-<p>Now suppose you are interested in whether the number of rodents in each species captured differs by sex. This would require for you to create a bar plot with two categorical variables. You have two options:</p>
+<p>Now suppose you are interested in whether the number of male and female rodents captured differs by species. This would require for you to create a bar plot with two categorical variables. You have two options:</p>
 <ol style="list-style-type: decimal">
 <li>each of the bars for sex could be stacked within a species <em>OR</em></li>
 <li>the bars for sex could be side-by-side within a species</li>
@@ -694,7 +701,7 @@ surveys %&gt;%
 <div class="tutorial-exercise" data-label="timeseries1" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code>yearly_counts &lt;- surveys %&gt;%
   count(year, genus) 
- ## counts the number of observations (rows) for each year, genus combination</code></pre>
+ ## counts the number of observations (rows) for each year, genus combination and creates a new variable &quot;n&quot;</code></pre>
 <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":["function (label = NULL, solution_code = NULL, user_code = NULL, ","    check_code = NULL, envir_result = NULL, evaluate_result = NULL, ","    envir_prep = NULL, last_value = NULL, ...) ","{","    (utils::getFromNamespace(\"grade_learnr_\", \"gradethis\"))(label = label, ","        solution_code = solution_code, user_code = user_code, ","        check_code = check_code, envir_result = envir_result, ","        evaluate_result = evaluate_result, envir_prep = envir_prep, ","        last_value = last_value, ...)","}"]}</script>
 </div>
 <p>Time series data can be visualized as a line plot with years on the x-axis and counts on the y-axis:</p>
@@ -802,7 +809,7 @@ facet_grid(. ~ genus)            # old</code></pre>
 </div>
 <blockquote>
 <h2 id="section-challenge-7">Challenge 7</h2>
-<p>Use what you just learned to create a plot that depicts how the average weight of each species changes through the years. Play around with which variable you facet by versus plot by!</p>
+<p>Use what you just learned to create a plot that depicts how the average weight of each species changes through the years. Play around with which variable you facet by versus plot by! (Note that you need to scroll down in the sandbox to add code to complete this challenge.)</p>
 </blockquote>
 <div class="tutorial-exercise" data-label="challenge-7" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="7">
 <pre class="text"><code>## To get you started:  
@@ -875,7 +882,7 @@ ggplot(mapping = aes(x = year, y = avg_weight, color = species_id)) +
 </div>
 <div id="section-customization" class="section level2">
 <h2>Customization</h2>
-<p>Take a look at the <a href="https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf"><strong><code>ggplot2</code></strong> cheat sheet</a>, and think of ways you could improve the plot.</p>
+<p>Take a look at the <a href="https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf"><strong><code>ggplot2</code></strong> cheat sheet</a>, and think of ways you could improve the previous plot.</p>
 <div id="section-plot-labels" class="section level3">
 <h3>Plot Labels</h3>
 <p>Now, let’s change names of axes to something more informative than ‘year’ and ‘n’ and add a title to the figure. Label customizations are done using the <code>labs()</code> function like so:</p>
@@ -1052,7 +1059,7 @@ surveys %&gt;%
 <ul>
 <li><p><code>RColorBrewer</code>: using <code>scale_fill_brewer()</code> or <code>scale_colour_brewer()</code></p></li>
 <li><p><code>viridis</code>: using <code>scale_colour_viridis_d()</code> for discrete data, <code>scale_colour_viridis_c()</code> for continuous data, with an inside argument of <code>option = &lt;COLOR&gt;</code> for your chosen color scheme</p></li>
-<li><p><code>ggsci</code>: using <code>scale_color_&lt;PALNAME&gt;()</code> or <code>scale_fill_&lt;PALNAME&gt;()</code>, where you specify the name of the palette you wish to use (e.g. <code>scale_color_aaas()</code>)</p></li>
+<li><p><code>ggsci</code>: using <code>scale_color_&lt;PALNAME&gt;()</code> or <code>scale_fill_&lt;PALNAME&gt;()</code>, where you specify the name of the palette you wish to use (e.g., <code>scale_color_aaas()</code>)</p></li>
 </ul>
 <blockquote>
 <h2 id="section-challenge-9">Challenge 9</h2>
@@ -1072,7 +1079,7 @@ surveys %&gt;%
 </div>
 <div id="section-arranging-and-exporting-plots" class="section level2">
 <h2>Arranging and Exporting Plots</h2>
-<p>Faceting is a great tool for splitting one plot into multiple plots, but sometimes you may want to produce a single figure that contains multiple plots using different variables or even different data frames. The <strong><code>gridExtra</code></strong> package allows us to combine separate ggplots into a single figure using <code>grid.arrange()</code>:</p>
+<p>Faceting is a great tool for splitting one plot into multiple plots, but sometimes you may want to produce a single figure that contains multiple plots using different variables or even different data frames. The <strong><code>gridExtra</code></strong> package allows us to combine separate ggplots into a single figure using <code>grid.arrange()</code> (make sure to scroll down in the window to see all the code):</p>
 <div class="tutorial-exercise" data-label="arrange" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code>library(gridExtra)
 
@@ -1182,18 +1189,51 @@ ggsave(&quot;fig/combo_plot_abun_weight.png&quot;, combo_plot, width = 10, dpi =
 </ul>
 <p><img src="images/fonts.JPG" /></p>
 <ul>
-<li>Colors are hard, so think about them carefully!</li>
+<li>Colors are hard, so think about them carefully! Remember to think about color-blind viewers.</li>
 </ul>
-<strong>Happy plotting!</strong> 
+<p><strong>Happy plotting!</strong></p>
+</div>
+<div id="section-suggestions-for-your-own-work" class="section level2">
+<h2>Suggestions for your own work</h2>
+<p>The goal of this workshop was to teach you to write code in <code>R</code> to learn data visualization using <code>ggplot2</code>. The first workshop in our series contains more information on how to get started working in <code>R</code> using RStudio (see <a href="http://www.montana.edu/datascience/training/" class="uri">http://www.montana.edu/datascience/training/</a>). The codechunks in this interactive document mimic the codechunks you can use on your own projects in RMarkdown but you will need to download and install both <code>R</code> and RStudio on your own computer.</p>
+</div>
+<div id="section-montana-state-university-r-workshops-team" class="section level2">
+<h2>Montana State University <code>R</code> Workshops Team</h2>
+<p>These materials were adapted from materials generated by the Data Carpentries (<a href="https://datacarpentry.org/" class="uri">https://datacarpentry.org/</a>) and were originally developed at MSU by Dr. Allison Theobold. The workshop series is co-organized by the Montana State University Library, Department of Mathematical Sciences, and Statistical Consulting and Research Services (SCRS, <a href="https://www.montana.edu/statisticalconsulting/" class="uri">https://www.montana.edu/statisticalconsulting/</a>). SCRS is supported by Montana INBRE (National Institutes of Health, Institute of General Medical Sciences Grant Number P20GM103474). The workshops for 2020-2021 are supported by Faculty Excellence Grants from MSU’s Center for Faculty Excellence.</p>
+<p>Research related to the development of these workshops is to appear in:</p>
+<ul>
+<li>Theobold, A., Hancock, S., &amp; Mannheimer, S.. Data Science Workshops for Data-Intensive Environmental Science Research, <em>Journal of Statistics Education</em>.</li>
+</ul>
+<p>The workshops for 2020-2021 involve modifications of materials and are being taught by:</p>
+<div id="section-sara-mannheimer" class="section level3">
+<h3>Sara Mannheimer</h3>
+<ul>
+<li>Sara Mannheimer is an Associate Professor and Data Librarian at Montana State University, where she helps shape practices and theories for curation, publication, and preservation of data. Her research is rooted in the examination of the social, ethical, and technical issues that arise as we—as a profession and as a society—grapple with the implications of a data-driven world. She is currently working with a library team to build a Dataset Search for institutions, funded by the National Network of Libraries of Medicine, and she is a PhD candidate at Humboldt University of Berlin, studying data stewardship practices for qualitative data reuse and big social data research.</li>
+</ul>
+</div>
+<div id="section-greta-linse" class="section level3">
+<h3>Greta Linse</h3>
+<ul>
+<li>Greta Linse is the Assistant Director of Statistical Consulting and Research Services (<a href="https://www.montana.edu/statisticalconsulting/" class="uri">https://www.montana.edu/statisticalconsulting/</a>) and the Project Manager for the Human Ecology Learning and Problem Solving (HELPS) Lab (<a href="https://helpslab.montana.edu" class="uri">https://helpslab.montana.edu</a>). Greta has been teaching, documenting and working with statistical software including R and RStudio for over 10 years.</li>
+</ul>
+</div>
+<div id="section-mark-greenwood" class="section level3">
+<h3>Mark Greenwood</h3>
+<ul>
+<li>Mark Greenwood is a Professor of Statistics in the Department of Mathematical Sciences at Montana State University and Director of Statistical Consulting and Research Services (<a href="https://www.montana.edu/statisticalconsulting/" class="uri">https://www.montana.edu/statisticalconsulting/</a>). His research interests have involved statistical methods and applications in environmental sciences, education, and biological sciences. Recent work has involved researching diagnostic methods for Multiple Sclerosis. His current research grants include funding from the Mountain West IDeA Clinical and Translational Research - Infrastructure Network (National Institute of General Medical Sciences Grant 5U54GM104944-07) and a grant from the National Multiple Sclerosis Society (RG-1907-34348); SCRS is supported by Montana INBRE (National Institutes of Health, Institute of General Medical Sciences, Grant P20GM103474).</li>
+</ul>
+
 <script type="application/shiny-prerendered" data-context="server-start">
 # remotes::install_github("rstudio-education/gradethis")
 # install.packages("tidyverse")
 # install.packages("learnr")
 # install.packages("ggplot2")
+# install.packages("tufte")
 library(ggplot2)
 library(learnr)
 library(tidyverse)
 library(gradethis)
+#library(tufte)
 knitr::opts_chunk$set(echo = FALSE, exercise.checker = gradethis::grade_learnr)
 
 surveys <- read_csv("data/surveys.csv")
@@ -1628,9 +1668,10 @@ output$`tutorial-exercise-export-output` <- renderUI({
 <!--/html_preserve-->
 <!--html_preserve-->
 <script type="application/shiny-prerendered" data-context="execution_dependencies">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85]}},"value":[{"type":"character","attributes":{},"value":["assertthat","backports","base","blob","broom","cellranger","cli","colorspace","compiler","crayon","datasets","DBI","dbplyr","digest","dplyr","ellipsis","evaluate","fansi","farver","fastmap","forcats","fs","generics","ggplot2","glue","gradethis","graphics","grDevices","grid","gtable","haven","hms","htmltools","htmlwidgets","httpuv","httr","jsonlite","knitr","labeling","later","lattice","learnr","lifecycle","lubridate","magrittr","markdown","Matrix","methods","mgcv","mime","modelr","munsell","nlme","pillar","pkgconfig","promises","purrr","R6","Rcpp","readr","readxl","reprex","rlang","rmarkdown","rprojroot","rstudioapi","rvest","scales","shiny","splines","stats","stringi","stringr","tibble","tidyr","tidyselect","tidyverse","tools","utils","vctrs","withr","xfun","xml2","xtable","yaml"]},{"type":"character","attributes":{},"value":["0.2.1","1.1.9","4.0.2","1.2.1","0.7.0","1.1.0","2.0.2","1.4-1","4.0.2","1.3.4","4.0.2","1.1.0","1.4.4","0.6.25","1.0.0","0.3.1","0.14","0.4.1","2.0.3","1.0.1","0.5.0","1.4.2","0.0.2","3.3.2","1.4.1","0.1.0.9004","4.0.2","4.0.2","4.0.2","0.3.0","2.3.1","0.5.3","0.5.0","1.5.1","1.5.4","1.4.2","1.7.0","1.29","0.3","1.1.0.1","0.20-41","0.10.1","0.2.0","1.7.9","1.5","1.1","1.2-18","4.0.2","1.8-31","0.9","0.1.8","0.5.0","3.1-148","1.4.6","2.0.3","1.1.1","0.3.4","2.4.1","1.0.5","1.3.1","1.3.1","0.3.0","0.4.7","2.3","1.3-2","0.11","0.3.6","1.1.1","1.5.0","4.0.2","4.0.2","1.4.6","1.4.0","3.0.3","1.1.2","1.1.0","1.3.0","4.0.2","4.0.2","0.3.2","2.2.0","0.16","1.3.2","1.8-4","2.2.1"]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85]}},"value":[{"type":"character","attributes":{},"value":["assertthat","backports","base","blob","broom","cellranger","cli","colorspace","compiler","crayon","datasets","DBI","dbplyr","digest","dplyr","ellipsis","evaluate","fansi","farver","fastmap","forcats","fs","generics","ggplot2","glue","gradethis","graphics","grDevices","grid","gtable","haven","hms","htmltools","htmlwidgets","httpuv","httr","jsonlite","knitr","labeling","later","lattice","learnr","lifecycle","lubridate","magrittr","markdown","Matrix","methods","mgcv","mime","modelr","munsell","nlme","pillar","pkgconfig","promises","purrr","R6","Rcpp","readr","readxl","reprex","rlang","rmarkdown","rprojroot","rstudioapi","rvest","scales","shiny","splines","stats","stringi","stringr","tibble","tidyr","tidyselect","tidyverse","tools","utils","vctrs","withr","xfun","xml2","xtable","yaml"]},{"type":"character","attributes":{},"value":["0.2.1","1.1.9","4.0.2","1.2.1","0.7.0","1.1.0","2.0.2","1.4-1","4.0.2","1.3.4","4.0.2","1.1.0","1.4.4","0.6.25","1.0.2","0.3.1","0.14","0.4.1","2.0.3","1.0.1","0.5.0","1.4.2","0.0.2","3.3.2","1.4.1","0.1.0.9004","4.0.2","4.0.2","4.0.2","0.3.0","2.3.1","0.5.3","0.5.0","1.5.1","1.5.4","1.4.2","1.7.0","1.29","0.3","1.1.0.1","0.20-41","0.10.1","0.2.0","1.7.9","1.5","1.1","1.2-18","4.0.2","1.8-31","0.9","0.1.8","0.5.0","3.1-148","1.4.6","2.0.3","1.1.1","0.3.4","2.4.1","1.0.5","1.3.1","1.3.1","0.3.0","0.4.7","2.3","1.3-2","0.11","0.3.6","1.1.1","1.5.0","4.0.2","4.0.2","1.4.6","1.4.0","3.0.3","1.1.2","1.1.0","1.3.0","4.0.2","4.0.2","0.3.2","2.2.0","0.16","1.3.2","1.8-4","2.2.1"]}]}]}
 </script>
 <!--/html_preserve-->
+</div>
 </div>
 
 </div> <!-- topics -->

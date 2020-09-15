@@ -10,10 +10,12 @@ runtime: shiny_prerendered
 # install.packages("tidyverse")
 # install.packages("learnr")
 # install.packages("ggplot2")
+# install.packages("tufte")
 library(ggplot2)
 library(learnr)
 library(tidyverse)
 library(gradethis)
+#library(tufte)
 knitr::opts_chunk$set(echo = FALSE, exercise.checker = gradethis::grade_learnr)
 
 surveys <- read_csv("data/surveys.csv")
@@ -40,11 +42,11 @@ surveys <- read_csv("data/surveys.csv")
 
 ## Orientation of/for the workshop
 
-** This workshop assumes some basic familiarity with working in `R` such as what you might obtain in the "Introduction to R" workshop or in a statistics course that uses `R` heavily, such as STAT 217 or STAT 411/511. If you have not interacted with `R` previously, some of the assumptions of your background for this workshop might be a barrier. We would recommend getting what you can from this workshop and you can always revisit the materials at a later date after filling in some of those basic `R` skills. We all often revisit materials and discover new and deeper aspects of the content that we were not in a position to appreciate in a first exposure.
+*  This workshop assumes some basic familiarity with working in `R` such as what you might obtain in the "Introduction to R" workshop or in a statistics course that uses `R` heavily, such as STAT 217 or STAT 411/511. If you have not interacted with `R` previously, some of the assumptions of your background for this workshop might be a barrier. We would recommend getting what you can from this workshop and you can always revisit the materials at a later date after filling in some of those basic `R` skills. We all often revisit materials and discover new and deeper aspects of the content that we were not in a position to appreciate in a first exposure.
 
-** In order to focus this workshop on coding, we developed this interactive website for you to play in a set of "sandboxes" and try your hand at implementing the methods we are discussing. When each code chunk is ready to run (all can be edited, many have the code prepared for you), you can click on "Run Code". This will run `R` in the background on a server. For the "Challenges", you can get your answer graded although many have multiple "correct" answers, so don't be surprised if our "correct" answer differs from yours. The "Solution" is also provided in some cases so you can see a solution - but you will learn more by trying the challenge first before seeing the answer. Each sandbox functions independently, which means that you can pick up working at any place in the documents and re-set your work without impacting other work (this is VERY different from how `R` usually works!). Hopefully this allows you to focus on the code and what it does... The "Start over" button can be used on any individual sandbox or you can use the one on the left tile will re-set all the code chunks to the original status. 
+*  In order to focus this workshop on coding, we developed this interactive website for you to play in a set of "sandboxes" and try your hand at implementing the methods we are discussing. When each code chunk is ready to run (all can be edited, many have the code prepared for you), you can click on "Run Code". This will run `R` in the background on a server. For the "Challenges", you can get your answer graded although many have multiple "correct" answers, so don't be surprised if our "correct" answer differs from yours. The "Solution" is also provided in some cases so you can see a solution - but you will learn more by trying the challenge first before seeing the answer. Each sandbox functions independently, which means that you can pick up working at any place in the documents and re-set your work without impacting other work (this is VERY different from how `R` usually works!). Hopefully this allows you to focus on the code and what it does... The "Start over" button can be used on any individual sandbox or you can use the one on the left tile will re-set all the code chunks to the original status. 
 
-** These workshops are taught by Sara Mannheimer, Greta Linse, and Mark Greenwood and co-organized by the MSU Library, Statistical Consulting and Research Services (SCRS), and the Department of Mathematical Sciences. More details on us and other workshops are available at the end of the session.
+*  These workshops are taught by Sara Mannheimer, Greta Linse, and Mark Greenwood and co-organized by the MSU Library, Statistical Consulting and Research Services (SCRS), and the Department of Mathematical Sciences. More details on us and other workshops are available at the end of the session.
 
 ## Data Viz Introduction
 
@@ -70,16 +72,18 @@ doing data analysis with some of the functions that come with `R`.
 
 1. The `tidyverse` solves complex problems by combining many simple pieces.
 
-> No matter how complex and polished the individual operations are, 
+> "No matter how complex and polished the individual operations are, 
 > it is often the quality of the glue that most directly determines 
-> the power of the system.
-> - Hal Abelson
+> the power of the system."
+>
+> --- Hal Abelson
 
 2. The `tidyverse` is written for people to read! 
 
-> Computer efficiency is a secondary concern because the 
-> bottleneck in most data analysis is thinking time, not computing time.
-> - Hadley Wickham
+> "Computer efficiency is a secondary concern because the 
+> bottleneck in most data analysis is thinking time, not computing time."
+>
+> --- Hadley Wickham
 
 In this workshop, we have already installed the `tidyverse` using `install.packages("tidyverse")`. It is important to note that there's no need to re-install packages every time we run the script.
 
@@ -145,7 +149,7 @@ str(surveys)
 glimpse(surveys)
 ```
 
-You could also use `View(surveys)` or `glimpse(surveys)` when working RStudio to explore the data set further.
+You could also use `View(surveys)` or `glimpse(surveys)` when working in RStudio to explore the data set further.
 
 At the top of the `str()` output, notice that the class of the data is a tibble. Tibbles tweak some of the behaviors of the 
 data frame objects we introduced in the previous workshop. The data structure is
@@ -178,23 +182,23 @@ Let's go through this step by step!
 1. Use the `ggplot()` function and bind the plot to a specific data frame using 
 the `data` argument
 
-```{r bind-plot, exercise=TRUE, exercise.eval=TRUE}
-ggplot(data = surveys)
-
-## Creates a blank ggplot(), referencing the surveys dataset
-```
+    ```{r bind-plot, exercise=TRUE, exercise.eval=TRUE}
+    ggplot(data = surveys)
+    
+    ## Creates a blank ggplot(), referencing the surveys dataset
+    ```
 
 2. Define a mapping (using the aesthetic (`aes`) function), by selecting the 
 variables to be plotted and specifying how to present them in the graph, e.g. as
 x/y positions or characteristics such as size, shape, color, etc.
 
-```{r define-mapping, exercise=TRUE, exercise.eval=TRUE}
-ggplot(data = surveys, 
-       mapping = aes(x = weight, y = hindfoot_length))
-#
-# Creates a blank ggplot(), with the variables mapped to the x- and y-axis
-# ggplot() knows where the variables live, since you have defined the data to use
-```
+    ```{r define-mapping, exercise=TRUE, exercise.eval=TRUE}
+    ggplot(data = surveys, 
+           mapping = aes(x = weight, y = hindfoot_length))
+    #
+    # Creates a blank ggplot(), with the variables mapped to the x- and y-axis
+    # ggplot() knows where the variables live, since you have defined the data to use
+    ```
 
 3. Add "geoms" -- graphical representations of the data in the plot (points,
   lines, bars). **`ggplot2`** offers many different geoms; we will use some 
@@ -205,16 +209,16 @@ ggplot(data = surveys,
       * `geom_bar()` for bar charts 
       * `geom_line()` for trend lines, time series, etc.  
 
-To add a geom to the plot use the `+` operator. Because we have two continuous 
-variables in the data, let's use `geom_point()` first:
+    To add a geom to the plot use the `+` operator. Because we have two continuous 
+    variables in the data, let's use `geom_point()` first:
 
-```{r add-to-plots, exercise=TRUE, exercise.eval=TRUE}
-ggplot(data = surveys, 
-       mapping = aes(x = weight, y = hindfoot_length)) +
-  geom_point()
-
- # Adds a point for each row (observation) in the data  
-```
+    ```{r add-to-plots, exercise=TRUE, exercise.eval=TRUE}
+    ggplot(data = surveys, 
+           mapping = aes(x = weight, y = hindfoot_length)) +
+      geom_point()
+    
+     # Adds a point for each row (observation) in the data  
+    ```
 
 You can think of the `+` sign as adding layers to the plot. 
 Each `+` sign must be placed at the end of the line containing the *previous* 
