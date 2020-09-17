@@ -647,7 +647,7 @@ density plot.
 >## Challenge 4 
 >
 > Use the `bins` argument in `geom_histogram()` to play around with the number of bins in your 
-> histogram. Compare your chosen number of bins with your neighbors! 
+> histogram. Try different numbers of bins to explore how that changes the results! 
 
 
 ```{r challenge-4, exercise=TRUE, exercise.lines = 7}
