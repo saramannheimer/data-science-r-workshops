@@ -360,8 +360,9 @@ surveys %>%
 that __same__ `alpha` in the legend. To remedy this you can add:  
 
 ```
-guides(colour = guide_legend(override.aes = list(alpha = 1)))
+guides(color = guide_legend(override.aes = list(alpha = 1)))
 ```
+
 to your plot. This customizes the legend appearance, similar to what we will 
 see in the customization section. 
 
@@ -400,7 +401,7 @@ surveys %>%
 
 **Locally**  
 
-```{r, warning = FALSE, results = 'hold'}
+```{r, warning = FALSE}
 surveys %>% 
   ggplot(mapping = aes(x = weight, y = hindfoot_length)) +
   geom_jitter(aes(color = species_id), alpha = 0.1) + 
@@ -525,7 +526,7 @@ grade_code()
 > So far, we've looked at the distribution of weight within species. Let's try 
 > making a new plot to explore the distribution of another variable within each 
 > species.
-
+>
 > Create a boxplot for `hindfoot_length`. This time overlay the boxplot layer over a jitter
 > layer that shows the actual measurements.
 
@@ -718,7 +719,7 @@ surveys %>%
   stat_count()
 ```
 
-If you so wish you could override the default stat for that geom. For example, 
+If you so wish, you could override the default stat for that geom. For example, 
 if you wanted to plot a bar chart of proportions you would use the following 
 code to override the `count` stat:  
 
@@ -834,6 +835,11 @@ yearly_counts <- surveys %>%
  ## counts the number of observations (rows) for each year, genus combination and creates a new variable "n"
 ```
 
+```{r warning=FALSE, message = FALSE, echo=FALSE, eval=TRUE}
+yearly_counts <- surveys %>%
+  count(year, genus) 
+```
+
 Time series data can be visualized as a line plot with years on the x-axis and 
 counts on the y-axis: 
 
@@ -907,6 +913,12 @@ yearly_sex_counts <- surveys %>%
 ## counts the number of observations (rows) for each year, species, sex combination
 ```
 
+```{r warning=FALSE, message = FALSE, echo=FALSE, eval=TRUE}
+yearly_sex_counts <- surveys %>%
+  count(year, species_id, sex)
+## counts the number of observations (rows) for each year, species, sex combination
+```
+
 We can now make the faceted plot by splitting further by sex using `color` 
 (within each panel):
 
@@ -920,7 +932,7 @@ yearly_sex_counts %>%
 You can also organize the panels only by rows (or only by columns), using the 
 optional `nrow` and `ncol` arguments:
 
-```{r facet4, fig.height = 8.5, fig.width = 8, results = 'hold', exercise = TRUE}
+```{r facet4, fig.height = 8.5, fig.width = 8, exercise = TRUE}
 yearly_sex_counts %>% 
   ggplot(mapping = aes(x = year, y = n, color = sex)) +
   geom_line() +
@@ -928,7 +940,7 @@ yearly_sex_counts %>%
   # One column, facet by rows
 ```
 
-```{r facet5, fig.width = 9.5, fig.height = 5, results = 'hold', exercise = TRUE}
+```{r facet5, fig.width = 9.5, fig.height = 5, exercise = TRUE}
 yearly_sex_counts %>% 
   ggplot(mapping = aes(x = year, y = n, color = sex)) +
     geom_line() +
@@ -973,9 +985,9 @@ facet_grid(. ~ genus)            # old
 >
 > Use what you just learned to create a plot that depicts how the average weight
 > of each species changes through the years. 
-> Play around with which variable you facet by versus plot by! (Note that you need to scroll down in the sandbox to add code to complete this challenge.) 
+> Play around with which variable you facet by versus plot by!
 
-```{r challenge-7, exercise=TRUE, exercise.lines = 7}
+```{r challenge-7, exercise=TRUE, exercise.lines = 13}
 ## To get you started:  
 yearly_species_weight <- surveys %>% 
   group_by(year, species_id) %>%
@@ -1014,6 +1026,13 @@ ggplot(mapping = aes(x = year, y = avg_weight, color = species_id)) +
 grade_code()
 ```
 
+```{r warning=FALSE, message = FALSE, echo=FALSE, eval=TRUE}
+## To get you started:  
+yearly_species_weight <- surveys %>% 
+  ## Variables to group by:
+  group_by(year, species_id) %>%
+  summarize(avg_weight = mean(weight))
+```
 
 ## **`ggplot2`** Themes
 
@@ -1232,7 +1251,7 @@ yearly_sex_counts %>%
         plot.title = element_text(size = 14), 
         legend.position = "top", 
         ## New themes for the grid lines
-        axis.line = element_line(colour = "black"),
+        axis.line = element_line(color = "black"),
         ## 
         panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
@@ -1292,10 +1311,10 @@ surveys %>%
 Install a package and use it's available color scales. Popular options 
 include:  
 
-- `RColorBrewer`: using `scale_fill_brewer()` or `scale_colour_brewer()` 
+- `RColorBrewer`: using `scale_fill_brewer()` or `scale_color_brewer()` 
 
-- `viridis`: using `scale_colour_viridis_d()` for discrete data, 
-`scale_colour_viridis_c()` for continuous data, with an inside 
+- `viridis`: using `scale_color_viridis_d()` for discrete data, 
+`scale_color_viridis_c()` for continuous data, with an inside 
 argument of `option = <COLOR>` for your chosen color scheme  
 
 - `ggsci`: using `scale_color_<PALNAME>()` or `scale_fill_<PALNAME>()`, where
@@ -1326,7 +1345,7 @@ using different variables or even different data frames. The **`gridExtra`**
 package allows us to combine separate ggplots into a single figure using 
 `grid.arrange()` (make sure to scroll down in the window to see all the code):
 
-```{r arrange, message = FALSE, fig.width = 10, results = 'hold', exercise = TRUE}
+```{r arrange, message = FALSE, fig.width = 10, fig.height=6, exercise = TRUE}
 library(gridExtra)
 
 spp_weight_boxplot <- surveys %>% 
@@ -1388,7 +1407,7 @@ dimension and resolution of your plot by adjusting the appropriate arguments:
     
 Make sure you have the `fig/` folder in your working directory.
 
-```{r export, exercise=TRUE, eval = FALSE}
+```{r export, echo=TRUE, eval = FALSE}
 my_plot <- ggplot(data = yearly_sex_counts, 
                   mapping = aes(x = year, y = n, color = sex)) +
               geom_line() +
@@ -1398,8 +1417,7 @@ my_plot <- ggplot(data = yearly_sex_counts,
                     y = "Number of individuals") +
               theme_bw() +
               coord_flip() + 
-              theme(axis.text.y = element_text(colour = "grey20", size = 12),
-                    axis.text.y = element_text(colour = "grey20", size = 12),
+              theme(axis.text.y = element_text(color = "grey20", size = 12),
                     text = element_text(size = 16))
 
 ggsave("fig/yearly_sex_counts.png", my_plot, width = 15, height = 10)
@@ -1421,7 +1439,7 @@ ggsave("fig/combo_plot_abun_weight.png", combo_plot, width = 10, dpi = 300)
 ![](images/glamour_of_graphics.JPG)
 
 One of my favorite references when I am creating plots are the slides from Will 
-Chase's presentation at the 2020 RStudio Conference [(link)](https://www.williamrchase.com/slides/assets/player/KeynoteDHTMLPlayer.html#0). 
+Chase's presentation at the 2020 RStudio Conference [Will Chase's presentation at the 2020 RStudio Conference (link)](https://www.williamrchase.com/slides/assets/player/KeynoteDHTMLPlayer.html#0). 
 Will is a graphic designer and lays out some interesting "best practices" for 
 creating graphics that we can explore. His suggestions are for three components 
 of the plot: layout, typography, and color. Here are some big take-aways that I 
