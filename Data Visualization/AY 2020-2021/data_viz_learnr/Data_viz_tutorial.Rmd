@@ -138,18 +138,20 @@ each column as it reads it into `R`. For example, in this dataset, `read_csv`
 reads `weight` as `col_double` (a numeric data type), and `species` as 
 `col_character`. 
 
-```{r inspect-data, exercise=TRUE}
+```{r inspect-data, message=TRUE, exercise=TRUE}
 ## inspect the data
 str(surveys)
 
 ```
 
-```{r preview-data, exercise=TRUE}
-## Preview the data: View(surveys) #Or
-glimpse(surveys)
+```{r eval=FALSE, echo=TRUE}
+## Preview the data
+View(surveys)
 ```
 
-You could also use `View(surveys)` or `glimpse(surveys)` when working in RStudio to explore the data set further.
+```{r echo=FALSE}
+surveys
+```
 
 At the top of the `str()` output, notice that the class of the data is a tibble. Tibbles tweak some of the behaviors of the 
 data frame objects we introduced in the previous workshop. The data structure is
@@ -359,9 +361,7 @@ surveys %>%
 **Note:** When specifying an `alpha` for a scatterplot, it automatically uses 
 that __same__ `alpha` in the legend. To remedy this you can add:  
 
-```
-guides(color = guide_legend(override.aes = list(alpha = 1)))
-```
+`guides(color = guide_legend(override.aes = list(alpha = 1)))`
 
 to your plot. This customizes the legend appearance, similar to what we will 
 see in the customization section. 
@@ -726,7 +726,7 @@ code to override the `count` stat:
 ```{r bar3, exercise=TRUE}
 surveys %>% 
   ggplot(mapping = aes(x = species_id)) + 
-  geom_bar(aes(y = ..prop.., group = 1))
+  geom_bar(aes(y = stat(prop), group = 1))
 ```
 
 
@@ -739,7 +739,7 @@ surveys %>%
 ## What is wrong with this plot? 
 surveys %>% 
   ggplot(mapping = aes(x = species_id)) + 
-  geom_bar(aes(y = ..prop..))
+  geom_bar(aes(y = stat(prop)))
 
 ```
 
