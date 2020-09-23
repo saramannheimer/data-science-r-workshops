@@ -28,7 +28,7 @@ surveys <- read_csv("../data/surveys.csv")
 > * Describe what aesthetics are and how they are used by ggplot().
 > * Describe what faceting is and apply faceting to a ggplot().
 > * Modify the aesthetics of an existing ggplot() plot (e.g., axis labels, color).
-> * Build multivariate and customized plots from data in a data frame.  
+> * Build multivariate and customized plots from data in a data frame.
 > * Arrange multiple plots in a grid format using grid.arrange() from gridExtra.
 > * Export publication ready graphics using ggsave(). 
 
@@ -440,7 +440,7 @@ surveys %>%
 
 ```{r challenge-2part2-solution}
 surveys %>% 
-  ggplot(mapping = aes(x = weight, y = plot_id)) +
+  ggplot(mapping = aes(x = plot_id, y = weight)) +
   geom_jitter(aes(color = plot_type), alpha = 0.1) + 
   geom_smooth()
 
@@ -465,8 +465,8 @@ surveys %>%
   ggplot(mapping = aes(x = species_id, y = weight)) +
   geom_boxplot(alpha = 0) + 
   ## alpha = 0 eliminates the black (possible outlier) points, so they're not plotted twice
-  geom_jitter(alpha = 0.2, color = "tomato")
-## alpha = 0.2 decreases the opacity of the points, to not be too busy
+  geom_jitter(alpha = 0.1, color = "tomato")
+## alpha = 0.1 decreases the opacity of the points, to not be too busy
 ```
 
 > Notice how the boxplot layer is behind the jitter layer? What would you 
@@ -485,12 +485,13 @@ surveys %>%
 ```{r challenge-3part1-example}
 ggplot(data = surveys, mapping = aes(x = species_id, y = weight)) +
   geom_boxplot(alpha = 0) +
-  geom_jitter(alpha = 0.3, color = "tomato")
+  geom_jitter(alpha = 0.1, color = "tomato")
 ```
 
 ```{r challenge-3part1}
 ##  Start with the boxplot we created
 ##  1. Replace the boxplot with a violin plot. For help, see geom_violin().
+##  You might need to decrease opacity even more to see the violins (try 0.03)
 
 
 ```
@@ -499,7 +500,7 @@ ggplot(data = surveys, mapping = aes(x = species_id, y = weight)) +
 surveys %>% 
   ggplot(mapping = aes(x = species_id, y = weight)) +
   geom_violin() + 
-  geom_jitter(alpha = 0.2, color = "tomato")
+  geom_jitter(alpha = 0.03, color = "tomato")  
 
 ```
 
@@ -692,7 +693,7 @@ surveys %>%
   stat_count()
 ```
 
-If you so wish, you could override the default stat for that geom. For example, 
+If you so wish, you could override the default `stat` for that `geom`. For example, 
 if you wanted to plot a bar chart of proportions you would use the following 
 code to override the `count` stat:  
 
@@ -1069,7 +1070,7 @@ yearly_sex_counts %>%
 ## sets ALL the text on the plot to be size 16
 ```
 
-**Note:**  `theme_bw()` is function for a **specific** theme and `theme()` is a
+**Note:**  `theme_bw()` is a function for a **specific** theme and `theme()` is a
 generic function for a **variety** of different themes!  
   
 After our manipulations, you may notice that the values on the x-axis are still 
