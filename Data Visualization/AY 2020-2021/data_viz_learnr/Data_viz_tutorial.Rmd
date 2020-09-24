@@ -19,6 +19,10 @@ library(gradethis)
 knitr::opts_chunk$set(echo = FALSE, exercise.checker = gradethis::grade_learnr)
 
 surveys <- read_csv("data/surveys.csv")
+yearly_counts <- surveys %>%
+  count(year, genus) 
+yearly_sex_counts <- surveys %>%
+  count(year, species_id, sex)
 ```
 
 
