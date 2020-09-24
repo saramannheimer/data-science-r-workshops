@@ -23,6 +23,10 @@ yearly_counts <- surveys %>%
   count(year, genus) 
 yearly_sex_counts <- surveys %>%
   count(year, species_id, sex)
+yearly_species_weight <- surveys %>% 
+  group_by(year, species_id) %>%
+  ## Variables to group by
+  summarize(avg_weight = mean(weight))
 ```
 
 
