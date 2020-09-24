@@ -426,7 +426,7 @@ ggplot(data = surveys,
 </div>
 <div class="tutorial-exercise-support" data-label="challenge-2part2-solution" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code>surveys %&gt;% 
-  ggplot(mapping = aes(x = weight, y = plot_id)) +
+  ggplot(mapping = aes(xx = plot_id, y = weight)) +
   geom_jitter(aes(color = plot_type), alpha = 0.1) + 
   geom_smooth()</code></pre>
 </div>
@@ -449,8 +449,8 @@ ggplot(data = surveys,
   ggplot(mapping = aes(x = species_id, y = weight)) +
     geom_boxplot(alpha = 0) + 
     ## alpha = 0 eliminates the black (possible outlier) points, so they&#39;re not plotted twice
-    geom_jitter(alpha = 0.2, color = &quot;tomato&quot;)
-    ## alpha = 0.2 decreases the opacity of the points, to not be too busy</code></pre>
+    geom_jitter(alpha = 0.1, color = &quot;tomato&quot;)
+    ## alpha = 0.1 decreases the opacity of the points, to not be too busy</code></pre>
 <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":["function (label = NULL, solution_code = NULL, user_code = NULL, ","    check_code = NULL, envir_result = NULL, evaluate_result = NULL, ","    envir_prep = NULL, last_value = NULL, ...) ","{","    (utils::getFromNamespace(\"grade_learnr_\", \"gradethis\"))(label = label, ","        solution_code = solution_code, user_code = user_code, ","        check_code = check_code, envir_result = envir_result, ","        evaluate_result = evaluate_result, envir_prep = envir_prep, ","        last_value = last_value, ...)","}"]}</script>
 </div>
 <blockquote>
@@ -464,19 +464,20 @@ ggplot(data = surveys,
 <div class="tutorial-exercise" data-label="challenge-3part1-example" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code>ggplot(data = surveys, mapping = aes(x = species_id, y = weight)) +
   geom_boxplot(alpha = 0) +
-  geom_jitter(alpha = 0.3, color = &quot;tomato&quot;)</code></pre>
+  geom_jitter(alpha = 0.1, color = &quot;tomato&quot;)</code></pre>
 <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":["function (label = NULL, solution_code = NULL, user_code = NULL, ","    check_code = NULL, envir_result = NULL, evaluate_result = NULL, ","    envir_prep = NULL, last_value = NULL, ...) ","{","    (utils::getFromNamespace(\"grade_learnr_\", \"gradethis\"))(label = label, ","        solution_code = solution_code, user_code = user_code, ","        check_code = check_code, envir_result = envir_result, ","        evaluate_result = evaluate_result, envir_prep = envir_prep, ","        last_value = last_value, ...)","}"]}</script>
 </div>
 <div class="tutorial-exercise" data-label="challenge-3part1" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="7">
 <pre class="text"><code>##  Start with the boxplot we created
-##  1. Replace the boxplot with a violin plot. For help, see geom_violin().</code></pre>
+##  1. Replace the boxplot with a violin plot. For help, see geom_violin().
+##  You might need to decrease opacity even more to see the violins (try 0.03)</code></pre>
 <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":["function (label = NULL, solution_code = NULL, user_code = NULL, ","    check_code = NULL, envir_result = NULL, evaluate_result = NULL, ","    envir_prep = NULL, last_value = NULL, ...) ","{","    (utils::getFromNamespace(\"grade_learnr_\", \"gradethis\"))(label = label, ","        solution_code = solution_code, user_code = user_code, ","        check_code = check_code, envir_result = envir_result, ","        evaluate_result = evaluate_result, envir_prep = envir_prep, ","        last_value = last_value, ...)","}"]}</script>
 </div>
 <div class="tutorial-exercise-support" data-label="challenge-3part1-solution" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code>surveys %&gt;% 
   ggplot(mapping = aes(x = species_id, y = weight)) +
     geom_violin() + 
-    geom_jitter(alpha = 0.2, color = &quot;tomato&quot;)</code></pre>
+    geom_jitter(alpha = 0.03, color = &quot;tomato&quot;)</code></pre>
 </div>
 <div class="tutorial-exercise-support" data-label="challenge-3part1-check" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code>grade_code()</code></pre>
@@ -617,7 +618,7 @@ surveys %&gt;%
   stat_count()</code></pre>
 <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":["function (label = NULL, solution_code = NULL, user_code = NULL, ","    check_code = NULL, envir_result = NULL, evaluate_result = NULL, ","    envir_prep = NULL, last_value = NULL, ...) ","{","    (utils::getFromNamespace(\"grade_learnr_\", \"gradethis\"))(label = label, ","        solution_code = solution_code, user_code = user_code, ","        check_code = check_code, envir_result = envir_result, ","        evaluate_result = evaluate_result, envir_prep = envir_prep, ","        last_value = last_value, ...)","}"]}</script>
 </div>
-<p>If you so wish, you could override the default stat for that geom. For example, if you wanted to plot a bar chart of proportions you would use the following code to override the <code>count</code> stat:</p>
+<p>If you so wish, you could override the default <code>stat</code> for that <code>geom</code>. For example, if you wanted to plot a bar chart of proportions you would use the following code to override the <code>count</code> stat:</p>
 <div class="tutorial-exercise" data-label="bar3" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code>surveys %&gt;% 
   ggplot(mapping = aes(x = species_id)) + 
@@ -900,7 +901,7 @@ ggplot(mapping = aes(x = year, y = avg_weight, color = species_id)) +
 <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":["function (label = NULL, solution_code = NULL, user_code = NULL, ","    check_code = NULL, envir_result = NULL, evaluate_result = NULL, ","    envir_prep = NULL, last_value = NULL, ...) ","{","    (utils::getFromNamespace(\"grade_learnr_\", \"gradethis\"))(label = label, ","        solution_code = solution_code, user_code = user_code, ","        check_code = check_code, envir_result = envir_result, ","        evaluate_result = evaluate_result, envir_prep = envir_prep, ","        last_value = last_value, ...)","}"]}</script>
 </div>
 <p><strong>Note:</strong><br />
-<code>theme_bw()</code> is function for a <strong>specific</strong> theme and <code>theme()</code> is a generic function for a <strong>variety</strong> of different themes!</p>
+<code>theme_bw()</code> is a function for a <strong>specific</strong> theme and <code>theme()</code> is a generic function for a <strong>variety</strong> of different themes!</p>
 <p>After our manipulations, you may notice that the values on the x-axis are still not properly readable. Let’s swap the orientation of the labels, so the reader doesn’t have to tilt their head when reading our plot! The <code>coord_flip()</code> function easily changes the x- and y-axis.</p>
 <div class="tutorial-exercise" data-label="flip" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code>yearly_sex_counts %&gt;% 

@@ -865,9 +865,9 @@ ggplot(mapping = aes(x = year, y = n, color = genus)) +
     geom_line()
 ```
 
->**Note:** When specifying the color for a line graph, you can use either the 
->`color = <VARIABLE>` argument or the `group = <VARIABLE>` argument. Both do the 
->same grouping of observations!
+>**Note:** When specifying the color for a line graph, you don't need to use both the 
+>`color = <VARIABLE>` argument and the `group = <VARIABLE>` argument. Both do the 
+>same grouping of observations! So you just need to specify the `color` argument.
 
 
 ### Faceting
