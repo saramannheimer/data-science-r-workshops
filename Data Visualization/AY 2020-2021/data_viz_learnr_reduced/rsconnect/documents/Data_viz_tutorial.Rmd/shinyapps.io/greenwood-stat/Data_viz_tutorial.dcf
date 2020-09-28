@@ -1,0 +1,12 @@
+name: Data_viz_tutorial
+title: Data_viz_tutorial
+username:
+account: greenwood-stat
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2833716
+bundleId: 3674408
+url: https://greenwood-stat.shinyapps.io/Data_viz_tutorial/
+when: 1601154251.98149
+asMultiple: FALSE
+asStatic: FALSE
