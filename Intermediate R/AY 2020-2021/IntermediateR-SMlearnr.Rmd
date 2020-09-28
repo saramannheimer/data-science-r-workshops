@@ -458,7 +458,7 @@ relational conditions specified (evaluates to `TRUE`).
 
 \vspace{0.25cm}
 
-```{r subset, tidy = TRUE, exercise=TRUE, exercise-eval=TRUE}
+```{r subset, tidy = TRUE, exercise=TRUE, exercise.eval=TRUE}
 x <- c(3, 5, 7, 9, 11, 13, 15)  
 
 subset(x, x > 6)
