@@ -1,6 +1,6 @@
 ---
 title: "Intermediate R"
-author: "Mark Greenwood, Sara Mannheimer, Allison Theobold, & The Carpentries"
+author: "Data Carpentry contributors & Montana State University R Workshops Team"
 output: learnr::tutorial
 runtime: shiny_prerendered
 # header-includes: \usepackage{graphicx} \usepackage{amsmath} \usepackage{amssymb}
@@ -17,6 +17,7 @@ library(tidyverse)
 library(gradethis)
 knitr::opts_chunk$set(echo = FALSE, exercise.checker = gradethis::grade_learnr)
 BlackfootFish <- read.csv("data/BlackfootFish.csv", header = TRUE)
+
 ```
 
 
@@ -62,7 +63,7 @@ to refresh how we can use these operations.
 To extract an element from a vector we use the bracket (`[]`) notation. Recall, 
 a vector has only one dimension, so inside the brackets goes *one* number. To
 extract elements of a vector, we can give their corresponding index, starting 
-from the number one. 
+from the number one. (`R` uses a one-based numbering system.)
 
 \vspace{0.25cm}
 
@@ -80,9 +81,11 @@ x[-2] ## Extracts everything in x BUT the second index
 
 __Exercise 1:__  Why does `R` produce an error for the following code?  
 
-\vspace{0.25cm}
+```{r whyError-setup}
+x <- c(5.4, 6.2, 7.1, 4.8, 7.5)
+```
 
-```{r whyError, message=TRUE, exercise=TRUE, eval = FALSE}
+```{r whyError, message=TRUE, exercise=TRUE}
 
 x[-1:3]
 
@@ -98,7 +101,7 @@ To extract a column from a dataframe we can the familiar `$` operator:
 
 \vspace{0.25cm}
 
-```{r extractDataframe, exercise=TRUE, exercise.eval=TRUE}
+```{r extractDataframe, exercise=TRUE}
 df <- data.frame(A = c(1, 5, 9, 13),
                 B = c(2, 6, 10, 14),
                 C = c(3, 7, 11, 15),
@@ -118,12 +121,18 @@ To extract a column from a dataframe using brackets (`[row, column]`):
 
 \vspace{0.25cm}
 
-```{r moreExtract, exercise=TRUE, exercise.eval=TRUE}
-df[1, 1] ## Extracts the first row, first column entry 
+```{r moreExtract-setup}
+df <- data.frame(A = c(1, 5, 9, 13),
+                B = c(2, 6, 10, 14),
+                C = c(3, 7, 11, 15),
+                D = c(4, 8, 12, 16)
+                )
+```
 
-df[, 1] ## Extracts EVERY row in the first column 
-
-df[1, ] ## Extracts EVERY column in the first row 
+```{r moreExtract, exercise=TRUE}
+df[1, 1] ## Extracts the first row, first column entry  
+df[, 1] ## Extracts EVERY row in the first column  
+df[1, ] ## Extracts EVERY column in the first row  
 ```
 
 \vspace{0.25cm}
@@ -132,7 +141,7 @@ __Exercise 2:__  I want to extract the 3rd and 4th columns. What is wrong with
 my code? How would you change it to extract these columns? What if I wanted 
 to extract the 2nd and 4th columns?  
 
-```{r challenge-2, exercise=TRUE, exercise.lines = 7}
+```{r challenge-2, exercise=TRUE, exercise.lines = 7, exercise.setup="moreExtract-setup"}
 ## Change the code below to extract the 3rd and 4th columns
 
 # df[, 3, 4]
@@ -140,7 +149,7 @@ to extract the 2nd and 4th columns?
 ```
 
 
-```{r challenge-2-solution}
+```{r challenge-2-solution, exercise.setup="moreExtract-setup"}
 
 df[, 3:4]
 
@@ -151,13 +160,13 @@ grade_code()
 ```
 
 
-```{r challenge-2-2, exercise=TRUE, exercise.lines = 7}
+```{r challenge-2-2, exercise=TRUE, exercise.lines = 7, exercise.setup="moreExtract-setup"}
 ## Write code to extract the 2nd and 4th columns
 
 
 ```
 
-```{r challenge-2-2-solution}
+```{r challenge-2-2-solution, exercise.setup="moreExtract-setup"}
 
 df[, c(2,4)]
 
@@ -373,11 +382,11 @@ relational statement is satisfied (evaluates to `TRUE`).
 \vspace{0.25cm}
 
 ```{r which, tidy = TRUE, exercise=TRUE, exercise.eval=TRUE}
-x <- c(3, 5, 7, 9, 11, 13, 15)  
+x_2 <- c(3, 5, 7, 9, 11, 13, 15)  
 
-which(x > 8) 
+which(x_2 > 8) 
 
-which(x == 7)
+which(x_2 == 7)
 
 ## Challenge: How would you use the indices from these "which" statements to 
 ##            extract the elements of x that meet the criteria?

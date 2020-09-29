@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 
-<meta name="author" content="Mark Greenwood, Sara Mannheimer, Allison Theobold, &amp; The Carpentries" />
+<meta name="author" content="Data Carpentry contributors &amp; Montana State University R Workshops Team" />
 
 
 <meta name="progressive" content="false" />
@@ -146,7 +146,7 @@ $(document).ready(function () {
 <p>This workshop covers content that will require that we remember how to extract elements from vectors and dataframes. Let’s work through the following warm-ups to refresh how we can use these operations.</p>
 <div id="section-extracting-elements-from-a-vector" class="section level3">
 <h3>Extracting Elements from a Vector</h3>
-<p>To extract an element from a vector we use the bracket (<code>[]</code>) notation. Recall, a vector has only one dimension, so inside the brackets goes <em>one</em> number. To extract elements of a vector, we can give their corresponding index, starting from the number one.</p>
+<p>To extract an element from a vector we use the bracket (<code>[]</code>) notation. Recall, a vector has only one dimension, so inside the brackets goes <em>one</em> number. To extract elements of a vector, we can give their corresponding index, starting from the number one. (<code>R</code> uses a one-based numbering system.)</p>
 <div class="tutorial-exercise" data-label="extractElements" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code>x &lt;- c(5.4, 6.2, 7.1, 4.8, 7.5)
 
@@ -158,6 +158,9 @@ x[-2] ## Extracts everything in x BUT the second index</code></pre>
 <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":["function (label = NULL, solution_code = NULL, user_code = NULL, ","    check_code = NULL, envir_result = NULL, evaluate_result = NULL, ","    envir_prep = NULL, last_value = NULL, ...) ","{","    (utils::getFromNamespace(\"grade_learnr_\", \"gradethis\"))(label = label, ","        solution_code = solution_code, user_code = user_code, ","        check_code = check_code, envir_result = envir_result, ","        evaluate_result = evaluate_result, envir_prep = envir_prep, ","        last_value = last_value, ...)","}"]}</script>
 </div>
 <p><strong>Exercise 1:</strong> Why does <code>R</code> produce an error for the following code?</p>
+<div class="tutorial-exercise-support" data-label="whyError-setup" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
+<pre class="text"><code>x &lt;- c(5.4, 6.2, 7.1, 4.8, 7.5)</code></pre>
+</div>
 <div class="tutorial-exercise" data-label="whyError" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code>x[-1:3]</code></pre>
 <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":["function (label = NULL, solution_code = NULL, user_code = NULL, ","    check_code = NULL, envir_result = NULL, evaluate_result = NULL, ","    envir_prep = NULL, last_value = NULL, ...) ","{","    (utils::getFromNamespace(\"grade_learnr_\", \"gradethis\"))(label = label, ","        solution_code = solution_code, user_code = user_code, ","        check_code = check_code, envir_result = envir_result, ","        evaluate_result = evaluate_result, envir_prep = envir_prep, ","        last_value = last_value, ...)","}"]}</script>
@@ -175,22 +178,21 @@ x[-2] ## Extracts everything in x BUT the second index</code></pre>
                 )
 
 df$A ## Extracts the A column from the dataframe</code></pre>
-<pre><code>[1]  1  5  9 13</code></pre>
 <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":["function (label = NULL, solution_code = NULL, user_code = NULL, ","    check_code = NULL, envir_result = NULL, evaluate_result = NULL, ","    envir_prep = NULL, last_value = NULL, ...) ","{","    (utils::getFromNamespace(\"grade_learnr_\", \"gradethis\"))(label = label, ","        solution_code = solution_code, user_code = user_code, ","        check_code = check_code, envir_result = envir_result, ","        evaluate_result = evaluate_result, envir_prep = envir_prep, ","        last_value = last_value, ...)","}"]}</script>
 </div>
 <p>This is useful if we only wish to extract a <em>single</em> vector from our dataframe. If we want multiple vectors, then using matrix notation is more simple.</p>
 <p>To extract a column from a dataframe using brackets (<code>[row, column]</code>):</p>
-<div class="tutorial-exercise" data-label="moreExtract" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
-<pre class="text"><code>df[1, 1] ## Extracts the first row, first column entry </code></pre>
-<pre><code>[1] 1</code></pre>
-<pre class="text"><code>df[, 1] ## Extracts EVERY row in the first column </code></pre>
-<pre><code>[1]  1  5  9 13</code></pre>
-<pre class="text"><code>df[1, ] ## Extracts EVERY column in the first row </code></pre>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["A"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["B"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["C"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["D"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"1","2":"2","3":"3","4":"4","_rn_":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
+<div class="tutorial-exercise-support" data-label="moreExtract-setup" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
+<pre class="text"><code>df &lt;- data.frame(A = c(1, 5, 9, 13),
+                B = c(2, 6, 10, 14),
+                C = c(3, 7, 11, 15),
+                D = c(4, 8, 12, 16)
+                )</code></pre>
 </div>
+<div class="tutorial-exercise" data-label="moreExtract" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
+<pre class="text"><code>df[1, 1] ## Extracts the first row, first column entry  
+df[, 1] ## Extracts EVERY row in the first column  
+df[1, ] ## Extracts EVERY column in the first row  </code></pre>
 <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":["function (label = NULL, solution_code = NULL, user_code = NULL, ","    check_code = NULL, envir_result = NULL, evaluate_result = NULL, ","    envir_prep = NULL, last_value = NULL, ...) ","{","    (utils::getFromNamespace(\"grade_learnr_\", \"gradethis\"))(label = label, ","        solution_code = solution_code, user_code = user_code, ","        check_code = check_code, envir_result = envir_result, ","        evaluate_result = evaluate_result, envir_prep = envir_prep, ","        last_value = last_value, ...)","}"]}</script>
 </div>
 <p><strong>Exercise 2:</strong> I want to extract the 3rd and 4th columns. What is wrong with my code? How would you change it to extract these columns? What if I wanted to extract the 2nd and 4th columns?</p>
@@ -198,7 +200,7 @@ df$A ## Extracts the A column from the dataframe</code></pre>
 <pre class="text"><code>## Change the code below to extract the 3rd and 4th columns
 
 # df[, 3, 4]</code></pre>
-<script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":["function (label = NULL, solution_code = NULL, user_code = NULL, ","    check_code = NULL, envir_result = NULL, evaluate_result = NULL, ","    envir_prep = NULL, last_value = NULL, ...) ","{","    (utils::getFromNamespace(\"grade_learnr_\", \"gradethis\"))(label = label, ","        solution_code = solution_code, user_code = user_code, ","        check_code = check_code, envir_result = envir_result, ","        evaluate_result = evaluate_result, envir_prep = envir_prep, ","        last_value = last_value, ...)","}"]}</script>
+<script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.setup":"moreExtract-setup","exercise.checker":["function (label = NULL, solution_code = NULL, user_code = NULL, ","    check_code = NULL, envir_result = NULL, evaluate_result = NULL, ","    envir_prep = NULL, last_value = NULL, ...) ","{","    (utils::getFromNamespace(\"grade_learnr_\", \"gradethis\"))(label = label, ","        solution_code = solution_code, user_code = user_code, ","        check_code = check_code, envir_result = envir_result, ","        evaluate_result = evaluate_result, envir_prep = envir_prep, ","        last_value = last_value, ...)","}"]}</script>
 </div>
 <div class="tutorial-exercise-support" data-label="challenge-2-solution" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code>df[, 3:4]</code></pre>
@@ -208,7 +210,7 @@ df$A ## Extracts the A column from the dataframe</code></pre>
 </div>
 <div class="tutorial-exercise" data-label="challenge-2-2" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="7">
 <pre class="text"><code>## Write code to extract the 2nd and 4th columns</code></pre>
-<script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":["function (label = NULL, solution_code = NULL, user_code = NULL, ","    check_code = NULL, envir_result = NULL, evaluate_result = NULL, ","    envir_prep = NULL, last_value = NULL, ...) ","{","    (utils::getFromNamespace(\"grade_learnr_\", \"gradethis\"))(label = label, ","        solution_code = solution_code, user_code = user_code, ","        check_code = check_code, envir_result = envir_result, ","        evaluate_result = evaluate_result, envir_prep = envir_prep, ","        last_value = last_value, ...)","}"]}</script>
+<script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.setup":"moreExtract-setup","exercise.checker":["function (label = NULL, solution_code = NULL, user_code = NULL, ","    check_code = NULL, envir_result = NULL, evaluate_result = NULL, ","    envir_prep = NULL, last_value = NULL, ...) ","{","    (utils::getFromNamespace(\"grade_learnr_\", \"gradethis\"))(label = label, ","        solution_code = solution_code, user_code = user_code, ","        check_code = check_code, envir_result = envir_result, ","        evaluate_result = evaluate_result, envir_prep = envir_prep, ","        last_value = last_value, ...)","}"]}</script>
 </div>
 <div class="tutorial-exercise-support" data-label="challenge-2-2-solution" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code>df[, c(2,4)]</code></pre>
@@ -335,11 +337,11 @@ shorter object length</code></pre>
 <li><strong>Which</strong>: The <code>which</code> statement returns the <em>indices</em> of a vector, where a relational statement is satisfied (evaluates to <code>TRUE</code>).</li>
 </ul>
 <div class="tutorial-exercise" data-label="which" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
-<pre class="text"><code>x &lt;- c(3, 5, 7, 9, 11, 13, 15)
+<pre class="text"><code>x_2 &lt;- c(3, 5, 7, 9, 11, 13, 15)
 
-which(x &gt; 8)</code></pre>
+which(x_2 &gt; 8)</code></pre>
 <pre><code>[1] 4 5 6 7</code></pre>
-<pre class="text"><code>which(x == 7)</code></pre>
+<pre class="text"><code>which(x_2 == 7)</code></pre>
 <pre><code>[1] 3</code></pre>
 <pre class="text"><code>## Challenge: How would you use the indices from these &#39;which&#39; statements to
 ## extract the elements of x that meet the criteria?</code></pre>
@@ -4090,7 +4092,7 @@ myfunction &lt;- function(arg1, ...) {
 <p>This material is intended to provide you with an introduction to using <code>R</code> for scientific analyses of data. The best way for you to continue to learn more about <code>R</code> is to use it in your research! This may sound daunting, but writing <code>R</code> scripts is the best way to become familiar with the syntax. This will help you progress through more advanced operations, such as cleaning your data, using statistical methods, or creating graphics.</p>
 <p>The best place to start is playing around with the code from today’s workshop. Change parts of the code and see what happens! Better yet, use the code from the workshop to investigate your own data!</p>
 <p style="text-align: right; font-size: small;">
-Workshop build on: 2020-09-29 09:40:41
+Workshop build on: 2020-09-29 10:28:17
 </p>
 
 <script type="application/shiny-prerendered" data-context="server-start">
@@ -4104,6 +4106,7 @@ library(tidyverse)
 library(gradethis)
 knitr::opts_chunk$set(echo = FALSE, exercise.checker = gradethis::grade_learnr)
 BlackfootFish <- read.csv("data/BlackfootFish.csv", header = TRUE)
+
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
@@ -4473,7 +4476,7 @@ output$`tutorial-exercise-challenge-18-2-output` <- renderUI({
 <!-- begin doc-metadata -->
 <div id="doc-metadata">
 <h2 class="title toc-ignore" style="display:none;">Intermediate R</h2>
-<h4 class="author"><em>Mark Greenwood, Sara Mannheimer, Allison Theobold, &amp; The Carpentries</em></h4>
+<h4 class="author"><em>Data Carpentry contributors &amp; Montana State University R Workshops Team</em></h4>
 </div>
 <!-- end doc-metadata -->
 
