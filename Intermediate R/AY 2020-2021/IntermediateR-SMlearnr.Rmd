@@ -65,7 +65,6 @@ a vector has only one dimension, so inside the brackets goes *one* number. To
 extract elements of a vector, we can give their corresponding index, starting 
 from the number one. (`R` uses a one-based numbering system.)
 
-\vspace{0.25cm}
 
 ```{r extractElements, message=TRUE, exercise=TRUE}
 x <- c(5.4, 6.2, 7.1, 4.8, 7.5)
@@ -77,9 +76,10 @@ x[1:3] ## Extracts a slice of x, from the first index to the third index
 x[-2] ## Extracts everything in x BUT the second index
 ```
 
-\vspace{0.25cm}
 
-__Exercise 1:__  Why does `R` produce an error for the following code?  
+> ### Challenge 1  
+>
+>Why does `R` produce an error for the following code?  
 
 ```{r whyError-setup}
 x <- c(5.4, 6.2, 7.1, 4.8, 7.5)
@@ -99,7 +99,6 @@ we are able to extract two types of elements.
 
 To extract a column from a dataframe we can the familiar `$` operator:
 
-\vspace{0.25cm}
 
 ```{r extractDataframe, exercise=TRUE}
 df <- data.frame(A = c(1, 5, 9, 13),
@@ -112,14 +111,12 @@ df$A ## Extracts the A column from the dataframe
 
 ```
 
-\vspace{0.25cm}
 
 This is useful if we only wish to extract a *single* vector from our dataframe. 
 If we want multiple vectors, then using matrix notation is more simple.  
 
 To extract a column from a dataframe using brackets (`[row, column]`): 
 
-\vspace{0.25cm}
 
 ```{r moreExtract-setup}
 df <- data.frame(A = c(1, 5, 9, 13),
@@ -131,15 +128,17 @@ df <- data.frame(A = c(1, 5, 9, 13),
 
 ```{r moreExtract, exercise=TRUE}
 df[1, 1] ## Extracts the first row, first column entry  
+
 df[, 1] ## Extracts EVERY row in the first column  
+
 df[1, ] ## Extracts EVERY column in the first row  
 ```
 
-\vspace{0.25cm}
 
-__Exercise 2:__  I want to extract the 3rd and 4th columns. What is wrong with 
-my code? How would you change it to extract these columns? What if I wanted 
-to extract the 2nd and 4th columns?  
+> ### Challenge 2 (Part 1)
+>
+>I want to extract the 3rd and 4th columns. What is wrong with 
+>my code? 
 
 ```{r challenge-2, exercise=TRUE, exercise.lines = 7, exercise.setup="moreExtract-setup"}
 ## Change the code below to extract the 3rd and 4th columns
@@ -159,6 +158,10 @@ df[, 3:4]
 grade_code()
 ```
 
+> ### Challenge 2 (Part 2)
+>
+>How would you change it to extract these columns? What if I wanted 
+>to extract the 2nd and 4th columns?  
 
 ```{r challenge-2-2, exercise=TRUE, exercise.lines = 7, exercise.setup="moreExtract-setup"}
 ## Write code to extract the 2nd and 4th columns
@@ -184,7 +187,7 @@ before in mathematics but take on a slightly different feel in data science.
 We will walk through a few examples of different types of relational operators 
 and the rest will be left as exercises.   
 
-```{r relOp, exercise=TRUE, exercise.eval=TRUE}
+```{r relOp, exercise=TRUE}
 w <- 10.2 
 x <- 1.3
 y <- 2.8 
@@ -194,40 +197,52 @@ dna2 <- "attattaggaacaca"
 
 ```
 
-* __Equality & Inequality__: This type of operator tells whether an object is 
+```{r relOp-setup}
+w <- 10.2 
+x <- 1.3
+y <- 2.8 
+z <- 17.5
+dna1 <- "attattaggaccaca"
+dna2 <- "attattaggaacaca"
+
+```
+
+### Equality & Inequality
+
+This type of operator tells whether an object is 
 equivalent to another object (`==`), or its negation (`!=`).  
 
-\vspace{0.25cm}
-
-```{r equality, tidy = TRUE, exercise=TRUE, exercise.eval=TRUE}
+```{r equality, tidy = TRUE, exercise=TRUE, exercise.setup="relOp-setup"}
 dna1 == dna2
 dna1 != dna2
 ```
 
-\vspace{0.5cm}
 
-* __Greater & Less__: These statements should be familiar, with a bit of a 
+
+### Greater & Less
+
+These statements should be familiar, with a bit of a 
 notation twist. To write a strict greater than or less than statement you would 
 use `>` or `<` in your statement. To add an equality constraint, you would 
 add a `=` sign \underline{after} the inequality statement (`>=` or `<=`).  
 
-\vspace{0.25cm}
 
-```{r greaterLess, tidy = TRUE, exercise=TRUE, exercise.eval=TRUE}
+```{r greaterLess, tidy = TRUE, exercise=TRUE, exercise.setup="relOp-setup"}
 w > 10
 x > y
 ```
 
-\vspace{0.5cm}
 
-* __Inclusion__: This type of statement checks if a character, number, or factor
+
+### Inclusion
+
+This type of statement checks if a character, number, or factor
 are included in a vector. The `%in%` operator tells you whether a value is 
 included in an object. These values can be linked together into a vector, and 
 the output will be a vector of logical values.   
 
-\vspace{0.25cm}
 
-```{r inclusion, tidy = TRUE, exercise=TRUE, exercise.eval=TRUE}
+```{r inclusion, tidy = TRUE, exercise=TRUE}
 colors <- c("green", "pink", "red")
 
 "blue" %in% colors
@@ -242,26 +257,24 @@ c("a", "b") %in% letters
 
 ```
 
-\vspace{0.5cm}
 
-__Exercise 3:__   
 
-\vspace{0.25cm}
+> ### Challenge 3
+>
+>Write `R` code to see if:
+>
+  -  2 * x + 0.3 is equal to y
+  -  "hello" is greater than or equal to "goodbye"
+  -  TRUE is greater than FALSE
+  -  dna1 is longer than 5 bases (use nchar() to figure out how long a string is)
+>
 
-```{r challenge-3, tidy = TRUE, exercise=TRUE, exercise.lines = 7}
-# write R code to see if
-    # 2 * x + 0.3 is equal to y
-    
-    # "hello" is greater than or equal to "goodbye"
-
-    # TRUE is greater than FALSE
-
-    # dna1 is longer than 5 bases (use nchar() to figure out how long a string is)
+```{r challenge-3, tidy = TRUE, exercise=TRUE, exercise.lines = 10, exercise.setup="relOp-setup"}
+# Challenge 3 R code goes here
 
 ```
 
-```{r challenge-3-solution}
-
+```{r challenge-3-solution, exercise.setup="relOp-setup"}
 2 * x + 0.3 == y
 
 "hello" > "goodbye"
@@ -276,9 +289,10 @@ nchar(dna1)
 grade_code()
 ```
 
-\vspace{0.25cm}
 
-__Comparing Decimal Valued Numbers__:  
+
+### Comparing Decimal Valued Numbers
+
 Why does the output from your first equality check not seem right? What do you 
 think might be going on?  
 
@@ -295,48 +309,48 @@ compare `R` objects `x` and `y` testing *near equality*." This means that the
 function allows for a little bit of wiggle room in the rounding errors that are
 associated with doubles. 
 
-__Comparing Characters__: 
+### Comparing Characters
 
 How did `R` know how to compare the words `hello` and `goodbye`? 
 
-```{r compareCharacters, eval = FALSE}
+```{r compareCharacters, exercise=TRUE}
 Sys.getlocale()
 
 ```
 
-\newpage
 
-__Exercise 4:__ What is going on in the code below? Why is `R` giving an error?  
+> ### Challenge 4
+ What is going on in the code below? 
+>Why is `R` giving an error?  
 
-\vspace{0.25cm}
+```{r challenge-4-setup}
+letters <- c("a", "b", "c", "d", "e")
+```
 
-```{r challenge-4, exercise=TRUE, exercise.eval=TRUE}
+```{r challenge-4, exercise=TRUE}
 letters != c("a", "c") 
 
 ```
 
-\vspace{0.5cm}
 
 Why does `R` give `TRUE` as the third element of this vector, when 
 `letters[3] != "c"` is obviously false?  
 
-__Recycling__: When you use `!=` or `==`, `R` tries to compare each element of 
+### Recycling
+
+When you use `!=` or `==`, `R` tries to compare each element of 
 the left argument with the corresponding element of its right argument. Then 
 what happens when you compare vectors of different lengths?  
 
-\vspace{0.5cm}
 
-![](images/recycling.png)
+![](images/recycling.png "Graphic demonstrating left and right character vectors with empty slots for the shorter right vector.")
 
-\newpage
 
 When one vector is shorter than the other, it gets *recycled*:
 
-\vspace{0.5cm}
 
-![](images/recycling2.png)
+![](images/recycling2.png "Graphic demonstrating left and right character vectors and how the right vector is recycled.")
 
-\vspace{0.5cm}
 
 In this case, R **repeats** `c("a", "c")` as many times as necessary to match 
 the length of the `letters` vector. So, we get `c("a", "c", "a", "c", "a")`. 
@@ -353,18 +367,20 @@ procedure we wish for `R` to do, without any silly recycling! To exclude values
 you place a `!` in front of the **entire** statement, not directly in front of
 the `%in%`. 
 
-```{r inclusionOp, exercise=TRUE, exercise.eval=TRUE}
+```{r inclusionOp, exercise=TRUE, exercise.setup="challenge-4-setup"}
 
-! c("a", "b") %in% letters
+!c("a", "b") %in% letters
 
 ```
 
-\newpage
 
-* __Logical Values__: You can also use logical values (`TRUE`, `FALSE`) to 
+
+### Logical Values
+
+You can also use logical values (`TRUE`, `FALSE`) to 
 extract elements of a vector. 
 
-```{r extractLetters, exercise=TRUE, exercise.eval=TRUE}
+```{r extractLetters, exercise=TRUE}
 letters[c(TRUE, TRUE, FALSE, FALSE, FALSE)] 
 ## Extracts the first two elements of the letters vector 
 
@@ -374,14 +390,14 @@ This should give you an intuition as to how we might be able to use the results
 of relational statements to extract the elements of the vector that satisfy 
 the relation. 
 
-\vspace{0.25cm}
 
-* __Which__: The `which` statement returns the *indices* of a vector, where a 
+### Which
+
+The `which` statement returns the *indices* of a vector, where a 
 relational statement is satisfied (evaluates to `TRUE`).   
 
-\vspace{0.25cm}
 
-```{r which, tidy = TRUE, exercise=TRUE, exercise.eval=TRUE}
+```{r which, tidy = TRUE, exercise=TRUE, exercise.lines=10}
 x_2 <- c(3, 5, 7, 9, 11, 13, 15)  
 
 which(x_2 > 8) 
@@ -393,16 +409,16 @@ which(x_2 == 7)
 
 ```
 
-\vspace{0.5cm}
 
-* __Matrices__: The above relational and which statements can be applied to a 
+### Matrices
+
+The above relational and which statements can be applied to a 
 matrix, or to a subset of the matrix (e.g., a vector). The relational and `which`
 statements are applied element wise (a step-by-step progression through the 
 matrix/vector entries).
 
-\vspace{0.25cm}
 
-```{r matricies, tidy = TRUE, exercise=TRUE, exercise.eval=TRUE}
+```{r matricies, tidy = TRUE, exercise=TRUE, exercise.lines=11}
 # The following are dating data, of one person's messages received per day for one week
 
 okcupid <- c(16, 9, 13, 5, 2, 17, 14)
@@ -415,12 +431,24 @@ row.names(messages) <- c("Monday", "Tuesday", "Wednesday", "Thursday",
 
 ```
 
-\pagebreak
 
-__Exercise 5:__ Use the messages matrix to return a matrix of *logical* values 
+> ### Challenge 5
+>
+>Use the messages matrix to return a matrix of *logical* values 
 which answer the following question:
  
-\vspace{0.25cm}
+```{r challenge-5-setup}
+# The following are dating data, of one person's messages received per day for one week
+
+okcupid <- c(16, 9, 13, 5, 2, 17, 14)
+match <- c(17, 7, 5, 16, 8, 13, 14)
+messages <- data.frame(Okcupid = okcupid, Match = match)
+# This makes the data from OkCupid the first column and the data from Match the second column
+
+row.names(messages) <- c("Monday", "Tuesday", "Wednesday", "Thursday",
+                         "Friday", "Saturday", "Sunday")
+
+```
 
 ```{r challenge-5, tidy = TRUE, exercise=TRUE, exercise.lines = 7}
 # Create a logical matrix to answer the question: 
@@ -442,14 +470,13 @@ which answer the following question:
 grade_code()
 ```
 
-\vspace{0.5cm}
-
-__Exercise 6:__ Use the messages matrix to return the *rows* of `messages` 
+> ### Challenge 6
+>
+>Use the messages matrix to return the *rows* of `messages` 
 which answer the following questions:
- 
-\vspace{0.25cm}
 
-```{r challenge-6, tidy = TRUE, exercise=TRUE, exercise.eval=TRUE}
+
+```{r challenge-6, tidy = TRUE, exercise=TRUE, exercise.lines=10,exercise.setup="challenge-5-setup"}
 # Use rows of the matrix to answer:  
 
 # when were the messages at OkCupid equal to 13?
@@ -459,15 +486,17 @@ which answer the following questions:
 
 ```
 
-\vspace{0.5cm}
 
-* __Subset__: The `subset` command takes in an object (vector, matrix, data 
+
+### Subset
+
+The `subset` command takes in an object (vector, matrix, data 
 frame) and returns the subset of that object where the entries meet the 
 relational conditions specified (evaluates to `TRUE`).  
 
-\vspace{0.25cm}
 
-```{r subset, tidy = TRUE, exercise=TRUE, exercise.eval=TRUE}
+
+```{r subset, tidy = TRUE, exercise=TRUE}
 x <- c(3, 5, 7, 9, 11, 13, 15)  
 
 subset(x, x > 6)
@@ -479,7 +508,7 @@ subset(x, x > 6)
 
 ```
 
-\vspace{0.25cm}
+
 
 ## Logicals (10 minutes)  
 
