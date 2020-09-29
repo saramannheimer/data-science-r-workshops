@@ -548,7 +548,7 @@ the statement, vector, or matrix.
 
 \vspace{0.5cm}
 
-```{r doubleLogical, tidy = TRUE, exercise=TRUE, exercise.eval=TRUE}
+```{r doubleLogical, tidy = TRUE, exercise=TRUE}
 c(TRUE, TRUE, FALSE) & c(TRUE, FALSE, FALSE)
 
 c(TRUE, TRUE, FALSE) | c(TRUE, FALSE, FALSE)
@@ -564,7 +564,7 @@ questions:
 
 \vspace{0.25cm}
 
-```{r logicals, tidy = TRUE, exercise=TRUE, exercise.eval=TRUE}
+```{r logicals, tidy = TRUE, exercise=TRUE}
 # Is the last day of the week under 5 messages or above 10 messages? 
 # (hint: last <- tail(okcupid, 1) could be helpful)
 
@@ -581,7 +581,7 @@ conditions, joined by logicals.
 
 \vspace{0.25cm}
 
-```{r subset2, tidy = TRUE, exercise=TRUE, exercise.eval=TRUE}
+```{r subset2, tidy = TRUE, exercise=TRUE, exercise.setup="challenge-5-setup"}
 bad_days <- subset(messages, Okcupid < 6 | Match < 6)
 
 bad_days
@@ -625,7 +625,7 @@ __single__ value (not a vector or matrix).
 
 \vspace{0.5cm}
 
-```{r if, tidy = TRUE, exercise=TRUE, exercise.eval=TRUE}  
+```{r if, tidy = TRUE, exercise=TRUE}  
 y <- -3 
 
 if(y < 0){
@@ -694,7 +694,7 @@ a __single__ value (not a vector or matrix).
 
 \vspace{0.25cm}
 
-```{r ifelse, tidy = TRUE, exercise=TRUE, exercise.eval=TRUE}  
+```{r ifelse, tidy = TRUE, exercise=TRUE}  
 y <- -3 
 
 if(y < 0){
@@ -725,7 +725,7 @@ the condition is `FALSE` (`statement2`).
 
 \vspace{0.25cm}
 
-```{r ifelse2, tidy = TRUE, exercise=TRUE, exercise.eval=TRUE}
+```{r ifelse2, tidy = TRUE, exercise=TRUE}
 
 ifelse(y < 0, "y is a negative number", "y is either positive or zero")
 
@@ -800,7 +800,7 @@ else{
 
 \vspace{0.25cm}
 
-```{r elseif, tidy = TRUE, exercise=TRUE, exercise.eval=TRUE}  
+```{r elseif, tidy = TRUE, exercise=TRUE}  
 y <- -3 
 
 if(y < 0){
@@ -820,7 +820,7 @@ are mutually exclusive (an observation can only belong to one piece).
 
 \vspace{0.25cm}
 
-```{r mutually, tidy = TRUE, exercise=TRUE, exercise.eval=TRUE}
+```{r mutually, tidy = TRUE, exercise=TRUE}
 
 x <- 6
 
@@ -919,7 +919,7 @@ __Example:__
 
 \vspace{0.25cm}
 
-```{r forloop, tidy = TRUE, exercise=TRUE, exercise.eval=TRUE}
+```{r forloop, tidy = TRUE, exercise=TRUE}
 
 for(i in 1:10) {
     print(i)
@@ -934,7 +934,7 @@ Now, let's take add the corresponding entries of two vectors together!
 
 \vspace{0.25cm}
 
-```{r twoVectors, eval = FALSE, exercise=TRUE, exercise.eval=TRUE}
+```{r twoVectors, eval = FALSE, exercise=TRUE}
 
 x <- seq(1, 10, by = 1)
 y <- seq(10, 28, by = 2)
@@ -1043,7 +1043,7 @@ can figure out how the loop proceeds through the indices.
 
 \vspace{0.25cm}
 
-```{r nestingForLoops, tidy = TRUE, exercise=TRUE, exercise.eval=TRUE}
+```{r nestingForLoops, tidy = TRUE, exercise=TRUE}
 for(i in 1:5){
   for(j in c("a", "b", "c", "d", "e")){
     print(paste(i, j))
@@ -1105,7 +1105,7 @@ A function allows for us to repeat several operations with a single command.
 Take for instance a function which converts heights from feet and inches to 
 centimeters, named `inch_to_cm()`.  
 
-```{r Functions, exercise=TRUE, exercise.eval=TRUE}
+```{r Functions, exercise=TRUE}
 inch_to_cm <- function(feet, inches) {
   inches <- feet*12 + inches
   cm <- inches * 2.54
@@ -1169,7 +1169,7 @@ the function. Take this example:
 
 \vspace{0.25cm}
 
-```{r scope, tidy = TRUE, exercise=TRUE, exercise.eval=TRUE}
+```{r scope, tidy = TRUE, exercise=TRUE}
 x <- 10
 ## globally defined variable 
 
@@ -1194,7 +1194,7 @@ within the function.
 
 \vspace{0.25cm}
 
-```{r scope2, tidy = TRUE, exercise=TRUE, exercise.eval=TRUE}
+```{r scope2, tidy = TRUE, exercise=TRUE}
 
 g <- function(){
   ## locally defined y
@@ -1245,7 +1245,7 @@ and `weight` columns of my data:
 
 \vspace{0.25cm}
 
-```{r WhyFunction, eval = FALSE, exercise=TRUE, exercise.eval=TRUE}
+```{r WhyFunction, eval = FALSE, exercise=TRUE}
 BlackfootFish$length_scaled <- (BlackfootFish$length - min(BlackfootFish$length, na.rm = TRUE)) /
   (max(BlackfootFish$length, na.rm = TRUE) - min(BlackfootFish$length, na.rm = TRUE))
 
@@ -1277,7 +1277,7 @@ The following snippet of code rescales a column to be between 0 and 1:
 
 \vspace{0.25cm}
 
-```{r rescalingFunction, eval = FALSE, tidy = TRUE, exercise=TRUE, exercise.eval=TRUE}
+```{r rescalingFunction, eval = FALSE, tidy = TRUE, exercise=TRUE}
 (BlackfootFish$length - min(BlackfootFish$length, na.rm = TRUE)) / 
   (max(BlackfootFish$length, na.rm = TRUE) - min(BlackfootFish$length, na.rm = TRUE))
 ```
@@ -1303,7 +1303,7 @@ variable `x`.
 
 \vspace{0.25cm}
 
-```{r temporary, tidy = TRUE, exercise=TRUE, exercise.eval=TRUE}
+```{r temporary, tidy = TRUE, exercise=TRUE}
 # code modification with temporary variables
 
 ```
@@ -1322,7 +1322,7 @@ instead calculate the range of `x` and refer to the first (minimum) and second
 The `range` function in `R` takes a single numeric input and returns the minimum
 and maximum (so this is not the "range" statistic but the information to calculate it):  
 
-```{r rangeFunction, exercise=TRUE, exercise.eval=TRUE}
+```{r rangeFunction, exercise=TRUE}
 range(seq(1, 5))     
 ```
 
@@ -1350,7 +1350,7 @@ sure that you specify the `na.rm()` option to ignore any NAs in the input vector
 
 \vspace{0.25cm}
 
-```{r challenge-14, eval = FALSE, tidy = TRUE, exercise=TRUE, exercise.eval=TRUE}
+```{r challenge-14, eval = FALSE, tidy = TRUE, exercise=TRUE}
 # Create rng = the range of x 
 
 
@@ -1393,7 +1393,7 @@ vector to be between 0 and 1. The function should take a single argument, `x`.
 
 \vspace{0.25cm}
 
-```{r function, tidy = TRUE, exercise=TRUE, exercise.eval=TRUE}
+```{r function, tidy = TRUE, exercise=TRUE}
 # Use the function template to create a function named rescale01 that perfoms the process outlined above, using the intermediate variables you previously defined
 
 myfunction <- function(arg1,...){
