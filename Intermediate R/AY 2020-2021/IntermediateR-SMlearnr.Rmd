@@ -82,7 +82,7 @@ __Exercise 1:__  Why does `R` produce an error for the following code?
 
 \vspace{0.25cm}
 
-```{r-whyError, message=TRUE, exercise=TRUE, eval = FALSE}
+```{r whyError, message=TRUE, exercise=TRUE, eval = FALSE}
 
 x[-1:3]
 
@@ -379,7 +379,7 @@ which(x > 8)
 
 which(x == 7)
 
-## Challenge: How would you use the indicies from these which statements to 
+## Challenge: How would you use the indices from these "which" statements to 
 ##            extract the elements of x that meet the criteria?
 
 ```
@@ -387,7 +387,7 @@ which(x == 7)
 \vspace{0.5cm}
 
 * __Matrices__: The above relational and which statements can be applied to a 
-matrix, or to a subset of the matrix (e.g. a vector). The relational and `which`
+matrix, or to a subset of the matrix (e.g., a vector). The relational and `which`
 statements are applied element wise (a step-by-step progression through the 
 matrix/vector entries).
 
@@ -827,10 +827,10 @@ that only repeat themselves until a conditional statement is evaluated to be
 
 ### For Loops  
 
-In the for loop figure above:   
+In the `for` loop figure above:   
 
 * The starting point (black dot) represents the initialization of the object(s) 
-being used in the `for` loop (i.e. the variables). `R` requires for you to 
+being used in the `for` loop (i.e., the variables). `R` requires for you to 
 initialize the objects you will use in your loop **before** you use them, it 
 does not automatically create the objects for you!   
 
@@ -851,9 +851,8 @@ evaluates to `FALSE` (`i` is not in `seq`).
 #### Notation  
 
 The `for` loop repeat statement is placed between parentheses after the `for` 
-statement. Directly after the repeat statement, in curly braces, are the the 
-instructions that are to be repeated. You will find the formatting that you like
-best for things such as loops and functions, but here is my preferred syntax:  
+statement. Directly after the repeat statement, in curly braces, are the instructions that are to be repeated. You will find the formatting that you like
+best for things such as loops and functions, but here is our preferred syntax:  
 
 \begin{center}
 \begin{verbatim}
@@ -885,7 +884,7 @@ __Example:__
 ```{r forloop, tidy = TRUE, exercise=TRUE, exercise.eval=TRUE}
 
 for(i in 1:10) {
-print(i)
+    print(i)
   }
 
 i ## should be 100 (the same as sim), unless the loop had issues!
@@ -941,7 +940,7 @@ grade_code()
 \vspace{0.5cm}
 
 
-__Remark:__ Like I used in the above `for` loop, it is often useful, to add a 
+__Remark:__ Like we used in the above `for` loop, it is often useful, to add a 
 `print()` statement inside the loop. This allows for you to verify that the 
 process is executing correctly and can save you some major headaches!
 
@@ -1058,7 +1057,7 @@ functions constitute "programming" as much as any single abstraction can. If you
 have written a function, you are a computer programmer! 
 
 At this point, you may be familiar with a smattering of `R` functions in a few
-different packages (e.g. `lm`, `glm`, `str`, `tapply`, etc.). Some of these
+different packages (e.g., `lm`, `glm`, `str`, `tapply`, etc.). Some of these
 functions take multiple arguments and return a single output, but the best way 
 to learn about the inner workings of functions is to write your own!  
 
@@ -1079,8 +1078,7 @@ inch_to_cm <- function(feet, inches) {
 
 \vspace{0.25cm}
 
-__Exercise 12__: Use the `inch_to_cm` function to convert your neighbor's 
-height!  
+__Exercise 12__: Use the `inch_to_cm` function to convert your height to cm!  
 
 
 ```{r challenge-12, tidy = TRUE, eval = FALSE, exercise=TRUE, exercise.lines = 7}
@@ -1210,10 +1208,10 @@ and `weight` columns of my data:
 \vspace{0.25cm}
 
 ```{r WhyFunction, eval = FALSE, exercise=TRUE, exercise.eval=TRUE}
-BlackfootFish$length <- (BlackfootFish$length - min(BlackfootFish$length, na.rm = TRUE)) /
+BlackfootFish$length_scaled <- (BlackfootFish$length - min(BlackfootFish$length, na.rm = TRUE)) /
   (max(BlackfootFish$length, na.rm = TRUE) - min(BlackfootFish$length, na.rm = TRUE))
 
-BlackfootFish$weight <- (BlackfootFish$weight - min(BlackfootFish$weight, na.rm = TRUE)) /
+BlackfootFish$weight_scaled <- (BlackfootFish$weight - min(BlackfootFish$weight, na.rm = TRUE)) /
   (max(BlackfootFish$weight, na.rm = TRUE) - min(BlackfootFish$length, na.rm = TRUE))
 ```  
 
@@ -1241,7 +1239,7 @@ The following snippet of code rescales a column to be between 0 and 1:
 
 \vspace{0.25cm}
 
-```{r rescalingFunction, , eval = FALSE, tidy = TRUE, exercise=TRUE, exercise.eval=TRUE}
+```{r rescalingFunction, eval = FALSE, tidy = TRUE, exercise=TRUE, exercise.eval=TRUE}
 (BlackfootFish$length - min(BlackfootFish$length, na.rm = TRUE)) / 
   (max(BlackfootFish$length, na.rm = TRUE) - min(BlackfootFish$length, na.rm = TRUE))
 ```
@@ -1284,7 +1282,7 @@ instead calculate the range of `x` and refer to the first (minimum) and second
 (maximum) elements when they are needed.  
 
 The `range` function in `R` takes a single numeric input and returns the minimum
-and maximum:  
+and maximum (so this is not the "range" statistic but the information to calculate it):  
 
 ```{r rangeFunction, exercise=TRUE, exercise.eval=TRUE}
 range(seq(1, 5))     
