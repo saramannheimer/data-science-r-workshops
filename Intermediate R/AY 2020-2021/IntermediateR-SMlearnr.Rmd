@@ -16,7 +16,7 @@ library(learnr)
 library(tidyverse)
 library(gradethis)
 knitr::opts_chunk$set(echo = FALSE, exercise.checker = gradethis::grade_learnr)
-
+BlackfootFish <- read.csv("data/BlackfootFish.csv", header = TRUE)
 ```
 
 
@@ -896,7 +896,7 @@ Now, let's take add the corresponding entries of two vectors together!
 
 \vspace{0.25cm}
 
-```{r, eval = FALSE, exercise=TRUE, exercise.eval=TRUE}
+```{r twoVectors, eval = FALSE, exercise=TRUE, exercise.eval=TRUE}
 
 x <- seq(1, 10, by = 1)
 y <- seq(10, 28, by = 2)
@@ -955,7 +955,7 @@ with the $1^{st}$ row, until you've sampled 1900 rows.
 \vspace{0.5cm}
 
 ```{r challenge-11, tidy = TRUE, eval = FALSE, exercise=TRUE, exercise.lines = 7}
-BlackfootFish <- read.csv("data/BlackfootFish.csv", header = TRUE)
+BlackfootFish <- read.csv("https://raw.githubusercontent.com/saramannheimer/data-science-r-workshops/master/Intermediate%20R/AY%202020-2021/data/BlackfootFish.csv", header = TRUE)
 
 size <- 1900
 
@@ -1312,11 +1312,11 @@ sure that you specify the `na.rm()` option to ignore any NAs in the input vector
 
 \vspace{0.25cm}
 
-```{r, eval = FALSE, tidy = TRUE, exercise=TRUE, exercise.eval=TRUE}
+```{r challenge-14, eval = FALSE, tidy = TRUE, exercise=TRUE, exercise.eval=TRUE}
 # Create rng = the range of x 
 
 
-# Rewrite the code snippet from Excercise 13 to now 
+# Rewrite the code snippet from Exercise 13 to now 
 # refer to rng instead of min(x) and max(x)
 
 
