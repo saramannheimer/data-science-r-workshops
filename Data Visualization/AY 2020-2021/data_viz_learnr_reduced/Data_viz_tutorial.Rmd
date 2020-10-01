@@ -112,7 +112,7 @@ and this [handy cheatsheet on **`ggplot2`** (link)](https://github.com/rstudio/c
 
 ### Presentation of the Survey Data
 
-The data used in this workshop are a time-series for a small mammal community in southern Arizona. This is part of a project studying the effects of rodents and ants on the plant community that has been running for almost 40 years, but we will focus on the years 1996 to 2002 (_n_=11353 observations). The rodents are sampled on a series of 24 plots, with different experimental manipulations controlling which rodents are allowed to access which plots. This is simplified version of the full data set that has been used in over 100 publications and was provided by the Data Carpentries (https://datacarpentry.org/ecology-workshop/data/). We are going to focus on animal species diversity and weights in this workshop. The dataset is stored as a comma separated value (CSV) file.
+The data used in this workshop are a time-series for a small mammal community in southern Arizona. This is part of a project studying the effects of rodents and ants on the plant community that has been running for almost 40 years, but we will focus on the years 1996 to 2002 (_n_=11332 observations). The rodents are sampled on a series of 24 plots, with different experimental manipulations controlling which rodents are allowed to access which plots. This is simplified version of the full data set that has been used in over 100 publications and was provided by the Data Carpentries (https://datacarpentry.org/ecology-workshop/data/). We are going to focus on animal species diversity and weights in this workshop. The dataset is stored as a comma separated value (CSV) file.
 Each row holds information for a single animal, and the columns represent (along with some others we will not use):
 
 | Column           | Description                        |
@@ -132,7 +132,7 @@ We'll read in our data using the `read_csv()` function, from the tidyverse
 package **`readr`**, instead of `read.csv()`.
 
 ```{r load-data, message = FALSE, exercise=TRUE}
-surveys <- read_csv("https://raw.githubusercontent.com/saramannheimer/data-science-r-workshops/master/Data%20Visualization/AY%202020-2021/data/surveys.csv")
+surveys <- read_csv("https://raw.githubusercontent.com/saramannheimer/data-science-r-workshops/master/Data%20Visualization/AY%202020-2021/data/surveys2.csv")
 ```
 
 You will see the message `Parsed with column specification`, followed by each 
@@ -405,7 +405,7 @@ surveys %>%
 
 **Locally**  
 
-```{r, warning = FALSE}
+```{r color-local, exercise=TRUE}
 surveys %>% 
   ggplot(mapping = aes(x = weight, y = hindfoot_length)) +
   geom_jitter(aes(color = species_id), alpha = 0.1) + 
@@ -1114,7 +1114,7 @@ yearly_sex_counts %>%
   geom_line() +
   facet_wrap(vars(species_id)) +
   theme_bw() +
-  labs(title = "Observed Genera Through Time",
+  labs(title = "Observed Species Through Time",
        x = "Year of Observation",
        y = "Number of Rodents",  
        color = "Sex") 
@@ -1145,7 +1145,7 @@ yearly_sex_counts %>%
   geom_line() +
   facet_wrap(vars(species_id)) +
   theme_bw() +
-  labs(title = "Observed Genera Through Time",
+  labs(title = "Observed Species Through Time",
       x = "Year of Observation",
       y = "Number of Rodents", 
       color = "Sex") +
@@ -1168,8 +1168,8 @@ yearly_sex_counts %>%
   geom_line() +
   facet_wrap(vars(species_id)) +
   theme_bw() +
-  labs(title = "Observed Genera by \n Year of Observation",
-      x = "",
+  labs(title = "Observed Species by \n Year of Observation",
+      x = "Year of Observation",
       y = "Number of Rodents", 
       color = "Sex") +
   theme(text = element_text(size = 16)) + 
@@ -1188,7 +1188,7 @@ yearly_sex_counts %>%
   geom_line() +
   facet_wrap(vars(species_id)) +
   theme_bw() +
-  labs(title = "Observed Genera by Year of Observation",
+  labs(title = "Observed Species by Year of Observation",
         x = "",
         y = "Number of Rodents", 
         color = "Sex") +
@@ -1216,8 +1216,8 @@ yearly_sex_counts %>%
   ggplot(mapping = aes(x = year, y = n, color = sex)) +
     geom_line() +
     facet_wrap(vars(species_id)) +
-    labs(title = "Observed Genera by Year of Observation by",
-        x = "",
+    labs(title = "Observed Species by Year of Observation by Sex",
+        x = "Year of Observation",
         y = "Number of Rodents", 
         color = "Sex") +
   theme_bw() +
@@ -1236,7 +1236,7 @@ yearly_sex_counts %>%
 ### Removing Grid Lines 
 
 By default, the background of a `ggplot()` contains both minor and major 
-gridlines. These can make the plot look a bit busy and difficult for the reader 
+gridlines. These can make the plot look a bit busy and sometimes difficult for the reader 
 to follow. As you may have guessed, to remove these gridlines, we add another
 theme to our plot. 
 
@@ -1247,8 +1247,8 @@ yearly_sex_counts %>%
   ggplot(mapping = aes(x = year, y = n, color = sex)) +
   geom_line() +
   facet_wrap(vars(species_id)) +
-  labs(title = "Observed Genera by Year of Observation by",
-      x = "",
+  labs(title = "Observed Species by Year of Observation by Sex",
+      x = "Year of Observation",
       y = "Number of Rodents", 
       color = "Sex") +
   theme(axis.text.x = element_text(size = 10), 
@@ -1312,6 +1312,13 @@ surveys %>%
   ggplot(aes(x = species_id, y = hindfoot_length, color = genus)) +
   geom_boxplot() +
   scale_color_manual(values = cbPalette_grey)
+
+surveys %>% 
+  ggplot(aes(x = species_id, y = hindfoot_length, color = genus)) +
+  geom_boxplot() +
+  scale_color_manual(values = cbPalette_blk)
+
+
 ```
 
 #### Package Specification 
