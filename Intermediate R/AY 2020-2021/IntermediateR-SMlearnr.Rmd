@@ -36,10 +36,11 @@ BlackfootFish <- read.csv("data/BlackfootFish.csv", header = TRUE)
 
 ## Orientation of/for the workshop
 
-*  The goal of this workshop is to teach you to write modular code and some best 
-practices for writing code in `R`. In the Introduction to R workshop (recording available at http://www.montana.edu/datascience/training/), you learned how to get started with a local installation of R, RStudio, and using projects and RMarkdown in RStudio. This workshop uses a web-server to run a 'Shiny' app that hosts R in the background. You will only need to interact with codechunks and answer some questions via a web-browser. The codechunks you interact with match the experience you would have writing and running your code in RMarkdown files. [By doing this, we are able to focus these workshops on coding skills. But to use R yourself, you will need to have your own local installation or can use Rstudio.cloud (limited free access).]
+*  This workshop assumes some basic familiarity with working in `R` such as what you might obtain in the "Introduction to R" workshop or in a statistics course that uses `R` heavily, such as STAT 217 or STAT 411/511. If you have not interacted with `R` previously, some of the assumptions of your background for this workshop might be a barrier. We would recommend getting what you can from this workshop and you can always revisit the materials at a later date after filling in some of those basic `R` skills. We all often revisit materials and discover new and deeper aspects of the content that we were not in a position to appreciate in a first exposure.
 
-*  These workshops are co-organized by the MSU Library (Sara Mannheimer, Data Librarian) and Statistical Consulting and Research Services (SCRS, Mark Greenwood, Director). SCRS is supported by Montana INBRE (grant #) and Mountain West CTR-IN (grant #).
+*  In order to focus this workshop on coding, we developed this interactive website for you to play in a set of "sandboxes" and try your hand at implementing the methods we are discussing. When each code chunk is ready to run (all can be edited, many have the code prepared for you), you can click on "Run Code". This will run `R` in the background on a server. For the "Challenges", you can get your answer graded although many have multiple "correct" answers, so don't be surprised if our "correct" answer differs from yours. The "Solution" is also provided in some cases so you can see a solution - but you will learn more by trying the challenge first before seeing the answer. Each sandbox functions independently, which means that you can pick up working at any place in the documents and re-set your work without impacting other work (this is VERY different from how `R` usually works!). Hopefully this allows you to focus on the code and what it does... The "Start over" button can be used on any individual sandbox or you can use the one on the left tile will re-set all the code chunks to the original status. 
+
+*  These workshops are taught by Sara Mannheimer, Greta Linse, and Mark Greenwood and co-organized by the MSU Library, Statistical Consulting and Research Services (SCRS), and the Department of Mathematical Sciences. More details on us and other workshops are available at the end of the session.
 
 *  First, we will start with the building blocks of conditional statements, the 
 relational operator. Next, we will join sequences of relational operations 
@@ -264,7 +265,7 @@ c("a", "b") %in% letters
 >
 >Write `R` code to see if:
 >
-  -  2 * x + 0.3 is equal to y
+  -  2 * x + 0.2 is equal to y
   -  "hello" is greater than or equal to "goodbye"
   -  TRUE is greater than FALSE
   -  dna1 is longer than 5 bases (use nchar() to figure out how long a string is)
@@ -276,7 +277,7 @@ c("a", "b") %in% letters
 ```
 
 ```{r challenge-3-solution, exercise.setup="relOp-setup"}
-2 * x + 0.3 == y
+2 * x + 0.2 == y
 
 "hello" > "goodbye"
 
@@ -294,7 +295,7 @@ grade_code()
 
 ### Comparing Decimal Valued Numbers
 
-Why does the output from your first equality check not seem right? What do you 
+Why does the output from `2 * x + 0.2 == y` not seem right? What do you 
 think might be going on?  
 
 General `R` advice is that the `==` operator should only be used for comparisons
@@ -304,11 +305,15 @@ doesn't accurately represent a number like 1.3. When the code is interpreted by
 `R`, the "1.3" is rounded to the nearest number in floating-point format, 
 which results in a small rounding error even before the calculation happens.
 
-This is why, general `R` advice is to use the `all.equal()` function to 
-check for equality of two doubles. This function "is a utility to 
-compare `R` objects `x` and `y` testing *near equality*." This means that the 
+This is why, general `R` advice is to use the `all.equal(x, y)` function to 
+check for equality of two doubles. This function, applied to the two arguments, "is a utility to compare `R` objects `x` and `y` testing *near equality*." This means that the 
 function allows for a little bit of wiggle room in the rounding errors that are
 associated with doubles. 
+
+```{r allequal, exercise=TRUE}
+#Verify the result using all.equal(..., ...)
+
+```
 
 ### Comparing Characters
 
@@ -317,7 +322,8 @@ How did `R` know how to compare the words `hello` and `goodbye`?
 ```{r compareCharacters, exercise=TRUE}
 "hello" > "goodbye"
 
-Sys.getlocale()
+# What does this output suggest?
+Sys.getlocale(category = "LC_COLLATE")
 ```
 
 
@@ -436,7 +442,7 @@ row.names(messages) <- c("Monday", "Tuesday", "Wednesday", "Thursday",
 
 > ### Challenge 5
 >
->Use the messages matrix to return a matrix of *logical* values 
+>Use the `messages` matrix to return a matrix of *logical* values 
 which answer the following question:
  
 ```{r okCupid-setup}
@@ -461,7 +467,6 @@ row.names(messages) <- c("Monday", "Tuesday", "Wednesday", "Thursday",
 
 ```{r challenge-5-solution}
 
-## Mark add solution here
 
 
 
@@ -485,6 +490,18 @@ which answer the following questions:
 
 # when were the messages at OkCupid greater than Match?
 
+```
+
+
+```{r challenge-6-solution}
+which(messages[,1] == 13)
+
+which(messages[,1] > messages[,2])
+
+```
+
+```{r challenge-6-check}
+grade_code()
 ```
 
 
