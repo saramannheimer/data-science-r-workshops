@@ -413,8 +413,8 @@ which(x_2 > 8)
 
 which(x_2 == 7)
 
-## Challenge: How would you use the indices from these "which" statements to 
-##            extract the elements of x that meet the criteria?
+## Mini-challenge: How would you use the indices from these "which" statements to 
+##            extract the elements of x_2 that meet the criteria?
 
 ```
 
@@ -458,7 +458,7 @@ row.names(messages) <- c("Monday", "Tuesday", "Wednesday", "Thursday",
 ```
 
 ```{r challenge-5, exercise=TRUE, exercise.lines = 7, exercise.setup="okCupid-setup"}
-# Create a logical matrix to answer the question: 
+# Create a logical matrix to provide information that would allow you to answer the question: 
 # For what days were the number of messages at either site greater than 12? 
 
 
@@ -466,7 +466,7 @@ row.names(messages) <- c("Monday", "Tuesday", "Wednesday", "Thursday",
 ```
 
 ```{r challenge-5-solution}
-
+messages > 12
 
 
 
@@ -494,9 +494,9 @@ which answer the following questions:
 
 
 ```{r challenge-6-solution}
-which(messages[,1] == 13)
+messages[which(messages[,1] == 13),]
 
-which(messages[,1] > messages[,2])
+messages[which(messages[,1] > messages[,2]),]
 
 ```
 
@@ -515,15 +515,32 @@ relational conditions specified (evaluates to `TRUE`).
 
 
 ```{r subset, exercise=TRUE}
-x <- c(3, 5, 7, 9, 11, 13, 15)  
+x_3 <- c(3, 5, 7, 9, 11, 13, 15)  
 
-subset(x, x > 6)
-
-## Challenge: Change the which() statement code to a subset() statement, 
-##            extracting the days that the number of messages at OkCupid 
-##            greater than the messages at Match
+subset(x_3, x_3 > 6)
+```
 
 
+> ### Challenge 7
+>
+>Using the okcupid "data" from above, answer the following 
+questions:  
+Change the which() statement code to a subset() statement, extracting the days that the number of messages at OkCupid greater than the messages at Match>
+>
+
+```{r challenge-7, exercise=TRUE, exercise.lines=10, exercise.setup="okCupid-which"}
+# Change the which() statement code to a subset() statement, extracting the days that the number of messages at OkCupid greater than the messages at Match
+
+```
+
+```{r challenge-7-solution, exercise.setup="okCupid-which"}
+subset(messages, messages[,1] > messages[,2])
+
+
+```
+
+```{r challenge-7-check}
+grade_code()
 ```
 
 
@@ -533,7 +550,7 @@ subset(x, x > 6)
 These statements allow for us to change or combine the results of the relational
 statements we discussed before, using __and__, __or__, or __not__. 
 
-### "and" statements 
+### "and" statements (`&`)
 
 These statements evaluate to `TRUE` only if ***every*** relational 
 statement evaluates to `TRUE`.   
@@ -544,7 +561,7 @@ relational statements are `TRUE`
 relational statements is `FALSE` (the first one)     
 
 
-### "or" statements 
+### "or" statements (`|`)
 
 These statements evaluate to `TRUE` if  ***at least one*** relational
 statement evaluates to `TRUE`.  
@@ -555,7 +572,7 @@ statement evaluates to `TRUE`.
     relational statements evaluate to `FALSE` 
 
 
-### "not" statements
+### "not" statements (`!`)
 
 These statements convert (negate) the statement it proceeds, changing 
 `TRUE` to `FALSE` and `FALSE` to `TRUE`. 
@@ -585,34 +602,36 @@ c(TRUE, TRUE, FALSE) && c(TRUE, FALSE, FALSE)
 
 
 
-> ### Challenge 7
+> ### Challenge 8
 >
 >Using the okcupid vector from above, answer the following 
 questions:  
   1. Is the last day of the week under 5 messages or above 10 messages?  
-  (HINT: `last <- tail(okcupid, 1)` could be helpful)  
+  (HINT: `last <- tail(messages$okcupid, n=1)` could be helpful)  
   2. Is the last day of the week between 15 and 20 messages, excluding 15 but including 20?
 >
 
 
 
-```{r challenge-7, exercise=TRUE, exercise.lines=10, exercise.setup="okCupid-setup"}
+```{r challenge-8, exercise=TRUE, exercise.lines=10, exercise.setup="okCupid-setup"}
 # Is the last day of the week under 5 messages or above 10 messages? 
-# (hint: last <- tail(okcupid, 1) could be helpful)
-
+# (hint: last <- tail(messages$okcupid, n=1) could be helpful)
 
 # Is the last day of the week between 15 and 20 messages, excluding 15 but including 20?
 
+# Make sure you test your code with some other values
+```
+
+```{r challenge-8-solution, exercise.setup="okCupid-setup"}
+last <- tail(messages$okcupid, 1)
+
+last < 5 | last >10
+
+last > 15 & last <= 20 #Or last > 15 & (last < 20 | last == 20)
 
 ```
 
-```{r challenge-7-solution, exercise.setup="okCupid-setup"}
-
-## Mark add solution here
-
-```
-
-```{r challenge-7-check}
+```{r challenge-8-check}
 grade_code()
 ```
 
@@ -621,11 +640,11 @@ condition if joined by logicals.
 
 
 ```{r subset2, exercise=TRUE, exercise.setup="okCupid-setup", exercise.lines=10}
-bad_days <- subset(messages, okCupid < 6 | match < 6)
+bad_days <- subset(messages, okcupid < 6 | match < 6)
 
 bad_days
 
-good_days <- subset(messages, okCupid > 10 & match > 10)
+good_days <- subset(messages, okcupid > 10 & match > 10)
 
 good_days
 
@@ -651,7 +670,7 @@ if(condition){
 }
 ```
 
-* the condition inside the parenthesis (a relational statement) is what the 
+* the condition inside the parentheses (a relational statement) is what the 
 computer executes to check its logical value,  
     -  if the condition evaluates to `TRUE` then the statement inside the curly
     braces (`{}`) is output, and  
@@ -672,30 +691,30 @@ if(y < 0){
 ```
 
 
-> ### Challenge 8
+> ### Challenge 9
 >
->Using the `last` number from above, write an `if` statement that 
-prints "You're popular!" if the number of messages exceeds 10.  
+>Using the `last` number from Challenge 8, write an `if` statement that 
+prints "You're popular!" if the number of messages from okcupid exceeds 10.  
 >
-> Mark (Greta here) this challenge makes no sense. Is it referring to Challenge 7????
 
 
-```{r challenge-8, exercise=TRUE, exercise.lines = 7, exercise.setup="okCupid-setup"}
+```{r challenge-9, exercise=TRUE, exercise.lines = 7, exercise.setup="okCupid-setup"}
 # hint: use the last day of the week for okcupid that you made above
-
-
-
-```
-
-```{r challenge-8-solution, exercise.setup="okCupid-setup"}
-
-## Mark add solution here
-
+last <- tail(messages$okcupid, 1)
 
 
 ```
 
-```{r challenge-8-check}
+```{r challenge-9-solution, exercise.setup="okCupid-setup"}
+last <- tail(messages$okcupid, 1)
+
+if (last > 10){
+  "You're popular!"
+}
+
+```
+
+```{r challenge-9-check}
 grade_code()
 ```
 
@@ -767,28 +786,28 @@ ifelse(y < 0, "y is a negative number", "y is either positive or zero")
 
 
 
-> ### Challenge 9
+> ### Challenge 10
 >
->Using the if statement from Challenge 8, add the following else 
+>Using the if statement from Challenge 9, add the following else 
 statement: When the if-condition on messages is not met, R prints out "Send more
 messages!". 
 
 
 
-```{r challenge-9, exercise=TRUE, exercise.lines = 7, exercise.setup="okCupid-setup"}
+```{r challenge-10, exercise=TRUE, exercise.lines = 7, exercise.setup="okCupid-setup"}
 # Challenge: Rewrite the if, else function from above using R's built in ifelse() function. 
+last <- tail(messages$okcupid, 1)
 
 ```
 
-```{r challenge-9-solution}
+```{r challenge-10-solution}
+last <- tail(messages$okcupid, 1)
 
-## Mark add solution here
-
-
+ifelse(last > 10, "You're popular!", "Send more messages!")
 
 ```
 
-```{r challenge-9-check}
+```{r challenge-10-check}
 grade_code()
 ```
 
@@ -797,8 +816,8 @@ grade_code()
 ### Else/If Statements  
 
 On occasion, you may want to add a third (or fourth, or fifth, ...) condition to
-your `ifelse` statement, which is where the `elseif` statement comes in. The
-`elseif` statement is added to the `ifelse` as follows:  
+your `ifelse` statement, which is where the `else if` statement comes in. The
+`else if` statement is added to the `ifelse` as follows:  
 
 ```
 if(condition1){
@@ -817,7 +836,7 @@ else{
     -  if it evaluates to `TRUE` then the first statement (`statement1`) is 
     output,  
     
-    -  if the condition is `FALSE` the computer moves on to the `elseif` 
+    -  if the condition is `FALSE` the computer moves on to the `else if` 
     condition,  
 
 * Now the second condition (`condition2`) is executed, 
@@ -836,7 +855,7 @@ else{
 
 
 ```{r elseif, exercise=TRUE, exercise.lines=10}  
-y <- -3 ## Try changing this number, for example y <- 5 
+y <- -3 ## Try changing this number, for example y <- 5 and y <- 0
 
 if(y < 0){
   "y is a negative number"
@@ -850,8 +869,9 @@ if(y < 0){
 
 
 > NOTE: Conditional statements should be written so that the components 
-are mutually exclusive (an observation can only belong to one piece).  
+are mutually exclusive (an observation can only belong to one piece). 
 
+> The modulo (`%%`) returns the remainder of the division of the number to the left by the number on the right, for example 5 modulo 3 or 5 %% 3 is 2.
 
 
 ```{r mutually, exercise=TRUE, exercise.lines=10}
@@ -906,9 +926,9 @@ initialize the objects you will use in your loop **before** you use them, it
 does not automatically create the objects for you!   
 
 * The diamond shapes represent the repeat condition the computer is required to 
-evaluate. The computer evaluates the conditional statement (`i in seq`) as 
+evaluate. The computer evaluates the conditional statement (`i in sequence`) as 
 either `TRUE` or `FALSE`. In other terms, you are testing if the current 
-value of `i` (the index/counter) is within the specified range of values (`seq`),
+value of `i` (the index/counter) is within the specified range of values (`sequence`),
 where this range is either defined in the initialization or directly within the
 condition statement (like `1:100`).  
 
@@ -917,7 +937,7 @@ iteration. This could be a simple statement, a block of instructions, or another
 loop (nested loops). 
 
 The computer marches through this process until the repeat decision (condition) 
-evaluates to `FALSE` (`i` is not in `seq`).  
+evaluates to `FALSE` (`i` is not in `sequence`).  
 
 #### Notation  
 
@@ -936,9 +956,9 @@ for(i in 1:num){
 Alternatively, you could use:
 
 ```
-seq <- 1:100
+sequence <- 1:100
 
-for(i in seq){
+for(i in sequence){
               statement
 }
 ```
@@ -955,7 +975,7 @@ i ## should be 10 (the last number of the sequence 1:10), unless the loop had is
 ```
 
 
-Now, let's take and add the corresponding entries of two vectors together!  
+Now, let's add the corresponding entries of two vectors together!  
 
 \vspace{0.25cm}
 
@@ -977,32 +997,30 @@ z ## examine the resulting vector
 ```
 
 
-```{r challenge-10-setup}
+```{r challenge-11-setup}
 x <- seq(1, 10, by = 1)
 y <- seq(10, 28, by = 2)
 ```
 
 
-> ### Challenge 10
+> ### Challenge 11
 >
 >How could the above calculation be done outside of a loop?  
 
-```{r challenge-10, exercise=TRUE, exercise.lines=7}
+```{r challenge-11, exercise=TRUE, exercise.lines=7}
 # code to execute adding of the x and y vectors from the example above,
 # NOT in a loop
 
 ```
 
 
-```{r challenge-10-solution}
-
-## Mark add solution here
-
-
+```{r challenge-11-solution}
+z <- x + y
+z
 
 ```
 
-```{r challenge-10-check}
+```{r challenge-11-check}
 grade_code()
 ```
 
@@ -1014,22 +1032,21 @@ grade_code()
 process is executing correctly and can save you some major headaches!
 
 
-> ### Challenge 11
+> ### Challenge 12
 > 
 >Recursive `for-loop`!  
 >
 >Read in the BlackfootFish dataset and modify the code to write a `for-loop` to 
 find the indices needed to sample every $7^{th}$ row from the dataset, starting 
-with the $1^{st}$ row, until you've sampled 1900 rows. 
+with the $1^{st}$ row, until you've sampled 1900 rows. This would allow us to split the data set into "testing" and "training" samples, possibly using the `testing` data for assessing a model we develop using the "training" data.
 
-\vspace{0.5cm}
 
-```{r challenge-11, eval=FALSE, exercise=TRUE, exercise.lines = 20}
+```{r challenge-12, eval=FALSE, exercise=TRUE, exercise.lines = 20}
 BlackfootFish <- read.csv("https://raw.githubusercontent.com/saramannheimer/data-science-r-workshops/master/Intermediate%20R/AY%202020-2021/data/BlackfootFish.csv", header = TRUE)
 
-size <- 1900
+n_testing <- 1900
 
-samps <- rep(NA, 1900)
+samps <- rep(NA, n_testing)
 ## Initializing the samps vector, for storing indicies
 
 samps[1] <- 1
@@ -1037,7 +1054,7 @@ samps[1] <- 1
 
 # Code snippet: 
 # Create the code for the process will be executed at each step
-# e.g. How will you get the next sample after 1?
+# e.g., How will you get the next sample after 1?
 
 for(i in 2:#ending index here){
   samps[i] <- # process you execute at every index
@@ -1048,15 +1065,33 @@ training <- BlackfootFish[-samps, ]
 ```
 
 
-```{r challenge-11-solution}
+```{r challenge-12-solution}
 
-## Mark add solution here
+n_testing <- 1900
+
+samps <- rep(NA, n_testing)
+## Initializing the samps vector, for storing indices
+
+samps[1] <- 1
+## Setting first sample index to 1 (first row)
+
+# Code snippet: 
+# Create the code for the process will be executed at each step
+# e.g., How will you get the next sample after 1?
+
+for(i in 2:n_testing){
+  samps[i] <- samps[i-1] + 7
+}
+
+testing <- BlackfootFish[samps, ]
+training <- BlackfootFish[-samps, ]
+
 
 
 
 ```
 
-```{r challenge-11-check}
+```{r challenge-12-check}
 grade_code()
 ```
 
@@ -1064,7 +1099,7 @@ grade_code()
 
 #### Nesting For Loops  
 
-Now that you know that `for` loops can also be nested, you're probably wondering
+The section title suggest that `for` loops can also be nested, you're probably wondering
 how this would look. 
 
 In nested `for` loops, you have two indices keeping track of where you are in 
@@ -1115,10 +1150,10 @@ and returning an output.
 Functions gather a sequence of operations into a whole, preserving it for 
 ongoing use. Functions provide:  
 
-*  a name we can remember and invoke it by  
-*  relief from the need to remember individual operations  
-*  a defined set of inputs and expected outputs  
-*  rich connections to the larger programming environment  
+*  a name we can remember and invoke it by,  
+*  relief from the need to remember individual operations,  
+*  a defined set of inputs and expected outputs, and  
+*  rich connections to the larger programming environment.  
 
 As the basic building block of most programming languages, user-defined 
 functions constitute "programming" as much as any single abstraction can. If you
@@ -1144,7 +1179,7 @@ feet_inch_to_cm <- function(feet, inches) {
 }
 ```
 
-```{r challenge-12-setup}
+```{r challenge-13-setup}
 feet_inch_to_cm <- function(feet, inches) {
   inches <- feet*12 + inches
   cm <- inches * 2.54
@@ -1153,24 +1188,24 @@ feet_inch_to_cm <- function(feet, inches) {
 }
 ```
 
-> ### Challenge 12
+> ### Challenge 13
 >
 >Use the `feet_inch_to_cm` function to convert your height to cm!  
 
 
-```{r challenge-12, eval = FALSE, exercise=TRUE, exercise.lines = 7}
+```{r challenge-13, eval = FALSE, exercise=TRUE, exercise.lines = 7}
 
 ## Your code goes here. NOTE, the solution will use a height of 5' 7"
 
 ```
 
 
-```{r challenge-12-solution}
+```{r challenge-13-solution}
 feet_inch_to_cm(5,7)
 
 ```
 
-```{r challenge-12-check}
+```{r challenge-13-check}
 grade_result(
   pass_if(~ identical(.result, 170.18))
 )
@@ -1248,8 +1283,6 @@ g()
 
 ```
 
-\vspace{0.5cm}
-
 ### Summary
 
 1. When you call a function, a new environment is created for the function to do
@@ -1257,10 +1290,10 @@ its work in.
 2. The new environment is populated with the argument values passed in to the 
 function.  
 3. Objects are looked for _first_ in the function environment.  
-4. If objects are not found in the function environment, the are then looked for
+4. If objects are not found in the function environment, they are then looked for
 in the global environment. 
 
-
+* This scoping issue emphasizes the need for using good global variable and data frame names that are informative and explicit, not reused, and also not function or typical argument names.
 
 ### Why Write a Function? 
 
@@ -1279,9 +1312,8 @@ $$y_{scaled} = \frac{y_i - min\{y_1, y_2,..., y_n\}}{max\{y_1, y_2,..., y_n\}
 - min\{y_1, y_2,..., y_n\}}$$
 
 The following `R` code would carry out this rescaling procedure for the `length`
-and `weight` columns of the `BlackfeetFish` data:  
+and `weight` columns of the `BlackfootFish` data:  
 
-\vspace{0.25cm}
 
 ```{r WhyFunction, exercise=TRUE}
 BlackfootFish$length_scaled <- (BlackfootFish$length - min(BlackfootFish$length, na.rm = TRUE)) /
@@ -1292,7 +1324,7 @@ BlackfootFish$weight_scaled <- (BlackfootFish$weight - min(BlackfootFish$weight,
 ```  
 
 
-We could continue to copy and paste for other columns of my data, but you can 
+We could continue to copy and paste for other columns of the data, but you can 
 probably get the idea. This process of duplicating an action multiple times 
 makes it difficult to understand the intent of the process. Additionally, it 
 makes it very difficult to spot the mistakes. 
@@ -1304,8 +1336,7 @@ makes it very difficult to spot the mistakes.
 Often you will find yourself in the position of needing to find a function that 
 performs a specific task, but you do not know of a function or a library that 
 would help you. You could spend time Googling for a solution, but in the amount 
-of time it takes you to find something you could have already written your own 
-function!   
+of time it takes you to find something, it is possible that you could have already written your own function!   
 
 
 
@@ -1322,7 +1353,6 @@ The following snippet of code rescales the `length` column to be between 0 and 1
 ```
 
 
-
 Our goal is to turn this snippet of code into a general rescale function that we
 can apply to any numeric vector. 
 
@@ -1335,25 +1365,25 @@ For this process there is one input, the numeric vector to be rescaled
 (currently `BlackfootFish$length`). We instead want to refer to this input using
 a temporary variable. It is common (in `R`) to refer to a generic vector of data as `x`. 
 
-> ### Challenge 13
+> ### Challenge 14
 >
 >1. Modify the code snippet above to instead refer to a temporary 
 variable `x`, make sure your code does not depend on a specific dataset. 
 >2. Save the rescaled vector in a variable called `x_rescaled`
 
 
-```{r challenge-13, exercise=TRUE}
+```{r challenge-14, exercise=TRUE}
 # code modification with temporary variable "x"
 x <- BlackfootFish$length
 ```
 
-```{r challenge-13-solution}
+```{r challenge-14-solution}
 x <- BlackfootFish$length
 x_rescaled <- (x - min(x, na.rm = TRUE)) / 
   (max(x, na.rm = TRUE) - min(x, na.rm = TRUE))
 ```
 
-```{r challenge-13-check}
+```{r challenge-14-check}
 grade_code()
 
 ```
@@ -1365,7 +1395,7 @@ when needed. We also notice that we use the maximum value of `x`, so we could
 instead calculate the range of `x` and refer to the first (minimum) and second 
 (maximum) elements when they are needed.  
 
-The `range` function in `R` takes a single numeric input and returns the minimum
+Note: The `range` function in `R` takes a single numeric input and returns the minimum
 and maximum (so this is not the "range" statistic but the information to calculate it):  
 
 ```{r rangeFunction, exercise=TRUE}
@@ -1387,25 +1417,25 @@ reserved word in `R` (`range`, `mean`, `sd`, `hist`, etc.).
 
 We will call this intermediate variable `x_range` (for range of the x variable).  
 
-> ### Challenge 14
+> ### Challenge 15
 >
 >Create another intermediate variable called `x_range` that contains 
 the range of the intermediate variable `x`, using the `range()` function. Make 
-sure that you specify the `na.rm()` option to ignore any NAs in the input vector. 
+sure that you specify the `na.rm` option to ignore any NAs in the input vector. 
 
 
-```{r challenge-14, exercise=TRUE}
+```{r challenge-15, exercise=TRUE}
 x <- BlackfootFish$length
 # Create x_range = the range of x 
 
 
-# Rewrite the code snippet from Exercise 13 to now 
+# Rewrite the code snippet from Exercise 14 to now 
 # refer to x_range instead of min(x) and max(x)
 
 
 ```
 
-```{r challenge-14-solution}
+```{r challenge-15-solution}
 x <- BlackfootFish$length
 
 x_range <- range(x, na.rm = TRUE)
@@ -1414,7 +1444,7 @@ x_rescaled <- (x - x_range[1]) /
 
 ```
 
-```{r challenge-14-check}
+```{r challenge-15-check}
 grade_code()
 
 ```
@@ -1441,13 +1471,13 @@ myFunction <- function(argument1, argument2,...){
 }
 ```
 
-> ### Challenge 15
+> ### Challenge 16
 >
 >Using the template above, write a function named `rescale` that rescales a 
 vector to be between 0 and 1. The function should take a single argument, `x`.   
 
 
-```{r challenge-15, exercise=TRUE}
+```{r challenge-16, exercise=TRUE}
 # Use the function template to create a function named rescale that performs the process outlined above, using the intermediate variables you previously defined
 
 myfunction <- function(arg1,...){
@@ -1455,82 +1485,83 @@ myfunction <- function(arg1,...){
 }
 ```
 
-```{r challenge-15-solution}
-rescale <- function(x){
-  x_range <- range(x, na.rm = TRUE)
-  x_rescaled <- (x - x_range[1]) / (x_range[2] - x_range[1])
-  return(x_rescaled)
-}
-```
-
-```{r challenge-15-check}
-grade_code()
-```
-
-Once you have written your function, the next step is to test it out. The 
-simplest place to start is to set value(s) for the function's argument(s) 
-(e.g. `x <- c(1, 2, 3, 4, 5)`). You can then run the code _inside_ the function,
-line by line, to make sure that each line successfully executes for this 
-variable. This is what we call unit testing in data science. This is a 
-similar process to testing out a `for` loop, by setting the value of the index 
-(`i <- 1`) and running the inside of the loop. 
-
-> Challenge 16
->
->Test your function on a simple vector, with the same name as 
-your function's input. What do you expect the values of the test to be after you
-input it into your function? 
-
-```{r challenge-16-setup}
-rescale <- function(x){
-  x_range <- range(x, na.rm = TRUE)
-  x_rescaled <- (x - x_range[1]) / (x_range[2] - x_range[1])
-  return(x_rescaled)
-}
-```
-
-```{r challenge-16, exercise=TRUE, exercise.lines=7}
-
-# Test your function out on a simple vector named x
-
-```
-
 ```{r challenge-16-solution}
-
-## Mark add solution here
-
-
+rescale <- function(x){
+  x_range <- range(x, na.rm = TRUE)
+  x_rescaled <- (x - x_range[1]) / (x_range[2] - x_range[1])
+  return(x_rescaled)
+}
 ```
 
 ```{r challenge-16-check}
 grade_code()
 ```
 
-
-If your unit test was successful, now you can move on to testing your function 
-with your data.  
+Once you have written your function, the next step is to test it out. The 
+simplest place to start is to set value(s) for the function's argument(s) 
+(e.g., `x <- c(1, 2, 3, 4, 5)`). You can then run the code _inside_ the function,
+line by line, to make sure that each line successfully executes for this 
+variable. This is what we call unit testing in data science. This is a 
+similar process to testing out a `for` loop, by setting the value of the index 
+(`i <- 1`) and running the inside of the loop. 
 
 > Challenge 17
 >
->Test your function on the `length` column of the BlackfootFish 
-dataset. Inspect the rescaled values. Do they look correct?  
+>Unit test your function on a simple vector, with the same name as 
+your function's input. What do you expect the values of the test to be after you
+input it into your function? 
 
-
+```{r challenge-17-setup}
+rescale <- function(x){
+  x_range <- range(x, na.rm = TRUE)
+  x_rescaled <- (x - x_range[1]) / (x_range[2] - x_range[1])
+  return(x_rescaled)
+}
+```
 
 ```{r challenge-17, exercise=TRUE, exercise.lines=7}
+
+# Copy the body code from the function to unit test the code in your function on a simple vector named x <- c(1, 2, 3, 4, 5)
+
+```
+
+```{r challenge-17-solution}
+x <- c(1, 2, 3, 4, 5)
+
+x_range <- range(x, na.rm = TRUE)
+x_rescaled <- (x - x_range[1]) / (x_range[2] - x_range[1])
+
+x_rescaled
+```
+
+```{r challenge-17-check}
+grade_code()
+```
+
+
+If your unit test was successful, now you can move on to testing your function on the test data and then with your real data.  
+
+> Challenge 18
+>
+>Test your function on the `length` column of the BlackfootFish 
+dataset, saving the results as `Blackfootfish$length_scaled`. Inspect the rescaled values and run `summary()` on the new variable. Do they look correct?  
+
+
+
+```{r challenge-18, exercise=TRUE, exercise.lines=7}
 
 # Test your function out on the BlackfootFish data's length variable
 
 ```
 
-```{r challenge-17-solution}
+```{r challenge-18-solution}
 
-## Mark add solution here
-
+BlackfootFish$length_scaled <- rescale(BlackfootFish$length)
+summary(BlackfootFish$length_scaled)
 
 ```
 
-```{r challenge-17-check}
+```{r challenge-18-check}
 grade_code()
 ```
 
@@ -1558,24 +1589,24 @@ your function.
 6.  Test your function! Start with a simple example and then go big! 
 
 
-> ### Challenge 18 (Part 1)
+> ### Challenge 19 (Part 1)
 > 
 > __Putting it All Together!__
 > Start by creating a data subset with just the length and weight variables
-> from the BlackfootFish dataset. Call the data subset `BlackfootFish_subset`
+> from the BlackfootFish dataset. Call the data subset `BlackfootFish_subset`.
 
-```{r challenge-18, exercise=TRUE, exercise.lines=7}
+```{r challenge-19, exercise=TRUE, exercise.lines=7}
 
 
 
 ```
 
-```{r challenge-18-solution}
+```{r challenge-19-solution}
 BlackfootFish_subset <- data.frame(length = BlackfootFish$length, width = BlackfootFish$weight)
 
 ```
 
-```{r challenge-18-check}
+```{r challenge-19-check}
 grade_result(
   pass_if(~ identical(.result,
                       data.frame(length = BlackfootFish$length, 
@@ -1583,7 +1614,7 @@ grade_result(
 )
 ```
 
-> ### Challenge 18 (Part 2)
+> ### Challenge 19 (Part 2)
 > 
 > Now, given the matrix of fish lengths and weights above, use the tools from the 
 workshop (`for` loop, function, conditional and relational statements) to:  
@@ -1593,24 +1624,28 @@ workshop (`for` loop, function, conditional and relational statements) to:
 >*  remove the fish from the dataset whose condition index is NA or less than 2
 
 
-```{r challenge-18-2, exercise=TRUE, exercise.lines=7}
+```{r challenge-19-2, exercise=TRUE, exercise.lines=7}
 
 
 
 ```
 
-```{r challenge-18-2-solution}
+```{r challenge-19-2-solution}
 
-## Mark add solution here
+condition_index <- function(x,y){
+  c_in <- (x^(1/3)/(y*50))
+  return(c_in)
+}
 
+BlackfootFish$condind <- condition_index(BlackfootFish$weight, BlackfootFish$length)
+
+summary(BlackfootFish$condind)
 
 ```
 
-```{r challenge-18-2-check}
+```{r challenge-19-2-check}
 grade_code()
 ```
-
-\pagebreak
 
 ## References  
 
@@ -1631,7 +1666,7 @@ Advanced `R` (Wickham, 2015)
 
 ## Suggestions for your own work
 
-The goal of this workshop was to teach you to write code in `R` to learn how to use relational operators, create conditional sequences, write loops and functions. The first workshop in our series contains more information on how to get started working in `R` using RStudio (see http://www.montana.edu/datascience/training/). The second workshop in our series contains information on how to write code to visualize data using `ggplot2`. The codechunks in this interactive document mimic the codechunks you can use on your own projects in RMarkdown but you will need to download and install both `R` and RStudio on your own computer. 
+The goal of this workshop was to teach you to write code in `R` to learn how to use relational operators, create conditional sequences, and write loops and functions. The first workshop in our series contains more information on how to get started working in `R` using RStudio (see http://www.montana.edu/datascience/training/). The second workshop in our series contains information on how to write code to visualize data using `ggplot2`. The codechunks in this interactive document mimic the codechunks you can use on your own projects in RMarkdown but you will need to download and install both `R` and RStudio on your own computer. 
 
 ## Montana State University `R` Workshops Team
 
