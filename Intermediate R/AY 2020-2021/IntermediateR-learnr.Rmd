@@ -310,8 +310,9 @@ check for equality of two doubles. This function, applied to the two arguments, 
 function allows for a little bit of wiggle room in the rounding errors that are
 associated with doubles. 
 
-```{r allequal, exercise=TRUE}
+```{r allequal, exercise=TRUE, exercise.setup="relOp-setup"}
 #Verify the result using all.equal(..., ...)
+
 
 ```
 
@@ -465,7 +466,7 @@ row.names(messages) <- c("Monday", "Tuesday", "Wednesday", "Thursday",
 
 ```
 
-```{r challenge-5-solution}
+```{r challenge-5-solution, exercise.setup="okCupid-setup"}
 messages > 12
 
 
