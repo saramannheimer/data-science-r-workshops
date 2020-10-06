@@ -1,0 +1,50 @@
+---
+title: "Subsample BlackfootFish"
+author: "Mark Greenwood"
+date: "10/6/2020"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Code to reduce file size
+
+In order to avoid RAM limit issues in the shiny environment, the original size of the BlackfootFish data set was reduced for use in the R workshops using this code for reproducibility. The original data set had _n_=18,352. The reduced data set is based on stratified sampling half of the observations taken within each year.
+
+```{r warning=F, message=F}
+BlackfootFish <- read.csv("data/BlackfootFish.csv", header = TRUE)
+
+BlackfootFish$year.species <- with(BlackfootFish, interaction(year, species))
+levels(BlackfootFish$year.species)
+library(mosaic)
+set.seed(1234)
+BFr <- sample(x=BlackfootFish, size=9000)
+tally(~year.species, data=BFr)
+
+condition_index <- function(x,y){
+  ifelse(!is.na(x)&!is.na(y), c_in <- 100000*(x/(y^3)), NA)
+  return(c_in)
+}
+
+BFr$condind <- condition_index(BFr$weight, BFr$length)
+
+summary(BFr$condind)
+
+D1 <- subset(BFr, !is.na(condind) & condind <= 2)
+
+summary(D1$condind)
+
+library(ggplot2)
+
+D1 %>% 
+  ggplot(aes(x=species, y=condind)) +
+  geom_jitter(aes(col=year)) +
+  geom_violin() + 
+  theme_bw()
+
+library(readr)
+write_csv(BFr, "data/BlackfootFish2.csv")
+
+```
