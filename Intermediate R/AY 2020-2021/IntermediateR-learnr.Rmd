@@ -978,7 +978,6 @@ i ## should be 10 (the last number of the sequence 1:10), unless the loop had is
 
 Now, let's add the corresponding entries of two vectors together!  
 
-\vspace{0.25cm}
 
 ```{r twoVectors, eval = FALSE, exercise=TRUE}
 
@@ -1044,7 +1043,7 @@ with the $1^{st}$ row, until you've sampled 1200 rows. This would allow us to sp
 ```{r challenge-12, eval=FALSE, exercise=TRUE, exercise.lines = 20}
 BlackfootFish <- read.csv("https://raw.githubusercontent.com/saramannheimer/data-science-r-workshops/master/Intermediate%20R/AY%202020-2021/data/BlackfootFish2.csv", header = TRUE)
 
-n_testing <- 1900
+n_testing <- 1200
 
 samps <- rep(NA, n_testing)
 ## Initializing the samps vector, for storing indicies
@@ -1067,7 +1066,7 @@ training <- BlackfootFish[-samps, ]
 
 ```{r challenge-12-solution}
 
-n_testing <- 1900
+n_testing <- 1200
 
 samps <- rep(NA, n_testing)
 ## Initializing the samps vector, for storing indices
@@ -1086,16 +1085,13 @@ for(i in 2:n_testing){
 testing <- BlackfootFish[samps, ]
 training <- BlackfootFish[-samps, ]
 
-
-
-
 ```
 
 ```{r challenge-12-check}
 grade_code()
 ```
 
-Before we move on, is there a better way to split a data set into training and testing versions?
+Before we move on, is there a better way to split a data set into training and testing versions than taking every 7th observation?
 
 #### Nesting For Loops  
 
@@ -1592,7 +1588,7 @@ your function.
 > ### Challenge 19 (Part 1)
 > 
 > __Putting it All Together!__
-> Start by creating a data subset with just the length and weight variables
+> Start by creating a data subset with just the species, length, and weight variables
 > from the BlackfootFish dataset. Call the data subset `BlackfootFish_subset`.
 
 ```{r challenge-19, exercise=TRUE, exercise.lines=7}
@@ -1602,21 +1598,22 @@ your function.
 ```
 
 ```{r challenge-19-solution}
-BlackfootFish_subset <- data.frame(length = BlackfootFish$length, width = BlackfootFish$weight)
+BlackfootFish_subset <- data.frame(species = BlackfootFish$species, length = BlackfootFish$length, width = BlackfootFish$weight)
 
 ```
 
 ```{r challenge-19-check}
 grade_result(
   pass_if(~ identical(.result,
-                      data.frame(length = BlackfootFish$length, 
+                      data.frame(species = BlackfootFish$species, 
+                                 length = BlackfootFish$length, 
                                  width = BlackfootFish$weight)))
 )
 ```
 
 > ### Challenge 19 (Part 2)
 > 
-> Now, given the matrix of fish lengths and weights above, use the tools from the 
+> Now, given the matrix of species, length, and weights above, use the tools from the 
 workshop (`for` loop, function, conditional, and/or relational statements) to:  
 
 >*  compute Fulton's condition factor of each fish ($condition = 
@@ -1625,30 +1622,40 @@ workshop (`for` loop, function, conditional, and/or relational statements) to:
 >* If you attended our data visualization workshop, try to make a plot of condition factors based on the fish species with jittered points and violins. 
 
 
-```{r challenge-19-2, exercise=TRUE, exercise.lines=7}
+```{r challenge-19-2, exercise=TRUE, exercise.lines=7, exercise.setup="challenge-19-solution"}
 
 
 
 ```
 
-```{r challenge-19-2-solution}
-
-condition_index <- function(x,y){
-  ifelse(!is.na(x)&!is.na(y), c_in <- 100000*(x/(y^3)), NA)
+```{r challenge-19-2-setup}
+condition_index <- function (x, y) {
+  ifelse(!is.na(x)&!is.na(y), c_in <- 100000*(x/(y^3)), c_in <- NA)
+  
   return(c_in)
 }
 
-BlackfootFish$condind <- condition_index(BlackfootFish$weight, BlackfootFish$length)
+```
 
-summary(BlackfootFish$condind)
+```{r challenge-19-2-solution}
 
-D1 <- subset(BlackfootFish, !is.na(condind) & condind <= 2)
+condition_index <- function (x, y) {
+  ifelse(!is.na(x)&!is.na(y), c_in <- 100000*(x/(y^3)), c_in <- NA)
+  
+  return(c_in)
+}
+
+BlackfootFish_subset$condind <- condition_index(BlackfootFish_subset$weight, BlackfootFish_subset$length)
+
+summary(BlackfootFish_subset$condind)
+
+D1 <- subset(BlackfootFish_subset, !is.na(condind) & condind <= 2)
 
 library(ggplot2)
 
 D1 %>% 
   ggplot(aes(x=species, y=condind)) +
-  geom_jitter(aes(col=year)) +
+  geom_jitter() +
   geom_violin() + 
   theme_bw()
 
