@@ -1635,6 +1635,8 @@ condition_index <- function (x, y) {
   return(c_in)
 }
 
+BlackfootFish_subset <- data.frame(species = BlackfootFish$species, length = BlackfootFish$length, width = BlackfootFish$weight)
+
 ```
 
 ```{r challenge-19-2-solution}
