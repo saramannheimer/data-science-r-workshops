@@ -1544,7 +1544,7 @@ dataset, saving the results as `Blackfootfish$length_scaled`. Inspect the rescal
 
 
 
-```{r challenge-18, exercise=TRUE, exercise.lines=7}
+```{r challenge-18, exercise=TRUE, exercise.lines=7, exercise.setup="challenge-17-setup"}
 
 # Test your function out on the BlackfootFish data's length variable
 
@@ -1598,7 +1598,7 @@ your function.
 ```
 
 ```{r challenge-19-solution}
-BlackfootFish_subset <- data.frame(species = BlackfootFish$species, length = BlackfootFish$length, width = BlackfootFish$weight)
+BlackfootFish_subset <- data.frame(species = BlackfootFish$species, length = BlackfootFish$length, weight = BlackfootFish$weight)
 
 ```
 
@@ -1622,12 +1622,6 @@ workshop (`for` loop, function, conditional, and/or relational statements) to:
 >* If you attended our data visualization workshop, try to make a plot of condition factors based on the fish species with jittered points and violins. 
 
 
-```{r challenge-19-2, exercise=TRUE, exercise.lines=7, exercise.setup="challenge-19-solution"}
-
-
-
-```
-
 ```{r challenge-19-2-setup}
 condition_index <- function (x, y) {
   ifelse(x==0|y==0, c_in<- NA, c_in <- 100000*(x/(y^3)))
@@ -1635,9 +1629,16 @@ condition_index <- function (x, y) {
   return(c_in)
 }
 
-BlackfootFish_subset <- data.frame(species = BlackfootFish$species, length = BlackfootFish$length, width = BlackfootFish$weight)
+BlackfootFish_subset <- data.frame(species = BlackfootFish$species, length = BlackfootFish$length, weight = BlackfootFish$weight)
 
 ```
+
+```{r challenge-19-2, exercise=TRUE, exercise.lines=15, exercise.setup="challenge-19-2-setup"}
+
+
+
+```
+
 
 ```{r challenge-19-2-solution}
 
