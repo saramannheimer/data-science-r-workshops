@@ -283,9 +283,9 @@ numbers &lt;- c(1, 2, 3, 4, 5)
 
 5 %in% numbers
 
-letters &lt;- c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;)
+some_letters &lt;- c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;)
 
-c(&quot;a&quot;, &quot;b&quot;) %in% letters</code></pre>
+c(&quot;a&quot;, &quot;b&quot;) %in% some_letters</code></pre>
 <script type="application/json" data-opts-chunk="1">{"fig.width":3,"fig.height":3,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":288,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":["function (label = NULL, solution_code = NULL, user_code = NULL, ","    check_code = NULL, envir_result = NULL, evaluate_result = NULL, ","    envir_prep = NULL, last_value = NULL, ...) ","{","    (utils::getFromNamespace(\"grade_learnr_\", \"gradethis\"))(label = label, ","        solution_code = solution_code, user_code = user_code, ","        check_code = check_code, envir_result = envir_result, ","        evaluate_result = evaluate_result, envir_prep = envir_prep, ","        last_value = last_value, ...)","}"]}</script>
 </div>
 <blockquote>
@@ -340,13 +340,13 @@ Sys.getlocale(category = &quot;LC_COLLATE&quot;)</code></pre>
 <p>What is going on in the code below? Why is <code>R</code> giving an error?</p>
 </blockquote>
 <div class="tutorial-exercise-support" data-label="challenge-4-setup" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
-<pre class="text"><code>letters &lt;- c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;)</code></pre>
+<pre class="text"><code>some_letters &lt;- c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;)</code></pre>
 </div>
 <div class="tutorial-exercise" data-label="challenge-4" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
-<pre class="text"><code>letters != c(&quot;a&quot;, &quot;c&quot;) </code></pre>
+<pre class="text"><code>some_letters != c(&quot;a&quot;, &quot;c&quot;) </code></pre>
 <script type="application/json" data-opts-chunk="1">{"fig.width":3,"fig.height":3,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":288,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":["function (label = NULL, solution_code = NULL, user_code = NULL, ","    check_code = NULL, envir_result = NULL, evaluate_result = NULL, ","    envir_prep = NULL, last_value = NULL, ...) ","{","    (utils::getFromNamespace(\"grade_learnr_\", \"gradethis\"))(label = label, ","        solution_code = solution_code, user_code = user_code, ","        check_code = check_code, envir_result = envir_result, ","        evaluate_result = evaluate_result, envir_prep = envir_prep, ","        last_value = last_value, ...)","}"]}</script>
 </div>
-<p>Why does <code>R</code> give <code>TRUE</code> as the third element of this vector, when <code>letters[3] != "c"</code> is obviously false?</p>
+<p>Why does <code>R</code> give <code>TRUE</code> as the third element of this vector, when <code>some_letters[3] != "c"</code> is obviously false?</p>
 </div>
 <div id="section-recycling" class="section level3">
 <h3>Recycling</h3>
@@ -354,11 +354,11 @@ Sys.getlocale(category = &quot;LC_COLLATE&quot;)</code></pre>
 <p><img src="images/recycling.png" title="Graphic demonstrating left and right character vectors with empty slots for the shorter right vector." width="400" /></p>
 <p>When one vector is shorter than the other, it gets <em>recycled</em>:</p>
 <p><img src="images/recycling2.png" title="Graphic demonstrating left and right character vectors and how the right vector is recycled." width="400" /></p>
-<p>In this case, R <strong>repeats</strong> <code>c("a", "c")</code> as many times as necessary to match the length of the <code>letters</code> vector. So, we get <code>c("a", "c", "a", "c", "a")</code>. Since the recycled <code>"a"</code> doesn’t match the third element of <code>letters</code>, the value of <code>!=</code> is in fact <code>TRUE</code>.</p>
+<p>In this case, R <strong>repeats</strong> <code>c("a", "c")</code> as many times as necessary to match the length of the <code>some_letters</code> vector. So, we get <code>c("a", "c", "a", "c", "a")</code>. Since the recycled <code>"a"</code> doesn’t match the third element of <code>some_letters</code>, the value of <code>!=</code> is in fact <code>TRUE</code>.</p>
 <p><strong>Note</strong>: We got lucky here! <code>R</code> output an error because the length of our vectors was not a constant multiple (e.g. 2 times as long). If they were, <code>R</code> would have carried out the <strong>same</strong> recycling procedure, but <strong>would not</strong> have output an error!</p>
 <p>This is why the inclusion (<code>%in%</code>) operator is so great! It does carry out the procedure we wish for <code>R</code> to do, without any silly recycling! To exclude values you place a <code>!</code> in front of the <strong>entire</strong> statement, not directly in front of the <code>%in%</code>.</p>
 <div class="tutorial-exercise" data-label="inclusionOp" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
-<pre class="text"><code>!c(&quot;a&quot;, &quot;b&quot;) %in% letters</code></pre>
+<pre class="text"><code>!c(&quot;a&quot;, &quot;b&quot;) %in% some_letters</code></pre>
 <script type="application/json" data-opts-chunk="1">{"fig.width":3,"fig.height":3,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":288,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.setup":"challenge-4-setup","exercise.checker":["function (label = NULL, solution_code = NULL, user_code = NULL, ","    check_code = NULL, envir_result = NULL, evaluate_result = NULL, ","    envir_prep = NULL, last_value = NULL, ...) ","{","    (utils::getFromNamespace(\"grade_learnr_\", \"gradethis\"))(label = label, ","        solution_code = solution_code, user_code = user_code, ","        check_code = check_code, envir_result = envir_result, ","        evaluate_result = evaluate_result, envir_prep = envir_prep, ","        last_value = last_value, ...)","}"]}</script>
 </div>
 </div>
@@ -366,9 +366,9 @@ Sys.getlocale(category = &quot;LC_COLLATE&quot;)</code></pre>
 <h3>Logical Values</h3>
 <p>You can also use logical values (<code>TRUE</code>, <code>FALSE</code>) to extract elements of a vector.</p>
 <div class="tutorial-exercise" data-label="extractLetters" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
-<pre class="text"><code>letters[c(TRUE, TRUE, FALSE, FALSE, FALSE)] 
-## Extracts the first two elements of the letters vector </code></pre>
-<script type="application/json" data-opts-chunk="1">{"fig.width":3,"fig.height":3,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":288,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":["function (label = NULL, solution_code = NULL, user_code = NULL, ","    check_code = NULL, envir_result = NULL, evaluate_result = NULL, ","    envir_prep = NULL, last_value = NULL, ...) ","{","    (utils::getFromNamespace(\"grade_learnr_\", \"gradethis\"))(label = label, ","        solution_code = solution_code, user_code = user_code, ","        check_code = check_code, envir_result = envir_result, ","        evaluate_result = evaluate_result, envir_prep = envir_prep, ","        last_value = last_value, ...)","}"]}</script>
+<pre class="text"><code>some_letters[c(TRUE, TRUE, FALSE, FALSE, FALSE)] 
+## Extracts the first two elements of the some_letters vector </code></pre>
+<script type="application/json" data-opts-chunk="1">{"fig.width":3,"fig.height":3,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":288,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.setup":"challenge-4-setup","exercise.checker":["function (label = NULL, solution_code = NULL, user_code = NULL, ","    check_code = NULL, envir_result = NULL, evaluate_result = NULL, ","    envir_prep = NULL, last_value = NULL, ...) ","{","    (utils::getFromNamespace(\"grade_learnr_\", \"gradethis\"))(label = label, ","        solution_code = solution_code, user_code = user_code, ","        check_code = check_code, envir_result = envir_result, ","        evaluate_result = evaluate_result, envir_prep = envir_prep, ","        last_value = last_value, ...)","}"]}</script>
 </div>
 <p>This should give you an intuition as to how we might be able to use the results of relational statements to extract the elements of the vector that satisfy the relation.</p>
 </div>

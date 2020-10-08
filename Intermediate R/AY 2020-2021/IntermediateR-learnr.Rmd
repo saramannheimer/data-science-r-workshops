@@ -253,9 +253,9 @@ numbers <- c(1, 2, 3, 4, 5)
 
 5 %in% numbers
 
-letters <- c("a", "b", "c", "d", "e")
+some_letters <- c("a", "b", "c", "d", "e")
 
-c("a", "b") %in% letters
+c("a", "b") %in% some_letters
 
 ```
 
@@ -333,17 +333,17 @@ Sys.getlocale(category = "LC_COLLATE")
 >Why is `R` giving an error?  
 
 ```{r challenge-4-setup}
-letters <- c("a", "b", "c", "d", "e")
+some_letters <- c("a", "b", "c", "d", "e")
 ```
 
 ```{r challenge-4, exercise=TRUE}
-letters != c("a", "c") 
+some_letters != c("a", "c") 
 
 ```
 
 
 Why does `R` give `TRUE` as the third element of this vector, when 
-`letters[3] != "c"` is obviously false?  
+`some_letters[3] != "c"` is obviously false?  
 
 ### Recycling
 
@@ -363,8 +363,8 @@ When one vector is shorter than the other, it gets *recycled*:
 
 
 In this case, R **repeats** `c("a", "c")` as many times as necessary to match 
-the length of the `letters` vector. So, we get `c("a", "c", "a", "c", "a")`. 
-Since the recycled `"a"` doesn't match the third element of `letters`, the value
+the length of the `some_letters` vector. So, we get `c("a", "c", "a", "c", "a")`. 
+Since the recycled `"a"` doesn't match the third element of `some_letters`, the value
 of `!=` is in fact `TRUE`. 
 
 **Note**: We got lucky here! `R` output an error because the length of our 
@@ -379,7 +379,7 @@ the `%in%`.
 
 ```{r inclusionOp, exercise=TRUE, exercise.setup="challenge-4-setup"}
 
-!c("a", "b") %in% letters
+!c("a", "b") %in% some_letters
 
 ```
 
@@ -390,9 +390,9 @@ the `%in%`.
 You can also use logical values (`TRUE`, `FALSE`) to 
 extract elements of a vector. 
 
-```{r extractLetters, exercise=TRUE}
-letters[c(TRUE, TRUE, FALSE, FALSE, FALSE)] 
-## Extracts the first two elements of the letters vector 
+```{r extractLetters, exercise=TRUE, exercise.setup="challenge-4-setup"}
+some_letters[c(TRUE, TRUE, FALSE, FALSE, FALSE)] 
+## Extracts the first two elements of the some_letters vector 
 
 ```
 
@@ -526,7 +526,7 @@ subset(x_3, x_3 > 6)
 >
 >Using the okcupid "data" from above, answer the following 
 questions:  
-Change the which() statement code to a subset() statement, extracting the days that the number of messages at OkCupid greater than the messages at Match>
+Change the which() statement code to a subset() statement, extracting the days that the number of messages at OkCupid greater than the messages at Match.
 >
 
 ```{r challenge-7, exercise=TRUE, exercise.lines=10, exercise.setup="okCupid-which"}
@@ -656,14 +656,14 @@ good_days
 ## Conditional Statements
 
 Conditional statements utilize relational and logical statements to change the 
-results of your `R` code. You may have encountered an `ifelse` statement 
+results of your `R` code. You may have encountered an `if else` statement 
 before (or not), but let's breakdown exactly what `R` is doing when it 
 evaluates them.  
 
 ### If Statements  
 
 First, let's start with an `if` statement, the often overlooked building block
-of the `ifelse` statement. The `if` statement is structured as follows:  
+of the `if else` statement. The `if` statement is structured as follows:  
 
 ```
 if(condition){
@@ -726,7 +726,7 @@ grade_code()
 Since whenever an `if` statement evaluates to `FALSE` nothing is output, you
 might see why an `else` statement could be beneficial! An `else` statement 
 allows for a different statement to be output whenever the `if` condition 
-evaluates to `FALSE`. The `ifelse` statement is structured as follows:  
+evaluates to `FALSE`. The `if else` statement is structured as follows:  
 
 ```
 if(condition){
@@ -744,7 +744,7 @@ else{
     statement, and the second statement (`statement2`) is output.   
 
 
-> NOTE: In `R` the `ifelse` statement, as described above, will only accept
+> NOTE: In `R` the `if else`  statement, as described above, will only accept
 a __single__ value (not a vector or matrix).       
 
 
@@ -762,8 +762,8 @@ if(y < 0){
 
 
 
-> NOTE: `R` accepts both `ifelse` statements structured as outlined 
-above, but also `ifelse` statements using the built-in `ifelse()` function. 
+> NOTE: `R` accepts both `if else` statements structured as outlined 
+above, but also `if else` statements using the built-in `ifelse()` function. 
 This function accepts __both singular and vector__ inputs and is structured as 
 follows: 
 
@@ -789,8 +789,8 @@ ifelse(y < 0, "y is a negative number", "y is either positive or zero")
 
 > ### Challenge 10
 >
->Using the if statement from Challenge 9, add the following else 
-statement: When the if-condition on messages is not met, R prints out "Send more
+>Using the "if" statement from Challenge 9, add the following else 
+statement: When the "if"-condition on messages is not met, R prints out "Send more
 messages!". 
 
 
@@ -817,8 +817,8 @@ grade_code()
 ### Else/If Statements  
 
 On occasion, you may want to add a third (or fourth, or fifth, ...) condition to
-your `ifelse` statement, which is where the `else if` statement comes in. The
-`else if` statement is added to the `ifelse` as follows:  
+your `if else` statement, which is where the `else if` statement comes in. The
+`else if` statement is added to the `if else` as follows:  
 
 ```
 if(condition1){
@@ -852,7 +852,7 @@ else{
 
 > ### NOTE:
 >
-> LearnR exercise code checking flags the "else if()" line as a problem. This is a bug with the LearnR environment and not the code.
+> LearnR exercise code checking flags the `else if()` line as a problem. This is a bug with the LearnR environment and not the code.
 
 
 ```{r elseif, exercise=TRUE, exercise.lines=10}  
