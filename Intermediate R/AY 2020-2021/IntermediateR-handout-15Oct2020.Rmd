@@ -1,7 +1,7 @@
 ---
-title: "Data Visualization with ggplot2 PDF version"
+title: "Intermediate R Handout"
 author: "Data Carpentry contributors & Montana State University R Workshops Team"
-date: "9/24/2020"
+date: "10/15/2020"
 output: pdf_document
 ---
 
