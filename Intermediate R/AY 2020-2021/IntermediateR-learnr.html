@@ -173,7 +173,7 @@ x[-2] ## Extracts everything in x BUT the second index</code></pre>
 <div id="section-extracting-elements-from-a-dataframe" class="section level3">
 <h3>Extracting Elements from a Dataframe</h3>
 <p>A dataframe is a list of vectors, where each vector is permitted to have a different data type. Because dataframes have two dimensions (columns and rows), we are able to extract two types of elements.</p>
-<p>To extract a column from a dataframe we can the familiar <code>$</code> operator:</p>
+<p>To extract a column from a dataframe we can use the familiar <code>$</code> operator:</p>
 <div class="tutorial-exercise" data-label="extractDataframe" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code>example_df &lt;- data.frame(A = c(1, 5, 9, 13),
                 B = c(2, 6, 10, 14),
@@ -450,11 +450,11 @@ subset(x_3, x_3 &gt; 6)</code></pre>
 <blockquote>
 <h3 id="section-challenge-7">Challenge 7</h3>
 <p>Using the okcupid “data” from above, answer the following questions:<br />
-Change the which() statement code to a subset() statement, extracting the days that the number of messages at OkCupid greater than the messages at Match&gt;</p>
+Change the which() statement code to a subset() statement, extracting the days that the number of messages at OkCupid greater than the messages at Match.</p>
 </blockquote>
 <div class="tutorial-exercise" data-label="challenge-7" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="10">
 <pre class="text"><code># Change the which() statement code to a subset() statement, extracting the days that the number of messages at OkCupid greater than the messages at Match</code></pre>
-<script type="application/json" data-opts-chunk="1">{"fig.width":3,"fig.height":3,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":288,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.setup":"okCupid-which","exercise.checker":["function (label = NULL, solution_code = NULL, user_code = NULL, ","    check_code = NULL, envir_result = NULL, evaluate_result = NULL, ","    envir_prep = NULL, last_value = NULL, ...) ","{","    (utils::getFromNamespace(\"grade_learnr_\", \"gradethis\"))(label = label, ","        solution_code = solution_code, user_code = user_code, ","        check_code = check_code, envir_result = envir_result, ","        evaluate_result = evaluate_result, envir_prep = envir_prep, ","        last_value = last_value, ...)","}"]}</script>
+<script type="application/json" data-opts-chunk="1">{"fig.width":3,"fig.height":3,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":288,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.setup":"okCupid-setup","exercise.checker":["function (label = NULL, solution_code = NULL, user_code = NULL, ","    check_code = NULL, envir_result = NULL, evaluate_result = NULL, ","    envir_prep = NULL, last_value = NULL, ...) ","{","    (utils::getFromNamespace(\"grade_learnr_\", \"gradethis\"))(label = label, ","        solution_code = solution_code, user_code = user_code, ","        check_code = check_code, envir_result = envir_result, ","        evaluate_result = evaluate_result, envir_prep = envir_prep, ","        last_value = last_value, ...)","}"]}</script>
 </div>
 <div class="tutorial-exercise-support" data-label="challenge-7-solution" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code>subset(messages, messages[,1] &gt; messages[,2])</code></pre>
@@ -547,10 +547,10 @@ good_days</code></pre>
 </div>
 <div id="section-conditional-statements" class="section level2">
 <h2>Conditional Statements</h2>
-<p>Conditional statements utilize relational and logical statements to change the results of your <code>R</code> code. You may have encountered an <code>ifelse</code> statement before (or not), but let’s breakdown exactly what <code>R</code> is doing when it evaluates them.</p>
+<p>Conditional statements utilize relational and logical statements to change the results of your <code>R</code> code. You may have encountered an <code>if else</code> statement before (or not), but let’s breakdown exactly what <code>R</code> is doing when it evaluates them.</p>
 <div id="section-if-statements" class="section level3">
 <h3>If Statements</h3>
-<p>First, let’s start with an <code>if</code> statement, the often overlooked building block of the <code>ifelse</code> statement. The <code>if</code> statement is structured as follows:</p>
+<p>First, let’s start with an <code>if</code> statement, the often overlooked building block of the <code>if else</code> statement. The <code>if</code> statement is structured as follows:</p>
 <pre><code>if(condition){
               statement
 }</code></pre>
@@ -595,7 +595,7 @@ if (last &gt; 10){
 </div>
 <div id="section-ifelse-statements" class="section level3">
 <h3>If/Else Statements</h3>
-<p>Since whenever an <code>if</code> statement evaluates to <code>FALSE</code> nothing is output, you might see why an <code>else</code> statement could be beneficial! An <code>else</code> statement allows for a different statement to be output whenever the <code>if</code> condition evaluates to <code>FALSE</code>. The <code>ifelse</code> statement is structured as follows:</p>
+<p>Since whenever an <code>if</code> statement evaluates to <code>FALSE</code> nothing is output, you might see why an <code>else</code> statement could be beneficial! An <code>else</code> statement allows for a different statement to be output whenever the <code>if</code> condition evaluates to <code>FALSE</code>. The <code>if else</code> statement is structured as follows:</p>
 <pre><code>if(condition){
               statement1
 }
@@ -610,7 +610,7 @@ else{
 </ul></li>
 </ul>
 <blockquote>
-<p>NOTE: In <code>R</code> the <code>ifelse</code> statement, as described above, will only accept a <strong>single</strong> value (not a vector or matrix).</p>
+<p>NOTE: In <code>R</code> the <code>if else</code> statement, as described above, will only accept a <strong>single</strong> value (not a vector or matrix).</p>
 </blockquote>
 <div class="tutorial-exercise" data-label="ifelse" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="10">
 <pre class="text"><code>y &lt;- -3 ## Try changing this number, for example y &lt;- 5
@@ -623,7 +623,7 @@ if(y &lt; 0){
 <script type="application/json" data-opts-chunk="1">{"fig.width":3,"fig.height":3,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":288,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":["function (label = NULL, solution_code = NULL, user_code = NULL, ","    check_code = NULL, envir_result = NULL, evaluate_result = NULL, ","    envir_prep = NULL, last_value = NULL, ...) ","{","    (utils::getFromNamespace(\"grade_learnr_\", \"gradethis\"))(label = label, ","        solution_code = solution_code, user_code = user_code, ","        check_code = check_code, envir_result = envir_result, ","        evaluate_result = evaluate_result, envir_prep = envir_prep, ","        last_value = last_value, ...)","}"]}</script>
 </div>
 <blockquote>
-<p>NOTE: <code>R</code> accepts both <code>ifelse</code> statements structured as outlined above, but also <code>ifelse</code> statements using the built-in <code>ifelse()</code> function. This function accepts <strong>both singular and vector</strong> inputs and is structured as follows:</p>
+<p>NOTE: <code>R</code> accepts both <code>if else</code> statements structured as outlined above, but also <code>if else</code> statements using the built-in <code>ifelse()</code> function. This function accepts <strong>both singular and vector</strong> inputs and is structured as follows:</p>
 </blockquote>
 <pre><code>ifelse(condition, statement1, statement2)</code></pre>
 <p>where the first argument is the conditional (relational) statement, the second argument is the statement that is evaluated when the condition is <code>TRUE</code> (<code>statement1</code>), and the third statement is the statement that is evaluated when the condition is <code>FALSE</code> (<code>statement2</code>).</p>
@@ -635,7 +635,7 @@ ifelse(y &lt; 0, &quot;y is a negative number&quot;, &quot;y is either positive 
 </div>
 <blockquote>
 <h3 id="section-challenge-10">Challenge 10</h3>
-<p>Using the if statement from Challenge 9, add the following else statement: When the if-condition on messages is not met, R prints out “Send more messages!”.</p>
+<p>Using the “if” statement from Challenge 9, add the following else statement: When the “if”-condition on messages is not met, R prints out “Send more messages!”.</p>
 </blockquote>
 <div class="tutorial-exercise" data-label="challenge-10" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="7">
 <pre class="text"><code># Challenge: Rewrite the if, else function from above using R&#39;s built in ifelse() function. 
@@ -653,7 +653,7 @@ ifelse(last &gt; 10, &quot;You&#39;re popular!&quot;, &quot;Send more messages!&
 </div>
 <div id="section-elseif-statements" class="section level3">
 <h3>Else/If Statements</h3>
-<p>On occasion, you may want to add a third (or fourth, or fifth, …) condition to your <code>ifelse</code> statement, which is where the <code>else if</code> statement comes in. The <code>else if</code> statement is added to the <code>ifelse</code> as follows:</p>
+<p>On occasion, you may want to add a third (or fourth, or fifth, …) condition to your <code>if else</code> statement, which is where the <code>else if</code> statement comes in. The <code>else if</code> statement is added to the <code>if else</code> as follows:</p>
 <pre><code>if(condition1){
               statement1
 }
@@ -678,7 +678,7 @@ else{
 </ul>
 <blockquote>
 <h3 id="section-note-1">NOTE:</h3>
-<p>LearnR exercise code checking flags the “else if()” line as a problem. This is a bug with the LearnR environment and not the code.</p>
+<p>LearnR exercise code checking flags the <code>else if()</code> line as a problem. This is a bug with the LearnR environment and not the code.</p>
 </blockquote>
 <div class="tutorial-exercise" data-label="elseif" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="10">
 <pre class="text"><code>y &lt;- -3 ## Try changing this number, for example y &lt;- 5 and y &lt;- 0
@@ -819,7 +819,9 @@ training &lt;- BlackfootFish[-samps, ]</code></pre>
 <script type="application/json" data-opts-chunk="1">{"fig.width":3,"fig.height":3,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":288,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":["function (label = NULL, solution_code = NULL, user_code = NULL, ","    check_code = NULL, envir_result = NULL, evaluate_result = NULL, ","    envir_prep = NULL, last_value = NULL, ...) ","{","    (utils::getFromNamespace(\"grade_learnr_\", \"gradethis\"))(label = label, ","        solution_code = solution_code, user_code = user_code, ","        check_code = check_code, envir_result = envir_result, ","        evaluate_result = evaluate_result, envir_prep = envir_prep, ","        last_value = last_value, ...)","}"]}</script>
 </div>
 <div class="tutorial-exercise-support" data-label="challenge-12-solution" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
-<pre class="text"><code>n_testing &lt;- 1200
+<pre class="text"><code>BlackfootFish &lt;- read.csv(&quot;https://raw.githubusercontent.com/saramannheimer/data-science-r-workshops/master/Intermediate%20R/AY%202020-2021/data/BlackfootFish2.csv&quot;, header = TRUE)
+
+n_testing &lt;- 1200
 
 samps &lt;- rep(NA, n_testing)
 ## Initializing the samps vector, for storing indices

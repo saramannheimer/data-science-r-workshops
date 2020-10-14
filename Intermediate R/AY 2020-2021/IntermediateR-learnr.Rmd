@@ -529,12 +529,12 @@ questions:
 Change the which() statement code to a subset() statement, extracting the days that the number of messages at OkCupid greater than the messages at Match.
 >
 
-```{r challenge-7, exercise=TRUE, exercise.lines=10, exercise.setup="okCupid-which"}
+```{r challenge-7, exercise=TRUE, exercise.lines=10, exercise.setup="okCupid-setup"}
 # Change the which() statement code to a subset() statement, extracting the days that the number of messages at OkCupid greater than the messages at Match
 
 ```
 
-```{r challenge-7-solution, exercise.setup="okCupid-which"}
+```{r challenge-7-solution, exercise.setup="okCupid-setup"}
 subset(messages, messages[,1] > messages[,2])
 
 
