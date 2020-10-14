@@ -99,7 +99,7 @@ A dataframe is a list of vectors, where each vector is permitted to have a
 different data type. Because dataframes have two dimensions (columns and rows), 
 we are able to extract two types of elements.  
 
-To extract a column from a dataframe we can the familiar `$` operator:
+To extract a column from a dataframe we can use the familiar `$` operator:
 
 
 ```{r extractDataframe, exercise=TRUE}
@@ -1065,6 +1065,7 @@ training <- BlackfootFish[-samps, ]
 
 
 ```{r challenge-12-solution}
+BlackfootFish <- read.csv("https://raw.githubusercontent.com/saramannheimer/data-science-r-workshops/master/Intermediate%20R/AY%202020-2021/data/BlackfootFish2.csv", header = TRUE)
 
 n_testing <- 1200
 
