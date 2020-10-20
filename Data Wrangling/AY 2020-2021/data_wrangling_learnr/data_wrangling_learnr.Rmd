@@ -929,7 +929,7 @@ surveys_edited %>%
   filter(!is.na(weight)) %>%
   group_by(year) %>%
   summarize(max_weight = max(weight)) %>%
-  select(year, genus, species_id_weight)
+  select(year, genus, species_id, weight)
 ```
 
 ```{r challenge-7-2-check}
@@ -938,7 +938,7 @@ grade_result(
   filter(!is.na(weight)) %>%
   group_by(year) %>%
   summarize(max_weight = max(weight)) %>%
-  select(year, genus, species_id_weight)))
+  select(year, genus, species_id, weight)))
 )
 ```
 
@@ -1018,50 +1018,41 @@ the counts for *NL* are on page 3 of the table.
 
 
 
-> ### Challenge 3 {.challenge3}
+> ### Challenge 8 Part 1: ![](images/mild.jpg)
 >
-> 1. How many animals were caught in each `plot_type` surveyed?
->
-> 2. Use `group_by()` and `summarize()` to find the mean, min, and max hindfoot
-> length for each species (using `species_id`). Also add the number of
-> observations (hint: see `?n`).
->
-> 3. What was the heaviest animal measured in each year? Return the columns 
-> `year`, `genus`, `species_id`, and `weight`.
+> 1. How many animals were caught in each plot (`plot_id`) surveyed?
 
-```{r challenge-3-q-1, exercise=TRUE, exercise.lines = 12, exercise.eval=TRUE}
+```{r challenge-8-p-1, exercise=TRUE, exercise.lines = 12, exercise.eval=TRUE}
 ## Count Challenges:
 ##  1. How many animals were caught in each `plot_type` surveyed?
 
 ```
 
-```{r challenge-3-q-2, exercise=TRUE, exercise.lines = 12, exercise.eval=TRUE}
+```{r challenge-8-p-1-solution}
+surveys_edited %>%
+        count(plot_type) 
+```
+
+```{r challenge-8-p-1-check}
+grade_result(
+  pass_if(~ identical(.result, surveys_edited %>% count(plot_type) ))
+)
+```
+
+> ### Challenge 8 Part 2: ![](images/medium.jpg)
+>
+> 2. Use `group_by()` and `summarize()` to find the mean, min, and max hindfoot
+> length for each species (using `species_id`). Also add the number of
+> observations (hint: see `?n`).
+
+```{r challenge-8-p-2, exercise=TRUE, exercise.lines = 12, exercise.eval=TRUE}
 ##  2. Use `group_by()` and `summarize()` to find the mean, min, and max
 ## hindfoot length for each species (using `species_id`). Also add the number of
 ## observations (hint: see `?n`).
 ```
 
-```{r challenge-3-q-3, exercise=TRUE, exercise.lines = 12, exercise.eval=TRUE}
-##  3. What was the heaviest animal measured in each year? Return the
-##  columns `year`, `genus`, `species_id`, and `weight`.
-```
-
-
-
-
-```{r challenge-3-q-1-solution}
-surveys %>%
-        count(plot_type) 
-```
-
-```{r challenge-3-q-1-check}
-grade_result(
-  pass_if(~ identical(.result, surveys %>% count(plot_type) ))
-)
-```
-
-```{r challenge-3-q-2-solution}
-surveys %>%
+```{r challenge-8-p-2-solution}
+surveys_edited %>%
     filter(!is.na(hindfoot_length)) %>%
     group_by(species_id) %>%
     summarize(
@@ -1072,9 +1063,9 @@ surveys %>%
             )
 ```
 
-```{r challenge-3-q-2-check}
+```{r challenge-8-p-2-check}
 grade_result(
-  pass_if(~ identical(.result, surveys %>%
+  pass_if(~ identical(.result, surveys_edited %>%
     filter(!is.na(hindfoot_length)) %>%
     group_by(species_id) %>%
     summarize(
@@ -1087,23 +1078,30 @@ grade_result(
 ```
 
 
-```{r challenge-3-q-3-solution}
-surveys %>%
-    filter(!is.na(weight)) %>%
-    group_by(year) %>%
-    filter(weight == max(weight)) %>%
-    select(year, genus, species, weight) %>%
-    arrange(year)
+> ### Challenge 8 Part 3: ![](images/hot.jpg)
+> 3. What was the heaviest animal measured in each year? Return the columns 
+> `year`, `species_id`, and `weight`.
+
+```{r challenge-8-p-3, exercise=TRUE, exercise.lines = 12, exercise.eval=TRUE}
+##  3. What was the heaviest animal measured in each year? Return the
+##  columns `year`, `genus`, `species_id`, and `weight`.
 ```
 
-```{r challenge-3-q-3-check}
-grade_result(
-  pass_if(~ identical(.result, surveys %>%
+```{r challenge-8-p-3-solution}
+surveys_edited %>%
     filter(!is.na(weight)) %>%
     group_by(year) %>%
     filter(weight == max(weight)) %>%
-    select(year, genus, species, weight) %>%
-    arrange(year)))
+    select(year, species_id, weight) 
+```
+
+```{r challenge-8-p-3-check}
+grade_result(
+  pass_if(~ identical(.result, surveys_edited %>%
+    filter(!is.na(weight)) %>%
+    group_by(year) %>%
+    filter(weight == max(weight)) %>%
+    select(year, species_id, weight) 
 )
 ```
 
@@ -1124,11 +1122,13 @@ The `survey` data have two other data tables they are related to: `plots` and
 `species`. Load in these data and inspect them to get an idea of how they relate
 to the `survey` data we've been working with. 
 
-```{r load-data2, results = 'hide', message = FALSE, exercise=TRUE}
+```{r load-data2p1, exercise=TRUE}
 plots <- read_csv("https://raw.githubusercontent.com/saramannheimer/data-science-r-workshops/master/Data%20Wrangling/AY%202020-2021/data/plots.csv")
 
-species <- read_csv("https://raw.githubusercontent.com/saramannheimer/data-science-r-workshops/master/Data%20Wrangling/AY%202020-2021/data/species.csv")
+head(plots)
 ```
+
+
 
 Table: Columns in the `plots.csv` file:
 
@@ -1136,6 +1136,13 @@ Table: Columns in the `plots.csv` file:
 |------------------|------------------------------------|
 | plot\_id         | ID of a particular plot            |
 | plot\_type       | type of plot                       |
+
+
+```{r load-data2p2, exercise=TRUE}
+species <- read_csv("https://raw.githubusercontent.com/saramannheimer/data-science-r-workshops/master/Data%20Wrangling/AY%202020-2021/data/species.csv")
+
+head(species)
+```
 
 Table: Columns in the `species.csv` file:
 
@@ -1240,7 +1247,7 @@ preserve the contents of `x`, even if there is not a match for them in `y`.
 ### Joining `surveys_edited` Data  
 
 To join the `surveys_edited` data with the `plots` data and `species` data, we will need
-to join statements. As we are interested in adding this information to our 
+two join statements. As we are interested in adding this information to our 
 already existing data frame, `surveys_edited`, a left join is the most appropriate.  
 
 
@@ -1249,12 +1256,12 @@ already existing data frame, `surveys_edited`, a left join is the most appropria
 combined <- surveys_edited %>% 
               left_join(plots, by = "plot_id") %>%  # adding the type of plot  
               left_join(species, by = "species_id") # adding the genus, species, and taxa 
-combined
+glimpse(combined)
 ```
 
 
 
-# Reshaping with `pivot_longer()` and `pivot_wider()`
+## Reshaping Data
 
 Data Carpentry's [spreadsheet
 lesson (link)](https://datacarpentry.org/spreadsheet-ecology-lesson/01-format-data/),
@@ -1266,11 +1273,11 @@ dataset:
 3. Each value must have its own cell
 4. Each type of observational unit forms a table
 
-![](figures/tidy-data.png)
+![](images/tidy-data.png)
 
 Here we examine the fourth rule: Each type of observational unit forms a table.
 
-In `surveys` , the rows of `surveys` contain the values of variables associated
+In `surveys_edited` , the rows of `surveys_edited` contain the values of variables associated
 with each record (the unit), values such as the weight or sex of each animal 
 associated with each record. What if instead of comparing records, we 
 wanted to compare the different mean weight of each genus between plots? 
@@ -1293,13 +1300,13 @@ a variable.
 We can do both these of transformations with two `tidyr` functions, 
 `pivot_longer()` and `pivot_wider()`.
 
-## Pivoting to a Wider Table
+### Pivoting to a Wider Table
 
 `pivot_wider()` takes three principal arguments:
 
-1. the data 
+1. the data  
 2. the column whose values will become new column names.  
-3. the column whose values will fill the new columns.
+3. the column whose values will fill the new columns.  
 
 Further arguments include `fill` which, if set, fills in missing values with 
 the value provided.
@@ -1329,7 +1336,7 @@ glimpse(surveys_gw)
 
 
 
-This yields `surveys_wide` where the observations for each plot are spread 
+This yields `surveys_gw` where the observations for each plot are spread 
 across multiple rows, 196 observations of 3 variables.  
 
 Using `pivot_wider()` to pivot on `genus` with values from `mean_weight` this 
@@ -1350,17 +1357,17 @@ surveys_wide <- surveys_gw %>%
 glimpse(surveys_wide)
 ```
 
-> ### Challenge 9 {.challenge9}
-> ![](figures/spicy.jpg)
+> ### Challenge 9: ![](figures/spicy.jpg)
+> 
 > Pivot the `combined` data frame to a wide format, with `year` as columns, 
 > `plot_id` as rows, and the number of genera per plot as the values. You will
 > need to summarize before reshaping, and use the function `n_distinct()` to 
 > get the number of unique genera within a particular chunk of data. It's a 
-> powerful function! See `?n_distinct` for more.
-
+> powerful function! See `?n_distinct` for more information.
+>
 > Save the wide dataset as an object, with an intuitive name!
 
-```{r}
+```{r challenge-9, exercise=TRUE, exercise.lines=10, exercise.setup="gw-setup"}
 ## Make a wide data frame by pivoting on year. 
 ## Fill the values in these columns with the number of genera per plot. 
 ## Make sure to save the new dataset with an intuitive name!
@@ -1368,7 +1375,23 @@ glimpse(surveys_wide)
 
 ```
 
-## Pivoting to a Longer Table
+```{r challenge-9-solution}
+surveys_wide_genera <- combined %>%
+  group_by(plot_id, year) %>%
+  summarize(num_genera = n_distinct(genus)) %>%
+  pivot_wider(names_from = year, values_from = num_genera)
+```
+
+```{r challenge-9-check}
+grade_result(
+  pass_if(~ identical(.result, surveys_wide_genera <- combined %>%
+  group_by(plot_id, year) %>%
+  summarize(num_genera = n_distinct(genus)) %>%
+  pivot_wider(names_from = year, values_from = num_genera))) 
+)
+```
+
+### Pivoting to a Longer Table
 
 The opposing situation could occur if we had been provided with data in the
 form of `surveys_wide`, where the genus names are column names, but we 
@@ -1481,229 +1504,7 @@ surveys_wide %>%
 
 ```
 
-## Reshaping with `pivot_longer()` and `pivot_wider()`
 
-In the [spreadsheet
-lesson](https://datacarpentry.org/spreadsheet-ecology-lesson/01-format-data/),
-Data Carpenters discussed how to structure data leading to the four rules defining a tidy
-dataset:
-
-1. Each variable has its own column
-2. Each observation has its own row
-3. Each value must have its own cell
-4. Each type of observational unit forms a table
-
-```{r fig.cap="Visualization of tidy data"}
-knitr::include_graphics("images/tidy-data.png")
-```
-
-Here we examine the fourth rule: Each type of observational unit forms a table.
-
-In `surveys_edited` , the rows of `surveys_edited` contain the values of variables associated
-with each record (the unit), values such as the weight or sex of each animal 
-associated with each record. What if instead of comparing records, we 
-wanted to compare the different mean weight of each genus between plots? 
-(Ignoring `plot_type` for simplicity).
-
-We'd need to create a new table where each row (the unit) is comprised of values
-of variables associated with each plot. In practical terms this means the values
-in `genus` would become the names of column variables and the cells would 
-contain the values of the mean weight observed on each plot.
-
-Having created a new table, it is therefore straightforward to explore the 
-relationship between the weight of different genera within, and between, the
-plots. The key point here is that we are still following a tidy data structure,
-but we have **reshaped** the data according to the observations of interest:
-average genus weight per plot instead of recordings per date.
-
-The opposite transformation would be to transform column names into values of
-a variable.
-
-We can do both these of transformations with two `tidyr` functions, 
-`pivot_longer()` and `pivot_wider()`.
-
-### Pivoting to a Wider Table
-
-`pivot_wider()` takes three principal arguments:
-
-1. the data 
-2. the column whose values will become new column names.  
-3. the column whose values will fill the new columns.
-
-Further arguments include `fill` which, if set, fills in missing values with 
-the value provided.
-
-```{r fig.cap="Visualization of the relationship between the long to wide versions of the data using pivot_wider()."}
-knitr::include_graphics("images/long_to_wide.jpg")
-```
-
-Let's use `pivot_wider()` to transform `surveys_edited` to find the mean weight of each 
-genus in each plot over the entire survey period. We use `filter()`,
-`group_by()` and `summarize()` to filter our observations and variables of 
-interest, and create a new variable for the `mean_weight`. We use the pipe as 
-before too.
-
-
-
-```{r genus-weight-example, exercise=TRUE}
-surveys_gw <- combined %>%
-  filter(!is.na(weight)) %>%
-  group_by(plot_id, genus) %>%
-  summarize(mean_weight = mean(weight))
-
-glimpse(surveys_gw)
-surveys_gw
-```
-
-```{r echo=FALSE, eval=TRUE}
-surveys_gw <- combined %>%
-  filter(!is.na(weight)) %>%
-  group_by(plot_id, genus) %>%
-  summarize(mean_weight = mean(weight))
-```
-
-This yields `surveys_gw` where the observations for each plot are spread across
-multiple rows, 196 observations of 3 variables.  
-
-Using `pivot_wider()` to key on `genus` with values from `mean_weight` this becomes
-24 observations of 11 variables, one row for each plot. We again use pipes:
-
-
-
-```{r spread-example, exercise=TRUE}
-surveys_wide <- surveys_gw %>%
-  pivot_wider(names_from = genus, values_from = mean_weight)
-
-surveys_wide
-```
-
-```{r echo=FALSE, eval=TRUE}
-surveys_wide <- surveys_gw %>%
-  pivot_wider(names_from = genus, values_from = mean_weight)
-```
-
-### Gathering
-
-The opposing situation could occur if we had been provided with data in the
-form of `surveys_spread`, where the genus names are column names, but we 
-wish to treat them as values of a genus variable instead.
-
-In this situation we are gathering the column names and turning them into a
-pair of new variables. One variable represents the column names as values, and
-the other variable contains the values previously associated with the column 
-names.
-
-`gather()` takes four principal arguments:
-
-1. the data
-2. the *key* column variable we wish to create from column names.
-3. the *values* column variable we wish to create and fill with values 
-associated with the key.
-4. the names of the columns we use to fill the key variable (or to drop).
-
-
-
-To recreate `surveys_gw` from `surveys_spread` we would create a key called
-`genus` and value called `mean_weight` and use all columns except `plot_id` for
-the key variable. Here we drop `plot_id` column with a minus sign.
-
-
-
-```{r gather-example, exercise=TRUE}
-surveys_long <- surveys_wide %>%
-  pivot_longer(cols=-plot_id, names_to = "genus", values_to = "mean_weight")
-
-glimpse(surveys_long)
-surveys_long
-```
-
-```{r echo=FALSE, eval=TRUE}
-surveys_long <- surveys_wide %>%
-  pivot_longer(cols=-plot_id, names_to = "genus", values_to = "mean_weight")
-```
-
-```{r fig.cap="Visualization of the relationship between the wide to long versions of the data using gather()."}
-knitr::include_graphics("images/wide_to_long.jpg")
-```
-
-Note that now the `NA` genera are included in the re-gathered format. Spreading
-and then gathering can be a useful way to balance out a dataset so every
-replicate has the same composition.
-
-We could also have used a specification for what columns to include. This can be
-useful if you have a large number of identifying columns, and it's easier to
-specify what to gather than what to leave alone. And if the columns are in a
-row, we don't even need to list them all out - just use the `:` operator!
-
-
-
-```{r spread-example2, exercise=TRUE}
-surveys_wide %>%
-  pivot_longer(cols=Baiomys:Spermophilus, names_to = "genus", values_to = "mean_weight", ) %>%
-  head()
-```
-
-
-
-> ### Challenge 4 {.challenge}
->
-> 1. Spread the `surveys_edited` data frame with `year` as columns, `plot_id` 
->   as rows, and the number of genera per plot as the values. You will need to 
->   summarize before reshaping, and use the function `n_distinct()` to get the
->   number of unique genera within a particular chunk of data. It's a powerful 
->   function! See `?n_distinct` for more.
->
-> 
-> 2. Now take that data frame and `gather()` it again, so each row is a unique
->    `plot_id` by `year` combination.
->
-> 
-> 3. The `surveys_edited` data set has two measurement columns: `hindfoot_length` and
->    `weight`.  This makes it difficult to do things like look at the 
->    relationship between mean values of each measurement per year in different
->    plot types. Let's walk through a common solution for this type of problem.
->    First, use `gather()` to create a dataset where we have a key column called
->    `measurement` and a `value` column that takes on the value of either 
->    `hindfoot_length` or `weight`. 
->    *Hint*: You'll need to specify which columns are being gathered.
->
-> 
-> 4. With this new data set, calculate the average of each
->    `measurement` in each `year` for each different `plot_type`. Then
->    `spread()` them into a data set with a column for `hindfoot_length` and
->    `weight`. *Hint*: You only need to specify the key and value
->    columns for `spread()`.
-
-
-```{r}
-## Reshaping challenges
-
-## 1. Make a wide data frame with `year` as columns, `plot_id`` as rows, and 
-## where the values are the number of genera per plot. 
-
-
-
-## 2. Now take that data frame, and make it long again, so each row is a unique
-## `plot_id` `year` combination
-
-
-
-## 3. Use gather to create a truly long dataset where we have a key column called
-## measurement and a value column that takes on the value of either 
-## hindfoot_length or weight. 
-## Hint: You'll need to specify which columns are being gathered.
-
-
-
-## 4. With this new truly long data set, calculate the average of each 
-## measurement in each year for each different plot_type. 
-## Then spread them into a wide data set with a column for hindfoot_length and
-## weight. 
-## Hint: Remember, you only need to specify the key and value columns for spread.
-
-
-
-```
 
 ## Exporting data
 
