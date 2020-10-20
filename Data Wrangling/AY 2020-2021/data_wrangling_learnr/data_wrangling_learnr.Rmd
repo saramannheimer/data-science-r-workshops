@@ -607,7 +607,7 @@ functions, such as:
 -  `minute()` 
 -  `second()`
 
-For additional information about `lubridate` visit [the `lubridate` reference website](https://lubridate.tidyverse.org/) or look over the [`lubridate` cheatsheet](https://rawgit.com/rstudio/cheatsheets/master/lubridate.pdf). 
+For additional information about `lubridate` visit [the `lubridate` reference website](https://lubridate.tidyverse.org/) or look over the [`lubridate` cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/lubridate.pdf). 
 
 ### Using `forcats` and `dplyr` for Character Wrangling   
 
