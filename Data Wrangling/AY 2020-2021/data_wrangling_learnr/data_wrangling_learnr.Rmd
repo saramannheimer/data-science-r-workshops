@@ -609,10 +609,10 @@ functions, such as:
 
 For additional information about `lubridate` visit [the `lubridate` reference website](https://lubridate.tidyverse.org/) or look over the [`lubridate` cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/lubridate.pdf). 
 
-### Using `forcats` and `dplyr` for Character Wrangling   
+## Character Wrangling   
 
 If we inspect the day of week variable we created in the last code chunk, we'll 
-see that it is an ordered (<ord>) factor. 
+see that it is an ordered (\<ord\>) factor. 
 
 > ### Challenge 4 ![](images/mild.jpg) {.challenge}
 > 
@@ -634,7 +634,7 @@ grade_result(
 )
 ```
 
-#### `case_when()` function
+### The `case_when()` function
 
 We notice that the labels for the days of the week are not necessarily 
 what we would like to have for a graphical display of our data. To reword the 
