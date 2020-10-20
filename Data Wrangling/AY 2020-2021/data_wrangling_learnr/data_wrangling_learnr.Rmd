@@ -634,6 +634,8 @@ grade_result(
 )
 ```
 
+#### `case_when()` function
+
 We notice that the labels for the days of the week are not necessarily 
 what we would like to have for a graphical display of our data. To reword the 
 names of the days of the week, we can use the `case_when()` function from 
@@ -673,6 +675,25 @@ surveys_days_full <- surveys_w_days %>%
                              day_of_week == "Sun" ~ "Sunday")
          )
 glimpse(surveys_days_full$day_of_week)
+```
+
+> ### NOTE:
+> 
+> If you only want to recode a couple levels of a variable, you can still use
+> `case_when()` without specifying the behavior for **ALL** levels. See the
+> example below:
+
+```{r caseWhen-example2, exercise=TRUE}
+# Create a variable weekday that takes on a value of 0 for Saturday/Sunday
+# and 1 otherwise and recodes Friday to missing
+surveys_weekday <- surveys_w_days %>%
+  mutate(weekday = case_when(day_of_week == "Sat" ~ 0,
+                             day_of_week == "Sun" ~ 0,
+                             day_of_week == "Fri" ~ as.numeric(NA),
+                             TRUE ~ 1))
+
+surveys_weekday %>%
+  count(weekday)
 ```
 
 But, perhaps these days are not in the order that we want them to be in. 
@@ -1590,7 +1611,7 @@ Similar to the `read_csv()` function used for reading CSV files into `R`, there 
 a `write_csv()` function that generates CSV files from data frames.
 
 Before using `write_csv()`, we are going to create a new folder, `data`,
-in our working directory that will store this generated dataset. We don't want
+in our working directory that will store the generated datasets. We don't want
 to write generated datasets in the same directory as our raw data. It's good
 practice to keep them separate. The `data_raw` folder should only contain the raw,
 unaltered data, and should be left alone to make sure we don't delete or modify
@@ -1598,19 +1619,25 @@ it. In contrast, our script will generate the contents of the `data`
 directory, so even if the files it contains are deleted, we can always
 re-generate them.
 
+```
+if(!dir.exists("data")){dir.create("data")}
+```
+
 In preparation for our next lesson on plotting, we are going to prepare a
-cleaned up version of the data set that doesn't include any missing data.
+cleaned up version of the dataset that doesn't include any missing data.
 
 Let's start by removing observations of animals for which `weight` and 
 `hindfoot_length` are missing, or the `sex` has not been determined:
 
 
 
-```{r, purl=FALSE}
+```{r data-cleanup-exercise, exercise=TRUE}
 surveys_complete <- surveys_edited %>%
   filter(!is.na(weight),           # remove missing weight
          !is.na(hindfoot_length),  # remove missing hindfoot_length
          !is.na(sex))                # remove missing sex
+
+glimpse(surveys_complete)
 ```
 
 
@@ -1621,40 +1648,28 @@ we are going to create a data set that counts how often each species has been
 observed, and filter out the rare species; then, we will extract only the
 observations for these more common species:
 
+```{r data-extract-setup, message=FALSE}
+surveys_complete <- surveys_edited %>%
+  filter(!is.na(weight),           # remove missing weight
+         !is.na(hindfoot_length),  # remove missing hindfoot_length
+         !is.na(sex))                # remove missing sex
+```
 
-```{r, purl=FALSE}
+```{r data-extract-exercise, exercise=TRUE, exercise.lines=12, exercise.setup="data-extract-setup"}
 ## Extract the most common species_id
 species_counts <- surveys_complete %>%
     count(species_id) %>% 
     filter(n >= 50)
 
 ## Only keep the most common species
-surveys_complete <- surveys_complete %>%
+surveys_complete_subset <- surveys_complete %>%
   filter(species_id %in% species_counts$species_id)
   ## using the relational operator %in% 
+
+glimpse(surveys_complete_subset)
 ```
 
-```{r}
-## Create the dataset for exporting:
-##  Start by removing observations for which the `species_id`, `weight`,
-##  `hindfoot_length`, or `sex` data are missing:
-surveys_complete <- surveys_edited %>%
-    filter(species_id != "",        # remove missing species_id
-           !is.na(weight),                 # remove missing weight
-           !is.na(hindfoot_length),        # remove missing hindfoot_length
-           sex != "")                      # remove missing sex
 
-##  Now remove rare species in two steps. First, make a list of species which
-##  appear at least 50 times in our dataset:
-species_counts <- surveys_complete %>%
-    count(species_id) %>% 
-    filter(n >= 50) %>%
-    select(species_id)
-
-##  Second, keep only those species:
-surveys_complete <- surveys_complete %>%
-    filter(species_id %in% species_counts$species_id)
-```
 
 To make sure that everyone has the same data set, check that `surveys_complete`
 has `r nrow(surveys_complete)` rows and `r ncol(surveys_complete)` columns by
@@ -1663,7 +1678,22 @@ typing `dim(surveys_complete)`.
 Now that our data set is ready, we can save it as a CSV file in our `data`
 folder.
 
+```{r ready-for-export-setup}
+## Extract the most common species_id
+species_counts <- surveys_complete %>%
+    count(species_id) %>% 
+    filter(n >= 50)
+
+## Only keep the most common species
+surveys_complete_subset <- surveys_complete %>%
+  filter(species_id %in% species_counts$species_id)
+  ## using the relational operator %in% 
+```
 
 ```{r}
-write_csv(surveys_complete, path = "data/surveys_complete.csv")
+dim(surveys_complete_subset)
+```
+
+```
+write_csv(surveys_complete, path = "data/surveys_complete_subset.csv")
 ```
