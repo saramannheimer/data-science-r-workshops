@@ -649,7 +649,7 @@ should be done with these matches.
 
 Let's look at this in action! 
 
-```{r caseWhen-setup, exercise.setup="challenge-4-setup"}
+```{r caseWhen-setup, message=FALSE, exercise.setup="challenge-4-setup"}
 surveys_days_full <- surveys_w_days %>% 
   mutate(day_of_week = case_when(day_of_week == "Mon" ~ "Monday", 
                              day_of_week == "Tue" ~ "Tuesday", 
@@ -677,7 +677,7 @@ glimpse(surveys_days_full$day_of_week)
 
 But, perhaps these days are not in the order that we want them to be in. 
 
-> ### Challenge 5 ![](figures/medium.jpg) {.challenge}
+> ### Challenge 5 ![](images/medium.jpg) {.challenge}
 > 
 > What order did `R` put the days of the week in?
 > What data type is `day_of_week` now? 
@@ -714,7 +714,7 @@ The function takes three arguments:
 
 This process looks like this: 
 
-```{r relevel-setup, exercise.setup="caseWhen-setup"}
+```{r relevel-setup, message=FALSE, exercise.setup="caseWhen-setup"}
 surveys_edited <- surveys_days_full %>% 
   mutate(day_of_week = fct_relevel(day_of_week, 
                                    "Monday", 
@@ -743,7 +743,7 @@ glimpse(surveys_edited$day_of_week)
 ```
 
 > ### Challenge 6
-> ![](figures/medium.jpg)
+> ![](images/medium.jpg)
 > Verify that `R` put the days in the order that you specified! 
 
 ```{r challenge-6, exercise=TRUE, exercise.eval=TRUE, exercise.setup="relevel-setup"}
@@ -1101,7 +1101,7 @@ grade_result(
     filter(!is.na(weight)) %>%
     group_by(year) %>%
     filter(weight == max(weight)) %>%
-    select(year, species_id, weight) 
+    select(year, species_id, weight) ))
 )
 ```
 
@@ -1311,7 +1311,7 @@ We can do both these of transformations with two `tidyr` functions,
 Further arguments include `fill` which, if set, fills in missing values with 
 the value provided.
 
-![](figures/long_to_wide.JPG)
+![](images/long_to_wide.JPG)
 
 Let's use `pivot_wider()` to transform surveys to find the mean weight of each 
 genus in each plot over the entire survey period. We use `filter()`,
@@ -1319,7 +1319,7 @@ genus in each plot over the entire survey period. We use `filter()`,
 interest, and create a new variable for the `mean_weight`. We use the pipe as 
 before too.
 
-```{r gw-setup}
+```{r gw-setup, message=FALSE}
 combined <- surveys_edited %>% 
               left_join(plots, by = "plot_id") %>%  # adding the type of plot  
               left_join(species, by = "species_id") # adding the genus, species, and taxa 
@@ -1343,7 +1343,7 @@ Using `pivot_wider()` to pivot on `genus` with values from `mean_weight` this
 becomes 24 observations of 11 variables, one row for each plot. We again use 
 pipes:
 
-```{r pivot-wider-setup, exercise.setup="gw-setup"}
+```{r pivot-wider-setup, message=FALSE, exercise.setup="gw-setup"}
 surveys_gw <- combined %>%
   filter(!is.na(weight)) %>%
   group_by(plot_id, genus) %>%
@@ -1357,7 +1357,7 @@ surveys_wide <- surveys_gw %>%
 glimpse(surveys_wide)
 ```
 
-> ### Challenge 9: ![](figures/spicy.jpg)
+> ### Challenge 9: ![](images/spicy.jpg)
 > 
 > Pivot the `combined` data frame to a wide format, with `year` as columns, 
 > `plot_id` as rows, and the number of genera per plot as the values. You will
@@ -1365,7 +1365,8 @@ glimpse(surveys_wide)
 > get the number of unique genera within a particular chunk of data. It's a 
 > powerful function! See `?n_distinct` for more information.
 >
-> Save the wide dataset as an object, with an intuitive name!
+> Save the wide dataset as an object, with an intuitive name! Then use
+> `glimpse` to take a look at the structure.
 
 ```{r challenge-9, exercise=TRUE, exercise.lines=10, exercise.setup="gw-setup"}
 ## Make a wide data frame by pivoting on year. 
@@ -1380,14 +1381,18 @@ surveys_wide_genera <- combined %>%
   group_by(plot_id, year) %>%
   summarize(num_genera = n_distinct(genus)) %>%
   pivot_wider(names_from = year, values_from = num_genera)
+
+glimpse(surveys_wide_genera)
 ```
 
 ```{r challenge-9-check}
-grade_result(
-  pass_if(~ identical(.result, surveys_wide_genera <- combined %>%
+surveys_wide_genera <- combined %>%
   group_by(plot_id, year) %>%
   summarize(num_genera = n_distinct(genus)) %>%
-  pivot_wider(names_from = year, values_from = num_genera))) 
+  pivot_wider(names_from = year, values_from = num_genera)
+
+grade_result(
+  pass_if(~ identical(.result, surveys_wide_genera)) 
 )
 ```
 
@@ -1409,13 +1414,13 @@ names.
 3. the name of the new column to create to store the names of each selected column
 4. the name of the new column to create to store the data filled in each cell
 
-![](figures/wide_to_long.JPG)
+![](images/wide_to_long.JPG)
 
 To recreate `surveys_gw` from `surveys_wide` we would create a key called
 `genus` and value called `mean_weight` and use all columns except `plot_id` for
 the key variable. Here we drop `plot_id` column with a minus sign.
 
-```{r pivot-long-setup, exercise.setup="pivot-wider-setup"}
+```{r pivot-long-setup, message=FALSE, exercise.setup="pivot-wider-setup"}
 surveys_wide <- surveys_gw %>%
   pivot_wider(names_from = genus, values_from = mean_weight)
 ```
@@ -1446,35 +1451,65 @@ surveys_wide %>%
   head()
 ```
 
-</br>
-
-> ### Challenge 10 {.challenge}
-> ![](figures/spicy.jpg)
-> Take the wide dataset and use `pivot_longer()` to pivot it to the long 
+> ### Challenge 10 ![](images/spicy.jpg)
+>
+> Take the `surveys_wide_genera` dataset and use `pivot_longer()` to pivot it to the long 
 > format it was in before, so that each row is a unique `plot_id` by `year` 
 > combination.
+> 
+> **HINT**: The year column names look like numbers so you need to use back ticks ("`") to indicate they
+> are variables instead of numbers. 
 
-```{r}
-## Now take the wide dataset, and make it long again, by (re)pivoting on the 
-## year columns. 
+
+```{r challenge-10-setup}
+surveys_wide_genera <- combined %>%
+  group_by(plot_id, year) %>%
+  summarize(num_genera = n_distinct(genus)) %>%
+  pivot_wider(names_from = year, values_from = num_genera)
+```
+
+```{r challenge-10, exercise=TRUE, exercise.setup="challenge-10-setup"}
+## Now take the surveys_wide_genera dataset, and make it long again, by  
+## (re)pivoting on the year columns. 
 
 
 ```
 
+```{r challenge-10-solution}
+## Now take the wide dataset, and make it long again, by (re)pivoting on the 
+## year columns. 
+surveys_wide_genera %>%
+  pivot_longer(cols=`1996`:`2002`, names_to = "year",
+               values_to = "num_genera")
 
-> ### Challenge 11 {.challenge}
-> ![](figures/hot.jpg)
-> 1. The `combined` data set has two measurement columns: `hindfoot_length` and
+```
+
+```{r challenge-10-check}
+grade_result(
+  pass_if(~ identical(.result, surveys_wide_genera %>%
+  pivot_longer(cols=`1996`:`2002`, names_to = "year",
+               values_to = "num_genera"))) 
+)
+```
+
+
+> ### Challenge 11 Part 1: ![](images/hot.jpg)
+> 
+> The `combined` data set has two measurement columns: `hindfoot_length` and
 > `weight`.  This makes it difficult to do things like look at the 
 > relationship between mean values of each measurement per year in different
-> plot types. Let's walk through a common solution for this type of problem.
+> plot types. 
+>
+> Let's walk through a common solution for this type of problem.
+>
 > First, use `pivot_longer()` to create a dataset where we have a names column
 > called `measurement` and a values column that takes on the value of either 
 > `hindfoot_length` or `weight`. 
-> *Hint*: You'll need to specify which columns to pivot into longer format!
+>
+> **HINT**: You'll need to specify which columns to pivot into longer format!
 
 
-```{r}
+```{r challenge-11-p-1, exercise=TRUE, exercise.lines=10, exercise.setup="gw-setup"}
 ## Use pivot_long() to create an even longer dataset.
 ## Create a column called measurement, containing the hindfoot and weight columns
 ## And a value column that takes on the value of either of these measurements 
@@ -1484,14 +1519,39 @@ surveys_wide %>%
 
 ```
 
-> ![](figures/spicy.jpg)
-> 2. With this new data set, calculate the average of each `measurement` in each
-> `year` for each different `plot_type`. Then pivot these summaries into a 
-> a data set with a column for `hindfoot_length` and `weight`. 
-> *Hint*: This sounds like you want to pivot the data to be a wider format! 
+```{r challenge-11-p-1-solution}
+combined_longer <- combined %>%
+  pivot_longer(cols = c(hindfoot_length, weight), names_to = "measurement",
+             values_to = "values")
 
+glimpse(combined_longer)
+```
 
-```{r}
+```{r challenge-11-p-1-check}
+grade_result(
+  pass_if(~ identical(.result, combined %>%
+  pivot_longer(cols = c(hindfoot_length, weight), names_to = "measurement",
+             values_to = "values"))) 
+)
+```
+
+> ### Challenge 11 Part 2: ![](images/hot.jpg)
+> 
+> With this new data set, calculate the average of each `measurement` in each
+> `year` for each different `plot_type`. 
+>
+> Then pivot these summaries into a 
+> data set with a column for `hindfoot_length` and `weight`. 
+>
+> **HINT**: This sounds like you want to pivot the data to be a wider format! 
+
+```{r challenge-11-p-2-setup}
+combined_longer <- combined %>%
+  pivot_longer(cols = c(hindfoot_length, weight), names_to = "measurement",
+             values_to = "values")
+```
+
+```{r challenge-11-p-2, exercise=TRUE, exercise.lines=20, exercise.setup="challenge-11-p-2-setup"}
 ## With this new very long data set, calculate the average of each 
 ## measurement in each year for each different plot_type. 
 
@@ -1504,7 +1564,21 @@ surveys_wide %>%
 
 ```
 
+```{r challenge-11-p-2-solution}
+measurement_averages <- combined_longer %>%
+  group_by(year, plot_type, measurement) %>%
+  summarize(avg_measure = mean(values))
 
+measurement_avg_wide <- measurement_averages %>%
+  pivot_wider(names_from = measurement, values_from = avg_measure)
+```
+
+```{r challenge-11-p-2-check}
+grade_result(
+  pass_if(~ identical(.result, measurement_averages %>%
+  pivot_wider(names_from = measurement, values_from = avg_measure))) 
+)
+```
 
 ## Exporting data
 
