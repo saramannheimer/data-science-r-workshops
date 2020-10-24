@@ -37,14 +37,14 @@ species <- read_csv("data/species.csv")
 
 ------------
 
-## Data Manipulation using **`dplyr`** and **`tidyr`** Introduction
+## Data Manipulation using **`dplyr`** & **`tidyr`** Intro
 
 **`dplyr`** is a 
 package for making tabular data manipulation easier. It pairs nicely with 
 **`tidyr`** which enables you to swiftly convert between different data formats
 for plotting and analysis. Note that we're not using "data 
 manipulation," but "data wrangling." To us, "data manipulation" is a term that 
-captures the event where a researcher manipulates their data (e.g moving 
+captures the event where a researcher manipulates their data (e.g., moving 
 columns, deleting rows, merging data files) in a __non-reproducible__ manner. 
 Whereas, with data wrangling, all of these process are done, but in a 
 __reproducible__ manner, such as using an `R` script!
@@ -77,14 +77,14 @@ to avoid this hidden argument to convert our data type.
 This time we will use the **`tidyverse`** package to read the data and avoid 
 having to set **`stringsAsFactors`** to **`FALSE`**
 
-If we haven't already done so, we can type `install.packages("tidyverse")` 
-straight into the console. In fact, it's better to write this in the console 
-than in our script for any package, as there's no need to re-install packages 
-every time we run the script.
+In order to install the `tidyverse` package, you can type `install.packages("tidyverse")` 
+straight into the RStudio console. In fact, it's better to write this in the console 
+than in a script for any package, as there's no need to re-install packages 
+every time we run the script. If you work in a .Rmd (R-markdown) format, any missing packages will be identified and a prompt added to the top of the document about installing the packages. 
 
-Then, to load the package type:
+Then, to load the package we would need to type:
 
-```{r, message = FALSE}
+```r
 ## load the tidyverse packages -- including dplyr, tidyr, readr, stringr
 library(tidyverse)
 ```
@@ -120,8 +120,7 @@ to check out this
 
 ### Presentation of the Survey Data
 
-We are investigating the animal species diversity and weights found within plots at the Data Carpentry study
-site. The dataset is stored as a comma separated value (CSV) file.
+The data used in this workshop are a time-series for a small mammal community in southern Arizona. This is part of a project studying the effects of rodents and ants on the plant community that has been running for almost 40 years, but we will focus on the years 1996 to 2002 (_n_=11332 observations). The rodents are sampled on a series of 24 plots, with different experimental manipulations controlling which rodents are allowed to access which plots. This is simplified version of the full data set that has been used in over 100 publications and was provided by the Data Carpentries (https://datacarpentry.org/ecology-workshop/data/). We are investigating the animal species diversity and weights found within plots in this workshop. The dataset is stored as a comma separated value (CSV) file.
 Each row holds information for a single animal, and the columns represent:
 
 | Column           | Description                        |
@@ -141,14 +140,14 @@ We'll read in our data using the `read_csv()` function, from the tidyverse
 package **`readr`**, instead of `read.csv()`.
 
 ```{r load-data, exercise=TRUE}
-surveys <- read_csv("https://raw.githubusercontent.com/saramannheimer/data-science-r-workshops/master/Data%20Wrangling/AY%202020-2021/data/surveys.csv")
+surveys <- read_csv("https://raw.githubusercontent.com/saramannheimer/data-science-r-workshops/master/Data%20Wrangling/AY%202020-2021/data/surveys2_subset.csv")
 ```
 
 
 You will see the message `Parsed with column specification`, followed by each 
 column name and its data type. When you execute `read_csv` on a data file, it 
 looks through the first 1000 rows of each column and guesses the data type for 
-each column as it reads it into `R`. For example, in this dataset, `read_csv`reads
+each column as it reads it into `R`. For example, in this dataset, `read_csv` reads
 `weight` as `col_double` (a numeric data type), and `species` as 
 `col_character`. You have the option to specify the data type for a column 
 manually by using the `col_types` argument in `read_csv`.
@@ -160,7 +159,7 @@ glimpse(surveys)
 ```
 
 ```{r eval=FALSE, echo=TRUE}
-## Preview the data
+## Preview the data (opens a spreadsheet-like interface in RStudio)
 View(surveys)
 ```
 
@@ -171,7 +170,7 @@ surveys
 Notice that the class of the data is now `tbl_df`
 
 This is referred to as a "tibble". Tibbles tweak some of the behaviors of the 
-data frame objects we introduced in the previous episode. The data structure is
+data frame objects we introduced previously. The data structure is
 very similar to a data frame. For our purposes the only differences are that:
 
 1. In addition to displaying the data type of each column under its name, it
@@ -225,66 +224,66 @@ and `species_id`.
 
 To choose rows based on a specific criteria, use `filter()`:
 
-```{r filter-rows-1995, exercise=TRUE}
-filter(surveys, year == 1995)
+```{r filter-rows-1999, exercise=TRUE}
+filter(surveys, year == 1999)
 ```
 
-In the code above `==` keeps all rows where the year is 1995. 
+In the code above `==` keeps all rows where the year is 1999. 
 
 Other filtering options include `!=`, which keeps all rows that are **not** a certain criteria, `,` which means **"and"**, and `|` which means **"or"**. Filter can also do `<` for "less than", `>` for "greater than", `<=` for "less than or equal to", and `>=` for "greater than or equal to". We type these last two options the same way we would typically say them.
 
 1.  `!=` example: 
 
     ```{r filter-exclude-rows-example, exercise=TRUE}
-    filter(surveys, year != 1977)
+    filter(surveys, year != 1999)
     ```
     
-    The code above keeps all rows where the year is not 1995. 
+    The code above keeps all rows where the year is not 1999. 
     
-    Modify the following code to keep all rows where the `year` is *not* 1995.
+    Modify the following code to keep all rows where the `year` is *not* 1996.
 
     ```{r filter-exclude-rows, exercise=TRUE, exercise.eval=TRUE}
-    filter(surveys, year != 1977)
+    filter(surveys, year != 1999)
     ```
 
     ```{r filter-exclude-rows-solution}
-    filter(surveys, year != 1995)
+    filter(surveys, year != 1996)
     ```
 
 2.  `,` example:
     
     ```{r filter-comma-example, exercise=TRUE}
-    filter(surveys, year == 1977 , plot_id == 2)
+    filter(surveys, year == 1999 , plot_id == 2)
     ```
     
-    The code above keeps all rows where the year is 1977 for plot id 2, i.e. year 1977 and plot 2. The rows meet **both** of these criteria. 
+    The code above keeps all rows where the year is 1999 for plot id 2, i.e., year 1999 and plot 2. The rows meet **both** of these criteria. 
     
-    Modify the following code to keep all rows where the `year` is 1995 and the `plot_id` is 3.
+    Modify the following code to keep all rows where the `year` is 2001 and the `plot_id` is 3.
   
     ```{r filter-comma, exercise=TRUE, exercise.eval=TRUE}
-    filter(surveys, year == 1977 , plot_id == 2)
+    filter(surveys, year == 1999 , plot_id == 2)
     ```
     
     ```{r filter-comma-solution}
-    filter(surveys, year == 1995 , plot_id == 3)
+    filter(surveys, year == 2001 , plot_id == 3)
     ```
 
 3.  `|` example:
 
     ```{r filter-or-example, exercise=TRUE}
-    filter(surveys, year == 1977 | plot_id == 2)
+    filter(surveys, year == 1999 | plot_id == 2)
     ```
     
-    The code above keeps all rows where the year is 1977 **or** is plot id 2, i.e. year 1977 or plot 2. The rows meet **either** of these criteria but not both. 
+    The code above keeps all rows where the year is 1999 **or** is plot id 2, i.e., year 1999 or plot 2. The rows meet **either** of these criteria but not both. 
     
-    Modify the following code to keep all rows where the `year` is 1995 or plot id 3, but not both.
+    Modify the following code to keep all rows where the `year` is 2001 or plot id 3, but not both.
     
     ```{r filter-or, exercise=TRUE}
     filter(surveys, year == 1977, plot_id == 2)
     ```
     
     ```{r filter-or-solution}
-    filter(surveys, year == 1995| plot_id == 3)
+    filter(surveys, year == 2001| plot_id == 3)
     ```
 
 4.  `<` example:
@@ -295,14 +294,14 @@ Other filtering options include `!=`, which keeps all rows that are **not** a ce
     
     The code above keeps all rows where weight is less than 8. 
     
-    Modify the following code to keep all rows where weight is less than 5.
+    Modify the following code to keep all rows where weight is less than 6.
     
     ```{r less-than, exercise=TRUE, exercise.eval=TRUE}
     filter(surveys, weight < 8)
     ```
     
     ```{r less-than-solution}
-    filter(surveys, weight < 5)
+    filter(surveys, weight < 6)
     ```
 
 
@@ -335,7 +334,7 @@ that as input to the next function, like this:
 
 
 ```{r pipes-example-1, exercise=TRUE}
-surveys2 <- filter(surveys, weight < 5)
+surveys2 <- filter(surveys, weight < 6)
 surveys_sml <- select(surveys2, species_id, sex, weight)
 ```
 
@@ -343,17 +342,17 @@ This is readable, but can clutter up your workspace with lots of objects that
 you have to name individually. With multiple steps, that can be hard to keep 
 track of.
 
-You can also nest functions (i.e. one function inside of another), like this:
+You can also nest functions (i.e., one function inside of another), like this:
 
 ```{r pipes-example-2, exercise=TRUE}
-surveys_sml <- select(filter(surveys, weight < 5), species_id, sex, weight)
+surveys_sml <- select(filter(surveys, weight < 6), species_id, sex, weight)
 ```
 
 This is handy, but can be difficult to read if too many functions are nested, as
 R evaluates the expression from the inside out (in this case, filtering, then 
 selecting).
 
-The last option, *pipes*, are a recent addition to `R`. Pipes let you take
+The last option, *pipes*, are a more recent addition to `R`. Pipes let you take
 the output of one function and send it directly to the next, which is useful
 when you need to do many things to the same dataset.  Pipes in `R` look like
 `%>%` and are made available via the **`magrittr`** package, installed 
@@ -363,12 +362,12 @@ automatically with **`dplyr`**. If you use RStudio, you can type the pipe with
 
 ```{r pipes-example-3, exercise=TRUE}
 surveys %>%
-  filter(weight < 5) %>%
+  filter(weight < 6) %>%
   select(species_id, sex, weight)
 ```
 
 In the above code, we use the pipe to send the `surveys` dataset first through
-`filter()` to keep rows where `weight` is less than 5, then through `select()`
+`filter()` to keep rows where `weight` is less than 6, then through `select()`
 to keep only the `species_id`, `sex`, and `weight` columns. Since `%>%` takes
 the object on its left and passes it as the first argument to the function on
 its right, we don't need to explicitly include the data frame as an argument
@@ -376,7 +375,7 @@ to the `filter()` and `select()` functions any more.
 
 Some may find it helpful to read the pipe like the word "then". For instance,
 in the above example, we took the data frame `surveys`, *then* we `filter`ed
-for rows with `weight < 5`, *then* we `select`ed columns `species_id`, `sex`,
+for rows with `weight < 6`, *then* we `select`ed columns `species_id`, `sex`,
 and `weight`. The **`dplyr`** functions by themselves are somewhat simple,
 but by combining them into linear workflows with the pipe, we can accomplish
 more complex manipulations of data frames.
@@ -388,7 +387,7 @@ can assign it a new name:
 
 ```{r pipe-rename-example, exercise=TRUE}
 surveys_sml <- surveys %>%
-  filter(weight < 5) %>%
+  filter(weight < 6) %>%
   select(species_id, sex, weight)
 
 surveys_sml
@@ -402,19 +401,19 @@ Note that the final data frame is the leftmost part of this expression.
 >
 >  Using pipes, subset the `surveys` data to include:
 >
-  -  animals collected on or after 1995 and 
+  -  animals collected on or after 2001 and 
   -  retain only the columns `year`, `sex`, and `weight`.
 >
 
 ```{r challenge-1, exercise=TRUE, exercise.lines = 7}
 ## Pipes Challenge:
 ##  Using pipes, subset the data to include animals collected
-##  before 1995, and retain the columns `year`, `sex`, and `weight.`
+##  on or after 2001, and retain the columns `year`, `sex`, and `weight.`
 ```
 
 ```{r challenge-1-solution}
 surveys %>%
-     filter(year >= 1995) %>%
+     filter(year >= 2001) %>%
      select(year, sex, weight)
 ```
 
@@ -428,7 +427,7 @@ Frequently you'll want to create new columns based on the values in existing
 columns, for example to do unit conversions, or to find the ratio of values in 
 two columns. For this we'll use `mutate()`.
 
-To create a new column of weight in kg:
+To create a new column of weight in kg from weight in grams:
 
 ```{r create-column, exercise=TRUE}
 surveys %>%
@@ -464,8 +463,7 @@ surveys %>%
 
 
 
-The first few rows of the output are full of `NA`s, so if we wanted to remove
-those we could insert a `filter()` in the chain:
+The first few rows of the data set contain some missing observations (`NA`s). If we wanted to remove any observations where there were missing values on `weight`, we could insert a `filter()` in the chain:
 
 
 
@@ -489,9 +487,9 @@ an `NA`.
 >
 -  contains only the `species_id` column and 
 -  a new column called `hindfoot_cm` containing the `hindfoot_length` values 
-   converted to centimeters.
--  In this `hindfoot_cm` column, there are no `NA`s and all values are less than 3.
--  Print out the new data frame.
+   converted to centimeters (they are in mm).
+-  Make sure that you only retain values in the hindfoot_cm column that are not missing (not NA) and are less than 3 cm.
+-  Then print out the `head()` of the new data frame.
 >
 >  **Hint**: think about how the commands should be ordered to produce this data frame!
 > 
@@ -505,9 +503,9 @@ an `NA`.
 ##  * contains only the `species_id` column and 
 ##  * a new column called `hindfoot_cm` containing the `hindfoot_length` values 
 ##    converted to centimeters.
-##  * In this `hindfoot_cm` column, there are no `NA`s and all values are less
-##    than 3.
-##  Print out the new data frame.
+##  * Make sure that you only retain values in the hindfoot_cm column that are
+##    not missing (not NA) and are less than 3 cm.
+##  Then print out the head of the new data frame.
 
 ##  Hint: think about how the commands should be ordered to produce this data frame!
 
@@ -519,7 +517,8 @@ surveys_hindfoot_cm <- surveys %>%
   mutate(hindfoot_cm = hindfoot_length/10) %>%
   filter(hindfoot_cm < 3) %>%
   select(species_id, hindfoot_cm)
-surveys_hindfoot_cm
+surveys_hindfoot_cm %>% 
+  head()
 ```
 
 
@@ -531,8 +530,10 @@ grade_result(
   filter(!is.na(hindfoot_length)) %>%
   mutate(hindfoot_cm = hindfoot_length/10) %>%
   filter(hindfoot_cm < 3) %>%
-  select(species_id, hindfoot_cm)))
-)
+  select(species_id, hindfoot_cm))
+  surveys_hindfoot_cm %>% 
+  head())
+  )
 ```
  
 ### Using `lubridate` for dates 
@@ -541,9 +542,8 @@ Date-time data can be frustrating to work with in `R`, since `R` commands for
 date-times are generally un-intuitive and change depending on the type of 
 date-time object being used. Moreover, the methods we use with date-times must 
 be robust to time zones, leap days, daylight savings times, and other time 
-related quirks, and `R` lacks these capabilities in some situations. `Lubridate`
-makes it easier to do the things `R` does with date-times and possible to do the
-things `R` does not.
+related quirks, and `R` lacks these capabilities in some situations. The `lubridate` package 
+makes it easier to do the things `R` does with date-times and possible to do things that base `R` does not.
 
 `Lubridate` has functions that handle easy parsing of times, such as:  
 
@@ -570,18 +570,25 @@ surveys_w_days <- surveys %>%
          ## label = TRUE prints the name, not the level! 
          )
 
+surveys_w_days %>%
+  head()
+
+surveys_w_days %>%
+  select(day_of_week) %>%
+  summary()
+
 surveys_w_days %>% 
   filter(is.na(date) == TRUE) %>% 
   select(month, day) %>% 
   table()
 
-head(surveys_w_days)
+
 ```
 
 > ### Challenge 3 ![Medium spicy chili pepper.](images/medium.jpg) {.challenge3} 
 >
 -  What dates were unable to be converted? 
--  Why did that happen?  
+-  Explore the results and objects in the previous sandbox to figure out why that happened.  
 >
 
 ```{r challenge-4-setup}
@@ -596,6 +603,7 @@ surveys_w_days <- surveys %>%
          ## label = TRUE prints the name, not the level! 
          )
 ```
+
 
 We can pull off components of dates using a large array of `lubridate` 
 functions, such as:  
@@ -661,7 +669,7 @@ surveys_days_full <- surveys_w_days %>%
                              day_of_week == "Sat" ~ "Saturday",
                              day_of_week == "Sun" ~ "Sunday")
          )
-glimpse(surveys_days_full$day_of_week)
+#glimpse(surveys_days_full$day_of_week)
 ```
 
 ```{r caseWhen-example, exercise=TRUE, exercise.lines=10, exercise.setup="challenge-4-setup"}
@@ -683,7 +691,7 @@ glimpse(surveys_days_full$day_of_week)
 > `case_when()` without specifying the behavior for **ALL** levels. See the
 > example below:
 
-```{r caseWhen-example2, exercise=TRUE}
+```{r caseWhen-example2, exercise=TRUE, exercise.setup="challenge-4-setup"}
 # Create a variable weekday that takes on a value of 0 for Saturday/Sunday
 # and 1 otherwise and recodes Friday to missing
 surveys_weekday <- surveys_w_days %>%
@@ -709,8 +717,8 @@ But, perhaps these days are not in the order that we want them to be in.
 ```
 
 ```{r challenge-5-solution}
-table(surveys_day_full$day_of_week)
-typeof(surveys_day_full$day_of_week)
+table(surveys_days_full$day_of_week)
+typeof(surveys_days_full$day_of_week)
 ```
 
 ```{r challenge-5-check}
@@ -807,8 +815,7 @@ surveys_edited %>%
 
 
 
-You may also have noticed that the output from these calls doesn't run off the
-screen anymore. It's one of the advantages of `tbl_df` over data frame.
+One of the advantages of `tbl_df` over data frame is that is provides more compact output, although the current format of these materials makes that hard to see.
 
 You can also group by multiple columns:
 
@@ -822,7 +829,7 @@ surveys_edited %>%
 
 
 
-When grouping both by `sex` and `species_id`, the last few rows are for animals
+When grouping both by `sex` and `species_id`, the last row is for animals
 that escaped before their sex and body weights could be determined. You may notice
 that the last column does not contain `NA` but `NaN` (which refers to "Not a
 Number"). To avoid this, we can remove the missing values for weight before we
@@ -840,8 +847,7 @@ surveys_edited %>%
 
 
 
-Here, again, the output from these calls doesn't run off the screen
-anymore. If you want to display more data, you can use the `print()` function
+If you want to display more data, you can use the `print()` function
 at the end of your chain with the argument `n` specifying the number of rows to
 display:
 
@@ -939,7 +945,7 @@ grade_result(
 >
 > What was the heaviest animal measured in each year?
 >
-> Return the columns `year`, `genus`, `species_id`, and `weight`.
+> Return the columns `year` and `weight`.
 
 ```{r challenge-7-2, exercise=TRUE, exercise.lines=7, exercise.setup="relevel-example"}
 
@@ -950,7 +956,7 @@ surveys_edited %>%
   filter(!is.na(weight)) %>%
   group_by(year) %>%
   summarize(max_weight = max(weight)) %>%
-  select(year, genus, species_id, weight)
+  select(year, max_weight)
 ```
 
 ```{r challenge-7-2-check}
@@ -959,7 +965,7 @@ grade_result(
   filter(!is.na(weight)) %>%
   group_by(year) %>%
   summarize(max_weight = max(weight)) %>%
-  select(year, genus, species_id, weight)))
+  select(year, max_weight)))
 )
 ```
 
@@ -1006,7 +1012,7 @@ surveys_edited %>%
 
 The previous example shows the use of `count()` to count the number of rows/observations 
 for *one* factor (i.e., `sex`). 
-If we wanted to count *combination of factors*, such as `sex` and `species`, 
+If we wanted to count the *combination of factors*, such as `sex` and `species`, 
 we would specify the first and the second factor as the arguments of `count()`:
 
 
@@ -1033,9 +1039,8 @@ surveys_edited %>%
 
 
 
-From the table above, we may learn that, for instance, there are 75 observations
-of the *albigula* species (`species_id` = "NL") that are not specified for its sex (i.e. `NA`), 
-the counts for *NL* are on page 3 of the table.
+From the table above, we may learn that, for instance, there are 72 observations
+of the *albigula* species (`species_id` = "NL") for males.
 
 
 
@@ -1051,12 +1056,12 @@ the counts for *NL* are on page 3 of the table.
 
 ```{r challenge-8-p-1-solution}
 surveys_edited %>%
-        count(plot_type) 
+        count(plot_id) 
 ```
 
 ```{r challenge-8-p-1-check}
 grade_result(
-  pass_if(~ identical(.result, surveys_edited %>% count(plot_type) ))
+  pass_if(~ identical(.result, surveys_edited %>% count(plot_id) ))
 )
 ```
 
@@ -1101,11 +1106,11 @@ grade_result(
 
 > ### Challenge 8 Part 3: ![](images/hot.jpg)
 > 3. What was the heaviest animal measured in each year? Return the columns 
-> `year`, `species_id`, and `weight`.
+> `year`, `species_id`, and `weight` for that animal.
 
 ```{r challenge-8-p-3, exercise=TRUE, exercise.lines = 12, exercise.eval=TRUE}
 ##  3. What was the heaviest animal measured in each year? Return the
-##  columns `year`, `genus`, `species_id`, and `weight`.
+##  columns `year`, `species_id`, and `weight`.
 ```
 
 ```{r challenge-8-p-3-solution}
@@ -1128,9 +1133,7 @@ grade_result(
 
 ## Relational Data with `dplyr`   
 
-It is rare that ecological data analyses involve only a single table of data. 
-More typically, you have multiple tables of data, describing different aspects 
-of your study. When you embark on analyzing your data, these different data 
+It is rare that data analyses, especially with longitudinal measurements, involve only a single table of data. More typically, you have multiple tables of data, describing different aspects of your study. When you embark on analyzing your data, these different data 
 tables need to be combined. Collectively, multiple tables of data are called 
 *relational data*, as the data tables are not independent, rather they relate to
 each other. 
@@ -1280,7 +1283,7 @@ combined <- surveys_edited %>%
 glimpse(combined)
 ```
 
-
+If the keys being used have different names in the data tables, you can use `by=c("a" = "b")` where `a` is the key name in the `x` data set and `b` is the name in the `y` data set. Or you could mutate the variable names so that they do match prior to using `left_join`.
 
 ## Reshaping Data
 
@@ -1301,7 +1304,7 @@ Here we examine the fourth rule: Each type of observational unit forms a table.
 In `surveys_edited` , the rows of `surveys_edited` contain the values of variables associated
 with each record (the unit), values such as the weight or sex of each animal 
 associated with each record. What if instead of comparing records, we 
-wanted to compare the different mean weight of each genus between plots? 
+wanted to compare the different mean weights of each genus between plots? 
 (Ignoring `plot_type` for simplicity).
 
 We'd need to create a new table where each row (the unit) is comprised of values
@@ -1353,15 +1356,18 @@ surveys_gw <- combined %>%
   summarize(mean_weight = mean(weight))
 
 glimpse(surveys_gw)
+
+surveys_gw %>% 
+  head()
 ```
 
 
 
 This yields `surveys_gw` where the observations for each plot are spread 
-across multiple rows, 196 observations of 3 variables.  
+across multiple rows, 164 observations of 3 variables.  
 
 Using `pivot_wider()` to pivot on `genus` with values from `mean_weight` this 
-becomes 24 observations of 11 variables, one row for each plot. We again use 
+becomes 24 observations of 9 variables, one row for each plot. We again use 
 pipes:
 
 ```{r pivot-wider-setup, message=FALSE, exercise.setup="gw-setup"}
@@ -1376,6 +1382,9 @@ surveys_wide <- surveys_gw %>%
   pivot_wider(names_from = genus, values_from = mean_weight)
 
 glimpse(surveys_wide)
+
+surveys_wide %>% 
+  head()
 ```
 
 > ### Challenge 9: ![](images/spicy.jpg)
@@ -1421,7 +1430,7 @@ grade_result(
 
 The opposing situation could occur if we had been provided with data in the
 form of `surveys_wide`, where the genus names are column names, but we 
-wish to treat them as values of a genus variable instead.
+wish to treat them as values of a genus variable instead. This task is extremely common in longitudinal data where the columns are the measurement events over time on the same variable and the rows are for the locations or subjects and we want to align all the responses in one long vector for plotting (e.g., `ggplot`) or analyses.
 
 In this situation we are gathering the column names and turning them into a
 pair of new variables. One variable represents the column names as values, and
@@ -1439,7 +1448,7 @@ names.
 
 To recreate `surveys_gw` from `surveys_wide` we would create a key called
 `genus` and value called `mean_weight` and use all columns except `plot_id` for
-the key variable. Here we drop `plot_id` column with a minus sign.
+the key variable. Here we drop the `plot_id` column with a minus sign.
 
 ```{r pivot-long-setup, message=FALSE, exercise.setup="pivot-wider-setup"}
 surveys_wide <- surveys_gw %>%
@@ -1457,7 +1466,7 @@ glimpse(surveys_long)
 
 Note that now the `NA` genera are included in the re-gathered format. Pivoting 
 your data to a wide format and then pivoting to a long format can be a useful 
-way to balance out a dataset so every replicate has the same composition.
+way to balance out a dataset so every replicate has the same composition and you can see where you could have obtained observations.
 
 We could also have used a specification for what columns to include. This can be
 useful if you have a large number of identifying columns, and it's easier to
@@ -1467,7 +1476,7 @@ row, we don't even need to list them all out `-` just use the `:` operator!
 
 ```{r pivot-long-example2, exercise=TRUE, exercise.setup="pivot-long-setup"}
 surveys_wide %>%
-  pivot_longer(cols = Baiomys:Spermophilus, names_to = "genus", 
+  pivot_longer(cols = Chaetodipus:Sigmodon, names_to = "genus", 
                values_to = "mean_weight") %>%
   head()
 ```
