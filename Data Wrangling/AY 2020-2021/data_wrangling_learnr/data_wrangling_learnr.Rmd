@@ -20,6 +20,18 @@ species <- read_csv("data/species.csv")
 ```
 
 
+## Orientation of/for the workshop
+
+*  This workshop assumes some basic familiarity with working in `R` such as what you might obtain in the "Introduction to R" workshop or in a statistics course that uses `R` heavily, such as STAT 217 or STAT 411/511. If you have not interacted with `R` previously, some of the assumptions of your background for this workshop might be a barrier. We would recommend getting what you can from this workshop and you can always revisit the materials at a later date after filling in some of those basic `R` skills. We all often revisit materials and discover new and deeper aspects of the content that we were not in a position to appreciate in a first exposure.
+
+*  In order to focus this workshop on coding, we developed this interactive website for you to play in a set of "sandboxes" and try your hand at implementing the methods we are discussing. When each code chunk is ready to run (all can be edited, many have the code prepared for you), you can click on "Run Code". This will run `R` in the background on a server. For the "Challenges", you can get your answer graded although many have multiple "correct" answers, so don't be surprised if our "correct" answer differs from yours. The "Solution" is also provided in some cases so you can see a solution - but you will learn more by trying the challenge first before seeing the answer. Each sandbox functions independently, which means that you can pick up working at any place in the documents and re-set your work without impacting other work (this is VERY different from how `R` usually works!). Hopefully this allows you to focus on the code and what it does... The "Start over" button can be used on any individual sandbox or you can use the one on the left tile will re-set all the code chunks to the original status. 
+
+*  These workshops are taught by Sara Mannheimer, Greta Linse, and Mark Greenwood and co-organized by the MSU Library, Statistical Consulting and Research Services (SCRS), and the Department of Mathematical Sciences. More details on us and other workshops are available at the end of the session.
+
+Let's get started! 
+
+------------
+
 ## Learning Objectives
 
 >
@@ -140,7 +152,7 @@ We'll read in our data using the `read_csv()` function, from the tidyverse
 package **`readr`**, instead of `read.csv()`.
 
 ```{r load-data, exercise=TRUE}
-surveys <- read_csv("https://raw.githubusercontent.com/saramannheimer/data-science-r-workshops/master/Data%20Wrangling/AY%202020-2021/data/surveys2_subset.csv")
+surveys <- read_csv("https://raw.githubusercontent.com/saramannheimer/data-science-r-workshops/master/Data%20Wrangling/AY%202020-2021/data_wrangling_learnr/data/surveys2_subset.csv")
 ```
 
 
@@ -1147,7 +1159,7 @@ The `survey` data have two other data tables they are related to: `plots` and
 to the `survey` data we've been working with. 
 
 ```{r load-data2p1, exercise=TRUE}
-plots <- read_csv("https://raw.githubusercontent.com/saramannheimer/data-science-r-workshops/master/Data%20Wrangling/AY%202020-2021/data/plots.csv")
+plots <- read_csv("https://raw.githubusercontent.com/saramannheimer/data-science-r-workshops/master/Data%20Wrangling/AY%202020-2021/data_wrangling_learnr/data/plots.csv")
 
 head(plots)
 ```
@@ -1163,7 +1175,7 @@ Table: Columns in the `plots.csv` file:
 
 
 ```{r load-data2p2, exercise=TRUE}
-species <- read_csv("https://raw.githubusercontent.com/saramannheimer/data-science-r-workshops/master/Data%20Wrangling/AY%202020-2021/data/species.csv")
+species <- read_csv("https://raw.githubusercontent.com/saramannheimer/data-science-r-workshops/master/Data%20Wrangling/AY%202020-2021/data_wrangling_learnr/data/species.csv")
 
 head(species)
 ```
@@ -1393,7 +1405,7 @@ surveys_wide %>%
 > `plot_id` as rows, and the number of genera per plot as the values. You will
 > need to summarize before reshaping, and use the function `n_distinct()` to 
 > get the number of unique genera within a particular chunk of data. It's a 
-> powerful function! See `?n_distinct` for more information.
+> powerful function! See `?n_distinct` or go to https://dplyr.tidyverse.org/reference/n_distinct.html for more information.
 >
 > Save the wide dataset as an object, with an intuitive name! Then use
 > `glimpse` to take a look at the structure.
@@ -1471,7 +1483,7 @@ way to balance out a dataset so every replicate has the same composition and you
 We could also have used a specification for what columns to include. This can be
 useful if you have a large number of identifying columns, and it's easier to
 specify what to gather than what to leave alone. And if the columns are in a
-row, we don't even need to list them all out `-` just use the `:` operator!
+row, we don't even need to list them all out - just use the `:` operator!
 
 
 ```{r pivot-long-example2, exercise=TRUE, exercise.setup="pivot-long-setup"}
@@ -1502,12 +1514,16 @@ surveys_wide_genera <- combined %>%
 ## Now take the surveys_wide_genera dataset, and make it long again, by  
 ## (re)pivoting on the year columns. 
 
+names(surveys_wide_genera)
 
 ```
 
 ```{r challenge-10-solution}
 ## Now take the wide dataset, and make it long again, by (re)pivoting on the 
 ## year columns. 
+
+names(surveys_wide_genera)
+
 surveys_wide_genera %>%
   pivot_longer(cols=`1996`:`2002`, names_to = "year",
                values_to = "num_genera")
@@ -1532,7 +1548,7 @@ grade_result(
 >
 > Let's walk through a common solution for this type of problem.
 >
-> First, use `pivot_longer()` to create a dataset where we have a names column
+> First, use `pivot_longer()` to create a dataset called `combined_longer` where we have a names column
 > called `measurement` and a values column that takes on the value of either 
 > `hindfoot_length` or `weight`. 
 >
@@ -1555,6 +1571,7 @@ combined_longer <- combined %>%
              values_to = "values")
 
 glimpse(combined_longer)
+
 ```
 
 ```{r challenge-11-p-1-check}
@@ -1567,7 +1584,7 @@ grade_result(
 
 > ### Challenge 11 Part 2: ![](images/hot.jpg)
 > 
-> With this new data set, calculate the average of each `measurement` in each
+> With this new data set, `combined_longer`, calculate the average of each `measurement` in each
 > `year` for each different `plot_type`. 
 >
 > Then pivot these summaries into a 
@@ -1610,6 +1627,39 @@ grade_result(
 )
 ```
 
+> ### Challenge 11 Bonus: ![](images/hot.jpg)
+> 
+> If you attended the Data Visualization workshop, make a plot of average hindfoot_lengths and weights with colors for the points based on the plot_type.
+
+```{r challenge-11-p-3-setup}
+combined_longer <- combined %>%
+  pivot_longer(cols = c(hindfoot_length, weight), names_to = "measurement",
+             values_to = "values")
+
+measurement_averages <- combined_longer %>%
+  group_by(year, plot_type, measurement) %>%
+  summarize(avg_measure = mean(values))
+
+measurement_avg_wide <- measurement_averages %>%
+  pivot_wider(names_from = measurement, values_from = avg_measure)
+```
+
+```{r challenge-11-p-3, exercise=TRUE, exercise.lines=20, exercise.setup="challenge-11-p-3-setup"}
+
+
+```
+
+```{r challenge-11-p-3-solution}
+
+measurement_avg_wide %>% 
+  ggplot(aes(x=hindfoot_length, y=weight, colour=plot_type)) +
+  geom_jitter() +
+  theme_bw()
+
+
+```
+
+
 ## Exporting data
 
 Now that you have learned how to use **`dplyr`** to extract information from
@@ -1619,20 +1669,19 @@ them with your collaborators or for archival.
 Similar to the `read_csv()` function used for reading CSV files into `R`, there is
 a `write_csv()` function that generates CSV files from data frames.
 
-Before using `write_csv()`, we are going to create a new folder, `data`,
-in our working directory that will store the generated datasets. We don't want
-to write generated datasets in the same directory as our raw data. It's good
+Before using `write_csv()`, it is good to create a new folder, `data`,
+in our working directory that will store the generated datasets. It is best to avoid writing generated datasets in the same directory as our raw data as that may create confusion later about which data set was the source and which was the "wrangled" version. So it is good
 practice to keep them separate. The `data_raw` folder should only contain the raw,
 unaltered data, and should be left alone to make sure we don't delete or modify
 it. In contrast, our script will generate the contents of the `data`
 directory, so even if the files it contains are deleted, we can always
-re-generate them.
+re-generate them. If you were working in RStudio, the following code would create a `data` directory inside the folder where you .Rmd exists.
 
 ```
 if(!dir.exists("data")){dir.create("data")}
 ```
 
-In preparation for our next lesson on plotting, we are going to prepare a
+For future use, we might want to prepare a
 cleaned up version of the dataset that doesn't include any missing data.
 
 Let's start by removing observations of animals for which `weight` and 
@@ -1650,8 +1699,8 @@ glimpse(surveys_complete)
 ```
 
 
-Because we are interested in plotting how species abundances have changed
-through time, we are also going to remove observations for rare species (i.e.,
+If we were interested in plotting how species abundances have changed
+through time, we might also want to remove observations for rare species (i.e.,
 that have been observed less than 50 times). We will do this in two steps: first
 we are going to create a data set that counts how often each species has been
 observed, and filter out the rare species; then, we will extract only the
@@ -1680,13 +1729,6 @@ glimpse(surveys_complete_subset)
 
 
 
-To make sure that everyone has the same data set, check that `surveys_complete`
-has `r nrow(surveys_complete)` rows and `r ncol(surveys_complete)` columns by
-typing `dim(surveys_complete)`.
-
-Now that our data set is ready, we can save it as a CSV file in our `data`
-folder.
-
 ```{r ready-for-export-setup}
 ## Extract the most common species_id
 species_counts <- surveys_complete %>%
@@ -1699,10 +1741,49 @@ surveys_complete_subset <- surveys_complete %>%
   ## using the relational operator %in% 
 ```
 
-```{r}
-dim(surveys_complete_subset)
-```
+We can check that `surveys_complete_subset`
+has `r nrow(surveys_complete_subset)` rows and `r ncol(surveys_complete_subset)` columns by
+typing `dim(surveys_complete_subset)` in the previous sandbox.
+
+Now that our data set is ready, we can save it as a CSV file in our `data`
+folder.
 
 ```
-write_csv(surveys_complete, path = "data/surveys_complete_subset.csv")
+write_csv(surveys_complete_subset, path = "data/surveys_complete_subset.csv")
 ```
+
+Happy wrangling!
+
+
+------
+
+## Other Workshops in the series
+
+The goal of this workshop was to teach you to write code in `R` to perform data wrangling in a reproducible fashion. Recordings of the previous workshops are available at http://www.montana.edu/datascience/training/. We plan to offer this same series in the spring (dates to be determined) and so these web-interface "Shiny" apps will continue to evolve and links might change. If they are not available when you try to revisit them, please contact   one of the authors and we can point you to the current versions of them. 
+
+
+The first workshop in our series contains more information on how to get started working in `R` using RStudio. The second workshop contains information on how to write code to visualize data using `ggplot2`. The third workshop, Intermediate R, explored more sophisticated R code involving logicals, loops, and functions. The codechunks in this interactive document mimic the codechunks you can use on your own projects in RMarkdown but you will need to download and install both `R` and RStudio on your own computer. 
+
+### Montana State University `R` Workshops Team
+
+These materials were adapted from materials generated by the Data Carpentries (https://datacarpentry.org/) and were originally developed at MSU by Dr. Allison Theobold. The workshop series is co-organized by the Montana State University Library, Department of Mathematical Sciences, and Statistical Consulting and Research Services (SCRS, https://www.montana.edu/statisticalconsulting/). SCRS is supported by Montana INBRE (National Institutes of Health, Institute of General Medical Sciences Grant Number P20GM103474). The workshops for 2020-2021 are supported by Faculty Excellence Grants from MSU's Center for Faculty Excellence. 
+
+Research related to the development of these workshops is to appear in:
+
+* Theobold, A., Hancock, S., & Mannheimer, S.. Data Science Workshops for Data-Intensive Environmental Science Research, _Journal of Statistics Education_. 
+
+The workshops for 2020-2021 involve modifications of materials and are being taught by:
+
+### Sara Mannheimer
+
+* Sara Mannheimer is an Associate Professor and Data Librarian at Montana State University, where she helps shape practices and theories for curation, publication, and preservation of data. Her research is rooted in the examination of the social, ethical, and technical issues that arise as we---as a profession and as a society---grapple with the implications of a data-driven world. She is currently working with a library team to build a Dataset Search for institutions, funded by the National Network of Libraries of Medicine, and she is a PhD candidate at Humboldt University of Berlin, studying data stewardship practices for qualitative data reuse and big social data research.
+
+### Greta Linse
+
+* Greta Linse is the Assistant Director of Statistical Consulting and Research Services (https://www.montana.edu/statisticalconsulting/) and the Project Manager for the Human Ecology Learning and Problem Solving (HELPS) Lab (https://helpslab.montana.edu). Greta has been teaching, documenting and working with statistical software including R and RStudio for over 10 years.
+
+### Mark Greenwood
+
+* Mark Greenwood is a Professor of Statistics in the Department of Mathematical Sciences at Montana State University and Director of Statistical Consulting and Research Services (https://www.montana.edu/statisticalconsulting/). His research interests have involved statistical methods and applications in environmental sciences, education, and biological sciences. Recent work has involved researching diagnostic methods for Multiple Sclerosis. His current research grants include funding from the Mountain West IDeA Clinical and Translational Research - Infrastructure Network  (National Institute of General Medical Sciences Grant 5U54GM104944-07) and a grant from the National Multiple Sclerosis Society (RG-1907-34348); SCRS is supported by Montana INBRE (National Institutes of Health, Institute of General Medical Sciences, Grant P20GM103474).
+
+
