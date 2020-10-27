@@ -3,12 +3,16 @@ title: "Manipulating, analyzing and exporting data with the tidyverse"
 author: "Data Carpentry contributors & MSU R Workshop Leadership Team"
 output: learnr::tutorial
 runtime: shiny_prerendered
-css: css/bootstrap.css
 ---
 
 ```{r setup, include=FALSE}
 library(learnr)
-library(tidyverse)
+library(dplyr)
+library(tibble)
+library(tidyr)
+library(readr)
+library(stringr)
+library(forcats)
 library(gradethis)
 library(lubridate)
 knitr::opts_chunk$set(echo = FALSE, exercise.checker = gradethis::grade_learnr,
@@ -537,14 +541,15 @@ surveys_hindfoot_cm %>%
 
 
 ```{r challenge-2-check}
-grade_result(
-  pass_if(~ identical(.result, surveys_hindfoot_cm <- surveys %>%
+surveys_hindfoot_cm <- surveys %>%
   filter(!is.na(hindfoot_length)) %>%
   mutate(hindfoot_cm = hindfoot_length/10) %>%
   filter(hindfoot_cm < 3) %>%
-  select(species_id, hindfoot_cm))
-  surveys_hindfoot_cm %>% 
-  head())
+  select(species_id, hindfoot_cm)
+
+grade_result(
+  pass_if(~ identical(.result, surveys_hindfoot_cm %>% 
+  head()))
   )
 ```
  
@@ -1347,7 +1352,7 @@ We can do both these of transformations with two `tidyr` functions,
 Further arguments include `fill` which, if set, fills in missing values with 
 the value provided.
 
-![](images/long_to_wide.JPG)
+![](images/long_to_wide.jpg)
 
 Let's use `pivot_wider()` to transform surveys to find the mean weight of each 
 genus in each plot over the entire survey period. We use `filter()`,
@@ -1456,7 +1461,7 @@ names.
 3. the name of the new column to create to store the names of each selected column
 4. the name of the new column to create to store the data filled in each cell
 
-![](images/wide_to_long.JPG)
+![](images/wide_to_long.jpg)
 
 To recreate `surveys_gw` from `surveys_wide` we would create a key called
 `genus` and value called `mean_weight` and use all columns except `plot_id` for
