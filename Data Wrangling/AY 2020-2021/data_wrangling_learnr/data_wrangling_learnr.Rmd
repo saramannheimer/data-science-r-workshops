@@ -7,7 +7,12 @@ runtime: shiny_prerendered
 
 ```{r setup, include=FALSE}
 library(learnr)
-library(tidyverse)
+library(dplyr)
+library(tibble)
+library(tidyr)
+library(readr)
+library(stringr)
+library(forcats)
 library(gradethis)
 library(lubridate)
 knitr::opts_chunk$set(echo = FALSE, exercise.checker = gradethis::grade_learnr,
@@ -16,7 +21,7 @@ knitr::opts_chunk$set(echo = FALSE, exercise.checker = gradethis::grade_learnr,
 surveys <- read_csv("data/surveys2_subset.csv")
 plots <- read_csv("data/plots.csv")
 species <- read_csv("data/species.csv")
-source("data/setup-code-chunks.R")
+source("setup-code-chunks.R")
 ```
 
 
