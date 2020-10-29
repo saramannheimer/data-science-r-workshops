@@ -5,9 +5,9 @@ account: gretalinse
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 2667303
-bundleId: 3788715
+bundleId: 3796935
 url: https://gretalinse.shinyapps.io/data_wrangling_learnr/
-when: 1603820442.76243
+when: 1603982598.87433
 asMultiple: FALSE
 asStatic: FALSE
 ignoredFiles: css/bootstrap.css
