@@ -1,10 +1,5 @@
 # Setup code chunks
-library(dplyr)
-library(tibble)
-library(tidyr)
-library(readr)
-library(stringr)
-library(forcats)
+library(tidyverse)
 library(lubridate)
 
 surveys <- read_csv("data/surveys2_subset.csv")

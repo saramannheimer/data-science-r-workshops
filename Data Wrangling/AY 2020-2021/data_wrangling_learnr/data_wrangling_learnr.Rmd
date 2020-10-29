@@ -7,12 +7,7 @@ runtime: shiny_prerendered
 
 ```{r setup, include=FALSE}
 library(learnr)
-library(dplyr)
-library(tibble)
-library(tidyr)
-library(readr)
-library(stringr)
-library(forcats)
+library(tidyverse)
 library(gradethis)
 library(lubridate)
 knitr::opts_chunk$set(echo = FALSE, exercise.checker = gradethis::grade_learnr,
@@ -1024,92 +1019,27 @@ of the *albigula* species (`species_id` = "NL") for males.
 
 
 
-> ### Challenge 8 Part 1: ![](images/mild.jpg)
+> ### Challenge 8: ![](images/mild.jpg)
 >
-> 1. How many animals were caught in each plot (`plot_id`) surveyed?
+> How many animals were caught in each plot (`plot_id`) surveyed?
 
-```{r challenge-8-p-1, exercise=TRUE, exercise.lines = 12, exercise.eval=TRUE}
+```{r challenge-8, exercise=TRUE, exercise.lines = 12, exercise.eval=TRUE}
 ## Count Challenges:
 ##  1. How many animals were caught in each `plot_type` surveyed?
 
 ```
 
-```{r challenge-8-p-1-solution}
+```{r challenge-8-solution}
 surveys_edited %>%
         count(plot_id) 
 ```
 
-```{r challenge-8-p-1-check}
+```{r challenge-8-check}
 grade_result(
   pass_if(~ identical(.result, surveys_edited %>% count(plot_id) ))
 )
 ```
 
-> ### Challenge 8 Part 2: ![](images/medium.jpg)
->
-> 2. Use `group_by()` and `summarize()` to find the mean, min, and max hindfoot
-> length for each species (using `species_id`). Also add the number of
-> observations (hint: see `?n`).
-
-```{r challenge-8-p-2, exercise=TRUE, exercise.lines = 12, exercise.eval=TRUE}
-##  2. Use `group_by()` and `summarize()` to find the mean, min, and max
-## hindfoot length for each species (using `species_id`). Also add the number of
-## observations (hint: see `?n`).
-```
-
-```{r challenge-8-p-2-solution}
-surveys_edited %>%
-    filter(!is.na(hindfoot_length)) %>%
-    group_by(species_id) %>%
-    summarize(
-            mean_hindfoot_length = mean(hindfoot_length),
-            min_hindfoot_length = min(hindfoot_length),
-            max_hindfoot_length = max(hindfoot_length),
-            n = n()
-            )
-```
-
-```{r challenge-8-p-2-check}
-grade_result(
-  pass_if(~ identical(.result, surveys_edited %>%
-    filter(!is.na(hindfoot_length)) %>%
-    group_by(species_id) %>%
-    summarize(
-            mean_hindfoot_length = mean(hindfoot_length),
-            min_hindfoot_length = min(hindfoot_length),
-            max_hindfoot_length = max(hindfoot_length),
-            n = n()
-            )))
-)
-```
-
-
-> ### Challenge 8 Part 3: ![](images/hot.jpg)
-> 3. What was the heaviest animal measured in each year? Return the columns 
-> `year`, `species_id`, and `weight` for that animal.
-
-```{r challenge-8-p-3, exercise=TRUE, exercise.lines = 12, exercise.eval=TRUE}
-##  3. What was the heaviest animal measured in each year? Return the
-##  columns `year`, `species_id`, and `weight`.
-```
-
-```{r challenge-8-p-3-solution}
-surveys_edited %>%
-    filter(!is.na(weight)) %>%
-    group_by(year) %>%
-    filter(weight == max(weight)) %>%
-    select(year, species_id, weight) 
-```
-
-```{r challenge-8-p-3-check}
-grade_result(
-  pass_if(~ identical(.result, surveys_edited %>%
-    filter(!is.na(weight)) %>%
-    group_by(year) %>%
-    filter(weight == max(weight)) %>%
-    select(year, species_id, weight) ))
-)
-```
 
 ## Relational Data with `dplyr`   
 
@@ -1604,7 +1534,7 @@ practice to keep them separate. The `data_raw` folder should only contain the ra
 unaltered data, and should be left alone to make sure we don't delete or modify
 it. In contrast, our script will generate the contents of the `data`
 directory, so even if the files it contains are deleted, we can always
-re-generate them. If you were working in RStudio, the following code would create a `data` directory inside the folder where you .Rmd exists.
+re-generate them. If you were working in RStudio, the following code would create a `data` directory inside the folder where your .Rmd exists.
 
 ```
 if(!dir.exists("data")){dir.create("data")}
