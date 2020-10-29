@@ -49,13 +49,10 @@ Let's get started!
 
 ------------
 
-## Data Manipulation using **`dplyr`** & **`tidyr`** Intro
+## Data Wrangling using **`dplyr`** & **`tidyr`** Intro
 
-**`dplyr`** is a 
-package for making tabular data manipulation easier. It pairs nicely with 
-**`tidyr`** which enables you to swiftly convert between different data formats
-for plotting and analysis. Note that we're not using "data 
-manipulation," but "data wrangling." To us, "data manipulation" is a term that 
+Note that we're not using "data 
+manipulation" for this workshop, but are calling it "data wrangling." To us, "data manipulation" is a term that 
 captures the event where a researcher manipulates their data (e.g., moving 
 columns, deleting rows, merging data files) in a __non-reproducible__ manner. 
 Whereas, with data wrangling, all of these process are done, but in a 
@@ -71,12 +68,11 @@ already have installed the **`tidyverse`** package. This is an
 work together well such as **`tidyr`**, **`dplyr`**, **`ggplot2`**, 
 **`tibble`**, etc.
 
-
 The **`tidyverse`** package tries to address 3 common issues that arise when
 doing data analysis with some of the functions that come with `R`:
 
 1. The results from a base `R` function sometimes depend on the type of data.
-2. Using `R` expressions in a non standard way, which can be confusing for new
+2. Using `R` expressions in a non-standard way, which can be confusing for new
    learners.
 3. Hidden arguments, having default operations that new learners are not aware
    of.
@@ -101,11 +97,9 @@ Then, to load the package we would need to type:
 library(tidyverse)
 ```
 
-
 ### What are **`dplyr`** and **`tidyr`**?
 
-The package **`dplyr`** provides easy tools for the most common data 
-manipulation tasks. It is built to work directly with data frames, with many 
+The package **`dplyr`** is built to work directly with data frames, with many 
 common tasks optimized by being written in a compiled language (C++). An 
 additional feature is the ability to work directly with data stored in an 
 external database. The benefits of doing this are that the data can be managed 
@@ -124,7 +118,7 @@ where we have one row per measurement. Sometimes we want a data frame where each
 measurement type has its own column, and rows are instead more aggregated groups
 - like plots or aquaria. Moving back and forth between these formats is 
 nontrivial, and **`tidyr`** gives you tools for this and more sophisticated data
-manipulation.
+wrangling.
 
 To learn more about **`dplyr`** and **`tidyr`** after the workshop, you may want
 to check out this
