@@ -1,6 +1,6 @@
 # Setup code chunks
-
 library(tidyverse)
+library(lubridate)
 
 surveys <- read_csv("data/surveys2_subset.csv")
 plots <- read_csv("data/plots.csv")
