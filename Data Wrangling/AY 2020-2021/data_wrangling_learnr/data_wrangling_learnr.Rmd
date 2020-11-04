@@ -20,7 +20,7 @@ source("setup-code-chunks.R")
 ```
 
 
-## Orientation of/for the workshop
+## Orientation of/for the Workshop
 
 *  This workshop assumes some basic familiarity with working in `R` such as what you might obtain in the "Introduction to R" workshop or in a statistics course that uses `R` heavily, such as STAT 217 or STAT 411/511. If you have not interacted with `R` previously, some of the assumptions of your background for this workshop might be a barrier. We would recommend getting what you can from this workshop and you can always revisit the materials at a later date after filling in some of those basic `R` skills. We all often revisit materials and discover new and deeper aspects of the content that we were not in a position to appreciate in a first exposure.
 
@@ -196,7 +196,7 @@ We're going to learn some of the most common **`dplyr`** functions:
 
 ## Select, Filter, and Mutate
 
-### Selecting columns and filtering rows
+### Selecting Columns and Filtering Rows
 
 To select columns of a data frame, use `select()`. The first argument
 to this function is the data frame (`surveys`), and the subsequent
@@ -543,7 +543,7 @@ grade_result(
   )
 ```
  
-### Using `lubridate` for dates 
+### Using `lubridate` for Dates 
 
 Date-time data can be frustrating to work with in `R`, since `R` commands for 
 date-times are generally un-intuitive and change depending on the type of 
@@ -638,7 +638,7 @@ grade_result(
 )
 ```
 
-### The `case_when()` function
+### The `case_when()` Function
 
 We notice that the labels for the days of the week are not necessarily 
 what we would like to have for a graphical display of our data. To reword the 
@@ -759,7 +759,7 @@ grade_result(
 )
 ```
 
-## Split-apply-combine data analysis
+## Split-Apply-Combine Data Analysis
 
 Many data analysis tasks can be approached using the *split-apply-combine*
 paradigm: split the data into groups, apply some analysis to each group, and
@@ -767,7 +767,7 @@ then combine the results. **`dplyr`** makes this very easy through the use of th
 `group_by()` function.
 
 
-### The `summarize()` function
+### The `summarize()` Function
 
 `group_by()` is often used together with `summarize()`, which collapses each
 group into a single-row summary of that group.  `group_by()` takes as arguments
@@ -1513,7 +1513,7 @@ measurement_avg_wide %>%
 ```
 
 
-## Exporting data
+## Exporting Data
 
 Now that you have learned how to use **`dplyr`** to extract information from
 or summarize your raw data, you may want to export these new data sets to share
@@ -1591,7 +1591,7 @@ Happy wrangling!
 
 ------
 
-## Other Workshops in the series
+## Other Workshops in the Series
 
 The goal of this workshop was to teach you to write code in `R` to perform data wrangling in a reproducible fashion. Recordings of the previous workshops are available at http://www.montana.edu/datascience/training/. We plan to offer this same series in the spring (dates to be determined) and so these web-interface "Shiny" apps will continue to evolve and links might change. If they are not available when you try to revisit them, please contact   one of the authors and we can point you to the current versions of them. 
 
