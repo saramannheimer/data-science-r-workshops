@@ -1,5 +1,5 @@
 ---
-title: "Manipulating, analyzing and exporting data with the tidyverse"
+title: "Wrangling, analyzing and exporting data with the tidyverse"
 author: "Data Carpentry contributors & MSU R Workshop Leadership Team"
 output: learnr::tutorial
 runtime: shiny_prerendered
@@ -384,7 +384,7 @@ in the above example, we took the data frame `surveys`, *then* we `filter`ed
 for rows with `weight < 6`, *then* we `select`ed columns `species_id`, `sex`,
 and `weight`. The **`dplyr`** functions by themselves are somewhat simple,
 but by combining them into linear workflows with the pipe, we can accomplish
-more complex manipulations of data frames.
+more complex wrangling of data frames.
 
 If we want to create a new object with this smaller version of the data, we
 can assign it a new name:
