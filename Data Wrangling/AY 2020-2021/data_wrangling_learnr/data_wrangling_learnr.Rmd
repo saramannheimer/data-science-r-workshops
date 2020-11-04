@@ -1,5 +1,5 @@
 ---
-title: "Wrangling, analyzing and exporting data with the tidyverse"
+title: "Wrangling, Analyzing and Exporting Data with the Tidyverse"
 author: "Data Carpentry contributors & MSU R Workshop Leadership Team"
 output: learnr::tutorial
 runtime: shiny_prerendered
@@ -1606,7 +1606,9 @@ Research related to the development of these workshops is to appear in:
 
 * Theobold, A., Hancock, S., & Mannheimer, S.. Data Science Workshops for Data-Intensive Environmental Science Research, _Journal of Statistics Education_. 
 
-The workshops for 2020-2021 involve modifications of materials and are being taught by:
+The workshops for 2020-2021 involve modifications of materials and are licensed CC-BY. <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+
+The workshops are taught by:
 
 ### Sara Mannheimer
 
