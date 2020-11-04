@@ -1,5 +1,5 @@
 ---
-title: "Data Wrangling Handout"
+title: "Wrangling, Analyzing and Exporting Data with the Tidyverse Handout"
 author: "Data Carpentry contributors & Montana State University R Workshops Team"
 date: "11/5/2020"
 output: pdf_document
@@ -1526,7 +1526,11 @@ Research related to the development of these workshops is to appear in:
 
 * Theobold, A., Hancock, S., & Mannheimer, S.. Data Science Workshops for Data-Intensive Environmental Science Research, _Journal of Statistics Education_. 
 
-The workshops for 2020-2021 involve modifications of materials and are being taught by:
+The workshops for 2020-2021 involve modifications of materials and are licensed CC-BY. ![Creative Commons License](images/88x31.png) This work is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
+
+\vspace{22pt}
+
+The workshops are taught by:
 
 ### Sara Mannheimer
 
