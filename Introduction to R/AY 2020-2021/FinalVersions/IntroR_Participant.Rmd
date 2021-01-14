@@ -12,8 +12,8 @@ output:
     fig_width: 5
 ---
 
-```{r, echo = FALSE}
-knitr::opts_chunk$set(tidy = TRUE, 
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(tidy = TRUE,
                       fig.align="center", 
                       tidy.opts = list(width.cutoff = 80))
 ```
@@ -39,7 +39,7 @@ of their operating system!
 
 For this workshop, we will be making use of the RStudio that you will need to install on your computer or a virtual desktop machine (available to MSU affiliated participants). For more details on this, you have hopefully completed the steps discussed here https://greenwood-stat.shinyapps.io/InstallDemo_RWorkshops/. The short version for downloading is to first go to https://cloud.r-project.org/ to `R` installed and then go to https://rstudio.com/products/rstudio/download/ to install RStudio. 
 
-If you did not complete that or do not have a computer available, you can also go to a virtual windows machine that is hosted by MSU - but only if you are an MSU affiliate. We will try to have it available to you based on your NETID. If you need this option, please go to https://studentlabs.montana.edu/remotelabs/howto.html, click on “Connect to virtual machine via a web browser”, then follow the directions to login and use it at “remotelabs.msu.montana.edu”. You should find a “CLS-STAT-REMOTE” box on the page with “Horizon”. If you work in this environment, the only way to have permanent store is via some sort of cloud drive like Onedrive - the session is cleared when you exit.  
+If you did not complete that or do not have a computer available, you can also go to a virtual windows machine that is hosted by MSU - but only if you are an MSU affiliate. We will try to have it available to you based on your NETID. If you need this option, please go to https://studentlabs.montana.edu/remotelabs/howto.html, click on "Connect to virtual machine via a web browser", then follow the directions to login and use it at "remotelabs.msu.montana.edu". You should find a "CLS-STAT-REMOTE" box on the page with "Horizon". If you work in this environment, the only way to have permanent store is via some sort of cloud drive like Onedrive - the session is cleared when you exit.  
 
 However you get to it, RStudio has four possible panels, where each can be viewed at the same time and
 has multiple tabs available.  
@@ -53,7 +53,16 @@ has multiple tabs available.
 
 ## Working in `R`  
 
-The document we provided for you is an Rmarkdown (.Rmd) document. It allows you to work in a reproducible fashion, with both code (placed in what are called code chunks) and descriptions of results in the same file. The grey sections that have three single quotes then `{r}` will delineate a code chunk. You can add these with Insert -> `R` into a .Rmd file. Type all of your code in these code chunks and other documentation and interpretation of results outside of the code chunks (like we are doing here). Although there are more complex ways to work in RStudio, you should start today with saving this .Rmd  file into a folder that also contains any data and other figures you might want to read into this document. When you do that, RStudio will know where to look to read in the data so you do not need to know the path for its physical location on your computer. Once we are done with our local work, we can also use the `Knit` button to compile our work into HTML, word, or PDF documents. We will demonstrate this at the end of the workshop - but this will only work if all the code "runs" and what we have provided you has some errors in it. One other great (and fairly new) feature in these files is that it does live spell-checknig - I mean spell-checking - by underlining suspect words. We will also discuss RStudio "Projects" that take this one step further in terms of organizing your work built around this markdown framework. It is important to understand the various ways to do your work in R using RStudio. 
+The document we provided for you is an Rmarkdown (.Rmd) document. It allows you to work in a reproducible fashion, with both code (placed in what are called code chunks) and descriptions of results in the same file. The grey sections that have three single quotes then `{r}` will delineate a code chunk. 
+
+````
+```{r}`r ''`
+1 + 1
+```  
+````
+
+
+You can add these with Insert -> `R` into a .Rmd file. Type all of your code in these code chunks and other documentation and interpretation of results outside of the code chunks (like we are doing here). Although there are more complex ways to work in RStudio, you should start today with saving this .Rmd  file into a folder that also contains any data and other figures you might want to read into this document. When you do that, RStudio will know where to look to read in the data so you do not need to know the path for its physical location on your computer. Once we are done with our local work, we can also use the `Knit` button to compile our work into HTML, Word (DOCX), or PDF documents. We will demonstrate this at the end of the workshop - but this will only work if all the code "runs" and what we have provided you has some errors in it. One other great (and fairly new) feature in these files is that it does live spell-checknig - I mean spell-checking - by underlining suspect words. We will also discuss RStudio "Projects" that take this one step further in terms of organizing your work built around this markdown framework. It is important to understand the various ways to do your work in R using RStudio. 
 
 RStudio allows for you to execute commands directly from the code chunk in the 
 document by using the __Ctrl + Enter__ (on Macs, __Cmd + Return__) shortcut. If
@@ -118,7 +127,7 @@ slight differences in syntax, it is best practice to always use `<-` for
 assignments.  
 
     + In RStudio, typing Alt at the same time as the - key will write `<-` in a 
-    single keystroke. Neat!   
+    single keystroke. Neat! (Option + - on MacOS)
 
 * There are a few simple rules that apply when creating the same of a new object
 (like we did above):  
@@ -370,7 +379,7 @@ Here are some:
 - size:  
     + `dim(data)`: rows and columns  
     + `nrow(data)`: number of rows  
-    + `ncol(data)`: number of columns
+    + `ncol(data)`: number of columns  
     + `length(data$variable)`: length of a vector
 
 
@@ -387,7 +396,7 @@ Here are some:
 
 - summary of content:  
     + `str(data)`: structure of object and information about the columns  
-    + `glimpse(data)`: similar information to `str`, but neater output (requires `tibble` package) 
+    + `glimpse(data)`: similar information to `str`, but neater output (requires `tibble` package)  
     + `summary(data)`: summary statistics for each column  
   
 *Note:* Many of these are generic functions that will work on other data types, 
@@ -601,7 +610,7 @@ There will be a large amount of output coming out of the console. This output is
 Now that the files are downloaded, we need to load them in order to use them. 
 The following code will load each package, please run it!  
 
-```{r packages}  
+```{r packages}
 library(devtools)
 library(tidyverse)
 ```
@@ -881,7 +890,7 @@ To attempt to knit to one of these formats, go to "Knit" and click on the triang
 
 ## Exiting RStudio
 
-Finally, when you are done with your work and attempt to exit out of RStudio, it will ask you to save your workspace. **DO NOT DO THIS!** It will just create a cluttered workspace and could even cause you to get incorrect results. In fact, you should go into the Tools -> Global Options and then make sure that “Save workspace to .RData on exit” option on the first screen you will see is set to Never. If you save your `R` code either as a .R or (better) an R Markdown (.Rmd) file, you can re-create any results by simply re-running that code or re-knitting the file. If you find that you have lots of “stuff” in your workspace because you accidentally saved your workspace, just run `rm(list = ls())`. It will delete all the data sets from your workspace.
+Finally, when you are done with your work and attempt to exit out of RStudio, it will ask you to save your workspace. **DO NOT DO THIS!** It will just create a cluttered workspace and could even cause you to get incorrect results. In fact, you should go into the Tools -> Global Options and then make sure that "Save workspace to .RData on exit" option on the first screen you will see is set to Never. If you save your `R` code either as a .R or (better) an R Markdown (.Rmd) file, you can re-create any results by simply re-running that code or re-knitting the file. If you find that you have lots of "stuff" in your workspace because you accidentally saved your workspace, just run `rm(list = ls())`. It will delete all the data sets from your workspace.
 
 ## Projects in `R`  
 
@@ -929,8 +938,14 @@ After saving your previous work today, you can try to create a project in a new 
 * *Command*: A command is what `R` executes. In an `R` script file (script.R), 
 commands are automatically implied, as this type of file does not accept text, 
 only in comments. In an Rmd (Markdown) file (report.Rmd), commands are 
-delineated between three ticks on the top (```{r}) and three ticks (```) on the
+delineated between three ticks on the top (```` ```{r}````) and three ticks (```` ``` ````) on the
 bottom.      
+
+    ````
+    ```{r}`r ''`
+    # Your code goes here
+    ```  
+    ````
 
 * *Comment*: Helpful text added into a script environment. Comments can be used
 to describe functions, processes, a train of thought, so that when you return to
@@ -938,11 +953,11 @@ your code, tomorrow or next year, you are able to understand the purpose of each
 line of code! Comments are preceded by at least on `#` within a code chunk. 
 
 * *Object*: A variable created in `R`, to be used elsewhere in the code. Objects
-can be a variety of things, such as scalars (x <- 3), vectors (x <- c(1, 2, 3, 
-4, 5)), matrices, and dataframes, to name a few.  
+can be a variety of things, such as scalars (`x <- 3`), vectors (`x <- c(1, 2, 3, 
+4, 5)`), matrices, and dataframes, to name a few.  
 
 * *Assignment Arrow*: The assignment arrow `<-` is used to assign values on the 
-right to the objects on the left (x <- 1). For historical reasons, you can also 
+right to the objects on the left (`x <- 1`). For historical reasons, you can also 
 use `=` for assignments, but not everywhere. Because of these slight 
 differences, it is recommended to *always* use assignment arrows for assignment. 
 
@@ -952,8 +967,8 @@ numeric, factor, integer, character, dataframe, matrix, list.
 
 * *Vector*: A vector is a list of entries, all sharing the same class. A vector 
 has only one dimension, so data extraction uses only a single entry in brackets 
-(e.g. x[3]). You can create vectors of characters (c("a", "b", "c")), vectors of 
-numbers (c(1, 2, 3)), to name a few.
+(e.g. `x[3]`). You can create vectors of characters (`c("a", "b", "c")`), vectors of 
+numbers (`c(1, 2, 3)`), to name a few.
 
 * *Matrix*: Similar to what you may have seen in a mathematics class, a matrix 
 is an object with rows and columns, where every entry in the matrix must be a 
@@ -966,17 +981,17 @@ the components are vectors and they all have the same length.
 
 * *Dataframe*: A dataframe is a collection of variables. Dataframes share many 
 of the properties of matrices, where you are able to extract elements using 
-bracket ([]) notation, and lists, where you are able to extract columns using 
+bracket (`[]`) notation, and lists, where you are able to extract columns using 
 `$`. Dataframes are used as the fundamental data structure by most of `R`'s 
 statistical modeling software. Note that tibbles have been more recently created as part of the tidyverse and provide a similar but slightly different object where you can store your data.
 
 * *Argument*: Input(s) into a function, so that an output is created. Most 
-functions take named arguments (e.g., data = BlackfootFish) and the order of the 
+functions take named arguments (e.g., `data = BlackfootFish`) and the order of the 
 arguments is assumed to follow the order found in the function's help file. When
-using a named argument in a function, the name comes first, followed by an = 
+using a named argument in a function, the name comes first, followed by an `=` 
 sign, then the input. 
 
-* *Logical Value*: TRUE and FALSE value(s) that can be used to turn off/on 
+* *Logical Value*: `TRUE` and `FALSE` value(s) that can be used to turn off/on 
 options in functions and plots, and also to manipulate data. 
 
 ## Workshop Materials & Recordings Available:
@@ -1013,7 +1028,7 @@ The workshops for 2020-2021 involve modifications of materials and are being tau
 
 ### Sara Mannheimer
 
-* Sara Mannheimer is an Associate Professor and Data Librarian at Montana State University, where she helps shape practices and theories for curation, publication, and preservation of data. Her research is rooted in the examination of the social, ethical, and technical issues that arise as we—as a profession and as a society—grapple with the implications of a data-driven world. She is currently working with a library team to build a Dataset Search for institutions, funded by the National Network of Libraries of Medicine, and she is a PhD candidate at Humboldt University of Berlin, studying data stewardship practices for qualitative data reuse and big social data research.
+* Sara Mannheimer is an Associate Professor and Data Librarian at Montana State University, where she helps shape practices and theories for curation, publication, and preservation of data. Her research is rooted in the examination of the social, ethical, and technical issues that arise as we -- as a profession and as a society -- grapple with the implications of a data-driven world. She is currently working with a library team to build a Dataset Search for institutions, funded by the National Network of Libraries of Medicine, and she is a PhD candidate at Humboldt University of Berlin, studying data stewardship practices for qualitative data reuse and big social data research.
 
 ### Greta Linse
 
