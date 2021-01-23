@@ -603,10 +603,10 @@ library(datasauRus)
 data(box_plots)
 
 box_plots_long <- box_plots %>%
-  gather() 
-
+  pivot_longer(cols=1:5)
+  
 box_plots_long <- box_plots_long %>%
-  rename(Example=key, Response=value) 
+  rename(Example=name, Response=value) 
 
 box_plots_long <- box_plots_long %>% 
   mutate(Example = factor(Example))

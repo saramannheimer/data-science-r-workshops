@@ -79,11 +79,11 @@ quiz(caption = "Quiz - Install R",
     answer("Never.", message = "A new version of R is released about once a year. I'll assume that you are using the newest version of R, which will be the fastest version with the fewest unexpected behaviors." )
   ),
   question("What is the current version of R?",
-    answer("3.3.2", message = "It is at least version 4.0.2."),
-    answer("3.6.2", message = "It is at least version 4.0.2."),
-    answer("4.0.0", message = "It is at least version 4.0.2."),
-    answer("4.0.2", correct = TRUE, "It was version 4.0.2 when I built this, but the current version might have a higher number (could be newer)."),
-    answer("Other", message = "It was version 4.0.2 when I built this, but the current version might have a higher number (could be newer).")
+    answer("3.3.2", message = "It is at least version 4.0.3."),
+    answer("3.6.2", message = "It is at least version 4.0.3."),
+    answer("4.0.0", message = "It is at least version 4.0.3."),
+    answer("4.0.3", correct = TRUE, "It was version 4.0.3 when I built this, but the current version might have a higher number (could be newer)."),
+    answer("Other", message = "It was version 4.0.3 when I built this, but the current version might have a higher number (could be newer).")
   )
 )
 
@@ -124,11 +124,11 @@ quiz(caption = "Quiz - Install RStudio",
     answer("No.", message = "R does not come with RStudio; you need to install R separately.")
   ),
   question("What is the current version of RStudio IDE?",
-    answer("1.0.136", message = "It is at least version 1.3.1056."),
-    answer("1.3.1056", correct = TRUE, "It was version 1.3.1056 when I built this, but the current version might have a higher number (could be newer)."),
-    answer("4.0.2", message = "That was the current version of R, RStudio is at least version 1.3.1056."),
-    answer("1.3", message = "It is at least version 1.3.1056."),
-    answer("Other", message = "It was version 1.3.1056 when I built this, but the current version might have a higher number (could be newer).")
+    answer("1.0.136", message = "It is at least version 1.3.1093."),
+    answer("1.3.1093", correct = TRUE, "It was version 1.3.1093 when I built this, but the current version might have a higher number (could be newer)."),
+    answer("4.0.3", message = "That was the current version of R, RStudio is at least version 1.3.1093."),
+    answer("1.3", message = "It is at least version 1.3.1093."),
+    answer("Other", message = "It was version 1.3.1093 when I built this, but the current version might have a higher number (could be newer).")
   )
 )
 ```
@@ -191,7 +191,7 @@ quiz(caption = "Quiz - Working with Packages",
 
 Once you have completed these steps, you should be ready for the "Introduction to R" Workshop. If you had any difficulties with getting your computer set up for the workshop, please contact the workshop organizers in advance. We can either diagnose the issue via email or we can set up a time to chat and hopefully resolve the issue. 
 
-As a backup to the preferred version of having a local installation of R and RStudio, we have an option to use a virtual windows machine that is hosted by MSU - but only if you are an MSU affiliate. We will try to have it available to you based on your NETID. If you need this option, please go to  [https://studentlabs.montana.edu/remotelabs/howto.html](https://studentlabs.montana.edu/remotelabs/howto.html), click on "Connect to virtual machine via a web browser", then follow the directions to login and use it at "remotelabs.msu.montana.edu". You should find a "CLS-STAT-REMOTE" box on the page with "Horizon". That build has a new install of R and RStudio and would operate the same way as having a local installation, but via the web browser. Note that files are not saved unless you save them in Onedrive or some other cloud service (Box, google drive, etc.). Because this is a streaming workshop, it might tax your internet connection to both stream the workshop and use this virtual desktop and so we recommend using a local installation of RStudio if at all possible.
+As a backup to the preferred version of having a local installation of R and RStudio, Rstudio server go to https://rstudio.math.montana.edu and sign in using your NetID credentials. Currently you need to be on a list to be approved to access this server version of RStudio (hopefully related to how you ran into this tutorial) and so this method may not be available to you (especially if you are not MSU affiliated). In this version of RStudio, to load a data set or .Rmd file, go to the "Files" tab in the lower right panel (not "File" in the upper ribbon) and use the "Upload" button and "Choose File" to pick the file from your local directory structure. This same "Files" location can also be used to download files (use "More" and then "Export" to download .Rmd files). Working in the session window should otherwise resemble working on a local installation of RStudio and be running the current version (4.0.3). Your work should be available when you re-open this until the end of the semester, but because it is new, we would recommend downloading your work at the end of each session until we can test the system more fully. Note that this version of access is a temporary solution and not a long-term way to use R.
 
 One way or another, you should be set up and ready to harness the amazing capabilities of R via RStudio. Thanks for taking the time to prepare for your first steps in learning to use R. 
 
