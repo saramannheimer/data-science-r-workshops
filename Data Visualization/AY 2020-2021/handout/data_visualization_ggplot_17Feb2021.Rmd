@@ -83,7 +83,7 @@ In this workshop, we have already installed the `tidyverse` using `install.packa
 
 Then, to load the package include code in your work with:
   
-```{r, message = FALSE}
+```{r echo=TRUE, message = FALSE}
 ## load the tidyverse packages
 library(tidyverse)
 ```
@@ -565,6 +565,30 @@ surveys %>%
   geom_jitter(alpha = 0.3, mapping = aes(color = plot_id_chr)) +  
   geom_boxplot(alpha = 0)  
 
+```
+
+>## Bonus violin plot example (DatasauRus!)
+>
+> The previous example doesn't fully illustrate the power of violin plots. This example from the `datasauRus` package (https://www.autodeskresearch.com/publications/samestats) shows five different distributions that have exactly the same summary statistics and boxplots but very different shapes:
+
+```{r datasaurus, message = FALSE, exercise = TRUE, exercise.eval=TRUE}
+library(datasauRus)
+data(box_plots)
+
+box_plots_long <- box_plots %>%
+  pivot_longer(cols=1:5)
+  
+box_plots_long <- box_plots_long %>%
+  rename(Example=name, Response=value) 
+
+box_plots_long <- box_plots_long %>% 
+  mutate(Example = factor(Example))
+
+ggplot(box_plots_long, aes(x=Example, y=Response)) +
+  geom_violin(fill="bisque") +
+  geom_boxplot(alpha=.6) +
+  geom_jitter(alpha=0.15, col="tomato") +
+  theme_minimal() 
 ```
 
 ## Plotting Single Variables
