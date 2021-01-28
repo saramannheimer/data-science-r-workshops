@@ -188,7 +188,7 @@ Let's go through this step by step!
 1. Use the `ggplot()` function and bind the plot to a specific data frame using 
 the `data` argument
 
-    ```{r bind-plot, exercise=TRUE, exercise.eval=TRUE}
+    ```{r bind-plot, exercise=TRUE}
     ggplot(data = surveys)
     
     ## Creates a blank ggplot(), referencing the surveys dataset
@@ -198,7 +198,7 @@ the `data` argument
 variables to be plotted and specifying how to present them in the graph, e.g. as
 x/y positions or characteristics such as size, shape, color, etc.
 
-    ```{r define-mapping, exercise=TRUE, exercise.eval=TRUE}
+    ```{r define-mapping, exercise=TRUE}
     ggplot(data = surveys, 
            mapping = aes(x = weight, y = hindfoot_length))
     #
@@ -218,7 +218,7 @@ x/y positions or characteristics such as size, shape, color, etc.
     To add a geom to the plot use the `+` operator. Because we have two continuous 
     variables in the data, let's use `geom_point()` first:
 
-    ```{r add-to-plots, exercise=TRUE, exercise.eval=TRUE}
+    ```{r add-to-plots, exercise=TRUE}
     ggplot(data = surveys, 
            mapping = aes(x = weight, y = hindfoot_length)) +
       geom_point()
