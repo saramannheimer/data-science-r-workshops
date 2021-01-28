@@ -97,7 +97,7 @@ In this workshop, we have already installed the `tidyverse` using `install.packa
 
 Then, to load the package include code in your work with:
 
-```{r, message = FALSE}
+```{r echo=TRUE, message = FALSE}
 ## load the tidyverse packages
 library(tidyverse)
 ```
@@ -454,7 +454,7 @@ grade_code()
 
 ```{r challenge-2part2-solution}
 surveys %>% 
-  ggplot(mapping = aes(xx = plot_id, y = weight)) +
+  ggplot(mapping = aes(x = plot_id, y = weight)) +
   geom_jitter(aes(color = plot_type), alpha = 0.1) + 
   geom_smooth()
 
