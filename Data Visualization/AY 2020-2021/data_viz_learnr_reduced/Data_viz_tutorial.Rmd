@@ -606,7 +606,7 @@ box_plots_long <- box_plots %>%
   pivot_longer(cols=1:5)
   
 box_plots_long <- box_plots_long %>%
-  rename(Example=name, Response=value) 
+  rename(Example=name, Response=value)
 
 box_plots_long <- box_plots_long %>% 
   mutate(Example = factor(Example))
@@ -615,7 +615,8 @@ ggplot(box_plots_long, aes(x=Example, y=Response)) +
   geom_violin(fill="bisque") +
   geom_boxplot(alpha=.6) +
   geom_jitter(alpha=0.15, col="tomato") +
-  theme_minimal() 
+  theme_minimal() + 
+  scale_x_discrete(labels=c('Trimodal, Right Skew', 'Clumpy', 'Normal', 'Trimodal, Left Skew',  'Bimodal'))
 ```
 
 
