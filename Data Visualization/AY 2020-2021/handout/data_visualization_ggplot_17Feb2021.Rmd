@@ -293,7 +293,7 @@ Reference for shapes in integers and characters:
 
 \newpage
 
-```{r challenge-1-solution}
+```{r challenge-1-solution, include=FALSE}
 ggplot(data = surveys, 
        mapping = aes(x = weight, y = hindfoot_length)) +
   geom_point(alpha = 0.1, color = "blue", shape = "diamond")
@@ -417,7 +417,7 @@ surveys %>%
 
 ```
 
-```{r challenge-2part1-solution}
+```{r challenge-2part1-solution, include=FALSE}
 surveys %>% 
   ggplot(mapping = aes(x = weight, y = hindfoot_length)) +
   geom_jitter(aes(color = plot_type), alpha = 0.1) + 
@@ -438,7 +438,7 @@ surveys %>%
 
 ```
 
-```{r challenge-2part2-solution}
+```{r challenge-2part2-solution, include=FALSE}
 surveys %>% 
   ggplot(mapping = aes(x = plot_id, y = weight)) +
   geom_jitter(aes(color = plot_type), alpha = 0.1) + 
@@ -496,7 +496,7 @@ ggplot(data = surveys, mapping = aes(x = species_id, y = weight)) +
 
 ```
 
-```{r challenge-3part1-solution}
+```{r challenge-3part1-solution, include=FALSE}
 surveys %>% 
   ggplot(mapping = aes(x = species_id, y = weight)) +
   geom_violin() + 
@@ -519,7 +519,7 @@ surveys %>%
 
 ```
 
-```{r challenge-3part2-solution}
+```{r challenge-3part2-solution, include=FALSE}
 surveys %>% 
   ggplot(mapping = aes(x = species_id, y = hindfoot_length)) +
   geom_jitter(alpha = 0.3, color = "tomato") +
@@ -545,7 +545,7 @@ surveys %>%
 
 ```
 
-```{r challenge-3part3-solution}
+```{r challenge-3part3-solution, include=FALSE}
 surveys %>% 
   ggplot(mapping = aes(x = species_id, y = hindfoot_length)) +
   geom_jitter(alpha = 0.3, mapping = aes(color = plot_id)) +
@@ -579,7 +579,7 @@ box_plots_long <- box_plots %>%
   pivot_longer(cols=1:5)
   
 box_plots_long <- box_plots_long %>%
-  rename(Example=name, Response=value) 
+  rename(Example=name, Response=value)
 
 box_plots_long <- box_plots_long %>% 
   mutate(Example = factor(Example))
@@ -588,8 +588,11 @@ ggplot(box_plots_long, aes(x=Example, y=Response)) +
   geom_violin(fill="bisque") +
   geom_boxplot(alpha=.6) +
   geom_jitter(alpha=0.15, col="tomato") +
-  theme_minimal() 
+  theme_minimal() + 
+  scale_x_discrete(labels=c('Trimodal, Right Skew', 'Clumpy', 'Normal', 'Trimodal, Left Skew',  'Bimodal'))
 ```
+
+
 
 ## Plotting Single Variables
 
@@ -657,7 +660,7 @@ density plot.
 
 ```
 
-```{r challenge-4-solution}
+```{r challenge-4-solution, include=FALSE}
 surveys %>% 
   ggplot(aes(x = weight)) + 
   geom_histogram(fill = "sky blue" , bins = 50)
@@ -780,7 +783,7 @@ surveys %>%
 
 ```
 
-```{r challenge-6-solution}
+```{r challenge-6-solution, include=FALSE}
 surveys %>% 
   ggplot(mapping = aes(x = species_id, fill = species_id)) + 
   geom_bar()
@@ -965,7 +968,7 @@ yearly_species_weight %>%
 
 ```
 
-```{r challenge-7-solution}
+```{r challenge-7-solution, include=FALSE}
 ## To get you started:  
 yearly_species_weight <- surveys %>% 
   ## Variables to group by:
@@ -1029,7 +1032,7 @@ additional themes.
 
 ```
 
-```{r challenge-8-solution}
+```{r challenge-8-solution, include=FALSE}
 yearly_species_weight %>% 
   ggplot(mapping = aes(x = year, y = avg_weight, color = species_id)) +
   geom_line() + 
@@ -1382,49 +1385,64 @@ ggsave("fig/combo_plot_abun_weight.png", combo_plot, width = 10, dpi = 300)
 > The parameters `width` and `height` also determine the font size in the 
 > saved plot.
 
+## Interactive Graphics
 
-## Tips for Visually Appealing Data Viz
+In certain situations, static displays can limit the sorts of information available and do not allow easy interrogation for information on individual aspects of plots. Obviously, most print journals do not have a way to have readers interact with the printed page, but in digital venues there are some possibilities. Of particular interest here are interactive graphics that can function on websites and in blog posts or even in certain presentation formats. One way to do this that leverages the previous work in making `ggplot`-style graphics is using the `ggplotly` function from the `plotly` R package (Sievert, 2020). You can access the 2020 book that goes into more detail on `plotly`-style graphics at https://plotly-r.com/. 
 
-![](images/glamour_of_graphics.JPG)
+To use `ggplotly`, we wrap that function around a `ggplot` object and it will render it in an interactive fashion when the viewer hovers over individual plot components. There are also ways of making `plotly` graphs directly using `plot_ly` and that may prove easier for some things, for example for making interactive three-dimensional graphs. 
 
-One of my favorite references when I am creating plots are the slides from Will 
-Chase's presentation at the 2020 RStudio Conference [Will Chase's presentation at the 2020 RStudio Conference (link)](https://www.williamrchase.com/slides/assets/player/KeynoteDHTMLPlayer.html#0).
+Here are two examples that we worked with earlier converted into `ggplotly` objects that allow further interrogation of the information displayed:
 
-Will is a graphic designer and lays out some interesting "best practices" for 
-creating graphics that we can explore. His suggestions are for three components 
-of the plot: layout, typography, and color. Here are some big take-aways that I 
-use when I create a plot!  
-                                                              
-- Titles should be top-left aligned (usually). 
+```{r plotlydemo, message = FALSE, eval=FALSE}
+library(plotly)
 
-![](images/alignment.JPG)
+spp_weight_boxplot <- surveys %>% 
+  ggplot(aes(x = genus, y = weight)) +
+  geom_violin() +
+  geom_jitter(color = "tomato", width = 0.2, alpha = 0.1) + 
+  scale_y_log10() +
+  ## log (base 10) transforms the y-axis variable
+  ## (helps to make the plot less skewed)
+  labs(x = "", 
+       ## removes the y-axis label
+       y = "log10-Weight") +
+  coord_flip() + 
+  theme(axis.text.y = element_text(size = 12), 
+        axis.text.x = element_text(size = 12), 
+        text = element_text(size = 16)) +
+  theme_bw()
 
-\newpage
+ggplotly(spp_weight_boxplot)
+```
+
+```{r staticPlotly1, message=FALSE, echo=FALSE}
+spp_weight_boxplot
+```
+
+```{r plotlydemo2, message = FALSE, eval=FALSE}
+spp_count_plot <- yearly_counts %>% 
+  ggplot(aes(x = year, y = n, color = genus)) +
+  geom_line() + 
+  labs(x = "Year", 
+       y = "Abundance", 
+       color = "Genus") +
+  theme(axis.title.x = element_text(face = "bold", size = 12)) +
+  theme_bw()
+
+ggplotly(spp_count_plot)
+```
+
+```{r  staticPlotly2, message=FALSE, echo=FALSE}
+spp_count_plot
+```
 
 
-- Don't make people tilt their head!
 
-![](images/tilt.JPG)
-
-- Don't use borders!
-
-- Remove grids and lighten as much as possible -- don't use minor grid lines. 
-
-![](images/grids.JPG)
-
-- Legends suck, so find clever ways to eliminate them. 
-
-![](images/legend.JPG)
-
-- White space is like garlic; take the amount you think you need and triple it.  
-
-- Fonts matter!  
-
-![](images/fonts.JPG)
-
-- Colors are hard, so think about them carefully! Remember to think about color-blind viewers.
+One note about using `plotly` graphics in R-markdown is that they will not knit into word or PDF formats, only into HTML (in word or PDF, you are stuck with static images but you could incorporate a link to a website containing the interactive version of the plot). You can also interact with plots when working in markdown or running code in the console in RStudio. For presentations, you can also record a video of interactions with plot to remove some challenges of live presentations using this format. But if you are looking to wow your viewers in a digital format, need to dig into some details of what is displayed in a plot quickly, or when static graphics are limiting your story-telling ability, remember that there might be another option!
 
 **Happy plotting!**
+
+
 
 
 ## Suggestions for your own work
