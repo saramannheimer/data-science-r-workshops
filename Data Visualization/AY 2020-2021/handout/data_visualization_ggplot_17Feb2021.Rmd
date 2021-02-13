@@ -12,7 +12,7 @@ library(tidyverse)
 knitr::opts_chunk$set(echo = FALSE, echo=TRUE, eval=TRUE,
                       fig.height=3,fig.width=6)
 
-surveys <- read_csv("../data/surveys.csv")
+surveys <- read_csv("../data/surveys2.csv")
 ```
 
 
@@ -1416,7 +1416,7 @@ ggplotly(spp_weight_boxplot)
 ```
 
 ```{r staticPlotly1, message=FALSE, echo=FALSE}
-spp_weight_boxplot
+spp_weight_boxplot + theme_bw()
 ```
 
 ```{r plotlydemo2, message = FALSE, eval=FALSE}
@@ -1426,14 +1426,14 @@ spp_count_plot <- yearly_counts %>%
   labs(x = "Year", 
        y = "Abundance", 
        color = "Genus") +
-  theme(axis.title.x = element_text(face = "bold", size = 12)) +
+  theme(axis.title.x = element_text(face = "bold", size = 12)) + 
   theme_bw()
 
 ggplotly(spp_count_plot)
 ```
 
 ```{r  staticPlotly2, message=FALSE, echo=FALSE}
-spp_count_plot
+spp_count_plot + theme_bw()
 ```
 
 
