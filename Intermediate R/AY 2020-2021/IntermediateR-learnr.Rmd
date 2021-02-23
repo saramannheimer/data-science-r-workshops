@@ -1708,7 +1708,7 @@ The workshops for 2020-2021 involve modifications of materials and are being tau
 
 ### Sara Mannheimer
 
-* Sara Mannheimer is an Associate Professor and Data Librarian at Montana State University, where she helps shape practices and theories for curation, publication, and preservation of data. Her research is rooted in the examination of the social, ethical, and technical issues that arise as we---as a profession and as a society---grapple with the implications of a data-driven world. She is currently working with a library team to build a Dataset Search for institutions, funded by the National Network of Libraries of Medicine, and she is a PhD candidate at Humboldt University of Berlin, studying data stewardship practices for qualitative data reuse and big social data research.
+* Sara Mannheimer is an Associate Professor and Data Librarian at Montana State University Library (http://www.lib.montana.edu/people/about/139), where she helps shape practices and theories for curation, publication, and preservation of data (https://www.lib.montana.edu/services/data/). Her research is rooted in the examination of the social, ethical, and technical issues that arise as we grapple with the implications of a data-driven world.
 
 ### Greta Linse
 
