@@ -1616,7 +1616,7 @@ BlackfootFish_subset <- data.frame(species = BlackfootFish$species, length = Bla
 
 ```{r challenge-19-check}
 grade_result(
-  pass_if(~ identical(.result,
+  pass_if(~identical(.result,
                       data.frame(species = BlackfootFish$species, 
                                  length = BlackfootFish$length, 
                                  width = BlackfootFish$weight)))
