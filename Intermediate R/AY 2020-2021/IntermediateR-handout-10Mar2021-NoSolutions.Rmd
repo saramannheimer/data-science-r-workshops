@@ -1,27 +1,17 @@
 ---
-title: "Intermediate R"
+title: "Intermediate R Handout"
 author: "Data Carpentry contributors & Montana State University R Workshops Team"
-output: learnr::tutorial
-runtime: shiny_prerendered
-# header-includes: \usepackage{graphicx} \usepackage{amsmath} \usepackage{amssymb}
+date: "3/10/2021"
+output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
-# remotes::install_github("rstudio-education/gradethis")
 # install.packages("tidyverse")
-# install.packages("learnr")
 # install.packages("formatR")
 library(formatR)
-library(learnr)
 library(tidyverse)
-library(gradethis)
-knitr::opts_chunk$set(echo = FALSE, exercise.checker = gradethis::grade_learnr,
-                      fig.width=3,fig.height=3)
-BlackfootFish <- read.csv("data/BlackfootFish2.csv", header = TRUE)
-messages <- data.frame(okcupid = c(16, 9, 13, 5, 2, 17, 14),
-                       match = c(17, 7, 5, 16, 8, 13, 14))
-row.names(messages) <- c("Monday", "Tuesday", "Wednesday", "Thursday",
-                         "Friday", "Saturday", "Sunday")
+
+BlackfootFish <- read.csv("https://raw.githubusercontent.com/saramannheimer/data-science-r-workshops/master/Intermediate%20R/AY%202020-2021/data/BlackfootFish2.csv", header = TRUE)
 ```
 
 
@@ -71,7 +61,7 @@ extract elements of a vector, we can give their corresponding index, starting
 from the number one. (`R` uses a one-based numbering system.)
 
 
-```{r extractElements, message=TRUE, exercise=TRUE}
+```{r extractElements, message=TRUE}
 x <- c(5.4, 6.2, 7.1, 4.8, 7.5)
 
 x[1] ## Extracts the first element of x 
@@ -90,7 +80,7 @@ x[-2] ## Extracts everything in x BUT the second index
 x <- c(5.4, 6.2, 7.1, 4.8, 7.5)
 ```
 
-```{r whyError, message=TRUE, exercise=TRUE}
+```{r whyError, message=TRUE, eval=F}
 
 x[-1:3]
 
@@ -105,7 +95,7 @@ we are able to extract two types of elements.
 To extract a column from a dataframe we can use the familiar `$` operator:
 
 
-```{r extractDataframe, exercise=TRUE}
+```{r extractDataframe}
 example_df <- data.frame(A = c(1, 5, 9, 13),
                 B = c(2, 6, 10, 14),
                 C = c(3, 7, 11, 15),
@@ -131,7 +121,7 @@ example_df <- data.frame(A = c(1, 5, 9, 13),
                 )
 ```
 
-```{r moreExtract, exercise=TRUE}
+```{r moreExtract}
 example_df[1, 1] ## Extracts the first row, first column entry  
 
 example_df[, 1] ## Extracts EVERY row in the first column  
@@ -145,7 +135,7 @@ example_df[1, ] ## Extracts EVERY column in the first row
 >I want to extract the 3rd and 4th columns. What is wrong with 
 >my code? 
 
-```{r challenge-2, exercise=TRUE, exercise.lines = 7, exercise.setup="moreExtract-setup"}
+```{r challenge-2}
 ## Change the code below to extract the 3rd and 4th columns
 
 # example_df[, 3, 4]
@@ -153,36 +143,31 @@ example_df[1, ] ## Extracts EVERY column in the first row
 ```
 
 
-```{r challenge-2-solution, exercise.setup="moreExtract-setup"}
+```{r challenge-2-solution, eval=F, echo=F}
 
 example_df[, 3:4]
 
 ```
 
-```{r challenge-2-check}
-grade_code()
-```
 
 > ### Challenge 2 (Part 2) ![](images/mild.jpg)
 >
 >How would you change it to extract these columns? What if I wanted 
 >to extract the 2nd and 4th columns?  
 
-```{r challenge-2-2, exercise=TRUE, exercise.lines = 7, exercise.setup="moreExtract-setup"}
+```{r challenge-2-2}
 ## Write code to extract the 2nd and 4th columns
 
 
 ```
 
-```{r challenge-2-2-solution, exercise.setup="moreExtract-setup"}
+```{r challenge-2-2-solution, eval=F, echo=F}
 
 example_df[, c(2,4)]
 
 ```
 
-```{r challenge-2-2-check}
-grade_code()
-```
+
 
 ## Relational Operators
 
@@ -192,7 +177,7 @@ before in mathematics but take on a slightly different feel in data science.
 We will walk through a few examples of different types of relational operators 
 and the rest will be left as exercises.   
 
-```{r relOp, exercise=TRUE}
+```{r relOp}
 w <- 10.2 
 x <- 1.3
 y <- 2.8 
@@ -217,7 +202,7 @@ dna2 <- "attattaggaacaca"
 This type of operator tells whether an object is 
 equivalent to another object (`==`), or its negation (`!=`).  
 
-```{r equality, exercise=TRUE, exercise.setup="relOp-setup"}
+```{r equality}
 dna1 == dna2
 dna1 != dna2
 ```
@@ -232,7 +217,7 @@ use `>` or `<` in your statement. To add an equality constraint, you would
 add a `=` sign \underline{after} the inequality statement (`>=` or `<=`).  
 
 
-```{r greaterLess, exercise=TRUE, exercise.setup="relOp-setup"}
+```{r greaterLess}
 w > 10
 x > y
 ```
@@ -247,7 +232,7 @@ included in an object. These values can be linked together into a vector, and
 the output will be a vector of logical values.   
 
 
-```{r inclusion, exercise=TRUE}
+```{r inclusion}
 colors <- c("green", "pink", "red")
 
 "blue" %in% colors
@@ -274,12 +259,12 @@ c("a", "b") %in% some_letters
   -  dna1 is longer than 5 bases (use nchar() to figure out how long a string is)
 >
 
-```{r challenge-3, exercise=TRUE, exercise.lines = 10, exercise.setup="relOp-setup"}
+```{r challenge-3}
 # Challenge 3 R code goes here
 
 ```
 
-```{r challenge-3-solution, exercise.setup="relOp-setup"}
+```{r challenge-3-solution, eval=F, echo=F}
 2 * x + 0.2 == y
 
 "hello" > "goodbye"
@@ -289,11 +274,6 @@ TRUE > FALSE
 nchar(dna1)
 
 ```
-
-```{r challenge-3-check}
-grade_code()
-```
-
 
 
 ### Comparing Decimal Valued Numbers
@@ -313,7 +293,7 @@ check for equality of two doubles. This function, applied to the two arguments, 
 function allows for a little bit of wiggle room in the rounding errors that are
 associated with doubles. 
 
-```{r allequal, exercise=TRUE, exercise.setup="relOp-setup"}
+```{r allequal}
 #Verify the result using all.equal(..., ...)
 
 
@@ -323,7 +303,7 @@ associated with doubles.
 
 How did `R` know how to compare the words `hello` and `goodbye`? 
 
-```{r compareCharacters, exercise=TRUE}
+```{r compareCharacters}
 "hello" > "goodbye"
 
 # What does this output suggest?
@@ -339,7 +319,7 @@ Sys.getlocale(category = "LC_COLLATE")
 some_letters <- c("a", "b", "c", "d", "e")
 ```
 
-```{r challenge-4, exercise=TRUE}
+```{r challenge-4}
 some_letters != c("a", "c") 
 
 ```
@@ -380,7 +360,7 @@ procedure we wish for `R` to do, without any silly recycling! To exclude values
 you place a `!` in front of the **entire** statement, not directly in front of
 the `%in%`. 
 
-```{r inclusionOp, exercise=TRUE, exercise.setup="challenge-4-setup"}
+```{r inclusionOp}
 
 !c("a", "b") %in% some_letters
 
@@ -393,7 +373,7 @@ the `%in%`.
 You can also use logical values (`TRUE`, `FALSE`) to 
 extract elements of a vector. 
 
-```{r extractLetters, exercise=TRUE, exercise.setup="challenge-4-setup"}
+```{r extractLetters}
 some_letters[c(TRUE, TRUE, FALSE, FALSE, FALSE)] 
 ## Extracts the first two elements of the some_letters vector 
 
@@ -410,7 +390,7 @@ The `which` statement returns the *indices* of a vector, where a
 relational statement is satisfied (evaluates to `TRUE`).   
 
 
-```{r which, exercise=TRUE, exercise.lines=10}
+```{r which}
 x_2 <- c(3, 5, 7, 9, 11, 13, 15)  
 
 which(x_2 > 8) 
@@ -431,7 +411,7 @@ statements are applied element wise (a step-by-step progression through the
 matrix/vector entries).
 
 
-```{r matricies, exercise=TRUE, exercise.lines=11}
+```{r matricies}
 # The following are dating data, of one person's messages received per day for one week
 
 messages <- data.frame(okcupid = c(16, 9, 13, 5, 2, 17, 14),  
@@ -463,7 +443,7 @@ row.names(messages) <- c("Monday", "Tuesday", "Wednesday", "Thursday",
 
 ```
 
-```{r challenge-5, exercise=TRUE, exercise.lines = 7, exercise.setup="okCupid-setup"}
+```{r challenge-5}
 # Create a logical matrix to provide information that would allow you to answer the question: 
 # For what days were the number of messages at either site greater than 12? 
 
@@ -471,15 +451,11 @@ row.names(messages) <- c("Monday", "Tuesday", "Wednesday", "Thursday",
 
 ```
 
-```{r challenge-5-solution, exercise.setup="okCupid-setup"}
+```{r challenge-5-solution, eval=F, echo=F}
 messages > 12
 
 
 
-```
-
-```{r challenge-5-check}
-grade_code()
 ```
 
 > ### Challenge 6 ![](images/medium.jpg)
@@ -493,7 +469,7 @@ which answer the following questions (Use rows of the matrix to answer):
 >
 
 
-```{r challenge-6, exercise=TRUE, exercise.lines=10, exercise.setup="okCupid-setup"}
+```{r challenge-6}
 # Use rows of the matrix to answer:  
 
 # when were the messages at OkCupid equal to 13?
@@ -504,18 +480,12 @@ which answer the following questions (Use rows of the matrix to answer):
 ```
 
 
-```{r challenge-6-solution}
+```{r challenge-6-solution, eval=F, echo=F}
 messages[which(messages[,1] == 13),]
 
 messages[which(messages[,1] > messages[,2]),]
 
 ```
-
-```{r challenge-6-check}
-grade_code()
-```
-
-
 
 ### Subset
 
@@ -525,7 +495,7 @@ relational conditions specified (evaluates to `TRUE`).
 
 
 
-```{r subset, exercise=TRUE}
+```{r subset}
 x_3 <- c(3, 5, 7, 9, 11, 13, 15)  
 
 subset(x_3, x_3 > 6)
@@ -540,22 +510,16 @@ question:
   1.  Change the which() statement code to a subset() statement, extracting the days that the number of messages at OkCupid greater than the messages at Match.
 >
 
-```{r challenge-7, exercise=TRUE, exercise.lines=10, exercise.setup="okCupid-setup"}
+```{r challenge-7}
 # Change the which() statement code to a subset() statement, extracting the days that the number of messages at OkCupid greater than the messages at Match
 
 ```
 
-```{r challenge-7-solution, exercise.setup="okCupid-setup"}
+```{r challenge-7-solution, eval=F, echo=F}
 subset(messages, messages[,1] > messages[,2])
 
 
 ```
-
-```{r challenge-7-check}
-grade_code()
-```
-
-
 
 ## Logicals
 
@@ -603,7 +567,7 @@ the statement, vector, or matrix.
 
 Below are examples of using logicals to evaluate vectors. For example, in the first line of code three statements are checked, `TRUE & TRUE`, `TRUE & FALSE`, and `FALSE & FALSE`. The first statement is "TRUE" since both elements were "TRUE". The second and third statements are "FALSE" since at least one element was "FALSE".
 
-```{r doubleLogical, exercise=TRUE}
+```{r doubleLogical}
 c(TRUE, TRUE, FALSE) & c(TRUE, FALSE, FALSE)
 
 c(TRUE, TRUE, FALSE) | c(TRUE, FALSE, FALSE)
@@ -625,7 +589,7 @@ questions:
 
 
 
-```{r challenge-8, exercise=TRUE, exercise.lines=10, exercise.setup="okCupid-setup"}
+```{r challenge-8}
 # Is the last day of the week under 5 messages or above 10 messages? 
 # (hint: last <- tail(messages$okcupid, n=1) could be helpful)
 
@@ -634,7 +598,7 @@ questions:
 # Make sure you test your code with some other values
 ```
 
-```{r challenge-8-solution, exercise.setup="okCupid-setup"}
+```{r challenge-8-solution, eval=F, echo=F}
 last <- tail(messages$okcupid, 1)
 
 last < 5 | last >10
@@ -643,15 +607,12 @@ last > 15 & last <= 20 #Or last > 15 & (last < 20 | last == 20)
 
 ```
 
-```{r challenge-8-check}
-grade_code()
-```
 
 The `subset` command (from before) can also accept more than one relational 
 condition if joined by logicals. 
 
 
-```{r subset2, exercise=TRUE, exercise.setup="okCupid-setup", exercise.lines=10}
+```{r subset2}
 bad_days <- subset(messages, okcupid < 6 | match < 6)
 
 bad_days
@@ -692,7 +653,7 @@ computer executes to check its logical value,
 __single__ value (not a vector or matrix).   
 
 
-```{r if, exercise=TRUE, exercise.lines=7}  
+```{r if}  
 y <- -3 ## Try changing this number, for example y <- 5 
 
 if(y < 0){
@@ -710,14 +671,14 @@ prints "You're popular!" if the number of messages from okcupid exceeds 10.
 >
 
 
-```{r challenge-9, exercise=TRUE, exercise.lines = 7, exercise.setup="okCupid-setup"}
+```{r challenge-9}
 # hint: use the last day of the week for okcupid that you made above
 last <- tail(messages$okcupid, 1)
 
 
 ```
 
-```{r challenge-9-solution, exercise.setup="okCupid-setup"}
+```{r challenge-9-solution, eval=F, echo=F}
 last <- tail(messages$okcupid, 1)
 
 if (last > 10){
@@ -725,12 +686,6 @@ if (last > 10){
 }
 
 ```
-
-```{r challenge-9-check}
-grade_code()
-```
-
-
 
 ### If/Else Statements  
 
@@ -759,7 +714,7 @@ else{
 a __single__ value (not a vector or matrix).       
 
 
-```{r ifelse, exercise=TRUE, exercise.lines=10}  
+```{r ifelse}  
 y <- -3 ## Try changing this number, for example y <- 5
 
 if(y < 0){
@@ -789,7 +744,7 @@ argument is the statement that is evaluated when the condition is `TRUE`
 the condition is `FALSE` (`statement2`).  
 
 
-```{r ifelse2, exercise=TRUE}
+```{r ifelse2}
 y <- -3 ## Try changing this number, for example y <- 5
 
 ifelse(y < 0, "y is a negative number", "y is either positive or zero")
@@ -806,24 +761,18 @@ messages!".
 
 
 
-```{r challenge-10, exercise=TRUE, exercise.lines = 7, exercise.setup="okCupid-setup"}
+```{r challenge-10}
 # Challenge: Rewrite the if, else function from above using R's built in ifelse() function. 
 last <- tail(messages$okcupid, 1)
 
 ```
 
-```{r challenge-10-solution}
+```{r challenge-10-solution, eval=F, echo=F}
 last <- tail(messages$okcupid, 1)
 
 ifelse(last > 10, "You're popular!", "Send more messages!")
 
 ```
-
-```{r challenge-10-check}
-grade_code()
-```
-
-
 
 ### Else/If Statements  
 
@@ -866,7 +815,7 @@ else{
 > LearnR exercise code checking flags the `else if()` line as a problem. This is a bug with the LearnR environment and not the code.
 
 
-```{r elseif, exercise=TRUE, exercise.lines=10}  
+```{r elseif}  
 y <- -3 ## Try changing this number, for example y <- 5 and y <- 0
 
 if(y < 0){
@@ -886,7 +835,7 @@ are mutually exclusive (an observation can only belong to one piece).
 > The modulo (`%%`) returns the remainder of the division of the number to the left by the number on the right, for example 5 modulo 3 or 5 %% 3 is 2.
 
 
-```{r mutually, exercise=TRUE, exercise.lines=10}
+```{r mutually}
 
 x <- 6
 
@@ -977,7 +926,7 @@ for(i in sequence){
 
 #### Example:
 
-```{r forloop, exercise=TRUE}
+```{r forloop}
 
 for(i in 1:10) {
     print(i)
@@ -990,7 +939,7 @@ i ## should be 10 (the last number of the sequence 1:10), unless the loop had is
 Now, let's add the corresponding entries of two vectors together!  
 
 
-```{r twoVectors, eval = FALSE, exercise=TRUE}
+```{r twoVectors, eval = FALSE}
 
 x <- seq(1, 10, by = 1)
 y <- seq(10, 28, by = 2)
@@ -1018,25 +967,18 @@ y <- seq(10, 28, by = 2)
 >
 >How could the above calculation be done outside of a loop?  
 
-```{r challenge-11, exercise=TRUE, exercise.lines=7}
+```{r challenge-11}
 # code to execute adding of the x and y vectors from the example above,
 # NOT in a loop
 
 ```
 
 
-```{r challenge-11-solution}
+```{r challenge-11-solution, eval=F, echo=F}
 z <- x + y
 z
 
 ```
-
-```{r challenge-11-check}
-grade_code()
-```
-
-
-
 
 > NOTE: Like we used in the above `for` loop, it is often useful, to add a 
 `print()` statement inside the loop. This allows for you to verify that the 
@@ -1051,7 +993,7 @@ process is executing correctly and can save you some major headaches!
 find the indices needed to sample every $7^{th}$ row from the dataset, starting 
 with the $1^{st}$ row, until you've sampled 1200 rows. This would allow us to split the data set into "testing" and "training" samples, possibly using the `testing` data for assessing a model we develop using the "training" data. 
 
-```{r challenge-12, eval=FALSE, exercise=TRUE, exercise.lines = 20}
+```{r challenge-12, eval=FALSE}
 BlackfootFish <- read.csv("https://raw.githubusercontent.com/saramannheimer/data-science-r-workshops/master/Intermediate%20R/AY%202020-2021/data/BlackfootFish2.csv", header = TRUE)
 
 n_testing <- 1200
@@ -1075,7 +1017,7 @@ training <- BlackfootFish[-samps, ]
 ```
 
 
-```{r challenge-12-solution}
+```{r challenge-12-solution, eval=F, echo=F}
 BlackfootFish <- read.csv("https://raw.githubusercontent.com/saramannheimer/data-science-r-workshops/master/Intermediate%20R/AY%202020-2021/data/BlackfootFish2.csv", header = TRUE)
 
 n_testing <- 1200
@@ -1099,10 +1041,6 @@ training <- BlackfootFish[-samps, ]
 
 ```
 
-```{r challenge-12-check}
-grade_code()
-```
-
 Before we move on, is there a better way to split a data set into training and testing versions than taking every 7th observation?
 
 #### Nesting For Loops  
@@ -1116,7 +1054,7 @@ have an index, say `j`. Let's look at the nested `for` loop below and see if we
 can figure out how the loop proceeds through the indices. 
 
 
-```{r nestingForLoops, exercise=TRUE}
+```{r nestingForLoops}
 for(i in 1:5){
   for(j in c("a", "b", "c", "d", "e")){
     print(paste(i, j))
@@ -1178,7 +1116,7 @@ A function allows for us to repeat several operations with a single command.
 Take for instance a function which converts heights from feet and inches to 
 centimeters, named `feet_inch_to_cm()`.  
 
-```{r functionsExample, exercise=TRUE}
+```{r functionsExample}
 feet_inch_to_cm <- function(feet, inches) {
   inches <- feet*12 + inches
   cm <- inches * 2.54
@@ -1201,26 +1139,17 @@ feet_inch_to_cm <- function(feet, inches) {
 >Use the `feet_inch_to_cm` function to convert your height to cm!  
 
 
-```{r challenge-13, eval = FALSE, exercise=TRUE, exercise.lines = 7}
+```{r challenge-13, eval = FALSE}
 
 ## Your code goes here. NOTE, the solution will use a height of 5' 7"
 
 ```
 
 
-```{r challenge-13-solution}
+```{r challenge-13-solution, eval=F, echo=F}
 feet_inch_to_cm(5,7)
 
 ```
-
-```{r challenge-13-check}
-grade_result(
-  pass_if(~ identical(.result, 170.18))
-)
-```
-
-
-
 
 We define `feet_inch_to_cm()` by assigning it to the output of function. The list
 of argument names are contained within parentheses. Next, the body of the 
@@ -1250,7 +1179,7 @@ a function belong to a local environment, and are not accessible from outside of
 the function. Take this example:  
 
 
-```{r scope, exercise=TRUE}
+```{r scope}
 x <- 10
 ## globally defined variable 
 
@@ -1273,7 +1202,7 @@ value of `x`! Now look at another example, where `x` is ***not*** defined
 within the function.  
 
 
-```{r scope2, exercise=TRUE}
+```{r scope2}
 
 g <- function(){
   ## locally defined y
@@ -1323,7 +1252,7 @@ The following `R` code would carry out this rescaling procedure for the `length`
 and `weight` columns of the `BlackfootFish` data:  
 
 
-```{r WhyFunction, exercise=TRUE}
+```{r WhyFunction}
 BlackfootFish$length_scaled <- (BlackfootFish$length - min(BlackfootFish$length, na.rm = TRUE)) /
   (max(BlackfootFish$length, na.rm = TRUE) - min(BlackfootFish$length, na.rm = TRUE))
 
@@ -1355,7 +1284,7 @@ function.
 
 The following snippet of code rescales the `length` column to be between 0 and 1:
 
-```{r rescalingFunction, exercise=TRUE}
+```{r rescalingFunction}
 (BlackfootFish$length - min(BlackfootFish$length, na.rm = TRUE)) / 
   (max(BlackfootFish$length, na.rm = TRUE) - min(BlackfootFish$length, na.rm = TRUE))
 ```
@@ -1380,20 +1309,15 @@ variable `x`, make sure your code does not depend on a specific dataset.
 >2. Save the rescaled vector in a variable called `x_rescaled`
 
 
-```{r challenge-14, exercise=TRUE}
+```{r challenge-14}
 # code modification with temporary variable "x"
 x <- BlackfootFish$length
 ```
 
-```{r challenge-14-solution}
+```{r challenge-14-solution, eval=F, echo=F}
 x <- BlackfootFish$length
 x_rescaled <- (x - min(x, na.rm = TRUE)) / 
   (max(x, na.rm = TRUE) - min(x, na.rm = TRUE))
-```
-
-```{r challenge-14-check}
-grade_code()
-
 ```
 
 But now take a closer look at our process. Is there any duplication? An obvious
@@ -1406,7 +1330,7 @@ instead calculate the range of `x` and refer to the first (minimum) and second
 Note: The `range` function in `R` takes a single numeric input and returns the minimum
 and maximum (so this is not the "range" statistic but the information to calculate it):  
 
-```{r rangeFunction, exercise=TRUE}
+```{r rangeFunction}
 range(seq(1, 5))     
 ```
 
@@ -1432,7 +1356,7 @@ the range of the intermediate variable `x`, using the `range()` function. Make
 sure that you specify the `na.rm` option to ignore any NAs in the input vector. 
 
 
-```{r challenge-15, exercise=TRUE}
+```{r challenge-15}
 x <- BlackfootFish$length
 # Create x_range = the range of x 
 
@@ -1443,7 +1367,7 @@ x <- BlackfootFish$length
 
 ```
 
-```{r challenge-15-solution}
+```{r challenge-15-solution, eval=F, echo=F}
 x <- BlackfootFish$length
 
 x_range <- range(x, na.rm = TRUE)
@@ -1451,12 +1375,6 @@ x_rescaled <- (x - x_range[1]) /
   (x_range[2] - x_range[1])
 
 ```
-
-```{r challenge-15-check}
-grade_code()
-
-```
-
 
 How does this process end up with us writing our own function? What do you need
 in order to write a function?   
@@ -1485,7 +1403,7 @@ myFunction <- function(argument1, argument2,...){
 vector to be between 0 and 1. The function should take a single argument, `x`.   
 
 
-```{r challenge-16, exercise=TRUE}
+```{r challenge-16}
 # Use the function template to create a function named rescale that performs the process outlined above, using the intermediate variables you previously defined
 
 myfunction <- function(arg1,...){
@@ -1493,7 +1411,7 @@ myfunction <- function(arg1,...){
 }
 ```
 
-```{r challenge-16-solution}
+```{r challenge-16-solution, eval=F, echo=F}
 rescale <- function(x){
   x_range <- range(x, na.rm = TRUE)
   x_rescaled <- (x - x_range[1]) / (x_range[2] - x_range[1])
@@ -1501,9 +1419,6 @@ rescale <- function(x){
 }
 ```
 
-```{r challenge-16-check}
-grade_code()
-```
 
 Once you have written your function, the next step is to test it out. The 
 simplest place to start is to set value(s) for the function's argument(s) 
@@ -1527,13 +1442,13 @@ rescale <- function(x){
 }
 ```
 
-```{r challenge-17, exercise=TRUE, exercise.lines=7}
+```{r challenge-17}
 
 # Copy the body code from the function to unit test the code in your function on a simple vector named x <- c(1, 2, 3, 4, 5)
 
 ```
 
-```{r challenge-17-solution}
+```{r challenge-17-solution, eval=F, echo=F}
 x <- c(1, 2, 3, 4, 5)
 
 x_range <- range(x, na.rm = TRUE)
@@ -1541,11 +1456,6 @@ x_rescaled <- (x - x_range[1]) / (x_range[2] - x_range[1])
 
 x_rescaled
 ```
-
-```{r challenge-17-check}
-grade_code()
-```
-
 
 If your unit test was successful, now you can move on to testing your function on the test data and then with your real data.  
 
@@ -1556,23 +1466,18 @@ dataset, saving the results as `Blackfootfish$length_scaled`. Inspect the rescal
 
 
 
-```{r challenge-18, exercise=TRUE, exercise.lines=7, exercise.setup="challenge-17-setup"}
+```{r challenge-18}
 
 # Test your function out on the BlackfootFish data's length variable
 
 ```
 
-```{r challenge-18-solution}
+```{r challenge-18-solution, eval=F, echo=F}
 
 BlackfootFish$length_scaled <- rescale(BlackfootFish$length)
 summary(BlackfootFish$length_scaled)
 
 ```
-
-```{r challenge-18-check}
-grade_code()
-```
-
 
 ### Process of Creating a Function  
 
@@ -1603,24 +1508,15 @@ your function.
 > Start by creating a data subset with just the species, length, and weight variables
 > from the BlackfootFish dataset. Call the data subset `BlackfootFish_subset`.
 
-```{r challenge-19, exercise=TRUE, exercise.lines=7}
+```{r challenge-19}
 
 
 
 ```
 
-```{r challenge-19-solution}
+```{r challenge-19-solution, eval=F, echo=F}
 BlackfootFish_subset <- data.frame(species = BlackfootFish$species, length = BlackfootFish$length, weight = BlackfootFish$weight)
 
-```
-
-```{r challenge-19-check}
-grade_result(
-  pass_if(~ identical(.result,
-                      data.frame(species = BlackfootFish$species, 
-                                 length = BlackfootFish$length, 
-                                 width = BlackfootFish$weight)))
-)
 ```
 
 > ### Challenge 19 (Part 2) ![](images/spicy.jpg)
@@ -1645,14 +1541,14 @@ BlackfootFish_subset <- data.frame(species = BlackfootFish$species, length = Bla
 
 ```
 
-```{r challenge-19-2, exercise=TRUE, exercise.lines=15, exercise.setup="challenge-19-2-setup"}
+```{r challenge-19-2}
 
 
 
 ```
 
 
-```{r challenge-19-2-solution}
+```{r challenge-19-2-solution, eval=F, echo=F}
 
 condition_index <- function (x, y) {
   ifelse(x==0|y==0, c_in<- NA, c_in <- 100000*(x/(y^3)))
@@ -1676,12 +1572,6 @@ D1 %>%
   theme_bw()
 
 ```
-
-```{r challenge-19-2-check}
-grade_code()
-```
-
-
 
 ## References  
 
