@@ -1619,7 +1619,7 @@ grade_result(
   pass_if(~identical(.result,
                       data.frame(species = BlackfootFish$species, 
                                  length = BlackfootFish$length, 
-                                 width = BlackfootFish$weight)))
+                                 weight = BlackfootFish$weight)))
 )
 ```
 
