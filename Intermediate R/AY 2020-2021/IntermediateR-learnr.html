@@ -456,7 +456,7 @@ subset(x_3, x_3 &gt; 6)</code></pre>
 </div>
 <blockquote>
 <h3 id="section-challenge-7">Challenge 7 <img src="images/medium.jpg" /></h3>
-<p>Using the okcupid “data” from above, answer the following questions:</p>
+<p>Using the okcupid “data” from above, answer the following question:</p>
 <ol style="list-style-type: decimal">
 <li>Change the which() statement code to a subset() statement, extracting the days that the number of messages at OkCupid greater than the messages at Match.</li>
 </ol>
@@ -1129,7 +1129,7 @@ myfunction &lt;- function(arg1,...){
 </div>
 <p>Once you have written your function, the next step is to test it out. The simplest place to start is to set value(s) for the function’s argument(s) (e.g., <code>x &lt;- c(1, 2, 3, 4, 5)</code>). You can then run the code <em>inside</em> the function, line by line, to make sure that each line successfully executes for this variable. This is what we call unit testing in data science. This is a similar process to testing out a <code>for</code> loop, by setting the value of the index (<code>i &lt;- 1</code>) and running the inside of the loop.</p>
 <blockquote>
-<p>Challenge 17 <img src="images/mild.jpg" /></p>
+<h3 id="section-challenge-17">Challenge 17 <img src="images/mild.jpg" /></h3>
 <p>Unit test your function on a simple vector, with the same name as your function’s input. What do you expect the values of the test to be after you input it into your function?</p>
 </blockquote>
 <div class="tutorial-exercise-support" data-label="challenge-17-setup" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
@@ -1156,7 +1156,7 @@ x_rescaled</code></pre>
 </div>
 <p>If your unit test was successful, now you can move on to testing your function on the test data and then with your real data.</p>
 <blockquote>
-<p>Challenge 18 <img src="images/medium.jpg" /></p>
+<h3 id="section-challenge-18">Challenge 18 <img src="images/medium.jpg" /></h3>
 <p>Test your function on the <code>length</code> column of the BlackfootFish dataset, saving the results as <code>Blackfootfish$length_scaled</code>. Inspect the rescaled values and run <code>summary()</code> on the new variable. Do they look correct?</p>
 </blockquote>
 <div class="tutorial-exercise" data-label="challenge-18" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="7">
@@ -1195,10 +1195,10 @@ summary(BlackfootFish$length_scaled)</code></pre>
 </div>
 <div class="tutorial-exercise-support" data-label="challenge-19-check" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code>grade_result(
-  pass_if(~ identical(.result,
+  pass_if(~identical(.result,
                       data.frame(species = BlackfootFish$species, 
                                  length = BlackfootFish$length, 
-                                 width = BlackfootFish$weight)))
+                                 weight = BlackfootFish$weight)))
 )</code></pre>
 </div>
 <blockquote>

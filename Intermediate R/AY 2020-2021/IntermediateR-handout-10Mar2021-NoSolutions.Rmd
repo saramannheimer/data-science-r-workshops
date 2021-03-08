@@ -1285,7 +1285,7 @@ function.
 The following snippet of code rescales the `length` column to be between 0 and 1:
 
 ```{r rescalingFunction}
-(BlackfootFish$length - min(BlackfootFish$length, na.rm = TRUE)) / 
+head(BlackfootFish$length - min(BlackfootFish$length, na.rm = TRUE)) / 
   (max(BlackfootFish$length, na.rm = TRUE) - min(BlackfootFish$length, na.rm = TRUE))
 ```
 
