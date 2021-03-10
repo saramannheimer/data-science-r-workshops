@@ -1552,7 +1552,7 @@ If your unit test was successful, now you can move on to testing your function o
 > ### Challenge 18 ![](images/medium.jpg)
 >
 >Test your function on the `length` column of the BlackfootFish 
-dataset, saving the results as `Blackfootfish$length_scaled`. Inspect the rescaled values and run `summary()` on the new variable. Do they look correct?  
+dataset, saving the results as `BlackfootFish$length_scaled`. Inspect the rescaled values and run `summary()` on the new variable. Do they look correct?  
 
 
 
