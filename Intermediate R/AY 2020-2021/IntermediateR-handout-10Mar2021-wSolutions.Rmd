@@ -1525,7 +1525,7 @@ BlackfootFish_subset <- data.frame(species = BlackfootFish$species, length = Bla
 workshop (`for` loop, function, conditional, and/or relational statements) to:  
 
 >*  compute Fulton's condition factor of each fish ($condition = 
-\frac{100000 \ast weight}{length^3}$), making any fish with weight or heights of 0s to be NAs on the condition factor since those are obvious data entry errors.  
+\frac{100000 \ast weight}{length^3}$), making any fish with weight or lengths of 0s to be NAs on the condition factor since those are obvious data entry errors.  
 >*  then remove the fish from the dataset whose condition index is NA or more than 2 (values larger than 2 are not typical and might suggest further data entry errors).
 >* If you attended our data visualization workshop, try to make a plot of condition factors based on the fish species with jittered points and violins. 
 
