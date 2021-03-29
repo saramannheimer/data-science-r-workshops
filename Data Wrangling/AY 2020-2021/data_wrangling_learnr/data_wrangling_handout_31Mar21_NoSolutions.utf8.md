@@ -5,15 +5,7 @@ date: "3/31/2021"
 output: pdf_document
 
 ---
-```{r setup, include=FALSE}
-library(tidyverse)
-library(lubridate)
-knitr::opts_chunk$set(echo = TRUE, eval=TRUE, fig.align = "center")
 
-surveys <- read_csv("data/surveys2_subset.csv")
-plots <- read_csv("data/plots.csv")
-species <- read_csv("data/species.csv")
-```
 
 
 ## Orientation of/for the Workshop
@@ -141,8 +133,25 @@ Each row holds information for a single animal, and the columns represent:
 We'll read in our data using the `read_csv()` function, from the tidyverse 
 package **`readr`**, instead of `read.csv()`.
 
-```{r load-data}
+
+```r
 surveys <- read_csv("https://raw.githubusercontent.com/saramannheimer/data-science-r-workshops/master/Data%20Wrangling/AY%202020-2021/data_wrangling_learnr/data/surveys2_subset.csv")
+```
+
+```
+## 
+## -- Column specification --------------------------------------------------------
+## cols(
+##   record_id = col_double(),
+##   month = col_double(),
+##   day = col_double(),
+##   year = col_double(),
+##   plot_id = col_double(),
+##   species_id = col_character(),
+##   sex = col_character(),
+##   hindfoot_length = col_double(),
+##   weight = col_double()
+## )
 ```
 
 
@@ -155,18 +164,48 @@ each column as it reads it into `R`. For example, in this dataset, `read_csv` re
 manually by using the `col_types` argument in `read_csv`.
 
 
-```{r inspect-data}
+
+```r
 ## inspect the data
 glimpse(surveys)
 ```
 
-```{r eval=FALSE, echo=TRUE}
+```
+## Rows: 11,332
+## Columns: 9
+## $ record_id       <dbl> 23215, 23216, 23217, 23218, 23220, 23221, 23222, 23...
+## $ month           <dbl> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+## $ day             <dbl> 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27,...
+## $ year            <dbl> 1996, 1996, 1996, 1996, 1996, 1996, 1996, 1996, 199...
+## $ plot_id         <dbl> 21, 1, 17, 17, 2, 18, 1, 2, 17, 2, 1, 12, 21, 18, 1...
+## $ species_id      <chr> "PF", "DM", "DM", "DM", "DM", "PF", "DM", "DO", "DM...
+## $ sex             <chr> "F", "M", "M", NA, "F", "F", "M", "M", "F", "M", "F...
+## $ hindfoot_length <dbl> 16, NA, 36, 37, 36, NA, 34, 37, 39, 40, 27, 39, 21,...
+## $ weight          <dbl> 7, 27, 25, NA, 47, 9, 27, 66, 49, 54, 38, NA, 16, 9...
+```
+
+
+```r
 ## Preview the data (opens a spreadsheet-like interface in RStudio)
 View(surveys)
 ```
 
-```{r echo=FALSE}
-surveys
+
+```
+## # A tibble: 11,332 x 9
+##    record_id month   day  year plot_id species_id sex   hindfoot_length weight
+##        <dbl> <dbl> <dbl> <dbl>   <dbl> <chr>      <chr>           <dbl>  <dbl>
+##  1     23215     1    27  1996      21 PF         F                  16      7
+##  2     23216     1    27  1996       1 DM         M                  NA     27
+##  3     23217     1    27  1996      17 DM         M                  36     25
+##  4     23218     1    27  1996      17 DM         <NA>               37     NA
+##  5     23220     1    27  1996       2 DM         F                  36     47
+##  6     23221     1    27  1996      18 PF         F                  NA      9
+##  7     23222     1    27  1996       1 DM         M                  34     27
+##  8     23223     1    27  1996       2 DO         M                  37     66
+##  9     23224     1    27  1996      17 DM         F                  39     49
+## 10     23225     1    27  1996       2 DM         M                  40     54
+## # ... with 11,322 more rows
 ```
 
 Notice that the class of the data is now `tbl_df`
@@ -200,34 +239,58 @@ arguments are the columns to keep.
 
 Modify the following code to select the `plot_id`, `species_id`, and `weight` columns from the `survey` dataset:
 
-```{r select-columns}
+
+```r
 select(surveys)
 ```
 
-```{r select-columns-solution, include=FALSE}
-select(surveys, plot_id, species_id, weight)
 ```
+## # A tibble: 11,332 x 0
+```
+
+
 
 To select all columns *except* certain ones, put a "-" in front of
 the variable to exclude it.
 
 Modify the following code to select all columns *except* `record_id` and `species_id`:
 
-```{r donot-select-columns}
+
+```r
 select(surveys)
 ```
 
-```{r donot-select-columns-solution, include=FALSE}
-select(surveys, -record_id, -species_id)
 ```
+## # A tibble: 11,332 x 0
+```
+
+
 
 This will select all the variables in `surveys` except `record_id`
 and `species_id`.
 
 To choose rows based on a specific criteria, use `filter()`:
 
-```{r filter-rows-1999}
+
+```r
 filter(surveys, year == 1999)
+```
+
+```
+## # A tibble: 1,064 x 9
+##    record_id month   day  year plot_id species_id sex   hindfoot_length weight
+##        <dbl> <dbl> <dbl> <dbl>   <dbl> <chr>      <chr>           <dbl>  <dbl>
+##  1     29024     1    16  1999       1 DM         F                  33     41
+##  2     29025     1    16  1999       1 DM         F                  35     52
+##  3     29026     1    16  1999       1 DM         M                  35     52
+##  4     29027     1    16  1999       1 DO         M                  36     55
+##  5     29028     1    16  1999       1 DO         F                  33     53
+##  6     29029     1    16  1999       2 DO         M                  36     50
+##  7     29030     1    16  1999       2 OT         M                  20     22
+##  8     29031     1    16  1999       2 OT         M                  20     26
+##  9     29032     1    16  1999       2 DO         F                  34     46
+## 10     29033     1    16  1999       2 DO         F                  35     51
+## # ... with 1,054 more rows
 ```
 
 In the code above `==` keeps all rows where the year is 1999. 
@@ -236,16 +299,52 @@ Other filtering options include `!=`, which keeps all rows that are **not** a ce
 
 1.  `!=` example: 
 
-    ```{r filter-exclude-rows-example}
+    
+    ```r
     filter(surveys, year != 1999)
+    ```
+    
+    ```
+    ## # A tibble: 10,268 x 9
+    ##    record_id month   day  year plot_id species_id sex   hindfoot_length weight
+    ##        <dbl> <dbl> <dbl> <dbl>   <dbl> <chr>      <chr>           <dbl>  <dbl>
+    ##  1     23215     1    27  1996      21 PF         F                  16      7
+    ##  2     23216     1    27  1996       1 DM         M                  NA     27
+    ##  3     23217     1    27  1996      17 DM         M                  36     25
+    ##  4     23218     1    27  1996      17 DM         <NA>               37     NA
+    ##  5     23220     1    27  1996       2 DM         F                  36     47
+    ##  6     23221     1    27  1996      18 PF         F                  NA      9
+    ##  7     23222     1    27  1996       1 DM         M                  34     27
+    ##  8     23223     1    27  1996       2 DO         M                  37     66
+    ##  9     23224     1    27  1996      17 DM         F                  39     49
+    ## 10     23225     1    27  1996       2 DM         M                  40     54
+    ## # ... with 10,258 more rows
     ```
     
     The code above keeps all rows where the year is not 1999. 
     
 2.  `,` example:
     
-    ```{r filter-comma-example}
+    
+    ```r
     filter(surveys, year == 1999 , plot_id == 2)
+    ```
+    
+    ```
+    ## # A tibble: 57 x 9
+    ##    record_id month   day  year plot_id species_id sex   hindfoot_length weight
+    ##        <dbl> <dbl> <dbl> <dbl>   <dbl> <chr>      <chr>           <dbl>  <dbl>
+    ##  1     29029     1    16  1999       2 DO         M                  36     50
+    ##  2     29030     1    16  1999       2 OT         M                  20     22
+    ##  3     29031     1    16  1999       2 OT         M                  20     26
+    ##  4     29032     1    16  1999       2 DO         F                  34     46
+    ##  5     29033     1    16  1999       2 DO         F                  35     51
+    ##  6     29034     1    16  1999       2 OT         F                  20     25
+    ##  7     29035     1    16  1999       2 PE         M                  20     18
+    ##  8     29036     1    16  1999       2 DM         M                  36     44
+    ##  9     29037     1    16  1999       2 DM         M                  37     47
+    ## 10     29039     1    16  1999       2 NL         F                  34    162
+    ## # ... with 47 more rows
     ```
     
     The code above keeps all rows where the year is 1999 for plot id 2, i.e., year 1999 and plot 2. The rows meet **both** of these criteria. 
@@ -253,8 +352,26 @@ Other filtering options include `!=`, which keeps all rows that are **not** a ce
 
 3.  `|` example:
 
-    ```{r filter-or-example}
+    
+    ```r
     filter(surveys, year == 1999 | plot_id == 2)
+    ```
+    
+    ```
+    ## # A tibble: 1,743 x 9
+    ##    record_id month   day  year plot_id species_id sex   hindfoot_length weight
+    ##        <dbl> <dbl> <dbl> <dbl>   <dbl> <chr>      <chr>           <dbl>  <dbl>
+    ##  1     23220     1    27  1996       2 DM         F                  36     47
+    ##  2     23223     1    27  1996       2 DO         M                  37     66
+    ##  3     23225     1    27  1996       2 DM         M                  40     54
+    ##  4     23234     1    27  1996       2 DM         F                  35     45
+    ##  5     23237     1    27  1996       2 DM         M                  35     46
+    ##  6     23239     1    27  1996       2 PB         M                  29     46
+    ##  7     23242     1    27  1996       2 DO         M                  36     54
+    ##  8     23243     1    27  1996       2 DM         M                  36     49
+    ##  9     23257     1    27  1996       2 DM         M                  36     50
+    ## 10     23258     1    27  1996       2 PE         M                  20     25
+    ## # ... with 1,733 more rows
     ```
     
     The code above keeps all rows where the year is 1999 **or** is plot id 2, i.e., year 1999 or plot 2. The rows meet **either** of these criteria but not both. 
@@ -262,8 +379,26 @@ Other filtering options include `!=`, which keeps all rows that are **not** a ce
 
 4.  `<` example:
 
-    ```{r less-than-example}
+    
+    ```r
     filter(surveys, weight < 8)
+    ```
+    
+    ```
+    ## # A tibble: 163 x 9
+    ##    record_id month   day  year plot_id species_id sex   hindfoot_length weight
+    ##        <dbl> <dbl> <dbl> <dbl>   <dbl> <chr>      <chr>           <dbl>  <dbl>
+    ##  1     23215     1    27  1996      21 PF         F                  16      7
+    ##  2     23240     1    27  1996      20 PF         M                  15      6
+    ##  3     23250     1    27  1996      21 PF         M                  15      6
+    ##  4     23271     1    28  1996      13 PF         F                  16      7
+    ##  5     23283     1    28  1996       3 PF         M                  15      5
+    ##  6     23317     1    28  1996       6 PF         M                  15      7
+    ##  7     23330     1    28  1996       6 PF         F                  15      7
+    ##  8     23334     1    28  1996       9 PF         M                  17      7
+    ##  9     23380     2    24  1996      12 PF         F                  14      7
+    ## 10     23436     2    25  1996       5 PF         F                  16      7
+    ## # ... with 153 more rows
     ```
     
     The code above keeps all rows where weight is less than 8. 
@@ -271,8 +406,26 @@ Other filtering options include `!=`, which keeps all rows that are **not** a ce
 
 5.  `>` example:
 
-    ```{r greater-than-example}
+    
+    ```r
     filter(surveys, hindfoot_length > 30)
+    ```
+    
+    ```
+    ## # A tibble: 3,828 x 9
+    ##    record_id month   day  year plot_id species_id sex   hindfoot_length weight
+    ##        <dbl> <dbl> <dbl> <dbl>   <dbl> <chr>      <chr>           <dbl>  <dbl>
+    ##  1     23217     1    27  1996      17 DM         M                  36     25
+    ##  2     23218     1    27  1996      17 DM         <NA>               37     NA
+    ##  3     23220     1    27  1996       2 DM         F                  36     47
+    ##  4     23222     1    27  1996       1 DM         M                  34     27
+    ##  5     23223     1    27  1996       2 DO         M                  37     66
+    ##  6     23224     1    27  1996      17 DM         F                  39     49
+    ##  7     23225     1    27  1996       2 DM         M                  40     54
+    ##  8     23227     1    27  1996      12 DM         <NA>               39     NA
+    ##  9     23230     1    27  1996      17 DM         M                  36     51
+    ## 10     23231     1    27  1996      22 DM         F                  36     43
+    ## # ... with 3,818 more rows
     ```
     
     The code above keeps all rows where hindfoot length is greater than 30.
@@ -288,7 +441,8 @@ that as input to the next function, like this:
 
 
 
-```{r pipes-example-1}
+
+```r
 surveys2 <- filter(surveys, weight < 6)
 surveys_sml <- select(surveys2, species_id, sex, weight)
 ```
@@ -299,7 +453,8 @@ track of.
 
 You can also nest functions (i.e., one function inside of another), like this:
 
-```{r pipes-example-2}
+
+```r
 surveys_sml <- select(filter(surveys, weight < 6), species_id, sex, weight)
 ```
 
@@ -315,10 +470,24 @@ automatically with **`dplyr`**. If you use RStudio, you can type the pipe with
 <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>M</kbd> if you have a PC or 
 <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>M</kbd> if you have a Mac.
 
-```{r pipes-example-3}
+
+```r
 surveys %>%
   filter(weight < 6) %>%
   select(species_id, sex, weight)
+```
+
+```
+## # A tibble: 7 x 3
+##   species_id sex   weight
+##   <chr>      <chr>  <dbl>
+## 1 PF         M          5
+## 2 PF         M          5
+## 3 PF         F          5
+## 4 PF         F          5
+## 5 PF         F          5
+## 6 PP         M          4
+## 7 PF         F          5
 ```
 
 In the above code, we use the pipe to send the `surveys` dataset first through
@@ -340,12 +509,26 @@ can assign it a new name:
 
 
 
-```{r pipe-rename-example}
+
+```r
 surveys_sml <- surveys %>%
   filter(weight < 6) %>%
   select(species_id, sex, weight)
 
 surveys_sml
+```
+
+```
+## # A tibble: 7 x 3
+##   species_id sex   weight
+##   <chr>      <chr>  <dbl>
+## 1 PF         M          5
+## 2 PF         M          5
+## 3 PF         F          5
+## 4 PF         F          5
+## 5 PF         F          5
+## 6 PP         M          4
+## 7 PF         F          5
 ```
 
 
@@ -360,17 +543,14 @@ Note that the final data frame is the leftmost part of this expression.
   -  retain only the columns `year`, `sex`, and `weight`.
 >
 
-```{r challenge-1}
+
+```r
 ## Pipes Challenge:
 ##  Using pipes, subset the data to include animals collected
 ##  on or after 2001, and retain the columns `year`, `sex`, and `weight.`
 ```
 
-```{r challenge-1-solution, include=FALSE}
-surveys %>%
-     filter(year >= 2001) %>%
-     select(year, sex, weight)
-```
+
 
 
 
@@ -382,9 +562,27 @@ two columns. For this we'll use `mutate()`.
 
 To create a new column of weight in kg from weight in grams:
 
-```{r create-column}
+
+```r
 surveys %>%
   mutate(weight_kg = weight / 1000)
+```
+
+```
+## # A tibble: 11,332 x 10
+##    record_id month   day  year plot_id species_id sex   hindfoot_length weight
+##        <dbl> <dbl> <dbl> <dbl>   <dbl> <chr>      <chr>           <dbl>  <dbl>
+##  1     23215     1    27  1996      21 PF         F                  16      7
+##  2     23216     1    27  1996       1 DM         M                  NA     27
+##  3     23217     1    27  1996      17 DM         M                  36     25
+##  4     23218     1    27  1996      17 DM         <NA>               37     NA
+##  5     23220     1    27  1996       2 DM         F                  36     47
+##  6     23221     1    27  1996      18 PF         F                  NA      9
+##  7     23222     1    27  1996       1 DM         M                  34     27
+##  8     23223     1    27  1996       2 DO         M                  37     66
+##  9     23224     1    27  1996      17 DM         F                  39     49
+## 10     23225     1    27  1996       2 DM         M                  40     54
+## # ... with 11,322 more rows, and 1 more variable: weight_kg <dbl>
 ```
 
 
@@ -394,10 +592,29 @@ same call of `mutate()`:
 
 
 
-```{r create-two-columns}
+
+```r
 surveys %>%
   mutate(weight_kg = weight / 1000,
          weight_lb = weight_kg * 2.2)
+```
+
+```
+## # A tibble: 11,332 x 11
+##    record_id month   day  year plot_id species_id sex   hindfoot_length weight
+##        <dbl> <dbl> <dbl> <dbl>   <dbl> <chr>      <chr>           <dbl>  <dbl>
+##  1     23215     1    27  1996      21 PF         F                  16      7
+##  2     23216     1    27  1996       1 DM         M                  NA     27
+##  3     23217     1    27  1996      17 DM         M                  36     25
+##  4     23218     1    27  1996      17 DM         <NA>               37     NA
+##  5     23220     1    27  1996       2 DM         F                  36     47
+##  6     23221     1    27  1996      18 PF         F                  NA      9
+##  7     23222     1    27  1996       1 DM         M                  34     27
+##  8     23223     1    27  1996       2 DO         M                  37     66
+##  9     23224     1    27  1996      17 DM         F                  39     49
+## 10     23225     1    27  1996       2 DM         M                  40     54
+## # ... with 11,322 more rows, and 2 more variables: weight_kg <dbl>,
+## #   weight_lb <dbl>
 ```
 
 
@@ -408,10 +625,24 @@ functions, too, as long as the **`dplyr`** or `magrittr` package is loaded).
 
 
 
-```{r create-column-head}
+
+```r
 surveys %>%
   mutate(weight_kg = weight / 1000) %>%
   head()
+```
+
+```
+## # A tibble: 6 x 10
+##   record_id month   day  year plot_id species_id sex   hindfoot_length weight
+##       <dbl> <dbl> <dbl> <dbl>   <dbl> <chr>      <chr>           <dbl>  <dbl>
+## 1     23215     1    27  1996      21 PF         F                  16      7
+## 2     23216     1    27  1996       1 DM         M                  NA     27
+## 3     23217     1    27  1996      17 DM         M                  36     25
+## 4     23218     1    27  1996      17 DM         <NA>               37     NA
+## 5     23220     1    27  1996       2 DM         F                  36     47
+## 6     23221     1    27  1996      18 PF         F                  NA      9
+## # ... with 1 more variable: weight_kg <dbl>
 ```
 
 
@@ -420,11 +651,25 @@ The first few rows of the data set contain some missing observations (`NA`s). If
 
 
 
-```{r mutate-filter}
+
+```r
 surveys %>%
   filter(!is.na(weight)) %>%
   mutate(weight_kg = weight / 1000) %>%
   head()
+```
+
+```
+## # A tibble: 6 x 10
+##   record_id month   day  year plot_id species_id sex   hindfoot_length weight
+##       <dbl> <dbl> <dbl> <dbl>   <dbl> <chr>      <chr>           <dbl>  <dbl>
+## 1     23215     1    27  1996      21 PF         F                  16      7
+## 2     23216     1    27  1996       1 DM         M                  NA     27
+## 3     23217     1    27  1996      17 DM         M                  36     25
+## 4     23220     1    27  1996       2 DM         F                  36     47
+## 5     23221     1    27  1996      18 PF         F                  NA      9
+## 6     23222     1    27  1996       1 DM         M                  34     27
+## # ... with 1 more variable: weight_kg <dbl>
 ```
 
 
@@ -449,7 +694,8 @@ an `NA`.
 
 
 
-```{r challenge-2} 
+
+```r
 ## Mutate Challenge:
 ##  Create a new data frame from the `surveys` data named `surveys_hindfoot_cm`
 ##  that meets the following criteria: 
@@ -461,18 +707,9 @@ an `NA`.
 ##  Then print out the head of the new data frame.
 
 ##  Hint: think about how the commands should be ordered to produce this data frame!
-
 ```
 
-```{r challenge-2-solution, include=FALSE}
-surveys_hindfoot_cm <- surveys %>%
-  filter(!is.na(hindfoot_length)) %>%
-  mutate(hindfoot_cm = hindfoot_length/10) %>%
-  filter(hindfoot_cm < 3) %>%
-  select(species_id, hindfoot_cm)
-surveys_hindfoot_cm %>% 
-  head()
-```
+
 
 
 
@@ -493,13 +730,26 @@ makes it easier to do the things `R` does with date-times and possible to do thi
 -  `mdy()` 
 
 
-```{r lubridate-example1, message = FALSE}
+
+```r
 library(lubridate)
 today() # Today's date
+```
+
+```
+## [1] "2021-03-29"
+```
+
+```r
 now() # Today's date, with time and timezone!
 ```
 
-```{r lubridate-example2, message = FALSE}
+```
+## [1] "2021-03-29 13:16:19 MDT"
+```
+
+
+```r
 surveys_w_days <- surveys %>% 
   mutate(date = ymd(paste(year,
                           month,
@@ -510,20 +760,65 @@ surveys_w_days <- surveys %>%
          ## Creating a day of the week variable
          ## label = TRUE prints the name, not the level! 
          )
+```
 
+```
+## Warning: Problem with `mutate()` input `date`.
+## i  125 failed to parse.
+## i Input `date` is `ymd(paste(year, month, day, sep = "-"))`.
+```
+
+```
+## Warning: 125 failed to parse.
+```
+
+```r
 surveys_w_days %>%
   head()
+```
 
+```
+## # A tibble: 6 x 11
+##   record_id month   day  year plot_id species_id sex   hindfoot_length weight
+##       <dbl> <dbl> <dbl> <dbl>   <dbl> <chr>      <chr>           <dbl>  <dbl>
+## 1     23215     1    27  1996      21 PF         F                  16      7
+## 2     23216     1    27  1996       1 DM         M                  NA     27
+## 3     23217     1    27  1996      17 DM         M                  36     25
+## 4     23218     1    27  1996      17 DM         <NA>               37     NA
+## 5     23220     1    27  1996       2 DM         F                  36     47
+## 6     23221     1    27  1996      18 PF         F                  NA      9
+## # ... with 2 more variables: date <date>, day_of_week <ord>
+```
+
+```r
 surveys_w_days %>%
   select(day_of_week) %>%
   summary()
+```
 
+```
+##   day_of_week  
+##  Sun    :4212  
+##  Sat    :4202  
+##  Wed    : 924  
+##  Mon    : 572  
+##  Thu    : 525  
+##  (Other): 772  
+##  NA's   : 125
+```
+
+```r
 surveys_w_days %>% 
   filter(is.na(date) == TRUE) %>% 
   select(month, day) %>% 
   table()
+```
 
-
+```
+##      day
+## month 31
+##     4 70
+##     9 55
 ```
 
 > ### Challenge 3 ![Medium spicy chili pepper.](images/medium.jpg) {.challenge3} 
@@ -557,13 +852,9 @@ see that it is an ordered (\<ord\>) factor.
 >  What are the names of the days of the week taken from the dates?  
 
 
-```{r challenge-4}
 
-```
 
-```{r  challenge-4-solution, include=FALSE}
-levels(surveys_w_days$day_of_week)
-```
+
 
 
 
@@ -584,7 +875,8 @@ should be done with these matches.
 
 Let's look at this in action! 
 
-```{r caseWhen-example}
+
+```r
 surveys_days_full <- surveys_w_days %>% 
   mutate(day_of_week = case_when(day_of_week == "Mon" ~ "Monday", 
                              day_of_week == "Tue" ~ "Tuesday", 
@@ -597,13 +889,18 @@ surveys_days_full <- surveys_w_days %>%
 glimpse(surveys_days_full$day_of_week)
 ```
 
+```
+##  chr [1:11332] "Saturday" "Saturday" "Saturday" "Saturday" "Saturday" ...
+```
+
 > ### NOTE:
 > 
 > If you only want to recode a couple levels of a variable, you can still use
 > `case_when()` without specifying the behavior for **ALL** levels. See the
 > example below:
 
-```{r caseWhen-example2}
+
+```r
 # Create a variable weekday that takes on a value of 0 for Saturday/Sunday
 # and 1 otherwise and recodes Friday to missing
 surveys_weekday <- surveys_w_days %>%
@@ -616,6 +913,15 @@ surveys_weekday %>%
   count(weekday)
 ```
 
+```
+## # A tibble: 3 x 2
+##   weekday     n
+##     <dbl> <int>
+## 1       0  8414
+## 2       1  2589
+## 3      NA   329
+```
+
 But, perhaps these days are not in the order that we want them to be in. 
 
 > ### Challenge 5 ![](images/medium.jpg) {.challenge}
@@ -623,15 +929,9 @@ But, perhaps these days are not in the order that we want them to be in.
 > What order did `R` put the days of the week in?
 > What data type is `day_of_week` now? 
 
-```{r challenge-5}
 
 
-```
 
-```{r challenge-5-solution, include=FALSE}
-table(surveys_days_full$day_of_week)
-typeof(surveys_days_full$day_of_week)
-```
 
 
 There are small differences between character data types and factor data types. 
@@ -652,7 +952,8 @@ The function takes three arguments:
 
 This process looks like this: 
 
-```{r relevel-example}
+
+```r
 surveys_edited <- surveys_days_full %>% 
   mutate(day_of_week = fct_relevel(day_of_week, 
                                    "Monday", 
@@ -666,18 +967,17 @@ surveys_edited <- surveys_days_full %>%
 glimpse(surveys_edited$day_of_week)
 ```
 
+```
+##  Factor w/ 7 levels "Monday","Tuesday",..: 6 6 6 6 6 6 6 6 6 6 ...
+```
+
 > ### Challenge 6
 > ![](images/medium.jpg)
 > Verify that `R` put the days in the order that you specified! 
 
-```{r challenge-6}
 
 
-```
 
-```{r challenge-6-solution, include=FALSE}
-levels(surveys_edited$day_of_week)
-```
 
 
 
@@ -698,10 +998,24 @@ to calculate the summary statistics. So to compute the mean `weight` by sex:
 
 
 
-```{r groupby-example}
+
+```r
 surveys_edited %>%
   group_by(sex) %>%
   summarize(mean_weight = mean(weight, na.rm = TRUE))
+```
+
+```
+## `summarise()` ungrouping output (override with `.groups` argument)
+```
+
+```
+## # A tibble: 3 x 2
+##   sex   mean_weight
+##   <chr>       <dbl>
+## 1 F            33.1
+## 2 M            33.3
+## 3 <NA>        NaN
 ```
 
 
@@ -712,10 +1026,33 @@ You can also group by multiple columns:
 
 
 
-```{r groupby-example2}
+
+```r
 surveys_edited %>%
   group_by(sex, species_id) %>%
   summarize(mean_weight = mean(weight, na.rm = TRUE))
+```
+
+```
+## `summarise()` regrouping output by 'sex' (override with `.groups` argument)
+```
+
+```
+## # A tibble: 25 x 3
+## # Groups:   sex [3]
+##    sex   species_id mean_weight
+##    <chr> <chr>            <dbl>
+##  1 F     DM               43.6 
+##  2 F     DO               49.4 
+##  3 F     NL              168.  
+##  4 F     OL               32.1 
+##  5 F     OT               25.3 
+##  6 F     PB               30.2 
+##  7 F     PE               22.5 
+##  8 F     PF                8.44
+##  9 F     PM               22.0 
+## 10 F     PP               17.5 
+## # ... with 15 more rows
 ```
 
 
@@ -729,11 +1066,34 @@ values are removed first, we can omit `na.rm = TRUE` when computing the mean:
 
 
 
-```{r groupby-example3}
+
+```r
 surveys_edited %>%
   filter(!is.na(weight)) %>%
   group_by(sex, species_id) %>%
   summarize(mean_weight = mean(weight))
+```
+
+```
+## `summarise()` regrouping output by 'sex' (override with `.groups` argument)
+```
+
+```
+## # A tibble: 24 x 3
+## # Groups:   sex [2]
+##    sex   species_id mean_weight
+##    <chr> <chr>            <dbl>
+##  1 F     DM               43.6 
+##  2 F     DO               49.4 
+##  3 F     NL              168.  
+##  4 F     OL               32.1 
+##  5 F     OT               25.3 
+##  6 F     PB               30.2 
+##  7 F     PE               22.5 
+##  8 F     PF                8.44
+##  9 F     PM               22.0 
+## 10 F     PP               17.5 
+## # ... with 14 more rows
 ```
 
 
@@ -744,12 +1104,40 @@ display:
 
 
 
-```{r groupby-example4}
+
+```r
 surveys_edited %>%
   filter(!is.na(weight)) %>%
   group_by(sex, species_id) %>%
   summarize(mean_weight = mean(weight)) %>%
   print(n = 15)
+```
+
+```
+## `summarise()` regrouping output by 'sex' (override with `.groups` argument)
+```
+
+```
+## # A tibble: 24 x 3
+## # Groups:   sex [2]
+##    sex   species_id mean_weight
+##    <chr> <chr>            <dbl>
+##  1 F     DM               43.6 
+##  2 F     DO               49.4 
+##  3 F     NL              168.  
+##  4 F     OL               32.1 
+##  5 F     OT               25.3 
+##  6 F     PB               30.2 
+##  7 F     PE               22.5 
+##  8 F     PF                8.44
+##  9 F     PM               22.0 
+## 10 F     PP               17.5 
+## 11 F     RM               11.9 
+## 12 F     SH               77.4 
+## 13 M     DM               45.1 
+## 14 M     DO               48.5 
+## 15 M     NL              167.  
+## # ... with 9 more rows
 ```
 
 
@@ -760,12 +1148,35 @@ column indicating the minimum weight for each species for each sex:
 
 
 
-```{r summarize-example1}
+
+```r
 surveys_edited %>%
   filter(!is.na(weight)) %>%
   group_by(sex, species_id) %>%
   summarize(mean_weight = mean(weight),
             min_weight = min(weight))
+```
+
+```
+## `summarise()` regrouping output by 'sex' (override with `.groups` argument)
+```
+
+```
+## # A tibble: 24 x 4
+## # Groups:   sex [2]
+##    sex   species_id mean_weight min_weight
+##    <chr> <chr>            <dbl>      <dbl>
+##  1 F     DM               43.6          19
+##  2 F     DO               49.4          22
+##  3 F     NL              168.           63
+##  4 F     OL               32.1          21
+##  5 F     OT               25.3          11
+##  6 F     PB               30.2          12
+##  7 F     PE               22.5          11
+##  8 F     PF                8.44          5
+##  9 F     PM               22.0           9
+## 10 F     PP               17.5           8
+## # ... with 14 more rows
 ```
 
 
@@ -775,13 +1186,36 @@ For instance, we can sort on `min_weight` to put the lighter species first:
 
 
 
-```{r summarize-example2}
+
+```r
 surveys_edited %>%
   filter(!is.na(weight)) %>%
   group_by(sex, species_id) %>%
   summarize(mean_weight = mean(weight),
             min_weight = min(weight)) %>%
   arrange(min_weight)
+```
+
+```
+## `summarise()` regrouping output by 'sex' (override with `.groups` argument)
+```
+
+```
+## # A tibble: 24 x 4
+## # Groups:   sex [2]
+##    sex   species_id mean_weight min_weight
+##    <chr> <chr>            <dbl>      <dbl>
+##  1 M     PP               17.1           4
+##  2 F     PF                8.44          5
+##  3 M     PF                8.39          5
+##  4 F     RM               11.9           7
+##  5 M     PM               20.3           7
+##  6 M     RM               10.8           7
+##  7 F     PP               17.5           8
+##  8 M     PE               20.3           8
+##  9 F     PM               22.0           9
+## 10 F     OT               25.3          11
+## # ... with 14 more rows
 ```
 
 
@@ -791,7 +1225,8 @@ sort the results by decreasing order of mean weight:
 
 
 
-```{r summarize-example3}
+
+```r
 surveys_edited %>%
   filter(!is.na(weight)) %>%
   group_by(sex, species_id) %>%
@@ -800,25 +1235,37 @@ surveys_edited %>%
   arrange(desc(mean_weight))
 ```
 
+```
+## `summarise()` regrouping output by 'sex' (override with `.groups` argument)
+```
+
+```
+## # A tibble: 24 x 4
+## # Groups:   sex [2]
+##    sex   species_id mean_weight min_weight
+##    <chr> <chr>            <dbl>      <dbl>
+##  1 F     NL               168.          63
+##  2 M     NL               167.          62
+##  3 F     SH                77.4         38
+##  4 M     SH                59.1         28
+##  5 F     DO                49.4         22
+##  6 M     DO                48.5         23
+##  7 M     DM                45.1         18
+##  8 F     DM                43.6         19
+##  9 M     PB                33.8         13
+## 10 F     OL                32.1         21
+## # ... with 14 more rows
+```
+
 > ### Challenge 7 Part 1: ![](images/mild.jpg)
 >
 > Use `group_by()` and `summarize()` to find the mean, min, and max hindfoot
 > length for each species (using `species_id`). Also add the number of observations.
 > (HINT: see `?n`.)
 
-```{r challenge-7-1}
 
-```
 
-```{r challenge-7-1-solution, include=FALSE}
-surveys_edited %>%
-  filter(!is.na(hindfoot_length)) %>%
-  group_by(species_id) %>%
-  summarize(mean_hf_length = mean(hindfoot_length),
-            min_hf_length = min(hindfoot_length),
-            max_hf_length = max(hindfoot_length),
-            num_obs = n())
-```
+
 
 
 
@@ -828,17 +1275,9 @@ surveys_edited %>%
 >
 > Return the columns `year` and `weight`.
 
-```{r challenge-7-2}
 
-```
 
-```{r challenge-7-2-solution, include=FALSE}
-surveys_edited %>%
-  filter(!is.na(weight)) %>%
-  group_by(year) %>%
-  summarize(max_weight = max(weight)) %>%
-  select(year, max_weight)
-```
+
 
 
 
@@ -851,9 +1290,19 @@ each sex, we would do:
 
 
 
-```{r count-example1}
+
+```r
 surveys_edited %>%
     count(sex) 
+```
+
+```
+## # A tibble: 3 x 2
+##   sex       n
+##   <chr> <int>
+## 1 F      5451
+## 2 M      5879
+## 3 <NA>      2
 ```
 
 
@@ -864,10 +1313,24 @@ group. In other words, `surveys %>% count()` is equivalent to:
 
 
 
-```{r count-example2}
+
+```r
 surveys_edited %>%
     group_by(sex) %>%
     summarize(count = n())
+```
+
+```
+## `summarise()` ungrouping output (override with `.groups` argument)
+```
+
+```
+## # A tibble: 3 x 2
+##   sex   count
+##   <chr> <int>
+## 1 F      5451
+## 2 M      5879
+## 3 <NA>      2
 ```
 
 
@@ -876,9 +1339,19 @@ For convenience, `count()` provides the `sort` argument:
 
 
 
-```{r count-example3}
+
+```r
 surveys_edited %>%
     count(sex, sort = TRUE) 
+```
+
+```
+## # A tibble: 3 x 2
+##   sex       n
+##   <chr> <int>
+## 1 M      5879
+## 2 F      5451
+## 3 <NA>      2
 ```
 
 
@@ -890,9 +1363,27 @@ we would specify the first and the second factor as the arguments of `count()`:
 
 
 
-```{r count-example4}
+
+```r
 surveys_edited %>%
   count(sex, species_id) 
+```
+
+```
+## # A tibble: 25 x 3
+##    sex   species_id     n
+##    <chr> <chr>      <int>
+##  1 F     DM          1111
+##  2 F     DO           389
+##  3 F     NL           134
+##  4 F     OL            10
+##  5 F     OT           507
+##  6 F     PB          1610
+##  7 F     PE           102
+##  8 F     PF           272
+##  9 F     PM           208
+## 10 F     PP           973
+## # ... with 15 more rows
 ```
 
 
@@ -904,10 +1395,28 @@ order of the levels of the species and (ii) in descending order of the count:
 
 
 
-```{r count-example5}
+
+```r
 surveys_edited %>%
   count(sex, species_id) %>%
   arrange(species_id, desc(n))
+```
+
+```
+## # A tibble: 25 x 3
+##    sex   species_id     n
+##    <chr> <chr>      <int>
+##  1 M     DM          1558
+##  2 F     DM          1111
+##  3 <NA>  DM             2
+##  4 M     DO           611
+##  5 F     DO           389
+##  6 F     NL           134
+##  7 M     NL            72
+##  8 M     OL            18
+##  9 F     OL            10
+## 10 M     OT           523
+## # ... with 15 more rows
 ```
 
 
@@ -921,16 +1430,13 @@ of the *albigula* species (`species_id` = "NL") for males.
 >
 > How many animals were caught in each plot (`plot_id`) surveyed?
 
-```{r challenge-8}
+
+```r
 ## Count Challenge:
 ##  How many animals were caught in each `plot_type` surveyed?
-
 ```
 
-```{r challenge-8-solution, include=FALSE}
-surveys_edited %>%
-        count(plot_id) 
-```
+
 
 
 
@@ -949,10 +1455,34 @@ The `survey` data have two other data tables they are related to: `plots` and
 `species`. Load in these data and inspect them to get an idea of how they relate
 to the `survey` data we've been working with. 
 
-```{r load-data2p1}
-plots <- read_csv("https://raw.githubusercontent.com/saramannheimer/data-science-r-workshops/master/Data%20Wrangling/AY%202020-2021/data_wrangling_learnr/data/plots.csv")
 
+```r
+plots <- read_csv("https://raw.githubusercontent.com/saramannheimer/data-science-r-workshops/master/Data%20Wrangling/AY%202020-2021/data_wrangling_learnr/data/plots.csv")
+```
+
+```
+## 
+## -- Column specification --------------------------------------------------------
+## cols(
+##   plot_id = col_double(),
+##   plot_type = col_character()
+## )
+```
+
+```r
 head(plots)
+```
+
+```
+## # A tibble: 6 x 2
+##   plot_id plot_type                
+##     <dbl> <chr>                    
+## 1       1 Spectab exclosure        
+## 2       2 Control                  
+## 3       3 Long-term Krat Exclosure 
+## 4       4 Control                  
+## 5       5 Rodent Exclosure         
+## 6       6 Short-term Krat Exclosure
 ```
 
 
@@ -965,10 +1495,36 @@ Table: Columns in the `plots.csv` file:
 | plot\_type       | type of plot                       |
 
 
-```{r load-data2p2}
-species <- read_csv("https://raw.githubusercontent.com/saramannheimer/data-science-r-workshops/master/Data%20Wrangling/AY%202020-2021/data_wrangling_learnr/data/species.csv")
 
+```r
+species <- read_csv("https://raw.githubusercontent.com/saramannheimer/data-science-r-workshops/master/Data%20Wrangling/AY%202020-2021/data_wrangling_learnr/data/species.csv")
+```
+
+```
+## 
+## -- Column specification --------------------------------------------------------
+## cols(
+##   species_id = col_character(),
+##   genus = col_character(),
+##   species = col_character(),
+##   taxa = col_character()
+## )
+```
+
+```r
 head(species)
+```
+
+```
+## # A tibble: 6 x 4
+##   species_id genus            species         taxa  
+##   <chr>      <chr>            <chr>           <chr> 
+## 1 AB         Amphispiza       bilineata       Bird  
+## 2 AH         Ammospermophilus harrisi         Rodent
+## 3 AS         Ammodramus       savannarum      Bird  
+## 4 BA         Baiomys          taylori         Rodent
+## 5 CB         Campylorhynchus  brunneicapillus Bird  
+## 6 CM         Calamospiza      melanocorys     Bird
 ```
 
 Table: Columns in the `species.csv` file:
@@ -1024,9 +1580,19 @@ hence a many-to-one relationship.
 For me, the easiest way to think about the relationships between the different 
 data tables is to draw a picture:  
 
-```{r fig.cap="Relations of survey data tables"}
+
+```r
 knitr::include_graphics("images/relations.jpg")
 ```
+
+\begin{figure}
+
+{\centering \includegraphics[width=8.1in]{images/relations} 
+
+}
+
+\caption{Relations of survey data tables}\label{fig:unnamed-chunk-3}
+\end{figure}
 
  
 
@@ -1046,9 +1612,19 @@ whenever their keys are equal. This join will output a new data frame that
 contains the key, the values of `x`, and the values of `y`. Importantly, this 
 join deletes observations that do not have a match. 
 
-```{r fig.cap="Wickham, H. and Grolemund, G. (2017) *R for Data Science*. Sebastopol, California: O'Reilly."}
+
+```r
 knitr::include_graphics("images/inner.jpg")
 ```
+
+\begin{figure}
+
+{\centering \includegraphics[width=5.36in]{images/inner} 
+
+}
+
+\caption{Wickham, H. and Grolemund, G. (2017) *R for Data Science*. Sebastopol, California: O'Reilly.}\label{fig:unnamed-chunk-4}
+\end{figure}
 
 
 ### Outer Join  
@@ -1061,9 +1637,19 @@ data tables. When joining `x` with `y`, there are three types of outer join:
 - A *right join* keeps all of the observations in `y`.  
 - A *full join* keeps all of the observations in both `x` and `y`. 
 
-```{r fig.cap="Wickham, H. and Grolemund, G. (2017) *R for Data Science*. Sebastopol, California: O'Reilly."}
+
+```r
 knitr::include_graphics("images/joins.jpg")
 ```
+
+\begin{figure}
+
+{\centering \includegraphics[width=5.49in]{images/joins} 
+
+}
+
+\caption{Wickham, H. and Grolemund, G. (2017) *R for Data Science*. Sebastopol, California: O'Reilly.}\label{fig:unnamed-chunk-5}
+\end{figure}
 
 The left join is the most common, as you typically have a data frame (`x`) that 
 you wish to add additional information to (the contents of `y`). This join will 
@@ -1079,11 +1665,32 @@ already existing data frame, `surveys_edited`, a left join is the most appropria
 
 
 
-```{r joins-example}
+
+```r
 combined <- surveys_edited %>% 
               left_join(plots, by = "plot_id") %>%  # adding the type of plot  
               left_join(species, by = "species_id") # adding the genus, species, and taxa 
 glimpse(combined)
+```
+
+```
+## Rows: 11,332
+## Columns: 15
+## $ record_id       <dbl> 23215, 23216, 23217, 23218, 23220, 23221, 23222, 23...
+## $ month           <dbl> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+## $ day             <dbl> 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27,...
+## $ year            <dbl> 1996, 1996, 1996, 1996, 1996, 1996, 1996, 1996, 199...
+## $ plot_id         <dbl> 21, 1, 17, 17, 2, 18, 1, 2, 17, 2, 1, 12, 21, 18, 1...
+## $ species_id      <chr> "PF", "DM", "DM", "DM", "DM", "PF", "DM", "DO", "DM...
+## $ sex             <chr> "F", "M", "M", NA, "F", "F", "M", "M", "F", "M", "F...
+## $ hindfoot_length <dbl> 16, NA, 36, 37, 36, NA, 34, 37, 39, 40, 27, 39, 21,...
+## $ weight          <dbl> 7, 27, 25, NA, 47, 9, 27, 66, 49, 54, 38, NA, 16, 9...
+## $ date            <date> 1996-01-27, 1996-01-27, 1996-01-27, 1996-01-27, 19...
+## $ day_of_week     <fct> Saturday, Saturday, Saturday, Saturday, Saturday, S...
+## $ plot_type       <chr> "Long-term Krat Exclosure", "Spectab exclosure", "C...
+## $ genus           <chr> "Perognathus", "Dipodomys", "Dipodomys", "Dipodomys...
+## $ species         <chr> "flavus", "merriami", "merriami", "merriami", "merr...
+## $ taxa            <chr> "Rodent", "Rodent", "Rodent", "Rodent", "Rodent", "...
 ```
 
 If the keys being used have different names in the data tables, you can use `by=c("a" = "b")` where `a` is the key name in the `x` data set and `b` is the name in the `y` data set. Or you could mutate the variable names so that they do match prior to using `left_join`.
@@ -1147,16 +1754,47 @@ interest, and create a new variable for the `mean_weight`. We use the pipe as
 before too.
 
 
-```{r gw-example}
+
+```r
 surveys_gw <- combined %>%
   filter(!is.na(weight)) %>%
   group_by(plot_id, genus) %>%
   summarize(mean_weight = mean(weight))
+```
 
+```
+## `summarise()` regrouping output by 'plot_id' (override with `.groups` argument)
+```
+
+```r
 glimpse(surveys_gw)
+```
 
+```
+## Rows: 165
+## Columns: 3
+## Groups: plot_id [24]
+## $ plot_id     <dbl> 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3...
+## $ genus       <chr> "Chaetodipus", "Dipodomys", "Neotoma", "Onychomys", "Pe...
+## $ mean_weight <dbl> 23.482625, 46.957377, 178.750000, 24.482143, 7.384615, ...
+```
+
+```r
 surveys_gw %>% 
   head()
+```
+
+```
+## # A tibble: 6 x 3
+## # Groups:   plot_id [1]
+##   plot_id genus       mean_weight
+##     <dbl> <chr>             <dbl>
+## 1       1 Chaetodipus       23.5 
+## 2       1 Dipodomys         47.0 
+## 3       1 Neotoma          179.  
+## 4       1 Onychomys         24.5 
+## 5       1 Perognathus        7.38
+## 6       1 Peromyscus        21.4
 ```
 
 
@@ -1169,14 +1807,46 @@ becomes 24 observations of 9 variables, one row for each plot. We again use
 pipes:
 
 
-```{r pivot-wider-example}
+
+```r
 surveys_wide <- surveys_gw %>%
   pivot_wider(names_from = genus, values_from = mean_weight)
 
 glimpse(surveys_wide)
+```
 
+```
+## Rows: 24
+## Columns: 9
+## Groups: plot_id [24]
+## $ plot_id         <dbl> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, ...
+## $ Chaetodipus     <dbl> 23.48263, 26.63729, 28.27273, 24.04444, 18.71429, 2...
+## $ Dipodomys       <dbl> 46.95738, 46.38756, 48.60748, 45.64417, 47.97059, 4...
+## $ Neotoma         <dbl> 178.7500, 169.1475, 171.0000, NA, 147.0000, 191.500...
+## $ Onychomys       <dbl> 24.48214, 25.45238, 24.81159, 24.43478, 25.42308, 2...
+## $ Perognathus     <dbl> 7.384615, 8.000000, 7.875000, 8.457143, 8.809524, 7...
+## $ Peromyscus      <dbl> 21.42857, 22.53571, 21.00000, 22.60000, 20.52174, 2...
+## $ Reithrodontomys <dbl> 14.00000, 11.36364, 12.28571, 10.00000, 11.46154, 1...
+## $ Sigmodon        <dbl> NA, 69.0, NA, 82.0, NA, 73.0, NA, NA, 77.0, NA, NA,...
+```
+
+```r
 surveys_wide %>% 
   head()
+```
+
+```
+## # A tibble: 6 x 9
+## # Groups:   plot_id [6]
+##   plot_id Chaetodipus Dipodomys Neotoma Onychomys Perognathus Peromyscus
+##     <dbl>       <dbl>     <dbl>   <dbl>     <dbl>       <dbl>      <dbl>
+## 1       1        23.5      47.0    179.      24.5        7.38       21.4
+## 2       2        26.6      46.4    169.      25.5        8          22.5
+## 3       3        28.3      48.6    171       24.8        7.88       21  
+## 4       4        24.0      45.6     NA       24.4        8.46       22.6
+## 5       5        18.7      48.0    147       25.4        8.81       20.5
+## 6       6        27.2      46      192.      24.8        7.74       21.9
+## # ... with 2 more variables: Reithrodontomys <dbl>, Sigmodon <dbl>
 ```
 
 > ### Challenge 9: ![](images/spicy.jpg)
@@ -1190,22 +1860,14 @@ surveys_wide %>%
 > Save the wide dataset as an object, with an intuitive name! Then use
 > `glimpse` to take a look at the structure.
 
-```{r challenge-9}
+
+```r
 ## Make a wide data frame by pivoting on year. 
 ## Fill the values in these columns with the number of genera per plot. 
 ## Make sure to save the new dataset with an intuitive name!
-
-
 ```
 
-```{r challenge-9-solution, include=FALSE}
-surveys_wide_genera <- combined %>%
-  group_by(plot_id, year) %>%
-  summarize(num_genera = n_distinct(genus)) %>%
-  pivot_wider(names_from = year, values_from = num_genera)
 
-glimpse(surveys_wide_genera)
-```
 
 
 
@@ -1234,11 +1896,21 @@ To recreate `surveys_gw` from `surveys_wide` we would create a key called
 the key variable. Here we drop the `plot_id` column with a minus sign.
 
 
-```{r pivot-long-example}
+
+```r
 surveys_long <- surveys_wide %>%
   pivot_longer(cols = -plot_id, names_to = "genus", values_to = "mean_weight")
 
 glimpse(surveys_long)
+```
+
+```
+## Rows: 192
+## Columns: 3
+## Groups: plot_id [24]
+## $ plot_id     <dbl> 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3...
+## $ genus       <chr> "Chaetodipus", "Dipodomys", "Neotoma", "Onychomys", "Pe...
+## $ mean_weight <dbl> 23.482625, 46.957377, 178.750000, 24.482143, 7.384615, ...
 ```
 
 
@@ -1253,11 +1925,25 @@ specify what to gather than what to leave alone. And if the columns are in a
 row, we don't even need to list them all out - just use the `:` operator!
 
 
-```{r pivot-long-example2}
+
+```r
 surveys_wide %>%
   pivot_longer(cols = Chaetodipus:Sigmodon, names_to = "genus", 
                values_to = "mean_weight") %>%
   head()
+```
+
+```
+## # A tibble: 6 x 3
+## # Groups:   plot_id [1]
+##   plot_id genus       mean_weight
+##     <dbl> <chr>             <dbl>
+## 1       1 Chaetodipus       23.5 
+## 2       1 Dipodomys         47.0 
+## 3       1 Neotoma          179.  
+## 4       1 Onychomys         24.5 
+## 5       1 Perognathus        7.38
+## 6       1 Peromyscus        21.4
 ```
 
 > ### Challenge 10 ![](images/spicy.jpg)
@@ -1270,25 +1956,20 @@ surveys_wide %>%
 > are variables instead of numbers. 
 
 
-```{r challenge-10}
+
+```r
 ## Now take the surveys_wide_genera dataset, and make it long again, by  
 ## (re)pivoting on the year columns. 
 
 names(surveys_wide_genera)
-
 ```
 
-```{r challenge-10-solution, include=FALSE}
-## Now take the wide dataset, and make it long again, by (re)pivoting on the 
-## year columns. 
-
-names(surveys_wide_genera)
-
-surveys_wide_genera %>%
-  pivot_longer(cols=`1996`:`2002`, names_to = "year",
-               values_to = "num_genera")
-
 ```
+## [1] "plot_id" "1996"    "1997"    "1998"    "1999"    "2000"    "2001"   
+## [8] "2002"
+```
+
+
 
 
 
@@ -1309,24 +1990,15 @@ surveys_wide_genera %>%
 > **HINT**: You'll need to specify which columns to pivot into longer format!
 
 
-```{r challenge-11-p-1}
+
+```r
 ## Use pivot_long() to create an even longer dataset.
 ## Create a column called measurement, containing the hindfoot and weight columns
 ## And a value column that takes on the value of either of these measurements 
 ## Hint: You'll need to specify which columns are being used to pivot!
-
-
-
 ```
 
-```{r challenge-11-p-1-solution, include=FALSE}
-combined_longer <- combined %>%
-  pivot_longer(cols = c(hindfoot_length, weight), names_to = "measurement",
-             values_to = "values")
 
-glimpse(combined_longer)
-
-```
 
 
 
@@ -1341,7 +2013,8 @@ glimpse(combined_longer)
 > **HINT**: This sounds like you want to pivot the data to be a wider format! 
 
 
-```{r challenge-11-p-2}
+
+```r
 ## With this new very long data set, calculate the average of each 
 ## measurement in each year for each different plot_type. 
 
@@ -1350,18 +2023,9 @@ glimpse(combined_longer)
 ## Now pivot these summaries into a wide data set. 
 ## With a columns for hindfoot_length and weight. 
 ## Filled with the summary values you calculated. 
-
-
 ```
 
-```{r challenge-11-p-2-solution, include=FALSE}
-measurement_averages <- combined_longer %>%
-  group_by(year, plot_type, measurement) %>%
-  summarize(avg_measure = mean(values))
 
-measurement_avg_wide <- measurement_averages %>%
-  pivot_wider(names_from = measurement, values_from = avg_measure)
-```
 
 
 
@@ -1370,20 +2034,9 @@ measurement_avg_wide <- measurement_averages %>%
 > If you attended the Data Visualization workshop, make a plot of average hindfoot_lengths and weights with colors for the points based on the plot_type.
 
 
-```{r challenge-11-p-3}
 
 
-```
 
-```{r challenge-11-p-3-solution, include=FALSE}
-
-measurement_avg_wide %>% 
-  ggplot(aes(x=hindfoot_length, y=weight, colour=plot_type)) +
-  geom_jitter() +
-  theme_bw()
-
-
-```
 
 
 ## Exporting Data
@@ -1415,13 +2068,30 @@ Let's start by removing observations of animals for which `weight` and
 
 
 
-```{r data-cleanup-exercise}
+
+```r
 surveys_complete <- surveys_edited %>%
   filter(!is.na(weight),           # remove missing weight
          !is.na(hindfoot_length),  # remove missing hindfoot_length
          !is.na(sex))                # remove missing sex
 
 glimpse(surveys_complete)
+```
+
+```
+## Rows: 11,328
+## Columns: 11
+## $ record_id       <dbl> 23215, 23217, 23220, 23222, 23223, 23224, 23225, 23...
+## $ month           <dbl> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+## $ day             <dbl> 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27,...
+## $ year            <dbl> 1996, 1996, 1996, 1996, 1996, 1996, 1996, 1996, 199...
+## $ plot_id         <dbl> 21, 17, 2, 1, 2, 17, 2, 1, 21, 18, 17, 22, 12, 2, 1...
+## $ species_id      <chr> "PF", "DM", "DM", "DM", "DO", "DM", "DM", "PB", "PP...
+## $ sex             <chr> "F", "M", "F", "M", "M", "F", "M", "F", "F", "F", "...
+## $ hindfoot_length <dbl> 16, 36, 36, 34, 37, 39, 40, 27, 21, 16, 36, 36, 38,...
+## $ weight          <dbl> 7, 25, 47, 27, 66, 49, 54, 38, 16, 9, 51, 43, 44, 4...
+## $ date            <date> 1996-01-27, 1996-01-27, 1996-01-27, 1996-01-27, 19...
+## $ day_of_week     <fct> Saturday, Saturday, Saturday, Saturday, Saturday, S...
 ```
 
 
@@ -1433,7 +2103,8 @@ observed, and filter out the rare species; then, we will extract only the
 observations for these more common species:
 
 
-```{r data-extract-exercise}
+
+```r
 ## Extract the most common species_id
 species_counts <- surveys_complete %>%
     count(species_id) %>% 
@@ -1447,9 +2118,25 @@ surveys_complete_subset <- surveys_complete %>%
 glimpse(surveys_complete_subset)
 ```
 
+```
+## Rows: 11,266
+## Columns: 11
+## $ record_id       <dbl> 23215, 23217, 23220, 23222, 23223, 23224, 23225, 23...
+## $ month           <dbl> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+## $ day             <dbl> 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27,...
+## $ year            <dbl> 1996, 1996, 1996, 1996, 1996, 1996, 1996, 1996, 199...
+## $ plot_id         <dbl> 21, 17, 2, 1, 2, 17, 2, 1, 21, 18, 17, 22, 12, 2, 1...
+## $ species_id      <chr> "PF", "DM", "DM", "DM", "DO", "DM", "DM", "PB", "PP...
+## $ sex             <chr> "F", "M", "F", "M", "M", "F", "M", "F", "F", "F", "...
+## $ hindfoot_length <dbl> 16, 36, 36, 34, 37, 39, 40, 27, 21, 16, 36, 36, 38,...
+## $ weight          <dbl> 7, 25, 47, 27, 66, 49, 54, 38, 16, 9, 51, 43, 44, 4...
+## $ date            <date> 1996-01-27, 1996-01-27, 1996-01-27, 1996-01-27, 19...
+## $ day_of_week     <fct> Saturday, Saturday, Saturday, Saturday, Saturday, S...
+```
+
 
 We can check that `surveys_complete_subset`
-has `r nrow(surveys_complete_subset)` rows and `r ncol(surveys_complete_subset)` columns by
+has 11266 rows and 11 columns by
 typing `dim(surveys_complete_subset)` in the previous sandbox.
 
 Now that our data set is ready, we can save it as a CSV file in our `data`

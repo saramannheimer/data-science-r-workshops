@@ -1,7 +1,7 @@
 ---
 title: "Wrangling, Analyzing and Exporting Data with the Tidyverse Handout"
 author: "Data Carpentry contributors & Montana State University R Workshops Team"
-date: "11/5/2020"
+date: "3/31/2021"
 output: pdf_document
 
 ---
