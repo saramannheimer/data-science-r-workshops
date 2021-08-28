@@ -1,0 +1,14 @@
+name: data_viz_tutorial
+title: Data_viz_tutorial
+username: w76c139
+account: w76c139
+server: rconnect.math.montana.edu
+hostUrl: https://rconnect.math.montana.edu/__api__
+appId: 11
+bundleId: 30
+url: https://rconnect.math.montana.edu/content/11/
+when: 1630185204.21726
+lastSyncTime: 1630185204.21726
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: Data_viz_tutorial_files

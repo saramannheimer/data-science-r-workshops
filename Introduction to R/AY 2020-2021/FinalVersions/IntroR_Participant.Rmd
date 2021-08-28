@@ -1024,9 +1024,9 @@ Research related to the development of these workshops is to appear in:
 
 * Theobold, A., Hancock, S., & Mannheimer, S.. Data Science Workshops for Data-Intensive Environmental Science Research, _Journal of Statistics Education_. 
 
-The workshops for 2020-2021 involve modifications of materials and are licensed CC-BY. ![Creative Commons License](88x31.png) This work is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
+The workshops for 2021-2022 involve modifications of materials and are licensed CC-BY. ![Creative Commons License](88x31.png) This work is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
 
-The workshops for 2020-2021 involve modifications of materials and are being taught by:
+The workshops for 2021-2022 involve modifications of materials and are being taught by:
 
 ### Sara Mannheimer
 
