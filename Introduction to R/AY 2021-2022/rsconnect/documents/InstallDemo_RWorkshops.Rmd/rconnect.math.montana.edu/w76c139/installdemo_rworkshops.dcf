@@ -1,0 +1,14 @@
+name: installdemo_rworkshops
+title: InstallDemo_RWorkshops
+username: w76c139
+account: w76c139
+server: rconnect.math.montana.edu
+hostUrl: https://rconnect.math.montana.edu/__api__
+appId: 10
+bundleId: 29
+url: https://rconnect.math.montana.edu/content/10/
+when: 1630183544.5436
+lastSyncTime: 1630183544.5436
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: StudentVersion
