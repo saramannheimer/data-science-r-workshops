@@ -37,9 +37,9 @@ hence both need to be installed on your computer. Both `R` and `RStudio` are
 cross-platform, so that everyone's versions look and operate the same regardless
 of their operating system! 
 
-For this workshop, we will be making use of the RStudio that you will need to install on your computer or a virtual desktop machine (available to MSU affiliated participants). For more details on this, you have hopefully completed the steps discussed here https://greenwood-stat.shinyapps.io/InstallDemo_RWorkshops/. The short version for downloading is to first go to https://cloud.r-project.org/ to `R` installed and then go to https://rstudio.com/products/rstudio/download/ to install RStudio. 
+For this workshop, we will be making use of the RStudio that you will need to install on your computer. For more details on this, you have hopefully completed the steps discussed here https://greenwood-stat.shinyapps.io/InstallDemo_RWorkshops/. The short version for downloading is to first go to https://cloud.r-project.org/ to `R` installed and then go to https://rstudio.com/products/rstudio/download/ to install RStudio. 
 
-If you did not complete that or do not have a computer available, you can You can also borrow a laptop from the MSU library (or maybe from a good friend) for the workshop. It needs to be a computer that is running Linux, Windows, or a somewhat recent macOS. Unfortunately, a chromebook or ipad are not sufficient for installing and running R.
+If you did not complete that or do not have a computer available, you can also borrow a laptop from the MSU library (or maybe from a good friend) for the workshop. It needs to be a computer that is running Linux, Windows, or a somewhat recent macOS. Unfortunately, a chromebook or ipad are not sufficient for installing and running R.
 
 However you get to it, RStudio has four possible panels, where each can be viewed at the same time and
 has multiple tabs available.  
