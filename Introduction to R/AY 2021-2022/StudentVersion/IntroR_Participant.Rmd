@@ -377,27 +377,27 @@ functions that are useful to check the content/structure of the data.
 Here are some:
 
 - size:  
-    + `dim(data)`: rows and columns  
-    + `nrow(data)`: number of rows  
-    + `ncol(data)`: number of columns  
-    + `length(data$variable)`: length of a vector
+    + `dim(datasetname)`: rows and columns  
+    + `nrow(datasetname)`: number of rows  
+    + `ncol(datasetname)`: number of columns  
+    + `length(datasetname$variable)`: length of a vector
 
 
 - content:  
-    + `head(data)`: first 6 rows  
-    + `tail(data)`: last 6 rows  
-    + `View(data)`: opens viewer window in separate tab  
+    + `head(datasetname)`: first 6 rows  
+    + `tail(datasetname)`: last 6 rows  
+    + `View(datasetname)`: opens viewer window in separate tab  
     
 
 - names:  
-    + `colnames(data)`: column names of dataframe  
-    + `rownames(data)`: row names of dataframe  
+    + `colnames(datasetname)`: column names of dataframe  
+    + `rownames(datasetname)`: row names of dataframe  
 
 
 - summary of content:  
-    + `str(data)`: structure of object and information about the columns  
-    + `glimpse(data)`: similar information to `str`, but neater output (requires `tibble` package)  
-    + `summary(data)`: summary statistics for each column  
+    + `str(datasetname)`: structure of object and information about the columns  
+    + `glimpse(datasetname)`: similar information to `str`, but neater output (requires `tibble` package)  
+    + `summary(datasetname)`: summary statistics for each column  
   
 *Note:* Many of these are generic functions that will work on other data types, 
 not just on `data.frame`s. 
@@ -424,7 +424,7 @@ as a vector of entries, which is what the [1:18352] refers to.
 
 ```{r}  
 years <- BlackfootFish$year 
-## extracts year from the dataset and saves it into a new variable named year
+## extracts year from the dataset and saves it into a new variable named years
 
 str(years) ## using the new variable (remember case matters!)
 
@@ -510,7 +510,7 @@ to store this information, (1) as a series of `character` strings, or (2) as a
 characters, since you only need to store the level of the factor each 
 observation went with. 
 
-While factors are still useful in today's statistical analyses and data  visualizations, they can be tricky to deal with. When you convert a variable to a factor, for many operations you will get different results than for a character (McNamara & Horton, 2017). 
+Some functions in R require character vectors to be converted to factor variables to correctly handle the information. We recommend that you convert character vectors to factors and always review and possibly modify the levels of the factor variable to make the levels as explicit as possible. 
 
 In these data, section has two levels (Johnsrud and ScottyBrown) and species has
 four levels (RBT, WCT, Bull, and Brown). If we want `R` to view these variables
@@ -690,7 +690,7 @@ Suppose we wanted to create a vector of 10 zeros. To do this, we would use the `
 ```{r} 
 # ?rep
 
-rep(0, times = 10) ## repeating 0 ten times
+rep(x = 0, times = 10) ## repeating 0 ten times
 
 rep(times = 10, 0) ## switching order of arguments
 
