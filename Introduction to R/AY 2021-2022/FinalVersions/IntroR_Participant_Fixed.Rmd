@@ -1,15 +1,23 @@
 ---
 title: "Introduction to `R`"
-author: "Data & Software Carpentry, with edits and reorganization by the Montana State University `R` Workshops Team"
+author: |
+  "Data & Software Carpentry, with edits and reorganization by the  
+  Montana State University R Workshops Team"
 output:
-  word_document:
+  pdf_document:
     fig_height: 3
     fig_width: 5
   html_document:
     fig_width: 5
-  pdf_document:
+  word_document:
     fig_height: 3
     fig_width: 5
+header-includes: |
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyfoot[LO,RE]{Introduction to R Workshop - Fixed}
+  \fancyfoot[CO,CE]{September 1, 2021}
+  \fancyfoot[LE,RO]{\thepage}
 ---
 
 ```{r setup, include = FALSE}

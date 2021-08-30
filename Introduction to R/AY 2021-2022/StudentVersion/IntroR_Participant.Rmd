@@ -1,6 +1,8 @@
 ---
 title: "Introduction to R"
-author: "Data & Software Carpentry, with edits and reorganization by the Montana State University R Workshops Team"
+author: |
+  "Data & Software Carpentry, with edits and reorganization by the  
+  Montana State University R Workshops Team"
 output:
   pdf_document:
     fig_height: 3
@@ -10,12 +12,19 @@ output:
   word_document:
     fig_height: 3
     fig_width: 5
+header-includes: |
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyfoot[LO,RE]{Introduction to R Workshop}
+  \fancyfoot[CO,CE]{September 1, 2021}
+  \fancyfoot[LE,RO]{\thepage}
 ---
 
 ```{r, echo = FALSE}
 knitr::opts_chunk$set(tidy = TRUE, 
                       fig.align="center", 
-                      tidy.opts = list(width.cutoff = 80))
+                      tidy.opts = list(width.cutoff = 80),
+                      #error=TRUE)
 ```
 
 
