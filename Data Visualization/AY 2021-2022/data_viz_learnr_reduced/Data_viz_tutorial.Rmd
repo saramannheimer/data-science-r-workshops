@@ -669,9 +669,7 @@ surveys %>%
 > What warning do you get and why?
 > Do you get an error like this when you use `hist()` in base `R`? 
 
-I was once told that the idea behind a good histogram was to make the plot look 
-as smooth as possible -- think about having it resemble the continuous shape of the 
-density plot.  
+There is no single right answer for the number of bins. There are some "plug-in" choices for number of bins that can be used, but you are always welcome to explore different numbers of bins to see if features you are seeing persist when you choose more or less bins.  
 
 
 >## Challenge 4 
@@ -851,6 +849,15 @@ In the first plot, the position was chosen automatically, but in the second plot
 the `position` argument was made explicit. What changes did this make in the 
 plots? 
 
+Finally, we can also choose the `position` to be `fill` for the bars and to `fill` the bars based on `sex`:
+
+```{r stacking2, exercise=TRUE}
+surveys %>% 
+  ggplot(mapping = aes(x = species_id, fill = sex)) + 
+  geom_bar(position = "fill")
+```
+
+
 
 ## Time-series Data
 
@@ -863,6 +870,8 @@ records within each group!
 yearly_counts <- surveys %>%
   count(year, genus) 
  ## counts the number of observations (rows) for each year, genus combination and creates a new variable "n"
+
+yearly_counts
 ```
 
 ```{r warning=FALSE, message = FALSE, echo=FALSE, eval=TRUE}
@@ -941,6 +950,8 @@ captured. To do that we need to make counts in the data frame grouped by `year`,
 yearly_sex_counts <- surveys %>%
   count(year, species_id, sex)
 ## counts the number of observations (rows) for each year, species, sex combination
+
+yearly_sex_counts
 ```
 
 ```{r warning=FALSE, message = FALSE, echo=FALSE, eval=TRUE}
@@ -1003,6 +1014,8 @@ yearly_species_weight <- surveys %>%
   ## Variables to group by
   summarize(avg_weight = mean(weight))
 
+
+## Edit the following ggplot() code for the plot here:
 yearly_species_weight %>%
   ggplot(mapping = aes(x = year, y = n, color = avg_weight)) +
     geom_line() +
