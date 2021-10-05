@@ -153,7 +153,7 @@ example_df[1, ] ## Extracts EVERY column in the first row
 ```
 
 
-```{r challenge-2-solution, exercise.setup="moreExtract-setup"}
+```{r challenge-2-solution}
 
 example_df[, 3:4]
 
@@ -174,7 +174,7 @@ grade_code()
 
 ```
 
-```{r challenge-2-2-solution, exercise.setup="moreExtract-setup"}
+```{r challenge-2-2-solution}
 
 example_df[, c(2,4)]
 
@@ -279,7 +279,7 @@ c("a", "b") %in% some_letters
 
 ```
 
-```{r challenge-3-solution, exercise.setup="relOp-setup"}
+```{r challenge-3-solution}
 2 * x + 0.2 == y
 
 "hello" > "goodbye"
@@ -471,7 +471,7 @@ row.names(messages) <- c("Monday", "Tuesday", "Wednesday", "Thursday",
 
 ```
 
-```{r challenge-5-solution, exercise.setup="okCupid-setup"}
+```{r challenge-5-solution}
 messages > 12
 
 
@@ -545,7 +545,7 @@ question:
 
 ```
 
-```{r challenge-7-solution, exercise.setup="okCupid-setup"}
+```{r challenge-7-solution}
 subset(messages, messages[,1] > messages[,2])
 
 
@@ -634,7 +634,7 @@ questions:
 # Make sure you test your code with some other values
 ```
 
-```{r challenge-8-solution, exercise.setup="okCupid-setup"}
+```{r challenge-8-solution}
 last <- tail(messages$okcupid, 1)
 
 last < 5 | last >10
@@ -717,7 +717,7 @@ last <- tail(messages$okcupid, 1)
 
 ```
 
-```{r challenge-9-solution, exercise.setup="okCupid-setup"}
+```{r challenge-9-solution}
 last <- tail(messages$okcupid, 1)
 
 if (last > 10){
