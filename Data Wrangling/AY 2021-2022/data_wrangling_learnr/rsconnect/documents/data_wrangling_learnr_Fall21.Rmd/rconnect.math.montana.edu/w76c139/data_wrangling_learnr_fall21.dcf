@@ -1,0 +1,14 @@
+name: data_wrangling_learnr_fall21
+title: data_wrangling_learnr_Fall21
+username: w76c139
+account: w76c139
+server: rconnect.math.montana.edu
+hostUrl: https://rconnect.math.montana.edu/__api__
+appId: 13
+bundleId: 37
+url: https://rconnect.math.montana.edu/content/13/
+when: 1635349994.65154
+lastSyncTime: 1635349994.65154
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: data_wrangling_handout_31Mar21_NoSolutions.pdf|data_wrangling_handout_31Mar21_NoSolutions.Rmd|data_wrangling_handout_31Mar21_wSolutions.pdf|data_wrangling_handout_31Mar21_wSolutions.Rmd|data_wrangling_learnr.html|data_wrangling_learnr.Rmd|data_wrangling_learnr_31Mar21.html|data_wrangling_learnr_31Mar21.Rmd
