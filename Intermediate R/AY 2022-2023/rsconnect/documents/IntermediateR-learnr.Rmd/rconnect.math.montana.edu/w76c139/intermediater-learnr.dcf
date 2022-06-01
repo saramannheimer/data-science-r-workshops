@@ -1,0 +1,14 @@
+name: intermediater-learnr
+title: IntermediateR-learnr
+username: w76c139
+account: w76c139
+server: rconnect.math.montana.edu
+hostUrl: https://rconnect.math.montana.edu/__api__
+appId: 12
+bundleId: 36
+url: https://rconnect.math.montana.edu/content/12/
+when: 1633450319.4248
+lastSyncTime: 1633450319.4248
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: data/BlackfootFish.csv|IntermediateR-handout-10Mar2021-NoSolutions.pdf|IntermediateR-handout-10Mar2021-NoSolutions.Rmd|IntermediateR-handout-10Mar2021-wSolutions.pdf|IntermediateR-handout-10Mar2021-wSolutions.Rmd
