@@ -1,0 +1,14 @@
+name: data_wrangling_learnr
+title: data_wrangling_learnr
+username:
+account: greenwood-stat
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3091733
+bundleId: 5183393
+url: https://greenwood-stat.shinyapps.io/data_wrangling_learnr/
+when: 1635351606.55473
+lastSyncTime: 1635351606.55473
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: data_wrangling_handout_31Mar21_NoSolutions.pdf|data_wrangling_handout_31Mar21_NoSolutions.Rmd|data_wrangling_handout_31Mar21_wSolutions.pdf|data_wrangling_handout_31Mar21_wSolutions.Rmd
