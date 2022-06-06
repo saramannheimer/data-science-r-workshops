@@ -15,6 +15,9 @@ library(ggplot2)
 library(learnr)
 library(tidyverse)
 library(gradethis)
+library(datasauRus)
+library(gridExtra)
+library(plotly)
 #library(tufte)
 knitr::opts_chunk$set(echo = FALSE, exercise.checker = gradethis::grade_learnr)
 
@@ -600,7 +603,6 @@ grade_code()
 > The previous example doesn't fully illustrate the power of violin plots. This example from the `datasauRus` package (https://www.autodeskresearch.com/publications/samestats) shows five different distributions that have exactly the same summary statistics and boxplots but very different shapes:
 
 ```{r datasaurus, message = FALSE, exercise = TRUE, exercise.eval=TRUE}
-library(datasauRus)
 data(box_plots)
 
 box_plots_long <- box_plots %>%
