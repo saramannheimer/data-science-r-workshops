@@ -186,9 +186,9 @@ x <- 2
 
 ```
 
-**Exercise 1:** What is the current value of `y`? 12 or 8? Create a code chunk (Hint, use __Ctrl + Alt + I__ on Windows, or __Cmd + Option + I__ on Mac, to insert a blank `R` code chunk).  
+**Exercise 1:** What is the current value of `y`? 12 or 8? Create a code chunk (Hint, use __Ctrl + Alt + I__ on Windows, or __Cmd + Option + I__ on Mac, to insert a blank `R` code chunk) and write the code to display the value of the object.  
 
-Insert your code chunk here.
+***Insert your code chunk here.***
 
 ## Working with Different Data Types 
 
