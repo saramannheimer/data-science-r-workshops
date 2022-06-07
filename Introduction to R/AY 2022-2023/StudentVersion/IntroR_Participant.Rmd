@@ -106,10 +106,6 @@ is the correct answer.  Try to do this in the console and by executing the code 
 16*9
 
 sqrt(2)
-
-20/5
-
-18.5 - 7.21
 ```
 
 ## Creating Objects 
@@ -168,9 +164,7 @@ what you are doing. For these reasons, there are style guides for writing code
 in `R`. The two main style guides are Google's 
 \href{https://google.github.io/styleguide/Rguide.xml}{(link)} and the slightly 
 more comprehensive Tidyverse style guide 
-\href{https://style.tidyverse.org/}{(link)}. Optionally, you can install `lintr`
-to automatically check and correct for issues in your code styling. More on 
-packages to come!
+\href{https://style.tidyverse.org/}{(link)}. Installing the `styler` package will allow you to highlight code and format it in a more legible way. Visit \href{https://style.tidyverse.org/}{(the tidyverse page)} for more.
 
 ## Working with Objects 
 
