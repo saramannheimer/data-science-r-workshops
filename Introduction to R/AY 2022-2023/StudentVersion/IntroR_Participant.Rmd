@@ -16,7 +16,7 @@ header-includes: |
   \usepackage{fancyhdr}
   \pagestyle{fancy}
   \fancyfoot[LO,RE]{Introduction to R Workshop}
-  \fancyfoot[CO,CE]{September 1, 2021}
+  \fancyfoot[CO,CE]{September 7, 2021}
   \fancyfoot[LE,RO]{\thepage}
 ---
 
@@ -24,7 +24,7 @@ header-includes: |
 knitr::opts_chunk$set(tidy = TRUE, 
                       fig.align="center", 
                       tidy.opts = list(width.cutoff = 80),
-                      #error=TRUE)
+                      error=TRUE)
 ```
 
 
