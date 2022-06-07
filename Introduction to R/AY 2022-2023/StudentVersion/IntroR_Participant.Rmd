@@ -608,7 +608,7 @@ have to first install the package (only once on a given computer) and then load 
 We're going to install a few packages that are often used.  
 
 * Use the __Install__ button in the __Packages__ tab  
-* Type in `devtools` and `tidyverse` into the blank line (separated by a comma)  
+* Type in `remotes` and `tidyverse` into the blank line (separated by a comma)  
 * Check the __Install dependencies__ box  
 * Click on the __Import__ button  
 
@@ -620,7 +620,7 @@ Now that the files are downloaded, we need to load them in order to use them.
 The following code will load each package, please run it!  
 
 ```{r packages}
-library(devtools)
+library(remotes)
 library(tidyverse)
 ```
 
