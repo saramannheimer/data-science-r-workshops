@@ -448,10 +448,6 @@ df <- data.frame(
   )
 
 df
-
-df[3, ]
-df$z[2]
-df[2,3]
 ```
 
 **Exercise 4:** What would be output if you entered: `df[3, ]`?  
