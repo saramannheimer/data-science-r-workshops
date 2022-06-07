@@ -158,13 +158,13 @@ future self and your collaborators.
 ## Working with Objects 
 
 When you assign a value to an object (like we did previously) `R` does not output
-anything by default. If you enclose the code you wrote in parenthesis, then `R` 
-will output the value of the object you created. 
+anything by default. Writing the name of the object will output the value of the object you created. 
 
 ```{r}
 x <- 6
 
-(x <- 6)
+x
+
 ```
 
 Once the object has been created, you can use it! Run the following lines of code:
@@ -186,14 +186,9 @@ x <- 2
 
 ```
 
-**Exercise 1:** What is the current value of `y`? 12 or 8?  
+**Exercise 1:** What is the current value of `y`? 12 or 8? Create a code chunk (Hint, use __Ctrl + Alt + I__ on Windows, or __Cmd + Option + I__ on Mac, to insert a blank `R` code chunk).  
 
-```{r}
-# Exercise 1 code here!
-
-y
-
-```
+Insert your code chunk here.
 
 ## Working with Different Data Types 
 
