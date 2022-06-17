@@ -48,7 +48,7 @@ of their operating system!
 
 For this workshop, we will be making use of the RStudio that you will need to install on your computer. For more details on this, you have hopefully completed the steps discussed here https://greenwood-stat.shinyapps.io/InstallDemo_RWorkshops/. The short version for downloading is to first go to https://cloud.r-project.org/ to `R` installed and then go to https://rstudio.com/products/rstudio/download/ to install RStudio. 
 
-If you did not complete that or do not have a computer available, you can also borrow a laptop from the MSU library (or maybe from a good friend) for the workshop. It needs to be a computer that is running Linux, Windows, or a somewhat recent macOS. Unfortunately, a chromebook or ipad are not sufficient for installing and running R.
+You need to have a computer that is running Linux, Windows, or a somewhat recent macOS. Unfortunately, a chromebook or ipad are not sufficient for installing and running R.
 
 However you get to it, RStudio has four possible panels, where each can be viewed at the same time and
 has multiple tabs available.  
@@ -59,6 +59,8 @@ has multiple tabs available.
 - and your __Files/Plots/Packages/Help/Viewer__ (bottom-right).
 
 ![RStudio layout](rstudio.png)  
+
+You can use the Tools -> Global Options -> Appearance tab to modify the colors and font sizes in RStudio.
 
 ## Working in `R`  
 
@@ -71,7 +73,7 @@ The document we provided for you is an Rmarkdown (.Rmd) document. It allows you 
 ````
 
 
-You can add these with Insert -> `R` into a .Rmd file. Type all of your code in these code chunks and other documentation and interpretation of results outside of the code chunks (like we are doing here). Although there are more complex ways to work in RStudio, you should start today with saving this .Rmd  file into a folder that also contains any data and other figures you might want to read into this document. When you do that, RStudio will know where to look to read in the data so you do not need to know the path for its physical location on your computer. Once we are done with our local work, we can also use the `Knit` button to compile our work into HTML, Word (DOCX), or PDF documents. We will demonstrate this at the end of the workshop - but this will only work if all the code "runs" and what we have provided you has some errors in it. One other great (and fairly new) feature in these files is that it does live spell-checknig - I mean spell-checking - by underlining suspect words. We will also discuss RStudio "Projects" that take this one step further in terms of organizing your work built around this markdown framework. It is important to understand the various ways to do your work in R using RStudio. 
+You can add these with Insert -> `R` into a .Rmd file. Type all of your code in these code chunks and other documentation and interpretation of results outside of the code chunks (like we are doing here). Although there are more complex ways to work in RStudio, you should start today with saving this .Rmd  file into a folder that also contains any data and other figures you might want to read into this document. When you do that, RStudio will know where to look to read in the data so you do not need to know the path for its physical location on your computer. Once we are done with our local work, we can also use the `Knit` button to compile our work into HTML, Word (DOCX), or PDF documents. We will demonstrate this at the end of the workshop - but this will only work if all the code "runs" and what we have provided you has some errors in it. One other great feature in these files is that it does live spell-checknig - I mean spell-checking - by underlining suspect words. We will also discuss RStudio "Projects" that take this one step further in terms of organizing your work built around this markdown framework. It is important to understand the various ways to do your work in R using RStudio. 
 
 RStudio allows for you to execute commands directly from the code chunk in the 
 document by using the __Ctrl + Enter__ (on Macs, __Cmd + Return__) shortcut. If
@@ -186,7 +188,9 @@ x <- 2
 
 ```
 
-**Exercise 1:** What is the current value of `y`? 12 or 8? Create a code chunk (Hint, use __Ctrl + Alt + I__ on Windows, or __Cmd + Option + I__ on Mac, to insert a blank `R` code chunk) and write the code to display the value of the object.  
+### Exercise 1:
+
+What is the current value of `y`? 12 or 8? Create a code chunk (Hint, use __Ctrl + Alt + I__ on Windows, or __Cmd + Option + I__ on Mac, to insert a blank `R` code chunk) and write the code to display the value of the object.  
 
 ***Insert your code chunk here.***
 
@@ -220,15 +224,13 @@ class(temps)
 class(animals)
 ```
 
-**Exercise 2:** Create a vector, named `dec`, that contains decimal valued numbers. Then check
-what data type does that vector contain?
+### Exercise 2:
+
+Create a vector, named `dec`, that contains three decimal valued numbers. Then check what data type does that vector contain?
 
 ```{r}
 # Exercise 2 code here!
 
-dec <- c(1,2,3.4)
-dec
-class(dec)
 
 ```
 
@@ -244,7 +246,9 @@ logic <- c(TRUE, FALSE, FALSE, TRUE)
 class(logic)
 ```
 
-**Exercise 3:** What happens when we try to mix different data types into one 
+### Exercise 3:
+
+What happens when we try to mix different data types into one 
 vector? Speculate what will happen when we run each of the following lines of code:
 
 ```{r}
@@ -436,7 +440,7 @@ BlackfootFish[1, 5]
 str(years)
 ```
 
-### Practice:
+### Practice: Working with dataframes
 
 The following is a preview of the dataframe `df`: 
 
@@ -469,10 +473,13 @@ of `[1] 22 24`?
 s <- c(22, 24, 49, 18, 1, 6)
 s[]
 
-s[3]
 ```
 
-**Exercise 8:** What would be output if you entered: `s[3, ]`?  
+**Exercise 8:** See what would happen if you entered `s[3, ]`. How can you explain that result?  
+
+```{r}
+
+```
 
 ## Changing Data Type  
 
@@ -495,20 +502,16 @@ observation went with.
 
 Some functions in R require character vectors to be converted to factor variables to correctly handle the information. We recommend that you convert character vectors to factors and always review and possibly modify the levels of the factor variable to make the levels as explicit as possible. 
 
-In these data, section has two levels (Johnsrud and ScottyBrown) and species has
-four levels (RBT, WCT, Bull, and Brown). If we want `R` to view these variables
-as factors instead of characters, we need to change their data type.   
+In these data, species has
+four levels (RBT, WCT, Bull, and Brown). The levels are the unique values that variable can take on. If we want `R` to view this variable
+as a factor instead of character, we need to change its data type.   
 
 ```{r factors, purl = TRUE}  
 unique(BlackfootFish$species) ## tells you the unique values of species
 
-unique(BlackfootFish$section) ## tells you the unique values of section  
-
 BlackfootFish$speciesF <- factor(BlackfootFish$species) 
 ## creates a new variable that is the factor version of species
 
-BlackfootFish$sectionF <- factor(BlackfootFish$section) 
-## creates a new variable that is the factor version of section
 ```
 
 There is also a function that will allow for you to specify the order of the 
@@ -530,7 +533,7 @@ levels(BlackfootFish$speciesF)
 
 ```
 
-### Practice:  
+### Practice: Working with factor variables 
 
 **Exercise 9:** Year was saved as an integer data type (1989 - 2006), but we 
 may want to consider it to be a categorical variable (a factor). Write the `R` 
@@ -849,7 +852,7 @@ barplot(section,
         )
 ```
 
-### Practice  
+### Practice: Graphing
 
 **Exercise 11:**  Using statistics or graphics, which year in our dataset had the 
 most fish caught?  
@@ -877,46 +880,7 @@ To attempt to knit to one of these formats, go to "Knit" and click on the triang
 
 Finally, when you are done with your work and attempt to exit out of RStudio, it will ask you to save your workspace. **DO NOT DO THIS!** It will just create a cluttered workspace and could even cause you to get incorrect results. In fact, you should go into the Tools -> Global Options and then make sure that "Save workspace to .RData on exit" option on the first screen you will see is set to Never. If you save your `R` code either as a .R or (better) an R Markdown (.Rmd) file, you can re-create any results by simply re-running that code or re-knitting the file. If you find that you have lots of "stuff" in your workspace because you accidentally saved your workspace, just run `rm(list = ls())`. It will delete all the data sets from your workspace.
 
-## Projects in `R`  
 
-`R` projects provide a way to organize all the code and data in one place and many consider these the best way to work in `R`. We chose to avoid this step and just use a single .Rmd file to expedite your first experience using `R`. A motivation for using projects is that it is important to organize your data and script files into the same or related locations and have different locations for different iterations of projects. If you don't do this:
-
-* it is really hard to tell which version of your data is original and what
-versions are modified  
-* things get really messy because all types of files are mixed together  
-* it's probably hard for you to find things and relate the correct files to 
-their respective output  
-
-Ultimately, good project organization will make your life easier! It helps 
-ensure the integrity of your data, makes it simpler to share your code or get
-help with your code, allows for you know exactly what code you used on a 
-paper, and it's easier to pick a project back up. 
-
-It is good code writing and file storage practice to keep a set of all related 
-data, analysis, plots, documents, etc. in the same folder. RStudio makes this 
-process easy with using their projects. In an RStudio project, all of the 
-project's pieces are in the same folder. This allows for a clean 
-workflow and a simple working directory for `R`. When you are executing code for
-a document/script `R` will search for things (such as data) in the 
-\underline{same} folder as the document/script, which is called a 
-_relative path_.
-
-Whenever you start working on a new project in 
-RStudio, go through the following steps:
-
-1. Click on the "File" menu button, then select "New Project"    
-2. Click "New Directory"  
-3. Click "New Project"  
-4. Create a name for your project (make it explanatory!)  
-5. Select where the project should live  
-6. Click the "Create Project" button  
-7. Open the project!
-
-After this process `R` will be searching for objects (such as data) in the 
-\underline{same} folder as the project. This allows for us to keep all of our
-files in a self-contained system. 
- 
-After saving your previous work today, you can try to create a project in a new folder on your computer. After you create the project, you can create a new .Rmd file and copy and paste the text from this document into this file. And move a copy of the BlackfootFish.csv into the project folder you created. Whenever you open this project it will take you directly to the work you have done in that project folder. It may be useful to close the project before exiting RStudio to avoid confusion in later sessions. 
 
 ## Terminology Used in Workshop
 
@@ -988,7 +952,7 @@ https://www.youtube.com/watch?v=W6E3hpcoUkQ&feature=youtu.be
 
 * other related information: http://www.montana.edu/datascience/
 
-## How to Learn More About `R`
+## How to Learn More About `R` and `RStudio`
 
 This material is intended to provide you with an introduction to using `R` for 
 scientific analyses of data. The best way for you to continue to learn more 
@@ -1013,6 +977,47 @@ in `R`. The two main style guides are
 more comprehensive  
 \href{https://style.tidyverse.org/}{Tidyverse style guide}. Installing the `styler` package will allow you to highlight code and format it in a more legible way. Visit \href{https://style.tidyverse.org/}{the tidyverse page} for more.
 
+### Projects in `RStudio`  
+
+`R` projects provide a way to organize all the code and data in one place and many consider these the best way to work in `R`. We chose to avoid this step and just use a single .Rmd file to expedite your first experience using `R`. A motivation for using projects is that it is important to organize your data and script files into the same or related locations and have different locations for different iterations of projects. If you don't do this:
+
+* it is really hard to tell which version of your data is original and what
+versions are modified  
+* things get really messy because all types of files are mixed together  
+* it's probably hard for you to find things and relate the correct files to 
+their respective output  
+
+Ultimately, good project organization will make your life easier! It helps 
+ensure the integrity of your data, makes it simpler to share your code or get
+help with your code, allows for you know exactly what code you used on a 
+paper, and it's easier to pick a project back up. 
+
+It is good code writing and file storage practice to keep a set of all related 
+data, analysis, plots, documents, etc. in the same folder. RStudio makes this 
+process easy with using their projects. In an RStudio project, all of the 
+project's pieces are in the same folder. This allows for a clean 
+workflow and a simple working directory for `R`. When you are executing code for
+a document/script `R` will search for things (such as data) in the 
+\underline{same} folder as the document/script, which is called a 
+_relative path_.
+
+Whenever you start working on a new project in 
+RStudio, go through the following steps:
+
+1. Click on the "File" menu button, then select "New Project"    
+2. Click "New Directory"  
+3. Click "New Project"  
+4. Create a name for your project (make it explanatory!)  
+5. Select where the project should live  
+6. Click the "Create Project" button  
+7. Open the project!
+
+After this process `R` will be searching for objects (such as data) in the 
+\underline{same} folder as the project. This allows for us to keep all of our
+files in a self-contained system. 
+ 
+After saving your previous work today, you can try to create a project in a new folder on your computer. After you create the project, you can create a new .Rmd file and copy and paste the text from this document into this file. And move a copy of the BlackfootFish.csv into the project folder you created. Whenever you open this project it will take you directly to the work you have done in that project folder. It may be useful to close the project before exiting RStudio to avoid confusion in later sessions. 
+
 ## Montana State University `R` Workshops Team
 
 These materials were adapted from materials generated by the Data Carpentries (https://datacarpentry.org/) and were originally developed at MSU by Dr. Allison Theobold. The workshop series is co-organized by the Montana State University Library, Department of Mathematical Sciences, and Statistical Consulting and Research Services (SCRS, https://www.montana.edu/statisticalconsulting/). SCRS is supported by Montana INBRE (National Institutes of Health, Institute of General Medical Sciences Grant Number P20GM103474). The workshops for 2021-2022 are supported by Faculty Excellence Grants from MSU's Center for Faculty Excellence. 
@@ -1027,12 +1032,22 @@ The workshops for 2021-2022 involve modifications of materials and are being tau
 
 ### Sara Mannheimer
 
-* Sara Mannheimer is an Associate Professor and Data Librarian at Montana State University, where she helps shape practices and theories for curation, publication, and preservation of data. Her research is rooted in the examination of the social, ethical, and technical issues that arise as we -- as a profession and as a society -- grapple with the implications of a data-driven world. She is currently working with a library team to build a Dataset Search for institutions, funded by the National Network of Libraries of Medicine, and she is a PhD candidate at Humboldt University of Berlin, studying data stewardship practices for qualitative data reuse and big social data research.
+* Sara Mannheimer is an Associate Professor and Data Librarian at Montana State University, where she helps shape practices and theories for curation, publication, and preservation of data. Her research examines the social, ethical, and technical issues of a data-driven world. She is the project lead for the MSU Dataset Search, and she is working on a book about data curation to support responsible qualitative data reuse and big social research.
 
 ### Greta Linse
 
-* Greta Linse is the Assistant Director of Statistical Consulting and Research Services (https://www.montana.edu/statisticalconsulting/) and the Project Manager for the Human Ecology Learning and Problem Solving (HELPS) Lab (https://helpslab.montana.edu). Greta has been teaching, documenting and working with statistical software including R and RStudio for over 10 years.
+* Greta Linse is the Interim Director of Statistical Consulting and Research Services (https://www.montana.edu/statisticalconsulting/) and the Project Manager for the Human Ecology Learning and Problem Solving (HELPS) Lab (https://helpslab.montana.edu). Greta has been teaching, documenting and working with statistical software including R and RStudio for over 10 years.
+
+
+### Harley Clifton
+
+* Harley Clifton is an undergraduate senior pursuing a degree in Mathematics (Statistics Option) with a minor in Psychology. She enjoys teaching nuanced coding skills and Data Visualization strategies through her experience as a Teaching Assistant for STAT 216 and STAT 408. Harley recently attended the Summer Institute in Biostatistics and Undergraduate Data Science at the University of California Irvine, funded by the National Institute Of Allergy And Infectious Diseases of the National Institutes of Health (under Award Number R25AI170491). Her areas of interest include quantifying behaviors and societal attitudes, behavior modification to reduce discrimination, Deaf culture and history, and women’s health.
+
+### Eliot Liucci
+
+
+* Eliot Liucci is a senior in the Mathematics (Statistics Option) here at Montana State University. He works in the Mathematics Statistics Center and has been a Teaching Assistant for STAT 216 and STAT 217. He hopes to move into Data Analysis and Education in order to help streamline the way Statistics is taught to students and will start the M.S. in Statistics program in Spring 2023.
 
 ### Mark Greenwood
 
-* Mark Greenwood is a Professor of Statistics in the Department of Mathematical Sciences at Montana State University and Director of Statistical Consulting and Research Services (https://www.montana.edu/statisticalconsulting/). His research interests have involved statistical methods and applications in environmental sciences, education, and biological sciences. Recent work has involved researching diagnostic methods for Multiple Sclerosis. His current research grants include funding from the Mountain West IDeA Clinical and Translational Research - Infrastructure Network  (National Institute of General Medical Sciences Grant 5U54GM104944-08) and a grant from the National Multiple Sclerosis Society (RG-1907-34348).
+* Mark Greenwood is a Professor of Statistics in the Department of Mathematical Sciences at Montana State University and the former Director of Statistical Consulting and Research Services (https://www.montana.edu/statisticalconsulting/). His research interests have involved statistical methods and applications in environmental sciences, education, and biological sciences. Recent work has involved researching diagnostic methods for Multiple Sclerosis. His current research grants include funding from the Mountain West IDeA Clinical and Translational Research - Infrastructure Network  (National Institute of General Medical Sciences Grant 5U54GM104944-08) and a grant from the National Multiple Sclerosis Society (RG-1907-34348).
