@@ -57,7 +57,7 @@ yearly_species_weight <- surveys %>%
 
 *  In order to focus this workshop on coding, we developed this interactive website for you to play in a set of "sandboxes" and try your hand at implementing the methods we are discussing. When each code chunk is ready to run (all can be edited, many have the code prepared for you), you can click on "Run Code". This will run `R` in the background on a server. For the "Challenges", you can get your answer graded although many have multiple "correct" answers, so don't be surprised if our "correct" answer differs from yours. The "Solution" is also provided in some cases so you can see a solution - but you will learn more by trying the challenge first before seeing the answer. Each sandbox functions independently, which means that you can pick up working at any place in the documents and re-set your work without impacting other work (this is VERY different from how `R` usually works!). Hopefully this allows you to focus on the code and what it does... The "Start over" button can be used on any individual sandbox or you can use the one on the left tile will re-set all the code chunks to the original status. 
 
-*  These workshops are taught by Sara Mannheimer, Greta Linse, and Mark Greenwood and co-organized by the MSU Library, Statistical Consulting and Research Services (SCRS), and the Department of Mathematical Sciences. More details on us and other workshops are available at the end of the session or via https://www.montana.edu/datascience/training/#workshop-recordings.
+*  These workshops are taught by Sara Mannheimer, Greta Linse, Eliot Liucci, and Harley Clifton and co-organized by the MSU Library, Statistical Consulting and Research Services (SCRS), and the Department of Mathematical Sciences. More details on us and other workshops are available at the end of the session or via https://www.montana.edu/datascience/training/#workshop-recordings.
 
 ## Data Viz Introduction
 
@@ -1418,8 +1418,8 @@ library(gridExtra)
 
 spp_weight_boxplot <- surveys %>% 
   ggplot(aes(x = genus, y = weight)) +
+  geom_jitter(color = "tomato", width = 0.2, alpha = 0.2) +
   geom_violin() +
-  geom_jitter(color = "tomato", width = 0.2, alpha = 0.2) + 
   scale_y_log10() +
   ## log (base 10) transforms the y-axis variable
   ## (helps to make the plot less skewed)
@@ -1581,7 +1581,7 @@ The workshops for 2022-2023 involve modifications of materials and are being tau
 ### Eliot Liucci
 
 
-* Eliot Liucci is a senior in the Mathematics (Statistics Option) here at Montana State University. He works in the Mathematics Statistics Center and has been a Teaching Assistant for STAT 216 and STAT 217. He hopes to move into Data Analysis and Education in order to help streamline the way Statistics is taught to students and will start the M.S. in Statistics program in Spring 2023.
+* Eliot Liucci is a senior in the Mathematics (Statistics Option) Program here at Montana State University. He is currently working on a research project with the Mathematics and Statistics Center to analyze the impact of different time based variables on overall MSC foot traffic and usage. Throughout his experience as a Teaching Assistant for STAT 216 and STAT 217, Eliot has gained a deeper understanding of statistical methods and educational approaches. Eliot will graduate at the end of Fall 2022 with his bachelors and will start the M.S. in Statistics program in Spring 2023. His interests include environmental statistics, video games, and he restores vintage automobiles and motorcycles in his free time.
 
 ### Mark Greenwood
 
