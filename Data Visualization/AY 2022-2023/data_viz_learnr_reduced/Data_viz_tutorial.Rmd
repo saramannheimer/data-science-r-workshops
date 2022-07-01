@@ -18,6 +18,7 @@ library(gradethis)
 library(datasauRus)
 library(gridExtra)
 library(plotly)
+library(patchwork)
 #library(tufte)
 knitr::opts_chunk$set(echo = FALSE, exercise.checker = gradethis::grade_learnr)
 
@@ -30,6 +31,32 @@ yearly_species_weight <- surveys %>%
   group_by(year, species_id) %>%
   ## Variables to group by
   summarize(avg_weight = mean(weight))
+
+spp_weight_boxplot <- surveys %>% 
+  ggplot(aes(x = genus, y = weight)) +
+  geom_violin() +
+  geom_jitter(color = "tomato", width = 0.2, alpha = 0.2) +
+  scale_y_log10() +
+  ## log (base 10) transforms the y-axis variable
+  ## (helps to make the plot less skewed)
+  labs(x = "", 
+       ## removes the y-axis label
+       y = expression(Log[10](Weight))) +
+       ## Expression creates a mathematical expression in the axis label
+       ## the [10] refers to the subscript next to Log
+  coord_flip() + 
+  theme(axis.text.y = element_text(size = 12), 
+        axis.text.x = element_text(size = 12), 
+        text = element_text(size = 16))
+
+spp_count_plot <- yearly_counts %>% 
+  ggplot(aes(x = year, y = n, color = genus)) +
+  geom_line() + 
+  labs(x = "Year", 
+       y = "Abundance", 
+       color = "Genus") +
+  theme(axis.title.x = element_text(face = "bold", size = 12))
+
 ```
 
 
@@ -1405,11 +1432,13 @@ grade_code()
 ```
 
 
-## Arranging and Exporting Plots
+## Arranging Plots
 
 Faceting is a great tool for splitting one plot into multiple plots, but 
 sometimes you may want to produce a single figure that contains multiple plots 
-using different variables or even different data frames. The **`gridExtra`** 
+using different variables or even different data frames. 
+
+The **`gridExtra`** 
 package allows us to combine separate ggplots into a single figure using 
 `grid.arrange()` (make sure to scroll down in the window to see all the code):
 
@@ -1418,8 +1447,8 @@ library(gridExtra)
 
 spp_weight_boxplot <- surveys %>% 
   ggplot(aes(x = genus, y = weight)) +
-  geom_jitter(color = "tomato", width = 0.2, alpha = 0.2) +
   geom_violin() +
+  geom_jitter(color = "tomato", width = 0.2, alpha = 0.2) +
   scale_y_log10() +
   ## log (base 10) transforms the y-axis variable
   ## (helps to make the plot less skewed)
@@ -1450,13 +1479,18 @@ grid.arrange(spp_weight_boxplot, spp_count_plot, ncol = 2, widths = c(4, 6))
 In addition to the `ncol` and `nrow` arguments, used to make simple arrangements,
 there are tools for [constructing more complex layouts](https://cran.r-project.org/web/packages/gridExtra/vignettes/arrangeGrob.html). 
 
+For more assistance arranging plots with `grid.arrage()`. We find the following 
+vignette **very** helpful! https://cran.r-project.org/web/packages/egg/vignettes/Ecosystem.html
 
-For more assistance arranging plots with `grid.arrage()`. I find the following 
-vignette **very** helpful! 
+Another option for combining plots is the [patchwork package](https://patchwork.data-imaginist.com/). It uses a sort of formula interface for defining the layout of multiple plots. For example, you can get two plots side-by-side in a one row, two column array with `p1 + p2` and two plots stacked into two rows and one column with `p1 / p2`. This provides both a quick and powerful way to arrange ggplots you have created.
 
-https://cran.r-project.org/web/packages/egg/vignettes/Ecosystem.html
+```{r arrange2, message = FALSE, fig.width = 10, fig.height=6, exercise = TRUE}
+spp_weight_boxplot / spp_count_plot
 
-### Exporting Plots 
+```
+
+
+## Exporting Plots 
 
 After creating your plot, you can save it to a file in your favorite format. The
 Export tab in the **Plot** pane in RStudio will save your plots at low 

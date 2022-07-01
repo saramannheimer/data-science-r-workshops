@@ -79,11 +79,11 @@ quiz(caption = "Quiz - Install R",
     answer("Never.", message = "A new version of R is released about once a year. I'll assume that you are using the newest version of R, which will be the fastest version with the fewest unexpected behaviors." )
   ),
   question("What is the current version of R?",
-    answer("3.3.2", message = "It is at least version 4.1.1."),
-    answer("3.6.2", message = "It is at least version 4.1.1."),
-    answer("4.0.5", message = "It is at least version 4.1.1."),
-    answer("4.1.1", correct = TRUE, "It was version 4.1.1 when I built this, but the current version might have a higher number (could be newer)."),
-    answer("Other", message = "It was version 4.1.1 when I built this, but the current version might have a higher number (could be newer).")
+    answer("3.3.2", message = "It is at least version 4.2.0."),
+    answer("3.6.2", message = "It is at least version 4.2.0."),
+    answer("4.0.5", message = "It is at least version 4.2.0."),
+    answer("4.2.0", correct = TRUE, "It was version 4.2.0 when I built this, but the current version might have a higher number (could be newer)."),
+    answer("Other", message = "It was version 4.2.0 when I built this, but the current version might have a higher number (could be newer).")
   )
 )
 
@@ -124,11 +124,11 @@ quiz(caption = "Quiz - Install RStudio",
     answer("No.", message = "R does not come with RStudio; you need to install R separately.")
   ),
   question("What is the current version of RStudio IDE?",
-    answer("1.0.136", message = "It is at least version 1.4.1717."),
-    answer("1.4.1717", correct = TRUE, "It was version 1.4.1717 when I built this, but the current version might have a higher number (could be newer)."),
-    answer("4.1.1", message = "That was the current version of R, RStudio is at least version 1.4.1717."),
-    answer("1.4", message = "It is at least version 1.4.1717."),
-    answer("Other", message = "It was version 1.4.1717 when I built this, but the current version might have a higher number (could be newer).")
+    answer("1.0.136", message = "It is at least version 2022.02.3."),
+    answer("2022.02.3", correct = TRUE, "It was version 2022.02.3 when I built this, but the current version might have a higher number (could be newer)."),
+    answer("4.2.0", message = "That was the current version of R, RStudio is at least version 2022.02.3."),
+    answer("1.4", message = "It is at least version 2022.02.3."),
+    answer("Other", message = "It was version 2022.02.3 when I built this, but the current version might have a higher number (could be newer).")
   )
 )
 ```
