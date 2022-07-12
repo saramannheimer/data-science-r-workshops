@@ -122,7 +122,7 @@ wrangling.
 
 To learn more about **`dplyr`** and **`tidyr`** after the workshop, you may want
 to check out this
-[handy data transformation with **`dplyr`** cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf) and this [cheatsheet about **`tidyr`**](https://github.com/rstudio/cheatsheets/raw/master/data-import.pdf).
+[handy data transformation with **`dplyr`** cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf) and this [cheatsheet about **`tidyr`**](https://raw.githubusercontent.com/rstudio/cheatsheets/main/tidyr.pdf).
 
 ### Presentation of the Survey Data
 
@@ -150,7 +150,7 @@ surveys <- read_csv("https://raw.githubusercontent.com/saramannheimer/data-scien
 ```
 
 
-You will see the message `Parsed with column specification`, followed by each 
+You will see the message `Column specification`, followed by each 
 column name and its data type. When you execute `read_csv` on a data file, it 
 looks through the first 1000 rows of each column and guesses the data type for 
 each column as it reads it into `R`. For example, in this dataset, `read_csv` reads
@@ -173,9 +173,7 @@ View(surveys)
 surveys
 ```
 
-Notice that the class of the data is now `tbl_df`
-
-This is referred to as a "tibble". Tibbles tweak some of the behaviors of the 
+The data set is stored as a "tibble". Tibbles tweak some of the behaviors of the 
 data frame objects we introduced previously. The data structure is
 very similar to a data frame. For our purposes the only differences are that:
 
@@ -560,7 +558,7 @@ functions, such as:
 -  `minute()` 
 -  `second()`
 
-For additional information about `lubridate` visit [the `lubridate` reference website](https://lubridate.tidyverse.org/) or look over the [`lubridate` cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/lubridate.pdf). 
+For additional information about `lubridate` visit [the `lubridate` reference website](https://lubridate.tidyverse.org/) or look over the [`lubridate` cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/lubridate.pdf). 
 
 ## Character Wrangling   
 
@@ -666,7 +664,7 @@ suite of tools that solve common problems with factors, including changing the
 order of levels or the values.
 
 The order of the levels `R` chose may not be what we wanted, but we can 
-reorder them using the `fct_relevel()` function from the `forcats` package. 
+reorder them using the `fct_relevel()` function from the `forcats` package (the [`forcats` cheatsheet link](https://raw.githubusercontent.com/rstudio/cheatsheets/main/factors.pdf). 
 The function takes three arguments: 
 
 1. the data 
@@ -689,8 +687,7 @@ surveys_edited <- surveys_days_full %>%
 glimpse(surveys_edited$day_of_week)
 ```
 
-> ### Challenge 6
-> ![](images/medium.jpg)
+> ### Challenge 6 ![](images/medium.jpg)
 > Verify that `R` put the days in the order that you specified! 
 
 ```{r challenge-6, exercise=TRUE, exercise.eval=TRUE}
@@ -1177,6 +1174,12 @@ a variable.
 We can do both these of transformations with two `tidyr` functions, 
 `pivot_longer()` and `pivot_wider()`.
 
+
+```{r echo =F}
+#include_graphics("images/tidyr-pivot_wider_longer.gif")
+```
+
+
 ### Pivoting to a Wider Table
 
 `pivot_wider()` takes three principal arguments:
@@ -1441,25 +1444,6 @@ grade_result(
 )
 ```
 
-> ### Challenge 11 Bonus: ![](images/hot.jpg)
-> 
-> If you attended the Data Visualization workshop, make a plot of average hindfoot_lengths and weights with colors for the points based on the plot_type.
-
-
-```{r challenge-11-p-3, exercise=TRUE, exercise.lines=20}
-
-
-```
-
-```{r challenge-11-p-3-solution}
-
-measurement_avg_wide %>% 
-  ggplot(aes(x=hindfoot_length, y=weight, colour=plot_type)) +
-  geom_jitter() +
-  theme_bw()
-
-
-```
 
 
 ## Exporting Data
@@ -1536,6 +1520,32 @@ write_csv(surveys_complete_subset, path = "data/surveys_complete_subset.csv")
 ```
 
 Happy wrangling!
+
+
+------
+
+## Additional Practice
+
+> ### Challenge 11 Bonus: ![](images/hot.jpg)
+> 
+> If you attended the Data Visualization workshop, make a plot of average hindfoot_lengths and weights with colors for the points based on the plot_type.
+
+
+```{r challenge-11-p-3, exercise=TRUE, exercise.lines=20}
+
+
+```
+
+```{r challenge-11-p-3-solution}
+
+measurement_avg_wide %>% 
+  ggplot(aes(x=hindfoot_length, y=weight, colour=plot_type)) +
+  geom_jitter() +
+  theme_bw()
+
+
+```
+
 
 
 ------
