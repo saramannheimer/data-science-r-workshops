@@ -1094,7 +1094,7 @@ contains the key, the values of `x`, and the values of `y`. Importantly, this
 join deletes observations that do not have a match. 
 
 ```{r fig.cap="Wickham, H. & Grolemund, G. (2017) *R for Data Science*. Sebastopol, California: O'Reilly."}
-knitr::include_graphics("images/inner.jpg")
+knitr::include_graphics("images/inner-join.gif")
 ```
 
 
@@ -1109,7 +1109,9 @@ data tables. When joining `x` with `y`, there are three types of outer join:
 - A *full join* keeps all of the observations in both `x` and `y`. 
 
 ```{r fig.cap="Wickham, H. & Grolemund, G. (2017) *R for Data Science*. Sebastopol, California: O'Reilly."}
-knitr::include_graphics("images/joins.jpg")
+knitr::include_graphics("images/left-join.gif")
+knitr::include_graphics("images/right-join.gif")
+knitr::include_graphics("images/full-join.gif")
 ```
 
 The left join is the most common, as you typically have a data frame (`x`) that 
@@ -1176,7 +1178,7 @@ We can do both these of transformations with two `tidyr` functions,
 
 
 ```{r echo =F}
-#include_graphics("images/tidyr-pivot_wider_longer.gif")
+knitr::include_graphics("images/tidyr-pivot_wider_longer.gif")
 ```
 
 
@@ -1191,7 +1193,9 @@ We can do both these of transformations with two `tidyr` functions,
 Further arguments include `fill` which, if set, fills in missing values with 
 the value provided.
 
-![](images/long_to_wide.jpg)
+```{r}
+knitr::include_graphics("images/pivot_wider_graphic.png")
+```
 
 Let's use `pivot_wider()` to transform surveys to find the mean weight of each 
 genus in each plot over the entire survey period. We use `filter()`,
@@ -1289,7 +1293,9 @@ names.
 3. the name of the new column to create to store the names of each selected column
 4. the name of the new column to create to store the data filled in each cell
 
-![](images/wide_to_long.jpg)
+```{r}
+knitr::include_graphics("images/pivot_longer_graphic.png")
+```
 
 To recreate `surveys_gw` from `surveys_wide` we would create a key called
 `genus` and value called `mean_weight` and use all columns except `plot_id` for
