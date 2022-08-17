@@ -1565,7 +1565,6 @@ spp_weight_boxplot <- surveys %>%
         text = element_text(size = 16)) +
   theme_bw()
 
-ggplotly(spp_weight_boxplot)
 
 spp_count_plot <- yearly_counts %>% 
   ggplot(aes(x = year, y = n, color = genus)) +
@@ -1575,6 +1574,10 @@ spp_count_plot <- yearly_counts %>%
        color = "Genus") +
   theme(axis.title.x = element_text(face = "bold", size = 12)) +
   theme_bw()
+
+
+ggplotly(spp_weight_boxplot);
+
 
 ggplotly(spp_count_plot)
 ```
