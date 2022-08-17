@@ -1567,7 +1567,6 @@ spp_weight_boxplot <- surveys %>%
 
 ggplotly(spp_weight_boxplot)
 
-
 spp_count_plot <- yearly_counts %>% 
   ggplot(aes(x = year, y = n, color = genus)) +
   geom_line() + 
