@@ -1,8 +1,8 @@
 ---
 title: "Introduction to R"
 author: |
-  "Data & Software Carpentry, with edits and reorganization by the  
-  Montana State University R Workshops Team"
+  Data & Software Carpentry, with edits and reorganization by the  
+  Montana State University R Workshops Team
 output:
   pdf_document:
     fig_height: 3
@@ -16,7 +16,7 @@ header-includes: |
   \usepackage{fancyhdr}
   \pagestyle{fancy}
   \fancyfoot[LO,RE]{Introduction to R Workshop}
-  \fancyfoot[CO,CE]{September 7, 2021}
+  \fancyfoot[CO,CE]{September 7, 2022}
   \fancyfoot[LE,RO]{\thepage}
 ---
 
@@ -48,7 +48,7 @@ of their operating system!
 
 For this workshop, we will be making use of the RStudio that you will need to install on your computer. For more details on this, you have hopefully completed the steps discussed here https://greenwood-stat.shinyapps.io/InstallDemo_RWorkshops/. The short version for downloading is to first go to https://cloud.r-project.org/ to `R` installed and then go to https://rstudio.com/products/rstudio/download/ to install RStudio. 
 
-You need to have a computer that is running Linux, Windows, or a somewhat recent macOS. Unfortunately, a chromebook or ipad are not sufficient for installing and running R.
+You need to have a computer that is running Linux, Windows, or a somewhat recent macOS. Unfortunately, a Chromebook or iPad are not sufficient for installing and running R.
 
 However you get to it, RStudio has four possible panels, where each can be viewed at the same time and
 has multiple tabs available.  
