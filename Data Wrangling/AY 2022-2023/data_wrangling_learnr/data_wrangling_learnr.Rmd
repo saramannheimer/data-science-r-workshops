@@ -26,7 +26,7 @@ source("setup-code-chunks.R")
 
 *  In order to focus this workshop on coding, we developed this interactive website for you to play in a set of "sandboxes" and try your hand at implementing the methods we are discussing. When each code chunk is ready to run (all can be edited, many have the code prepared for you), you can click on "Run Code". This will run `R` in the background on a server. For the "Challenges", you can get your answer graded although many have multiple "correct" answers, so don't be surprised if our "correct" answer differs from yours. The "Solution" is also provided in some cases so you can see a solution - but you will learn more by trying the challenge first before seeing the answer. Each sandbox functions independently, which means that you can pick up working at any place in the documents and re-set your work without impacting other work (this is VERY different from how `R` usually works!). Hopefully this allows you to focus on the code and what it does... The "Start over" button can be used on any individual sandbox or you can use the one on the left tile will re-set all the code chunks to the original status. 
 
-*  These workshops are taught by Sara Mannheimer, Greta Linse, and Mark Greenwood and co-organized by the MSU Library, Statistical Consulting and Research Services (SCRS), and the Department of Mathematical Sciences. More details on us and other workshops are available at the end of the session.
+*  These workshops are taught by Sara Mannheimer, Greta Linse, Harley Clifton, and Eliot Liucci and co-organized by the MSU Library, Statistical Consulting and Research Services (SCRS), and the Department of Mathematical Sciences. More details on us and other workshops are available at the end of the session.
 
 Let's get started! 
 
@@ -146,7 +146,7 @@ We'll read in our data using the `read_csv()` function, from the tidyverse
 package **`readr`**, instead of `read.csv()`.
 
 ```{r load-data, exercise=TRUE}
-surveys <- read_csv("https://raw.githubusercontent.com/saramannheimer/data-science-r-workshops/master/Data%20Wrangling/AY%202020-2021/data_wrangling_learnr/data/surveys2_subset.csv")
+surveys <- read_csv("https://raw.githubusercontent.com/saramannheimer/data-science-r-workshops/master/Data%20Wrangling/AY%202022-2023/data_wrangling_learnr/data/surveys2_subset.csv")
 ```
 
 
