@@ -124,7 +124,7 @@ wrangling.
 
 To learn more about **`dplyr`** and **`tidyr`** after the workshop, you may want
 to check out this
-[handy data transformation with **`dplyr`** cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf) and this [cheatsheet about **`tidyr`**](https://github.com/rstudio/cheatsheets/raw/master/data-import.pdf).
+[handy data transformation with **`dplyr`** cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf) and this [cheatsheet about **`tidyr`**](https://raw.githubusercontent.com/rstudio/cheatsheets/main/tidyr.pdf).
 
 ### Presentation of the Survey Data
 
@@ -152,7 +152,7 @@ surveys <- read_csv("https://raw.githubusercontent.com/saramannheimer/data-scien
 ```
 
 
-You will see the message `Parsed with column specification`, followed by each 
+You will see the message `Column specification`, followed by each 
 column name and its data type. When you execute `read_csv` on a data file, it 
 looks through the first 1000 rows of each column and guesses the data type for 
 each column as it reads it into `R`. For example, in this dataset, `read_csv` reads
@@ -175,9 +175,7 @@ View(surveys)
 surveys
 ```
 
-Notice that the class of the data is now `tbl_df`
-
-This is referred to as a "tibble". Tibbles tweak some of the behaviors of the 
+The data set is stored as a "tibble". Tibbles tweak some of the behaviors of the 
 data frame objects we introduced previously. The data structure is
 very similar to a data frame. For our purposes the only differences are that:
 
@@ -551,7 +549,7 @@ functions, such as:
 -  `minute()` 
 -  `second()`
 
-For additional information about `lubridate` visit [the `lubridate` reference website](https://lubridate.tidyverse.org/) or look over the [`lubridate` cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/lubridate.pdf). 
+For additional information about `lubridate` visit [the `lubridate` reference website](https://lubridate.tidyverse.org/) or look over the [`lubridate` cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/lubridate.pdf). 
 
 ## Character Wrangling   
 
@@ -649,7 +647,7 @@ suite of tools that solve common problems with factors, including changing the
 order of levels or the values.
 
 The order of the levels `R` chose may not be what we wanted, but we can 
-reorder them using the `fct_relevel()` function from the `forcats` package. 
+reorder them using the `fct_relevel()` function from the `forcats` package (the [`forcats` cheatsheet link](https://raw.githubusercontent.com/rstudio/cheatsheets/main/factors.pdf). 
 The function takes three arguments: 
 
 1. the data 
@@ -672,7 +670,7 @@ surveys_edited <- surveys_days_full %>%
 glimpse(surveys_edited$day_of_week)
 ```
 
-> ### Challenge 6
+> ### Challenge 6 ![](images/medium.jpg)
 > ![](images/medium.jpg)
 > Verify that `R` put the days in the order that you specified! 
 
@@ -1144,7 +1142,7 @@ We can do both these of transformations with two `tidyr` functions,
 Further arguments include `fill` which, if set, fills in missing values with 
 the value provided.
 
-![](images/long_to_wide.jpg)
+![](images/pivot_wider_graphic.png)
 
 Let's use `pivot_wider()` to transform surveys to find the mean weight of each 
 genus in each plot over the entire survey period. We use `filter()`,
@@ -1233,7 +1231,7 @@ names.
 3. the name of the new column to create to store the names of each selected column
 4. the name of the new column to create to store the data filled in each cell
 
-![](images/wide_to_long.jpg)
+![](images/pivot_longer_graphic.png)
 
 To recreate `surveys_gw` from `surveys_wide` we would create a key called
 `genus` and value called `mean_weight` and use all columns except `plot_id` for
@@ -1369,29 +1367,6 @@ measurement_avg_wide <- measurement_averages %>%
   pivot_wider(names_from = measurement, values_from = avg_measure)
 ```
 
-
-
-> ### Challenge 11 Bonus: ![](images/hot.jpg)
-> 
-> If you attended the Data Visualization workshop, make a plot of average hindfoot_lengths and weights with colors for the points based on the plot_type.
-
-
-```{r challenge-11-p-3}
-
-
-```
-
-```{r challenge-11-p-3-solution, include=TRUE}
-
-measurement_avg_wide %>% 
-  ggplot(aes(x=hindfoot_length, y=weight, colour=plot_type)) +
-  geom_jitter() +
-  theme_bw()
-
-
-```
-
-
 ## Exporting Data
 
 Now that you have learned how to use **`dplyr`** to extract information from
@@ -1470,36 +1445,66 @@ Happy wrangling!
 
 ------
 
+> ### Challenge 11 Bonus: ![](images/hot.jpg)
+> 
+> If you attended the Data Visualization workshop, make a plot of average hindfoot_lengths and weights with colors for the points based on the plot_type.
+
+
+```{r challenge-11-p-3}
+
+
+```
+
+```{r challenge-11-p-3-solution, include=TRUE}
+
+measurement_avg_wide %>% 
+  ggplot(aes(x=hindfoot_length, y=weight, colour=plot_type)) +
+  geom_jitter() +
+  theme_bw()
+
+
+```
 ## Other Workshops in the Series
 
 The goal of this workshop was to teach you to write code in `R` to perform data wrangling in a reproducible fashion. Recordings of the previous workshops are available at http://www.montana.edu/datascience/training/. We plan to offer this same series in the spring (dates to be determined) and so these web-interface "Shiny" apps will continue to evolve and links might change. If they are not available when you try to revisit them, please contact   one of the authors and we can point you to the current versions of them. 
 
 
-The first workshop in our series contains more information on how to get started working in `R` using RStudio. The second workshop contains information on how to write code to visualize data using `ggplot2`. The third workshop, Intermediate R, explored more sophisticated R code involving logicals, loops, and functions. The codechunks in this interactive document mimic the codechunks you can use on your own projects in RMarkdown but you will need to download and install both `R` and RStudio on your own computer. 
+The first workshop in our series contains more information on how to get started working in `R` using RStudio. The second workshop contains information on how to write code to visualize data using `ggplot2`. The third workshop, Intermediate R, explored more sophisticated R code involving logicals, loops, and functions. The code chunks in this interactive document mimic the code chunks you can use on your own projects in RMarkdown but you will need to download and install both `R` and RStudio on your own computer. 
 
 ## Montana State University `R` Workshops Team
 
-These materials were adapted from materials generated by the Data Carpentries (https://datacarpentry.org/) and were originally developed at MSU by Dr. Allison Theobold. The workshop series is co-organized by the Montana State University Library, Department of Mathematical Sciences, and Statistical Consulting and Research Services (SCRS, https://www.montana.edu/statisticalconsulting/). SCRS is supported by Montana INBRE (National Institutes of Health, Institute of General Medical Sciences Grant Number P20GM103474). The workshops for 2020-2021 are supported by Faculty Excellence Grants from MSU's Center for Faculty Excellence. 
+These materials were adapted from materials generated by the Data Carpentries (https://datacarpentry.org/) and were originally developed at MSU by Dr. Allison Theobold. The workshop series is co-organized by the Montana State University Library, Department of Mathematical Sciences, and Statistical Consulting and Research Services (SCRS, https://www.montana.edu/statisticalconsulting/). SCRS is supported by Montana INBRE (National Institutes of Health, Institute of General Medical Sciences Grant Number P20GM103474). The workshops for 2020-2022 were supported by Faculty Excellence Grants from MSU's Center for Faculty Excellence. 
 
-Research related to the development of these workshops is to appear in:
+Research related to the development of these workshops appeared in:
 
-* Theobold, A., Hancock, S., & Mannheimer, S.. Data Science Workshops for Data-Intensive Environmental Science Research, _Journal of Statistics Education_. 
+* Allison S. Theobold, Stacey A. Hancock & Sara Mannheimer (2021) Designing Data Science Workshops for Data-Intensive Environmental Science Research, _Journal of Statistics and Data Science Education_, 29:sup1, S83-S94, DOI: 10.1080/10691898.2020.1854636
 
-The workshops for 2020-2021 involve modifications of materials and are licensed CC-BY. ![Creative Commons License](images/88x31.png) This work is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
+The workshops for 2022-2023 involve modifications of materials and are licensed CC-BY. ![Creative Commons License](images/88x31.png) This work is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
 
-The workshops for 2020-2021 involve modifications of materials and are being taught by:
+The workshops for 2022-2023 involve modifications of materials and are being taught by:
 
 ### Sara Mannheimer
 
-* Sara Mannheimer is an Associate Professor and Data Librarian at Montana State University Library (http://www.lib.montana.edu/people/about/139), where she helps shape practices and theories for curation, publication, and preservation of data (https://www.lib.montana.edu/services/data/). Her research is rooted in the examination of the social, ethical, and technical issues that arise as we grapple with the implications of a data-driven world.
+* Sara Mannheimer is an Associate Professor and Data Librarian at Montana State University, where she helps shape practices and theories for curation, publication, and preservation of data. Her research examines the social, ethical, and technical issues of a data-driven world. She is the project lead for the MSU Dataset Search, and she is working on a book about data curation to support responsible qualitative data reuse and big social research.
 
 ### Greta Linse
 
-* Greta Linse is the Assistant Director of Statistical Consulting and Research Services (https://www.montana.edu/statisticalconsulting/) and the Project Manager for the Human Ecology Learning and Problem Solving (HELPS) Lab (https://helpslab.montana.edu). Greta has been teaching, documenting and working with statistical software including R and RStudio for over 10 years.
+* Greta Linse is the Interim Director of Statistical Consulting and Research Services (https://www.montana.edu/statisticalconsulting/) and the Project Manager for the Human Ecology Learning and Problem Solving (HELPS) Lab (https://helpslab.montana.edu). Greta has been teaching, documenting and working with statistical software including R and RStudio for over 10 years.
+
+				  
+
+### Harley Clifton
+
+* Harley Clifton is an undergraduate senior pursuing a degree in Mathematics (Statistics Option) with a minor in Psychology. She enjoys teaching nuanced coding skills and Data Visualization strategies through her experience as a Teaching Assistant for STAT 216 and STAT 408. Harley recently attended the Summer Institute in Biostatistics and Undergraduate Data Science at the University of California Irvine, funded by the National Institute Of Allergy And Infectious Diseases of the National Institutes of Health (under Award Number R25AI170491). Her areas of interest include quantifying behaviors and societal attitudes, behavior modification to reduce discrimination, Deaf culture and history, and women’s health.
+
+### Eliot Liucci
+
+
+* Eliot Liucci is a senior in the Mathematics (Statistics Option) Program here at Montana State University. He is currently working on a research project with the Mathematics and Statistics Center to analyze the impact of different time based variables on overall MSC foot traffic and usage. Throughout his experience as a Teaching Assistant for STAT 216 and STAT 217, Eliot has gained a deeper understanding of statistical methods and educational approaches. Eliot will graduate at the end of Fall 2022 with his bachelors and will start the M.S. in Statistics program in Spring 2023. His interests include environmental statistics, video games, and he restores vintage automobiles and motorcycles in his free time.
 
 ### Mark Greenwood
 
-* Mark Greenwood is a Professor of Statistics in the Department of Mathematical Sciences at Montana State University and Director of Statistical Consulting and Research Services (https://www.montana.edu/statisticalconsulting/). His research interests have involved statistical methods and applications in environmental sciences, education, and biological sciences. Recent work has involved researching diagnostic methods for Multiple Sclerosis. His current research grants include funding from the Mountain West IDeA Clinical and Translational Research - Infrastructure Network  (National Institute of General Medical Sciences Grant 5U54GM104944-07) and a grant from the National Multiple Sclerosis Society (RG-1907-34348); SCRS is supported by Montana INBRE (National Institutes of Health, Institute of General Medical Sciences, Grant P20GM103474).
+* Mark Greenwood is a Professor of Statistics in the Department of Mathematical Sciences at Montana State University and the former Director of Statistical Consulting and Research Services (https://www.montana.edu/statisticalconsulting/). His research interests have involved statistical methods and applications in environmental sciences, education, and biological sciences. Recent work has involved researching diagnostic methods for Multiple Sclerosis. His current research grants include funding from the Mountain West IDeA Clinical and Translational Research - Infrastructure Network  (National Institute of General Medical Sciences Grant 5U54GM104944-08) and a grant from the National Multiple Sclerosis Society (RG-1907-34348).
 
 
 
