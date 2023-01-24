@@ -1067,6 +1067,7 @@ The workshops for 2022-2023 involve modifications of materials and are being tau
 
 ### Esther Birch
 
+* Esther Birch is an instructor at MSU who has been teaching Introduction to Statistics and Intermediate Statistics full-time since 2018, when she received her M.S. in statistics. Additionally, she is the Director of the Math Testing Center. Esther greatly enjoys teaching coding in R, as well as making visualizations. Outside of statistics, she can be found puttering in her garden or losing balls on the golf course.
 
 Fall 2022 instructors also included:
 
