@@ -46,7 +46,7 @@ hence both need to be installed on your computer. Both `R` and `RStudio` are
 cross-platform, so that everyone's versions look and operate the same regardless
 of their operating system! 
 
-For this workshop, we will be making use of the RStudio that you will need to install on your computer. For more details on this, you have hopefully completed the steps discussed here https://greenwood-stat.shinyapps.io/InstallDemo_RWorkshops/. The short version for downloading is to first go to https://cloud.r-project.org/ to `R` installed and then go to https://posit.co/download/rstudio-desktop/ to install RStudio.
+For this workshop, we will be making use of the RStudio that you will need to install on your computer. For more details on this, you have hopefully completed the steps discussed here https://greenwood-stat.shinyapps.io/InstallDemo_RWorkshops/. The short version for downloading is to first go to https://cloud.r-project.org/ to get `R` installed and then go to https://posit.co/download/rstudio-desktop/ to install RStudio.
 
 You need to have a computer that is running Linux, Windows, or a somewhat recent macOS. Unfortunately, a Chromebook or iPad are not sufficient for installing and running R.
 
