@@ -1,22 +1,24 @@
 ---
-title: "Wrangling, Analyzing and Exporting Data with the Tidyverse"
-author: "Data Carpentry contributors & MSU R Workshop Leadership Team"
-output: learnr::tutorial
-runtime: shiny_prerendered
+title: "Wrangling, Analyzing and Exporting Data with the Tidyverse Handout"
+author: "Data Carpentry contributors & Montana State University R Workshops Team"
+date: "3/8/2023"
+output: pdf_document
+header-includes: |
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyfoot[LO,RE]{Data Wrangling}
+  \fancyfoot[CO,CE]{November 17, 2021}
+  \fancyfoot[LE,RO]{\thepage}
 ---
 
 ```{r setup, include=FALSE}
-library(learnr)
 library(tidyverse)
-library(gradethis)
 library(lubridate)
-knitr::opts_chunk$set(echo = FALSE, exercise.checker = gradethis::grade_learnr,
-                      fig.align = "center")
+knitr::opts_chunk$set(echo = TRUE, eval=TRUE, fig.align = "center")
 
 surveys <- read_csv("data/surveys2_subset.csv")
 plots <- read_csv("data/plots.csv")
 species <- read_csv("data/species.csv")
-source("setup-code-chunks.R")
 ```
 
 
@@ -145,8 +147,8 @@ Each row holds information for a single animal, and the columns represent:
 We'll read in our data using the `read_csv()` function, from the tidyverse 
 package **`readr`**, instead of `read.csv()`.
 
-```{r load-data, exercise=TRUE}
-surveys <- read_csv("https://raw.githubusercontent.com/saramannheimer/data-science-r-workshops/master/Data%20Wrangling/AY%202022-2023/data_wrangling_learnr/data/surveys2_subset.csv")
+```{r load-data}
+surveys <- read_csv("https://raw.githubusercontent.com/saramannheimer/data-science-r-workshops/master/Data%20Wrangling/AY%202020-2021/data_wrangling_learnr/data/surveys2_subset.csv")
 ```
 
 
@@ -159,7 +161,7 @@ each column as it reads it into `R`. For example, in this dataset, `read_csv` re
 manually by using the `col_types` argument in `read_csv`.
 
 
-```{r inspect-data, exercise=TRUE}
+```{r inspect-data}
 ## inspect the data
 glimpse(surveys)
 ```
@@ -202,11 +204,11 @@ arguments are the columns to keep.
 
 Modify the following code to select the `plot_id`, `species_id`, and `weight` columns from the `survey` dataset:
 
-```{r select-columns, exercise=TRUE, exercise.eval=TRUE}
+```{r select-columns}
 select(surveys)
 ```
 
-```{r select-columns-solution}
+```{r select-columns-solution, include=TRUE}
 select(surveys, plot_id, species_id, weight)
 ```
 
@@ -215,11 +217,11 @@ the variable to exclude it.
 
 Modify the following code to select all columns *except* `record_id` and `species_id`:
 
-```{r donot-select-columns, exercise=TRUE, exercise.eval=TRUE}
+```{r donot-select-columns}
 select(surveys)
 ```
 
-```{r donot-select-columns-solution}
+```{r donot-select-columns-solution, include=TRUE}
 select(surveys, -record_id, -species_id)
 ```
 
@@ -228,7 +230,7 @@ and `species_id`.
 
 To choose rows based on a specific criteria, use `filter()`:
 
-```{r filter-rows-1999, exercise=TRUE}
+```{r filter-rows-1999}
 filter(surveys, year == 1999)
 ```
 
@@ -238,7 +240,7 @@ Other filtering options include `!=`, which keeps all rows that are **not** a ce
 
 1.  `!=` example: 
 
-    ```{r filter-exclude-rows-example, exercise=TRUE}
+    ```{r filter-exclude-rows-example}
     filter(surveys, year != 1999)
     ```
     
@@ -246,36 +248,40 @@ Other filtering options include `!=`, which keeps all rows that are **not** a ce
     
 2.  `,` example:
     
-    ```{r filter-comma-example, exercise=TRUE}
+    ```{r filter-comma-example}
     filter(surveys, year == 1999 , plot_id == 2)
     ```
     
     The code above keeps all rows where the year is 1999 for plot id 2, i.e., year 1999 and plot 2. The rows meet **both** of these criteria. 
     
+
 3.  `|` example:
 
-    ```{r filter-or-example, exercise=TRUE}
+    ```{r filter-or-example}
     filter(surveys, year == 1999 | plot_id == 2)
     ```
     
     The code above keeps all rows where the year is 1999 **or** is plot id 2, i.e., year 1999 or plot 2. The rows meet **either** of these criteria but not both. 
     
+
 4.  `<` example:
 
-    ```{r less-than-example, exercise=TRUE}
+    ```{r less-than-example}
     filter(surveys, weight < 8)
     ```
     
     The code above keeps all rows where weight is less than 8. 
     
+
 5.  `>` example:
 
-    ```{r greater-than-example, exercise=TRUE}
+    ```{r greater-than-example}
     filter(surveys, hindfoot_length > 30)
     ```
     
     The code above keeps all rows where hindfoot length is greater than 30.
     
+
 ### Pipes
 
 What if you want to select and filter at the same time? There are three
@@ -286,7 +292,7 @@ that as input to the next function, like this:
 
 
 
-```{r pipes-example-1, exercise=TRUE}
+```{r pipes-example-1}
 surveys2 <- filter(surveys, weight < 6)
 surveys_sml <- select(surveys2, species_id, sex, weight)
 ```
@@ -297,7 +303,7 @@ track of.
 
 You can also nest functions (i.e., one function inside of another), like this:
 
-```{r pipes-example-2, exercise=TRUE}
+```{r pipes-example-2}
 surveys_sml <- select(filter(surveys, weight < 6), species_id, sex, weight)
 ```
 
@@ -313,7 +319,7 @@ automatically with **`dplyr`**. If you use RStudio, you can type the pipe with
 <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>M</kbd> if you have a PC or 
 <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>M</kbd> if you have a Mac.
 
-```{r pipes-example-3, exercise=TRUE}
+```{r pipes-example-3}
 surveys %>%
   filter(weight < 6) %>%
   select(species_id, sex, weight)
@@ -338,7 +344,7 @@ can assign it a new name:
 
 
 
-```{r pipe-rename-example, exercise=TRUE}
+```{r pipe-rename-example}
 surveys_sml <- surveys %>%
   filter(weight < 6) %>%
   select(species_id, sex, weight)
@@ -358,21 +364,19 @@ Note that the final data frame is the leftmost part of this expression.
   -  retain only the columns `year`, `sex`, and `weight`.
 >
 
-```{r challenge-1, exercise=TRUE, exercise.lines = 7}
+```{r challenge-1}
 ## Pipes Challenge:
 ##  Using pipes, subset the data to include animals collected
 ##  on or after 2001, and retain the columns `year`, `sex`, and `weight.`
 ```
 
-```{r challenge-1-solution}
+```{r challenge-1-solution, include=TRUE}
 surveys %>%
      filter(year >= 2001) %>%
      select(year, sex, weight)
 ```
 
-```{r challenge-1-check}
-grade_code()
-```
+
 
 ### Mutate
 
@@ -382,7 +386,7 @@ two columns. For this we'll use `mutate()`.
 
 To create a new column of weight in kg from weight in grams:
 
-```{r create-column, exercise=TRUE}
+```{r create-column}
 surveys %>%
   mutate(weight_kg = weight / 1000)
 ```
@@ -394,7 +398,7 @@ same call of `mutate()`:
 
 
 
-```{r create-two-columns, exercise=TRUE}
+```{r create-two-columns}
 surveys %>%
   mutate(weight_kg = weight / 1000,
          weight_lb = weight_kg * 2.2)
@@ -408,7 +412,7 @@ functions, too, as long as the **`dplyr`** or `magrittr` package is loaded).
 
 
 
-```{r create-column-head, exercise=TRUE}
+```{r create-column-head}
 surveys %>%
   mutate(weight_kg = weight / 1000) %>%
   head()
@@ -420,7 +424,7 @@ The first few rows of the data set contain some missing observations (`NA`s). If
 
 
 
-```{r mutate-filter, exercise=TRUE, exercise.eval=TRUE}
+```{r mutate-filter}
 surveys %>%
   filter(!is.na(weight)) %>%
   mutate(weight_kg = weight / 1000) %>%
@@ -449,7 +453,7 @@ an `NA`.
 
 
 
-```{r challenge-2, exercise=TRUE, exercise.lines = 12, exercise.eval=TRUE} 
+```{r challenge-2} 
 ## Mutate Challenge:
 ##  Create a new data frame from the `surveys` data named `surveys_hindfoot_cm`
 ##  that meets the following criteria: 
@@ -464,7 +468,7 @@ an `NA`.
 
 ```
 
-```{r challenge-2-solution}
+```{r challenge-2-solution, include=TRUE}
 surveys_hindfoot_cm <- surveys %>%
   filter(!is.na(hindfoot_length)) %>%
   mutate(hindfoot_cm = hindfoot_length/10) %>%
@@ -476,19 +480,6 @@ surveys_hindfoot_cm %>%
 
 
 
-
-```{r challenge-2-check}
-surveys_hindfoot_cm <- surveys %>%
-  filter(!is.na(hindfoot_length)) %>%
-  mutate(hindfoot_cm = hindfoot_length/10) %>%
-  filter(hindfoot_cm < 3) %>%
-  select(species_id, hindfoot_cm)
-
-grade_result(
-  pass_if(~ identical(.result, surveys_hindfoot_cm %>% 
-  head()))
-  )
-```
  
 ### Using `lubridate` for Dates 
 
@@ -506,13 +497,13 @@ makes it easier to do the things `R` does with date-times and possible to do thi
 -  `mdy()` 
 
 
-```{r lubridate-example1, message = FALSE, exercise=TRUE}
+```{r lubridate-example1, message = FALSE}
 library(lubridate)
 today() # Today's date
 now() # Today's date, with time and timezone!
 ```
 
-```{r lubridate-example2, message = FALSE, exercise=TRUE, exercise.lines=20}
+```{r lubridate-example2, message = FALSE}
 surveys_w_days <- surveys %>% 
   mutate(date = ymd(paste(year,
                           month,
@@ -570,20 +561,15 @@ see that it is an ordered (\<ord\>) factor.
 >  What are the names of the days of the week taken from the dates?  
 
 
-```{r challenge-4, exercise=TRUE, exercise.eval=TRUE}
+```{r challenge-4}
 
 ```
 
-```{r  challenge-4-solution}
+```{r  challenge-4-solution, include=TRUE}
 levels(surveys_w_days$day_of_week)
 ```
 
 
-```{r challenge-4-check}
-grade_result(
-  pass_if(~ identical(.result, levels(surveys_w_days$day_of_week)))
-)
-```
 
 ### The `case_when()` Function
 
@@ -602,7 +588,7 @@ should be done with these matches.
 
 Let's look at this in action! 
 
-```{r caseWhen-example, exercise=TRUE, exercise.lines=10}
+```{r caseWhen-example}
 surveys_days_full <- surveys_w_days %>% 
   mutate(day_of_week = case_when(day_of_week == "Mon" ~ "Monday", 
                              day_of_week == "Tue" ~ "Tuesday", 
@@ -621,7 +607,7 @@ glimpse(surveys_days_full$day_of_week)
 > `case_when()` without specifying the behavior for **ALL** levels. See the
 > example below:
 
-```{r caseWhen-example2, exercise=TRUE}
+```{r caseWhen-example2}
 # Create a variable weekday that takes on a value of 0 for Saturday/Sunday
 # and 1 otherwise and recodes Friday to missing
 surveys_weekday <- surveys_w_days %>%
@@ -641,19 +627,16 @@ But, perhaps these days are not in the order that we want them to be in.
 > What order did `R` put the days of the week in?
 > What data type is `day_of_week` now? 
 
-```{r challenge-5, exercise=TRUE}
+```{r challenge-5}
 
 
 ```
 
-```{r challenge-5-solution}
+```{r challenge-5-solution, include=TRUE}
 table(surveys_days_full$day_of_week)
 typeof(surveys_days_full$day_of_week)
 ```
 
-```{r challenge-5-check}
-grade_code()
-```
 
 There are small differences between character data types and factor data types. 
 Typically, `R` uses factors to handle categorical variables, variables that have
@@ -673,7 +656,7 @@ The function takes three arguments:
 
 This process looks like this: 
 
-```{r relevel-example, exercise=TRUE, exercise.lines=10}
+```{r relevel-example}
 surveys_edited <- surveys_days_full %>% 
   mutate(day_of_week = fct_relevel(day_of_week, 
                                    "Monday", 
@@ -688,22 +671,19 @@ glimpse(surveys_edited$day_of_week)
 ```
 
 > ### Challenge 6 ![](images/medium.jpg)
+> ![](images/medium.jpg)
 > Verify that `R` put the days in the order that you specified! 
 
-```{r challenge-6, exercise=TRUE, exercise.eval=TRUE}
+```{r challenge-6}
 
 
 ```
 
-```{r challenge-6-solution}
+```{r challenge-6-solution, include=TRUE}
 levels(surveys_edited$day_of_week)
 ```
 
-```{r challenge-6-check}
-grade_result(
-  pass_if(~ identical(.result, levels(surveys_edited$day_of_week)))
-)
-```
+
 
 ## Split-Apply-Combine Data Analysis
 
@@ -722,7 +702,7 @@ to calculate the summary statistics. So to compute the mean `weight` by sex:
 
 
 
-```{r groupby-example, exercise=TRUE}
+```{r groupby-example}
 surveys_edited %>%
   group_by(sex) %>%
   summarize(mean_weight = mean(weight, na.rm = TRUE))
@@ -736,7 +716,7 @@ You can also group by multiple columns:
 
 
 
-```{r groupby-example2, exercise=TRUE}
+```{r groupby-example2}
 surveys_edited %>%
   group_by(sex, species_id) %>%
   summarize(mean_weight = mean(weight, na.rm = TRUE))
@@ -753,7 +733,7 @@ values are removed first, we can omit `na.rm = TRUE` when computing the mean:
 
 
 
-```{r groupby-example3, exercise=TRUE}
+```{r groupby-example3}
 surveys_edited %>%
   filter(!is.na(weight)) %>%
   group_by(sex, species_id) %>%
@@ -768,7 +748,7 @@ display:
 
 
 
-```{r groupby-example4, exercise=TRUE}
+```{r groupby-example4}
 surveys_edited %>%
   filter(!is.na(weight)) %>%
   group_by(sex, species_id) %>%
@@ -784,7 +764,7 @@ column indicating the minimum weight for each species for each sex:
 
 
 
-```{r summarize-example1, exercise=TRUE}
+```{r summarize-example1}
 surveys_edited %>%
   filter(!is.na(weight)) %>%
   group_by(sex, species_id) %>%
@@ -799,7 +779,7 @@ For instance, we can sort on `min_weight` to put the lighter species first:
 
 
 
-```{r summarize-example2, exercise=TRUE}
+```{r summarize-example2}
 surveys_edited %>%
   filter(!is.na(weight)) %>%
   group_by(sex, species_id) %>%
@@ -815,7 +795,7 @@ sort the results by decreasing order of mean weight:
 
 
 
-```{r summarize-example3, exercise=TRUE}
+```{r summarize-example3}
 surveys_edited %>%
   filter(!is.na(weight)) %>%
   group_by(sex, species_id) %>%
@@ -830,11 +810,11 @@ surveys_edited %>%
 > length for each species (using `species_id`). Also add the number of observations.
 > (HINT: see `?n`.)
 
-```{r challenge-7-1, exercise=TRUE, exercise.lines=7, exercise.setup="relevel-example"}
+```{r challenge-7-1}
 
 ```
 
-```{r challenge-7-1-solution}
+```{r challenge-7-1-solution, include=TRUE}
 surveys_edited %>%
   filter(!is.na(hindfoot_length)) %>%
   group_by(species_id) %>%
@@ -844,17 +824,7 @@ surveys_edited %>%
             num_obs = n())
 ```
 
-```{r challenge-7-1-check}
-grade_result(
-  pass_if(~ identical(.result, surveys_edited %>%
-  filter(!is.na(hindfoot_length)) %>%
-  group_by(species_id) %>%
-  summarize(mean_hf_length = mean(hindfoot_length),
-            min_hf_length = min(hindfoot_length),
-            max_hf_length = max(hindfoot_length),
-            num_obs = n())))
-)
-```
+
 
 > ### Challenge 7 Part 2: ![](images/hot.jpg)
 >
@@ -862,11 +832,11 @@ grade_result(
 >
 > Return the columns `year` and `weight`.
 
-```{r challenge-7-2, exercise=TRUE, exercise.lines=7, exercise.setup="relevel-example"}
+```{r challenge-7-2}
 
 ```
 
-```{r challenge-7-2-solution}
+```{r challenge-7-2-solution, include=TRUE}
 surveys_edited %>%
   filter(!is.na(weight)) %>%
   group_by(year) %>%
@@ -874,15 +844,7 @@ surveys_edited %>%
   select(year, max_weight)
 ```
 
-```{r challenge-7-2-check}
-grade_result(
-  pass_if(~ identical(.result, surveys_edited %>%
-  filter(!is.na(weight)) %>%
-  group_by(year) %>%
-  summarize(max_weight = max(weight)) %>%
-  select(year, max_weight)))
-)
-```
+
 
 ### Counting
 
@@ -893,7 +855,7 @@ each sex, we would do:
 
 
 
-```{r count-example1, exercise=TRUE}
+```{r count-example1}
 surveys_edited %>%
     count(sex) 
 ```
@@ -906,7 +868,7 @@ group. In other words, `surveys %>% count()` is equivalent to:
 
 
 
-```{r count-example2, exercise=TRUE}
+```{r count-example2}
 surveys_edited %>%
     group_by(sex) %>%
     summarize(count = n())
@@ -918,7 +880,7 @@ For convenience, `count()` provides the `sort` argument:
 
 
 
-```{r count-example3, exercise=TRUE}
+```{r count-example3}
 surveys_edited %>%
     count(sex, sort = TRUE) 
 ```
@@ -932,7 +894,7 @@ we would specify the first and the second factor as the arguments of `count()`:
 
 
 
-```{r count-example4, exercise=TRUE}
+```{r count-example4}
 surveys_edited %>%
   count(sex, species_id) 
 ```
@@ -946,7 +908,7 @@ order of the levels of the species and (ii) in descending order of the count:
 
 
 
-```{r count-example5, exercise=TRUE}
+```{r count-example5}
 surveys_edited %>%
   count(sex, species_id) %>%
   arrange(species_id, desc(n))
@@ -963,22 +925,17 @@ of the *albigula* species (`species_id` = "NL") for males.
 >
 > How many animals were caught in each plot (`plot_id`) surveyed?
 
-```{r challenge-8, exercise=TRUE, exercise.lines = 12, exercise.eval=TRUE}
+```{r challenge-8}
 ## Count Challenge:
 ##  How many animals were caught in each `plot_type` surveyed?
 
 ```
 
-```{r challenge-8-solution}
+```{r challenge-8-solution, include=TRUE}
 surveys_edited %>%
         count(plot_id) 
 ```
 
-```{r challenge-8-check}
-grade_result(
-  pass_if(~ identical(.result, surveys_edited %>% count(plot_id) ))
-)
-```
 
 
 ## Relational Data with `dplyr`   
@@ -996,7 +953,7 @@ The `survey` data have two other data tables they are related to: `plots` and
 `species`. Load in these data and inspect them to get an idea of how they relate
 to the `survey` data we've been working with. 
 
-```{r load-data2p1, exercise=TRUE}
+```{r load-data2p1}
 plots <- read_csv("https://raw.githubusercontent.com/saramannheimer/data-science-r-workshops/master/Data%20Wrangling/AY%202020-2021/data_wrangling_learnr/data/plots.csv")
 
 head(plots)
@@ -1012,7 +969,7 @@ Table: Columns in the `plots.csv` file:
 | plot\_type       | type of plot                       |
 
 
-```{r load-data2p2, exercise=TRUE}
+```{r load-data2p2}
 species <- read_csv("https://raw.githubusercontent.com/saramannheimer/data-science-r-workshops/master/Data%20Wrangling/AY%202020-2021/data_wrangling_learnr/data/species.csv")
 
 head(species)
@@ -1032,7 +989,7 @@ variable that uniquely identifies an observation in that table.  What are the
 keys for each of the three data tables? (hint: What combination of variables 
 uniquely identifies a row in that data frame?) 
 
-```{r key-quiz}
+```
 quiz(
   question("What is the key for the plots data table?",
     answer("plot_id",correct=TRUE),
@@ -1093,8 +1050,8 @@ whenever their keys are equal. This join will output a new data frame that
 contains the key, the values of `x`, and the values of `y`. Importantly, this 
 join deletes observations that do not have a match. 
 
-```{r fig.cap="Wickham, H. & Grolemund, G. (2017) *R for Data Science*. Sebastopol, California: O'Reilly."}
-knitr::include_graphics("images/inner-join.gif")
+```{r fig.cap="Wickham, H. and Grolemund, G. (2017) *R for Data Science*. Sebastopol, California: O'Reilly."}
+knitr::include_graphics("images/inner.jpg")
 ```
 
 
@@ -1108,10 +1065,8 @@ data tables. When joining `x` with `y`, there are three types of outer join:
 - A *right join* keeps all of the observations in `y`.  
 - A *full join* keeps all of the observations in both `x` and `y`. 
 
-```{r fig.cap="Wickham, H. & Grolemund, G. (2017) *R for Data Science*. Sebastopol, California: O'Reilly."}
-knitr::include_graphics("images/left-join.gif")
-knitr::include_graphics("images/right-join.gif")
-knitr::include_graphics("images/full-join.gif")
+```{r fig.cap="Wickham, H. and Grolemund, G. (2017) *R for Data Science*. Sebastopol, California: O'Reilly."}
+knitr::include_graphics("images/joins.jpg")
 ```
 
 The left join is the most common, as you typically have a data frame (`x`) that 
@@ -1128,7 +1083,7 @@ already existing data frame, `surveys_edited`, a left join is the most appropria
 
 
 
-```{r joins-example, exercise=TRUE}
+```{r joins-example}
 combined <- surveys_edited %>% 
               left_join(plots, by = "plot_id") %>%  # adding the type of plot  
               left_join(species, by = "species_id") # adding the genus, species, and taxa 
@@ -1176,12 +1131,6 @@ a variable.
 We can do both these of transformations with two `tidyr` functions, 
 `pivot_longer()` and `pivot_wider()`.
 
-
-```{r echo =F}
-knitr::include_graphics("images/tidyr-pivot_wider_longer.gif")
-```
-
-
 ### Pivoting to a Wider Table
 
 `pivot_wider()` takes three principal arguments:
@@ -1193,9 +1142,7 @@ knitr::include_graphics("images/tidyr-pivot_wider_longer.gif")
 Further arguments include `fill` which, if set, fills in missing values with 
 the value provided.
 
-```{r}
-knitr::include_graphics("images/pivot_wider_graphic.png")
-```
+![](images/pivot_wider_graphic.png)
 
 Let's use `pivot_wider()` to transform surveys to find the mean weight of each 
 genus in each plot over the entire survey period. We use `filter()`,
@@ -1204,7 +1151,7 @@ interest, and create a new variable for the `mean_weight`. We use the pipe as
 before too.
 
 
-```{r gw-example, exercise=TRUE}
+```{r gw-example}
 surveys_gw <- combined %>%
   filter(!is.na(weight)) %>%
   group_by(plot_id, genus) %>%
@@ -1226,7 +1173,7 @@ becomes 24 observations of 9 variables, one row for each plot. We again use
 pipes:
 
 
-```{r pivot-wider-example, exercise=TRUE}
+```{r pivot-wider-example}
 surveys_wide <- surveys_gw %>%
   pivot_wider(names_from = genus, values_from = mean_weight)
 
@@ -1247,7 +1194,7 @@ surveys_wide %>%
 > Save the wide dataset as an object, with an intuitive name! Then use
 > `glimpse` to take a look at the structure.
 
-```{r challenge-9, exercise=TRUE, exercise.lines=10}
+```{r challenge-9}
 ## Make a wide data frame by pivoting on year. 
 ## Fill the values in these columns with the number of genera per plot. 
 ## Make sure to save the new dataset with an intuitive name!
@@ -1255,7 +1202,7 @@ surveys_wide %>%
 
 ```
 
-```{r challenge-9-solution}
+```{r challenge-9-solution, include=TRUE}
 surveys_wide_genera <- combined %>%
   group_by(plot_id, year) %>%
   summarize(num_genera = n_distinct(genus)) %>%
@@ -1264,16 +1211,7 @@ surveys_wide_genera <- combined %>%
 glimpse(surveys_wide_genera)
 ```
 
-```{r challenge-9-check}
-surveys_wide_genera <- combined %>%
-  group_by(plot_id, year) %>%
-  summarize(num_genera = n_distinct(genus)) %>%
-  pivot_wider(names_from = year, values_from = num_genera)
 
-grade_result(
-  pass_if(~ identical(.result, surveys_wide_genera)) 
-)
-```
 
 ### Pivoting to a Longer Table
 
@@ -1293,16 +1231,14 @@ names.
 3. the name of the new column to create to store the names of each selected column
 4. the name of the new column to create to store the data filled in each cell
 
-```{r}
-knitr::include_graphics("images/pivot_longer_graphic.png")
-```
+![](images/pivot_longer_graphic.png)
 
 To recreate `surveys_gw` from `surveys_wide` we would create a key called
 `genus` and value called `mean_weight` and use all columns except `plot_id` for
 the key variable. Here we drop the `plot_id` column with a minus sign.
 
 
-```{r pivot-long-example, exercise=TRUE}
+```{r pivot-long-example}
 surveys_long <- surveys_wide %>%
   pivot_longer(cols = -plot_id, names_to = "genus", values_to = "mean_weight")
 
@@ -1321,7 +1257,7 @@ specify what to gather than what to leave alone. And if the columns are in a
 row, we don't even need to list them all out - just use the `:` operator!
 
 
-```{r pivot-long-example2, exercise=TRUE}
+```{r pivot-long-example2}
 surveys_wide %>%
   pivot_longer(cols = Chaetodipus:Sigmodon, names_to = "genus", 
                values_to = "mean_weight") %>%
@@ -1338,7 +1274,7 @@ surveys_wide %>%
 > are variables instead of numbers. 
 
 
-```{r challenge-10, exercise=TRUE}
+```{r challenge-10}
 ## Now take the surveys_wide_genera dataset, and make it long again, by  
 ## (re)pivoting on the year columns. 
 
@@ -1346,7 +1282,7 @@ names(surveys_wide_genera)
 
 ```
 
-```{r challenge-10-solution}
+```{r challenge-10-solution, include=TRUE}
 ## Now take the wide dataset, and make it long again, by (re)pivoting on the 
 ## year columns. 
 
@@ -1358,13 +1294,7 @@ surveys_wide_genera %>%
 
 ```
 
-```{r challenge-10-check}
-grade_result(
-  pass_if(~ identical(.result, surveys_wide_genera %>%
-  pivot_longer(cols=`1996`:`2002`, names_to = "year",
-               values_to = "num_genera"))) 
-)
-```
+
 
 
 > ### Challenge 11 Part 1: ![](images/hot.jpg)
@@ -1383,7 +1313,7 @@ grade_result(
 > **HINT**: You'll need to specify which columns to pivot into longer format!
 
 
-```{r challenge-11-p-1, exercise=TRUE, exercise.lines=10}
+```{r challenge-11-p-1}
 ## Use pivot_long() to create an even longer dataset.
 ## Create a column called measurement, containing the hindfoot and weight columns
 ## And a value column that takes on the value of either of these measurements 
@@ -1393,7 +1323,7 @@ grade_result(
 
 ```
 
-```{r challenge-11-p-1-solution}
+```{r challenge-11-p-1-solution, include=TRUE}
 combined_longer <- combined %>%
   pivot_longer(cols = c(hindfoot_length, weight), names_to = "measurement",
              values_to = "values")
@@ -1402,13 +1332,7 @@ glimpse(combined_longer)
 
 ```
 
-```{r challenge-11-p-1-check}
-grade_result(
-  pass_if(~ identical(.result, combined %>%
-  pivot_longer(cols = c(hindfoot_length, weight), names_to = "measurement",
-             values_to = "values"))) 
-)
-```
+
 
 > ### Challenge 11 Part 2: ![](images/hot.jpg)
 > 
@@ -1421,7 +1345,7 @@ grade_result(
 > **HINT**: This sounds like you want to pivot the data to be a wider format! 
 
 
-```{r challenge-11-p-2, exercise=TRUE, exercise.lines=20}
+```{r challenge-11-p-2}
 ## With this new very long data set, calculate the average of each 
 ## measurement in each year for each different plot_type. 
 
@@ -1434,7 +1358,7 @@ grade_result(
 
 ```
 
-```{r challenge-11-p-2-solution}
+```{r challenge-11-p-2-solution, include=TRUE}
 measurement_averages <- combined_longer %>%
   group_by(year, plot_type, measurement) %>%
   summarize(avg_measure = mean(values))
@@ -1442,15 +1366,6 @@ measurement_averages <- combined_longer %>%
 measurement_avg_wide <- measurement_averages %>%
   pivot_wider(names_from = measurement, values_from = avg_measure)
 ```
-
-```{r challenge-11-p-2-check}
-grade_result(
-  pass_if(~ identical(.result, measurement_averages %>%
-  pivot_wider(names_from = measurement, values_from = avg_measure))) 
-)
-```
-
-
 
 ## Exporting Data
 
@@ -1481,7 +1396,7 @@ Let's start by removing observations of animals for which `weight` and
 
 
 
-```{r data-cleanup-exercise, exercise=TRUE}
+```{r data-cleanup-exercise}
 surveys_complete <- surveys_edited %>%
   filter(!is.na(weight),           # remove missing weight
          !is.na(hindfoot_length),  # remove missing hindfoot_length
@@ -1499,7 +1414,7 @@ observed, and filter out the rare species; then, we will extract only the
 observations for these more common species:
 
 
-```{r data-extract-exercise, exercise=TRUE, exercise.lines=12}
+```{r data-extract-exercise}
 ## Extract the most common species_id
 species_counts <- surveys_complete %>%
     count(species_id) %>% 
@@ -1530,19 +1445,17 @@ Happy wrangling!
 
 ------
 
-## Additional Practice
-
 > ### Challenge 11 Bonus: ![](images/hot.jpg)
 > 
 > If you attended the Data Visualization workshop, make a plot of average hindfoot_lengths and weights with colors for the points based on the plot_type.
 
 
-```{r challenge-11-p-3, exercise=TRUE, exercise.lines=20}
+```{r challenge-11-p-3}
 
 
 ```
 
-```{r challenge-11-p-3-solution}
+```{r challenge-11-p-3-solution, include=TRUE}
 
 measurement_avg_wide %>% 
   ggplot(aes(x=hindfoot_length, y=weight, colour=plot_type)) +
@@ -1551,11 +1464,6 @@ measurement_avg_wide %>%
 
 
 ```
-
-
-
-------
-
 ## Other Workshops in the Series
 
 The goal of this workshop was to teach you to write code in `R` to perform data wrangling in a reproducible fashion. Recordings of the previous workshops are available at http://www.montana.edu/datascience/training/. We plan to offer this same series in the spring (dates to be determined) and so these web-interface "Shiny" apps will continue to evolve and links might change. If they are not available when you try to revisit them, please contact   one of the authors and we can point you to the current versions of them. 
@@ -1604,3 +1512,6 @@ Fall 2022 instructors also included:
 ### Mark Greenwood
 
 * Mark Greenwood is a Professor of Statistics in the Department of Mathematical Sciences at Montana State University and the former Director of Statistical Consulting and Research Services (https://www.montana.edu/statisticalconsulting/). His research interests have involved statistical methods and applications in environmental sciences, education, and biological sciences. Recent work has involved researching diagnostic methods for Multiple Sclerosis. His current research grants include funding from the Mountain West IDeA Clinical and Translational Research - Infrastructure Network  (National Institute of General Medical Sciences Grant 5U54GM104944-08) and a grant from the National Multiple Sclerosis Society (RG-1907-34348).
+
+
+
