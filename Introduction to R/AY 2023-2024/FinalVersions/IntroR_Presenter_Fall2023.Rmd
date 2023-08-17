@@ -16,7 +16,7 @@ header-includes: |
   \usepackage{fancyhdr}
   \pagestyle{fancy}
   \fancyfoot[LO,RE]{Intro to R Workshop - Presenter}
-  \fancyfoot[CO,CE]{September 7 & October 26, 2023}
+  \fancyfoot[CO,CE]{Sep. 7 \& Oct. 26, 2023}
   \fancyfoot[LE,RO]{\thepage}
 ---
 
@@ -804,7 +804,7 @@ plot(length ~ weight,
      xlab = "Weight (gm)", ## adding in axis labels
      ylab = "Length (cm)", 
      las = 1, ## changing orientation of y-axis labels,
-     main = "Plot of Length by Weight of ...", ## adds a title
+     main = "Plot of Length by Weight of ..." ## adds a title
      ) 
 ```
 

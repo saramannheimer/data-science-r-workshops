@@ -16,7 +16,7 @@ header-includes: |
   \usepackage{fancyhdr}
   \pagestyle{fancy}
   \fancyfoot[LO,RE]{Introduction to R Workshop}
-  \fancyfoot[CO,CE]{September 7 & October 26, 2023}
+  \fancyfoot[CO,CE]{September 7 \& October 26, 2023}
   \fancyfoot[LE,RO]{\thepage}
 ---
 
