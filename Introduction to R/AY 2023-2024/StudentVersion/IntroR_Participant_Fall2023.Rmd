@@ -502,6 +502,45 @@ What would you input to get an output of `2015`? Can you
 think of two ways to do it?
 
 
+### Accessing Data
+
+When we have a data frame or a list of objects, we can extract specific items by specifying their position in the data frame or list. We saw how to do this with a single item, row, or column that we want to extract (`BlackfootFish[1, 5]`, `df[3,]` or `BlackfootFish[, 5]`). We can specify two items, rows, or columns by either using the fact that the two things we want are adjacent, or we can combine what we want into a list that we can then use for extracting. We will continue to use the indicies to specify what we want to extract.
+
+For example, `c(1, 2)` could identify the first two objects in a list. However they are adjacent so we could use `a:b` to indicate that we want everything from position `a` to position `b` in the list. So, `c(1,2)` would give the same items as `c(1:2)`.
+
+#### Quick Check
+
+Run the following code to see what you get. Play around with the first and last numbers to see what happens.
+
+```{r}
+c(1, 2, 3, 4, 5)
+c(1:5)
+c(5:1)
+c(123:131)
+c(3:-1)
+```
+When you want adjacent items, using the `a:b` notation is nicer than having to type out all of the values.
+
+***What about non-adjacent items?***
+
+For non-adjacent items, you just need to fall back on listing everything out. Say you want the first, third, and 9th item in a list. Then you can use `c(1, 3, 9)`.
+
+Now that we've talked about how to create lists of the indices we want, how do we use these lists to extract items?
+
+Using our data frame that we created above, to extract rows 2 and 3 we can use the notation `c(2, 3)` (or `c(2:3)` since they are adjacent).
+
+```{r}
+df[c(2,3), ]
+```
+
+If we want to extract rows 2 and 4, we can use this list of indices: `c(2, 4)`
+
+```{r}
+df[c(2,4),]
+```
+
+***NOTE:*** Instead of using indices you can also do the same technique with names if the rows or columns are named.
+
 #### Exercise 6:
 
 How would you pull off only columns `x` and `y`? What about 
