@@ -801,7 +801,7 @@ code to override the `count` stat:
 ```{r bar3, exercise=TRUE}
 surveys %>% 
   ggplot(mapping = aes(x = species_id)) + 
-  geom_bar(aes(y = stat(prop), group = 1))
+  geom_bar(aes(y = after_stat(prop), group = 1))
 ```
 
 
@@ -814,7 +814,7 @@ surveys %>%
 ## What is wrong with this plot? 
 surveys %>% 
   ggplot(mapping = aes(x = species_id)) + 
-  geom_bar(aes(y = stat(prop)))
+  geom_bar(aes(y = after_stat(prop)))
 
 ```
 
