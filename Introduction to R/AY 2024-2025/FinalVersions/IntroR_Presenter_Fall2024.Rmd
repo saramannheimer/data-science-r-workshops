@@ -46,7 +46,11 @@ hence both need to be installed on your computer. Both `R` and `RStudio` are
 cross-platform, so that everyone's versions look and operate the same regardless
 of their operating system! 
 
-For this workshop, we will be making use of the RStudio that you will need to install on your computer. For more details on this, you have hopefully completed the steps discussed here https://greenwood-stat.shinyapps.io/InstallDemo_RWorkshops/. The short version for downloading is to first go to https://cloud.r-project.org/ to get `R` installed and then go to https://posit.co/download/rstudio-desktop/ to install RStudio.
+For this workshop, we will be making use of the RStudio that you will need to install on your computer. First you will want to go to https://cran.r-project.org/ to download for your speicfic operating system, run the `R` installer that you downloaded and then go to https://posit.co/download/rstudio-desktop/ to download and install RStudio.
+
+For more assistance with getting set up, please check out the instructions provided 
+in this tutorial https://rconnect.math.montana.edu/InstallDemo_RWorkshops/ and in the
+instructions provided by Data Carpentries at https://datacarpentry.org/R-ecology-lesson/#install-r-and-rstudio.
 
 You need to have a computer that is running Linux, Windows, or a somewhat recent macOS. Unfortunately, a Chromebook or iPad are not sufficient for installing and running R.
 
@@ -61,6 +65,7 @@ has multiple tabs available.
 ![RStudio layout](rstudio.png)  
 
 You can use the Tools -> Global Options -> Appearance tab to modify the colors and font sizes in RStudio.
+
 ## Working in `R`  
 
 The document we provided for you is an Rmarkdown (.Rmd) document. It allows you to work in a reproducible fashion, with both code (placed in what are called code chunks) and descriptions of results in the same file. The grey sections that have three single quotes then `{r}` will delineate a code chunk. 
@@ -107,10 +112,6 @@ is the correct answer.  Try to do this in the console and by executing the code 
 16*9
 
 sqrt(2)
-
-20/5
-
-18.5 - 7.21
 ```
 
 ## Creating Objects 
@@ -167,7 +168,7 @@ anything by default. Writing the name of the object will output the value of the
 ```{r}
 x <- 6
 
-(x <- 6)
+x
 ```
 
 Once the object has been created, you can use it! Run the following lines of code:
@@ -342,7 +343,9 @@ yourself. Copy and paste the code that was output in the code chunk below.
 The path provided can also be simplified to just include the file name - if the .Rmd and data are saved in the same folder. If you have any trouble reading in the data set, here is code that allows you to read the data from our github repository:
 
 ```{r}
-BlackfootFish <- read.csv("https://github.com/saramannheimer/data-science-r-workshops/raw/master/Introduction%20to%20R/AY%202020-2021/Student%20Version/BlackfootFish.csv")
+BlackfootFish <- read.csv(paste0("https://github.com/saramannheimer/",
+"data-science-r-workshops/raw/master/",
+"Introduction%20to%20R/AY%202020-2021/Student%20Version/BlackfootFish.csv"))
 
 ```
 
@@ -476,6 +479,40 @@ What would be output if you entered: `df[3, ]`?
 
 What would you input to get an output of `2015`? Can you 
 think of two ways to do it?
+
+#### Quick Check
+
+Run the following code to see what you get. Play around with the first and last numbers to see what happens.
+
+```{r}
+c(1, 2, 3, 4, 5)
+c(1:5)
+c(5:1)
+c(123:131)
+c(3:-1)
+```
+
+When you want adjacent items, using the `a:b` notation is nicer than having to type out all of the values.
+
+***What about non-adjacent items?***
+
+For non-adjacent items, you just need to fall back on listing everything out. Say you want the first, third, and 9th item in a list. Then you can use `c(1, 3, 9)`.
+
+Now that we've talked about how to create lists of the indices we want, how do we use these lists to extract items?
+
+Using our data frame that we created above, to extract rows 2 and 3 we can use the notation `c(2, 3)` (or `c(2:3)` since they are adjacent).
+
+```{r}
+df[c(2,3), ]
+```
+
+If we want to extract rows 2 and 4, we can use this list of indices: `c(2, 4)`
+
+```{r}
+df[c(2,4),]
+```
+
+***NOTE:*** Instead of using indices you can also do the same technique with names if the rows or columns are named.
 
 
 #### Exercise 6:
@@ -716,14 +753,17 @@ rep(10, 0) ## not what we wanted!
 Now let's look over some other functions that are often used: 
 
 ```{r} 
+## takes a numerical input, but there are NA's in our data
+mean(BlackfootFish$weight)  
 
-mean(BlackfootFish$weight)  ## takes a numerical input, but there are NA's in our data
+## review the help and add in the argument that removes the NA's
+mean(BlackfootFish$weight, na.rm = TRUE)  
 
-mean(BlackfootFish$weight, na.rm = TRUE)  ## review the help and add in the argument that removes the NA's
+## gives an error because the input is not the correct data type  
+median(BlackfootFish$species) 
 
-median(BlackfootFish$species) ## gives an error because the input is not the correct data type  
-
-cor(BlackfootFish$length, BlackfootFish$weight) ## takes multiple inputs separated by a comma
+## takes multiple inputs separated by a comma
+cor(BlackfootFish$length, BlackfootFish$weight)
 
 ## Does cor have an option to remove NA's?
 ```
@@ -748,8 +788,8 @@ dim(BlackfootFish) ## gives the dimensions of the dataset in (row, column) forma
 
 dim(na.omit(BlackfootFish)) 
 
-## na.omit takes dataframes, matricies, and vectors and returns object with incomplete cases removed 
-## incomplete cases are ones with any NA's
+## na.omit takes dataframes, matricies, and vectors and returns object 
+## with incomplete cases removed - incomplete cases are ones with any NA's
 ```
 
 __Remark:__ The computer is using an algorithm to return a dataset with no NA 
@@ -976,10 +1016,7 @@ options in functions and plots, and also to manipulate data.
 
 * email Sara Mannheimer (sara.mannheimer@montana.edu)
 
-* through the MSU Library YouTube channel: 
-https://www.youtube.com/watch?v=W6E3hpcoUkQ&feature=youtu.be 
-
-* other related information: http://www.montana.edu/datascience/
+* through the MSU Library Data Science website (http://www.montana.edu/datascience/)
 
 ## How to Learn More About `R`
 
@@ -1001,10 +1038,10 @@ code that looks nice and code that does not. Generally, object names should be
 nouns and function names should be verbs. It is also important that your code 
 looks presentable, so that a friend/college/professor can read it and understand
 what you are doing. For these reasons, there are style guides for writing code 
-in `R`. The two main style guides are 
-\href{https://google.github.io/styleguide/Rguide.xml}{Google's} and the slightly 
-more comprehensive  
-\href{https://style.tidyverse.org/}{Tidyverse style guide}. Installing the `styler` package will allow you to highlight code and format it in a more legible way. Visit \href{https://style.tidyverse.org/}{the tidyverse page} for more.
+in `R`. The two main style guides are Google's
+https://google.github.io/styleguide/Rguide.xml and the slightly 
+more comprehensive  Tidyverse style guide
+https://style.tidyverse.org/. Installing the `styler` package will allow you to highlight code and format it in a more legible way. Visit the tidyverse page https://style.tidyverse.org/ for more information.
 
 ### Projects in `RStudio`  
 
@@ -1064,17 +1101,37 @@ Science Workshops for Data-Intensive Environmental Science Research, _Journal of
 Statistics and Data Science Education_, 29:sup1, S83-S94, 
 DOI: 10.1080/10691898.2020.1854636
 
-The workshops for 2024-2025 involve modifications of materials and are licensed CC-BY. ![Creative Commons License](88x31.png) This work is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
+The workshops for 2024-2025 involve modifications of materials and are licensed 
+CC-BY. ![Creative Commons License](88x31.png) This work is licensed under a 
+[Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
 
-The workshops for 2024-2025 involve modifications of materials and are being taught by:
+The workshops for 2024-2025 involve modifications of materials and are being 
+taught by:
+
+### Ava Yazdian
+
+* Ava Yazdian is a current sophomore studying conservation biology and ecology. She enjoys helping others learn the language of statistics and data analysis through her experience in her statistics coursework. Her interests include plant ecology, skiing, and ceramics.
 
 ### Greta Linse
 
-* Greta Linse is the Facility Manager of Social Data Collection and Analysis Services (https://www.montana.edu/socialdata/) among other on campus roles. Greta has been teaching, documenting and working with statistical software including R and RStudio for over 10 years.
+* Greta Linse is the Facility Manager of Social Data Collection and Analysis 
+Services (https://www.montana.edu/socialdata/) among other on campus roles. 
+Greta has been teaching, documenting and working with statistical software 
+including R and RStudio for over 10 years.
+
+### Sally Slipher
+
+* Sally Slipher
 
 ### Sara Mannheimer
 
-* Sara Mannheimer is an Associate Professor and Data Librarian at Montana State University, where she helps shape practices and theories for curation, publication, and preservation of data. Her research examines the social, ethical, and technical issues of a data-driven world. She is the project lead for the MSU Dataset Search, and she is working on a book about data curation to support responsible qualitative data reuse and big social research.
+* Sara Mannheimer is an Associate Professor and Data Librarian at Montana State 
+University, where she helps shape practices and theories for curation, 
+publication, and preservation of data. Her research examines the social, ethical, 
+and technical issues of a data-driven world. She is the project lead for the MSU 
+Dataset Search and the Responsible AI in Libraries and Archives project. Her 
+2024 book, Scaling Up, explores how data curation can address epistemological, 
+ethical, and legal issues in qualitative data reuse and big social research.
 
 The materials have also been modified and improved by:
 
