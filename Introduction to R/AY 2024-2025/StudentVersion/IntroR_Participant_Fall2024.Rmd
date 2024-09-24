@@ -1196,7 +1196,7 @@ including R and RStudio for over 10 years.
 
 ### Sally Slipher
 
-* Sally Slipher
+* Sally Slipher is a research statistician for Social Data. She has taught statistics in the past and uses R extensively (and sometimes other coding languages) to explore data and put together analyses.
 
 ### Sara Mannheimer
 
