@@ -80,13 +80,13 @@ spp_count_plot <- yearly_counts %>%
 
 ## Orientation of/for the workshop
 
-*  This workshop assumes some basic familiarity with working in `R` such as what you might obtain in the "Introduction to R" workshop or in course that uses `R` regularly. If you have not interacted with `R` previously, some of the assumptions of your background for this workshop might be a barrier. We would recommend getting what you can from this workshop and you can always revisit the materials at a later date after filling in some of those basic `R` skills. We all often revisit materials and discover new and deeper aspects of the content that we were not in a position to appreciate in a first exposure. 
+*  This workshop assumes some basic familiarity with working in `R` such as what you might obtain in the "Introduction to R" workshop or in a course that uses `R` regularly. If you have not interacted with `R` previously, some of the assumptions of your background for this workshop might be a barrier. We would recommend getting what you can from this workshop and you can always revisit the materials at a later date after filling in some of those basic `R` skills. We all often revisit materials and discover new and deeper aspects of the content that we were not in a position to appreciate in a first exposure. 
 
 *  In order to focus this workshop on coding, we developed this interactive website for you to play in a set of "sandboxes" and try your hand at implementing the methods we are discussing. When each code chunk is ready to run (all can be edited, many have the code prepared for you), you can click on "Run Code". This will run `R` in the background on a server. For the "Challenges", you can get your answer graded although many have multiple "correct" answers, so don't be surprised if our "correct" answer differs from yours. The "Solution" is also provided in some cases so you can see a solution - but you will learn more by trying the challenge first before seeing the answer. Each sandbox functions independently, which means that you can pick up working at any place in the documents and re-set your work without impacting other work (this is VERY different from how `R` usually works!). Hopefully this allows you to focus on the code and what it does... The "Start over" button can be used on any individual sandbox or you can use the one on the left tile will re-set all the code chunks to the original status. 
 
 *  These workshops are taught by Greta Linse and Sara Mannheimer and co-organized by the MSU Library, Statistical Consulting and Research Services (SCRS), and the Department of Mathematical Sciences. More details on us and other workshops are available at the end of the session or via https://www.montana.edu/datascience/training/#workshop-recordings.
 
-*  A PDF version of this Workshop from last year (only minor differences) is available at: [Data Viz R Fall 2022](https://montanaedu-my.sharepoint.com/:f:/g/personal/w83j978_msu_montana_edu/EnB37Khlrr9Okmbpgq6ysgsBxYJzuCfGhDJadWmzRkffLw?e=V4XKxh "Data Viz R Fall 2022 PDF")
+*  A PDF version of this Workshop from a previous year (only minor differences) is available at: [Data Viz R Fall 2022](https://montanaedu-my.sharepoint.com/:f:/g/personal/w83j978_msu_montana_edu/EnB37Khlrr9Okmbpgq6ysgsBxYJzuCfGhDJadWmzRkffLw?e=V4XKxh "Data Viz R Fall 2022 PDF")
 
 ## Data Viz Introduction
 
@@ -149,7 +149,7 @@ and this [handy cheatsheet on **`ggplot2`** (link)](https://rstudio.github.io/ch
 
 ### Presentation of the Survey Data
 
-The data used in this workshop are a time-series for a small mammal community in southern Arizona. This is part of a project studying the effects of rodents and ants on the plant community that has been running for almost 40 years, but we will focus on the years 1996 to 2002 (_n_=11332 observations). The rodents are sampled on a series of 24 plots, with different experimental manipulations controlling which rodents are allowed to access which plots. This is simplified version of the full data set that has been used in over 100 publications and was provided by the Data Carpentries (https://figshare.com/articles/dataset/Portal_Project_Teaching_Database/1314459/10). We are going to focus on animal species diversity and weights in this workshop. The dataset is stored as a comma separated value (CSV) file.
+The data used in this workshop are a time-series for a small mammal community in southern Arizona. This is part of a project studying the effects of rodents and ants on the plant community that has been running for almost 40 years, but we will focus on the years 1996 to 2002 (_n_=11332 observations). The rodents are sampled on a series of 24 plots, with different experimental manipulations controlling which rodents are allowed to access which plots. This is a simplified version of the full data set that has been used in over 100 publications and was provided by the Data Carpentries (https://figshare.com/articles/dataset/Portal_Project_Teaching_Database/1314459/10). We are going to focus on animal species diversity and weights in this workshop. The dataset is stored as a comma separated value (CSV) file.
 
 Each row holds information for a single animal, and the columns represent (along with some others we will not use):
 
@@ -427,7 +427,7 @@ surveys %>%
     geom_point(alpha = 0.2)
 ```
 
-Notice that we can change the geom layer and colors will be still determined by
+Notice that we can change the geom layer and colors will still be determined by
 **`species_id`**
 
 
@@ -490,7 +490,7 @@ grade_code()
 > ## Challenge 2 (Part 2)
 >
 > Use what you just learned to create a scatter plot of `weight` over
-> `plot_id` with data from different plot types being showed in different 
+> `plot_id` with data from different plot types being shown in different 
 > colors. Is this a good way to show this type of data?
 
 ```{r challenge-2part2, exercise=TRUE, exercise.lines = 7}
@@ -716,7 +716,7 @@ surveys %>%
 > What warning do you get and why?
 > Do you get an error like this when you use `hist()` in base `R`? 
 
-There is no single right answer for the number of bins. There are some "plug-in" choices for number of bins that can be used, but you are always welcome to explore different numbers of bins to see if features you are seeing persist when you choose more or less bins.  
+There is no single right answer for the number of bins. There are some "plug-in" choices for the number of bins that can be used, but you are always welcome to explore different numbers of bins to see if features you are seeing persist when you choose more or less bins.  
 
 
 >## Challenge 4 
@@ -910,7 +910,7 @@ learn how to change labels later when we discuss [**Customization**](#customizat
 
 ## Time-series Data
 
-Let's calculate number of counts per year for each genus. 
+Let's calculate the number of counts per year for each genus. 
 
 *What you will see in Data Wrangling:* First we need to group the data and count 
 records within each group!  
@@ -1106,7 +1106,7 @@ yearly_species_weight <- surveys %>%
 
 ## **`ggplot2`** Themes
 
-Usually plots with white background look more readable when printed. 
+Usually plots with white backgrounds look more readable when printed. 
 Every single component of a `ggplot()` graph can be customized using the generic 
 `theme()` function, as we will see below. However, there are pre-loaded themes 
 available that change the overall appearance of the graph without much effort. 
@@ -1166,7 +1166,7 @@ and think of ways you could improve the previous plot.
 
 ### Plot Labels 
 
-Now, let's change names of axes to something more informative than 'year'
+Now, let's change the names of axes to something more informative than 'year'
 and 'n' and add a title to the figure. Label customizations are done using the 
 `labs()` function like so:
 
@@ -1385,7 +1385,7 @@ surveys %>%
 
 #### Package Specification 
 
-Install a package and use it's available color scales. Popular options 
+Install a package and use its available color scales. Popular options 
 include:  
 
 - `RColorBrewer`: using `scale_fill_brewer()` or `scale_color_brewer()` 
@@ -1518,7 +1518,7 @@ Instead, use the `ggsave()` function, which allows you easily change the
 dimension and resolution of your plot by adjusting the appropriate arguments:  
 
 - `width` and `height`: adjust the total plot size in units ("in", "cm", or "mm")
-  * If units are not specified, default is inches. 
+  * If units are not specified, the default is inches. 
 - `dpi`: adjusts the plot resolution. This accepts a string or numeric input: 
     * "retina" (320)
     * "print" (300) 
