@@ -139,10 +139,10 @@ working at any place in the documents and re-set your work without
 impacting other work (this is VERY different from how <code>R</code>
 usually works!). Hopefully this allows you to focus on the code and what
 it does… The “Start over” button can be used on any individual sandbox
-or you can use the one on the left tile will re-set all the code chunks
+or you can use the one on the left tile to re-set all the code chunks
 to the original status.</p></li>
 <li><p>These workshops are taught by Ava Yazdian, Sally Slipher, Greta
-Linse and Sara Mannheimer and co-organized by the MSU Library and Social
+Linse, and Sara Mannheimer and co-organized by the MSU Library and Social
 Data Collection and Analysis Services (Social Data). More details on us
 and other workshops are available at the end of the session or via <a
 href="https://www.montana.edu/datascience/training/#workshop-recordings"
@@ -195,7 +195,7 @@ moving columns, deleting rows, merging data files) in a
 <strong>non-reproducible</strong> manner. Whereas, with data wrangling,
 all of these processes are done, but in a <strong>reproducible</strong>
 manner, such as using an <code>R</code> script!</p>
-<p>Packages in <code>R</code> are basically sets of additional functions
+<p>Packages in <code>R</code> are sets of additional functions
 that lets you do more stuff. The functions we’ve been using so far, like
 <code>str()</code> or <code>data.frame()</code>, come built into
 <code>R</code>; packages give you access to more of them. Before you use
@@ -204,7 +204,7 @@ then you should import it in every subsequent <code>R</code> session
 when you need it. You should already have installed the
 <strong><code>tidyverse</code></strong> package. This is an
 “umbrella-package” that installs several packages useful for data
-analysis which work together well such as
+analysis that work together well such as
 <strong><code>tidyr</code></strong>,
 <strong><code>dplyr</code></strong>,
 <strong><code>ggplot2</code></strong>,
@@ -252,7 +252,7 @@ relational database, queries can be conducted on that database, and only
 the results of the query are returned.</p>
 <p>This addresses a common problem with <code>R</code> in that all
 operations are conducted in-memory and thus the amount of data you can
-work with is limited by available memory. The database connections
+work with is limited by the available memory. The database connections
 essentially remove that limitation in that you can connect to a database
 of many hundreds of GB, conduct queries on it directly, and pull back
 into <code>R</code> only what you need for analysis.</p>
@@ -902,7 +902,7 @@ display. However, factors are often difficult to work with. Enter the
 <code>forcats</code> package, whose goal is to provide a suite of tools
 that solve common problems with factors, including changing the order of
 levels or the values.</p>
-<p>The order of the levels <code>R</code> chose may not be what we
+<p>The order of the levels <code>R</code> chosen may not be what we
 wanted, but we can reorder them using the <code>fct_relevel()</code>
 function from the <code>forcats</code> package (the <a
 href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/factors.pdf"><code>forcats</code>
@@ -932,7 +932,7 @@ glimpse(surveys_edited$day_of_week)</code></pre>
 <blockquote>
 <h3 id="section-challenge-6">Challenge 6 <img
 src="images/medium.jpg" /></h3>
-<p>Verify that <code>R</code> put the days in the order that you
+<p>Verify that <code>R</code> puts the days in the order that you
 specified!</p>
 </blockquote>
 <div class="tutorial-exercise" data-label="challenge-6"
@@ -1422,7 +1422,7 @@ four rules defining a tidy dataset:</p>
 <p><img src="images/tidy-data.png" /></p>
 <p>Here we examine the fourth rule: Each type of observational unit
 forms a table.</p>
-<p>In <code>surveys_edited</code> , the rows of
+<p>In <code>surveys_edited</code>, the rows of
 <code>surveys_edited</code> contain the values of variables associated
 with each record (the unit), values such as the weight or sex of each
 animal associated with each record. What if instead of comparing
@@ -1441,7 +1441,7 @@ the data according to the observations of interest: average genus weight
 per plot instead of recordings per date.</p>
 <p>The opposite transformation would be to transform column names into
 values of a variable.</p>
-<p>We can do both these of transformations with two <code>tidyr</code>
+<p>We can do both of these transformations with two <code>tidyr</code>
 functions, <code>pivot_longer()</code> and
 <code>pivot_wider()</code>.</p>
 <p><img src="images/tidyr-pivot_wider_longer.gif" style="display: block; margin: auto;" /></p>
@@ -1460,7 +1460,7 @@ missing values with the value provided.</p>
 <p><img src="images/pivot_wider_graphic.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>Let’s use <code>pivot_wider()</code> to transform surveys to find the
 mean weight of each genus in each plot over the entire survey period. We
-use <code>filter()</code>, <code>group_by()</code> and
+use <code>filter()</code>, <code>group_by()</code>, and
 <code>summarize()</code> to filter our observations and variables of
 interest, and create a new variable for the <code>mean_weight</code>. We
 use the pipe as before too.</p>
@@ -1633,7 +1633,7 @@ of each measurement per year in different plot types.</p>
 <code>measurement</code> and a values column that takes on the value of
 either <code>hindfoot_length</code> or <code>weight</code>.</p>
 <p><strong>HINT</strong>: You’ll need to specify which columns to pivot
-into longer format!</p>
+into a longer format!</p>
 </blockquote>
 <div class="tutorial-exercise" data-label="challenge-11-p-1"
 data-completion="1" data-diagnostics="1" data-startover="1"
@@ -1717,7 +1717,7 @@ folder where your .Rmd exists.</p>
 <p>For future use, we might want to prepare a cleaned up version of the
 dataset that doesn’t include any missing data.</p>
 <p>Let’s start by removing observations of animals for which
-<code>weight</code> and <code>hindfoot_length</code> are missing, or the
+<code>weight</code> and <code>hindfoot_length</code> is missing, or the
 <code>sex</code> has not been determined:</p>
 <div class="tutorial-exercise" data-label="data-cleanup-exercise"
 data-completion="1" data-diagnostics="1" data-startover="1"
@@ -1793,7 +1793,7 @@ data-pipe="|&gt;">
 Recordings of the previous workshops are available at <a
 href="http://www.montana.edu/datascience/training/"
 class="uri">http://www.montana.edu/datascience/training/</a>. We plan to
-offer this same series in the spring (dates to be determined) and so
+offer this same series in the spring (dates to be determined) so
 these web-interface “Shiny” apps will continue to evolve and links might
 change. If they are not available when you try to revisit them, please
 contact one of the authors and we can point you to the current versions
