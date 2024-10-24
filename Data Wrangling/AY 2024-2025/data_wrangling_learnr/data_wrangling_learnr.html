@@ -15,7 +15,7 @@
 <meta name="allow-skip" content="false" />
 <meta name="learnr-version-prerender" content="0.11.5" />
 
-<title>Wrangling, Analyzing and Exporting Data with the Tidyverse</title>
+<title>Wrangling, Analyzing and, Exporting Data with the Tidyverse</title>
 
 <!-- header-includes START -->
 <!-- HEAD_CONTENT -->
@@ -193,10 +193,10 @@ are calling it “data wrangling.” To us, “data manipulation” is a term
 that captures the event where a researcher manipulates their data (e.g.,
 moving columns, deleting rows, merging data files) in a
 <strong>non-reproducible</strong> manner. Whereas, with data wrangling,
-all of these process are done, but in a <strong>reproducible</strong>
+all of these processes are done, but in a <strong>reproducible</strong>
 manner, such as using an <code>R</code> script!</p>
 <p>Packages in <code>R</code> are basically sets of additional functions
-that let you do more stuff. The functions we’ve been using so far, like
+that lets you do more stuff. The functions we’ve been using so far, like
 <code>str()</code> or <code>data.frame()</code>, come built into
 <code>R</code>; packages give you access to more of them. Before you use
 a package for the first time you need to install it on your machine, and
@@ -282,7 +282,7 @@ effects of rodents and ants on the plant community that has been running
 for almost 40 years, but we will focus on the years 1996 to 2002
 (<em>n</em>=11332 observations). The rodents are sampled on a series of
 24 plots, with different experimental manipulations controlling which
-rodents are allowed to access which plots. This is simplified version of
+rodents are allowed to access which plots. This is a simplified version of
 the full data set that has been used in over 100 publications and was
 provided by the Data Carpentries (<a
 href="https://datacarpentry.org/ecology-workshop/index.html"
@@ -450,7 +450,7 @@ data-pipe="|&gt;">
 </div>
 <p>This will select all the variables in <code>surveys</code> except
 <code>record_id</code> and <code>species_id</code>.</p>
-<p>To choose rows based on a specific criteria, use
+<p>To choose rows based on specific criteria, use
 <code>filter()</code>:</p>
 <div class="tutorial-exercise" data-label="filter-rows-1999"
 data-completion="1" data-diagnostics="1" data-startover="1"
@@ -1141,7 +1141,7 @@ data-lines="0" data-pipe="|&gt;">
 the number of rows/observations for <em>one</em> factor (i.e.,
 <code>sex</code>). If we wanted to count the <em>combination of
 factors</em>, such as <code>sex</code> and <code>species</code>, we
-would specify the first and the second factor as the arguments of
+would specify the first and the second factors as the arguments of
 <code>count()</code>:</p>
 <div class="tutorial-exercise" data-label="count-example4"
 data-completion="1" data-diagnostics="1" data-startover="1"
@@ -1479,7 +1479,7 @@ surveys_gw %&gt;%
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
 <p>This yields <code>surveys_gw</code> where the observations for each
-plot are spread across multiple rows, 164 observations of 3
+plot is spread across multiple rows, 164 observations of 3
 variables.</p>
 <p>Using <code>pivot_wider()</code> to pivot on <code>genus</code> with
 values from <code>mean_weight</code> this becomes 24 observations of 9
@@ -1532,7 +1532,7 @@ glimpse(surveys_wide_genera)</code></pre>
 </div>
 <div id="section-pivoting-to-a-longer-table" class="section level3">
 <h3>Pivoting to a Longer Table</h3>
-<p>The opposing situation could occur if we had been provided with data
+<p>The opposing situation could have occurred if we had been provided with data
 in the form of <code>surveys_wide</code>, where the genus names are
 column names, but we wish to treat them as values of a genus variable
 instead. This task is extremely common in longitudinal data where the
@@ -1851,7 +1851,7 @@ interests include plant ecology, skiing, and ceramics.</li>
 <li>Greta Linse is the Facility Manager of Social Data Collection and
 Analysis Services (<a href="https://www.montana.edu/socialdata/"
 class="uri">https://www.montana.edu/socialdata/</a>) among other on
-campus roles. Greta has been teaching, documenting and working with
+campus roles. Greta has been teaching, documenting, and working with
 statistical software including R and RStudio for over 10 years.</li>
 </ul>
 </div>
