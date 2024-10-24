@@ -1,5 +1,5 @@
 ---
-title: "Wrangling, Analyzing and Exporting Data with the Tidyverse"
+title: "Wrangling, Analyzing, and Exporting Data with the Tidyverse"
 author: "Authors: Data Carpentry contributors & MSU R Workshop Leadership Team"
 output: learnr::tutorial
 runtime: shiny_prerendered
@@ -24,9 +24,9 @@ source("setup-code-chunks.R")
 
 *  This workshop assumes some basic familiarity with working in `R` such as what you might obtain in the "Introduction to R" workshop or in a statistics course that uses `R` heavily, such as STAT 217 or STAT 411/511. If you have not interacted with `R` previously, some of the assumptions of your background for this workshop might be a barrier. We would recommend getting what you can from this workshop and you can always revisit the materials at a later date after filling in some of those basic `R` skills. We all often revisit materials and discover new and deeper aspects of the content that we were not in a position to appreciate in a first exposure.
 
-*  In order to focus this workshop on coding, we developed this interactive website for you to play in a set of "sandboxes" and try your hand at implementing the methods we are discussing. When each code chunk is ready to run (all can be edited, many have the code prepared for you), you can click on "Run Code". This will run `R` in the background on a server. For the "Challenges", you can get your answer graded although many have multiple "correct" answers, so don't be surprised if our "correct" answer differs from yours. The "Solution" is also provided in some cases so you can see a solution - but you will learn more by trying the challenge first before seeing the answer. Each sandbox functions independently, which means that you can pick up working at any place in the documents and re-set your work without impacting other work (this is VERY different from how `R` usually works!). Hopefully this allows you to focus on the code and what it does... The "Start over" button can be used on any individual sandbox or you can use the one on the left tile will re-set all the code chunks to the original status. 
+*  In order to focus this workshop on coding, we developed this interactive website for you to play in a set of "sandboxes" and try your hand at implementing the methods we are discussing. When each code chunk is ready to run (all can be edited, many have the code prepared for you), you can click on "Run Code". This will run `R` in the background on a server. For the "Challenges", you can get your answer graded although many have multiple "correct" answers, so don't be surprised if our "correct" answer differs from yours. The "Solution" is also provided in some cases so you can see a solution - but you will learn more by trying the challenge first before seeing the answer. Each sandbox functions independently, which means that you can pick up working at any place in the documents and re-set your work without impacting other work (this is VERY different from how `R` usually works!). Hopefully this allows you to focus on the code and what it does... The "Start over" button can be used on any individual sandbox or you can use the one on the left tile to re-set all the code chunks to the original status. 
 
-*  These workshops are taught by Ava Yazdian, Sally Slipher, Greta Linse and Sara Mannheimer and co-organized by the MSU Library and Social Data Collection and Analysis Services (Social Data). More details on us and other workshops are available at the end of the session or via https://www.montana.edu/datascience/training/#workshop-recordings.
+*  These workshops are taught by Ava Yazdian, Sally Slipher, Greta Linse, and Sara Mannheimer and co-organized by the MSU Library and Social Data Collection and Analysis Services (Social Data). More details on us and other workshops are available at the end of the session or via https://www.montana.edu/datascience/training/#workshop-recordings.
 
 Let's get started! 
 
@@ -55,16 +55,16 @@ Note that we're not using "data
 manipulation" for this workshop, but are calling it "data wrangling." To us, "data manipulation" is a term that 
 captures the event where a researcher manipulates their data (e.g., moving 
 columns, deleting rows, merging data files) in a __non-reproducible__ manner. 
-Whereas, with data wrangling, all of these process are done, but in a 
+Whereas, with data wrangling, all of these processes are done, but in a 
 __reproducible__ manner, such as using an `R` script!
 
-Packages in `R` are basically sets of additional functions that let you do more
+Packages in `R` are sets of additional functions that let you do more
 stuff. The functions we've been using so far, like `str()` or `data.frame()`,
 come built into `R`; packages give you access to more of them. Before you use a
 package for the first time you need to install it on your machine, and then you
 should import it in every subsequent `R` session when you need it. You should
 already have installed the **`tidyverse`** package. This is an
-"umbrella-package" that installs several packages useful for data analysis which
+"umbrella-package" that installs several packages useful for data analysis that
 work together well such as **`tidyr`**, **`dplyr`**, **`ggplot2`**, 
 **`tibble`**, etc.
 
@@ -107,7 +107,7 @@ natively in a relational database, queries can be conducted on that database,
 and only the results of the query are returned.
 
 This addresses a common problem with `R` in that all operations are conducted
-in-memory and thus the amount of data you can work with is limited by available
+in-memory and thus the amount of data you can work with is limited by the available
 memory. The database connections essentially remove that limitation in that you
 can connect to a database of many hundreds of GB, conduct queries on it directly,
 and pull back into `R` only what you need for analysis.
@@ -126,7 +126,7 @@ to check out this
 
 ### Presentation of the Survey Data
 
-The data used in this workshop are a time-series for a small mammal community in southern Arizona. This is part of a project studying the effects of rodents and ants on the plant community that has been running for almost 40 years, but we will focus on the years 1996 to 2002 (_n_=11332 observations). The rodents are sampled on a series of 24 plots, with different experimental manipulations controlling which rodents are allowed to access which plots. This is simplified version of the full data set that has been used in over 100 publications and was provided by the Data Carpentries (https://datacarpentry.org/ecology-workshop/index.html) (Link to data: https://figshare.com/articles/dataset/Portal_Project_Teaching_Database/1314459). We are investigating the animal species diversity and weights found within plots in this workshop. The dataset is stored as a comma separated value (CSV) file.
+The data used in this workshop are a time-series for a small mammal community in southern Arizona. This is part of a project studying the effects of rodents and ants on the plant community that has been running for almost 40 years, but we will focus on the years 1996 to 2002 (_n_=11332 observations). The rodents are sampled on a series of 24 plots, with different experimental manipulations controlling which rodents are allowed to access which plots. This is a simplified version of the full data set that has been used in over 100 publications and was provided by the Data Carpentries (https://datacarpentry.org/ecology-workshop/index.html) (Link to data: https://figshare.com/articles/dataset/Portal_Project_Teaching_Database/1314459). We are investigating the animal species diversity and weights found within plots in this workshop. The dataset is stored as a comma separated value (CSV) file.
 Each row holds information for a single animal, and the columns represent:
 
 | Column           | Description                        |
@@ -305,7 +305,7 @@ This is handy, but can be difficult to read if too many functions are nested, as
 R evaluates the expression from the inside out (in this case, filtering, then 
 selecting).
 
-The last option, *pipes*, are a more recent addition to `R`. Pipes let you take
+The last option, *pipes*, is a more recent addition to `R`. Pipes let you take
 the output of one function and send it directly to the next, which is useful
 when you need to do many things to the same dataset.  Pipes in `R` look like
 `%>%` and are made available via the **`magrittr`** package, installed 
@@ -663,7 +663,7 @@ difficult to work with. Enter the `forcats` package, whose goal is to provide a
 suite of tools that solve common problems with factors, including changing the 
 order of levels or the values.
 
-The order of the levels `R` chose may not be what we wanted, but we can 
+The order of the levels `R` chosen may not be what we wanted, but we can 
 reorder them using the `fct_relevel()` function from the `forcats` package (the [`forcats` cheatsheet link](https://raw.githubusercontent.com/rstudio/cheatsheets/main/factors.pdf). 
 The function takes three arguments: 
 
@@ -688,7 +688,7 @@ glimpse(surveys_edited$day_of_week)
 ```
 
 > ### Challenge 6 ![](images/medium.jpg)
-> Verify that `R` put the days in the order that you specified! 
+> Verify that `R` puts the days in the order that you specified! 
 
 ```{r challenge-6, exercise=TRUE, exercise.eval=TRUE}
 
@@ -928,7 +928,7 @@ surveys_edited %>%
 The previous example shows the use of `count()` to count the number of rows/observations 
 for *one* factor (i.e., `sex`). 
 If we wanted to count the *combination of factors*, such as `sex` and `species`, 
-we would specify the first and the second factor as the arguments of `count()`:
+we would specify the first and the second factors as the arguments of `count()`:
 
 
 
@@ -1114,8 +1114,8 @@ knitr::include_graphics("images/right-join.gif")
 knitr::include_graphics("images/full-join.gif")
 ```
 
-The left join is the most common, as you typically have a data frame (`x`) that 
-you wish to add additional information to (the contents of `y`). This join will 
+The left join is the most common, as you typically have a data frame (`x`) 
+which you wish to add additional information to (the contents of `y`). This join will 
 preserve the contents of `x`, even if there is not a match for them in `y`. 
 
  
@@ -1153,7 +1153,7 @@ dataset:
 
 Here we examine the fourth rule: Each type of observational unit forms a table.
 
-In `surveys_edited` , the rows of `surveys_edited` contain the values of variables associated
+In `surveys_edited`, the rows of `surveys_edited` contain the values of variables associated
 with each record (the unit), values such as the weight or sex of each animal 
 associated with each record. What if instead of comparing records, we 
 wanted to compare the different mean weights of each genus between plots? 
@@ -1173,7 +1173,7 @@ average genus weight per plot instead of recordings per date.
 The opposite transformation would be to transform column names into values of
 a variable.
 
-We can do both these of transformations with two `tidyr` functions, 
+We can do both of these transformations with two `tidyr` functions, 
 `pivot_longer()` and `pivot_wider()`.
 
 
@@ -1199,7 +1199,7 @@ knitr::include_graphics("images/pivot_wider_graphic.png", dpi=NA)
 
 Let's use `pivot_wider()` to transform surveys to find the mean weight of each 
 genus in each plot over the entire survey period. We use `filter()`,
-`group_by()` and `summarize()` to filter our observations and variables of 
+`group_by()`, and `summarize()` to filter our observations and variables of 
 interest, and create a new variable for the `mean_weight`. We use the pipe as 
 before too.
 
@@ -1380,7 +1380,7 @@ grade_result(
 > called `measurement` and a values column that takes on the value of either 
 > `hindfoot_length` or `weight`. 
 >
-> **HINT**: You'll need to specify which columns to pivot into longer format!
+> **HINT**: You'll need to specify which columns to pivot into a longer format!
 
 
 ```{r challenge-11-p-1, exercise=TRUE, exercise.lines=10}
@@ -1477,7 +1477,7 @@ For future use, we might want to prepare a
 cleaned up version of the dataset that doesn't include any missing data.
 
 Let's start by removing observations of animals for which `weight` and 
-`hindfoot_length` are missing, or the `sex` has not been determined:
+`hindfoot_length` is missing, or the `sex` has not been determined:
 
 
 
@@ -1558,7 +1558,7 @@ measurement_avg_wide %>%
 
 ## Other Workshops in the Series
 
-The goal of this workshop was to teach you to write code in `R` to perform data wrangling in a reproducible fashion. Recordings of the previous workshops are available at http://www.montana.edu/datascience/training/. We plan to offer this same series in the spring (dates to be determined) and so these web-interface "Shiny" apps will continue to evolve and links might change. If they are not available when you try to revisit them, please contact   one of the authors and we can point you to the current versions of them. 
+The goal of this workshop was to teach you to write code in `R` to perform data wrangling in a reproducible fashion. Recordings of the previous workshops are available at http://www.montana.edu/datascience/training/. We plan to offer this same series in the spring (dates to be determined) so these web-interface "Shiny" apps will continue to evolve and links might change. If they are not available when you try to revisit them, please contact   one of the authors and we can point you to the current versions of them. 
 
 
 The first workshop in our series contains more information on how to get started working in `R` using RStudio. The second workshop contains information on how to write code to visualize data using `ggplot2`. The third workshop, Intermediate R, explored more sophisticated R code involving logicals, loops, and functions. The code chunks in this interactive document mimic the code chunks you can use on your own projects in RMarkdown but you will need to download and install both `R` and RStudio on your own computer. 
@@ -1594,7 +1594,7 @@ The workshops for 2024-2025 involve modifications of materials and are being tau
 
 * Greta Linse is the Facility Manager of Social Data Collection and Analysis 
 Services (https://www.montana.edu/socialdata/) among other on campus roles. 
-Greta has been teaching, documenting and working with statistical software 
+Greta has been teaching, documenting, and working with statistical software 
 including R and RStudio for over 10 years.
 
 ### Sally Slipher
