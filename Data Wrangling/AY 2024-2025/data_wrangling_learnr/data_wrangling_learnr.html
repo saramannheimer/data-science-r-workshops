@@ -15,7 +15,7 @@
 <meta name="allow-skip" content="false" />
 <meta name="learnr-version-prerender" content="0.11.5" />
 
-<title>Wrangling, Analyzing and, Exporting Data with the Tidyverse</title>
+<title>Wrangling, Analyzing, and Exporting Data with the Tidyverse</title>
 
 <!-- header-includes START -->
 <!-- HEAD_CONTENT -->
@@ -139,12 +139,13 @@ working at any place in the documents and re-set your work without
 impacting other work (this is VERY different from how <code>R</code>
 usually works!). Hopefully this allows you to focus on the code and what
 it does… The “Start over” button can be used on any individual sandbox
-or you can use the one on the left tile to re-set all the code chunks
-to the original status.</p></li>
+or you can use the one on the left tile to re-set all the code chunks to
+the original status.</p></li>
 <li><p>These workshops are taught by Ava Yazdian, Sally Slipher, Greta
-Linse, and Sara Mannheimer and co-organized by the MSU Library and Social
-Data Collection and Analysis Services (Social Data). More details on us
-and other workshops are available at the end of the session or via <a
+Linse, and Sara Mannheimer and co-organized by the MSU Library and
+Social Data Collection and Analysis Services (Social Data). More details
+on us and other workshops are available at the end of the session or via
+<a
 href="https://www.montana.edu/datascience/training/#workshop-recordings"
 class="uri">https://www.montana.edu/datascience/training/#workshop-recordings</a>.</p></li>
 </ul>
@@ -195,8 +196,8 @@ moving columns, deleting rows, merging data files) in a
 <strong>non-reproducible</strong> manner. Whereas, with data wrangling,
 all of these processes are done, but in a <strong>reproducible</strong>
 manner, such as using an <code>R</code> script!</p>
-<p>Packages in <code>R</code> are sets of additional functions
-that lets you do more stuff. The functions we’ve been using so far, like
+<p>Packages in <code>R</code> are sets of additional functions that lets
+you do more stuff. The functions we’ve been using so far, like
 <code>str()</code> or <code>data.frame()</code>, come built into
 <code>R</code>; packages give you access to more of them. Before you use
 a package for the first time you need to install it on your machine, and
@@ -282,8 +283,8 @@ effects of rodents and ants on the plant community that has been running
 for almost 40 years, but we will focus on the years 1996 to 2002
 (<em>n</em>=11332 observations). The rodents are sampled on a series of
 24 plots, with different experimental manipulations controlling which
-rodents are allowed to access which plots. This is a simplified version of
-the full data set that has been used in over 100 publications and was
+rodents are allowed to access which plots. This is a simplified version
+of the full data set that has been used in over 100 publications and was
 provided by the Data Carpentries (<a
 href="https://datacarpentry.org/ecology-workshop/index.html"
 class="uri">https://datacarpentry.org/ecology-workshop/index.html</a>)
@@ -544,7 +545,7 @@ data-lines="0" data-pipe="|&gt;">
 <p>This is handy, but can be difficult to read if too many functions are
 nested, as R evaluates the expression from the inside out (in this case,
 filtering, then selecting).</p>
-<p>The last option, <em>pipes</em>, are a more recent addition to
+<p>The last option, <em>pipes</em>, is a more recent addition to
 <code>R</code>. Pipes let you take the output of one function and send
 it directly to the next, which is useful when you need to do many things
 to the same dataset. Pipes in <code>R</code> look like
@@ -902,7 +903,7 @@ display. However, factors are often difficult to work with. Enter the
 <code>forcats</code> package, whose goal is to provide a suite of tools
 that solve common problems with factors, including changing the order of
 levels or the values.</p>
-<p>The order of the levels <code>R</code> chosen may not be what we
+<p>The order of the levels chosen by <code>R</code> may not be what we
 wanted, but we can reorder them using the <code>fct_relevel()</code>
 function from the <code>forcats</code> package (the <a
 href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/factors.pdf"><code>forcats</code>
@@ -1379,7 +1380,7 @@ Sebastopol, California: O’Reilly.
 </p>
 </div>
 <p>The left join is the most common, as you typically have a data frame
-(<code>x</code>) that you wish to add additional information to (the
+(<code>x</code>) which you wish to add additional information to (the
 contents of <code>y</code>). This join will preserve the contents of
 <code>x</code>, even if there is not a match for them in
 <code>y</code>.</p>
@@ -1479,7 +1480,7 @@ surveys_gw %&gt;%
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
 <p>This yields <code>surveys_gw</code> where the observations for each
-plot is spread across multiple rows, 164 observations of 3
+plot are spread across multiple rows, 164 observations of 3
 variables.</p>
 <p>Using <code>pivot_wider()</code> to pivot on <code>genus</code> with
 values from <code>mean_weight</code> this becomes 24 observations of 9
@@ -1532,14 +1533,14 @@ glimpse(surveys_wide_genera)</code></pre>
 </div>
 <div id="section-pivoting-to-a-longer-table" class="section level3">
 <h3>Pivoting to a Longer Table</h3>
-<p>The opposing situation could have occurred if we had been provided with data
-in the form of <code>surveys_wide</code>, where the genus names are
-column names, but we wish to treat them as values of a genus variable
-instead. This task is extremely common in longitudinal data where the
-columns are the measurement events over time on the same variable and
-the rows are for the locations or subjects and we want to align all the
-responses in one long vector for plotting (e.g., <code>ggplot</code>) or
-analyses.</p>
+<p>The opposing situation could have occurred if we had been provided
+with data in the form of <code>surveys_wide</code>, where the genus
+names are column names, but we wish to treat them as values of a genus
+variable instead. This task is extremely common in longitudinal data
+where the columns are the measurement events over time on the same
+variable and the rows are for the locations or subjects and we want to
+align all the responses in one long vector for plotting (e.g.,
+<code>ggplot</code>) or analyses.</p>
 <p>In this situation we are gathering the column names and turning them
 into a pair of new variables. One variable represents the column names
 as values, and the other variable contains the values previously
@@ -1717,7 +1718,7 @@ folder where your .Rmd exists.</p>
 <p>For future use, we might want to prepare a cleaned up version of the
 dataset that doesn’t include any missing data.</p>
 <p>Let’s start by removing observations of animals for which
-<code>weight</code> and <code>hindfoot_length</code> is missing, or the
+<code>weight</code> or <code>hindfoot_length</code> is missing, or the
 <code>sex</code> has not been determined:</p>
 <div class="tutorial-exercise" data-label="data-cleanup-exercise"
 data-completion="1" data-diagnostics="1" data-startover="1"
@@ -1793,8 +1794,8 @@ data-pipe="|&gt;">
 Recordings of the previous workshops are available at <a
 href="http://www.montana.edu/datascience/training/"
 class="uri">http://www.montana.edu/datascience/training/</a>. We plan to
-offer this same series in the spring (dates to be determined) so
-these web-interface “Shiny” apps will continue to evolve and links might
+offer this same series in the spring (dates to be determined) so these
+web-interface “Shiny” apps will continue to evolve and links might
 change. If they are not available when you try to revisit them, please
 contact one of the authors and we can point you to the current versions
 of them.</p>
@@ -3996,10 +3997,10 @@ learnr:::store_exercise_cache(structure(list(label = "load-data2p2", global_setu
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "key-quiz-1", question = structure("What is the key for the plots data table?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_1feb3f0", 
+"character")), answers = list(structure(list(id = "lnr_ans_f5a8073", 
     option = "plot_id", value = "plot_id", label = structure("plot_id", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_678565f", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_5f9fbb9", 
     option = "plot_type", value = "plot_type", label = structure("plot_type", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -4009,23 +4010,23 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "key-quiz-1-answer", question = "key-quiz-1"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = FALSE, seed = 1455199830.82237, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 76795753.9642392, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "key-quiz-2", question = structure("What is the key for the species data table?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_57d3f62", 
+"character")), answers = list(structure(list(id = "lnr_ans_10e303b", 
     option = "species_id", value = "species_id", label = structure("species_id", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_a08510f", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_6cbea0d", 
     option = "genus", value = "genus", label = structure("genus", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_13c43b", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_bbfc81", 
     option = "species", value = "species", label = structure("species", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_6c68bb3", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_34d5f33", 
     option = "taxa", value = "taxa", label = structure("taxa", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -4035,7 +4036,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "key-quiz-2-answer", question = "key-quiz-2"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = FALSE, seed = 641663607.201202, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 1254619177.41577, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
@@ -4043,31 +4044,31 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "key-quiz-3", question = structure("What is the key for the surveys data table?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_4d45fc3", 
+"character")), answers = list(structure(list(id = "lnr_ans_591a0a2", 
     option = "record_id", value = "record_id", label = structure("record_id", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_a815756", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_5846087", 
     option = "month", value = "month", label = structure("month", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_af6e433", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_721b169", 
     option = "day", value = "day", label = structure("day", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_93d472e", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_40102e8", 
     option = "year", value = "year", label = structure("year", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_7a3f35b", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_d95821f", 
     option = "plot_id", value = "plot_id", label = structure("plot_id", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_42755b1", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_60311a0", 
     option = "species_id", value = "species_id", label = structure("species_id", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_8b7de5b", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_5b99a6a", 
     option = "sex", value = "sex", label = structure("sex", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_8c412c7", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_bc31570", 
     option = "hindfoot_length", value = "hindfoot_length", label = structure("hindfoot_length", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_bddda0d", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_b5b4408", 
     option = "weight", value = "weight", label = structure("weight", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -4077,7 +4078,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "key-quiz-3-answer", question = "key-quiz-3"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = FALSE, seed = 982760833.042366, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 2083006428.03002, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
@@ -4691,7 +4692,7 @@ learnr:::store_exercise_cache(structure(list(label = "challenge-11-p-3", global_
 
 <!-- begin doc-metadata -->
 <div id="doc-metadata">
-<h1 class="title toc-ignore" style="display:none;">Wrangling, Analyzing
+<h1 class="title toc-ignore" style="display:none;">Wrangling, Analyzing,
 and Exporting Data with the Tidyverse</h1>
 <h4 class="author"><em>Authors: Data Carpentry contributors &amp; MSU R
 Workshop Leadership Team</em></h4>

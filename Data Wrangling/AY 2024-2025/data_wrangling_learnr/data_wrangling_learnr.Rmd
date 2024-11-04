@@ -58,7 +58,7 @@ columns, deleting rows, merging data files) in a __non-reproducible__ manner.
 Whereas, with data wrangling, all of these processes are done, but in a 
 __reproducible__ manner, such as using an `R` script!
 
-Packages in `R` are sets of additional functions that let you do more
+Packages in `R` are sets of additional functions that lets you do more
 stuff. The functions we've been using so far, like `str()` or `data.frame()`,
 come built into `R`; packages give you access to more of them. Before you use a
 package for the first time you need to install it on your machine, and then you
@@ -226,7 +226,7 @@ select(surveys, -record_id, -species_id)
 This will select all the variables in `surveys` except `record_id`
 and `species_id`.
 
-To choose rows based on a specific criteria, use `filter()`:
+To choose rows based on specific criteria, use `filter()`:
 
 ```{r filter-rows-1999, exercise=TRUE}
 filter(surveys, year == 1999)
@@ -663,7 +663,7 @@ difficult to work with. Enter the `forcats` package, whose goal is to provide a
 suite of tools that solve common problems with factors, including changing the 
 order of levels or the values.
 
-The order of the levels `R` chosen may not be what we wanted, but we can 
+The order of the levels chosen by `R` may not be what we wanted, but we can 
 reorder them using the `fct_relevel()` function from the `forcats` package (the [`forcats` cheatsheet link](https://raw.githubusercontent.com/rstudio/cheatsheets/main/factors.pdf). 
 The function takes three arguments: 
 
@@ -1277,7 +1277,7 @@ grade_result(
 
 ### Pivoting to a Longer Table
 
-The opposing situation could occur if we had been provided with data in the
+The opposing situation could have occurred if we had been provided with data in the
 form of `surveys_wide`, where the genus names are column names, but we 
 wish to treat them as values of a genus variable instead. This task is extremely common in longitudinal data where the columns are the measurement events over time on the same variable and the rows are for the locations or subjects and we want to align all the responses in one long vector for plotting (e.g., `ggplot`) or analyses.
 
@@ -1476,7 +1476,7 @@ if(!dir.exists("data")){dir.create("data")}
 For future use, we might want to prepare a
 cleaned up version of the dataset that doesn't include any missing data.
 
-Let's start by removing observations of animals for which `weight` and 
+Let's start by removing observations of animals for which `weight` or 
 `hindfoot_length` is missing, or the `sex` has not been determined:
 
 
