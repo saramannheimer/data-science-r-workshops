@@ -1,0 +1,2114 @@
+record_id,plot_id,species_id,sex,hindfoot_length,weight,date,day_of_week,plot_type
+23216,1,DM,M,36,27,1/27/1996,Sat,Spectab exclosure
+23220,2,DM,F,36,47,1/27/1996,Sat,Control
+23222,1,DM,M,34,27,1/27/1996,Sat,Spectab exclosure
+23224,17,DM,F,39,49,1/27/1996,Sat,Control
+23226,1,PB,F,27,38,1/27/1996,Sat,Spectab exclosure
+23227,12,DM,F,39,51,1/27/1996,Sat,Control
+23231,22,DM,F,36,43,1/27/1996,Sat,Control
+23233,12,DM,F,38,44,1/27/1996,Sat,Control
+23234,2,DM,F,35,45,1/27/1996,Sat,Control
+23235,17,DM,M,37,42,1/27/1996,Sat,Control
+23236,1,DO,M,38,42,1/27/1996,Sat,Spectab exclosure
+23242,2,DO,M,36,54,1/27/1996,Sat,Control
+23243,2,DM,M,36,49,1/27/1996,Sat,Control
+23245,12,DM,M,36,56,1/27/1996,Sat,Control
+23246,21,PM,F,20,31,1/27/1996,Sat,Long-term Krat Exclosure
+23258,2,PE,M,20,25,1/27/1996,Sat,Control
+23259,12,DM,M,39,47,1/27/1996,Sat,Control
+23261,20,PF,M,16,9,1/27/1996,Sat,Short-term Krat Exclosure
+23262,1,OT,M,21,25,1/27/1996,Sat,Spectab exclosure
+23265,3,DO,M,39,64,1/28/1996,Sun,Long-term Krat Exclosure
+23266,4,PF,M,16,9,1/28/1996,Sun,Control
+23268,11,DO,F,37,52,1/28/1996,Sun,Control
+23269,13,PP,M,23,17,1/28/1996,Sun,Short-term Krat Exclosure
+23270,15,DM,F,35,37,1/28/1996,Sun,Long-term Krat Exclosure
+23271,13,PF,F,16,7,1/28/1996,Sun,Short-term Krat Exclosure
+23272,14,DM,M,36,53,1/28/1996,Sun,Control
+23278,8,DO,M,38,60,1/28/1996,Sun,Control
+23282,14,DM,F,37,50,1/28/1996,Sun,Control
+23284,9,PF,F,17,8,1/28/1996,Sun,Spectab exclosure
+23287,3,PP,F,24,18,1/28/1996,Sun,Long-term Krat Exclosure
+23294,3,PF,F,16,9,1/28/1996,Sun,Long-term Krat Exclosure
+23300,4,DM,F,36,52,1/28/1996,Sun,Control
+23301,8,DM,M,38,37,1/28/1996,Sun,Control
+23303,4,DM,M,37,36,1/28/1996,Sun,Control
+23304,11,RM,M,18,12,1/28/1996,Sun,Control
+23309,9,DM,F,36,29,1/28/1996,Sun,Spectab exclosure
+23310,4,DM,F,38,62,1/28/1996,Sun,Control
+23314,8,DO,M,36,55,1/28/1996,Sun,Control
+23316,8,DO,F,36,51,1/28/1996,Sun,Control
+23319,9,DM,M,38,45,1/28/1996,Sun,Spectab exclosure
+23326,5,PP,M,23,15,1/28/1996,Sun,Rodent Exclosure
+23329,14,DM,M,36,53,1/28/1996,Sun,Control
+23330,6,PF,F,15,7,1/28/1996,Sun,Short-term Krat Exclosure
+23331,8,DM,F,39,51,1/28/1996,Sun,Control
+23332,5,DO,F,34,34,1/28/1996,Sun,Rodent Exclosure
+23336,14,PF,F,16,11,1/28/1996,Sun,Control
+23338,9,DM,M,38,43,1/28/1996,Sun,Spectab exclosure
+23341,2,DM,F,38,55,2/24/1996,Sat,Control
+23342,12,DM,F,35,45,2/24/1996,Sat,Control
+23343,21,PF,M,16,10,2/24/1996,Sat,Long-term Krat Exclosure
+23354,12,DM,M,39,58,2/24/1996,Sat,Control
+23358,1,DM,M,36,37,2/24/1996,Sat,Spectab exclosure
+23359,21,PP,F,21,16,2/24/1996,Sat,Long-term Krat Exclosure
+23362,12,DM,F,38,49,2/24/1996,Sat,Control
+23365,2,DM,F,34,49,2/24/1996,Sat,Control
+23367,1,PB,F,26,42,2/24/1996,Sat,Spectab exclosure
+23368,2,DM,M,40,55,2/24/1996,Sat,Control
+23371,2,PM,M,20,16,2/24/1996,Sat,Control
+23373,1,PB,F,26,31,2/24/1996,Sat,Spectab exclosure
+23375,17,DM,M,37,45,2/24/1996,Sat,Control
+23380,12,PF,F,14,7,2/24/1996,Sat,Control
+23382,12,DM,F,37,40,2/24/1996,Sat,Control
+23386,17,DM,M,38,52,2/24/1996,Sat,Control
+23387,24,PM,M,21,21,2/24/1996,Sat,Rodent Exclosure
+23389,12,DM,M,36,51,2/24/1996,Sat,Control
+23392,19,PP,M,21,20,2/24/1996,Sat,Long-term Krat Exclosure
+23394,7,PM,F,21,24,2/24/1996,Sat,Rodent Exclosure
+23398,1,OT,M,21,26,2/24/1996,Sat,Spectab exclosure
+23399,2,PE,F,20,19,2/24/1996,Sat,Control
+23400,12,DM,F,35,46,2/24/1996,Sat,Control
+23405,12,DM,M,36,53,2/24/1996,Sat,Control
+23410,3,PP,F,21,18,2/25/1996,Sun,Long-term Krat Exclosure
+23412,3,PE,F,19,18,2/25/1996,Sun,Long-term Krat Exclosure
+23415,11,DO,F,39,54,2/25/1996,Sun,Control
+23420,11,PP,M,24,24,2/25/1996,Sun,Control
+23421,8,PF,F,16,8,2/25/1996,Sun,Control
+23424,4,DM,M,37,51,2/25/1996,Sun,Control
+23425,13,PM,M,22,23,2/25/1996,Sun,Short-term Krat Exclosure
+23439,6,PF,F,16,8,2/25/1996,Sun,Short-term Krat Exclosure
+23441,14,DM,M,38,51,2/25/1996,Sun,Control
+23442,3,PP,M,21,16,2/25/1996,Sun,Long-term Krat Exclosure
+23448,15,PF,M,17,11,2/25/1996,Sun,Long-term Krat Exclosure
+23460,13,PF,M,16,8,2/25/1996,Sun,Short-term Krat Exclosure
+23462,13,PF,F,17,8,2/25/1996,Sun,Short-term Krat Exclosure
+23464,16,DM,M,35,32,2/25/1996,Sun,Rodent Exclosure
+23469,13,PF,M,16,10,2/25/1996,Sun,Short-term Krat Exclosure
+23474,5,PF,F,16,7,2/25/1996,Sun,Rodent Exclosure
+23476,9,DM,F,37,47,2/25/1996,Sun,Spectab exclosure
+23480,15,DM,M,38,50,2/25/1996,Sun,Long-term Krat Exclosure
+23484,5,PF,F,16,8,2/25/1996,Sun,Rodent Exclosure
+23488,15,DM,F,35,47,2/25/1996,Sun,Long-term Krat Exclosure
+23490,5,DM,F,39,55,2/25/1996,Sun,Rodent Exclosure
+23491,15,PF,F,15,10,2/25/1996,Sun,Long-term Krat Exclosure
+23492,5,OT,F,21,28,2/25/1996,Sun,Rodent Exclosure
+23493,16,DO,F,35,38,2/25/1996,Sun,Rodent Exclosure
+23498,2,DM,F,36,41,3/23/1996,Sat,Control
+23503,23,RM,M,18,10,3/23/1996,Sat,Rodent Exclosure
+23504,2,PE,M,20,21,3/23/1996,Sat,Control
+23507,1,PF,M,15,8,3/23/1996,Sat,Spectab exclosure
+23512,20,PF,F,17,9,3/23/1996,Sat,Short-term Krat Exclosure
+23515,24,RM,F,17,13,3/23/1996,Sat,Rodent Exclosure
+23516,12,PM,M,20,17,3/23/1996,Sat,Control
+23524,20,PE,M,21,22,3/23/1996,Sat,Short-term Krat Exclosure
+23536,12,DO,M,45,51,3/23/1996,Sat,Control
+23540,7,RM,F,16,12,3/23/1996,Sat,Rodent Exclosure
+23543,7,PP,F,21,17,3/23/1996,Sat,Rodent Exclosure
+23544,17,DM,M,37,45,3/23/1996,Sat,Control
+23547,2,PE,F,20,18,3/23/1996,Sat,Control
+23548,1,DM,M,40,58,3/23/1996,Sat,Spectab exclosure
+23549,2,DM,M,38,44,3/23/1996,Sat,Control
+23553,7,PP,M,23,21,3/23/1996,Sat,Rodent Exclosure
+23560,18,PF,M,16,7,3/23/1996,Sat,Short-term Krat Exclosure
+23561,1,DO,M,34,37,3/23/1996,Sat,Spectab exclosure
+23565,2,DM,M,37,48,3/23/1996,Sat,Control
+23575,12,DM,M,37,49,3/23/1996,Sat,Control
+23579,17,OT,F,21,31,3/23/1996,Sat,Control
+23581,17,PF,M,17,8,3/23/1996,Sat,Control
+23584,12,DM,M,33,36,3/23/1996,Sat,Control
+23589,17,DM,F,36,42,3/23/1996,Sat,Control
+23591,18,PF,F,17,10,3/23/1996,Sat,Short-term Krat Exclosure
+23592,2,RM,M,17,11,3/23/1996,Sat,Control
+23599,18,RM,M,17,11,3/23/1996,Sat,Short-term Krat Exclosure
+23602,21,RM,F,17,12,3/23/1996,Sat,Long-term Krat Exclosure
+23603,16,DM,M,35,42,3/24/1996,Sun,Rodent Exclosure
+23606,13,PF,M,16,9,3/24/1996,Sun,Short-term Krat Exclosure
+23607,14,DM,M,36,49,3/24/1996,Sun,Control
+23614,8,PP,M,22,21,3/24/1996,Sun,Control
+23616,3,PF,F,16,8,3/24/1996,Sun,Long-term Krat Exclosure
+23617,8,PP,F,21,16,3/24/1996,Sun,Control
+23618,13,PM,F,22,20,3/24/1996,Sun,Short-term Krat Exclosure
+23623,3,PP,M,22,18,3/24/1996,Sun,Long-term Krat Exclosure
+23630,11,PM,F,19,14,3/24/1996,Sun,Control
+23632,11,DO,M,36,43,3/24/1996,Sun,Control
+23634,3,PP,F,22,15,3/24/1996,Sun,Long-term Krat Exclosure
+23635,15,DM,M,39,48,3/24/1996,Sun,Long-term Krat Exclosure
+23636,14,PP,F,24,18,3/24/1996,Sun,Control
+23637,5,DO,F,36,49,3/24/1996,Sun,Rodent Exclosure
+23639,10,RM,M,16,10,3/24/1996,Sun,Rodent Exclosure
+23641,13,DM,F,36,39,3/24/1996,Sun,Short-term Krat Exclosure
+23643,14,PP,M,22,22,3/24/1996,Sun,Control
+23645,2,DM,F,37,47,4/14/1996,Sun,Control
+23651,19,PF,F,17,9,4/14/1996,Sun,Long-term Krat Exclosure
+23652,22,PF,F,17,8,4/14/1996,Sun,Control
+23653,17,DM,M,38,40,4/14/1996,Sun,Control
+23656,1,PF,M,15,8,4/14/1996,Sun,Spectab exclosure
+23660,24,PM,M,20,18,4/14/1996,Sun,Rodent Exclosure
+23661,18,PF,F,17,9,4/14/1996,Sun,Short-term Krat Exclosure
+23662,17,DM,M,38,39,4/14/1996,Sun,Control
+23665,21,PP,F,21,20,4/14/1996,Sun,Long-term Krat Exclosure
+23668,19,PF,M,16,8,4/14/1996,Sun,Long-term Krat Exclosure
+23671,20,RM,M,19,11,4/14/1996,Sun,Short-term Krat Exclosure
+23673,17,DM,M,37,49,4/14/1996,Sun,Control
+23678,22,PF,F,16,7,4/14/1996,Sun,Control
+23687,2,DM,M,40,56,4/14/1996,Sun,Control
+23688,18,PF,M,16,7,4/14/1996,Sun,Short-term Krat Exclosure
+23691,17,PF,M,18,9,4/14/1996,Sun,Control
+23692,18,PP,M,24,23,4/14/1996,Sun,Short-term Krat Exclosure
+23704,18,PF,M,17,8,4/14/1996,Sun,Short-term Krat Exclosure
+23710,12,OL,M,21,27,4/14/1996,Sun,Control
+23711,19,PP,M,24,18,4/14/1996,Sun,Long-term Krat Exclosure
+23713,23,RM,M,17,13,4/14/1996,Sun,Rodent Exclosure
+23715,1,DO,M,37,38,4/14/1996,Sun,Spectab exclosure
+23720,1,DO,M,34,37,4/14/1996,Sun,Spectab exclosure
+23721,19,PF,M,17,9,4/14/1996,Sun,Long-term Krat Exclosure
+23724,20,PP,F,24,25,4/14/1996,Sun,Short-term Krat Exclosure
+23727,1,PF,F,15,7,4/14/1996,Sun,Spectab exclosure
+23729,2,PE,F,20,22,4/14/1996,Sun,Control
+23730,24,PE,M,20,20,4/14/1996,Sun,Rodent Exclosure
+23733,13,PM,M,20,21,4/15/1996,Mon,Short-term Krat Exclosure
+23741,3,PP,M,23,20,4/15/1996,Mon,Long-term Krat Exclosure
+23744,8,PF,M,16,8,4/15/1996,Mon,Control
+23746,3,PP,M,24,25,4/15/1996,Mon,Long-term Krat Exclosure
+23749,4,DM,F,37,49,4/15/1996,Mon,Control
+23750,3,DO,F,36,41,4/15/1996,Mon,Long-term Krat Exclosure
+23756,11,DO,F,34,22,4/15/1996,Mon,Control
+23760,13,PM,F,21,22,4/15/1996,Mon,Short-term Krat Exclosure
+23762,3,DO,F,35,46,4/15/1996,Mon,Long-term Krat Exclosure
+23766,11,DO,F,37,49,4/15/1996,Mon,Control
+23770,3,DO,M,37,50,4/15/1996,Mon,Long-term Krat Exclosure
+23775,14,DM,M,37,50,4/15/1996,Mon,Control
+23776,3,RM,M,18,11,4/15/1996,Mon,Long-term Krat Exclosure
+23777,4,PF,M,16,11,4/15/1996,Mon,Control
+23782,13,PF,F,15,8,4/15/1996,Mon,Short-term Krat Exclosure
+23786,15,PF,F,15,12,4/15/1996,Mon,Long-term Krat Exclosure
+23788,11,PM,M,21,17,4/15/1996,Mon,Control
+23789,8,DO,M,34,30,4/15/1996,Mon,Control
+23796,13,PM,F,21,13,4/15/1996,Mon,Short-term Krat Exclosure
+23797,4,PP,F,21,11,4/15/1996,Mon,Control
+23800,8,PP,F,24,19,4/15/1996,Mon,Control
+23804,3,PF,M,15,8,4/15/1996,Mon,Long-term Krat Exclosure
+23806,15,DM,M,38,35,4/15/1996,Mon,Long-term Krat Exclosure
+23810,11,DM,M,36,51,4/15/1996,Mon,Control
+23812,3,PP,M,23,42,4/15/1996,Mon,Long-term Krat Exclosure
+23814,6,OL,M,19,27,4/15/1996,Mon,Short-term Krat Exclosure
+23816,3,OL,F,21,23,4/15/1996,Mon,Long-term Krat Exclosure
+23818,3,PF,M,16,8,4/15/1996,Mon,Long-term Krat Exclosure
+23824,9,DM,M,35,39,4/15/1996,Mon,Spectab exclosure
+23826,14,DM,F,35,46,4/15/1996,Mon,Control
+23831,15,PF,M,15,12,4/15/1996,Mon,Long-term Krat Exclosure
+23833,11,RM,F,17,11,4/15/1996,Mon,Control
+23838,9,DM,M,38,48,4/15/1996,Mon,Spectab exclosure
+23841,4,DM,M,35,47,4/15/1996,Mon,Control
+23844,8,PP,M,22,22,4/15/1996,Mon,Control
+23846,14,DM,M,37,36,4/15/1996,Mon,Control
+23847,15,PF,M,15,10,4/15/1996,Mon,Long-term Krat Exclosure
+23849,8,DM,M,37,49,4/15/1996,Mon,Control
+23855,4,DM,M,37,38,4/15/1996,Mon,Control
+23857,9,PF,M,17,9,4/15/1996,Mon,Spectab exclosure
+23858,5,PF,M,15,8,4/15/1996,Mon,Rodent Exclosure
+23860,11,DO,M,36,53,4/15/1996,Mon,Control
+23864,3,PP,F,21,16,4/15/1996,Mon,Long-term Krat Exclosure
+23865,11,DM,M,35,53,4/15/1996,Mon,Control
+23870,16,RM,M,18,10,4/15/1996,Mon,Rodent Exclosure
+23874,15,PF,F,15,9,4/15/1996,Mon,Long-term Krat Exclosure
+23875,8,PP,F,23,16,4/15/1996,Mon,Control
+23882,21,PF,M,16,10,5/23/1996,Thu,Long-term Krat Exclosure
+23883,12,DO,F,37,34,5/23/1996,Thu,Control
+23884,21,PP,M,22,7,5/23/1996,Thu,Long-term Krat Exclosure
+23885,22,PF,M,17,8,5/23/1996,Thu,Control
+23887,22,PP,F,24,18,5/23/1996,Thu,Control
+23888,21,PP,M,22,18,5/23/1996,Thu,Long-term Krat Exclosure
+23889,18,PF,M,13,8,5/23/1996,Thu,Short-term Krat Exclosure
+23890,12,DM,M,35,46,5/23/1996,Thu,Control
+23891,1,DO,F,37,45,5/23/1996,Thu,Spectab exclosure
+23893,21,PP,M,23,11,5/23/1996,Thu,Long-term Krat Exclosure
+23894,12,NL,M,21,118,5/23/1996,Thu,Control
+23895,2,DM,M,35,41,5/23/1996,Thu,Control
+23896,21,PP,M,23,12,5/23/1996,Thu,Long-term Krat Exclosure
+23903,18,PP,M,24,21,5/23/1996,Thu,Short-term Krat Exclosure
+23904,2,DM,F,36,49,5/23/1996,Thu,Control
+23912,2,PF,M,17,8,5/23/1996,Thu,Control
+23916,12,DM,M,32,53,5/23/1996,Thu,Control
+23918,1,DO,M,36,46,5/23/1996,Thu,Spectab exclosure
+23924,20,PP,F,23,19,5/23/1996,Thu,Short-term Krat Exclosure
+23927,22,DM,F,35,20,5/23/1996,Thu,Control
+23939,12,DM,M,34,27,5/23/1996,Thu,Control
+23941,7,PP,M,21,18,5/23/1996,Thu,Rodent Exclosure
+23946,18,PP,M,23,20,5/23/1996,Thu,Short-term Krat Exclosure
+23951,3,PP,M,22,20,5/24/1996,Fri,Long-term Krat Exclosure
+23955,3,DO,F,35,35,5/24/1996,Fri,Long-term Krat Exclosure
+23957,8,PP,F,23,19,5/24/1996,Fri,Control
+23960,8,DO,F,34,47,5/24/1996,Fri,Control
+23964,13,OT,M,20,26,5/24/1996,Fri,Short-term Krat Exclosure
+23965,15,DM,M,36,42,5/24/1996,Fri,Long-term Krat Exclosure
+23966,5,PF,M,15,9,5/24/1996,Fri,Rodent Exclosure
+23967,3,PP,M,23,20,5/24/1996,Fri,Long-term Krat Exclosure
+23968,15,PF,F,16,11,5/24/1996,Fri,Long-term Krat Exclosure
+23973,15,PF,F,15,8,5/24/1996,Fri,Long-term Krat Exclosure
+23975,6,DO,M,35,47,5/24/1996,Fri,Short-term Krat Exclosure
+23983,4,DM,M,37,47,5/24/1996,Fri,Control
+23984,15,PF,F,16,9,5/24/1996,Fri,Long-term Krat Exclosure
+23990,6,DO,M,36,31,5/24/1996,Fri,Short-term Krat Exclosure
+23995,13,PF,F,16,9,5/24/1996,Fri,Short-term Krat Exclosure
+23996,6,PF,M,15,9,5/24/1996,Fri,Short-term Krat Exclosure
+23997,8,PP,F,23,18,5/24/1996,Fri,Control
+23998,15,PP,M,14,21,5/24/1996,Fri,Long-term Krat Exclosure
+23999,10,RM,M,18,12,5/24/1996,Fri,Rodent Exclosure
+24001,15,PP,M,24,20,5/24/1996,Fri,Long-term Krat Exclosure
+24006,14,DM,F,38,49,5/24/1996,Fri,Control
+24010,3,DO,M,38,44,5/24/1996,Fri,Long-term Krat Exclosure
+24011,14,DM,F,35,61,5/24/1996,Fri,Control
+24026,18,PF,F,15,10,6/13/1996,Thu,Short-term Krat Exclosure
+24027,2,DM,M,40,53,6/13/1996,Thu,Control
+24029,21,PP,F,21,18,6/13/1996,Thu,Long-term Krat Exclosure
+24032,21,PP,M,22,18,6/13/1996,Thu,Long-term Krat Exclosure
+24033,1,DO,F,38,49,6/13/1996,Thu,Spectab exclosure
+24035,7,PP,F,23,18,6/13/1996,Thu,Rodent Exclosure
+24036,12,DO,F,37,43,6/13/1996,Thu,Control
+24044,1,PP,M,22,16,6/13/1996,Thu,Spectab exclosure
+24046,12,DM,M,37,51,6/13/1996,Thu,Control
+24048,2,PP,F,22,17,6/13/1996,Thu,Control
+24055,19,PF,M,16,9,6/13/1996,Thu,Long-term Krat Exclosure
+24056,1,PF,M,16,6,6/13/1996,Thu,Spectab exclosure
+24058,17,DM,M,37,49,6/13/1996,Thu,Control
+24061,21,PF,F,17,9,6/13/1996,Thu,Long-term Krat Exclosure
+24062,23,RM,M,17,11,6/13/1996,Thu,Rodent Exclosure
+24067,19,PP,M,20,12,6/13/1996,Thu,Long-term Krat Exclosure
+24070,17,DM,M,36,22,6/13/1996,Thu,Control
+24072,17,DM,F,36,51,6/13/1996,Thu,Control
+24075,12,PM,M,21,20,6/13/1996,Thu,Control
+24076,19,PF,M,16,10,6/13/1996,Thu,Long-term Krat Exclosure
+24077,18,PF,F,16,10,6/13/1996,Thu,Short-term Krat Exclosure
+24083,13,PP,M,24,19,6/14/1996,Fri,Short-term Krat Exclosure
+24087,3,PP,M,23,19,6/14/1996,Fri,Long-term Krat Exclosure
+24090,9,PF,M,16,8,6/14/1996,Fri,Spectab exclosure
+24097,3,DO,F,35,49,6/14/1996,Fri,Long-term Krat Exclosure
+24103,8,PP,F,23,18,6/14/1996,Fri,Control
+24106,9,DM,F,36,40,6/14/1996,Fri,Spectab exclosure
+24113,15,PF,F,16,10,6/14/1996,Fri,Long-term Krat Exclosure
+24115,4,DM,M,38,47,6/14/1996,Fri,Control
+24120,4,PF,M,15,5,6/14/1996,Fri,Control
+24121,9,DM,M,38,49,6/14/1996,Fri,Spectab exclosure
+24123,3,PF,M,16,7,6/14/1996,Fri,Long-term Krat Exclosure
+24124,4,PF,M,17,10,6/14/1996,Fri,Control
+24126,3,PE,F,20,23,6/14/1996,Fri,Long-term Krat Exclosure
+24127,8,DO,M,37,47,6/14/1996,Fri,Control
+24131,14,PP,F,23,15,6/14/1996,Fri,Control
+24132,15,PP,F,23,19,6/14/1996,Fri,Long-term Krat Exclosure
+24148,6,DO,F,38,52,6/14/1996,Fri,Short-term Krat Exclosure
+24149,13,PF,M,17,9,6/14/1996,Fri,Short-term Krat Exclosure
+24160,14,DM,M,37,48,6/14/1996,Fri,Control
+24161,15,PF,F,17,10,6/14/1996,Fri,Long-term Krat Exclosure
+24163,13,PP,M,23,13,6/14/1996,Fri,Short-term Krat Exclosure
+24164,15,OT,M,21,26,6/14/1996,Fri,Long-term Krat Exclosure
+24170,15,OL,F,21,21,6/14/1996,Fri,Long-term Krat Exclosure
+24173,19,PP,M,22,18,7/20/1996,Sat,Long-term Krat Exclosure
+24177,18,PF,M,15,9,7/20/1996,Sat,Short-term Krat Exclosure
+24186,21,PP,F,23,19,7/20/1996,Sat,Long-term Krat Exclosure
+24189,1,PP,F,22,16,7/20/1996,Sat,Spectab exclosure
+24198,18,PP,M,23,19,7/20/1996,Sat,Short-term Krat Exclosure
+24199,20,PP,M,24,20,7/20/1996,Sat,Short-term Krat Exclosure
+24201,7,PP,F,23,17,7/20/1996,Sat,Rodent Exclosure
+24204,7,PP,M,22,21,7/20/1996,Sat,Rodent Exclosure
+24206,17,DM,M,37,49,7/20/1996,Sat,Control
+24208,17,OT,M,22,28,7/20/1996,Sat,Control
+24211,20,PF,M,16,10,7/20/1996,Sat,Short-term Krat Exclosure
+24212,1,DO,F,35,58,7/20/1996,Sat,Spectab exclosure
+24215,17,PP,M,21,20,7/20/1996,Sat,Control
+24216,2,PB,F,26,24,7/20/1996,Sat,Control
+24217,2,PP,M,23,12,7/20/1996,Sat,Control
+24221,18,PF,F,15,10,7/20/1996,Sat,Short-term Krat Exclosure
+24222,17,PF,F,16,7,7/20/1996,Sat,Control
+24224,21,PP,F,22,26,7/20/1996,Sat,Long-term Krat Exclosure
+24229,5,PF,M,17,6,7/21/1996,Sun,Rodent Exclosure
+24235,15,PF,M,17,10,7/21/1996,Sun,Long-term Krat Exclosure
+24236,3,DO,F,35,49,7/21/1996,Sun,Long-term Krat Exclosure
+24239,15,PP,F,24,23,7/21/1996,Sun,Long-term Krat Exclosure
+24247,11,PF,M,17,9,7/21/1996,Sun,Control
+24251,8,DO,M,37,52,7/21/1996,Sun,Control
+24254,9,OT,M,20,32,7/21/1996,Sun,Spectab exclosure
+24256,4,DM,M,37,47,7/21/1996,Sun,Control
+24258,6,DO,F,39,52,7/21/1996,Sun,Short-term Krat Exclosure
+24259,8,DO,M,35,51,7/21/1996,Sun,Control
+24260,14,DM,M,37,55,7/21/1996,Sun,Control
+24261,9,DM,M,37,45,7/21/1996,Sun,Spectab exclosure
+24265,15,PP,M,23,23,7/21/1996,Sun,Long-term Krat Exclosure
+24267,8,DO,M,38,54,7/21/1996,Sun,Control
+24271,13,DM,F,37,44,7/21/1996,Sun,Short-term Krat Exclosure
+24272,3,DO,F,38,53,7/21/1996,Sun,Long-term Krat Exclosure
+24274,3,PP,M,22,18,7/21/1996,Sun,Long-term Krat Exclosure
+24276,3,PP,M,23,19,7/21/1996,Sun,Long-term Krat Exclosure
+24280,22,DM,F,35,46,8/14/1996,Wed,Control
+24281,19,PB,F,23,23,8/14/1996,Wed,Long-term Krat Exclosure
+24290,12,DM,M,38,57,8/14/1996,Wed,Control
+24291,21,PP,F,22,20,8/14/1996,Wed,Long-term Krat Exclosure
+24293,17,DM,M,38,44,8/14/1996,Wed,Control
+24294,1,PP,M,23,19,8/14/1996,Wed,Spectab exclosure
+24296,19,PP,F,24,22,8/14/1996,Wed,Long-term Krat Exclosure
+24298,1,DO,M,36,23,8/14/1996,Wed,Spectab exclosure
+24303,1,PB,F,26,32,8/14/1996,Wed,Spectab exclosure
+24304,12,DM,M,39,44,8/14/1996,Wed,Control
+24307,2,PP,F,22,19,8/14/1996,Wed,Control
+24309,20,PP,F,23,18,8/14/1996,Wed,Short-term Krat Exclosure
+24310,7,PP,F,23,17,8/14/1996,Wed,Rodent Exclosure
+24313,19,PP,M,22,15,8/14/1996,Wed,Long-term Krat Exclosure
+24318,2,PP,M,23,15,8/14/1996,Wed,Control
+24324,12,PP,F,23,16,8/14/1996,Wed,Control
+24325,21,PP,F,24,21,8/14/1996,Wed,Long-term Krat Exclosure
+24330,3,PP,F,22,16,8/15/1996,Thu,Long-term Krat Exclosure
+24331,6,PP,M,23,15,8/15/1996,Thu,Short-term Krat Exclosure
+24334,3,DO,F,34,48,8/15/1996,Thu,Long-term Krat Exclosure
+24338,15,DM,M,37,41,8/15/1996,Thu,Long-term Krat Exclosure
+24339,9,DM,F,37,45,8/15/1996,Thu,Spectab exclosure
+24340,14,DM,F,37,48,8/15/1996,Thu,Control
+24344,8,DO,F,36,55,8/15/1996,Thu,Control
+24348,13,PP,M,22,18,8/15/1996,Thu,Short-term Krat Exclosure
+24351,3,PP,M,22,17,8/15/1996,Thu,Long-term Krat Exclosure
+24355,4,PP,M,23,12,8/15/1996,Thu,Control
+24357,6,OT,M,20,22,8/15/1996,Thu,Short-term Krat Exclosure
+24358,11,PP,F,22,11,8/15/1996,Thu,Control
+24359,5,OT,F,21,22,8/15/1996,Thu,Rodent Exclosure
+24362,3,PP,M,22,11,8/15/1996,Thu,Long-term Krat Exclosure
+24364,3,PP,F,23,17,8/15/1996,Thu,Long-term Krat Exclosure
+24366,9,DM,M,36,47,8/15/1996,Thu,Spectab exclosure
+24368,3,PP,M,22,17,8/15/1996,Thu,Long-term Krat Exclosure
+24376,8,PP,F,21,13,8/15/1996,Thu,Control
+24377,4,PF,M,17,10,8/15/1996,Thu,Control
+24382,13,PF,F,16,11,8/15/1996,Thu,Short-term Krat Exclosure
+24383,6,OT,F,21,21,8/15/1996,Thu,Short-term Krat Exclosure
+24390,17,DM,M,36,48,9/21/1996,Sat,Control
+24392,23,PP,M,18,22,9/21/1996,Sat,Rodent Exclosure
+24393,2,DM,F,33,26,9/21/1996,Sat,Control
+24402,20,OT,F,20,27,9/21/1996,Sat,Short-term Krat Exclosure
+24407,2,DM,F,35,42,9/21/1996,Sat,Control
+24410,20,PF,M,16,8,9/21/1996,Sat,Short-term Krat Exclosure
+24412,22,DM,F,23,54,9/21/1996,Sat,Control
+24416,1,PF,M,15,7,9/21/1996,Sat,Spectab exclosure
+24418,2,PP,F,20,20,9/21/1996,Sat,Control
+24419,17,OT,M,19,13,9/21/1996,Sat,Control
+24422,1,DO,M,37,41,9/21/1996,Sat,Spectab exclosure
+24431,12,DM,F,35,43,9/21/1996,Sat,Control
+24432,21,OT,M,22,15,9/21/1996,Sat,Long-term Krat Exclosure
+24438,22,DM,F,30,52,9/21/1996,Sat,Control
+24440,2,PB,F,25,24,9/21/1996,Sat,Control
+24442,17,DM,M,37,50,9/21/1996,Sat,Control
+24444,20,PB,M,26,25,9/21/1996,Sat,Short-term Krat Exclosure
+24447,12,OT,M,23,27,9/21/1996,Sat,Control
+24453,12,PF,F,15,8,9/21/1996,Sat,Control
+24456,22,OT,F,22,24,9/21/1996,Sat,Control
+24461,6,PP,F,21,15,9/22/1996,Sun,Short-term Krat Exclosure
+24466,3,PP,F,21,17,9/22/1996,Sun,Long-term Krat Exclosure
+24472,13,OT,F,20,16,9/22/1996,Sun,Short-term Krat Exclosure
+24475,4,DM,M,38,51,9/22/1996,Sun,Control
+24477,13,OT,F,20,18,9/22/1996,Sun,Short-term Krat Exclosure
+24480,3,PB,F,27,26,9/22/1996,Sun,Long-term Krat Exclosure
+24482,13,OT,M,20,14,9/22/1996,Sun,Short-term Krat Exclosure
+24483,15,PP,M,21,15,9/22/1996,Sun,Long-term Krat Exclosure
+24485,9,DO,M,34,50,9/22/1996,Sun,Spectab exclosure
+24488,5,PP,F,21,16,9/22/1996,Sun,Rodent Exclosure
+24492,3,PP,F,20,16,9/22/1996,Sun,Long-term Krat Exclosure
+24494,3,PP,F,20,18,9/22/1996,Sun,Long-term Krat Exclosure
+24499,11,DM,F,35,33,9/22/1996,Sun,Control
+24501,13,OT,M,20,21,9/22/1996,Sun,Short-term Krat Exclosure
+24505,3,PP,M,21,20,9/22/1996,Sun,Long-term Krat Exclosure
+24513,16,PM,M,20,19,9/22/1996,Sun,Rodent Exclosure
+24514,5,PF,M,17,8,9/22/1996,Sun,Rodent Exclosure
+24523,15,OT,M,20,16,9/22/1996,Sun,Long-term Krat Exclosure
+24524,8,OT,F,21,25,9/22/1996,Sun,Control
+24530,14,DM,F,36,53,9/22/1996,Sun,Control
+24533,11,PP,M,23,15,9/22/1996,Sun,Control
+24534,4,OT,F,21,28,9/22/1996,Sun,Control
+24536,1,OT,M,20,25,10/12/1996,Sat,Spectab exclosure
+24537,2,DM,M,38,45,10/12/1996,Sat,Control
+24538,12,DM,M,39,46,10/12/1996,Sat,Control
+24540,1,DM,F,35,27,10/12/1996,Sat,Spectab exclosure
+24546,2,DM,M,38,50,10/12/1996,Sat,Control
+24547,12,PP,M,22,16,10/12/1996,Sat,Control
+24549,2,DM,M,34,36,10/12/1996,Sat,Control
+24563,21,OT,M,21,20,10/12/1996,Sat,Long-term Krat Exclosure
+24564,12,PF,M,15,8,10/12/1996,Sat,Control
+24566,19,PB,M,27,26,10/12/1996,Sat,Long-term Krat Exclosure
+24567,18,PF,M,15,8,10/12/1996,Sat,Short-term Krat Exclosure
+24568,1,PP,M,22,18,10/12/1996,Sat,Spectab exclosure
+24573,1,DO,F,37,49,10/12/1996,Sat,Spectab exclosure
+24574,17,DM,M,36,48,10/12/1996,Sat,Control
+24576,1,DO,M,36,45,10/12/1996,Sat,Spectab exclosure
+24585,17,PF,M,16,8,10/12/1996,Sat,Control
+24587,21,PF,M,16,8,10/12/1996,Sat,Long-term Krat Exclosure
+24591,17,DM,F,36,45,10/12/1996,Sat,Control
+24595,2,PB,M,28,38,10/12/1996,Sat,Control
+24596,20,PF,F,15,7,10/12/1996,Sat,Short-term Krat Exclosure
+24604,6,OT,F,20,17,10/13/1996,Sun,Short-term Krat Exclosure
+24607,15,OT,M,21,21,10/13/1996,Sun,Long-term Krat Exclosure
+24611,3,DO,F,35,55,10/13/1996,Sun,Long-term Krat Exclosure
+24612,9,DO,M,34,49,10/13/1996,Sun,Spectab exclosure
+24613,8,DO,M,37,50,10/13/1996,Sun,Control
+24614,9,PF,M,16,7,10/13/1996,Sun,Spectab exclosure
+24615,14,DM,M,30,26,10/13/1996,Sun,Control
+24616,14,DM,M,33,24,10/13/1996,Sun,Control
+24625,6,PP,M,21,15,10/13/1996,Sun,Short-term Krat Exclosure
+24626,4,DM,F,36,41,10/13/1996,Sun,Control
+24629,6,PF,M,16,7,10/13/1996,Sun,Short-term Krat Exclosure
+24634,13,DM,F,36,43,10/13/1996,Sun,Short-term Krat Exclosure
+24638,6,PF,M,16,7,10/13/1996,Sun,Short-term Krat Exclosure
+24639,11,DO,F,38,54,10/13/1996,Sun,Control
+24640,9,DM,M,36,47,10/13/1996,Sun,Spectab exclosure
+24642,11,PF,F,15,6,10/13/1996,Sun,Control
+24643,6,OT,M,20,23,10/13/1996,Sun,Short-term Krat Exclosure
+24645,3,PP,F,23,17,10/13/1996,Sun,Long-term Krat Exclosure
+24648,14,OT,M,21,22,10/13/1996,Sun,Control
+24649,15,PP,M,22,15,10/13/1996,Sun,Long-term Krat Exclosure
+24652,13,PF,F,16,9,10/13/1996,Sun,Short-term Krat Exclosure
+24654,4,OT,F,20,24,10/13/1996,Sun,Control
+24659,9,DM,F,35,36,10/13/1996,Sun,Spectab exclosure
+24666,14,DM,F,36,43,10/13/1996,Sun,Control
+24668,13,PF,M,15,7,10/13/1996,Sun,Short-term Krat Exclosure
+24673,23,PM,M,19,23,11/16/1996,Sat,Rodent Exclosure
+24675,17,PF,F,15,7,11/16/1996,Sat,Control
+24676,12,DM,M,36,48,11/16/1996,Sat,Control
+24677,17,DM,M,38,42,11/16/1996,Sat,Control
+24679,1,DM,M,37,40,11/16/1996,Sat,Spectab exclosure
+24681,2,DM,M,35,42,11/16/1996,Sat,Control
+24682,2,DM,M,36,41,11/16/1996,Sat,Control
+24685,12,DM,M,36,36,11/16/1996,Sat,Control
+24687,22,OT,F,22,25,11/16/1996,Sat,Control
+24688,17,DM,M,38,47,11/16/1996,Sat,Control
+24693,22,DM,M,36,40,11/16/1996,Sat,Control
+24695,22,OT,M,21,21,11/16/1996,Sat,Control
+24700,1,DO,F,36,49,11/16/1996,Sat,Spectab exclosure
+24702,20,PF,M,16,7,11/16/1996,Sat,Short-term Krat Exclosure
+24706,17,DM,M,36,51,11/16/1996,Sat,Control
+24709,12,DM,F,37,47,11/16/1996,Sat,Control
+24710,1,OT,M,20,23,11/16/1996,Sat,Spectab exclosure
+24715,17,OT,M,21,20,11/16/1996,Sat,Control
+24717,2,PB,M,25,27,11/16/1996,Sat,Control
+24718,7,PM,F,19,21,11/16/1996,Sat,Rodent Exclosure
+24721,3,PE,M,19,23,11/17/1996,Sun,Long-term Krat Exclosure
+24723,14,DM,M,35,47,11/17/1996,Sun,Control
+24726,9,DM,M,37,49,11/17/1996,Sun,Spectab exclosure
+24729,6,PF,F,15,8,11/17/1996,Sun,Short-term Krat Exclosure
+24730,9,DM,F,36,40,11/17/1996,Sun,Spectab exclosure
+24733,15,RM,F,17,12,11/17/1996,Sun,Long-term Krat Exclosure
+24735,4,PF,F,15,8,11/17/1996,Sun,Control
+24740,3,PP,F,22,15,11/17/1996,Sun,Long-term Krat Exclosure
+24742,3,PM,M,21,19,11/17/1996,Sun,Long-term Krat Exclosure
+24743,9,DM,M,35,40,11/17/1996,Sun,Spectab exclosure
+24744,3,DO,F,35,54,11/17/1996,Sun,Long-term Krat Exclosure
+24756,14,DM,F,33,36,11/17/1996,Sun,Control
+24759,9,DM,F,35,38,11/17/1996,Sun,Spectab exclosure
+24760,9,DO,M,36,46,11/17/1996,Sun,Spectab exclosure
+24761,8,PF,F,16,7,11/17/1996,Sun,Control
+24763,11,DM,M,37,39,11/17/1996,Sun,Control
+24767,14,DM,F,36,47,11/17/1996,Sun,Control
+24771,4,DM,M,38,46,11/17/1996,Sun,Control
+24772,13,DM,F,32,43,11/17/1996,Sun,Short-term Krat Exclosure
+24777,11,DM,F,35,43,11/17/1996,Sun,Control
+24782,3,OT,F,21,22,11/17/1996,Sun,Long-term Krat Exclosure
+24787,11,DM,M,36,44,11/17/1996,Sun,Control
+24789,13,PF,F,16,8,11/17/1996,Sun,Short-term Krat Exclosure
+24791,16,RM,F,17,16,11/17/1996,Sun,Rodent Exclosure
+24796,1,DO,M,35,36,12/18/1996,Wed,Spectab exclosure
+24798,22,DM,F,37,38,12/18/1996,Wed,Control
+24799,12,DM,F,37,47,12/18/1996,Wed,Control
+24800,12,OT,F,20,20,12/18/1996,Wed,Control
+24801,19,PF,M,16,8,12/18/1996,Wed,Long-term Krat Exclosure
+24806,2,OT,F,20,27,12/18/1996,Wed,Control
+24807,22,DM,F,35,47,12/18/1996,Wed,Control
+24809,24,RM,F,16,11,12/18/1996,Wed,Rodent Exclosure
+24812,18,PF,M,16,8,12/18/1996,Wed,Short-term Krat Exclosure
+24813,24,PM,F,20,24,12/18/1996,Wed,Rodent Exclosure
+24814,19,PF,F,17,7,12/18/1996,Wed,Long-term Krat Exclosure
+24819,17,DM,F,36,35,12/18/1996,Wed,Control
+24829,22,PF,M,16,7,12/18/1996,Wed,Control
+24833,20,PF,M,17,7,12/18/1996,Wed,Short-term Krat Exclosure
+24835,12,OT,F,21,27,12/18/1996,Wed,Control
+24837,12,DM,F,37,40,12/18/1996,Wed,Control
+24838,2,RM,M,18,11,12/18/1996,Wed,Control
+24839,18,RM,F,16,14,12/18/1996,Wed,Short-term Krat Exclosure
+24845,2,PB,F,24,26,12/18/1996,Wed,Control
+24847,2,RM,F,16,9,12/18/1996,Wed,Control
+24850,2,PB,M,27,44,12/18/1996,Wed,Control
+24853,22,PB,M,26,45,12/18/1996,Wed,Control
+24854,1,DO,M,36,50,12/18/1996,Wed,Spectab exclosure
+24857,12,DM,F,36,40,12/18/1996,Wed,Control
+24858,1,DO,M,35,54,12/18/1996,Wed,Spectab exclosure
+24864,1,DM,F,37,41,12/18/1996,Wed,Spectab exclosure
+24868,12,DM,M,36,37,12/18/1996,Wed,Control
+24874,14,DM,M,34,36,12/19/1996,Thu,Control
+24876,9,DM,M,37,51,12/19/1996,Thu,Spectab exclosure
+24883,13,OT,F,22,25,12/19/1996,Thu,Short-term Krat Exclosure
+24889,14,DM,M,35,50,12/19/1996,Thu,Control
+24890,11,DO,M,37,53,12/19/1996,Thu,Control
+24891,8,DM,M,35,40,12/19/1996,Thu,Control
+24893,4,DM,M,36,40,12/19/1996,Thu,Control
+24895,4,PF,F,16,7,12/19/1996,Thu,Control
+24902,6,OT,F,20,23,12/19/1996,Thu,Short-term Krat Exclosure
+24913,16,DM,F,34,39,12/19/1996,Thu,Rodent Exclosure
+24916,13,PM,F,19,23,12/19/1996,Thu,Short-term Krat Exclosure
+24917,5,PM,M,20,23,12/19/1996,Thu,Rodent Exclosure
+24918,4,DM,M,37,51,12/19/1996,Thu,Control
+24919,11,DM,F,35,39,12/19/1996,Thu,Control
+27414,12,DM,F,35,41,1/31/1998,Sat,Control
+27415,12,DM,M,36,43,1/31/1998,Sat,Control
+27418,19,OT,M,21,18,1/31/1998,Sat,Long-term Krat Exclosure
+27423,21,PB,M,27,32,1/31/1998,Sat,Long-term Krat Exclosure
+27425,1,DM,M,35,39,1/31/1998,Sat,Spectab exclosure
+27431,24,PM,M,22,28,1/31/1998,Sat,Rodent Exclosure
+27433,19,PB,M,27,31,1/31/1998,Sat,Long-term Krat Exclosure
+27437,12,DM,F,36,43,1/31/1998,Sat,Control
+27438,2,OT,F,21,25,1/31/1998,Sat,Control
+27442,12,DM,F,35,40,1/31/1998,Sat,Control
+27446,12,OT,F,20,22,1/31/1998,Sat,Control
+27447,17,DM,F,36,39,1/31/1998,Sat,Control
+27449,12,DM,M,37,42,1/31/1998,Sat,Control
+27454,22,DM,F,37,39,1/31/1998,Sat,Control
+27455,1,PB,F,26,31,1/31/1998,Sat,Spectab exclosure
+27456,12,OT,M,20,23,1/31/1998,Sat,Control
+27457,22,DM,M,37,42,1/31/1998,Sat,Control
+27459,22,OT,M,20,24,1/31/1998,Sat,Control
+27461,2,OT,M,21,22,1/31/1998,Sat,Control
+27466,1,DM,F,36,42,1/31/1998,Sat,Spectab exclosure
+27480,8,DO,F,38,48,2/1/1998,Sun,Control
+27483,6,PB,F,26,33,2/1/1998,Sun,Short-term Krat Exclosure
+27485,14,DM,M,37,49,2/1/1998,Sun,Control
+27486,8,DM,F,34,40,2/1/1998,Sun,Control
+27488,9,DO,F,37,52,2/1/1998,Sun,Spectab exclosure
+27490,4,DM,M,38,51,2/1/1998,Sun,Control
+27494,8,DO,M,36,51,2/1/1998,Sun,Control
+27495,13,PM,M,21,23,2/1/1998,Sun,Short-term Krat Exclosure
+27496,3,PB,F,26,37,2/1/1998,Sun,Long-term Krat Exclosure
+27499,11,DO,F,36,43,2/1/1998,Sun,Control
+27505,11,OT,F,21,22,2/1/1998,Sun,Control
+27506,14,DM,F,35,41,2/1/1998,Sun,Control
+27509,4,DM,M,35,43,2/1/1998,Sun,Control
+27511,11,DM,M,35,41,2/1/1998,Sun,Control
+27518,14,DM,F,37,42,2/1/1998,Sun,Control
+27524,14,DM,M,35,42,2/1/1998,Sun,Control
+27530,6,OT,F,20,21,2/1/1998,Sun,Short-term Krat Exclosure
+27532,14,DM,M,39,44,2/1/1998,Sun,Control
+27539,14,DM,F,35,45,2/1/1998,Sun,Control
+27540,8,DM,M,36,41,2/1/1998,Sun,Control
+27684,12,DM,F,35,47,3/29/1998,Sun,Control
+27685,1,DM,F,35,45,3/29/1998,Sun,Spectab exclosure
+27698,18,PB,F,25,38,3/29/1998,Sun,Short-term Krat Exclosure
+27701,2,DM,M,34,45,3/29/1998,Sun,Control
+27702,2,DM,M,35,48,3/29/1998,Sun,Control
+27706,19,PB,F,26,42,3/29/1998,Sun,Long-term Krat Exclosure
+27710,19,PM,F,20,23,3/29/1998,Sun,Long-term Krat Exclosure
+27711,19,PB,M,26,38,3/29/1998,Sun,Long-term Krat Exclosure
+27715,2,DM,M,37,43,3/29/1998,Sun,Control
+27716,12,DM,F,35,48,3/29/1998,Sun,Control
+27717,12,DM,M,37,49,3/29/1998,Sun,Control
+27718,17,DM,F,33,45,3/29/1998,Sun,Control
+27721,17,DM,F,37,47,3/29/1998,Sun,Control
+27722,21,PB,F,27,36,3/29/1998,Sun,Long-term Krat Exclosure
+27725,2,PP,M,20,20,3/29/1998,Sun,Control
+27726,7,PP,M,23,19,3/29/1998,Sun,Rodent Exclosure
+27727,2,OT,M,21,23,3/29/1998,Sun,Control
+27728,12,DM,F,36,42,3/29/1998,Sun,Control
+27734,2,NL,F,33,188,3/29/1998,Sun,Control
+27736,17,PP,M,21,22,3/29/1998,Sun,Control
+27737,22,DM,M,36,45,3/29/1998,Sun,Control
+27742,17,DM,F,36,40,3/29/1998,Sun,Control
+27743,22,DM,M,36,50,3/29/1998,Sun,Control
+27749,18,PB,F,25,35,5/2/1998,Sat,Short-term Krat Exclosure
+27750,12,OT,F,19,14,5/2/1998,Sat,Control
+27752,1,PP,M,22,22,5/2/1998,Sat,Spectab exclosure
+27758,1,DM,F,35,45,5/2/1998,Sat,Spectab exclosure
+27759,17,DM,M,37,50,5/2/1998,Sat,Control
+27760,20,PM,F,20,27,5/2/1998,Sat,Short-term Krat Exclosure
+27762,12,NL,F,31,238,5/2/1998,Sat,Control
+27766,12,DM,M,35,42,5/2/1998,Sat,Control
+27771,12,DM,M,36,46,5/2/1998,Sat,Control
+27773,20,PF,F,16,11,5/2/1998,Sat,Short-term Krat Exclosure
+27776,2,DM,M,35,46,5/2/1998,Sat,Control
+27777,1,OT,F,19,35,5/2/1998,Sat,Spectab exclosure
+27780,2,OT,M,19,29,5/2/1998,Sat,Control
+27784,12,DM,M,36,47,5/2/1998,Sat,Control
+27786,12,DM,M,35,47,5/2/1998,Sat,Control
+27787,7,PP,F,21,17,5/2/1998,Sat,Rodent Exclosure
+27788,12,OT,F,20,31,5/2/1998,Sat,Control
+27789,22,PB,F,25,31,5/2/1998,Sat,Control
+27793,1,DO,M,36,30,5/2/1998,Sat,Spectab exclosure
+27795,17,PP,F,22,19,5/2/1998,Sat,Control
+27796,22,PB,M,27,46,5/2/1998,Sat,Control
+27797,12,DM,M,35,45,5/2/1998,Sat,Control
+27800,7,PP,M,22,20,5/2/1998,Sat,Rodent Exclosure
+27802,11,DO,M,36,59,5/3/1998,Sun,Control
+27803,8,DM,M,36,49,5/3/1998,Sun,Control
+27806,6,PB,F,26,42,5/3/1998,Sun,Short-term Krat Exclosure
+27807,8,PP,M,22,18,5/3/1998,Sun,Control
+27812,13,DM,M,36,52,5/3/1998,Sun,Short-term Krat Exclosure
+27813,13,DM,F,34,44,5/3/1998,Sun,Short-term Krat Exclosure
+27814,3,PP,F,20,17,5/3/1998,Sun,Long-term Krat Exclosure
+27816,5,PM,M,20,13,5/3/1998,Sun,Rodent Exclosure
+27817,16,PM,M,21,21,5/3/1998,Sun,Rodent Exclosure
+27818,9,DM,F,35,50,5/3/1998,Sun,Spectab exclosure
+27821,9,PP,F,21,20,5/3/1998,Sun,Spectab exclosure
+27825,13,DM,M,37,48,5/3/1998,Sun,Short-term Krat Exclosure
+27828,3,PP,F,21,17,5/3/1998,Sun,Long-term Krat Exclosure
+27830,14,DM,M,37,46,5/3/1998,Sun,Control
+27835,5,PP,M,20,23,5/3/1998,Sun,Rodent Exclosure
+27848,6,PP,F,22,17,5/3/1998,Sun,Short-term Krat Exclosure
+27853,9,DM,F,33,44,5/3/1998,Sun,Spectab exclosure
+27859,24,PE,F,20,27,5/28/1998,Thu,Rodent Exclosure
+27860,2,NL,F,33,190,5/28/1998,Thu,Control
+27863,12,PP,M,21,18,5/28/1998,Thu,Control
+27864,22,OT,F,21,25,5/28/1998,Thu,Control
+27865,12,DM,M,36,52,5/28/1998,Thu,Control
+27867,12,NL,F,33,199,5/28/1998,Thu,Control
+27868,19,PB,M,26,24,5/28/1998,Thu,Long-term Krat Exclosure
+27869,21,PB,F,26,35,5/28/1998,Thu,Long-term Krat Exclosure
+27870,17,PE,M,19,13,5/28/1998,Thu,Control
+27876,17,DM,F,37,38,5/28/1998,Thu,Control
+27877,22,DM,F,35,45,5/28/1998,Thu,Control
+27878,19,PM,F,21,20,5/28/1998,Thu,Long-term Krat Exclosure
+27881,20,PF,F,16,10,5/28/1998,Thu,Short-term Krat Exclosure
+27886,22,DM,F,36,46,5/28/1998,Thu,Control
+27890,18,PB,F,26,34,5/28/1998,Thu,Short-term Krat Exclosure
+27896,2,DM,F,37,45,5/28/1998,Thu,Control
+27897,2,NL,M,21,110,5/28/1998,Thu,Control
+27901,17,DM,M,39,43,5/28/1998,Thu,Control
+27906,19,PB,F,25,20,5/28/1998,Thu,Long-term Krat Exclosure
+27907,12,DM,M,34,46,5/28/1998,Thu,Control
+27908,1,PP,M,22,17,5/28/1998,Thu,Spectab exclosure
+27910,20,PE,M,20,16,5/28/1998,Thu,Short-term Krat Exclosure
+27911,22,DM,M,35,44,5/28/1998,Thu,Control
+27912,12,DM,F,36,57,5/28/1998,Thu,Control
+27913,17,PP,F,22,17,5/28/1998,Thu,Control
+27916,12,OT,M,22,29,5/28/1998,Thu,Control
+27917,17,DM,F,36,50,5/28/1998,Thu,Control
+27918,1,DO,M,37,56,5/28/1998,Thu,Spectab exclosure
+27923,19,PB,F,26,22,5/28/1998,Thu,Long-term Krat Exclosure
+27927,17,PP,M,22,19,5/28/1998,Thu,Control
+27928,17,PM,F,20,22,5/28/1998,Thu,Control
+27935,3,OT,M,21,21,5/29/1998,Fri,Long-term Krat Exclosure
+27937,6,OT,M,20,21,5/29/1998,Fri,Short-term Krat Exclosure
+27943,9,DM,M,36,49,5/29/1998,Fri,Spectab exclosure
+27948,14,DM,M,35,51,5/29/1998,Fri,Control
+27949,11,DO,F,34,44,5/29/1998,Fri,Control
+27950,8,DM,M,35,47,5/29/1998,Fri,Control
+27951,13,PB,M,27,40,5/29/1998,Fri,Short-term Krat Exclosure
+27952,6,PB,F,26,39,5/29/1998,Fri,Short-term Krat Exclosure
+27953,14,DM,M,36,51,5/29/1998,Fri,Control
+27955,6,PB,M,27,35,5/29/1998,Fri,Short-term Krat Exclosure
+27961,9,DM,M,36,45,5/29/1998,Fri,Spectab exclosure
+27967,14,DM,M,37,48,5/29/1998,Fri,Control
+27974,14,DM,F,35,39,5/29/1998,Fri,Control
+27980,14,DM,F,35,51,5/29/1998,Fri,Control
+27982,14,NL,M,31,140,5/29/1998,Fri,Control
+27984,6,PB,F,26,27,5/29/1998,Fri,Short-term Krat Exclosure
+27985,9,PE,M,21,14,5/29/1998,Fri,Spectab exclosure
+27992,15,PM,M,20,18,5/29/1998,Fri,Long-term Krat Exclosure
+27996,15,PM,F,20,16,5/29/1998,Fri,Long-term Krat Exclosure
+28000,3,OT,M,20,21,5/29/1998,Fri,Long-term Krat Exclosure
+28002,8,DO,M,35,55,5/29/1998,Fri,Control
+28004,13,OT,F,20,28,5/29/1998,Fri,Short-term Krat Exclosure
+28005,3,PB,F,26,34,5/29/1998,Fri,Long-term Krat Exclosure
+28006,4,DM,F,35,43,5/29/1998,Fri,Control
+28008,11,DM,F,36,46,5/29/1998,Fri,Control
+28012,14,DM,M,36,46,5/29/1998,Fri,Control
+28015,22,DM,M,37,38,6/27/1998,Sat,Control
+28018,22,DM,F,38,49,6/27/1998,Sat,Control
+28028,21,PP,M,22,12,6/27/1998,Sat,Long-term Krat Exclosure
+28033,12,DM,M,36,45,6/27/1998,Sat,Control
+28037,20,PF,F,16,8,6/27/1998,Sat,Short-term Krat Exclosure
+28043,21,PB,F,26,38,6/27/1998,Sat,Long-term Krat Exclosure
+28053,20,PE,M,22,22,6/27/1998,Sat,Short-term Krat Exclosure
+28054,2,PP,M,22,15,6/27/1998,Sat,Control
+28057,7,PP,F,20,19,6/27/1998,Sat,Rodent Exclosure
+28058,24,PE,F,20,25,6/27/1998,Sat,Rodent Exclosure
+28061,17,DM,F,36,33,6/27/1998,Sat,Control
+28062,21,DM,F,34,47,6/27/1998,Sat,Long-term Krat Exclosure
+28072,12,DM,M,37,45,6/27/1998,Sat,Control
+28074,17,NL,M,34,93,6/27/1998,Sat,Control
+28075,20,PM,M,20,23,6/27/1998,Sat,Short-term Krat Exclosure
+28079,19,PB,F,25,29,6/27/1998,Sat,Long-term Krat Exclosure
+28080,17,DM,F,36,42,6/27/1998,Sat,Control
+28081,21,PF,F,16,9,6/27/1998,Sat,Long-term Krat Exclosure
+28084,21,OT,M,20,23,6/27/1998,Sat,Long-term Krat Exclosure
+28085,24,PE,M,20,22,6/27/1998,Sat,Rodent Exclosure
+28092,3,PB,M,28,27,6/28/1998,Sun,Long-term Krat Exclosure
+28093,9,DO,M,37,59,6/28/1998,Sun,Spectab exclosure
+28096,4,PP,F,20,12,6/28/1998,Sun,Control
+28100,6,OT,M,19,24,6/28/1998,Sun,Short-term Krat Exclosure
+28104,9,DO,F,36,36,6/28/1998,Sun,Spectab exclosure
+28105,6,PB,F,26,29,6/28/1998,Sun,Short-term Krat Exclosure
+28118,11,DM,F,36,44,6/28/1998,Sun,Control
+28119,14,DM,F,37,51,6/28/1998,Sun,Control
+28125,14,DM,F,36,42,6/28/1998,Sun,Control
+28133,14,DM,M,35,49,6/28/1998,Sun,Control
+28134,3,PB,M,26,30,6/28/1998,Sun,Long-term Krat Exclosure
+28140,16,PP,M,23,12,6/28/1998,Sun,Rodent Exclosure
+28141,3,PB,F,26,19,6/28/1998,Sun,Long-term Krat Exclosure
+28143,5,PM,F,19,19,6/28/1998,Sun,Rodent Exclosure
+28144,14,DM,M,36,34,6/28/1998,Sun,Control
+28145,15,PM,M,20,20,6/28/1998,Sun,Long-term Krat Exclosure
+28149,14,OT,F,19,27,6/28/1998,Sun,Control
+28156,9,DM,F,36,41,6/28/1998,Sun,Spectab exclosure
+28159,13,PB,F,26,37,6/28/1998,Sun,Short-term Krat Exclosure
+28162,3,PB,F,27,36,6/28/1998,Sun,Long-term Krat Exclosure
+28167,12,PP,F,21,25,7/18/1998,Sat,Control
+28168,19,PF,F,15,9,7/18/1998,Sat,Long-term Krat Exclosure
+28182,18,PP,F,20,14,7/18/1998,Sat,Short-term Krat Exclosure
+28183,17,DM,M,36,52,7/18/1998,Sat,Control
+28184,2,DM,F,36,48,7/18/1998,Sat,Control
+28187,22,DM,M,37,40,7/18/1998,Sat,Control
+28188,12,PP,F,21,17,7/18/1998,Sat,Control
+28201,21,PB,M,26,22,7/18/1998,Sat,Long-term Krat Exclosure
+28202,1,PP,F,22,17,7/18/1998,Sat,Spectab exclosure
+28212,21,PF,F,16,11,7/18/1998,Sat,Long-term Krat Exclosure
+28215,19,PB,F,26,26,7/18/1998,Sat,Long-term Krat Exclosure
+28216,19,PM,M,20,23,7/18/1998,Sat,Long-term Krat Exclosure
+28223,19,PB,F,26,20,7/18/1998,Sat,Long-term Krat Exclosure
+28227,1,PP,F,22,14,7/18/1998,Sat,Spectab exclosure
+28229,12,OT,F,19,24,7/18/1998,Sat,Control
+28230,17,DO,M,35,28,7/18/1998,Sat,Control
+28232,20,PF,F,16,11,7/18/1998,Sat,Short-term Krat Exclosure
+28243,4,PP,F,22,18,7/19/1998,Sun,Control
+28244,8,PP,M,22,17,7/19/1998,Sun,Control
+28247,3,PB,F,26,25,7/19/1998,Sun,Long-term Krat Exclosure
+28248,9,OT,M,20,25,7/19/1998,Sun,Spectab exclosure
+28253,13,OT,F,19,36,7/19/1998,Sun,Short-term Krat Exclosure
+28255,14,DM,F,35,44,7/19/1998,Sun,Control
+28257,15,NL,F,35,187,7/19/1998,Sun,Long-term Krat Exclosure
+28262,14,DM,F,33,31,7/19/1998,Sun,Control
+28265,5,PM,F,20,20,7/19/1998,Sun,Rodent Exclosure
+28269,13,PB,F,27,30,7/19/1998,Sun,Short-term Krat Exclosure
+28270,5,PM,M,21,23,7/19/1998,Sun,Rodent Exclosure
+28272,9,DO,M,36,62,7/19/1998,Sun,Spectab exclosure
+28274,10,PM,F,21,25,7/19/1998,Sun,Rodent Exclosure
+28278,10,PM,M,20,21,7/19/1998,Sun,Rodent Exclosure
+28279,4,DM,F,37,43,7/19/1998,Sun,Control
+28288,11,DM,F,35,43,7/19/1998,Sun,Control
+28298,9,DM,F,35,42,7/19/1998,Sun,Spectab exclosure
+28299,14,DM,M,36,35,7/19/1998,Sun,Control
+28301,13,PB,F,26,21,7/19/1998,Sun,Short-term Krat Exclosure
+28304,16,PM,F,21,25,7/19/1998,Sun,Rodent Exclosure
+28308,10,PM,F,20,18,7/19/1998,Sun,Rodent Exclosure
+28310,14,OT,F,19,31,7/19/1998,Sun,Control
+28314,8,DO,M,37,62,7/19/1998,Sun,Control
+28315,9,DM,F,36,57,7/19/1998,Sun,Spectab exclosure
+28319,1,DM,M,34,26,8/22/1998,Sat,Spectab exclosure
+28320,1,PP,F,21,15,8/22/1998,Sat,Spectab exclosure
+28322,1,DO,M,37,52,8/22/1998,Sat,Spectab exclosure
+28324,2,PP,F,24,18,8/22/1998,Sat,Control
+28330,2,PB,F,26,33,8/22/1998,Sat,Control
+28332,7,PB,M,26,27,8/22/1998,Sat,Rodent Exclosure
+28336,7,PB,M,26,23,8/22/1998,Sat,Rodent Exclosure
+28339,12,PP,M,21,13,8/22/1998,Sat,Control
+28345,12,PP,M,21,12,8/22/1998,Sat,Control
+28348,12,OT,F,20,24,8/22/1998,Sat,Control
+28349,12,DM,F,34,45,8/22/1998,Sat,Control
+28351,17,DM,M,35,23,8/22/1998,Sat,Control
+28353,17,PP,F,21,17,8/22/1998,Sat,Control
+28361,18,PB,M,29,48,8/22/1998,Sat,Short-term Krat Exclosure
+28363,18,PP,M,22,14,8/22/1998,Sat,Short-term Krat Exclosure
+28367,19,PP,M,21,14,8/22/1998,Sat,Long-term Krat Exclosure
+28374,19,PB,M,26,27,8/22/1998,Sat,Long-term Krat Exclosure
+28375,19,PB,M,26,28,8/22/1998,Sat,Long-term Krat Exclosure
+28379,20,PF,F,15,8,8/22/1998,Sat,Short-term Krat Exclosure
+28386,21,PP,M,21,16,8/22/1998,Sat,Long-term Krat Exclosure
+28389,21,PB,M,26,26,8/22/1998,Sat,Long-term Krat Exclosure
+28390,21,PB,M,27,29,8/22/1998,Sat,Long-term Krat Exclosure
+28403,24,PE,F,19,26,8/22/1998,Sat,Rodent Exclosure
+28405,3,PB,M,26,31,8/23/1998,Sun,Long-term Krat Exclosure
+28408,3,PB,M,26,25,8/23/1998,Sun,Long-term Krat Exclosure
+28410,3,PB,F,26,34,8/23/1998,Sun,Long-term Krat Exclosure
+28416,3,PB,F,25,30,8/23/1998,Sun,Long-term Krat Exclosure
+28418,4,PP,M,22,17,8/23/1998,Sun,Control
+28422,4,PP,M,20,8,8/23/1998,Sun,Control
+28423,4,DM,F,35,47,8/23/1998,Sun,Control
+28425,4,DM,M,35,46,8/23/1998,Sun,Control
+28428,5,PM,M,19,21,8/23/1998,Sun,Rodent Exclosure
+28429,6,PE,F,20,18,8/23/1998,Sun,Short-term Krat Exclosure
+28430,6,PE,M,19,18,8/23/1998,Sun,Short-term Krat Exclosure
+28432,6,PB,F,27,38,8/23/1998,Sun,Short-term Krat Exclosure
+28436,6,OT,M,20,28,8/23/1998,Sun,Short-term Krat Exclosure
+28443,8,PP,F,23,17,8/23/1998,Sun,Control
+28447,9,PP,M,23,17,8/23/1998,Sun,Spectab exclosure
+28451,11,PP,F,22,17,8/23/1998,Sun,Control
+28452,11,DM,F,35,41,8/23/1998,Sun,Control
+28458,13,PP,M,21,13,8/23/1998,Sun,Short-term Krat Exclosure
+28459,13,OT,M,20,26,8/23/1998,Sun,Short-term Krat Exclosure
+28460,13,PB,M,26,26,8/23/1998,Sun,Short-term Krat Exclosure
+28463,13,PP,F,22,14,8/23/1998,Sun,Short-term Krat Exclosure
+28465,13,PB,F,26,31,8/23/1998,Sun,Short-term Krat Exclosure
+28467,14,DM,F,35,40,8/23/1998,Sun,Control
+28470,14,PM,F,20,19,8/23/1998,Sun,Control
+28471,15,PP,F,21,13,8/23/1998,Sun,Long-term Krat Exclosure
+28473,15,PB,M,24,24,8/23/1998,Sun,Long-term Krat Exclosure
+28476,16,PB,M,27,23,8/23/1998,Sun,Rodent Exclosure
+28478,16,PP,M,22,12,8/23/1998,Sun,Rodent Exclosure
+28490,12,DM,F,34,43,9/19/1998,Sat,Control
+28492,18,PB,F,25,19,9/19/1998,Sat,Short-term Krat Exclosure
+28493,18,PB,M,25,32,9/19/1998,Sat,Short-term Krat Exclosure
+28498,19,PP,M,21,14,9/19/1998,Sat,Long-term Krat Exclosure
+28499,19,PB,M,27,32,9/19/1998,Sat,Long-term Krat Exclosure
+28505,19,PP,M,22,14,9/19/1998,Sat,Long-term Krat Exclosure
+28508,20,PP,M,21,18,9/19/1998,Sat,Short-term Krat Exclosure
+28521,21,PB,M,26,39,9/19/1998,Sat,Long-term Krat Exclosure
+28522,21,PB,M,26,31,9/19/1998,Sat,Long-term Krat Exclosure
+28524,22,PB,M,26,29,9/19/1998,Sat,Control
+28527,22,PB,F,26,28,9/19/1998,Sat,Control
+28530,22,PB,M,27,27,9/19/1998,Sat,Control
+28542,1,DO,F,33,53,9/20/1998,Sun,Spectab exclosure
+28544,1,PP,F,21,13,9/20/1998,Sun,Spectab exclosure
+28546,1,DO,F,37,61,9/20/1998,Sun,Spectab exclosure
+28549,1,DO,M,36,54,9/20/1998,Sun,Spectab exclosure
+28557,2,OT,M,20,20,9/20/1998,Sun,Control
+28560,2,PB,F,26,35,9/20/1998,Sun,Control
+28561,2,DM,M,35,28,9/20/1998,Sun,Control
+28564,3,PP,M,22,15,9/20/1998,Sun,Long-term Krat Exclosure
+28565,3,PB,M,26,27,9/20/1998,Sun,Long-term Krat Exclosure
+28566,3,PB,M,26,30,9/20/1998,Sun,Long-term Krat Exclosure
+28569,3,PB,F,26,38,9/20/1998,Sun,Long-term Krat Exclosure
+28580,4,PP,F,22,17,9/20/1998,Sun,Control
+28583,6,PB,M,26,29,9/20/1998,Sun,Short-term Krat Exclosure
+28585,7,PB,M,26,25,9/20/1998,Sun,Rodent Exclosure
+28592,8,DO,M,37,56,9/20/1998,Sun,Control
+28593,8,PP,M,20,13,9/20/1998,Sun,Control
+28597,8,PP,M,20,11,9/20/1998,Sun,Control
+28599,9,PP,M,22,17,9/20/1998,Sun,Spectab exclosure
+28601,13,OT,F,20,26,9/20/1998,Sun,Short-term Krat Exclosure
+28602,13,DM,M,37,43,9/20/1998,Sun,Short-term Krat Exclosure
+28603,13,PP,M,20,13,9/20/1998,Sun,Short-term Krat Exclosure
+28605,13,PB,M,25,27,9/20/1998,Sun,Short-term Krat Exclosure
+28611,14,PP,M,22,11,9/20/1998,Sun,Control
+28614,14,DM,F,31,42,9/20/1998,Sun,Control
+28615,14,DM,M,36,39,9/20/1998,Sun,Control
+28616,10,PM,M,21,19,9/21/1998,Mon,Rodent Exclosure
+28617,11,PP,M,21,13,9/21/1998,Mon,Control
+28619,11,DO,M,35,48,9/21/1998,Mon,Control
+28620,11,PP,F,22,16,9/21/1998,Mon,Control
+28622,11,DO,M,34,45,9/21/1998,Mon,Control
+28637,16,PM,F,21,26,9/21/1998,Mon,Rodent Exclosure
+28638,17,DM,M,36,35,9/21/1998,Mon,Control
+28646,17,PP,F,22,16,9/21/1998,Mon,Control
+28647,17,DM,F,35,40,9/21/1998,Mon,Control
+28651,1,PP,F,21,13,10/24/1998,Sat,Spectab exclosure
+28661,2,DO,M,33,50,10/24/1998,Sat,Control
+28663,2,DM,M,37,44,10/24/1998,Sat,Control
+28664,2,OT,F,21,28,10/24/1998,Sat,Control
+28667,7,PB,M,26,25,10/24/1998,Sat,Rodent Exclosure
+28668,7,PM,F,20,25,10/24/1998,Sat,Rodent Exclosure
+28673,12,DM,F,34,47,10/24/1998,Sat,Control
+28674,12,DM,M,36,44,10/24/1998,Sat,Control
+28678,12,DM,F,33,45,10/24/1998,Sat,Control
+28685,17,DM,F,36,37,10/24/1998,Sat,Control
+28686,17,DM,F,35,40,10/24/1998,Sat,Control
+28689,18,OT,F,20,24,10/24/1998,Sat,Short-term Krat Exclosure
+28700,19,PP,M,22,15,10/24/1998,Sat,Long-term Krat Exclosure
+28703,19,PB,M,26,27,10/24/1998,Sat,Long-term Krat Exclosure
+28704,19,PB,M,25,28,10/24/1998,Sat,Long-term Krat Exclosure
+28711,21,PB,M,26,28,10/24/1998,Sat,Long-term Krat Exclosure
+28712,21,PB,F,26,32,10/24/1998,Sat,Long-term Krat Exclosure
+28715,21,PB,M,26,28,10/24/1998,Sat,Long-term Krat Exclosure
+28716,21,PB,F,25,33,10/24/1998,Sat,Long-term Krat Exclosure
+28726,23,PM,M,21,18,10/24/1998,Sat,Rodent Exclosure
+28736,3,OT,F,20,24,10/25/1998,Sun,Long-term Krat Exclosure
+28737,3,PB,M,26,37,10/25/1998,Sun,Long-term Krat Exclosure
+28743,3,PB,M,26,24,10/25/1998,Sun,Long-term Krat Exclosure
+28750,4,DM,M,35,36,10/25/1998,Sun,Control
+28755,6,PM,M,22,22,10/25/1998,Sun,Short-term Krat Exclosure
+28766,9,DM,F,34,41,10/25/1998,Sun,Spectab exclosure
+28767,9,DM,F,35,39,10/25/1998,Sun,Spectab exclosure
+28772,11,DO,M,36,45,10/25/1998,Sun,Control
+28773,11,DO,M,35,53,10/25/1998,Sun,Control
+28774,11,DM,M,35,37,10/25/1998,Sun,Control
+28781,13,PB,M,26,25,10/25/1998,Sun,Short-term Krat Exclosure
+28784,13,OT,F,20,26,10/25/1998,Sun,Short-term Krat Exclosure
+28787,14,DM,F,34,36,10/25/1998,Sun,Control
+28789,15,PB,M,25,25,10/25/1998,Sun,Long-term Krat Exclosure
+28791,16,OT,F,19,21,10/25/1998,Sun,Rodent Exclosure
+28798,2,DM,M,36,46,11/21/1998,Sat,Control
+28799,2,DM,F,35,34,11/21/1998,Sat,Control
+28802,2,DO,M,32,42,11/21/1998,Sat,Control
+28804,2,PB,F,26,27,11/21/1998,Sat,Control
+28807,12,DM,F,36,42,11/21/1998,Sat,Control
+28816,12,DM,M,35,40,11/21/1998,Sat,Control
+28824,17,DM,M,36,49,11/21/1998,Sat,Control
+28825,17,DM,F,34,42,11/21/1998,Sat,Control
+28829,17,DO,M,35,52,11/21/1998,Sat,Control
+28830,18,PB,M,24,21,11/21/1998,Sat,Short-term Krat Exclosure
+28841,20,RM,M,17,8,11/21/1998,Sat,Short-term Krat Exclosure
+28851,21,PB,M,25,45,11/21/1998,Sat,Long-term Krat Exclosure
+28852,21,PB,F,25,33,11/21/1998,Sat,Long-term Krat Exclosure
+28853,21,PB,M,26,30,11/21/1998,Sat,Long-term Krat Exclosure
+28856,22,PB,F,26,29,11/21/1998,Sat,Control
+28862,24,NL,M,32,164,11/21/1998,Sat,Rodent Exclosure
+28864,3,PB,M,26,28,11/22/1998,Sun,Long-term Krat Exclosure
+28865,3,PB,F,27,26,11/22/1998,Sun,Long-term Krat Exclosure
+28866,3,PB,F,26,35,11/22/1998,Sun,Long-term Krat Exclosure
+28867,3,PB,M,26,30,11/22/1998,Sun,Long-term Krat Exclosure
+28870,3,OT,M,20,22,11/22/1998,Sun,Long-term Krat Exclosure
+28874,4,DM,M,37,43,11/22/1998,Sun,Control
+28875,4,DM,M,36,40,11/22/1998,Sun,Control
+28876,4,DM,F,35,46,11/22/1998,Sun,Control
+28877,4,DM,M,37,48,11/22/1998,Sun,Control
+28878,4,DM,M,36,48,11/22/1998,Sun,Control
+28885,5,OT,M,20,24,11/22/1998,Sun,Rodent Exclosure
+28886,6,PB,M,27,39,11/22/1998,Sun,Short-term Krat Exclosure
+28888,6,OT,M,20,27,11/22/1998,Sun,Short-term Krat Exclosure
+28889,6,OT,F,21,23,11/22/1998,Sun,Short-term Krat Exclosure
+28892,8,DM,M,35,39,11/22/1998,Sun,Control
+28893,8,OT,F,20,26,11/22/1998,Sun,Control
+28896,8,DO,M,37,59,11/22/1998,Sun,Control
+28897,8,DM,M,36,37,11/22/1998,Sun,Control
+28903,11,DO,M,36,49,11/22/1998,Sun,Control
+28904,11,DM,M,36,39,11/22/1998,Sun,Control
+28908,13,DM,M,34,55,11/22/1998,Sun,Short-term Krat Exclosure
+28915,14,DM,F,36,45,11/22/1998,Sun,Control
+28919,1,DM,F,34,39,12/22/1998,Tue,Spectab exclosure
+28926,2,DM,F,34,36,12/22/1998,Tue,Control
+28933,12,DM,F,35,45,12/22/1998,Tue,Control
+28934,12,DM,M,37,37,12/22/1998,Tue,Control
+28936,12,DM,M,37,39,12/22/1998,Tue,Control
+28939,19,PB,F,25,31,12/22/1998,Tue,Long-term Krat Exclosure
+28945,18,PB,M,25,22,12/22/1998,Tue,Short-term Krat Exclosure
+28946,18,OT,F,20,27,12/22/1998,Tue,Short-term Krat Exclosure
+28947,18,RM,M,17,10,12/22/1998,Tue,Short-term Krat Exclosure
+28954,17,DM,F,35,46,12/22/1998,Tue,Control
+28963,22,DM,M,37,44,12/22/1998,Tue,Control
+28966,22,DM,F,35,45,12/22/1998,Tue,Control
+28967,22,PB,F,26,28,12/22/1998,Tue,Control
+28969,22,PB,F,27,29,12/22/1998,Tue,Control
+28971,24,PM,M,22,29,12/22/1998,Tue,Rodent Exclosure
+28976,3,PB,M,25,28,12/23/1998,Wed,Long-term Krat Exclosure
+28980,4,DM,F,35,39,12/23/1998,Wed,Control
+28983,4,DM,M,37,44,12/23/1998,Wed,Control
+28985,4,DM,M,35,40,12/23/1998,Wed,Control
+28991,11,DM,M,36,43,12/23/1998,Wed,Control
+28992,11,DM,F,35,44,12/23/1998,Wed,Control
+28994,9,DM,F,35,42,12/23/1998,Wed,Spectab exclosure
+28998,9,DM,M,37,45,12/23/1998,Wed,Spectab exclosure
+29000,8,DO,M,35,45,12/23/1998,Wed,Control
+29004,13,OT,F,20,28,12/23/1998,Wed,Short-term Krat Exclosure
+29006,13,DM,M,37,49,12/23/1998,Wed,Short-term Krat Exclosure
+29009,13,DM,F,36,39,12/23/1998,Wed,Short-term Krat Exclosure
+29010,13,PB,F,26,33,12/23/1998,Wed,Short-term Krat Exclosure
+29012,14,DM,M,37,48,12/23/1998,Wed,Control
+29015,14,DM,M,37,50,12/23/1998,Wed,Control
+29016,14,DM,M,35,41,12/23/1998,Wed,Control
+29022,10,PM,M,22,24,12/23/1998,Wed,Rodent Exclosure
+30160,1,DO,M,35,53,1/8/2000,Sat,Spectab exclosure
+30161,1,PP,F,21,17,1/8/2000,Sat,Spectab exclosure
+30162,1,DM,M,36,50,1/8/2000,Sat,Spectab exclosure
+30164,1,PB,M,26,27,1/8/2000,Sat,Spectab exclosure
+30170,2,PP,M,21,17,1/8/2000,Sat,Control
+30171,2,DO,M,36,52,1/8/2000,Sat,Control
+30173,2,DO,F,35,54,1/8/2000,Sat,Control
+30177,12,DO,F,32,54,1/8/2000,Sat,Control
+30179,12,DM,M,36,60,1/8/2000,Sat,Control
+30185,12,OT,F,20,25,1/8/2000,Sat,Control
+30186,19,PB,F,25,34,1/8/2000,Sat,Long-term Krat Exclosure
+30187,19,PB,F,26,36,1/8/2000,Sat,Long-term Krat Exclosure
+30200,17,PB,M,26,31,1/8/2000,Sat,Control
+30203,20,PB,M,26,42,1/8/2000,Sat,Short-term Krat Exclosure
+30207,21,PB,F,25,32,1/8/2000,Sat,Long-term Krat Exclosure
+30208,21,PP,M,22,14,1/8/2000,Sat,Long-term Krat Exclosure
+30210,22,DM,M,38,56,1/8/2000,Sat,Control
+30213,22,PB,F,26,34,1/8/2000,Sat,Control
+30214,22,PB,M,26,22,1/8/2000,Sat,Control
+30224,3,PB,F,26,28,1/10/2000,Mon,Long-term Krat Exclosure
+30229,4,SH,M,30,72,1/10/2000,Mon,Control
+30231,4,PP,M,23,17,1/10/2000,Mon,Control
+30234,6,OT,M,20,27,1/10/2000,Mon,Short-term Krat Exclosure
+30235,6,PP,M,23,21,1/10/2000,Mon,Short-term Krat Exclosure
+30236,6,PP,M,22,16,1/10/2000,Mon,Short-term Krat Exclosure
+30246,11,DM,F,33,54,1/10/2000,Mon,Control
+30250,9,DM,M,35,27,1/10/2000,Mon,Spectab exclosure
+30260,8,PP,F,22,15,1/10/2000,Mon,Control
+30266,13,PB,M,26,32,1/10/2000,Mon,Short-term Krat Exclosure
+30267,13,PB,M,25,30,1/10/2000,Mon,Short-term Krat Exclosure
+30268,13,PB,M,25,31,1/10/2000,Mon,Short-term Krat Exclosure
+30270,14,PP,M,19,13,1/10/2000,Mon,Control
+30271,14,DM,M,34,41,1/10/2000,Mon,Control
+30277,15,OT,F,20,19,1/10/2000,Mon,Long-term Krat Exclosure
+30278,15,PP,M,21,16,1/10/2000,Mon,Long-term Krat Exclosure
+30282,5,PP,F,22,19,1/10/2000,Mon,Rodent Exclosure
+30289,1,DO,F,35,48,2/5/2000,Sat,Spectab exclosure
+30290,1,DO,F,36,65,2/5/2000,Sat,Spectab exclosure
+30301,2,PP,M,22,18,2/5/2000,Sat,Control
+30302,2,PP,F,22,17,2/5/2000,Sat,Control
+30307,2,NL,F,33,185,2/5/2000,Sat,Control
+30311,12,PB,M,27,43,2/5/2000,Sat,Control
+30312,12,PB,M,25,24,2/5/2000,Sat,Control
+30314,12,DO,M,33,54,2/5/2000,Sat,Control
+30321,19,PB,F,25,23,2/5/2000,Sat,Long-term Krat Exclosure
+30328,17,DM,F,34,42,2/5/2000,Sat,Control
+30334,20,PP,F,22,17,2/5/2000,Sat,Short-term Krat Exclosure
+30336,20,PP,M,22,19,2/5/2000,Sat,Short-term Krat Exclosure
+30338,21,PB,F,25,32,2/5/2000,Sat,Long-term Krat Exclosure
+30340,21,PB,F,24,24,2/5/2000,Sat,Long-term Krat Exclosure
+30342,22,PP,F,23,23,2/5/2000,Sat,Control
+30348,22,PB,F,25,24,2/5/2000,Sat,Control
+30349,22,PB,F,26,29,2/5/2000,Sat,Control
+30350,22,PB,M,25,24,2/5/2000,Sat,Control
+30356,7,OT,M,19,25,2/5/2000,Sat,Rodent Exclosure
+30364,3,PB,F,28,33,2/6/2000,Sun,Long-term Krat Exclosure
+30365,4,PB,F,23,31,2/6/2000,Sun,Control
+30368,4,PB,M,25,42,2/6/2000,Sun,Control
+30369,4,DM,M,35,50,2/6/2000,Sun,Control
+30374,6,PB,F,25,37,2/6/2000,Sun,Short-term Krat Exclosure
+30379,11,DM,F,34,46,2/6/2000,Sun,Control
+30380,11,OT,M,20,25,2/6/2000,Sun,Control
+30381,11,PB,M,26,33,2/6/2000,Sun,Control
+30382,11,DM,M,36,46,2/6/2000,Sun,Control
+30385,9,PB,F,25,23,2/6/2000,Sun,Spectab exclosure
+30387,9,DM,M,34,45,2/6/2000,Sun,Spectab exclosure
+30390,9,PB,M,25,41,2/6/2000,Sun,Spectab exclosure
+30392,8,PB,M,24,32,2/6/2000,Sun,Control
+30393,8,PB,F,24,34,2/6/2000,Sun,Control
+30396,8,DO,M,34,51,2/6/2000,Sun,Control
+30401,8,DO,M,36,57,2/6/2000,Sun,Control
+30405,13,PP,M,20,15,2/6/2000,Sun,Short-term Krat Exclosure
+30406,13,PB,F,25,42,2/6/2000,Sun,Short-term Krat Exclosure
+30409,14,DM,M,34,53,2/6/2000,Sun,Control
+30413,14,PP,M,23,19,2/6/2000,Sun,Control
+30419,16,PP,F,19,23,2/6/2000,Sun,Rodent Exclosure
+30422,1,DO,F,36,46,3/4/2000,Sat,Spectab exclosure
+30432,2,PP,F,23,17,3/4/2000,Sat,Control
+30435,2,RM,F,17,13,3/4/2000,Sat,Control
+30436,2,PB,M,26,30,3/4/2000,Sat,Control
+30437,2,PB,M,26,47,3/4/2000,Sat,Control
+30438,2,PB,F,27,42,3/4/2000,Sat,Control
+30440,2,PB,F,25,26,3/4/2000,Sat,Control
+30441,2,PB,F,25,31,3/4/2000,Sat,Control
+30444,12,PP,M,19,13,3/4/2000,Sat,Control
+30458,19,PB,F,25,44,3/4/2000,Sat,Long-term Krat Exclosure
+30461,19,PB,M,27,31,3/4/2000,Sat,Long-term Krat Exclosure
+30464,18,PB,M,25,26,3/4/2000,Sat,Short-term Krat Exclosure
+30465,18,PB,M,26,41,3/4/2000,Sat,Short-term Krat Exclosure
+30467,18,PB,M,26,33,3/4/2000,Sat,Short-term Krat Exclosure
+30471,17,DM,F,36,44,3/4/2000,Sat,Control
+30472,17,DM,M,36,49,3/4/2000,Sat,Control
+30482,22,PB,M,26,37,3/4/2000,Sat,Control
+30483,22,PB,F,26,24,3/4/2000,Sat,Control
+30490,21,PB,M,25,40,3/4/2000,Sat,Long-term Krat Exclosure
+30493,20,PB,M,27,45,3/4/2000,Sat,Short-term Krat Exclosure
+30504,3,PB,F,27,40,3/5/2000,Sun,Long-term Krat Exclosure
+30507,4,PB,F,25,32,3/5/2000,Sun,Control
+30511,4,PB,M,26,40,3/5/2000,Sun,Control
+30514,4,PP,M,22,18,3/5/2000,Sun,Control
+30517,6,PB,M,28,49,3/5/2000,Sun,Short-term Krat Exclosure
+30520,6,RM,M,19,13,3/5/2000,Sun,Short-term Krat Exclosure
+30521,6,PB,F,25,31,3/5/2000,Sun,Short-term Krat Exclosure
+30522,6,PP,M,21,17,3/5/2000,Sun,Short-term Krat Exclosure
+30529,11,DM,M,37,50,3/5/2000,Sun,Control
+30536,9,OT,M,20,28,3/5/2000,Sun,Spectab exclosure
+30539,9,PP,M,21,14,3/5/2000,Sun,Spectab exclosure
+30540,8,DO,F,36,43,3/5/2000,Sun,Control
+30544,8,PB,F,25,31,3/5/2000,Sun,Control
+30551,13,PP,M,22,17,3/5/2000,Sun,Short-term Krat Exclosure
+30552,13,PP,M,23,21,3/5/2000,Sun,Short-term Krat Exclosure
+30553,13,PB,F,25,31,3/5/2000,Sun,Short-term Krat Exclosure
+30555,13,OT,M,20,25,3/5/2000,Sun,Short-term Krat Exclosure
+30559,14,PP,M,21,19,3/5/2000,Sun,Control
+30561,14,OT,M,21,30,3/5/2000,Sun,Control
+30563,14,DM,F,36,48,3/5/2000,Sun,Control
+30564,14,DM,M,36,47,3/5/2000,Sun,Control
+30565,14,DM,F,36,41,3/5/2000,Sun,Control
+30567,15,OT,M,20,26,3/5/2000,Sun,Long-term Krat Exclosure
+30570,15,PP,F,21,14,3/5/2000,Sun,Long-term Krat Exclosure
+30572,15,PP,M,23,21,3/5/2000,Sun,Long-term Krat Exclosure
+30574,15,PP,F,21,16,3/5/2000,Sun,Long-term Krat Exclosure
+30575,15,PP,M,22,20,3/5/2000,Sun,Long-term Krat Exclosure
+30576,16,DO,M,35,41,3/5/2000,Sun,Rodent Exclosure
+30579,16,OT,M,20,24,3/5/2000,Sun,Rodent Exclosure
+30582,1,DO,M,34,53,4/30/2000,Sun,Spectab exclosure
+30583,1,DO,F,36,49,4/30/2000,Sun,Spectab exclosure
+30587,1,PB,F,26,35,4/30/2000,Sun,Spectab exclosure
+30588,1,PP,M,20,14,4/30/2000,Sun,Spectab exclosure
+30590,19,PB,F,26,37,4/30/2000,Sun,Long-term Krat Exclosure
+30591,19,PB,F,25,38,4/30/2000,Sun,Long-term Krat Exclosure
+30594,18,PP,F,23,16,4/30/2000,Sun,Short-term Krat Exclosure
+30596,18,PB,M,25,31,4/30/2000,Sun,Short-term Krat Exclosure
+30597,18,PP,F,24,16,4/30/2000,Sun,Short-term Krat Exclosure
+30602,17,DO,M,34,39,4/30/2000,Sun,Control
+30611,2,PB,M,26,41,4/30/2000,Sun,Control
+30612,2,DO,F,34,42,4/30/2000,Sun,Control
+30613,12,OT,M,21,29,4/30/2000,Sun,Control
+30616,12,PB,F,25,34,4/30/2000,Sun,Control
+30617,12,PP,F,21,16,4/30/2000,Sun,Control
+30618,12,PP,F,21,20,4/30/2000,Sun,Control
+30619,12,OT,F,20,35,4/30/2000,Sun,Control
+30625,22,PB,F,25,30,4/30/2000,Sun,Control
+30630,22,DM,M,37,56,4/30/2000,Sun,Control
+30631,21,PB,M,26,21,4/30/2000,Sun,Long-term Krat Exclosure
+30634,21,PB,F,26,39,4/30/2000,Sun,Long-term Krat Exclosure
+30637,21,PB,M,26,17,4/30/2000,Sun,Long-term Krat Exclosure
+30643,23,RM,M,15,9,4/30/2000,Sun,Rodent Exclosure
+30732,2,PB,M,27,43,6/3/2000,Sat,Control
+30733,2,PP,M,27,10,6/3/2000,Sat,Control
+30736,2,PB,F,25,33,6/3/2000,Sat,Control
+30737,2,PB,F,26,40,6/3/2000,Sat,Control
+30742,12,DM,F,36,47,6/3/2000,Sat,Control
+30744,12,OT,F,20,26,6/3/2000,Sat,Control
+30748,12,DO,M,36,47,6/3/2000,Sat,Control
+30750,12,PB,F,26,33,6/3/2000,Sat,Control
+30754,19,PP,M,23,20,6/3/2000,Sat,Long-term Krat Exclosure
+30755,19,PB,M,26,41,6/3/2000,Sat,Long-term Krat Exclosure
+30757,19,PP,F,22,18,6/3/2000,Sat,Long-term Krat Exclosure
+30758,19,PB,M,26,29,6/3/2000,Sat,Long-term Krat Exclosure
+30759,19,PB,M,26,16,6/3/2000,Sat,Long-term Krat Exclosure
+30762,18,PB,M,25,27,6/3/2000,Sat,Short-term Krat Exclosure
+30764,18,PB,F,25,35,6/3/2000,Sat,Short-term Krat Exclosure
+30765,18,SH,M,26,35,6/3/2000,Sat,Short-term Krat Exclosure
+30767,17,DM,F,34,38,6/3/2000,Sat,Control
+30770,17,PP,M,22,22,6/3/2000,Sat,Control
+30771,17,PP,M,23,15,6/3/2000,Sat,Control
+30774,17,PP,M,22,18,6/3/2000,Sat,Control
+30776,17,DO,F,36,55,6/3/2000,Sat,Control
+30780,20,PP,M,22,18,6/3/2000,Sat,Short-term Krat Exclosure
+30782,20,NL,F,33,170,6/3/2000,Sat,Short-term Krat Exclosure
+30788,21,PB,F,25,39,6/3/2000,Sat,Long-term Krat Exclosure
+30794,22,PB,F,26,36,6/3/2000,Sat,Control
+30801,24,PP,F,21,17,6/3/2000,Sat,Rodent Exclosure
+30813,3,PB,F,26,33,6/4/2000,Sun,Long-term Krat Exclosure
+30814,3,PB,M,26,36,6/4/2000,Sun,Long-term Krat Exclosure
+30824,4,PB,M,31,31,6/4/2000,Sun,Control
+30826,4,DM,M,36,46,6/4/2000,Sun,Control
+30831,6,PP,F,21,9,6/4/2000,Sun,Short-term Krat Exclosure
+30836,6,PB,F,26,36,6/4/2000,Sun,Short-term Krat Exclosure
+30837,6,PB,F,25,20,6/4/2000,Sun,Short-term Krat Exclosure
+30838,6,PP,F,22,18,6/4/2000,Sun,Short-term Krat Exclosure
+30840,6,PB,M,25,32,6/4/2000,Sun,Short-term Krat Exclosure
+30841,6,PB,F,25,21,6/4/2000,Sun,Short-term Krat Exclosure
+30844,11,PP,F,22,21,6/4/2000,Sun,Control
+30846,11,PP,M,22,18,6/4/2000,Sun,Control
+30854,9,DM,M,36,46,6/4/2000,Sun,Spectab exclosure
+30857,9,DO,M,35,44,6/4/2000,Sun,Spectab exclosure
+30858,9,DM,M,35,45,6/4/2000,Sun,Spectab exclosure
+30859,9,OT,M,20,26,6/4/2000,Sun,Spectab exclosure
+30860,9,PP,M,22,19,6/4/2000,Sun,Spectab exclosure
+30865,8,PP,F,22,20,6/4/2000,Sun,Control
+30867,8,DO,M,35,50,6/4/2000,Sun,Control
+30868,8,PP,F,21,8,6/4/2000,Sun,Control
+30870,8,DO,M,37,32,6/4/2000,Sun,Control
+30871,8,PP,F,22,21,6/4/2000,Sun,Control
+30872,8,PP,F,21,18,6/4/2000,Sun,Control
+30873,8,PB,M,26,40,6/4/2000,Sun,Control
+30875,13,PB,M,25,16,6/4/2000,Sun,Short-term Krat Exclosure
+30876,13,OT,F,21,35,6/4/2000,Sun,Short-term Krat Exclosure
+30877,13,PB,M,26,18,6/4/2000,Sun,Short-term Krat Exclosure
+30878,13,PP,F,22,17,6/4/2000,Sun,Short-term Krat Exclosure
+30880,14,DM,M,36,43,6/4/2000,Sun,Control
+30881,14,DM,M,34,24,6/4/2000,Sun,Control
+30883,15,PP,F,22,19,6/4/2000,Sun,Long-term Krat Exclosure
+30888,15,PP,F,21,16,6/4/2000,Sun,Long-term Krat Exclosure
+30889,15,PP,F,21,16,6/4/2000,Sun,Long-term Krat Exclosure
+30894,16,PB,M,25,38,6/4/2000,Sun,Rodent Exclosure
+30901,1,PP,F,21,14,7/1/2000,Sat,Spectab exclosure
+30904,1,PB,M,26,20,7/1/2000,Sat,Spectab exclosure
+30905,1,PB,F,26,30,7/1/2000,Sat,Spectab exclosure
+30908,1,PP,F,22,21,7/1/2000,Sat,Spectab exclosure
+30910,2,PB,M,26,21,7/1/2000,Sat,Control
+30917,2,PB,M,25,25,7/1/2000,Sat,Control
+30919,2,PB,F,26,30,7/1/2000,Sat,Control
+30924,12,PP,M,22,18,7/1/2000,Sat,Control
+30929,12,OT,F,21,29,7/1/2000,Sat,Control
+30930,12,PP,F,21,15,7/1/2000,Sat,Control
+30932,19,PB,M,27,29,7/1/2000,Sat,Long-term Krat Exclosure
+30935,19,PB,M,26,48,7/1/2000,Sat,Long-term Krat Exclosure
+30938,19,PP,M,21,17,7/1/2000,Sat,Long-term Krat Exclosure
+30945,18,PB,F,26,24,7/1/2000,Sat,Short-term Krat Exclosure
+30946,22,PB,F,26,33,7/1/2000,Sat,Control
+30950,22,PB,F,26,40,7/1/2000,Sat,Control
+30952,22,PP,M,22,16,7/1/2000,Sat,Control
+30957,21,PB,F,26,29,7/1/2000,Sat,Long-term Krat Exclosure
+30958,21,PB,F,25,45,7/1/2000,Sat,Long-term Krat Exclosure
+30960,21,PB,F,25,28,7/1/2000,Sat,Long-term Krat Exclosure
+30962,20,PP,F,21,11,7/1/2000,Sat,Short-term Krat Exclosure
+30967,20,NL,F,33,174,7/1/2000,Sat,Short-term Krat Exclosure
+30972,17,PP,M,21,14,7/1/2000,Sat,Control
+30973,17,PP,F,22,22,7/1/2000,Sat,Control
+30974,17,DM,F,36,43,7/1/2000,Sat,Control
+30979,17,DM,F,34,43,7/1/2000,Sat,Control
+30983,24,PB,M,26,28,7/1/2000,Sat,Rodent Exclosure
+30985,24,NL,M,27,140,7/1/2000,Sat,Rodent Exclosure
+30990,3,OT,M,19,22,7/2/2000,Sun,Long-term Krat Exclosure
+30993,3,PP,M,20,13,7/2/2000,Sun,Long-term Krat Exclosure
+30995,3,PB,F,24,34,7/2/2000,Sun,Long-term Krat Exclosure
+30997,3,PP,M,20,16,7/2/2000,Sun,Long-term Krat Exclosure
+30998,3,PB,M,25,26,7/2/2000,Sun,Long-term Krat Exclosure
+31001,4,PB,F,24,28,7/2/2000,Sun,Control
+31006,4,PB,M,25,21,7/2/2000,Sun,Control
+31009,6,PP,F,19,13,7/2/2000,Sun,Short-term Krat Exclosure
+31014,6,PP,M,22,14,7/2/2000,Sun,Short-term Krat Exclosure
+31015,6,PB,M,26,26,7/2/2000,Sun,Short-term Krat Exclosure
+31017,11,PP,M,21,14,7/2/2000,Sun,Control
+31020,11,OT,F,21,18,7/2/2000,Sun,Control
+31028,9,DM,M,35,48,7/2/2000,Sun,Spectab exclosure
+31029,9,PP,F,20,16,7/2/2000,Sun,Spectab exclosure
+31035,9,PP,M,21,15,7/2/2000,Sun,Spectab exclosure
+31039,9,OT,M,19,29,7/2/2000,Sun,Spectab exclosure
+31042,9,DM,M,35,40,7/2/2000,Sun,Spectab exclosure
+31045,8,PP,F,20,14,7/2/2000,Sun,Control
+31046,8,DM,M,34,53,7/2/2000,Sun,Control
+31048,8,PB,F,25,32,7/2/2000,Sun,Control
+31051,8,PB,F,26,36,7/2/2000,Sun,Control
+31052,8,PP,F,20,17,7/2/2000,Sun,Control
+31055,8,PP,F,21,16,7/2/2000,Sun,Control
+31056,13,PB,M,24,17,7/2/2000,Sun,Short-term Krat Exclosure
+31058,13,PP,M,24,17,7/2/2000,Sun,Short-term Krat Exclosure
+31061,13,PB,F,26,29,7/2/2000,Sun,Short-term Krat Exclosure
+31062,13,PB,F,25,34,7/2/2000,Sun,Short-term Krat Exclosure
+31067,14,PP,M,20,17,7/2/2000,Sun,Control
+31070,14,DM,M,37,45,7/2/2000,Sun,Control
+31074,14,DM,M,36,47,7/2/2000,Sun,Control
+31083,15,PP,M,21,16,7/2/2000,Sun,Long-term Krat Exclosure
+31085,15,SH,M,25,51,7/2/2000,Sun,Long-term Krat Exclosure
+31088,10,PB,M,24,27,7/2/2000,Sun,Rodent Exclosure
+31089,10,OT,M,19,15,7/2/2000,Sun,Rodent Exclosure
+31096,1,PP,M,22,13,7/22/2000,Sat,Spectab exclosure
+31099,1,PB,F,26,25,7/22/2000,Sat,Spectab exclosure
+31102,1,PP,M,22,17,7/22/2000,Sat,Spectab exclosure
+31103,1,PP,F,22,11,7/22/2000,Sat,Spectab exclosure
+31105,2,PB,M,26,31,7/22/2000,Sat,Control
+31109,2,PB,F,26,25,7/22/2000,Sat,Control
+31114,12,PP,M,22,22,7/22/2000,Sat,Control
+31115,12,DM,M,37,36,7/22/2000,Sat,Control
+31119,12,DM,F,36,49,7/22/2000,Sat,Control
+31121,19,PP,M,20,11,7/22/2000,Sat,Long-term Krat Exclosure
+31122,19,PP,F,22,19,7/22/2000,Sat,Long-term Krat Exclosure
+31126,18,PB,M,27,34,7/22/2000,Sat,Short-term Krat Exclosure
+31129,18,PB,F,25,38,7/22/2000,Sat,Short-term Krat Exclosure
+31131,18,PP,F,21,16,7/22/2000,Sat,Short-term Krat Exclosure
+31133,18,PB,F,26,34,7/22/2000,Sat,Short-term Krat Exclosure
+31136,17,DM,M,37,46,7/22/2000,Sat,Control
+31140,17,PP,F,21,15,7/22/2000,Sat,Control
+31146,22,PB,F,26,35,7/22/2000,Sat,Control
+31149,21,PB,F,26,31,7/22/2000,Sat,Long-term Krat Exclosure
+31150,21,PB,F,25,32,7/22/2000,Sat,Long-term Krat Exclosure
+31154,20,PB,M,26,39,7/22/2000,Sat,Short-term Krat Exclosure
+31155,20,PP,F,22,15,7/22/2000,Sat,Short-term Krat Exclosure
+31162,3,PB,F,26,31,7/22/2000,Sat,Long-term Krat Exclosure
+31179,3,PB,F,25,30,7/23/2000,Sun,Long-term Krat Exclosure
+31180,4,PB,M,26,24,7/23/2000,Sun,Control
+31182,4,PB,M,26,22,7/23/2000,Sun,Control
+31189,4,PP,F,21,19,7/23/2000,Sun,Control
+31208,2,PP,M,22,15,8/25/2000,Fri,Control
+31212,2,PB,M,26,32,8/25/2000,Fri,Control
+31213,2,OT,F,21,32,8/25/2000,Fri,Control
+31215,2,DM,F,36,43,8/25/2000,Fri,Control
+31220,12,PP,F,21,17,8/25/2000,Fri,Control
+31221,12,DO,M,36,55,8/25/2000,Fri,Control
+31222,12,PP,M,22,15,8/25/2000,Fri,Control
+31223,12,OT,M,20,24,8/25/2000,Fri,Control
+31225,12,PP,F,22,15,8/25/2000,Fri,Control
+31226,12,PP,F,22,17,8/25/2000,Fri,Control
+31227,12,NL,F,32,173,8/25/2000,Fri,Control
+31231,19,PP,F,22,15,8/25/2000,Fri,Long-term Krat Exclosure
+31235,18,PB,F,25,32,8/25/2000,Fri,Short-term Krat Exclosure
+31242,22,PB,F,27,43,8/25/2000,Fri,Control
+31243,22,PB,F,27,25,8/25/2000,Fri,Control
+31245,22,DM,M,36,56,8/25/2000,Fri,Control
+31248,21,PP,F,21,13,8/25/2000,Fri,Long-term Krat Exclosure
+31249,21,PB,F,26,28,8/25/2000,Fri,Long-term Krat Exclosure
+31253,21,PB,F,26,30,8/25/2000,Fri,Long-term Krat Exclosure
+31260,17,DM,M,37,43,8/25/2000,Fri,Control
+31261,17,DM,M,37,47,8/25/2000,Fri,Control
+31263,17,DM,F,35,38,8/25/2000,Fri,Control
+31265,17,PP,M,22,19,8/25/2000,Fri,Control
+31266,17,OT,F,20,31,8/25/2000,Fri,Control
+31267,17,DM,F,36,45,8/25/2000,Fri,Control
+31277,3,PB,F,25,31,8/26/2000,Sat,Long-term Krat Exclosure
+31278,3,PB,M,26,30,8/26/2000,Sat,Long-term Krat Exclosure
+31283,4,PP,M,22,13,8/26/2000,Sat,Control
+31292,4,PB,M,27,29,8/26/2000,Sat,Control
+31294,4,PB,M,25,31,8/26/2000,Sat,Control
+31298,6,PB,F,26,31,8/26/2000,Sat,Short-term Krat Exclosure
+31300,6,PP,F,21,14,8/26/2000,Sat,Short-term Krat Exclosure
+31301,6,PP,F,19,13,8/26/2000,Sat,Short-term Krat Exclosure
+31304,6,PP,F,21,18,8/26/2000,Sat,Short-term Krat Exclosure
+31310,11,PB,F,25,30,8/26/2000,Sat,Control
+31312,11,PP,M,21,14,8/26/2000,Sat,Control
+31318,9,DM,M,36,46,8/26/2000,Sat,Spectab exclosure
+31319,9,PP,M,21,15,8/26/2000,Sat,Spectab exclosure
+31321,9,PP,M,22,15,8/26/2000,Sat,Spectab exclosure
+31323,9,DM,M,36,46,8/26/2000,Sat,Spectab exclosure
+31326,9,PB,M,25,28,8/26/2000,Sat,Spectab exclosure
+31329,8,DM,M,35,37,8/26/2000,Sat,Control
+31334,8,DO,M,35,51,8/26/2000,Sat,Control
+31338,13,PB,F,20,24,8/26/2000,Sat,Short-term Krat Exclosure
+31341,13,PB,F,25,27,8/26/2000,Sat,Short-term Krat Exclosure
+31342,13,PB,M,25,22,8/26/2000,Sat,Short-term Krat Exclosure
+31343,13,PB,M,25,27,8/26/2000,Sat,Short-term Krat Exclosure
+31344,13,PP,M,21,16,8/26/2000,Sat,Short-term Krat Exclosure
+31345,13,OT,M,19,19,8/26/2000,Sat,Short-term Krat Exclosure
+31348,14,PP,F,21,14,8/26/2000,Sat,Control
+31358,14,OT,F,20,34,8/26/2000,Sat,Control
+31359,15,PP,M,21,18,8/26/2000,Sat,Long-term Krat Exclosure
+31361,15,OT,F,21,30,8/26/2000,Sat,Long-term Krat Exclosure
+31370,1,DM,M,37,39,9/30/2000,Sat,Spectab exclosure
+31373,1,PB,F,25,26,9/30/2000,Sat,Spectab exclosure
+31379,1,PP,F,22,17,9/30/2000,Sat,Spectab exclosure
+31381,2,PB,M,26,43,9/30/2000,Sat,Control
+31382,2,PB,M,26,31,9/30/2000,Sat,Control
+31385,2,PB,M,26,31,9/30/2000,Sat,Control
+31386,2,DM,F,35,45,9/30/2000,Sat,Control
+31389,2,PP,M,22,17,9/30/2000,Sat,Control
+31390,2,PB,M,26,30,9/30/2000,Sat,Control
+31391,12,PP,F,22,17,9/30/2000,Sat,Control
+31394,12,OT,F,20,29,9/30/2000,Sat,Control
+31398,12,NL,F,31,164,9/30/2000,Sat,Control
+31406,18,PB,F,26,26,9/30/2000,Sat,Short-term Krat Exclosure
+31408,18,PB,F,26,37,9/30/2000,Sat,Short-term Krat Exclosure
+31410,18,PB,M,27,33,9/30/2000,Sat,Short-term Krat Exclosure
+31411,17,DM,F,34,42,9/30/2000,Sat,Control
+31413,17,DM,F,36,43,9/30/2000,Sat,Control
+31415,17,DM,F,37,34,9/30/2000,Sat,Control
+31417,17,OT,F,20,27,9/30/2000,Sat,Control
+31423,20,OT,F,20,29,9/30/2000,Sat,Short-term Krat Exclosure
+31427,22,DM,M,35,52,9/30/2000,Sat,Control
+31431,22,PB,M,27,35,9/30/2000,Sat,Control
+31438,21,PB,F,27,29,9/30/2000,Sat,Long-term Krat Exclosure
+31505,1,OT,F,20,27,11/25/2000,Sat,Spectab exclosure
+31513,2,PB,M,27,34,11/25/2000,Sat,Control
+31522,12,DM,F,36,47,11/25/2000,Sat,Control
+31523,12,OT,F,20,26,11/25/2000,Sat,Control
+31524,12,OT,M,20,21,11/25/2000,Sat,Control
+31539,17,DM,F,34,42,11/25/2000,Sat,Control
+31540,17,DM,F,36,42,11/25/2000,Sat,Control
+31542,17,DM,M,36,49,11/25/2000,Sat,Control
+31544,22,PB,F,27,33,11/25/2000,Sat,Control
+31546,22,PB,F,25,28,11/25/2000,Sat,Control
+31548,21,PB,M,24,28,11/25/2000,Sat,Long-term Krat Exclosure
+31553,20,PB,F,23,27,11/25/2000,Sat,Short-term Krat Exclosure
+31558,3,PB,M,27,31,11/26/2000,Sun,Long-term Krat Exclosure
+31559,3,PB,F,25,29,11/26/2000,Sun,Long-term Krat Exclosure
+31560,3,PE,M,21,20,11/26/2000,Sun,Long-term Krat Exclosure
+31562,3,PB,M,27,32,11/26/2000,Sun,Long-term Krat Exclosure
+31571,4,DM,M,36,44,11/26/2000,Sun,Control
+31575,6,PB,F,25,30,11/26/2000,Sun,Short-term Krat Exclosure
+31577,6,OT,M,21,23,11/26/2000,Sun,Short-term Krat Exclosure
+31579,11,OT,M,20,24,11/26/2000,Sun,Control
+31582,9,DM,F,36,39,11/26/2000,Sun,Spectab exclosure
+31585,9,OT,M,20,27,11/26/2000,Sun,Spectab exclosure
+31589,8,PB,F,24,28,11/26/2000,Sun,Control
+31590,8,OT,F,21,25,11/26/2000,Sun,Control
+31599,14,OT,F,19,19,11/26/2000,Sun,Control
+31601,14,DM,M,36,40,11/26/2000,Sun,Control
+31604,14,DM,M,34,35,11/26/2000,Sun,Control
+31608,24,PE,M,19,16,11/26/2000,Sun,Rodent Exclosure
+31611,5,RM,M,17,10,11/26/2000,Sun,Rodent Exclosure
+31612,16,RM,M,17,8,11/26/2000,Sun,Rodent Exclosure
+31619,1,PB,F,25,25,12/22/2000,Fri,Spectab exclosure
+31620,1,DM,M,36,38,12/22/2000,Fri,Spectab exclosure
+31627,2,OT,M,20,25,12/22/2000,Fri,Control
+31628,2,OT,M,19,28,12/22/2000,Fri,Control
+31630,2,OT,F,20,28,12/22/2000,Fri,Control
+31636,12,DO,M,35,54,12/22/2000,Fri,Control
+31638,12,NL,F,30,212,12/22/2000,Fri,Control
+31642,18,PB,M,26,38,12/22/2000,Fri,Short-term Krat Exclosure
+31646,17,DM,F,36,42,12/22/2000,Fri,Control
+31647,17,DM,F,35,43,12/22/2000,Fri,Control
+31649,17,OT,M,21,22,12/22/2000,Fri,Control
+31651,17,OT,F,20,27,12/22/2000,Fri,Control
+31655,21,PB,F,26,28,12/22/2000,Fri,Long-term Krat Exclosure
+31657,21,PB,F,26,30,12/22/2000,Fri,Long-term Krat Exclosure
+31659,22,PB,F,27,28,12/22/2000,Fri,Control
+31661,22,PB,M,28,32,12/22/2000,Fri,Control
+31663,7,OT,M,21,24,12/22/2000,Fri,Rodent Exclosure
+31664,7,OT,F,20,21,12/22/2000,Fri,Rodent Exclosure
+31667,3,PB,M,26,42,12/23/2000,Sat,Long-term Krat Exclosure
+31679,6,PB,F,26,31,12/23/2000,Sat,Short-term Krat Exclosure
+31681,6,OT,M,20,21,12/23/2000,Sat,Short-term Krat Exclosure
+31683,6,PB,M,27,33,12/23/2000,Sat,Short-term Krat Exclosure
+31690,9,DM,M,35,44,12/23/2000,Sat,Spectab exclosure
+31693,8,OT,M,19,24,12/23/2000,Sat,Control
+31697,8,DO,M,35,47,12/23/2000,Sat,Control
+31704,14,DM,M,35,52,12/23/2000,Sat,Control
+31706,15,OT,F,21,25,12/23/2000,Sat,Long-term Krat Exclosure
+31707,15,OT,M,20,19,12/23/2000,Sat,Long-term Krat Exclosure
+33322,1,DO,M,37,58,1/12/2002,Sat,Spectab exclosure
+33327,2,OT,M,20,24,1/12/2002,Sat,Control
+33330,2,DO,M,35,51,1/12/2002,Sat,Control
+33331,2,PE,F,21,23,1/12/2002,Sat,Control
+33332,2,OT,F,20,18,1/12/2002,Sat,Control
+33337,2,PB,M,28,47,1/12/2002,Sat,Control
+33343,12,DO,F,37,47,1/12/2002,Sat,Control
+33345,12,DO,M,37,55,1/12/2002,Sat,Control
+33347,12,DM,F,37,45,1/12/2002,Sat,Control
+33350,19,PP,F,20,13,1/12/2002,Sat,Long-term Krat Exclosure
+33353,19,OT,F,22,24,1/12/2002,Sat,Long-term Krat Exclosure
+33356,19,PB,M,26,28,1/12/2002,Sat,Long-term Krat Exclosure
+33358,18,PB,F,26,28,1/12/2002,Sat,Short-term Krat Exclosure
+33359,18,PB,M,27,32,1/12/2002,Sat,Short-term Krat Exclosure
+33360,18,PB,M,28,44,1/12/2002,Sat,Short-term Krat Exclosure
+33361,18,PB,F,26,26,1/12/2002,Sat,Short-term Krat Exclosure
+33363,18,PB,F,25,26,1/12/2002,Sat,Short-term Krat Exclosure
+33366,17,PB,F,27,31,1/12/2002,Sat,Control
+33375,21,PB,M,28,32,1/12/2002,Sat,Long-term Krat Exclosure
+33382,21,PB,F,25,29,1/12/2002,Sat,Long-term Krat Exclosure
+33398,1,DO,F,35,35,2/9/2002,Sat,Spectab exclosure
+33402,1,DO,M,35,40,2/9/2002,Sat,Spectab exclosure
+33407,2,DO,M,35,52,2/9/2002,Sat,Control
+33410,2,DM,F,35,46,2/9/2002,Sat,Control
+33411,2,PE,M,19,25,2/9/2002,Sat,Control
+33412,2,PP,M,22,17,2/9/2002,Sat,Control
+33415,2,NL,M,33,120,2/9/2002,Sat,Control
+33420,3,OT,F,21,24,2/9/2002,Sat,Long-term Krat Exclosure
+33425,3,DO,F,34,51,2/9/2002,Sat,Long-term Krat Exclosure
+33431,3,DO,M,36,49,2/9/2002,Sat,Long-term Krat Exclosure
+33432,3,OT,M,21,30,2/9/2002,Sat,Long-term Krat Exclosure
+33436,3,PM,M,20,19,2/9/2002,Sat,Long-term Krat Exclosure
+33439,12,DM,F,35,46,2/9/2002,Sat,Control
+33450,17,DM,F,35,46,2/9/2002,Sat,Control
+33452,17,NL,F,29,154,2/9/2002,Sat,Control
+33454,18,RM,F,16,12,2/9/2002,Sat,Short-term Krat Exclosure
+33457,18,PB,F,26,32,2/9/2002,Sat,Short-term Krat Exclosure
+33462,19,PB,F,27,30,2/9/2002,Sat,Long-term Krat Exclosure
+33463,19,PB,F,26,27,2/9/2002,Sat,Long-term Krat Exclosure
+33471,22,PB,F,27,30,2/9/2002,Sat,Control
+33474,21,PB,F,27,30,2/9/2002,Sat,Long-term Krat Exclosure
+33484,20,PB,F,26,33,2/9/2002,Sat,Short-term Krat Exclosure
+33486,20,PB,M,27,41,2/9/2002,Sat,Short-term Krat Exclosure
+33488,20,OT,F,20,24,2/9/2002,Sat,Short-term Krat Exclosure
+33493,4,DM,F,36,51,2/10/2002,Sun,Control
+33499,4,PB,F,26,25,2/10/2002,Sun,Control
+33500,6,PB,F,27,28,2/10/2002,Sun,Short-term Krat Exclosure
+33502,6,PB,F,26,26,2/10/2002,Sun,Short-term Krat Exclosure
+33505,6,PB,M,26,35,2/10/2002,Sun,Short-term Krat Exclosure
+33506,6,DO,F,36,53,2/10/2002,Sun,Short-term Krat Exclosure
+33510,6,PB,M,26,35,2/10/2002,Sun,Short-term Krat Exclosure
+33515,11,DO,F,35,46,2/10/2002,Sun,Control
+33518,11,DO,M,35,55,2/10/2002,Sun,Control
+33529,8,DO,M,38,52,2/10/2002,Sun,Control
+33530,8,DO,F,37,60,2/10/2002,Sun,Control
+33531,8,DM,F,36,41,2/10/2002,Sun,Control
+33533,8,PB,F,26,25,2/10/2002,Sun,Control
+33535,13,PF,F,15,7,2/10/2002,Sun,Short-term Krat Exclosure
+33540,13,PB,M,28,37,2/10/2002,Sun,Short-term Krat Exclosure
+33541,13,PB,M,29,49,2/10/2002,Sun,Short-term Krat Exclosure
+33548,14,DM,F,36,46,2/10/2002,Sun,Control
+33549,14,NL,M,33,222,2/10/2002,Sun,Control
+33551,15,RM,F,17,7,2/10/2002,Sun,Long-term Krat Exclosure
+33554,15,RM,F,17,10,2/10/2002,Sun,Long-term Krat Exclosure
+33568,7,DO,F,37,55,2/10/2002,Sun,Rodent Exclosure
+33569,7,DO,F,38,47,2/10/2002,Sun,Rodent Exclosure
+33570,7,DO,F,35,54,2/10/2002,Sun,Rodent Exclosure
+33575,1,DO,F,35,46,3/13/2002,Wed,Spectab exclosure
+33577,1,DO,M,37,63,3/13/2002,Wed,Spectab exclosure
+33580,2,DM,M,36,55,3/13/2002,Wed,Control
+33586,2,NL,F,32,196,3/13/2002,Wed,Control
+33594,12,PP,M,22,23,3/13/2002,Wed,Control
+33596,19,PB,M,27,45,3/13/2002,Wed,Long-term Krat Exclosure
+33597,19,PP,M,24,19,3/13/2002,Wed,Long-term Krat Exclosure
+33599,19,PB,F,27,28,3/13/2002,Wed,Long-term Krat Exclosure
+33602,18,PB,F,25,36,3/13/2002,Wed,Short-term Krat Exclosure
+33605,18,RM,M,17,11,3/13/2002,Wed,Short-term Krat Exclosure
+33606,18,OT,F,20,24,3/13/2002,Wed,Short-term Krat Exclosure
+33609,17,DM,M,35,50,3/13/2002,Wed,Control
+33612,17,OT,M,21,32,3/13/2002,Wed,Control
+33617,17,DM,F,37,45,3/13/2002,Wed,Control
+33618,17,DM,M,35,46,3/13/2002,Wed,Control
+33619,17,OT,F,21,26,3/13/2002,Wed,Control
+33622,22,PB,F,26,32,3/13/2002,Wed,Control
+33625,22,PB,F,26,25,3/13/2002,Wed,Control
+33627,21,PB,M,27,34,3/13/2002,Wed,Long-term Krat Exclosure
+33628,21,PB,F,27,30,3/13/2002,Wed,Long-term Krat Exclosure
+33636,20,PB,M,27,41,3/13/2002,Wed,Short-term Krat Exclosure
+33637,20,PB,F,26,34,3/13/2002,Wed,Short-term Krat Exclosure
+33643,3,PB,F,26,32,3/14/2002,Thu,Long-term Krat Exclosure
+33644,3,DO,M,36,56,3/14/2002,Thu,Long-term Krat Exclosure
+33650,3,DO,M,35,53,3/14/2002,Thu,Long-term Krat Exclosure
+33651,3,PB,M,26,40,3/14/2002,Thu,Long-term Krat Exclosure
+33653,3,PB,F,26,39,3/14/2002,Thu,Long-term Krat Exclosure
+33656,4,DO,M,34,30,3/14/2002,Thu,Control
+33657,4,PF,F,16,8,3/14/2002,Thu,Control
+33658,4,DM,F,36,50,3/14/2002,Thu,Control
+33662,4,PB,F,25,26,3/14/2002,Thu,Control
+33663,4,DO,M,36,54,3/14/2002,Thu,Control
+33664,4,DM,F,38,52,3/14/2002,Thu,Control
+33670,6,PB,M,26,33,3/14/2002,Thu,Short-term Krat Exclosure
+33671,6,PB,F,27,25,3/14/2002,Thu,Short-term Krat Exclosure
+33672,6,PB,M,26,34,3/14/2002,Thu,Short-term Krat Exclosure
+33676,6,DO,F,37,53,3/14/2002,Thu,Short-term Krat Exclosure
+33677,6,PB,F,26,32,3/14/2002,Thu,Short-term Krat Exclosure
+33681,6,DO,M,36,59,3/14/2002,Thu,Short-term Krat Exclosure
+33682,11,DM,M,34,49,3/14/2002,Thu,Control
+33684,11,DM,M,36,47,3/14/2002,Thu,Control
+33687,11,PP,F,22,18,3/14/2002,Thu,Control
+33688,11,DM,M,37,59,3/14/2002,Thu,Control
+33691,11,PB,F,27,30,3/14/2002,Thu,Control
+33694,11,DO,F,36,54,3/14/2002,Thu,Control
+33699,9,OT,M,21,30,3/14/2002,Thu,Spectab exclosure
+33707,8,DO,F,37,58,3/14/2002,Thu,Control
+33711,8,PP,M,22,18,3/14/2002,Thu,Control
+33720,14,PP,M,22,19,3/14/2002,Thu,Control
+33727,15,PP,F,22,15,3/14/2002,Thu,Long-term Krat Exclosure
+33730,15,RM,F,17,7,3/14/2002,Thu,Long-term Krat Exclosure
+33736,1,DO,M,37,51,4/16/2002,Tue,Spectab exclosure
+33738,1,PP,F,22,18,4/16/2002,Tue,Spectab exclosure
+33739,1,NL,M,34,227,4/16/2002,Tue,Spectab exclosure
+33741,1,PP,F,23,17,4/16/2002,Tue,Spectab exclosure
+33743,1,DO,M,38,58,4/16/2002,Tue,Spectab exclosure
+33744,1,PB,M,27,40,4/16/2002,Tue,Spectab exclosure
+33745,1,PP,M,22,17,4/16/2002,Tue,Spectab exclosure
+33746,1,PP,F,22,15,4/16/2002,Tue,Spectab exclosure
+33751,6,OT,F,21,26,4/16/2002,Tue,Short-term Krat Exclosure
+33753,6,PB,M,25,34,4/16/2002,Tue,Short-term Krat Exclosure
+33754,6,DO,M,34,35,4/16/2002,Tue,Short-term Krat Exclosure
+33758,6,PB,F,26,43,4/16/2002,Tue,Short-term Krat Exclosure
+33760,6,PB,F,26,36,4/16/2002,Tue,Short-term Krat Exclosure
+33764,12,DM,M,36,45,4/16/2002,Tue,Control
+33766,12,DO,M,36,48,4/16/2002,Tue,Control
+33774,12,DM,F,36,46,4/16/2002,Tue,Control
+33779,11,PB,F,26,31,4/16/2002,Tue,Control
+33780,11,DM,F,35,43,4/16/2002,Tue,Control
+33782,11,DM,M,37,57,4/16/2002,Tue,Control
+33783,11,PP,F,22,20,4/16/2002,Tue,Control
+33792,8,DO,M,34,62,4/16/2002,Tue,Control
+33796,8,PP,F,22,18,4/16/2002,Tue,Control
+33797,8,PB,F,27,35,4/16/2002,Tue,Control
+33803,13,PB,M,26,17,4/16/2002,Tue,Short-term Krat Exclosure
+33806,13,PB,M,28,38,4/16/2002,Tue,Short-term Krat Exclosure
+33812,18,PB,M,26,36,4/16/2002,Tue,Short-term Krat Exclosure
+33813,18,OT,F,22,26,4/16/2002,Tue,Short-term Krat Exclosure
+33816,19,PP,M,22,17,4/16/2002,Tue,Long-term Krat Exclosure
+33819,19,PP,M,22,15,4/16/2002,Tue,Long-term Krat Exclosure
+33829,22,PB,F,27,35,4/16/2002,Tue,Control
+33834,2,PB,F,26,34,4/17/2002,Wed,Control
+33835,2,DO,F,35,38,4/17/2002,Wed,Control
+33838,2,OT,F,20,25,4/17/2002,Wed,Control
+33842,2,DM,F,35,51,4/17/2002,Wed,Control
+33847,2,NL,F,30,149,4/17/2002,Wed,Control
+33848,3,DM,M,36,50,4/17/2002,Wed,Long-term Krat Exclosure
+33849,3,DM,F,36,43,4/17/2002,Wed,Long-term Krat Exclosure
+33850,3,PP,M,22,21,4/17/2002,Wed,Long-term Krat Exclosure
+33851,3,DO,M,36,47,4/17/2002,Wed,Long-term Krat Exclosure
+33852,3,PB,M,27,51,4/17/2002,Wed,Long-term Krat Exclosure
+33853,3,PB,F,26,38,4/17/2002,Wed,Long-term Krat Exclosure
+33859,3,DO,F,36,56,4/17/2002,Wed,Long-term Krat Exclosure
+33861,3,PB,F,25,32,4/17/2002,Wed,Long-term Krat Exclosure
+33863,3,OT,M,21,31,4/17/2002,Wed,Long-term Krat Exclosure
+33865,4,DM,F,36,47,4/17/2002,Wed,Control
+33877,4,PB,M,29,48,4/17/2002,Wed,Control
+33879,9,DM,F,35,50,4/17/2002,Wed,Spectab exclosure
+33884,9,PP,M,23,24,4/17/2002,Wed,Spectab exclosure
+33888,9,PP,F,23,16,4/17/2002,Wed,Spectab exclosure
+33889,9,PP,M,23,19,4/17/2002,Wed,Spectab exclosure
+33890,9,DM,M,35,56,4/17/2002,Wed,Spectab exclosure
+33893,14,DM,F,35,43,4/17/2002,Wed,Control
+33896,14,OT,M,20,24,4/17/2002,Wed,Control
+33897,14,DM,M,36,49,4/17/2002,Wed,Control
+33898,14,DM,M,36,43,4/17/2002,Wed,Control
+33900,14,DM,M,34,27,4/17/2002,Wed,Control
+33902,15,SH,M,26,51,4/17/2002,Wed,Long-term Krat Exclosure
+33904,15,PP,F,22,17,4/17/2002,Wed,Long-term Krat Exclosure
+33912,15,PB,F,26,19,4/17/2002,Wed,Long-term Krat Exclosure
+33921,20,PB,F,26,35,4/17/2002,Wed,Short-term Krat Exclosure
+33926,17,DM,M,37,50,4/17/2002,Wed,Control
+33928,17,PB,F,28,47,4/17/2002,Wed,Control
+33932,17,PP,M,22,20,4/17/2002,Wed,Control
+33941,1,PB,M,26,23,5/15/2002,Wed,Spectab exclosure
+33946,1,PP,F,21,17,5/15/2002,Wed,Spectab exclosure
+33948,1,PB,M,27,43,5/15/2002,Wed,Spectab exclosure
+33949,1,DO,M,36,52,5/15/2002,Wed,Spectab exclosure
+33951,1,NL,F,30,138,5/15/2002,Wed,Spectab exclosure
+33953,2,PE,F,20,16,5/15/2002,Wed,Control
+33955,2,PB,F,25,19,5/15/2002,Wed,Control
+33956,2,PB,F,26,41,5/15/2002,Wed,Control
+33957,2,PP,M,23,22,5/15/2002,Wed,Control
+33959,2,PP,F,22,20,5/15/2002,Wed,Control
+33960,2,DO,M,37,52,5/15/2002,Wed,Control
+33963,2,PE,M,20,21,5/15/2002,Wed,Control
+33972,12,PP,F,22,20,5/15/2002,Wed,Control
+33974,12,PP,M,22,17,5/15/2002,Wed,Control
+33976,12,DO,F,37,63,5/15/2002,Wed,Control
+33977,12,PP,M,23,19,5/15/2002,Wed,Control
+33979,12,PP,M,22,18,5/15/2002,Wed,Control
+33987,19,PB,F,26,34,5/15/2002,Wed,Long-term Krat Exclosure
+33988,19,PP,F,20,13,5/15/2002,Wed,Long-term Krat Exclosure
+33990,19,PP,M,23,17,5/15/2002,Wed,Long-term Krat Exclosure
+33991,19,PP,F,22,18,5/15/2002,Wed,Long-term Krat Exclosure
+33993,18,PB,F,25,20,5/15/2002,Wed,Short-term Krat Exclosure
+33995,18,PB,M,27,33,5/15/2002,Wed,Short-term Krat Exclosure
+33997,18,PB,F,26,30,5/15/2002,Wed,Short-term Krat Exclosure
+34000,18,PB,F,26,16,5/15/2002,Wed,Short-term Krat Exclosure
+34002,17,DM,M,35,41,5/15/2002,Wed,Control
+34009,17,DM,F,36,47,5/15/2002,Wed,Control
+34015,20,RM,M,18,10,5/15/2002,Wed,Short-term Krat Exclosure
+34019,20,OT,F,21,26,5/15/2002,Wed,Short-term Krat Exclosure
+34021,20,PB,M,26,41,5/15/2002,Wed,Short-term Krat Exclosure
+34022,20,NL,F,31,171,5/15/2002,Wed,Short-term Krat Exclosure
+34025,21,PB,F,25,13,5/15/2002,Wed,Long-term Krat Exclosure
+34026,21,PB,F,25,31,5/15/2002,Wed,Long-term Krat Exclosure
+34030,21,PB,F,25,15,5/15/2002,Wed,Long-term Krat Exclosure
+34033,22,PB,F,26,30,5/15/2002,Wed,Control
+34034,22,DM,M,36,26,5/15/2002,Wed,Control
+34035,22,DM,M,36,49,5/15/2002,Wed,Control
+34038,22,PB,M,27,32,5/15/2002,Wed,Control
+34044,24,PE,F,20,24,5/15/2002,Wed,Rodent Exclosure
+34045,7,PP,F,22,16,5/15/2002,Wed,Rodent Exclosure
+34047,7,PP,F,23,19,5/15/2002,Wed,Rodent Exclosure
+34048,3,PB,F,26,17,5/16/2002,Thu,Long-term Krat Exclosure
+34054,3,PB,M,27,48,5/16/2002,Thu,Long-term Krat Exclosure
+34057,3,PF,F,15,9,5/16/2002,Thu,Long-term Krat Exclosure
+34059,3,PP,M,22,20,5/16/2002,Thu,Long-term Krat Exclosure
+34063,3,DO,M,36,52,5/16/2002,Thu,Long-term Krat Exclosure
+34069,4,DM,F,37,46,5/16/2002,Thu,Control
+34075,4,DO,M,36,50,5/16/2002,Thu,Control
+34080,6,PB,F,26,32,5/16/2002,Thu,Short-term Krat Exclosure
+34089,6,DO,M,34,44,5/16/2002,Thu,Short-term Krat Exclosure
+34093,6,PB,F,25,17,5/16/2002,Thu,Short-term Krat Exclosure
+34095,6,PB,M,26,19,5/16/2002,Thu,Short-term Krat Exclosure
+34104,11,PE,F,20,27,5/16/2002,Thu,Control
+34112,11,PP,F,23,20,5/16/2002,Thu,Control
+34114,11,DO,F,35,37,5/16/2002,Thu,Control
+34118,9,DM,M,36,45,5/16/2002,Thu,Spectab exclosure
+34122,9,DM,F,35,45,5/16/2002,Thu,Spectab exclosure
+34126,9,DM,F,35,25,5/16/2002,Thu,Spectab exclosure
+34129,8,PP,M,23,21,5/16/2002,Thu,Control
+34132,8,DM,M,36,42,5/16/2002,Thu,Control
+34135,8,DO,M,36,49,5/16/2002,Thu,Control
+34137,8,OT,M,20,11,5/16/2002,Thu,Control
+34140,8,PP,F,23,13,5/16/2002,Thu,Control
+34143,8,PB,F,26,46,5/16/2002,Thu,Control
+34147,8,DO,M,35,57,5/16/2002,Thu,Control
+34150,13,OT,F,20,23,5/16/2002,Thu,Short-term Krat Exclosure
+34154,13,PB,F,27,26,5/16/2002,Thu,Short-term Krat Exclosure
+34155,13,PB,F,27,42,5/16/2002,Thu,Short-term Krat Exclosure
+34158,14,DM,M,36,48,5/16/2002,Thu,Control
+34160,14,DM,M,35,42,5/16/2002,Thu,Control
+34161,14,DM,F,35,37,5/16/2002,Thu,Control
+34162,14,DM,M,35,47,5/16/2002,Thu,Control
+34163,14,DM,M,35,48,5/16/2002,Thu,Control
+34166,15,PB,M,25,24,5/16/2002,Thu,Long-term Krat Exclosure
+34167,15,PB,F,27,33,5/16/2002,Thu,Long-term Krat Exclosure
+34168,15,PP,F,22,20,5/16/2002,Thu,Long-term Krat Exclosure
+34169,15,PP,M,23,18,5/16/2002,Thu,Long-term Krat Exclosure
+34170,15,PP,F,21,20,5/16/2002,Thu,Long-term Krat Exclosure
+34172,15,PB,F,27,23,5/16/2002,Thu,Long-term Krat Exclosure
+34175,16,PB,M,25,35,5/16/2002,Thu,Rodent Exclosure
+34177,16,PE,M,18,13,5/16/2002,Thu,Rodent Exclosure
+34180,1,DO,F,34,39,6/15/2002,Sat,Spectab exclosure
+34181,1,PB,F,26,29,6/15/2002,Sat,Spectab exclosure
+34183,1,PP,F,22,11,6/15/2002,Sat,Spectab exclosure
+34185,1,PP,M,23,21,6/15/2002,Sat,Spectab exclosure
+34198,2,NL,F,31,139,6/15/2002,Sat,Control
+34204,12,DO,M,38,52,6/15/2002,Sat,Control
+34205,12,PE,F,20,23,6/15/2002,Sat,Control
+34208,12,PP,F,22,18,6/15/2002,Sat,Control
+34213,19,PP,F,21,18,6/15/2002,Sat,Long-term Krat Exclosure
+34214,19,PB,F,26,31,6/15/2002,Sat,Long-term Krat Exclosure
+34215,19,PP,F,20,18,6/15/2002,Sat,Long-term Krat Exclosure
+34219,19,PB,F,26,23,6/15/2002,Sat,Long-term Krat Exclosure
+34229,22,PB,M,28,39,6/15/2002,Sat,Control
+34230,22,PB,M,26,23,6/15/2002,Sat,Control
+34232,18,PB,F,26,34,6/15/2002,Sat,Short-term Krat Exclosure
+34235,18,PB,F,26,25,6/15/2002,Sat,Short-term Krat Exclosure
+34236,18,PB,F,26,23,6/15/2002,Sat,Short-term Krat Exclosure
+34237,18,PB,M,26,18,6/15/2002,Sat,Short-term Krat Exclosure
+34245,17,DM,M,37,50,6/15/2002,Sat,Control
+34250,17,PB,F,27,38,6/15/2002,Sat,Control
+34252,17,PB,M,27,28,6/15/2002,Sat,Control
+34253,17,DM,F,36,50,6/15/2002,Sat,Control
+34258,17,PB,F,27,20,6/15/2002,Sat,Control
+34263,21,PB,M,27,40,6/15/2002,Sat,Long-term Krat Exclosure
+34269,21,PB,F,25,31,6/15/2002,Sat,Long-term Krat Exclosure
+34274,20,PB,F,25,33,6/15/2002,Sat,Short-term Krat Exclosure
+34275,20,PB,F,25,29,6/15/2002,Sat,Short-term Krat Exclosure
+34290,3,DM,F,36,44,6/16/2002,Sun,Long-term Krat Exclosure
+34292,3,PP,F,22,11,6/16/2002,Sun,Long-term Krat Exclosure
+34297,3,DM,M,36,53,6/16/2002,Sun,Long-term Krat Exclosure
+34303,4,PP,F,23,20,6/16/2002,Sun,Control
+34305,4,PB,M,26,28,6/16/2002,Sun,Control
+34307,4,DO,M,35,50,6/16/2002,Sun,Control
+34309,4,PB,F,26,27,6/16/2002,Sun,Control
+34310,4,PE,F,20,22,6/16/2002,Sun,Control
+34315,6,PP,F,22,17,6/16/2002,Sun,Short-term Krat Exclosure
+34318,6,DO,M,36,43,6/16/2002,Sun,Short-term Krat Exclosure
+34320,6,PP,M,23,18,6/16/2002,Sun,Short-term Krat Exclosure
+34323,6,PB,M,26,22,6/16/2002,Sun,Short-term Krat Exclosure
+34324,6,PB,F,25,29,6/16/2002,Sun,Short-term Krat Exclosure
+34328,11,DO,M,36,49,6/16/2002,Sun,Control
+34342,9,DM,M,36,48,6/16/2002,Sun,Spectab exclosure
+34345,9,PP,M,21,10,6/16/2002,Sun,Spectab exclosure
+34346,9,DM,M,34,22,6/16/2002,Sun,Spectab exclosure
+34352,8,DO,F,38,48,6/16/2002,Sun,Control
+34353,8,PP,M,21,9,6/16/2002,Sun,Control
+34357,8,PB,F,26,21,6/16/2002,Sun,Control
+34360,8,DO,M,36,55,6/16/2002,Sun,Control
+34362,8,PB,M,25,18,6/16/2002,Sun,Control
+34363,8,PP,M,22,11,6/16/2002,Sun,Control
+34364,8,PP,M,22,21,6/16/2002,Sun,Control
+34365,8,PP,F,22,18,6/16/2002,Sun,Control
+34367,13,PB,M,26,26,6/16/2002,Sun,Short-term Krat Exclosure
+34369,13,PB,M,27,41,6/16/2002,Sun,Short-term Krat Exclosure
+34372,13,DO,F,36,41,6/16/2002,Sun,Short-term Krat Exclosure
+34376,13,PB,F,26,37,6/16/2002,Sun,Short-term Krat Exclosure
+34378,14,DM,F,36,46,6/16/2002,Sun,Control
+34382,14,DM,M,35,38,6/16/2002,Sun,Control
+34384,14,OT,M,21,23,6/16/2002,Sun,Control
+34387,14,NL,M,31,203,6/16/2002,Sun,Control
+34388,15,PB,F,26,37,6/16/2002,Sun,Long-term Krat Exclosure
+34390,15,PP,M,22,10,6/16/2002,Sun,Long-term Krat Exclosure
+34392,15,PB,M,26,26,6/16/2002,Sun,Long-term Krat Exclosure
+34393,15,PP,F,22,19,6/16/2002,Sun,Long-term Krat Exclosure
+34396,15,PB,F,26,29,6/16/2002,Sun,Long-term Krat Exclosure
+34402,15,PP,M,25,18,6/16/2002,Sun,Long-term Krat Exclosure
+34403,16,PF,F,16,5,6/16/2002,Sun,Rodent Exclosure
+34404,16,PB,M,26,24,6/16/2002,Sun,Rodent Exclosure
+34405,16,OT,F,20,24,6/16/2002,Sun,Rodent Exclosure
+34406,16,PB,M,27,23,6/16/2002,Sun,Rodent Exclosure
+34407,16,PB,F,26,27,6/16/2002,Sun,Rodent Exclosure
+34411,1,DO,F,37,40,7/13/2002,Sat,Spectab exclosure
+34416,1,PP,F,22,18,7/13/2002,Sat,Spectab exclosure
+34419,1,PP,F,23,15,7/13/2002,Sat,Spectab exclosure
+34427,2,PB,F,25,26,7/13/2002,Sat,Control
+34428,2,DM,F,34,46,7/13/2002,Sat,Control
+34430,2,PP,F,19,13,7/13/2002,Sat,Control
+34433,2,PP,F,20,13,7/13/2002,Sat,Control
+34443,12,PP,F,22,21,7/13/2002,Sat,Control
+34446,12,PE,M,21,23,7/13/2002,Sat,Control
+34460,19,PB,M,27,24,7/13/2002,Sat,Long-term Krat Exclosure
+34461,19,PB,F,25,30,7/13/2002,Sat,Long-term Krat Exclosure
+34464,18,PB,F,26,27,7/13/2002,Sat,Short-term Krat Exclosure
+34465,18,PB,F,26,24,7/13/2002,Sat,Short-term Krat Exclosure
+34466,18,PB,F,25,25,7/13/2002,Sat,Short-term Krat Exclosure
+34474,18,PB,F,26,31,7/13/2002,Sat,Short-term Krat Exclosure
+34475,17,OT,M,21,27,7/13/2002,Sat,Control
+34476,17,PB,M,26,28,7/13/2002,Sat,Control
+34477,17,DM,M,36,54,7/13/2002,Sat,Control
+34478,17,PP,F,21,11,7/13/2002,Sat,Control
+34484,17,PP,M,21,16,7/13/2002,Sat,Control
+34486,17,PB,M,27,33,7/13/2002,Sat,Control
+34491,20,PP,F,23,15,7/13/2002,Sat,Short-term Krat Exclosure
+34498,20,PB,M,27,40,7/13/2002,Sat,Short-term Krat Exclosure
+34505,21,PB,M,26,24,7/13/2002,Sat,Long-term Krat Exclosure
+34509,21,PB,F,25,30,7/13/2002,Sat,Long-term Krat Exclosure
+34510,22,PB,F,26,26,7/13/2002,Sat,Control
+34514,22,PB,F,26,30,7/13/2002,Sat,Control
+34516,22,PB,M,27,29,7/13/2002,Sat,Control
+34519,23,PE,F,20,23,7/13/2002,Sat,Rodent Exclosure
+34522,7,PP,M,22,15,7/13/2002,Sat,Rodent Exclosure
+34524,7,PB,M,25,16,7/13/2002,Sat,Rodent Exclosure
+34528,24,RM,M,15,7,7/13/2002,Sat,Rodent Exclosure
+34534,3,PB,F,26,34,7/14/2002,Sun,Long-term Krat Exclosure
+34537,3,PB,M,27,42,7/14/2002,Sun,Long-term Krat Exclosure
+34539,3,PP,M,20,13,7/14/2002,Sun,Long-term Krat Exclosure
+34547,3,PP,F,21,16,7/14/2002,Sun,Long-term Krat Exclosure
+34550,4,PB,M,25,25,7/14/2002,Sun,Control
+34553,4,PP,F,23,15,7/14/2002,Sun,Control
+34557,4,PP,F,22,17,7/14/2002,Sun,Control
+34558,4,PF,F,15,7,7/14/2002,Sun,Control
+34560,4,PB,F,26,26,7/14/2002,Sun,Control
+34561,6,PP,F,21,12,7/14/2002,Sun,Short-term Krat Exclosure
+34564,6,PB,M,25,26,7/14/2002,Sun,Short-term Krat Exclosure
+34565,6,PB,M,26,42,7/14/2002,Sun,Short-term Krat Exclosure
+34567,6,PP,M,24,19,7/14/2002,Sun,Short-term Krat Exclosure
+34570,6,PB,F,26,38,7/14/2002,Sun,Short-term Krat Exclosure
+34572,6,PB,F,26,26,7/14/2002,Sun,Short-term Krat Exclosure
+34573,6,DO,M,36,39,7/14/2002,Sun,Short-term Krat Exclosure
+34577,6,PB,F,25,29,7/14/2002,Sun,Short-term Krat Exclosure
+34580,6,PB,F,25,34,7/14/2002,Sun,Short-term Krat Exclosure
+34590,11,PP,M,23,18,7/14/2002,Sun,Control
+34591,11,PP,M,22,13,7/14/2002,Sun,Control
+34599,9,PP,F,22,17,7/14/2002,Sun,Spectab exclosure
+34601,9,DO,F,37,47,7/14/2002,Sun,Spectab exclosure
+34603,9,DM,M,36,46,7/14/2002,Sun,Spectab exclosure
+34606,9,PP,F,22,13,7/14/2002,Sun,Spectab exclosure
+34609,9,DM,M,37,35,7/14/2002,Sun,Spectab exclosure
+34611,8,DO,M,37,52,7/14/2002,Sun,Control
+34617,8,OT,M,18,19,7/14/2002,Sun,Control
+34618,8,DO,M,34,53,7/14/2002,Sun,Control
+34621,8,PP,F,22,12,7/14/2002,Sun,Control
+34625,13,OT,F,21,21,7/14/2002,Sun,Short-term Krat Exclosure
+34629,13,PB,M,25,29,7/14/2002,Sun,Short-term Krat Exclosure
+34630,13,PB,M,27,41,7/14/2002,Sun,Short-term Krat Exclosure
+34631,13,PP,F,22,11,7/14/2002,Sun,Short-term Krat Exclosure
+34633,13,PP,M,21,13,7/14/2002,Sun,Short-term Krat Exclosure
+34635,13,PB,M,27,31,7/14/2002,Sun,Short-term Krat Exclosure
+34637,13,PB,F,26,25,7/14/2002,Sun,Short-term Krat Exclosure
+34639,14,DM,F,36,40,7/14/2002,Sun,Control
+34642,14,PP,M,22,13,7/14/2002,Sun,Control
+34646,14,PP,M,23,14,7/14/2002,Sun,Control
+34649,15,PB,F,24,25,7/14/2002,Sun,Long-term Krat Exclosure
+34650,15,PP,F,23,17,7/14/2002,Sun,Long-term Krat Exclosure
+34654,15,DM,F,36,42,7/14/2002,Sun,Long-term Krat Exclosure
+34655,15,PP,F,21,18,7/14/2002,Sun,Long-term Krat Exclosure
+34656,15,PB,M,25,29,7/14/2002,Sun,Long-term Krat Exclosure
+34657,15,PB,M,26,29,7/14/2002,Sun,Long-term Krat Exclosure
+34658,15,SH,M,27,57,7/14/2002,Sun,Long-term Krat Exclosure
+34659,15,PB,F,25,23,7/14/2002,Sun,Long-term Krat Exclosure
+34661,16,OT,F,21,39,7/14/2002,Sun,Rodent Exclosure
+34663,16,RM,M,14,7,7/14/2002,Sun,Rodent Exclosure
+34667,16,DM,F,36,45,7/14/2002,Sun,Rodent Exclosure
+34675,12,DO,F,37,57,9/8/2002,Sun,Control
+34678,19,PB,M,27,33,9/8/2002,Sun,Long-term Krat Exclosure
+34681,18,PB,F,26,29,9/8/2002,Sun,Short-term Krat Exclosure
+34683,17,PB,F,26,30,9/8/2002,Sun,Control
+34685,17,DM,F,37,50,9/8/2002,Sun,Control
+34686,17,PB,F,26,31,9/8/2002,Sun,Control
+34687,17,DM,M,35,47,9/8/2002,Sun,Control
+34688,17,NL,M,32,162,9/8/2002,Sun,Control
+34689,20,PB,F,26,48,9/8/2002,Sun,Short-term Krat Exclosure
+34691,21,PB,M,28,36,9/8/2002,Sun,Long-term Krat Exclosure
+34693,22,PB,M,26,30,9/8/2002,Sun,Control
+34694,22,PB,F,27,33,9/8/2002,Sun,Control
+34695,22,PP,M,24,21,9/8/2002,Sun,Control
+34697,24,PP,M,22,18,9/8/2002,Sun,Rodent Exclosure
+34701,15,PB,M,25,32,9/10/2002,Tue,Long-term Krat Exclosure
+34703,14,DM,M,36,55,9/10/2002,Tue,Control
+34707,14,DM,M,35,52,9/10/2002,Tue,Control
+34712,13,OT,M,19,26,9/10/2002,Tue,Short-term Krat Exclosure
+34715,13,PB,M,25,33,9/10/2002,Tue,Short-term Krat Exclosure
+34719,9,PP,F,21,15,9/10/2002,Tue,Spectab exclosure
+34731,8,OT,M,20,11,9/10/2002,Tue,Control
+34733,3,PB,F,27,46,9/10/2002,Tue,Long-term Krat Exclosure
+34735,3,PP,M,21,13,9/10/2002,Tue,Long-term Krat Exclosure
+34736,3,PP,F,22,18,9/10/2002,Tue,Long-term Krat Exclosure
+34739,4,PP,M,21,15,9/10/2002,Tue,Control
+34741,4,DO,M,36,53,9/10/2002,Tue,Control
+34744,6,PP,F,21,17,9/10/2002,Tue,Short-term Krat Exclosure
+34745,6,PB,F,27,36,9/10/2002,Tue,Short-term Krat Exclosure
+34747,6,PP,F,21,20,9/10/2002,Tue,Short-term Krat Exclosure
+34748,6,PB,F,27,36,9/10/2002,Tue,Short-term Krat Exclosure
+34750,16,PP,M,23,19,9/10/2002,Tue,Rodent Exclosure
+34752,16,OT,M,20,15,9/10/2002,Tue,Rodent Exclosure
+34753,16,PB,M,27,36,9/10/2002,Tue,Rodent Exclosure
+34754,16,OT,F,20,25,9/10/2002,Tue,Rodent Exclosure
+34765,1,PP,F,23,18,10/5/2002,Sat,Spectab exclosure
+34766,1,PP,F,20,15,10/5/2002,Sat,Spectab exclosure
+34769,1,PP,F,22,16,10/5/2002,Sat,Spectab exclosure
+34772,1,PB,F,25,28,10/5/2002,Sat,Spectab exclosure
+34779,2,OL,M,20,27,10/5/2002,Sat,Control
+34782,2,PB,M,27,40,10/5/2002,Sat,Control
+34785,17,PB,M,26,32,10/5/2002,Sat,Control
+34793,17,DM,F,35,50,10/5/2002,Sat,Control
+34794,17,PP,M,21,16,10/5/2002,Sat,Control
+34795,17,PP,F,21,15,10/5/2002,Sat,Control
+34797,18,PB,M,27,55,10/5/2002,Sat,Short-term Krat Exclosure
+34798,18,PB,F,25,34,10/5/2002,Sat,Short-term Krat Exclosure
+34799,18,PB,F,26,29,10/5/2002,Sat,Short-term Krat Exclosure
+34801,18,PB,F,25,29,10/5/2002,Sat,Short-term Krat Exclosure
+34804,18,PB,F,25,31,10/5/2002,Sat,Short-term Krat Exclosure
+34805,18,PB,F,25,30,10/5/2002,Sat,Short-term Krat Exclosure
+34807,18,PB,F,27,32,10/5/2002,Sat,Short-term Krat Exclosure
+34815,19,PB,F,25,35,10/5/2002,Sat,Long-term Krat Exclosure
+34817,12,PP,F,21,13,10/5/2002,Sat,Control
+34821,12,PB,F,27,26,10/5/2002,Sat,Control
+34823,12,DO,F,36,57,10/5/2002,Sat,Control
+34824,12,PP,M,22,15,10/5/2002,Sat,Control
+34826,12,DM,F,35,50,10/5/2002,Sat,Control
+34828,22,PB,F,27,36,10/5/2002,Sat,Control
+34833,22,PB,F,25,30,10/5/2002,Sat,Control
+34836,22,PB,F,26,30,10/5/2002,Sat,Control
+34852,20,PB,F,26,30,10/5/2002,Sat,Short-term Krat Exclosure
+34857,20,PB,F,26,31,10/5/2002,Sat,Short-term Krat Exclosure
+34859,20,PB,M,26,48,10/5/2002,Sat,Short-term Krat Exclosure
+34860,20,NL,F,32,190,10/5/2002,Sat,Short-term Krat Exclosure
+34874,3,PB,F,25,15,10/6/2002,Sun,Long-term Krat Exclosure
+34878,3,PB,M,27,44,10/6/2002,Sun,Long-term Krat Exclosure
+34879,3,PB,F,26,17,10/6/2002,Sun,Long-term Krat Exclosure
+34880,4,PB,F,24,28,10/6/2002,Sun,Control
+34882,4,PF,F,15,10,10/6/2002,Sun,Control
+34884,4,PB,M,28,43,10/6/2002,Sun,Control
+34885,4,PB,F,27,25,10/6/2002,Sun,Control
+34888,6,PP,M,22,17,10/6/2002,Sun,Short-term Krat Exclosure
+34894,6,PB,M,26,39,10/6/2002,Sun,Short-term Krat Exclosure
+34895,6,PB,F,25,26,10/6/2002,Sun,Short-term Krat Exclosure
+34896,6,PB,F,25,29,10/6/2002,Sun,Short-term Krat Exclosure
+34897,6,PB,M,26,41,10/6/2002,Sun,Short-term Krat Exclosure
+34898,6,PB,F,26,30,10/6/2002,Sun,Short-term Krat Exclosure
+34902,11,PP,F,21,19,10/6/2002,Sun,Control
+34903,11,OT,F,20,33,10/6/2002,Sun,Control
+34904,11,PP,F,21,16,10/6/2002,Sun,Control
+34915,9,PP,F,21,17,10/6/2002,Sun,Spectab exclosure
+34919,8,OT,F,20,23,10/6/2002,Sun,Control
+34922,8,DO,F,37,56,10/6/2002,Sun,Control
+34925,8,PP,M,21,16,10/6/2002,Sun,Control
+34929,15,PB,F,26,32,10/6/2002,Sun,Long-term Krat Exclosure
+34933,15,PP,F,21,16,10/6/2002,Sun,Long-term Krat Exclosure
+34934,15,PB,F,26,27,10/6/2002,Sun,Long-term Krat Exclosure
+34940,14,DM,M,34,52,10/6/2002,Sun,Control
+34941,14,DM,M,34,54,10/6/2002,Sun,Control
+34944,14,DM,M,38,52,10/6/2002,Sun,Control
+34949,14,PP,M,22,17,10/6/2002,Sun,Control
+34950,14,DM,F,35,43,10/6/2002,Sun,Control
+34958,13,DO,M,39,60,10/6/2002,Sun,Short-term Krat Exclosure
+34964,16,OT,M,18,22,10/6/2002,Sun,Rodent Exclosure
+34972,1,PP,F,22,18,11/9/2002,Sat,Spectab exclosure
+34985,2,DM,M,35,55,11/9/2002,Sat,Control
+34987,2,DM,M,35,45,11/9/2002,Sat,Control
+34992,17,OT,F,19,30,11/9/2002,Sat,Control
+34994,17,PB,F,28,38,11/9/2002,Sat,Control
+34996,17,DM,M,33,47,11/9/2002,Sat,Control
+34997,17,DM,M,36,44,11/9/2002,Sat,Control
+34999,17,PB,F,27,29,11/9/2002,Sat,Control
+35011,18,PB,F,26,29,11/9/2002,Sat,Short-term Krat Exclosure
+35013,18,PB,F,26,29,11/9/2002,Sat,Short-term Krat Exclosure
+35015,18,PB,F,25,30,11/9/2002,Sat,Short-term Krat Exclosure
+35019,19,PP,F,21,13,11/9/2002,Sat,Long-term Krat Exclosure
+35021,19,PP,M,21,15,11/9/2002,Sat,Long-term Krat Exclosure
+35022,19,PP,F,22,18,11/9/2002,Sat,Long-term Krat Exclosure
+35025,19,PB,F,26,24,11/9/2002,Sat,Long-term Krat Exclosure
+35029,12,DO,F,36,54,11/9/2002,Sat,Control
+35031,12,OT,M,20,24,11/9/2002,Sat,Control
+35032,12,PB,M,27,51,11/9/2002,Sat,Control
+35035,12,PB,F,27,31,11/9/2002,Sat,Control
+35039,22,PB,M,27,34,11/9/2002,Sat,Control
+35045,22,PB,F,26,26,11/9/2002,Sat,Control
+35047,21,PB,M,27,45,11/9/2002,Sat,Long-term Krat Exclosure
+35048,21,PB,F,25,30,11/9/2002,Sat,Long-term Krat Exclosure
+35052,21,PB,F,26,30,11/9/2002,Sat,Long-term Krat Exclosure
+35056,21,PB,M,27,45,11/9/2002,Sat,Long-term Krat Exclosure
+35058,20,PB,M,27,49,11/9/2002,Sat,Short-term Krat Exclosure
+35059,20,PB,F,26,25,11/9/2002,Sat,Short-term Krat Exclosure
+35063,20,PE,F,20,24,11/9/2002,Sat,Short-term Krat Exclosure
+35064,20,OT,M,19,13,11/9/2002,Sat,Short-term Krat Exclosure
+35068,24,RM,F,16,16,11/9/2002,Sat,Rodent Exclosure
+35075,7,PE,F,21,30,11/9/2002,Sat,Rodent Exclosure
+35079,6,DO,F,35,61,11/10/2002,Sun,Short-term Krat Exclosure
+35081,6,PB,F,25,25,11/10/2002,Sun,Short-term Krat Exclosure
+35083,6,OT,M,19,23,11/10/2002,Sun,Short-term Krat Exclosure
+35092,11,PP,M,22,15,11/10/2002,Sun,Control
+35094,11,PB,F,27,33,11/10/2002,Sun,Control
+35095,11,PP,M,22,17,11/10/2002,Sun,Control
+35107,3,PB,F,26,25,11/10/2002,Sun,Long-term Krat Exclosure
+35109,3,PB,M,28,49,11/10/2002,Sun,Long-term Krat Exclosure
+35113,3,PB,F,27,24,11/10/2002,Sun,Long-term Krat Exclosure
+35114,4,DO,M,34,41,11/10/2002,Sun,Control
+35119,4,PB,F,26,28,11/10/2002,Sun,Control
+35121,4,PB,M,26,46,11/10/2002,Sun,Control
+35122,4,PP,M,22,14,11/10/2002,Sun,Control
+35124,6,PB,F,26,30,11/10/2002,Sun,Short-term Krat Exclosure
+35125,6,PB,F,26,39,11/10/2002,Sun,Short-term Krat Exclosure
+35127,6,PB,M,27,46,11/10/2002,Sun,Short-term Krat Exclosure
+35128,6,PB,F,25,28,11/10/2002,Sun,Short-term Krat Exclosure
+35132,9,OT,M,20,22,11/10/2002,Sun,Spectab exclosure
+35135,9,OL,M,21,21,11/10/2002,Sun,Spectab exclosure
+35140,8,OT,F,20,25,11/10/2002,Sun,Control
+35141,8,PB,F,26,37,11/10/2002,Sun,Control
+35143,8,PB,F,26,24,11/10/2002,Sun,Control
+35145,8,PB,F,27,27,11/10/2002,Sun,Control
+35147,8,DO,M,39,63,11/10/2002,Sun,Control
+35148,8,PP,F,22,14,11/10/2002,Sun,Control
+35150,13,PB,F,27,35,11/10/2002,Sun,Short-term Krat Exclosure
+35151,13,PB,M,26,22,11/10/2002,Sun,Short-term Krat Exclosure
+35152,13,PB,M,26,44,11/10/2002,Sun,Short-term Krat Exclosure
+35159,13,PB,F,25,20,11/10/2002,Sun,Short-term Krat Exclosure
+35160,13,DO,F,36,65,11/10/2002,Sun,Short-term Krat Exclosure
+35163,13,OT,M,20,23,11/10/2002,Sun,Short-term Krat Exclosure
+35171,14,DM,F,36,44,11/10/2002,Sun,Control
+35174,15,PB,F,25,31,11/10/2002,Sun,Long-term Krat Exclosure
+35179,15,PB,F,25,22,11/10/2002,Sun,Long-term Krat Exclosure
+35180,15,PB,M,26,38,11/10/2002,Sun,Long-term Krat Exclosure
+35184,16,PB,F,26,29,11/10/2002,Sun,Rodent Exclosure
+35193,1,PB,M,26,14,12/7/2002,Sat,Spectab exclosure
+35199,1,NL,F,28,196,12/7/2002,Sat,Spectab exclosure
+35202,2,PP,M,21,14,12/7/2002,Sat,Control
+35203,2,PB,F,27,27,12/7/2002,Sat,Control
+35205,2,PB,F,25,28,12/7/2002,Sat,Control
+35207,2,PB,M,27,38,12/7/2002,Sat,Control
+35210,2,DM,M,35,48,12/7/2002,Sat,Control
+35212,2,NL,M,33,248,12/7/2002,Sat,Control
+35224,18,PB,F,28,28,12/7/2002,Sat,Short-term Krat Exclosure
+35226,18,PB,F,26,23,12/7/2002,Sat,Short-term Krat Exclosure
+35227,18,PB,F,27,28,12/7/2002,Sat,Short-term Krat Exclosure
+35230,18,PB,F,26,29,12/7/2002,Sat,Short-term Krat Exclosure
+35231,18,NL,F,32,154,12/7/2002,Sat,Short-term Krat Exclosure
+35234,19,PB,F,24,25,12/7/2002,Sat,Long-term Krat Exclosure
+35237,19,PP,F,21,13,12/7/2002,Sat,Long-term Krat Exclosure
+35244,12,PB,F,27,30,12/7/2002,Sat,Control
+35247,12,PP,M,20,14,12/7/2002,Sat,Control
+35254,22,PB,F,26,27,12/7/2002,Sat,Control
+35255,22,PB,M,26,35,12/7/2002,Sat,Control
+35268,21,PB,M,26,29,12/7/2002,Sat,Long-term Krat Exclosure
+35271,20,PB,F,26,34,12/7/2002,Sat,Short-term Krat Exclosure
+35272,20,PB,M,26,47,12/7/2002,Sat,Short-term Krat Exclosure
+35273,20,PB,F,25,24,12/7/2002,Sat,Short-term Krat Exclosure
+35274,20,PB,F,26,27,12/7/2002,Sat,Short-term Krat Exclosure
+35281,23,PP,M,23,15,12/7/2002,Sat,Rodent Exclosure
+35284,24,NL,M,35,225,12/7/2002,Sat,Rodent Exclosure
+35286,3,PB,F,27,38,12/8/2002,Sun,Long-term Krat Exclosure
+35288,3,PB,F,27,36,12/8/2002,Sun,Long-term Krat Exclosure
+35289,3,PB,M,26,49,12/8/2002,Sun,Long-term Krat Exclosure
+35294,3,PB,F,26,34,12/8/2002,Sun,Long-term Krat Exclosure
+35295,3,PB,M,27,46,12/8/2002,Sun,Long-term Krat Exclosure
+35296,4,PP,M,21,14,12/8/2002,Sun,Control
+35299,4,PB,F,26,24,12/8/2002,Sun,Control
+35300,4,PB,F,26,29,12/8/2002,Sun,Control
+35303,4,DO,M,36,54,12/8/2002,Sun,Control
+35305,4,OT,M,20,21,12/8/2002,Sun,Control
+35308,6,PF,F,16,6,12/8/2002,Sun,Short-term Krat Exclosure
+35309,6,PB,F,25,27,12/8/2002,Sun,Short-term Krat Exclosure
+35310,6,DO,F,36,50,12/8/2002,Sun,Short-term Krat Exclosure
+35312,6,PB,F,25,30,12/8/2002,Sun,Short-term Krat Exclosure
+35314,6,PB,F,26,27,12/8/2002,Sun,Short-term Krat Exclosure
+35318,6,PB,M,26,45,12/8/2002,Sun,Short-term Krat Exclosure
+35319,6,DO,M,35,49,12/8/2002,Sun,Short-term Krat Exclosure
+35321,6,PB,F,26,37,12/8/2002,Sun,Short-term Krat Exclosure
+35325,11,PP,M,22,18,12/8/2002,Sun,Control
+35333,11,PB,F,25,26,12/8/2002,Sun,Control
+35336,9,PB,F,26,30,12/8/2002,Sun,Spectab exclosure
+35337,9,OT,M,20,25,12/8/2002,Sun,Spectab exclosure
+35345,9,PB,M,26,24,12/8/2002,Sun,Spectab exclosure
+35355,8,PB,F,23,30,12/8/2002,Sun,Control
+35356,13,PB,M,26,33,12/8/2002,Sun,Short-term Krat Exclosure
+35364,14,DM,F,36,49,12/8/2002,Sun,Control
+35368,14,DM,F,33,41,12/8/2002,Sun,Control
+35375,15,PB,M,26,36,12/8/2002,Sun,Long-term Krat Exclosure
+35376,15,PB,F,25,31,12/8/2002,Sun,Long-term Krat Exclosure
+35377,15,PB,M,28,38,12/8/2002,Sun,Long-term Krat Exclosure
+35378,15,PB,F,26,29,12/8/2002,Sun,Long-term Krat Exclosure
+35383,5,PP,M,20,19,12/8/2002,Sun,Rodent Exclosure
+35391,1,DO,F,34,52,12/29/2002,Sun,Spectab exclosure
+35392,1,DO,F,33,40,12/29/2002,Sun,Spectab exclosure
+35393,1,PP,F,23,19,12/29/2002,Sun,Spectab exclosure
+35395,2,OT,M,19,23,12/29/2002,Sun,Control
+35401,2,PP,M,21,14,12/29/2002,Sun,Control
+35405,2,PB,F,26,26,12/29/2002,Sun,Control
+35406,2,PB,M,26,44,12/29/2002,Sun,Control
+35413,12,DO,F,36,49,12/29/2002,Sun,Control
+35421,19,PB,M,27,35,12/29/2002,Sun,Long-term Krat Exclosure
+35422,19,PB,F,26,33,12/29/2002,Sun,Long-term Krat Exclosure
+35424,19,PP,M,21,16,12/29/2002,Sun,Long-term Krat Exclosure
+35425,19,PE,M,20,22,12/29/2002,Sun,Long-term Krat Exclosure
+35426,18,PB,F,25,30,12/29/2002,Sun,Short-term Krat Exclosure
+35430,18,PB,F,26,29,12/29/2002,Sun,Short-term Krat Exclosure
+35432,18,PB,F,24,28,12/29/2002,Sun,Short-term Krat Exclosure
+35433,18,PB,F,26,27,12/29/2002,Sun,Short-term Krat Exclosure
+35435,18,NL,F,31,150,12/29/2002,Sun,Short-term Krat Exclosure
+35441,17,DM,M,34,47,12/29/2002,Sun,Control
+35444,17,DM,F,36,47,12/29/2002,Sun,Control
+35445,17,DM,M,33,39,12/29/2002,Sun,Control
+35448,17,PB,M,27,45,12/29/2002,Sun,Control
+35450,20,PB,M,27,42,12/29/2002,Sun,Short-term Krat Exclosure
+35451,20,PB,F,25,25,12/29/2002,Sun,Short-term Krat Exclosure
+35452,20,PB,M,25,47,12/29/2002,Sun,Short-term Krat Exclosure
+35459,20,NL,F,29,148,12/29/2002,Sun,Short-term Krat Exclosure
+35461,21,PB,M,26,42,12/29/2002,Sun,Long-term Krat Exclosure
+35462,21,PB,F,25,26,12/29/2002,Sun,Long-term Krat Exclosure
+35463,21,PB,M,26,31,12/29/2002,Sun,Long-term Krat Exclosure
+35464,21,PB,F,26,35,12/29/2002,Sun,Long-term Krat Exclosure
+35466,21,PB,F,25,27,12/29/2002,Sun,Long-term Krat Exclosure
+35467,21,PB,F,25,26,12/29/2002,Sun,Long-term Krat Exclosure
+35470,22,PB,M,26,46,12/29/2002,Sun,Control
+35471,22,PB,F,27,26,12/29/2002,Sun,Control
+35473,22,PB,M,27,39,12/29/2002,Sun,Control
+35479,24,NL,M,32,224,12/29/2002,Sun,Rodent Exclosure
+35481,16,PB,M,28,31,12/29/2002,Sun,Rodent Exclosure
+35488,23,PE,F,19,23,12/29/2002,Sun,Rodent Exclosure
+35489,23,PB,F,25,24,12/29/2002,Sun,Rodent Exclosure
+35498,4,DO,M,34,47,12/31/2002,Tue,Control
+35504,6,PB,F,25,27,12/31/2002,Tue,Short-term Krat Exclosure
+35506,6,PF,M,13,8,12/31/2002,Tue,Short-term Krat Exclosure
+35508,6,PB,F,25,35,12/31/2002,Tue,Short-term Krat Exclosure
+35514,11,PP,M,23,18,12/31/2002,Tue,Control
+35523,9,DM,F,36,44,12/31/2002,Tue,Spectab exclosure
+35524,9,PB,F,25,27,12/31/2002,Tue,Spectab exclosure
+35526,8,OT,F,20,24,12/31/2002,Tue,Control
+35533,14,DM,F,36,48,12/31/2002,Tue,Control
+35534,14,DM,M,37,56,12/31/2002,Tue,Control
+35535,14,DM,M,37,53,12/31/2002,Tue,Control
+35536,14,DM,F,35,42,12/31/2002,Tue,Control
+35537,14,DM,F,36,46,12/31/2002,Tue,Control
+35541,15,PB,F,24,31,12/31/2002,Tue,Long-term Krat Exclosure
+35543,15,PB,F,27,34,12/31/2002,Tue,Long-term Krat Exclosure
+35548,7,DO,M,36,51,12/31/2002,Tue,Rodent Exclosure
