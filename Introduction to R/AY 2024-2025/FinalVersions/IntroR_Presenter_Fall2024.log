@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.22)  12 SEP 2024 16:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.22)  24 SEP 2024 08:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -499,15 +499,10 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 144.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 144.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 163.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 165.
 (c:/Users/greta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Underfull \hbox (badness 10000) in paragraph at lines 163--165
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 165--167
 
  []
@@ -517,14 +512,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 167--169
 
  []
 
-<rstudio.png, id=7, 368.87813pt x 207.02344pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 169--171
+
+ []
+
+<rstudio.png, id=8, 368.87813pt x 207.02344pt>
 File: rstudio.png Graphic file (type png)
 <use rstudio.png>
-Package pdftex.def Info: rstudio.png  used on input line 174.
+Package pdftex.def Info: rstudio.png  used on input line 176.
 (pdftex.def)             Requested size: 368.87721pt x 207.02292pt.
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 182.
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 194.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 184.
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 196.
 (c:/Users/greta/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -535,24 +535,24 @@ File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 [2 <./rstudio.png>]
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 250.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 252.
 
-Underfull \hbox (badness 10000) in paragraph at lines 320--324
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 324--329
+Underfull \hbox (badness 10000) in paragraph at lines 322--326
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 329--334
+Underfull \hbox (badness 10000) in paragraph at lines 326--331
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 334--337
+Underfull \hbox (badness 10000) in paragraph at lines 331--336
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 336--339
 
  []
 
@@ -563,29 +563,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 334--337
 [4]
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 594--598
+Underfull \hbox (badness 10000) in paragraph at lines 596--600
 
  []
 
 
-Overfull \hbox (12.36362pt too wide) in paragraph at lines 598--600
+Overfull \hbox (12.36362pt too wide) in paragraph at lines 600--602
 []\T1/lmr/m/n/10 (-20) To ac-cess the el-e-ments in-side each cubby, you then use sin-gle square brack-ets (e.g. \T1/lmtt/m/n/10 my_first_list[[1]][2]\T1/lmr/m/n/10 (-20) ). 
  []
 
-<list_example.png, id=52, 286.57062pt x 233.87375pt>
+<list_example.png, id=54, 286.57062pt x 233.87375pt>
 File: list_example.png Graphic file (type png)
 <use list_example.png>
-Package pdftex.def Info: list_example.png  used on input line 604.
+Package pdftex.def Info: list_example.png  used on input line 606.
 (pdftex.def)             Requested size: 286.57428pt x 233.87671pt.
 
 
 [6 <./list_example.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 640--643
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 643--645
+Underfull \hbox (badness 10000) in paragraph at lines 642--645
 
  []
 
@@ -595,53 +590,58 @@ Underfull \hbox (badness 10000) in paragraph at lines 645--647
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 647--650
+Underfull \hbox (badness 10000) in paragraph at lines 647--649
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 649--652
 
  []
 
 
 LaTeX Font Warning: Font shape `T1/lmtt/bx/it' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/sl' tried instead on input line 693.
+(Font)              Font shape `T1/lmtt/b/sl' tried instead on input line 697.
 
 
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 785--787
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 787--789
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 789--791
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 799--801
+Underfull \hbox (badness 10000) in paragraph at lines 791--793
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 801--803
+Underfull \hbox (badness 10000) in paragraph at lines 793--795
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 811--813
+Underfull \hbox (badness 10000) in paragraph at lines 803--805
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 821--824
+Underfull \hbox (badness 10000) in paragraph at lines 805--807
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 824--827
+Underfull \hbox (badness 10000) in paragraph at lines 815--817
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 825--828
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 828--831
 
  []
 
@@ -656,49 +656,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 824--827
 [11]
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 1297--1299
+Underfull \hbox (badness 10000) in paragraph at lines 1301--1303
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1299--1302
+Underfull \hbox (badness 10000) in paragraph at lines 1303--1306
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1302--1304
+Underfull \hbox (badness 10000) in paragraph at lines 1306--1308
 
  []
 
 
-Overfull \hbox (76.2434pt too wide) in paragraph at lines 1334--1334
+Overfull \hbox (76.2434pt too wide) in paragraph at lines 1338--1338
 []\T1/lmtt/m/n/10 ## i Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors[] 
  []
 
 
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 1363--1367
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 1367--1371
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1378--1381
+Underfull \hbox (badness 10000) in paragraph at lines 1371--1375
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1394--1396
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1396--1398
+Underfull \hbox (badness 10000) in paragraph at lines 1382--1385
 
  []
 
@@ -723,119 +713,114 @@ Underfull \hbox (badness 10000) in paragraph at lines 1404--1406
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 1406--1408
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1408--1410
+
+ []
+
+
 
 [14]
 
 LaTeX Font Warning: Font shape `TS1/lmtt/bx/it' in size <10> not available
-(Font)              Font shape `TS1/lmtt/b/sl' tried instead on input line 1485.
+(Font)              Font shape `TS1/lmtt/b/sl' tried instead on input line 1489.
 
 
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 1584--1586
+Underfull \hbox (badness 10000) in paragraph at lines 1592--1594
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1586--1589
+Underfull \hbox (badness 10000) in paragraph at lines 1594--1597
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1589--1592
+Underfull \hbox (badness 10000) in paragraph at lines 1597--1600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1616--1619
+Underfull \hbox (badness 10000) in paragraph at lines 1624--1627
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1619--1622
+Underfull \hbox (badness 10000) in paragraph at lines 1627--1630
 
  []
 
-<IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-36-1.pdf, id=119, 361.35pt x 216.81pt>
+<IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-36-1.pdf, id=121, 361.35pt x 216.81pt>
 File: IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-36-1.pdf Graphic file (type pdf)
 <use IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-36-1.pdf>
-Package pdftex.def Info: IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-36-1.pdf  used on input line 1641.
+Package pdftex.def Info: IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-36-1.pdf  used on input line 1649.
 (pdftex.def)             Requested size: 361.34912pt x 216.80946pt.
 
 
-[16 <./IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-36-1.pdf>]
-<IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-37-1.pdf, id=131, 361.35pt x 216.81pt>
+[16]
+<IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-37-1.pdf, id=128, 361.35pt x 216.81pt>
 File: IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-37-1.pdf Graphic file (type pdf)
 <use IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-37-1.pdf>
-Package pdftex.def Info: IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-37-1.pdf  used on input line 1655.
+Package pdftex.def Info: IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-37-1.pdf  used on input line 1663.
 (pdftex.def)             Requested size: 361.34912pt x 216.80946pt.
-<IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-38-1.pdf, id=132, 361.35pt x 216.81pt>
+<IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-38-1.pdf, id=129, 361.35pt x 216.81pt>
 File: IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-38-1.pdf Graphic file (type pdf)
 <use IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-38-1.pdf>
-Package pdftex.def Info: IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-38-1.pdf  used on input line 1669.
+Package pdftex.def Info: IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-38-1.pdf  used on input line 1677.
 (pdftex.def)             Requested size: 361.34912pt x 216.80946pt.
-<IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-39-1.pdf, id=133, 361.35pt x 216.81pt>
+
+
+[17 <./IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-36-1.pdf> <./IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-37-1.pdf>]
+<IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-39-1.pdf, id=147, 361.35pt x 216.81pt>
 File: IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-39-1.pdf Graphic file (type pdf)
 <use IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-39-1.pdf>
-Package pdftex.def Info: IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-39-1.pdf  used on input line 1678.
+Package pdftex.def Info: IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-39-1.pdf  used on input line 1686.
 (pdftex.def)             Requested size: 361.34912pt x 216.80946pt.
-
-
-[17 <./IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-37-1.pdf> <./IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-38-1.pdf>]
-<IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-41-1.pdf, id=152, 361.35pt x 216.81pt>
+<IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-41-1.pdf, id=148, 361.35pt x 216.81pt>
 File: IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-41-1.pdf Graphic file (type pdf)
 <use IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-41-1.pdf>
-Package pdftex.def Info: IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-41-1.pdf  used on input line 1707.
+Package pdftex.def Info: IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-41-1.pdf  used on input line 1715.
 (pdftex.def)             Requested size: 361.34912pt x 216.80946pt.
 
 
-[18 <./IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-39-1.pdf> <./IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-41-1.pdf>]
-<IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-42-1.pdf, id=169, 361.35pt x 216.81pt>
+[18 <./IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-38-1.pdf> <./IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-39-1.pdf>]
+<IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-42-1.pdf, id=165, 361.35pt x 216.81pt>
 File: IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-42-1.pdf Graphic file (type pdf)
 <use IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-42-1.pdf>
-Package pdftex.def Info: IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-42-1.pdf  used on input line 1721.
+Package pdftex.def Info: IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-42-1.pdf  used on input line 1729.
 (pdftex.def)             Requested size: 361.34912pt x 216.80946pt.
-<IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-43-1.pdf, id=170, 361.35pt x 216.81pt>
+<IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-43-1.pdf, id=166, 361.35pt x 216.81pt>
 File: IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-43-1.pdf Graphic file (type pdf)
 <use IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-43-1.pdf>
-Package pdftex.def Info: IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-43-1.pdf  used on input line 1737.
+Package pdftex.def Info: IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-43-1.pdf  used on input line 1745.
 (pdftex.def)             Requested size: 361.34912pt x 216.80946pt.
 
 
-[19 <./IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-42-1.pdf> <./IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-43-1.pdf>]
-<IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-44-1.pdf, id=189, 361.35pt x 216.81pt>
+[19 <./IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-41-1.pdf> <./IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-42-1.pdf>]
+<IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-44-1.pdf, id=185, 361.35pt x 216.81pt>
 File: IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-44-1.pdf Graphic file (type pdf)
 <use IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-44-1.pdf>
-Package pdftex.def Info: IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-44-1.pdf  used on input line 1760.
+Package pdftex.def Info: IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-44-1.pdf  used on input line 1768.
 (pdftex.def)             Requested size: 361.34912pt x 216.80946pt.
 
 
-[20 <./IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-44-1.pdf>]
+[20 <./IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-43-1.pdf> <./IntroR_Presenter_Fall2024_files/figure-latex/unnamed-chunk-44-1.pdf>]
 
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 1953--1956
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1956--1959
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1984--1986
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1986--1988
-
- []
-
-
 
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 1988--1990
+Underfull \hbox (badness 10000) in paragraph at lines 1959--1962
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1962--1965
 
  []
 
@@ -854,34 +839,49 @@ Underfull \hbox (badness 10000) in paragraph at lines 1994--1996
 
  []
 
-<88x31.png, id=227, 88.33pt x 31.11626pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1996--1998
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1998--2000
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2000--2002
+
+ []
+
+<88x31.png, id=226, 88.33pt x 31.11626pt>
 File: 88x31.png Graphic file (type png)
 <use 88x31.png>
-Package pdftex.def Info: 88x31.png  used on input line 2037.
+Package pdftex.def Info: 88x31.png  used on input line 2043.
 (pdftex.def)             Requested size: 88.33112pt x 31.11664pt.
 
 
-[23 <./88x31.png>]
+[23]
 
-[24] (./IntroR_Presenter_Fall2024.aux)
+[24 <./88x31.png>] (./IntroR_Presenter_Fall2024.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 14206 strings out of 475483
- 229195 string characters out of 5773862
+ 14212 strings out of 475483
+ 229257 string characters out of 5773862
  1944908 words of memory out of 5000000
- 36397 multiletter control sequences out of 15000+600000
+ 36401 multiletter control sequences out of 15000+600000
  620284 words of font info for 169 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 83i,11n,93p,1022b,644s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 83i,11n,93p,1022b,643s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/greta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/greta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/greta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb><c:/Users/greta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/greta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/greta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/greta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/greta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmro10.pfb><c:/Users/greta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><c:/Users/greta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtko10.pfb><c:/Users/greta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/Users/greta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb><c:/Users/greta/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtto10.pfb>
-Output written on IntroR_Presenter_Fall2024.pdf (24 pages, 2100539 bytes).
+Output written on IntroR_Presenter_Fall2024.pdf (24 pages, 2101830 bytes).
 PDF statistics:
- 445 PDF objects out of 1000 (max. 8388607)
- 366 compressed objects within 4 object streams
- 81 named destinations out of 1000 (max. 500000)
- 31072 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 453 PDF objects out of 1000 (max. 8388607)
+ 374 compressed objects within 4 object streams
+ 83 named destinations out of 1000 (max. 500000)
+ 31088 words of extra memory for PDF output out of 35830 (max. 10000000)
 

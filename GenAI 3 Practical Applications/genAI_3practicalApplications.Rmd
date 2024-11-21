@@ -1,0 +1,11 @@
+---
+title: 'Gen AI: 3 Practical Data Science Applications'
+author: "Greta Linse"
+date: "2024-11-13"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
