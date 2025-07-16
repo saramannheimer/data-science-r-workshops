@@ -74,7 +74,7 @@ an RMD or script file is opened)
 - your __Environment (Objects/Variables)/History__ (top-right)  
 - and your __Files/Plots/Packages/Help/Viewer__ (bottom-right).
 
-![RStudio layout](rstudio.png)  
+![RStudio layout](images/rstudio.png)  
 
 You can use the Tools -> Global Options -> Appearance tab to modify the colors 
 and font sizes in RStudio.
@@ -342,7 +342,7 @@ next to the name of the list (e.g `my_first_list[[1]]`).
 * To access the elements inside each cubby, you then use single square brackets 
 (e.g. `my_first_list[[1]][2]`). 
 
-![Example of lists](list_example.png)
+![Example of lists](images/list_example.png)
 
 ### Named Lists
 
@@ -384,9 +384,7 @@ the data set, here is code that allows you to read the data from our github
 repository:
 
 ```{r}
-BlackfootFish <- read.csv(paste0("https://github.com/saramannheimer/",
-"data-science-r-workshops/raw/master/",
-"Introduction%20to%20R/AY%202020-2021/Student%20Version/BlackfootFish.csv"))
+BlackfootFish <- read.csv("data/BlackfootFish.csv")
 ```
 
 ## Structure of Data  
