@@ -2,6 +2,29 @@
 title: "Montana State University - Data Science Workshop"
 author: "Data Carpentry contributors & MSU Data Science Workshops Team"
 date: "August 8, 2025"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+# url: your book url like https://bookdown.org/yihui/bookdown
+# cover-image: path to the social sharing image like images/cover.jpg
+description: |
+  Course materials for the all-day data science workshop where you'll learn to 
+  use the R programming language for data science applications.
+link-citations: yes
+mainfont: Calibri
+classoption:
+  - twoside
+  - openright
+papersize: letter
+linestretch: 1.25
+fontsize: 10pt
+geometry: 
+  - top=1in
+  - bottom=1in
+  - right=0.75in
+  - left=0.75in
+  - bindingoffset=0.5in
+  - asymmetric
 ---
 
 # About {-}
@@ -2628,6 +2651,8 @@ One note about using `plotly` graphics in R-markdown is that they will not knit 
 <!--chapter:end:02-dataViz.Rmd-->
 
 # Coding with Generative AI
+
+\includepdf[pages=-]{../../Gen AI Workshop - 8 Aug 2025.pdf}
 
 
 <!--chapter:end:03-genAI.Rmd-->
