@@ -2652,7 +2652,7 @@ One note about using `plotly` graphics in R-markdown is that they will not knit 
 
 # Coding with Generative AI
 
-\includepdf[pages=-]{../../Gen AI Workshop - 8 Aug 2025.pdf}
+\includepdf[pages=-]{Gen AI Workshop - 8 Aug 2025.pdf}
 
 
 <!--chapter:end:03-genAI.Rmd-->
