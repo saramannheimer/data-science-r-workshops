@@ -1,59 +1,66 @@
 --- 
 title: "Montana State University - Data Science Workshop"
 author: "Data Carpentry contributors & MSU Data Science Workshops Team"
-date: "August 8, 2025"
-site: bookdown::bookdown_site
-documentclass: book
-bibliography: [book.bib, packages.bib]
-# url: your book url like https://bookdown.org/yihui/bookdown
-# cover-image: path to the social sharing image like images/cover.jpg
-description: |
-  Course materials for the all-day data science workshop where you'll learn to 
-  use the R programming language for data science applications.
-link-citations: yes
+date: "August 14, 2026"
+output: pdf_document
+description: "Course materials for the all-day data science workshop where you'll
+  learn to \nuse the R programming language for data science applications.\n"
 mainfont: Calibri
 classoption:
-  - twoside
-  - openright
+- twoside
+- openright
 papersize: letter
 linestretch: 1.25
 fontsize: 10pt
-geometry: 
-  - top=1in
-  - bottom=1in
-  - right=0.75in
-  - left=0.75in
-  - bindingoffset=0.5in
-  - asymmetric
+geometry:
+- top=1in
+- bottom=1in
+- right=0.75in
+- left=0.75in
+- bindingoffset=0.5in
+- asymmetric
 ---
 
 # About {-}
 
-## Data Science Workshop, August 8, 9am - 5pm {-}
+## Data Science Workshop, August 14, 9am - 5pm {-}
 
-Join us for an all-day workshop where you'll learn to use the R programming language for data science applications. These concepts will be presented in an interactive format, integrating instruction and computational practice. Montana University system graduate students, undergrads, staff, faculty, and community members are all welcome to join. The full schedule is below.  
+Join us for an all-day workshop where you'll learn to use the `R` programming language for data science applications. These concepts will be presented in an interactive format, integrating instruction and computational practice. Montana University system graduate students, undergrads, staff, faculty, and community members are all welcome to join. The full schedule is below.  
 
-**Location:** Montana State University, NAH 153 - with an online option
-**Date:** Friday, August 8, 2025
+**Location:** Montana State University, TBD - with an online option
+**Date:** Friday, August 14, 2025
 **Time:** 9 a.m. - 5 p.m.
 
-### Introduction to R - 9-10:50am  {-}
+### Introduction to `R` - 9-10:30am  {-}
 
-This session will start with the building blocks of using RStudio to create and explore the data structures available in R. Then we'll learn some basic tools for working with data in R. We will also discuss accessing and using R packages, and how to use R's built-in help interface.  
+<!-- This session will start with the building blocks of using RStudio to create and explore the data structures available in R. Then we'll learn some basic tools for working with data in R. We will also discuss accessing and using R packages, and how to use R's built-in help interface.   -->
 
-### Data Visualization in R - 11am-1pm  {-}
+Learn the basics of `R`, RStudio, and the Tidyverse.
 
-The ability to create meaningful and attractive data visualizations is an essential skill of data-intensive research. This session will give you an overview of the grammar of graphics plotting concepts from the ggplot2 package. We will explore ggplot's three plotting components, data, aesthetics, and geometries, for many univariate and multivariate graphics.   
+### Break - 10:30-10:45am {-}
 
-### Lunch (provided) - 1-2pm {-}
+### Introduction to `R` Continued - 10:45-11:30am {-}
 
-### Coding with Generative AI - 2-3pm  {-}
+### Q&A - 11:30-Noon {-}
 
-In this session, we'll explore using Generative AI to write code. We'll also discuss writing prompts and responsible use of Generative AI for data science applications.  
+### Lunch (provided) - 12-1:00pm {-}
 
-### Data Wrangling in R - 3:10-5:00pm  {-}
+### Data Visualization in `R` - 1-2:30pm  {-}
 
-In this session, you will learn how to manipulate data in R using the Tidyverse. You will learn to select, filter, mutate, arrange, and summarize data, build workflows that combine a series of operations, reshape data, join data, and more. 
+<!-- The ability to create meaningful and attractive data visualizations is an essential skill of data-intensive research. This session will give you an overview of the grammar of graphics plotting concepts from the ggplot2 package. We will explore ggplot's three plotting components, data, aesthetics, and geometries, for many univariate and multivariate graphics.    -->
+
+Learn to visualize data in `R` using the ggplot2 package.
+
+### Break - 2:30-2:45pm {-}
+
+### Coding with Generative AI - 2:45-4:30pm  {-}
+
+<!-- In this session, we'll explore using Generative AI to write code. We'll also discuss writing prompts and responsible use of Generative AI for data science applications.   -->
+
+Learn how to use Gen AI responsibly with hands-on coding and discussion. 
+
+### Q&A and Wrap-up - 4:30-5:00pm  {-}
+
 The workshop is sponsored by the Library, Social Data Collection and Analysis Services, and Montana INBRE.
 
 
@@ -71,7 +78,7 @@ knitr::opts_chunk$set(tidy = TRUE,
 
 <!--chapter:end:index.Rmd-->
 
-# Introduction to R
+# Introduction to `R`
 
 ## Getting Started
 
@@ -119,6 +126,54 @@ an RMD or script file is opened)
 
 You can use the Tools -> Global Options -> Appearance tab to modify the colors 
 and font sizes in RStudio.
+
+### Projects in `RStudio`  
+
+`R` projects provide a way to organize all the code and data in one place and 
+many consider these the best way to work in `R`. A motivation for using projects 
+is that it is important to organize your data
+and script files into the same or related locations and have different 
+locations for different iterations of projects. If you don't do this:
+
+* it is really hard to tell which version of your data is original and what
+versions are modified  
+* things get really messy because all types of files are mixed together  
+* it's probably hard for you to find things and relate the correct files to 
+their respective output  
+
+Ultimately, good project organization will make your life easier! It helps 
+ensure the integrity of your data, makes it simpler to share your code or get
+help with your code, allows for you know exactly what code you used on a 
+paper, and it's easier to pick a project back up. 
+
+It is good code writing and file storage practice to keep a set of all related 
+data, analysis, plots, documents, etc. in the same folder. RStudio makes this 
+process easy with using their projects. In an RStudio project, all of the 
+project's pieces are in the same folder. This allows for a clean 
+workflow and a simple working directory for `R`. When you are executing code for
+a document/script `R` will search for things (such as data) in the 
+\underline{same} folder as the document/script, which is called a 
+_relative path_.
+
+Whenever you start working on a new project in 
+RStudio, go through the following steps:
+
+1. Click on the "File" menu button, then select "New Project"    
+2. Click "New Directory"  
+3. Click "New Project"  
+4. Create a name for your project (make it explanatory!)  
+5. Select where the project should live  
+6. Click the "Create Project" button  
+7. Open the project!
+
+After this process `R` will be searching for objects (such as data) in the 
+\underline{same} folder as the project. This allows for us to keep all of our
+files in a self-contained system. 
+
+You can either create a project in a new folder, or the existing folder containing
+the workshop materials.
+
+Go ahead and create your first project!
 
 ## Working in `R`  
 
@@ -398,14 +453,137 @@ We see the output for a named list is slightly different. Instead of double
 brackets next to each component, there are now `$` and names of the items in the
 list, these can be variables, parameters, or other information. This will help you understand the structure of data.frames (coming up next)!
 
+## Motivating Research Questions
+
+To give context to the workshop we are going to put ourselves in the role of a
+biologist or ecologist studying the health and abundance of fish in the Blackfoot
+river. We've already done the hard work of going out and collecting the data, now
+we are ready to analyze it.
+
+### Research Questions
+
+Descriptive questions include:
+
+1.  Summarize the health of the fish caught in this project in tables and graphs by
+year caught, length, weight, and species.
+
+Inferential questions include:
+
+1.  The mean length of a Westslope Cutthroat Trout is different in different sections
+of the Blackfoot River.
+
+## Examine collected data
+
+Navigate to where you have downloaded the files for today and double click on the
+"BlackfootFish.CSV" file or open this file in Excel.
+
+***Advanced:*** Import this file into RStudio and explore the data.
+
+We will keep these research questions and idea of the data in mind as we work through
+answering the questions in `R` using RStudio.
+
+![Blackfoot Fish data in Excel](images/BlackfootFish_in_Excel.png)
+
+## Packages  
+
+`R` has many packages, which people around the world
+work on to provide and maintain new software and new capabilities for `R`. 
+You will slowly accumulate a number of packages that you use often for a variety
+of purposes. In order to use the elements (data, functions) of the packages, you
+have to first install the package (only once on a given computer) and then load 
+the package (every time).  
+
+We're going to install a packages that is actually a collection of packages that are often used.  
+
+* Use the __Install__ button in the __Packages__ tab  
+* Type in `tidyverse` into the blank line 
+* Check the __Install dependencies__ box  
+* Click on the __Install__ button  
+
+There will be a large amount of output coming out of the console. This output is
+`R` trying to download the package(s) you requested. Once the computer has 
+downloaded the packages, it will tell you that 
+"`The downloaded binary packages are in`", followed by the location of the files.
+
+Now that the files are downloaded, we need to load the package in order to use it. 
+The following code will load all of the packages in the "tidyverse", please run it!  
+
+```{r packages}
+library(tidyverse)
+```
+
+The **`tidyverse`** package tries to address 3 common issues that arise when
+doing data analysis with some of the functions that come with `R`:
+
+1. The results from a base `R` function sometimes depend on the type of data.
+2. Using `R` expressions in a non-standard way, which can be confusing for new
+   learners.
+3. Hidden arguments, having default operations that new learners are not aware
+   of.
+   
+<!-- Notice that when loading the `tidyverse` package that there is a large amount of -->
+<!-- output. This output is telling you all of the other packages that are loaded in  -->
+<!-- the `tidyverse` package, as well as the functions in the `tidyverse` package -->
+<!-- that overwrite (mask) functions from base `R`.   -->
+
+This is the process you go through if you ever find packages that you would 
+like to use! Often packages that you install will need to be updated. To update
+a package you can click on the "Tools" tab, then click on "Check for Package
+Updates". This will bring up a window that will list all of the packages that 
+have newer versions than what you have. Click on the packages that you wish to 
+update, or click on the "Select All" button.
+
+***ERROR ALERT*** If you ever get an error updating a package, do the following:
+
+1.  Take a note of the name, 
+1.  navigate to where your packages are saved,
+1.  close RStudio,
+1.  delete the folder for that package,
+1.  restart RStudio, and
+1.  install that package again.
+
+## Finding Help  
+
+One of the chief reasons for `R`'s religious following is its wonderful 
+documentation. If you need a function to complete a task (say find the variance), 
+but are not quite sure how it's spelled, what arguments it takes, or what package
+it lives in, don't fret! The `?` and `help()` commands are very powerful. For 
+functions, placing the `?` before the name, will tell `R` to search for that 
+name in all of the functions, in all of the packages you have installed.  
+
+* If it finds _one_ __identical match__, it will display the help file for that 
+function in the Help tab in the bottom-right corner.  
+* If it finds _more than one_ __identical match__, it will display the functions,
+in their respective packages, that you have to choose from.  
+* If it finds _no_ __identical match__, it will tell you that "`No documentation 
+for ____ in specified packages and libraries:,`" and suggests you use a `??` 
+instead.  
+    
+    + A `??` in front of the function name will search __all of `R`__ for named 
+    functions similar to what you typed.  
+    + The output will tell you what package the function is in, as well as the 
+    function's name (`package::function`).  
+
+If you would like help on a particular package, say one that you just downloaded,
+then you can use the same command(s) to get help.  These commands will load up 
+a help page (in RStudio) in the Help pane. Each help page is broken down into 
+sections:  
+
+* Description: An extended description of what the function does.   
+* Usage: The arguments of the function and their default values.     
+* Arguments: An explanation of the object each argument is expecting.  
+* Details: Any important details to be aware of.    
+* Value: The object the function returns.      
+* See Also: Any related functions that may be useful.    
+* Examples: Some examples for how to use the function.
+
 ## Importing Data  
 
 * Use the __Import Dataset__ button in the __Environment__ tab  
-* Choose the __From Text (base)__ option  
+* Choose the __From Text (readr)__ option  
 * Click on the __Browse__ button  
 * Direct the computer to where you saved the `BlackfootFish.csv` data file, click __open__  
 * It will bring up a preview of the data  
-* Make sure that the box labeled "Strings as factors" is not checked  
 * Click on the __Import__ button  
 
 Notice the code that outputs in the console (the bottom left square). This is 
@@ -428,12 +606,19 @@ repository:
 BlackfootFish <- read.csv("data/BlackfootFish.csv")
 ```
 
+***ERROR ALERT*** At this point, if you are having any errors, it is likely due
+to working in a zipped folder. Fix this by doing the following:
+
+1.  In a file browser, navigate to where you downloaded the workshop materials,
+1.  right click on the folder and extract to a new location such as your desktop,
+1.  open the RMD file in the extracted folder by double clicking on it, it should 
+open in RStudio.
+
 ## Structure of Data  
 
 The data we will use is organized into data tables. When you imported the 
 `BlackfootFish` data into RStudio it was saved as an object. You are able to
-inspect the structure of the `BlackfootFish` object using functions built in to
-`R` (no packages necessary).  
+inspect the structure of the `BlackfootFish` object using functions.  
 
 Run the following code. What is output from each of the following commands?
 
@@ -569,11 +754,15 @@ either using the fact that the two things we want are adjacent, or we can combin
 what we want into a list that we can then use for extracting. We will continue to
 use the indices to specify what we want to extract.
 
-For example, `c(1, 2)` could identify the first two objects in a list. However they are adjacent so we could use `a:b` to indicate that we want everything from position `a` to position `b` in the list. So, `c(1,2)` would give the same items as `c(1:2)`.
+For example, `c(1, 2)` could identify the first two objects in a list. However 
+they are adjacent so we could use `a:b` to indicate that we want everything from 
+position `a` to position `b` in the list. So, `c(1,2)` would give the same items 
+as `c(1:2)`.
 
 #### Quick Check
 
-Run the following code to see what you get. Play around with the first and last numbers to see what happens.
+Run the following code to see what you get. Play around with the first and last 
+numbers to see what happens.
 
 ```{r}
 c(1, 2, 3, 4, 5)
@@ -583,7 +772,8 @@ c(123:131)
 c(3:-1)
 ```
 
-When you want adjacent items, using the `a:b` notation is nicer than having to type out all of the values.
+When you want adjacent items, using the `a:b` notation is nicer than having to 
+type out all of the values.
 
 ***What about non-adjacent items?***
 
@@ -636,18 +826,282 @@ See what would happen if you entered `s[3, ]`. How can you explain that result?
 
 ```
 
+### Piping Data In  
+
+Most functions require data to operate on. Because of this, the first argument to 
+many functions is the dataset you wish to be working with. The pipe 
+operator sends the output of one function directly into the next function,
+which is useful when you need to do many things to the same dataset. 
+
+Pipes in `R` look like `|>`, there is also a pipe that looks like `%>%` from the **`magrittr`** 
+package, installed automatically with the **`tidyverse`**. If you use RStudio, 
+you can type the pipe with `Ctrl + Shift + M` if
+you have a PC or `Cmd + Shift + M` if you have a Mac. In the settings 
+(Tools > Global Options > Code) you can change the pipe operator that is inserted
+when you use those short cuts.
+
+One function we used previously was the `summary()` function. This function
+uses a dataset as its only parameter. This is how that function would work when
+using piping.
+
+```{r}
+BlackfootFish |>
+  summary()
+```
+
+
+We're going to learn some of the most common functions used to wrangle data:
+
+- `select()`: subset columns
+- `filter()`: subset rows on conditions
+- `mutate()`: create new columns by using information from other columns
+- `group_by()` and `summarize()`: create summary statistics on grouped data
+- `arrange()`: sort results
+- `count()`: count discrete values
+
+## Select, Filter, and Mutate
+
+### Selecting Columns and Filtering Rows
+
+To select columns of a data frame, use `select()`. The first argument
+to this function is the data frame (`BlackfootFish`), and the subsequent
+arguments are the columns to keep.
+
+Modify the following code to select the `length`, `weight`, and `species` columns from the `BlackfootFish` dataset:
+
+```{r select-columns}
+BlackfootFish |>
+  select()
+```
+
+```{r select-columns-solution, include=TRUE}
+BlackfootFish |>
+  select(length, weight, species)
+```
+
+To select all columns *except* certain ones, put a "-" in front of
+the variable to exclude it.
+
+Modify the following code to select all columns *except* `trip` and `mark`:
+
+```{r donot-select-columns}
+BlackfootFish |>
+  select()
+```
+
+```{r donot-select-columns-solution, include=TRUE}
+BlackfootFish |>
+  select(-trip, -mark)
+```
+
+This will select all the variables in `BlackfootFish` except `trip`
+and `mark`.
+
+To choose rows based on a specific criteria, use `filter()`:
+
+```{r filter-rows-1998}
+BlackfootFish |>
+  filter(year==1998)
+```
+
+In the code above `==` keeps all rows where the year is 1998. 
+
+Other filtering options include `!=`, which keeps all rows that are **not** a certain criteria, `,` which means **"and"**, and `|` which means **"or"**. Filter can also do `<` for "less than", `>` for "greater than", `<=` for "less than or equal to", and `>=` for "greater than or equal to". We type these last two options the same way we would typically say them.
+
+1.  `!=` example: 
+
+    ```{r filter-exclude-rows-example}
+    BlackfootFish |>
+      filter(year!=1998)
+    ```
+    
+    The code above keeps all rows where the year is not 1998. 
+    
+2.  `,` example:
+    
+    ```{r filter-comma-example}
+    BlackfootFish |>
+      filter(year==1998, species=="WCT") # can also use "&" instead of a comma
+    ```
+    
+    The code above keeps all rows where the year is 1998 for Westslope Cutthroat Trout, i.e., year 1998 and species WCT. The rows meet **both** of these criteria. 
+    
+
+3.  `|` example:
+
+    ```{r filter-or-example}
+    BlackfootFish |>
+      filter(year==1998 | species=="WCT")
+    ```
+    
+    The code above keeps all rows where the year is 1998 **or** is a Westslope Cutthroat Trout, i.e., year 1998 or species WCT. The rows meet **either** of these criteria but do not have to meet not both. 
+    
+
+4.  `<` example:
+
+    ```{r less-than-example}
+    BlackfootFish |>
+      filter(weight < 200)
+    ```
+    
+    The code above keeps all rows where weight is less than 200. 
+    
+
+5.  `>` example:
+
+    ```{r greater-than-example}
+    BlackfootFish |>
+      filter(length > 300)
+    ```
+    
+    The code above keeps all rows where length is greater than 300.
+    
+
+### Perform multiple functions on the same dataset
+
+What if you want to select and filter at the same time?
+
+```{r pipes-example-3}
+BlackfootFish |>
+  filter(weight < 200) |>
+  select(species, length, weight)
+```
+
+As a refresher, in the above code, we use the pipe to send the `BlackfootFish` dataset
+first through `filter()` to keep rows where `weight` is less than 200, then 
+through `select()` to keep only the `species`, `length`, and `weight` columns.
+Since `\>` takes the object on its left and passes it as the first argument to 
+the function on its right, we don't need to explicitly include the data frame as 
+an argument to the `filter()` and `select()` functions.
+
+Some may find it helpful to read the pipe like the word "then". For instance,
+in the above example, we took the data frame `BlackfootFish`, *then* we `filter`ed
+for rows with `weight < 200`, *then* we `select`ed columns `species`, `length`,
+and `weight`. The functions by themselves are somewhat simple,
+but by combining them into linear workflows with the pipe, we can accomplish
+more complex wrangling of data frames.
+
+If we want to create a new object with this smaller version of the data, we
+can assign it a new name:
+
+```{r pipe-rename-example}
+BlackfootFish_sml <- BlackfootFish |>
+  filter(weight < 200) |>
+  select(species, length, weight)
+
+BlackfootFish_sml
+```
+
+Note that the final data frame is the leftmost part of this expression.
+
+#### Challenge 1
+
+>
+>  Using pipes, subset the `BlackfootFish` data to include:
+>
+  -  fish collected on or after 2002 and 
+  -  retain only the columns `year`, `species`, `length`, and `weight`.
+>
+
+```{r challenge-s4-1}
+## Pipes Challenge:
+##  Using pipes, subset the data to include animals collected
+##  on or after 2002, and retain the columns `year`, `species`, `length`, and `weight`
+```
+
+### Mutate
+
+Frequently you'll want to create new columns based on the values in existing
+columns, for example to do unit conversions, or to find the ratio of values in 
+two columns. For this we'll use `mutate()`.
+
+To create a new column of weight in kg from weight in grams:
+
+```{r create-column}
+BlackfootFish |>
+  mutate(weight_kg = weight / 1000)
+```
+
+
+You can also create a second new column based on the first new column within the
+same call of `mutate()`:
+
+```{r create-two-columns}
+BlackfootFish |>
+  mutate(weight_kg = weight / 1000,
+         weight_lb = weight_kg * 2.2)
+```
+
+
+If this runs off your screen and you just want to see the first few rows, you
+can use a pipe to view the `head()` of the data.
+
+
+
+```{r create-column-head}
+BlackfootFish |>
+  mutate(weight_kg = weight / 1000,
+         weight_lb = weight_kg * 2.2) |>
+  head()
+```
+
+The dataset contains some missing observations (`NA`s). If we wanted to remove 
+any observations where there were missing values on `weight`, we could insert a 
+`filter()` in the chain:
+
+
+
+```{r mutate-filter}
+BlackfootFish |>
+  filter(!is.na(weight)) |>
+  mutate(weight_kg = weight / 1000,
+         weight_lb = weight_kg * 2.2) |>
+  head()
+```
+
+
+
+`is.na()` is a function that determines whether something is an `NA`. The `!`
+symbol negates the result, so in the code above we're asking for every row where weight *is not* 
+an `NA`.
+
+#### Challenge 2
+
+>
+>  Create a new data frame from the `BlackfootFish` data named `BlackfootFish_length_cm` 
+> that meets the following criteria:
+>
+-  contains only the `species` column and 
+-  a new column called `length_cm` containing the `length` values 
+   converted to centimeters (they are in mm).
+-  Make sure that you only retain values in the length_cm column that are not missing (not NA).
+-  Then print out the `head()` of the new data frame.
+>
+>  **Hint**: think about how the commands should be ordered to produce this data frame!
+> 
+
+
+
+```{r challenge-s4-2} 
+## Mutate Challenge:
+##  Create a new data frame from the `BlackfootFish` data named `BlackfootFish_length_cm`
+##  that meets the following criteria: 
+##  * contains only the `species` column and 
+##  * a new column called `length_cm` containing the `length` values 
+##    converted to centimeters.
+##  * Make sure that you only retain values in the length_cm column that are
+##    not missing (not NA).
+##  Then print out the head of the new data frame.
+
+##  Hint: think about how the commands should be ordered to produce this data frame!
+
+```
+
 ## Changing Data Type  
 
-By default, when building or importing a data frame, the columns that contain 
-characters (i.e., text) are coerced (= converted) into factors. Depending on what
-you want to do with the data, you may want to keep these columns as character
-type. To do so, read.csv() and read.table() have an argument called
-`stringsAsFactors` which can be set to `FALSE`. This is what happened when we made
-sure that the box `"stringsAsFactors"` was unchecked when importing our data. 
+### Factor data type
 
-In most cases, it is preferable to set `stringsAsFactors = FALSE` when importing 
-data and to convert as a factor only the columns that require this data type. 
-But what is a factor? 
+What is a factor? 
 
 Consider the variables `species` and `section`. These variables represent a
 broader class of what we call categorical variables. In `R` there are two ways 
@@ -669,7 +1123,13 @@ variable as a factor instead of character, we need to change its data type.
 ```{r factors, purl = TRUE}  
 unique(BlackfootFish$species) ## tells you the unique values of species
 
-BlackfootFish$speciesF <- factor(BlackfootFish$species) 
+# or
+BlackfootFish |>
+  select(species) |>
+  unique()
+
+BlackfootFish_mod <- BlackfootFish |>
+  mutate(speciesF = factor(species))
 ## creates a new variable that is the factor version of species
 
 ```
@@ -677,9 +1137,10 @@ BlackfootFish$speciesF <- factor(BlackfootFish$species)
 Now do the same thing for section. How many unique sections are there?
 
 ```{r}
-unique(BlackfootFish$section) ## tells you the unique values of section
+unique(BlackfootFish_mod$section) ## tells you the unique values of section
 
-BlackfootFish$sectionF <- factor(BlackfootFish$section) 
+BlackfootFish_mod <- BlackfootFish_mod |>
+  mutate(sectionF = factor(section))
 ## creates a new variable that is the factor version of section
 ```
 
@@ -691,15 +1152,16 @@ following order: Bull, Brown, RBT, and WCT.
 Using the `factor` function this would look like:
 
 ```{r, tidy = FALSE}
-BlackfootFish$speciesF <- factor(BlackfootFish$species, 
-                                levels = c("Bull", "Brown", "RBT", "WCT"))
+BlackfootFish_mod <- BlackfootFish_mod |>
+  mutate(speciesF = factor(species, 
+                           levels = c("Bull", "Brown", "RBT", "WCT")))
 ```
 
 If you want to check the order and names of the levels that are being used by 
 a factor, the `levels()` function can be useful:
 
 ```{r, tidy = FALSE}
-levels(BlackfootFish$speciesF)
+levels(BlackfootFish_mod$speciesF)
 
 ```
 
@@ -713,14 +1175,14 @@ Write the `R` code to create a new variable called `yearF` that is a factor of
 `year` (as you did with section and species). 
 
 ```{r}
-BlackfootFish$yearF <- factor(BlackfootFish$year)
+BlackfootFish_mod <- BlackfootFish_mod |>
+  mutate(yearF = factor(year))
 ```
 
 #### Exercise 10:
 
 Now, verify that `yearF` is viewed as a categorical variable, 
-with the same levels as `year`. (*Hint*: you have already used three functions 
-that would do this for you)  
+with the same levels as `year`. 
 
 ```{r}
 
@@ -733,13 +1195,14 @@ to be a factor and want to change it back to numeric. What happens when I use
 the `as.numeric()` function on the `yearF` variable?  
 
 ```{r}
-BlackfootFish$yearF <- factor(BlackfootFish$year)
+BlackfootFish_mod <- BlackfootFish_mod |>
+  mutate(yearF = factor(year))
 ```
 
 ```{r}
-year_recover <- as.numeric(BlackfootFish$yearF)
+year_recover <- as.numeric(BlackfootFish_mod$yearF)
 
-ds <- data.frame(original = BlackfootFish$yearF, 
+ds <- data.frame(original = BlackfootFish_mod$yearF, 
                  recovered = year_recover)
 head(ds)
 
@@ -747,83 +1210,7 @@ tail(ds)
 
 ```
 
-## Packages  
-
-As we mentioned previously, `R` has many packages, which people around the world
-work on to provide and maintain new software and new capabilities for `R`. 
-You will slowly accumulate a number of packages that you use often for a variety
-of purposes. In order to use the elements (data, functions) of the packages, you
-have to first install the package (only once on a given computer) and then load 
-the package (every time).  
-
-We're going to install a few packages that are often used.  
-
-* Use the __Install__ button in the __Packages__ tab  
-* Type in `remotes` and `tidyverse` into the blank line (separated by a comma)  
-* Check the __Install dependencies__ box  
-* Click on the __Install__ button  
-
-There will be a large amount of output coming out of the console. This output is
-`R` trying to download the package(s) you requested. Once the computer has 
-downloaded the packages, it will tell you that 
-"`The downloaded binary packages are in`", followed by the location of the files.
-
-Now that the files are downloaded, we need to load them in order to use them. 
-The following code will load each package, please run it!  
-
-```{r packages}
-library(remotes)
-library(tidyverse)
-```
-
-Notice that when loading the `tidyverse` package that there is a large amount of
-output. This output is telling you all of the other packages that are loaded in 
-the `tidyverse` package, as well as the functions in the `tidyverse` package
-that overwrite (mask) functions from base `R`.  
-
-This is the process you go through if you ever find packages that you would 
-like to use! Often packages that you install will need to be updated. To update
-a package you can click on the "Tools" tab, then click on "Check for Package
-Updates". This will bring up a window that will list all of the packages that 
-have newer versions than what you have. Click on the packages that you wish to 
-update, or click on the "Select All" button.
-
-## Finding Help  
-
-One of the chief reasons for `R`'s religious following is its wonderful 
-documentation. If you need a function to complete a task (say find the variance), 
-but are not quite sure how it's spelled, what arguments it takes, or what package
-it lives in, don't fret! The `?` and `help()` commands are very powerful. For 
-functions, placing the `?` before the name, will tell `R` to search for that 
-name in all of the functions, in all of the packages you have installed.  
-
-* If it finds _one_ __identical match__, it will display the help file for that 
-function in the Help tab in the bottom-right corner.  
-* If it finds _more than one_ __identical match__, it will display the functions,
-in their respective packages, that you have to choose from.  
-* If it finds _no_ __identical match__, it will tell you that "`No documentation 
-for ____ in specified packages and libraries:,`" and suggests you use a `??` 
-instead.  
-    
-    + A `??` in front of the function name will search __all of `R`__ for named 
-    functions similar to what you typed.  
-    + The output will tell you what package the function is in, as well as the 
-    function's name (`package::function`).  
-
-If you would like help on a particular package, say one that you just downloaded,
-then you can use the same command(s) to get help.  These commands will load up 
-a help page (in RStudio) in the Help pane. Each help page is broken down into 
-sections:  
-
-* Description: An extended description of what the function does.   
-* Usage: The arguments of the function and their default values.     
-* Arguments: An explanation of the object each argument is expecting.  
-* Details: Any important details to be aware of.    
-* Value: The object the function returns.      
-* See Also: Any related functions that may be useful.    
-* Examples: Some examples for how to use the function.
-
-## Functions  
+## Common Statistical Functions  
 
 In `R` there are both functions that are built in (require no package to be 
 loaded), as well as functions that are housed within specific packages. You have
@@ -926,6 +1313,1453 @@ object with the new object).
 BlackfootFish_clean <- na.omit(BlackfootFish) 
 ## Creates a new dataframe, where the NA's have all been removed 
 ```
+
+
+<!--chapter:end:01-introToR.Rmd-->
+
+# Data Visualization in R
+
+```{r setup2, include=FALSE}
+library(ggplot2)
+library(tidyverse)
+library(gridExtra)
+library(plotly)
+library(patchwork)
+```
+
+## Learning Objectives
+
+>
+> * Produce scatter plots, boxplots, density plots, and time series plots using 
+>   ggplot2.
+> * Set universal and local plot settings.
+> * Describe what aesthetics are and how they are used by ggplot().
+> * Describe what faceting is and apply faceting to a ggplot().
+> * Modify the aesthetics of an existing ggplot() plot (e.g., axis labels, color).
+> * Build multivariate and customized plots from data in a data frame.
+> * Arrange multiple plots in a grid format.
+> * Export publication ready graphics using ggsave(). 
+
+
+## Data Viz Introduction
+
+**`ggplot2`** is a plotting package that makes it simple to create complex plots
+from data in a data frame. It provides a more programmatic interface for
+specifying what variables to plot, how they are displayed, and general visual
+properties. Therefore, we only need minimal changes if the underlying data 
+change or if we decide to change from a bar plot to a scatter plot. This helps 
+in creating publication quality plots with minimal amounts of adjustments and 
+tweaking.
+
+To learn more about **`ggplot2`** after the workshop, you may want
+to check out this
+[**`ggplot2`** reference website (link)](https://ggplot2.tidyverse.org/reference/) 
+and this [handy cheatsheet on **`ggplot2`** (link)](https://github.com/rstudio/cheatsheets/blob/main/data-visualization-2.1.pdf).
+
+
+## Plotting with **`ggplot2`**
+
+`ggplot2` functions like data in the 'long' format, i.e., a column for every 
+dimension, and a row for every observation. There are other data formats, which 
+we have discussed in the _Data Wrangling in `R`_ workshop (we will share the
+link later), as well as how to 
+convert from one data format to another. Well-structured data will save you 
+lots of time when making figures with `ggplot2` and when working in `R`!
+
+`ggplot()` graphics are built step by step by adding new elements. Adding layers 
+in this fashion allows for extensive flexibility and customization of plots.
+
+To build a `ggplot()`, we will use the following basic template that can be used 
+for different types of plots:
+
+`ggplot(data = <DATA>, mapping = aes(<VARIABLE MAPPINGS>)) +  <GEOM_FUNCTION>()`
+
+
+Let's go through this step by step!  
+
+1. Use the `ggplot()` function and bind the plot to a specific data frame using 
+the `data` argument
+
+    ```{r bind-plot}
+    ggplot(data = BlackfootFish_clean)
+    
+    ## Creates a blank ggplot(), referencing the BlackfootFish_clean dataset
+    ```
+
+2. Define a mapping (using the aesthetic (`aes`) function), by selecting the 
+variables to be plotted and specifying how to present them in the graph, e.g. as
+x/y positions or characteristics such as size, shape, color, etc.
+
+    ```{r define-mapping}
+    ggplot(data = BlackfootFish_clean, 
+           mapping = aes(x = weight, y = length))
+    #
+    # Creates a blank ggplot(), with the variables mapped to the x- and y-axis
+    # ggplot() knows where the variables live, since you have defined the data to use
+    ```
+
+3. Add "geoms" -- graphical representations of the data in the plot (points,
+  lines, bars). **`ggplot2`** offers many different geoms; we will use some 
+  common ones today, including:
+  
+    * `geom_point()` for scatter plots, dot plots, etc.
+    * `geom_boxplot()` for boxplots
+    * `geom_bar()` for bar charts
+    * `geom_line()` for trend lines, time series, etc.
+
+    To add a geom to the plot use the `+` operator. Because we have two continuous 
+    variables in the data, let's use `geom_point()` first:
+
+    ```{r add-to-plots}
+    ggplot(data = BlackfootFish_clean, 
+           mapping = aes(x = weight, y = length)) +
+      geom_point()
+    
+     # Adds a point for each row (observation) in the data  
+    ```
+
+You can think of the `+` sign as adding layers to the plot. 
+Each `+` sign must be placed at the end of the line containing the *previous* 
+layer. If, instead, the `+` sign is added at the beginning of the line 
+containing the new layer, **`ggplot2`** will not add the new layer and will 
+return an error message.
+
+```{r plus-sign, error=TRUE}
+
+# This will not add the new layer and will return an error message
+ggplot(data = BlackfootFish_clean, 
+           mapping = aes(x = weight, y = length)) 
+  + geom_point()
+
+```
+
+
+### Building Plots Iteratively 
+
+Building plots with **`ggplot2`** is typically an iterative process. We start by
+defining the dataset we'll use, lay out the axes, and choose a geom:
+
+```{r build-plot}
+ggplot(data = BlackfootFish_clean, 
+           mapping = aes(x = weight, y = length)) +
+    geom_point()
+```
+
+Then, we start modifying this plot to extract more information from it. For
+instance, we can add transparency (`alpha`) to the points, to avoid 
+overplotting:
+
+```{r modify-plot}
+ggplot(data = BlackfootFish_clean, 
+           mapping = aes(x = weight, y = length)) +
+    geom_point(alpha = 0.2)
+    ## alpha reduces the opacity of the points 
+    ## 0 is fully transparent
+    ## 1 is the original opacity
+```
+
+We can also add colors for all the points:
+
+```{r color-plot}
+ggplot(data = BlackfootFish_clean, 
+           mapping = aes(x = weight, y = length)) +
+    geom_point(alpha = 0.2, color = "blue")
+```
+
+
+`geom_point` also accepts aesthetics of size and shape. 
+The size of a point is its width in mm. The shape of a point has five 
+different options for plotting:  
+
+* an integer [0, 25] of defined plotting characters -- same as base `R`
+* the name of the shape in quotations (e.g. "circle open" or "diamond filled")
+* a single character, to use that character as a plotting symbol
+* a "." to draw the smallest point that is visible -- typically 1 pixel
+* an NA, to draw nothing
+
+Reference for shapes in integers and characters:  
+https://ggplot2.tidyverse.org/articles/ggplot2-specs.html  
+
+### Challenge 1
+
+>
+> Copy and paste the code from the previous code chunk and modify it to assign one of these aesthetics to the 
+> `geom_point` aspect of your plot. 
+>
+>What happened? 
+
+```{r challenge-s2-1}
+## Your ggplot code to answer the challenge goes here!
+
+
+```
+
+### Piping Data In  
+
+Because **`ggplot2`** lives in the `tidyverse`, it is expected to work well with 
+other packages in the `tidyverse`. Because of this, the first argument to 
+creating a `ggplot()` is the dataset you wish to be working with. The pipe 
+operator sends the output of one function directly into the next function,
+which is useful when you need to do many things to the same dataset. Since the 
+dataset we wish to use is the first argument to `ggplot()`, we can use the pipe 
+operator to pipe the data into the `ggplot()` function!  
+
+This would instead look like this:  
+
+```{r pipe-example}
+BlackfootFish_clean |>  
+  ## data to be used in the ggplot  
+  ggplot(mapping = aes(x = weight, y = length)) + 
+  ## uses the data piped in as the first argument to ggplot() 
+    geom_point(alpha = 0.2, color = "blue")
+```
+
+Once we pipe the data in, the first argument becomes the `mapping` of the 
+aesthetics. Technically, we are using the name of this argument, which is why it
+looks like:  
+
+`mapping = aes(<VARIABLES>)`
+
+When we pipe our data in, the first argument then becomes this `mapping` 
+argument. 
+
+### Assigning More Variables to Aesthetics 
+
+To color each species in the plot differently, you could use a vector as an
+input to the argument **color**. **`ggplot2`** will provide a different color 
+corresponding to different values in the vector. Here is an example where we 
+color with **`species_id`**:
+
+```{r color-example1, fig.height=3, fig.width=6}
+BlackfootFish_clean |>  
+  ggplot(mapping = aes(x = weight, y = length)) +
+    geom_point(alpha = 0.2, aes(color = species)) 
+
+```
+
+**Note:** When specifying an `alpha` for a scatterplot, it automatically uses 
+that __same__ `alpha` in the legend. To remedy this you can add:  
+
+`guides(color = guide_legend(override.aes = list(alpha = 1)))`
+
+to your plot. This customizes the legend appearance, similar to what we will 
+see in the customization section. 
+
+We can also specify the colors directly inside the mapping provided in the 
+`ggplot()` function. This will be seen by **any** geom layers and the mapping 
+will be determined by the x- and y-axis set up in `aes()`.
+
+```{r color-example2, fig.height=3, fig.width=6}
+BlackfootFish_clean |>  
+  ggplot(mapping = aes(x = weight, y = length, color = species)) +
+    geom_point(alpha = 0.2)
+```
+
+Notice that we can change the geom layer and colors will be still determined by
+**`species`**
+
+
+### Local Aesthetics versus Global Aesthetics 
+
+When you define aesthetics in the `ggplot()` function, those mappings hold for
+**every** aspect of your plot. 
+
+For example, if you chose to add a smoothing line to your plot of weight versus 
+hindfoot length, you would get different lines depending on where you define 
+your color aesthetics. 
+
+**Globally** 
+
+```{r color-global, fig.height=3, fig.width=6}
+BlackfootFish_clean |>  
+  ggplot(mapping = aes(x = weight, y = length, color = species)) +
+    geom_point(alpha = 0.2) + 
+  geom_smooth()
+  ## smoothing line for each species_id -- because color is defined globally
+```
+
+**Locally**  
+
+```{r color-local, fig.height=3, fig.width=6}
+BlackfootFish_clean |>  
+  ggplot(mapping = aes(x = weight, y = length)) +
+  geom_jitter(aes(color = species), alpha = 0.2) + 
+  geom_smooth()
+  ## one smoothing line -- no color defined globally
+```
+
+
+### Challenge 2 (Part 1)
+
+>
+> Inspect the `geom_point` help file (either go to https://ggplot2.tidyverse.org/reference/geom_point.html or run `?geom_point`) 
+> to see what other aesthetics are available. 
+> Map a new variable from the dataset to another aesthetic in your plot. 
+> What happened? 
+> Does the aesthetic change if you use a continuous variable versus a 
+> categorical/discrete variable?  
+>
+
+```{r challenge-s2-2part1}
+## Your ggplot() code for the challenge goes here!
+
+
+```
+
+
+### Challenge 2 (Part 2)
+
+>
+> Use what you just learned to create a scatter plot of `weight` over
+> `plot_id` with data from different plot types being showed in different 
+> colors. Is this a good way to show this type of data?
+>
+
+```{r challenge-s2-2part2}
+## Your ggplot() code for the challenge goes here!
+
+
+```
+
+
+
+
+### Boxplots & Violin Plots
+
+Boxplots provide a visualization of a quantitative variables across different levels of a categorical (grouping) variable. For example, we can use boxplots to visualize the distribution of weight within each species:
+
+```{r boxplot1}
+BlackfootFish_clean |>
+  ggplot(mapping = aes(x = species, y = weight)) +
+    geom_boxplot()
+```
+
+By adding points to boxplot, we can have a better idea of the number of
+measurements and their distribution:
+
+```{r boxplot2}
+BlackfootFish_clean |>
+  ggplot(mapping = aes(x = species, y = weight)) +
+    geom_boxplot(alpha = 0) + 
+    ## alpha = 0 eliminates the black (possible outlier) points, so they're not plotted twice
+    geom_jitter(alpha = 0.2, color = "tomato")
+    ## alpha = 0.2 decreases the opacity of the points, to not be too busy
+```
+
+> Notice how the boxplot layer is behind the jitter layer? What would you 
+> change in the code to put the boxplot in front of the points?
+
+
+### Challenge 3 (Part 1) 
+
+>
+> Boxplots are useful summaries, but hide details of the *shape* of the
+> distribution. For example, if the distribution is bimodal, we would not see 
+> it in a boxplot. A superior density plot is the violin plot, where the shape 
+> (of the density of points) is drawn.
+>
+> Replace the box plot with a violin plot. For help see `geom_violin()`. 
+> Start with the boxplot we created:
+>
+
+```{r challenge-s2-3part1-example}
+BlackfootFish_clean |>
+  ggplot(mapping = aes(x = species, y = weight)) +
+  geom_jitter(alpha = 0.2, color = "tomato")
+```
+
+```{r challenge-s2-3part1}
+##  Start with the boxplot we created
+##  1. Replace the boxplot with a violin plot. For help, see geom_violin().
+##  You might need to decrease opacity even more to see the violins (try 0.03)
+
+```
+
+
+
+### Challenge 3 (Part 2)
+
+>
+> So far, we've looked at the distribution of weight within species. Let's try 
+> making a new plot to explore the distribution of another variable within each 
+> species.
+>
+> Create a boxplot for `length`. This time overlay the boxplot layer 
+> over a jitter layer that shows the actual measurements.
+>
+
+```{r challenge-s2-3part2}
+##  First: create boxplot for length` overlaid on a jitter layer.
+
+```
+
+
+
+
+### Challenge 3 (Part 3)
+
+>
+> Now, add color to the data points on your boxplot according to the trip 
+> the fish was captured on (`trip`).
+>
+> *Hint:* Check the class for `trip`. If `trip` was a character instead, 
+> how would the graph be different?  
+>
+
+```{r challenge-s2-3part3}
+## Next: add color to the data points on your boxplot according to the
+## the fish was captured on (`trip`)).
+
+## Hint: Check the class for `trip`. If trip was a character instead, 
+## how would the graph be different? 
+
+```
+
+
+
+
+### Bonus violin plot example (DatasauRus)
+
+>
+> The previous example doesn't fully illustrate the power of violin plots. 
+> This example from the `datasauRus` package
+> (https://www.autodeskresearch.com/publications/samestats) shows five different
+> distributions that have exactly the same summary statistics and boxplots but
+> very different shapes:
+>
+
+```{r datasaurus, message = FALSE}
+library(datasauRus)
+data(box_plots)
+
+box_plots_long <- box_plots %>%
+  pivot_longer(cols=1:5)
+  
+box_plots_long <- box_plots_long %>%
+  rename(Example=name, Response=value)
+
+box_plots_long <- box_plots_long %>% 
+  mutate(Example = factor(Example))
+
+ggplot(box_plots_long, aes(x=Example, y=Response)) +
+  geom_violin(fill="bisque") +
+  geom_boxplot(alpha=.6) +
+  geom_jitter(alpha=0.15, col="tomato") +
+  theme_minimal() + 
+  scale_x_discrete(labels=c('Trimodal, Right Skew', 'Clumpy', 'Normal', 
+                            'Trimodal, Left Skew',  'Bimodal'))
+```
+
+
+## Plotting Single Variables
+
+### Distribution Plots (Quantitative Variables)
+
+If we wish to visualize the distribution of a single quantitative variable, our 
+plot changes a bit. Unfortunately, the `geom_violin()` function only accepts 
+groups, so we cannot make a violin plot with no groups. Darn it!  
+
+But, a violin is simply a density plot that's been reflected across the y-axis. 
+So, we could likely suffice with a density plot.  
+
+To visualize the distribution of rodent weights we could aggregate over all 
+species, years, plots, etc. and produce a single density plot:  
+
+
+```{r dist-plot}
+BlackfootFish_clean |>
+  ggplot(mapping = aes(x = weight)) + 
+  geom_density()
+  
+```
+
+The default is an empty density plot, which is largely unsatisfying. By adding 
+a `fill = <COLOR>` argument to `geom_density()` we can produce a nicer looking 
+plot:  
+
+```{r dist-add-color}
+BlackfootFish_clean |>
+  ggplot(mapping = aes(x = weight)) + 
+  geom_density(fill = "sky blue")
+  
+```
+
+\newpage
+
+Another frequently used plot for a single quantitative variable is the 
+histogram. The same plot as above can be recreated using `geom_histogram()` 
+instead of `geom_density()`. However, when you use `geom_histogram()` it gives 
+you a warning. 
+
+```{r hist}
+BlackfootFish_clean |>
+  ggplot(mapping = aes(x = weight)) + 
+  geom_histogram()
+
+```
+
+
+> What warning do you get and why?
+> Do you get an error like this when you use `hist()` in base `R`? 
+
+```{r}
+hist(BlackfootFish_clean$weight)
+```
+
+There is no single right answer for the number of bins. There are some "plug-in" choices for number of bins that can be used, but you are always welcome to explore different numbers of bins to see if features you are seeing persist when you choose more or less bins.  
+
+
+### Challenge 4 
+
+>
+> Use the `bins` argument in `geom_histogram()` to play around with the number
+> of bins in your histogram. Try different numbers of bins to explore how that
+> changes the results! 
+>
+
+
+```{r challenge-s2-4}
+## Your code to answer the challenge goes here!
+
+
+```
+
+
+
+### Bar Charts  (Categorical Variables)
+
+At first glimpse, you would think that a bar plot would be simple to create, but
+bar plots reveal a subtle nuance of the plots we have created thus far. The 
+following bar chart displays the total number of rodents in the `surveys` 
+dataset, grouped by their species ID. 
+
+```{r bar1}
+BlackfootFish_clean |>
+  ggplot(mapping = aes(x = species)) + 
+  geom_bar()
+```
+
+The x-axis displays the levels of `species`, a variable in the 
+`BlackfootFish_clean` dataset. On the y-axis `count` is displayed, but `count` is 
+**not** a variable in our dataset! Where did `count` come from? Graphs, such as
+the scatterplots, display the raw values of your data. Other graphs, like bar 
+charts and boxplots, calculate new values (from your data) to plot. 
+
+*  Bar charts and histograms bin your data and then plot the number of 
+observations that fall in each bin.
+
+*  Boxplots find summaries of your data (min, max, quartiles, median) and plot 
+those summaries in a tidy box, with "potential outliers" (data over 1.5*IQR from
+Q1 or Q3) plotted as points.
+
+*  Smoothers (as used in `geom_smooth`) fit a model to your data (you can 
+specify, but we used the `gam` (generalized additive model from the `mgcv`
+package) default) and then plot the predicted means from that model (with
+associated 95% confidence intervals).
+
+
+To calculate each of these summaries of the data, `R` uses a different 
+statistical transformation, or *stat* for short. With a bar chart this looks 
+like the following process:  
+
+1. `geom_bar` first looks at the entire data frame  
+2. `geom_bar` then transforms the data using the `count` statistic  
+3. the `count` statistic returns a data frame with the number of observations 
+(rows) associated with each level of `species`  
+4. `geom_bar` uses this summary data frame, to build the plot -- levels of
+`species` are plotted on the x-axis and `count` is plotted on the y-axis  
+
+Generally, you can use `geoms` and `stats` interchangeably. This is because
+every `geom` has a default `stat` and vice versa. For example, the following
+code produces the same output as above:  
+
+```{r bar2}
+BlackfootFish_clean |>
+  ggplot(mapping = aes(x = species)) + 
+  stat_count()
+```
+
+If you so wish, you could override the default `stat` for that `geom`. For
+example, if you wanted to plot a bar chart of proportions you would use the
+following code to override the `count` stat:  
+
+```{r bar3}
+BlackfootFish_clean |>
+  ggplot(mapping = aes(x = species)) + 
+  geom_bar(aes(y = after_stat(prop), group = 1))
+```
+
+
+### Challenge 5 
+
+>
+> Why do we need to set `group = 1` in the above proportion bar chart? 
+> In other words, what is wrong with the plot below?  
+>
+
+```{r bar4}
+## What is wrong with this plot? 
+BlackfootFish_clean |>
+  ggplot(mapping = aes(x = species)) + 
+  geom_bar(aes(y = after_stat(prop)))
+
+```
+
+
+### Colored and/or Stacked Bar Charts
+
+Another piece of visual appeal to creating a bar chart is the ability to use 
+colors to differentiate the different groups, or to plot two different variables
+in one bar chart (stacked bar chart). Let's start with adding color to our bar
+chart.  
+
+#### Coloring Bars 
+
+As we saw before, to add a color aesthetic to the plot we need to map it to a 
+variable. However, if we use the `color` option that we used before we get a 
+slightly unsatisfying result.  
+
+```{r bar5, fig.height=3, fig.width=6}
+BlackfootFish_clean |>
+  ggplot(mapping = aes(x = species, color = species)) + 
+  geom_bar()
+```
+
+We notice that the color only appears in the outline of the bars. For a bar 
+chart, the aesthetic that we are interested in is the `fill` of the bars.  
+
+
+### Challenge 6
+
+>
+> Change the code below so that each bar is filled with a different color. 
+
+```{r challenge-s2-6-example, fig.height=3, fig.width=6}
+BlackfootFish_clean |>
+  ggplot(mapping = aes(x = species, color = species)) + 
+  geom_bar()
+```
+
+```{r challenge-s2-6}
+
+
+```
+
+#### Stacking Bars 
+
+Now suppose you are interested in whether the number of fish captured in different sections of the river differs by species. This would require for you to create a bar plot with 
+two categorical variables. You have two options:  
+
+1. each of the bars for section could be stacked within a species *OR* 
+2. the bars for section could be side-by-side within a species  
+
+Let's see how the two approaches differ. To stack bars of a second categorical 
+variable we would instead use this second categorical variable as the `fill` of
+the bars. Run these two lines of code and see how they differ. 
+
+```{r stacking}
+BlackfootFish_clean |>
+  ggplot(mapping = aes(x = species, fill = section)) + 
+  geom_bar()
+
+BlackfootFish_clean |>
+  ggplot(mapping = aes(x = species, fill = section)) + 
+  geom_bar(position = "dodge")
+```
+
+In the first plot, the position was chosen automatically, but in the second plot
+the `position` argument was made explicit. What changes did this make in the 
+plots? 
+
+Finally, we can also choose the `position` to be `fill` for the bars and to `fill` the bars based on `sex`:
+
+```{r stacking2}
+BlackfootFish_clean |>
+  ggplot(mapping = aes(x = species, fill = section)) + 
+  geom_bar(position = "fill")
+```
+
+Notice that the y-axis label still says "count" instead of "proportion". We will 
+learn how to change labels later when we discuss [**Customization**](#customization).
+
+
+## Time-series Data
+
+Let's calculate number of counts per year for each genus. 
+
+*Preview of Data Wrangling:* First we need to group the data and count 
+records within each group!  
+
+```{r timeseries1}
+yearly_counts <- BlackfootFish_clean |>
+  count(year, species) 
+  ## counts the number of observations (rows) for each year, species combination 
+  ## and creates a new variable "n" and creates a new variable "n"
+
+yearly_counts
+```
+
+Time series data can be visualized as a line plot with years on the x-axis and 
+counts on the y-axis: 
+
+```{r timeseries2}
+yearly_counts |>
+  ggplot(mapping = aes(x = year, y = n)) +
+     geom_line()
+```
+
+Unfortunately, this does not work because we plotted data for all the species
+together. We need to tell `ggplot()` to draw a line for each species by modifying
+the aesthetic function to include `group = species`:
+
+```{r timeseries3}
+yearly_counts |>
+  ggplot(mapping = aes(x = year, y = n, group = species)) +
+    geom_line()
+```
+
+Unfortunately, we can't tell what line corresponds to which species. We will be 
+able to distinguish species in the plot if we add colors (using `color` also 
+automatically groups the data):
+
+```{r timeseries4}
+yearly_counts |>
+ggplot(mapping = aes(x = year, y = n, color = species)) +
+    geom_line()
+```
+
+>**Note:** When specifying the color for a line graph, you don't need to use both the 
+>`color = <VARIABLE>` argument and the `group = <VARIABLE>` argument. Both do the 
+>same grouping of observations! So you just need to specify the `color` argument.
+
+
+### Faceting
+
+**`ggplot2`** has a special technique called *faceting* that allows the user to 
+split one plot into multiple plots based on a categorical variable included in 
+the dataset. 
+
+There are two types of `facet` functions:
+
+* `facet_wrap()` arranges a one-dimensional sequence of panels to allow them to 
+cleanly fit on one page -- used for one variable
+* `facet_grid()` allows you to form a matrix of rows and columns of panels --
+used for two variables  
+
+Both geometries allow you to specify faceting variables using formula notation
+or the `vars()` function. We will use the formula notation, as you will use this
+notation when creating models (not covered in this workshop).
+
+This looks like: `facet_wrap(facets = ~ facet_variable)` or 
+`facet_grid(row_variable ~ col_variable)`. 
+
+Let's start by using `facet_wrap()` to make a time series plot for each species:
+
+```{r facet1, fig.height=3, fig.width=6}
+yearly_counts |>
+  ggplot(mapping = aes(x = year, y = n)) +
+    geom_line() +
+    facet_wrap(facets = ~ species)
+```
+
+Now we would like to split the line in each plot by the section of the river the 
+fish was captured in. To do that we need to make counts in the data frame grouped by `year`,
+`species`, and `section`:
+
+```{r facet2}
+yearly_section_counts <- BlackfootFish_clean |>
+  count(year, species, section)
+## counts the number of observations (rows) for each year, species, section combination
+
+yearly_section_counts
+```
+
+We can now make the faceted plot by splitting further by section using `color` 
+(within each panel):
+
+```{r facet3, fig.height=4, fig.width=6}
+yearly_section_counts |>
+  ggplot(mapping = aes(x = year, y = n, color = section)) +
+    geom_line() +
+    facet_wrap(facets =  ~ species)
+```
+
+You can also organize the panels only by rows (or only by columns), using the 
+optional `nrow` and `ncol` arguments:
+
+```{r facet4, fig.height = 8.5, fig.width = 8}
+yearly_section_counts |>
+  ggplot(mapping = aes(x = year, y = n, color = section)) +
+    geom_line() +
+    facet_wrap(facets =  ~ species, ncol = 1)
+  # One column, facet by rows
+```
+
+```{r facet5, fig.width = 9.5, fig.height = 5}
+yearly_section_counts |>
+  ggplot(mapping = aes(x = year, y = n, color = section)) +
+    geom_line() +
+    facet_wrap(facets =  ~ species, nrow = 1)
+  # One row, facet by columns
+```
+
+Now let's use `facet_grid()` to control how panels are organized by both rows 
+and columns:
+
+```{r facet6, fig.width = 9.5}
+yearly_section_counts |>
+  ggplot(mapping = aes(x = year, y = n, color = section)) +
+    geom_line() +
+    facet_wrap(section ~ species)
+```
+
+
+
+### Challenge 7
+
+>
+> Use what you just learned to create a plot that depicts how the average weight
+> of each species changes through the years. 
+> Play around with which variable you facet by versus plot by!
+
+```{r challenge-s2-7, error=TRUE}
+## To get you started:  
+yearly_species_weight <- BlackfootFish_clean |>
+  group_by(year, species) |>
+  ## Variables to group by
+  summarize(avg_weight = mean(weight))
+
+## Edit the following ggplot() code for the plot here:
+yearly_species_weight |>
+  ggplot(mapping = aes(x = year, y = n, color = avg_weight)) +
+    geom_line() +
+    facet_wrap(facets =  ~ species)
+## Your ggplot() code for the plot goes here!
+
+```
+
+## **`ggplot2`** Themes
+
+Usually plots with white background look more readable when printed. 
+Every single component of a `ggplot()` graph can be customized using the generic 
+`theme()` function, as we will see below. However, there are pre-loaded themes 
+available that change the overall appearance of the graph without much effort. 
+
+For example, we can change our previous graph to have a simpler white background 
+using the `theme_bw()` function:
+
+```{r themes1, fig.height=3, fig.width=6}
+yearly_section_counts |>
+ ggplot(mapping = aes(x = year, y = n, color = section)) +
+     geom_line() +
+     facet_wrap(~ species) +
+     theme_bw()
+```
+
+In addition to `theme_bw()`, which changes the plot background to white, 
+**`ggplot2`**comes with several other themes which can be useful to quickly 
+change the look of your visualization. The complete list of themes is available
+at <https://ggplot2.tidyverse.org/reference/ggtheme.html>. `theme_minimal()` and
+`theme_light()` are popular, and `theme_void()` can be useful as a starting
+point to create a new hand-crafted theme.
+
+The
+[ggthemes](https://jrnold.github.io/ggthemes/reference/index.html) package
+provides a wide variety of options.
+The [**`ggplot2`** extensions website](https://exts.ggplot2.tidyverse.org/) provides a 
+list of packages that extend the capabilities of **`ggplot2`**, including 
+additional themes.
+
+
+### Challenge 8
+
+>
+> Use what you just learned to add the plotting background theme 
+> of your choosing to the plot you made in Challenge 7!
+
+```{r challenge-s2-8}
+## Your ggplot() code for the plot goes here!
+
+```
+
+
+## Customization {#customization}
+
+Take a look at the [**`ggplot2`** cheat sheet](https://github.com/rstudio/cheatsheets/blob/main/data-visualization-2.1.pdf), 
+and think of ways you could improve the previous plot.
+
+### Plot Labels 
+
+Now, let's change names of axes to something more informative than 'year'
+and 'n' and add a title to the figure. Label customizations are done using the 
+`labs()` function like so:
+
+```{r labels}
+yearly_section_counts |>
+ ggplot(mapping = aes(x = year, y = n, color = section)) +
+     geom_line() +
+     facet_wrap(~ species) +
+     theme_bw() +
+  labs(title = "Observed Species Through Time",
+       x = "Year of Observation",
+       y = "Number of Fish",  
+       color = "Section") 
+```
+
+>**Tip: Wrapping Titles**    
+>
+>Sometimes the titles we wish to have for our plots are longer than the space 
+>originally allotted. If you create a title and the text is running off the plot
+>you can add a `\n` inside your title to force a line break 
+>(`\n` stands for new line).  
+
+
+### Label & Plot Fonts 
+
+Note that it is also possible to change the fonts of your plots. If you are on
+Windows, you may have to install
+the [**`extrafont`** package](https://github.com/wch/extrafont), and follow the
+instructions included in the README for this package.
+
+In the last plot, the axes have more informative names, but their readability 
+can be improved by increasing the font size. This can be done with the generic
+`theme()` function. 
+
+```{r fonts}
+yearly_section_counts |>
+ ggplot(mapping = aes(x = year, y = n, color = section)) +
+     geom_line() +
+     facet_wrap(~ species) +
+     theme_bw() +
+  labs(title = "Observed Species Through Time",
+       x = "Year of Observation",
+       y = "Number of Fish",  
+       color = "Section")  +
+  theme(text = element_text(size = 16))
+    ## sets ALL the text on the plot to be size 16
+```
+
+**Note:**  
+`theme_bw()` is a function for a **specific** theme and `theme()` is a
+generic function for a **variety** of different themes!  
+
+After our manipulations, you may notice that the values on the x-axis are still 
+not properly readable. Let's swap the orientation of the labels, so the reader 
+doesn't have to tilt their head when reading our plot! The `coord_flip()` 
+function easily changes the x- and y-axis. 
+
+```{r flip, fig.height=4, fig.width=6}
+yearly_section_counts |>
+ ggplot(mapping = aes(x = year, y = n, color = section)) +
+     geom_line() +
+     facet_wrap(~ species) +
+     theme_bw() +
+  labs(title = "Observed Species Through Time",
+       x = "Year of Observation",
+       y = "Number of Fish",  
+       color = "Section")  +
+  theme(text = element_text(size = 16)) + 
+  coord_flip()
+    
+```
+
+This definitely makes the reader tilt their head less! But, the text on the 
+x-axis is a bit too large to separate the numbers. We can specify the text size 
+for each element of the plot independently, if we so wish. This would look 
+something like this:  
+
+```{r text-size, fig.height=4, fig.width=6}
+yearly_section_counts |>
+ ggplot(mapping = aes(x = year, y = n, color = section)) +
+     geom_line() +
+     facet_wrap(~ species) +
+     theme_bw() +
+  labs(title = "Observed Species Through Time",
+       x = "Year of Observation",
+       y = "Number of Fish",  
+       color = "Section") +
+  theme(axis.text.x = element_text(size = 10), 
+        axis.text.y = element_text(size = 12), 
+        axis.title.x = element_text(size = 14),
+        legend.text = element_text(size = 12),
+        legend.title = element_text(size = 12),
+        plot.title = element_text(size = 16)) + 
+  coord_flip()
+    
+```
+
+
+### Legend Position
+
+By default in `ggplot2` the legend is positioned on the right hand side. 
+However, you are able to change the position of the legend to the left hand 
+side, the top of the plot, or the bottom of the plot. 
+
+This is done by adding a `legend.position` theme to the plot's `theme()`'s. 
+
+```{r legend-pos, fig.height=4, fig.width=6}
+yearly_section_counts |>
+ ggplot(mapping = aes(x = year, y = n, color = section)) +
+     geom_line() +
+     facet_wrap(~ species) +
+     theme_bw() +
+  labs(title = "Observed Species Through Time",
+       x = "Year of Observation",
+       y = "Number of Fish",  
+       color = "Section")  +
+  theme_bw() +
+  theme(axis.text.x = element_text(size = 10), 
+        axis.text.y = element_text(size = 12), 
+        axis.title.x = element_text(size = 14),
+        legend.text = element_text(size = 12),
+        legend.title = element_text(size = 14),
+        plot.title = element_text(size = 14), 
+        legend.position = "top") + 
+  coord_flip()
+    
+```
+
+
+### Removing Grid Lines 
+
+By default, the background of a `ggplot()` contains both minor and major 
+gridlines. These can make the plot look a bit busy and sometimes difficult for the reader 
+to follow. As you may have guessed, to remove these gridlines, we add another
+theme to our plot. 
+
+This looks like this:
+
+```{r remove-grid, fig.height=4, fig.width=6}
+yearly_section_counts |>
+ ggplot(mapping = aes(x = year, y = n, color = section)) +
+     geom_line() +
+     facet_wrap(~ species) +
+     theme_bw() +
+  labs(title = "Observed Species Through Time",
+       x = "Year of Observation",
+       y = "Number of Fish",  
+       color = "Section")  +
+  theme(axis.text.x = element_text(size = 10), 
+        axis.text.y = element_text(size = 12), 
+        axis.title.x = element_text(size = 14),
+        legend.text = element_text(size = 12),
+        legend.title = element_text(size = 14),
+        plot.title = element_text(size = 14), 
+        legend.position = "top", 
+        ## New themes for the grid lines
+        axis.line = element_line(color = "black"),
+        ## 
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.border = element_blank(), 
+        panel.background = element_blank()) + 
+  coord_flip()
+    
+```
+
+Let's break these options down!  
+
+- The `axis.line` option declares what color the x- and y-axis lines should be. 
+(Change it to a different color, if you don't believe me!)
+- The `panel.grid.major` removes the major grid (the one associated with the 
+ticks from the x- and y-axis).  
+- The `panel.grid.minor` removes the minor grid (the one *between* the x- and 
+y-axis ticks).  
+- The `panel.border` removes the border around the plot.  
+- The `panel.background` performs a similar action to `theme_bw()`, but it keeps 
+the border around the facet labels.    
+
+
+### Changing Colors 
+
+The built in `ggplot()` color scheme may not be what you were looking for, but 
+don't worry! There are many other color palettes available to use!  
+
+You can change the colors used by `ggplot()` a few different ways.  
+
+#### Manual Specification 
+
+Add the `scale_color_manual()` or `scale_fill_manual()` functions to your 
+plot and directly specify the colors you want to use. You can either:  
+
+- defining a vector of colors right there (e.g. `values = c("blue", "black", "red", "green")`)  
+
+- creating a vector of colors and storing it in an object and calling it 
+(see below)
+
+```{r manual-colors}
+# A color deficient friendly palette with grey:
+cbPalette_grey <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", 
+                    "#0072B2", "#D55E00", "#CC79A7")
+
+# A color deficient friendly palette with black:
+cbPalette_blk <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", 
+                   "#0072B2", "#D55E00", "#CC79A7")
+
+BlackfootFish_clean |>
+  ggplot(aes(x = species, y = length, color = section)) +
+  geom_boxplot() +
+  scale_color_manual(values = cbPalette_grey)
+
+BlackfootFish_clean |>
+  ggplot(aes(x = species, y = length, color = section)) +
+  geom_boxplot() +
+  scale_color_manual(values = cbPalette_blk)
+
+
+```
+
+#### Package Specification 
+
+Install a package and use it's available color scales. Popular options 
+include:  
+
+- `RColorBrewer`: using `scale_fill_brewer()` or `scale_color_brewer()` 
+
+- `viridis`: using `scale_color_viridis_d()` for discrete data, 
+`scale_color_viridis_c()` for continuous data, with an inside 
+argument of `option = <COLOR>` for your chosen color scheme  
+
+- `ggsci`: using `scale_color_<PALNAME>()` or `scale_fill_<PALNAME>()`, where
+you specify the name of the palette you wish to use (e.g., `scale_color_aaas()`)
+
+### Challenge 9
+
+>
+> With all of this information in hand, please take another five minutes to
+> either improve one of the plots generated in this exercise or create a
+> beautiful graph of your own. Use the RStudio [**`ggplot2`** cheat sheet](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf)
+> for inspiration. Here are some ideas:
+>
+> * See if you can change the thickness of the lines.
+> * Try using a different color palette 
+> * Can you find a way to change the name of the legend? What about its labels?
+>   (see http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/).
+
+```{r challenge-s2-9}
+## your code for the challenge goes here!
+
+```
+
+## Arranging Plots
+
+Faceting is a great tool for splitting one plot into multiple plots, but 
+sometimes you may want to produce a single figure that contains multiple plots 
+using different variables or even different data frames. The **`gridExtra`** 
+package allows us to combine separate ggplots into a single figure using 
+`grid.arrange()` (make sure to scroll down in the window to see all the code):
+
+```{r arrange, message = FALSE, fig.width = 10, fig.height=6}
+library(gridExtra)
+
+spp_weight_boxplot <- BlackfootFish_clean %>% 
+  ggplot(aes(x = species, y = weight)) +
+  geom_violin() +
+  geom_jitter(color = "tomato", width = 0.2, alpha = 0.2) +
+  scale_y_log10() +
+  ## log (base 10) transforms the y-axis variable
+  ## (helps to make the plot less skewed)
+  labs(x = "", 
+       ## removes the y-axis label
+       y = expression(Log[10](Weight))) +
+       ## Expression creates a mathematical expression in the axis label
+       ## the [10] refers to the subscript next to Log
+  coord_flip() + 
+  theme(axis.text.y = element_text(size = 12), 
+        axis.text.x = element_text(size = 12), 
+        text = element_text(size = 16))
+
+spp_count_plot <- yearly_counts %>% 
+  ggplot(aes(x = year, y = n, color = species)) +
+  geom_line() + 
+  labs(x = "Year", 
+       y = "Abundance", 
+       color = "Species") +
+  theme(axis.title.x = element_text(face = "bold", size = 12))
+  ## To make your axis title boldface, this is what you need!
+
+grid.arrange(spp_weight_boxplot, spp_count_plot, ncol = 2, widths = c(4, 6))
+## nrow and ncol specify how many rows/columns you want the arranged plots to be in
+## widths specify what proportion of the overall plotting area each plot takes up
+```
+
+In addition to the `ncol` and `nrow` arguments, used to make simple arrangements,
+there are tools for [constructing more complex layouts](https://cran.r-project.org/web/packages/gridExtra/vignettes/arrangeGrob.html). 
+
+
+For more assistance arranging plots with `grid.arrage()`. We find the following 
+vignette **very** helpful! https://cran.r-project.org/web/packages/egg/vignettes/Ecosystem.html
+
+Another option for combining plots is the [patchwork package](https://patchwork.data-imaginist.com/). It uses a sort of formula interface for defining the layout of multiple plots. For example, you can get two plots side-by-side in a one row, two column array with `p1 + p2` and two plots stacked into two rows and one column with `p1 / p2`. This provides both a quick and powerful way to arrange ggplots you have created.
+						   
+
+```{r arrange2, message = FALSE, fig.width = 10, fig.height=6, exercise = TRUE}
+spp_weight_boxplot / spp_count_plot
+
+```
+
+
+## Exporting Plots 
+ 
+
+After creating your plot, you can save it to a file in your favorite format. The
+Export tab in the **Plot** pane in RStudio will save your plots at low 
+resolution, which will not be accepted by many journals and will not scale well 
+for posters. 
+
+Instead, use the `ggsave()` function, which allows you easily change the 
+dimension and resolution of your plot by adjusting the appropriate arguments:  
+
+- `width` and `height`: adjust the total plot size in units ("in", "cm", or "mm")
+  * If units are not specified, default is inches. 
+- `dpi`: adjusts the plot resolution. This accepts a string or numeric input: 
+    * "retina" (320)
+    * "print" (300) 
+    * "screen" (72)
+    
+Make sure you have the `fig/` folder in your working directory. The first line 
+of code checks to see if that folder exists, and if not, creates it.
+
+```{r export, fig.height=4, fig.width=6}
+# Specify where you want figures to be saved relative to current directory
+if(!dir.exists("fig")){dir.create("fig")}
+
+my_plot <- ggplot(data = yearly_section_counts, 
+                  mapping = aes(x = year, y = n, color = section)) +
+              geom_line() +
+              facet_wrap(~ species) +
+              labs(title = "Observed species through time",
+                    x = "Year of observation",
+                    y = "Number of individuals") +
+              theme_bw() +
+              coord_flip() + 
+              theme(axis.text.y = element_text(color = "grey20", size = 12),
+                    text = element_text(size = 16))
+
+ggsave("fig/yearly_section_counts.png", my_plot, width = 15, height = 10)
+
+# This also works for grid.arrange() plots
+combo_plot <- grid.arrange(spp_weight_boxplot, spp_count_plot, 
+                           ncol = 2, widths = c(4, 6))
+
+ggsave("fig/combo_plot_abun_weight.png", combo_plot, width = 10, dpi = 300)
+```
+
+> **Note:** 
+> The parameters `width` and `height` also determine the font size in the 
+> saved plot.
+
+
+### Interactive Graphics (Bonus Material)
+
+
+In certain situations, static displays can limit the sorts of information available and do not allow easy interrogation for information on individual aspects of plots. Obviously, most print journals do not have a way to have readers interact with the printed page, but in digital venues there are some possibilities. Of particular interest here are interactive graphics that can function on websites and in blog posts or even in certain presentation formats. One way to do this that leverages the previous work in making `ggplot`-style graphics is using the `ggplotly` function from the `plotly` R package (Sievert, 2020). You can access the 2020 book that goes into more detail on `plotly`-style graphics at https://plotly-r.com/. 
+
+To use `ggplotly`, we wrap that function around a `ggplot` object and it will render it in an interactive fashion when the viewer hovers over individual plot components. There are also ways of making `plotly` graphs directly using `plot_ly` and that may prove easier for some things, for example for making interactive three-dimensional graphs. 
+
+Here are two examples that we worked with earlier converted into `ggplotly` objects that allow further interrogation of the information displayed:
+
+```{r plotlydemo, message = FALSE, eval=FALSE}
+library(plotly)
+
+spp_weight_boxplot <- BlackfootFish_clean |>
+  ggplot(aes(x = species, y = weight)) +
+  geom_violin() +
+  geom_jitter(color = "tomato", width = 0.2, alpha = 0.2) + 
+  scale_y_log10() +
+  ## log (base 10) transforms the y-axis variable
+  ## (helps to make the plot less skewed)
+  labs(x = "", 
+       ## removes the y-axis label
+       y = "log10-Weight") +
+  coord_flip() + #Switches x and y axes
+  theme(axis.text.y = element_text(size = 12), 
+        axis.text.x = element_text(size = 12), 
+        text = element_text(size = 16)) +
+  theme_bw()
+
+spp_count_plot <- yearly_counts |>
+  ggplot(aes(x = year, y = n, color = species)) +
+  geom_line() + 
+  labs(x = "Year", 
+       y = "Abundance", 
+       color = "Species") +
+  theme(axis.title.x = element_text(face = "bold", size = 12)) +
+  theme_bw()
+
+ggplotly(spp_weight_boxplot);ggplotly(spp_count_plot)
+```
+
+
+
+One note about using `plotly` graphics in R-markdown is that they will not knit into word or PDF formats, only into HTML (in word or PDF, you are stuck with static images but you could incorporate a link to a website containing the interactive version of the plot). You can also interact with plots when working in markdown or running code in the console in RStudio. For presentations, you can also record a video of interactions with plot to remove some challenges of live presentations using this format. But if you are looking to wow your viewers in a digital format, need to dig into some details of what is displayed in a plot quickly, or when static graphics are limiting your story-telling ability, remember that there might be another option!
+
+
+
+
+<!--chapter:end:02-dataViz.Rmd-->
+
+# Coding with Generative AI
+
+<!-- \includepdf[pages=-]{Gen AI Workshop - 8 Aug 2025.pdf} -->
+
+
+<!--chapter:end:03-genAI.Rmd-->
+
+
+
+
+<!--chapter:end:04-dataWrangling.Rmd-->
+
+# Appendix {-}
+
+## Terminology Used in Workshop
+
+* *Command*: A command is what `R` executes. In an `R` script file (script.R), 
+commands are automatically implied, as this type of file does not accept text, 
+only in comments. In an Rmd (Markdown) file (report.Rmd), commands are 
+delineated between three ticks on the top (```` ```{r}````) and three 
+ticks (```` ``` ````) on the
+bottom.      
+
+    ````
+    ```{r}`r ''`
+    # Your code goes here
+    ```  
+    ````
+
+* *Comment*: Helpful text added into a script environment. Comments can be used
+to describe functions, processes, a train of thought, so that when you return to
+your code, tomorrow or next year, you are able to understand the purpose of each
+line of code! Comments are preceded by at least on `#` within a code chunk. 
+
+* *Object*: A variable created in `R`, to be used elsewhere in the code. Objects
+can be a variety of things, such as scalars (`x <- 3`), vectors (`x <- c(1, 2, 3, 
+4, 5)`), matrices, and dataframes, to name a few.  
+
+* *Assignment Arrow*: The assignment arrow `<-` is used to assign values on the 
+right to the objects on the left (`x <- 1`). For historical reasons, you can also 
+use `=` for assignments, but not everywhere. Because of these slight 
+differences, it is recommended to *always* use assignment arrows for assignment. 
+
+* *Class*: Most `R` objects have a class attribute, a character vector giving 
+the names of the classes from which the object inherits. Examples of classes are
+numeric, factor, integer, character, dataframe, matrix, list. 
+
+* *Vector*: A vector is a list of entries, all sharing the same class. A vector 
+has only one dimension, so data extraction uses only a single entry in brackets 
+(e.g. `x[3]`). You can create vectors of characters (`c("a", "b", "c")`), vectors of 
+numbers (`c(1, 2, 3)`), to name a few.
+
+* *Matrix*: Similar to what you may have seen in a mathematics class, a matrix 
+is an object with rows and columns, where every entry in the matrix must be a 
+number. 
+
+* *List*: A generic vector, which contains other objects. A list can contain a
+variety of different classes of objects, e.g., characters, vectors, data.frames, 
+matrices, or outputs from a model! A data.frame is a special type of list where
+the components are vectors and they all have the same length. 
+
+* *Dataframe*: A dataframe is a collection of variables. Dataframes share many 
+of the properties of matrices, where you are able to extract elements using 
+bracket (`[]`) notation, and lists, where you are able to extract columns using 
+`$`. Dataframes are used as the fundamental data structure by most of `R`'s 
+statistical modeling software. Note that tibbles have been more recently created as 
+part of the tidyverse and provide a similar but slightly different object where 
+you can store your data.
+
+* *Argument*: Input(s) into a function, so that an output is created. Most 
+functions take named arguments (e.g., `data = BlackfootFish`) and the order of the 
+arguments is assumed to follow the order found in the function's help file. When
+using a named argument in a function, the name comes first, followed by an `=` 
+sign, then the input. 
+
+* *Logical Value*: `TRUE` and `FALSE` value(s) that can be used to turn off/on 
+options in functions and plots, and also to manipulate data. 
+
+## Workshop Materials & Recordings Available:
+
+* email Sara Mannheimer (sara.mannheimer@montana.edu)
+
+* through the MSU Library Data Science website (http://www.montana.edu/datascience/)
+
+## How to Learn More About `R` and `RStudio`
+
+This material is intended to provide you with an introduction to using `R` for 
+scientific analyses of data. The best way for you to continue to learn more 
+about `R` is to use it in your research! This may sound daunting, but writing 
+`R` scripts is the best way to become familiar with the syntax. This will help 
+you progress through more advanced operations, such as cleaning your data, 
+using statistical methods, or creating graphics. 
+
+The best place to start is playing around with the code from today's workshop.
+Change parts of the code and see what happens! Better yet, use the code from the
+workshop to investigate your own data! 
+
+### Clean Code 
+
+Yes, writing code may be completely new to you, but there is a difference between
+code that looks nice and code that does not. Generally, object names should be 
+nouns and function names should be verbs. It is also important that your code 
+looks presentable, so that a friend/college/professor can read it and understand
+what you are doing. For these reasons, there are style guides for writing code 
+in `R`. The two main style guides are Google's
+https://google.github.io/styleguide/Rguide.xml and the slightly 
+more comprehensive  Tidyverse style guide
+https://style.tidyverse.org/. Installing the `styler` package will allow you to highlight code and format it in a more legible way. Visit the tidyverse page https://style.tidyverse.org/ for more information.
+
+### Projects in `RStudio`  
+
+`R` projects provide a way to organize all the code and data in one place and 
+many consider these the best way to work in `R`. We chose to avoid this step 
+and just use a single .Rmd file to expedite your first experience using `R`. 
+A motivation for using projects is that it is important to organize your data
+and script files into the same or related locations and have different 
+locations for different iterations of projects. If you don't do this:
+
+* it is really hard to tell which version of your data is original and what
+versions are modified  
+* things get really messy because all types of files are mixed together  
+* it's probably hard for you to find things and relate the correct files to 
+their respective output  
+
+Ultimately, good project organization will make your life easier! It helps 
+ensure the integrity of your data, makes it simpler to share your code or get
+help with your code, allows for you know exactly what code you used on a 
+paper, and it's easier to pick a project back up. 
+
+It is good code writing and file storage practice to keep a set of all related 
+data, analysis, plots, documents, etc. in the same folder. RStudio makes this 
+process easy with using their projects. In an RStudio project, all of the 
+project's pieces are in the same folder. This allows for a clean 
+workflow and a simple working directory for `R`. When you are executing code for
+a document/script `R` will search for things (such as data) in the 
+\underline{same} folder as the document/script, which is called a 
+_relative path_.
+
+Whenever you start working on a new project in 
+RStudio, go through the following steps:
+
+1. Click on the "File" menu button, then select "New Project"    
+2. Click "New Directory"  
+3. Click "New Project"  
+4. Create a name for your project (make it explanatory!)  
+5. Select where the project should live  
+6. Click the "Create Project" button  
+7. Open the project!
+
+After this process `R` will be searching for objects (such as data) in the 
+\underline{same} folder as the project. This allows for us to keep all of our
+files in a self-contained system. 
+ 
+After saving your previous work today, you can try to create a project in a 
+new folder on your computer. After you create the project, you can create a new 
+.Rmd file and copy and paste the text from this document into this file. And 
+move a copy of the BlackfootFish.csv into the project folder you created. 
+Whenever you open this project it will take you directly to the work you have 
+done in that project folder. It may be useful to close the project before 
+exiting RStudio to avoid confusion in later sessions. 
+
 
 ## Data Visualization  
 
@@ -1185,6 +3019,8 @@ The best place to start is playing around with the code from today's workshop.
 Change parts of the code and see what happens! Better yet, use the code from the
 workshop to investigate your own data! 
 
+## Additional Data Wrangling Material
+
 ### Clean Code 
 
 Yes, writing code may be completely new to you, but there is a difference between
@@ -1196,1901 +3032,6 @@ in `R`. The two main style guides are Google's
 https://google.github.io/styleguide/Rguide.xml and the slightly 
 more comprehensive  Tidyverse style guide
 https://style.tidyverse.org/. Installing the `styler` package will allow you to highlight code and format it in a more legible way. Visit the tidyverse page https://style.tidyverse.org/ for more information.
-
-### Projects in `RStudio`  
-
-`R` projects provide a way to organize all the code and data in one place and 
-many consider these the best way to work in `R`. We chose to avoid this step 
-and just use a single .Rmd file to expedite your first experience using `R`. 
-A motivation for using projects is that it is important to organize your data
-and script files into the same or related locations and have different 
-locations for different iterations of projects. If you don't do this:
-
-* it is really hard to tell which version of your data is original and what
-versions are modified  
-* things get really messy because all types of files are mixed together  
-* it's probably hard for you to find things and relate the correct files to 
-their respective output  
-
-Ultimately, good project organization will make your life easier! It helps 
-ensure the integrity of your data, makes it simpler to share your code or get
-help with your code, allows for you know exactly what code you used on a 
-paper, and it's easier to pick a project back up. 
-
-It is good code writing and file storage practice to keep a set of all related 
-data, analysis, plots, documents, etc. in the same folder. RStudio makes this 
-process easy with using their projects. In an RStudio project, all of the 
-project's pieces are in the same folder. This allows for a clean 
-workflow and a simple working directory for `R`. When you are executing code for
-a document/script `R` will search for things (such as data) in the 
-\underline{same} folder as the document/script, which is called a 
-_relative path_.
-
-Whenever you start working on a new project in 
-RStudio, go through the following steps:
-
-1. Click on the "File" menu button, then select "New Project"    
-2. Click "New Directory"  
-3. Click "New Project"  
-4. Create a name for your project (make it explanatory!)  
-5. Select where the project should live  
-6. Click the "Create Project" button  
-7. Open the project!
-
-After this process `R` will be searching for objects (such as data) in the 
-\underline{same} folder as the project. This allows for us to keep all of our
-files in a self-contained system. 
- 
-After saving your previous work today, you can try to create a project in a 
-new folder on your computer. After you create the project, you can create a new 
-.Rmd file and copy and paste the text from this document into this file. And 
-move a copy of the BlackfootFish.csv into the project folder you created. 
-Whenever you open this project it will take you directly to the work you have 
-done in that project folder. It may be useful to close the project before 
-exiting RStudio to avoid confusion in later sessions. 
-
-
-<!--chapter:end:01-introToR.Rmd-->
-
-# Data Visualization in R
-
-```{r setup2, include=FALSE}
-library(ggplot2)
-library(tidyverse)
-library(gridExtra)
-library(plotly)
-library(patchwork)
-```
-
-## Learning Objectives
-
->
-> * Produce scatter plots, boxplots, density plots, and time series plots using 
->   ggplot2.
-> * Set universal and local plot settings.
-> * Describe what aesthetics are and how they are used by ggplot().
-> * Describe what faceting is and apply faceting to a ggplot().
-> * Modify the aesthetics of an existing ggplot() plot (e.g., axis labels, color).
-> * Build multivariate and customized plots from data in a data frame.
-> * Arrange multiple plots in a grid format.
-> * Export publication ready graphics using ggsave(). 
-
-
-## Data Viz Introduction
-
-**`ggplot2`** is a plotting package that makes it simple to create complex plots
-from data in a data frame. It provides a more programmatic interface for
-specifying what variables to plot, how they are displayed, and general visual
-properties. Therefore, we only need minimal changes if the underlying data 
-change or if we decide to change from a bar plot to a scatter plot. This helps 
-in creating publication quality plots with minimal amounts of adjustments and 
-tweaking.
-
-Packages in `R` are basically sets of additional functions that let you do more
-stuff. The functions we've used in the previous session, like `str()` or `mean()`,
-come built into `R`; packages give you access to more of them. Before you use a
-package for the first time you need to install it on your machine, and then you
-should import it in every subsequent `R` session when you need it. 
-
->
-> Install the **tidyverse** package by going to `Packages > Install` and
-> typing tidyverse into the dialog box. Keep "Install dependencies" checked.
-> You can also run `install.packages("tidyverse")` from the console.
->
-
-This is an "umbrella-package" that installs several packages useful for data
-analysis which work together well such as **`tidyr`**, **`dplyr`**, 
-**`ggplot2`**, **`readr`**, **`forcats`**, etc.
-
-The **`tidyverse`** package tries to address common issues that arise when
-doing data analysis with some of the functions that come with `R`. 
-
-1. The `tidyverse` solves complex problems by combining many simple pieces.
-
-> "No matter how complex and polished the individual operations are, 
-> it is often the quality of the glue that most directly determines 
-> the power of the system."
->
-> --- Hal Abelson
-
-2. The `tidyverse` is written for people to read! 
-
-> "Computer efficiency is a secondary concern because the 
-> bottleneck in most data analysis is thinking time, not computing time."
->
-> --- Hadley Wickham
-
-In this workshop, we have already installed the `tidyverse` using `install.packages("tidyverse")`. It is important to note that there's no need to re-install packages every time we run the script.
-
-Then, to load the package include code in your work with:
-  
-```{r echo=TRUE, message = FALSE}
-## load the tidyverse packages
-library(tidyverse)
-```
-
-Working with packages was discussed in more detail in the "Introduction to R" workshop. We will proceed through the remaining work with the `tidyverse` package installed and loaded.
-
-To learn more about **`ggplot2`** after the workshop, you may want
-to check out this
-[**`ggplot2`** reference website (link)](https://ggplot2.tidyverse.org/reference/) 
-and this [handy cheatsheet on **`ggplot2`** (link)](https://github.com/rstudio/cheatsheets/blob/main/data-visualization-2.1.pdf).
-
-
-### Presentation of the Survey Data
-
-The data used in this workshop are a time-series for a small mammal community in southern Arizona. This is part of a project studying the effects of rodents and ants on the plant community that has been running for almost 40 years, but we will focus on the years 1996 to 2002 (_n_=11332 observations). The rodents are sampled on a series of 24 plots, with different experimental manipulations controlling which rodents are allowed to access which plots. This is simplified version of the full data set that has been used in over 100 publications and was provided by the Data Carpentries (https://datacarpentry.org/ecology-workshop/data/). We are going to focus on animal species diversity and weights in this workshop. The dataset is stored as a comma separated value (CSV) file.
-
-\newpage
-
-Each row holds information for a single animal, and the columns represent (along with some others we will not use):
-
-| Column           | Description                        |
-|------------------|------------------------------------|
-| record\_id       | Unique id for the observation      |
-| month            | month of observation               |
-| day              | day of observation                 |
-| year             | year of observation                |
-| plot\_id         | ID of a particular plot            |
-| species\_id      | 2-letter code                      |
-| sex              | sex of animal ("M", "F")           |
-| hindfoot\_length | length of the hindfoot in mm       |
-| weight           | weight of the animal in grams      |
-
-
-We'll read in our data using the `read_csv()` function, from the tidyverse 
-package **`readr`**, instead of `read.csv()`.
-
-```{r load-data2}
-surveys <- read_csv("data/surveys2.csv")
-```
-
-You will see the message `Parsed with column specification`, followed by each 
-column name and its data type. When you execute `read_csv` on a data file, it 
-looks through the first 1000 rows of each column and guesses the data type for 
-each column as it reads it into `R`. For example, in this dataset, `read_csv` 
-reads `weight` as `col_double` (a numeric data type), and `species` as 
-`col_character`. 
-
-```{r inspect-data2, message=TRUE}
-## inspect the data
-str(surveys)
-
-```
-
-```{r eval=FALSE, echo=TRUE}
-## Preview the data
-View(surveys)
-```
-
-```{r echo=FALSE}
-surveys
-```
-
-At the top of the `str()` output, notice that the class of the data is a tibble. Tibbles tweak some of the behaviors of the 
-data frame objects we introduced in the previous workshop. The data structure is
-very similar to a data frame, so for our purposes the only differences are that:
-
-1. In addition to displaying the data type of each column under its name, it
-   only prints the first few rows of data and only as many columns as fit on one
-   screen.
-2. Columns of class `character` are never converted into factors.
-
-
-## Plotting with **`ggplot2`**
-
-`ggplot2` functions like data in the 'long' format, i.e., a column for every 
-dimension, and a row for every observation. There are other data formats, which 
-we will discuss in the _Data Wrangling in `R`_ workshop, as well as how to 
-convert from one data format to another. Well-structured data will save you 
-lots of time when making figures with `ggplot2` and when working in `R`!
-
-`ggplot()` graphics are built step by step by adding new elements. Adding layers 
-in this fashion allows for extensive flexibility and customization of plots.
-
-To build a `ggplot()`, we will use the following basic template that can be used 
-for different types of plots:
-
-`ggplot(data = <DATA>, mapping = aes(<VARIABLE MAPPINGS>)) +  <GEOM_FUNCTION>()`
-
-
-Let's go through this step by step!  
-
-1. Use the `ggplot()` function and bind the plot to a specific data frame using 
-the `data` argument
-
-    ```{r bind-plot}
-    ggplot(data = surveys)
-    
-    ## Creates a blank ggplot(), referencing the surveys dataset
-    ```
-
-2. Define a mapping (using the aesthetic (`aes`) function), by selecting the 
-variables to be plotted and specifying how to present them in the graph, e.g. as
-x/y positions or characteristics such as size, shape, color, etc.
-
-    ```{r define-mapping}
-    ggplot(data = surveys, 
-           mapping = aes(x = weight, y = hindfoot_length))
-    #
-    # Creates a blank ggplot(), with the variables mapped to the x- and y-axis
-    # ggplot() knows where the variables live, since you have defined the data to use
-    ```
-
-3. Add "geoms" -- graphical representations of the data in the plot (points,
-  lines, bars). **`ggplot2`** offers many different geoms; we will use some 
-  common ones today, including:
-  
-    * `geom_point()` for scatter plots, dot plots, etc.
-    * `geom_boxplot()` for boxplots
-    * `geom_bar()` for bar charts
-    * `geom_line()` for trend lines, time series, etc.
-
-    To add a geom to the plot use the `+` operator. Because we have two continuous 
-    variables in the data, let's use `geom_point()` first:
-
-    ```{r add-to-plots}
-    ggplot(data = surveys, 
-           mapping = aes(x = weight, y = hindfoot_length)) +
-      geom_point()
-    
-     # Adds a point for each row (observation) in the data  
-    ```
-
-You can think of the `+` sign as adding layers to the plot. 
-Each `+` sign must be placed at the end of the line containing the *previous* 
-layer. If, instead, the `+` sign is added at the beginning of the line 
-containing the new layer, **`ggplot2`** will not add the new layer and will 
-return an error message.
-
-```{r plus-sign, error=TRUE}
-
-# This will not add the new layer and will return an error message
-ggplot(data = surveys, 
-       mapping = aes(x = weight, y = hindfoot_length)) 
-  + geom_point()
-
-```
-
-
-### Building Plots Iteratively 
-
-Building plots with **`ggplot2`** is typically an iterative process. We start by
-defining the dataset we'll use, lay out the axes, and choose a geom:
-
-```{r build-plot}
-ggplot(data = surveys, 
-       mapping = aes(x = weight, y = hindfoot_length)) +
-    geom_point()
-```
-
-Then, we start modifying this plot to extract more information from it. For
-instance, we can add transparency (`alpha`) to the points, to avoid 
-overplotting:
-
-```{r modify-plot}
-ggplot(data = surveys, 
-       mapping = aes(x = weight, y = hindfoot_length)) +
-    geom_point(alpha = 0.2)
-    ## alpha reduces the opacity of the points 
-    ## 0 is fully transparent
-    ## 1 is the original opacity
-```
-
-We can also add colors for all the points:
-
-```{r color-plot}
-ggplot(data = surveys, 
-       mapping = aes(x = weight, y = hindfoot_length)) +
-    geom_point(alpha = 0.2, color = "blue")
-```
-
-
-`geom_point` also accepts aesthetics of size and shape. 
-The size of a point is its width in mm. The shape of a point has five 
-different options for plotting:  
-
-* an integer [0, 25] of defined plotting characters -- same as base `R`
-* the name of the shape in quotations (e.g. "circle open" or "diamond filled")
-* a single character, to use that character as a plotting symbol
-* a "." to draw the smallest point that is visible -- typically 1 pixel
-* an NA, to draw nothing
-
-Reference for shapes in integers and characters:  
-https://ggplot2.tidyverse.org/articles/ggplot2-specs.html  
-
-### Challenge 1
-
->
-> Copy and paste the code from the previous code chunk and modify it to assign one of these aesthetics to the 
-> `geom_point` aspect of your plot. 
->
->What happened? 
-
-```{r challenge-s2-1}
-## Your ggplot code to answer the challenge goes here!
-
-
-```
-
-### Piping Data In  
-
-Because **`ggplot2`** lives in the `tidyverse`, it is expected to work well with 
-other packages in the `tidyverse`. Because of this, the first argument to 
-creating a `ggplot()` is the dataset you wish to be working with. The pipe 
-operator sends the output of one function directly into the next function,
-which is useful when you need to do many things to the same dataset. Since the 
-dataset we wish to use is the first argument to `ggplot()`, we can use the pipe 
-operator to pipe the data into the `ggplot()` function!  
-
-Pipes in `R` look like `%>%` and are made available via the **`magrittr`** 
-package, installed automatically with the **`tidyverse`**. If you use RStudio, 
-you can type the pipe with `Ctrl + Shift + M` if
-you have a PC or `Cmd + Shift + M` if you have a Mac.
-
->**Note:** There is now (as of R 4.1.0) a native R pipe `|>` that works similar 
-> to the `%>%` pipe operator with minor differences that you may encounter, but 
-> since we are working in the `tidyverse` we will stick with their pipe operator
-> (`%>%`). If you want to switch which pipe operator is used with the shortcut
-> keys, you can go to `Tools > Global Options... > Code` and check (or uncheck) 
-> the option "Use native pipe operator, |> (requires R 4.1+)".
-> 
-
-
-This would instead look like this:  
-
-```{r pipe-example}
-surveys %>%  
-  ## data to be used in the ggplot  
-  ggplot(mapping = aes(x = weight, y = hindfoot_length)) + 
-  ## uses the data piped in as the first argument to ggplot() 
-    geom_point(alpha = 0.2, color = "blue")
-```
-
-Once we pipe the data in, the first argument becomes the `mapping` of the 
-aesthetics. Technically, we are using the name of this argument, which is why it
-looks like:  
-
-`mapping = aes(<VARIABLES>)`
-
-When we pipe our data in, the first argument then becomes this `mapping` 
-argument. 
-
-### Assigning More Variables to Aesthetics 
-
-To color each species in the plot differently, you could use a vector as an
-input to the argument **color**. **`ggplot2`** will provide a different color 
-corresponding to different values in the vector. Here is an example where we 
-color with **`species_id`**:
-
-```{r color-example1, fig.height=3, fig.width=6}
-surveys %>% 
-  ggplot(mapping = aes(x = weight, y = hindfoot_length)) +
-    geom_point(alpha = 0.2, aes(color = species_id)) 
-
-```
-
-**Note:** When specifying an `alpha` for a scatterplot, it automatically uses 
-that __same__ `alpha` in the legend. To remedy this you can add:  
-
-`guides(color = guide_legend(override.aes = list(alpha = 1)))`
-
-to your plot. This customizes the legend appearance, similar to what we will 
-see in the customization section. 
-
-We can also specify the colors directly inside the mapping provided in the 
-`ggplot()` function. This will be seen by **any** geom layers and the mapping 
-will be determined by the x- and y-axis set up in `aes()`.
-
-```{r color-example2, fig.height=3, fig.width=6}
-surveys %>% 
-  ggplot(mapping = aes(x = weight, y = hindfoot_length, color = species_id)) +
-    geom_point(alpha = 0.2)
-```
-
-Notice that we can change the geom layer and colors will be still determined by
-**`species_id`**
-
-
-### Local Aesthetics versus Global Aesthetics 
-
-When you define aesthetics in the `ggplot()` function, those mappings hold for
-**every** aspect of your plot. 
-
-For example, if you chose to add a smoothing line to your plot of weight versus 
-hindfoot length, you would get different lines depending on where you define 
-your color aesthetics. 
-
-**Globally** 
-
-```{r color-global, fig.height=3, fig.width=6}
-surveys %>% 
-  ggplot(mapping = aes(x = weight, y = hindfoot_length, color = species_id)) +
-  geom_jitter(alpha = 0.2) + 
-  geom_smooth()
-  ## smoothing line for each species_id -- because color is defined globally
-```
-
-**Locally**  
-
-```{r color-local, fig.height=3, fig.width=6}
-surveys %>% 
-  ggplot(mapping = aes(x = weight, y = hindfoot_length)) +
-  geom_jitter(aes(color = species_id), alpha = 0.2) + 
-  geom_smooth()
-  ## one smoothing line -- no color defined globally
-```
-
-
-### Challenge 2 (Part 1)
-
->
-> Inspect the `geom_point` help file (either go to https://ggplot2.tidyverse.org/reference/geom_point.html or run `?geom_point`) 
-> to see what other aesthetics are available. 
-> Map a new variable from the dataset to another aesthetic in your plot. 
-> What happened? 
-> Does the aesthetic change if you use a continuous variable versus a 
-> categorical/discrete variable?  
->
-
-```{r challenge-s2-2part1}
-## Your ggplot() code for the challenge goes here!
-
-
-```
-
-
-### Challenge 2 (Part 2)
-
->
-> Use what you just learned to create a scatter plot of `weight` over
-> `plot_id` with data from different plot types being showed in different 
-> colors. Is this a good way to show this type of data?
->
-
-```{r challenge-s2-2part2}
-## Your ggplot() code for the challenge goes here!
-
-
-```
-
-
-
-
-### Boxplots & Violin Plots
-
-Boxplots provide a visualization of a quantitative variables across different levels of a categorical (grouping) variable. For example, we can use boxplots to visualize the distribution of weight within each species:
-
-```{r boxplot1}
-surveys %>% 
-  ggplot(mapping = aes(x = species_id, y = weight)) +
-    geom_boxplot()
-```
-
-By adding points to boxplot, we can have a better idea of the number of
-measurements and their distribution:
-
-```{r boxplot2}
-surveys %>% 
-  ggplot(mapping = aes(x = species_id, y = weight)) +
-    geom_boxplot(alpha = 0) + 
-    ## alpha = 0 eliminates the black (possible outlier) points, so they're not plotted twice
-    geom_jitter(alpha = 0.2, color = "tomato")
-    ## alpha = 0.2 decreases the opacity of the points, to not be too busy
-```
-
-> Notice how the boxplot layer is behind the jitter layer? What would you 
-> change in the code to put the boxplot in front of the points?
-
-
-### Challenge 3 (Part 1) 
-
->
-> Boxplots are useful summaries, but hide details of the *shape* of the
-> distribution. For example, if the distribution is bimodal, we would not see 
-> it in a boxplot. A superior density plot is the violin plot, where the shape 
-> (of the density of points) is drawn.
->
-> Replace the box plot with a violin plot. For help see `geom_violin()`. 
-> Start with the boxplot we created:
->
-
-```{r challenge-s2-3part1-example}
-ggplot(data = surveys, mapping = aes(x = species_id, y = weight)) +
-  geom_boxplot(alpha = 0) +
-  geom_jitter(alpha = 0.2, color = "tomato")
-```
-
-```{r challenge-s2-3part1}
-##  Start with the boxplot we created
-##  1. Replace the boxplot with a violin plot. For help, see geom_violin().
-##  You might need to decrease opacity even more to see the violins (try 0.03)
-
-```
-
-
-
-### Challenge 3 (Part 2)
-
->
-> So far, we've looked at the distribution of weight within species. Let's try 
-> making a new plot to explore the distribution of another variable within each 
-> species.
->
-> Create a boxplot for `hindfoot_length`. This time overlay the boxplot layer 
-> over a jitter layer that shows the actual measurements.
->
-
-```{r challenge-s2-3part2}
-##  First: create boxplot for hindfoot_length` overlaid on a jitter layer.
-
-```
-
-
-
-
-### Challenge 3 (Part 3)
-
->
-> Now, add color to the data points on your boxplot according to the plot from 
-> which the sample was taken (`plot_id`).
->
-> *Hint:* Check the class for `plot_id`. If `plot_id` was a character instead, 
-> how would the graph be different?  
->
-
-```{r challenge-s2-3part3}
-## Next: add color to the data points on your boxplot according to the
-## plot from which the sample was taken (plot_id).
-
-## Hint: Check the class for plot_id`. If plot_id was a character instead, 
-## how would the graph be different? 
-
-```
-
-
-
-
-### Bonus violin plot example (DatasauRus)
-
->
-> The previous example doesn't fully illustrate the power of violin plots. 
-> This example from the `datasauRus` package
-> (https://www.autodeskresearch.com/publications/samestats) shows five different
-> distributions that have exactly the same summary statistics and boxplots but
-> very different shapes:
->
-
-```{r datasaurus, message = FALSE}
-library(datasauRus)
-data(box_plots)
-
-box_plots_long <- box_plots %>%
-  pivot_longer(cols=1:5)
-  
-box_plots_long <- box_plots_long %>%
-  rename(Example=name, Response=value)
-
-box_plots_long <- box_plots_long %>% 
-  mutate(Example = factor(Example))
-
-ggplot(box_plots_long, aes(x=Example, y=Response)) +
-  geom_violin(fill="bisque") +
-  geom_boxplot(alpha=.6) +
-  geom_jitter(alpha=0.15, col="tomato") +
-  theme_minimal() + 
-  scale_x_discrete(labels=c('Trimodal, Right Skew', 'Clumpy', 'Normal', 
-                            'Trimodal, Left Skew',  'Bimodal'))
-```
-
-
-## Plotting Single Variables
-
-### Distribution Plots (Quantitative Variables)
-
-If we wish to visualize the distribution of a single quantitative variable, our 
-plot changes a bit. Unfortunately, the `geom_violin()` function only accepts 
-groups, so we cannot make a violin plot with no groups. Darn it!  
-
-But, a violin is simply a density plot that's been reflected across the y-axis. 
-So, we could likely suffice with a density plot.  
-
-To visualize the distribution of rodent weights we could aggregate over all 
-species, years, plots, etc. and produce a single density plot:  
-
-
-```{r dist-plot}
-surveys %>% 
-  ggplot(mapping = aes(x = weight)) + 
-  geom_density()
-  
-```
-
-The default is an empty density plot, which is largely unsatisfying. By adding 
-a `fill = <COLOR>` argument to `geom_density()` we can produce a nicer looking 
-plot:  
-
-```{r dist-add-color}
-surveys %>% 
-  ggplot(mapping = aes(x = weight)) + 
-  geom_density(fill = "sky blue")
-  
-```
-
-\newpage
-
-Another frequently used plot for a single quantitative variable is the 
-histogram. The same plot as above can be recreated using `geom_histogram()` 
-instead of `geom_density()`. However, when you use `geom_histogram()` it gives 
-you a warning. 
-
-```{r hist}
-surveys %>% 
-  ggplot(mapping = aes(x = weight)) + 
-  geom_histogram()
-
-```
-
-
-> What warning do you get and why?
-> Do you get an error like this when you use `hist()` in base `R`? 
-
-```{r}
-hist(surveys$weight)
-```
-
-There is no single right answer for the number of bins. There are some "plug-in" choices for number of bins that can be used, but you are always welcome to explore different numbers of bins to see if features you are seeing persist when you choose more or less bins.  
-
-
-### Challenge 4 
-
->
-> Use the `bins` argument in `geom_histogram()` to play around with the number
-> of bins in your histogram. Try different numbers of bins to explore how that
-> changes the results! 
->
-
-
-```{r challenge-s2-4}
-## Your code to answer the challenge goes here!
-
-
-```
-
-
-
-### Bar Charts  (Categorical Variables)
-
-At first glimpse, you would think that a bar plot would be simple to create, but
-bar plots reveal a subtle nuance of the plots we have created thus far. The 
-following bar chart displays the total number of rodents in the `surveys` 
-dataset, grouped by their species ID. 
-
-```{r bar1}
-surveys %>% 
-  ggplot(mapping = aes(x = species_id)) + 
-  geom_bar()
-```
-
-The x-axis displays the levels of `species_id`, a variable in the 
-`surveys` dataset. On the y-axis `count` is displayed, but `count` is 
-**not** a variable in our dataset! Where did `count` come from? Graphs, such as
-the scatterplots, display the raw values of your data. Other graphs, like bar 
-charts and boxplots, calculate new values (from your data) to plot. 
-
-*  Bar charts and histograms bin your data and then plot the number of 
-observations that fall in each bin.
-
-*  Boxplots find summaries of your data (min, max, quartiles, median) and plot 
-those summaries in a tidy box, with "potential outliers" (data over 1.5*IQR from
-Q1 or Q3) plotted as points.
-
-*  Smoothers (as used in `geom_smooth`) fit a model to your data (you can 
-specify, but we used the `gam` (generalized additive model from the `mgcv`
-package) default) and then plot the predicted means from that model (with
-associated 95% confidence intervals).
-
-
-To calculate each of these summaries of the data, `R` uses a different 
-statistical transformation, or *stat* for short. With a bar chart this looks 
-like the following process:  
-
-1. `geom_bar` first looks at the entire data frame  
-2. `geom_bar` then transforms the data using the `count` statistic  
-3. the `count` statistic returns a data frame with the number of observations 
-(rows) associated with each level of `species_id`  
-4. `geom_bar` uses this summary data frame, to build the plot -- levels of
-`species_id` are plotted on the x-axis and `count` is plotted on the y-axis  
-
-Generally, you can use `geoms` and `stats` interchangeably. This is because
-every `geom` has a default `stat` and vice versa. For example, the following
-code produces the same output as above:  
-
-```{r bar2}
-surveys %>% 
-  ggplot(mapping = aes(x = species_id)) + 
-  stat_count()
-```
-
-If you so wish, you could override the default `stat` for that `geom`. For
-example, if you wanted to plot a bar chart of proportions you would use the
-following code to override the `count` stat:  
-
-```{r bar3}
-surveys %>% 
-  ggplot(mapping = aes(x = species_id)) + 
-  geom_bar(aes(y = after_stat(prop), group = 1))
-```
-
-
-### Challenge 5 
-
->
-> Why do we need to set `group = 1` in the above proportion bar chart? 
-> In other words, what is wrong with the plot below?  
->
-
-```{r bar4}
-## What is wrong with this plot? 
-surveys %>% 
-  ggplot(mapping = aes(x = species_id)) + 
-  geom_bar(aes(y = after_stat(prop)))
-
-```
-
-
-### Colored and/or Stacked Bar Charts
-
-Another piece of visual appeal to creating a bar chart is the ability to use 
-colors to differentiate the different groups, or to plot two different variables
-in one bar chart (stacked bar chart). Let's start with adding color to our bar
-chart.  
-
-#### Coloring Bars 
-
-As we saw before, to add a color aesthetic to the plot we need to map it to a 
-variable. However, if we use the `color` option that we used before we get a 
-slightly unsatisfying result.  
-
-```{r bar5, fig.height=3, fig.width=6}
-surveys %>% 
-  ggplot(mapping = aes(x = species_id, color = species_id)) + 
-  geom_bar()
-```
-
-We notice that the color only appears in the outline of the bars. For a bar 
-chart, the aesthetic that we are interested in is the `fill` of the bars.  
-
-
-### Challenge 6
-
->
-> Change the code below so that each bar is filled with a different color. 
-
-```{r challenge-s2-6-example, fig.height=3, fig.width=6}
-surveys %>% 
-  ggplot(mapping = aes(x = species_id, color = species_id)) + 
-  geom_bar()
-```
-
-```{r challenge-s2-6}
-
-
-```
-
-#### Stacking Bars 
-
-Now suppose you are interested in whether the number of male and female rodents captured differs by species. This would require for you to create a bar plot with 
-two categorical variables. You have two options:  
-
-1. each of the bars for sex could be stacked within a species *OR* 
-2. the bars for sex could be side-by-side within a species  
-
-Let's see how the two approaches differ. To stack bars of a second categorical 
-variable we would instead use this second categorical variable as the `fill` of
-the bars. Run these two lines of code and see how they differ. 
-
-```{r stacking}
-surveys %>% 
-  ggplot(mapping = aes(x = species_id, fill = sex)) + 
-  geom_bar()
-
-surveys %>% 
-  ggplot(mapping = aes(x = species_id, fill = sex)) + 
-  geom_bar(position = "dodge")
-```
-
-In the first plot, the position was chosen automatically, but in the second plot
-the `position` argument was made explicit. What changes did this make in the 
-plots? 
-
-Finally, we can also choose the `position` to be `fill` for the bars and to `fill` the bars based on `sex`:
-
-```{r stacking2}
-surveys %>% 
-  ggplot(mapping = aes(x = species_id, fill = sex)) + 
-  geom_bar(position = "fill")
-```
-
-Notice that the y-axis label still says "count" instead of "proportion". We will 
-learn how to change labels later when we discuss [**Customization**](#customization).
-
-
-## Time-series Data
-
-Let's calculate number of counts per year for each genus. 
-
-*Preview of Data Wrangling:* First we need to group the data and count 
-records within each group!  
-
-```{r timeseries1}
-yearly_counts <- surveys %>%
-  count(year, genus) 
-  ## counts the number of observations (rows) for each year, genus combination 
-  ## and creates a new variable "n" and creates a new variable "n"
-
-yearly_counts
-```
-
-Time series data can be visualized as a line plot with years on the x-axis and 
-counts on the y-axis: 
-
-```{r timeseries2}
-yearly_counts %>% 
-  ggplot(mapping = aes(x = year, y = n)) +
-     geom_line()
-```
-
-Unfortunately, this does not work because we plotted data for all the genera
-together. We need to tell `ggplot()` to draw a line for each genus by modifying
-the aesthetic function to include `group = genus`:
-
-```{r timeseries3}
-yearly_counts %>% 
-  ggplot(mapping = aes(x = year, y = n, group = genus)) +
-    geom_line()
-```
-
-Unfortunately, we can't tell what line corresponds to which genus. We will be 
-able to distinguish genera in the plot if we add colors (using `color` also 
-automatically groups the data):
-
-```{r timeseries4}
-yearly_counts %>% 
-ggplot(mapping = aes(x = year, y = n, color = genus)) +
-    geom_line()
-```
-
->**Note:** When specifying the color for a line graph, you don't need to use both the 
->`color = <VARIABLE>` argument and the `group = <VARIABLE>` argument. Both do the 
->same grouping of observations! So you just need to specify the `color` argument.
-
-
-### Faceting
-
-**`ggplot2`** has a special technique called *faceting* that allows the user to 
-split one plot into multiple plots based on a categorical variable included in 
-the dataset. 
-
-There are two types of `facet` functions:
-
-* `facet_wrap()` arranges a one-dimensional sequence of panels to allow them to 
-cleanly fit on one page -- used for one variable
-* `facet_grid()` allows you to form a matrix of rows and columns of panels --
-used for two variables  
-
-Both geometries allow you to specify faceting variables using formula notation
-or the `vars()` function. We will use the formula notation, as you will use this
-notation when creating models (not covered in this workshop).
-
-This looks like: `facet_wrap(facets = ~ facet_variable)` or 
-`facet_grid(row_variable ~ col_variable)`. 
-
-Let's start by using `facet_wrap()` to make a time series plot for each species:
-
-```{r facet1, fig.height=3, fig.width=6}
-yearly_counts %>% 
-  ggplot(mapping = aes(x = year, y = n)) +
-    geom_line() +
-    facet_wrap(facets = ~ genus)
-```
-
-Now we would like to split the line in each plot by the sex of the rodent 
-captured. To do that we need to make counts in the data frame grouped by `year`,
-`species_id`, and `sex`:
-
-```{r facet2}
-yearly_sex_counts <- surveys %>%
-  count(year, species_id, sex)
-## counts the number of observations (rows) for each year, species, sex combination
-
-yearly_sex_counts
-```
-
-We can now make the faceted plot by splitting further by sex using `color` 
-(within each panel):
-
-```{r facet3, fig.height=4, fig.width=6}
-yearly_sex_counts %>% 
-  ggplot(mapping = aes(x = year, y = n, color = sex)) +
-    geom_line() +
-    facet_wrap(facets =  ~ species_id)
-```
-
-You can also organize the panels only by rows (or only by columns), using the 
-optional `nrow` and `ncol` arguments:
-
-```{r facet4, fig.height = 8.5, fig.width = 8}
-yearly_sex_counts %>% 
-  ggplot(mapping = aes(x = year, y = n, color = sex)) +
-  geom_line() +
-  facet_wrap(~ species_id, ncol = 1)
-  # One column, facet by rows
-```
-
-```{r facet5, fig.width = 9.5, fig.height = 5}
-yearly_sex_counts %>% 
-  ggplot(mapping = aes(x = year, y = n, color = sex)) +
-    geom_line() +
-    facet_wrap(~ species_id, nrow = 1)
-  # One row, facet by columns
-```
-
-Now let's use `facet_grid()` to control how panels are organized by both rows 
-and columns:
-
-```{r facet6, fig.width = 9.5}
-yearly_sex_counts %>% 
-  ggplot(mapping = aes(x = year, y = n, color = sex)) +
-    geom_line() +
-    facet_grid(sex ~ species_id)
-```
-
-
-
-### Challenge 7
-
->
-> Use what you just learned to create a plot that depicts how the average weight
-> of each species changes through the years. 
-> Play around with which variable you facet by versus plot by!
-
-```{r challenge-s2-7, error=TRUE}
-## To get you started:  
-yearly_species_weight <- surveys %>% 
-  group_by(year, species_id) %>%
-  ## Variables to group by
-  summarize(avg_weight = mean(weight))
-
-## Edit the following ggplot() code for the plot here:
-yearly_species_weight %>%
-  ggplot(mapping = aes(x = year, y = n, color = avg_weight)) +
-    geom_line() +
-    facet_wrap(facets =  ~ species_id)
-## Your ggplot() code for the plot goes here!
-
-```
-
-## **`ggplot2`** Themes
-
-Usually plots with white background look more readable when printed. 
-Every single component of a `ggplot()` graph can be customized using the generic 
-`theme()` function, as we will see below. However, there are pre-loaded themes 
-available that change the overall appearance of the graph without much effort. 
-
-For example, we can change our previous graph to have a simpler white background 
-using the `theme_bw()` function:
-
-```{r themes1, fig.height=3, fig.width=6}
-yearly_sex_counts %>% 
- ggplot(mapping = aes(x = year, y = n, color = sex)) +
-     geom_line() +
-     facet_wrap(~ species_id) +
-     theme_bw()
-```
-
-In addition to `theme_bw()`, which changes the plot background to white, 
-**`ggplot2`**comes with several other themes which can be useful to quickly 
-change the look of your visualization. The complete list of themes is available
-at <https://ggplot2.tidyverse.org/reference/ggtheme.html>. `theme_minimal()` and
-`theme_light()` are popular, and `theme_void()` can be useful as a starting
-point to create a new hand-crafted theme.
-
-The
-[ggthemes](https://jrnold.github.io/ggthemes/reference/index.html) package
-provides a wide variety of options.
-The [**`ggplot2`** extensions website](https://exts.ggplot2.tidyverse.org/) provides a 
-list of packages that extend the capabilities of **`ggplot2`**, including 
-additional themes.
-
-
-### Challenge 8
-
->
-> Use what you just learned to add the plotting background theme 
-> of your choosing to the plot you made in Challenge 7!
-
-```{r challenge-s2-8}
-## Your ggplot() code for the plot goes here!
-
-```
-
-
-## Customization {#customization}
-
-Take a look at the [**`ggplot2`** cheat sheet](https://github.com/rstudio/cheatsheets/blob/main/data-visualization-2.1.pdf), 
-and think of ways you could improve the previous plot.
-
-### Plot Labels 
-
-Now, let's change names of axes to something more informative than 'year'
-and 'n' and add a title to the figure. Label customizations are done using the 
-`labs()` function like so:
-
-```{r labels}
-yearly_sex_counts %>% 
-  ggplot(mapping = aes(x = year, y = n, color = sex)) +
-  geom_line() +
-  facet_wrap(~ species_id) +
-  theme_bw() +
-  labs(title = "Observed Species Through Time",
-       x = "Year of Observation",
-       y = "Number of Rodents",  
-       color = "Sex") 
-```
-
->**Tip: Wrapping Titles**    
->
->Sometimes the titles we wish to have for our plots are longer than the space 
->originally allotted. If you create a title and the text is running off the plot
->you can add a `\n` inside your title to force a line break 
->(`\n` stands for new line).  
-
-
-### Label & Plot Fonts 
-
-Note that it is also possible to change the fonts of your plots. If you are on
-Windows, you may have to install
-the [**`extrafont`** package](https://github.com/wch/extrafont), and follow the
-instructions included in the README for this package.
-
-In the last plot, the axes have more informative names, but their readability 
-can be improved by increasing the font size. This can be done with the generic
-`theme()` function. 
-
-```{r fonts}
-yearly_sex_counts %>% 
-  ggplot(mapping = aes(x = year, y = n, color = sex)) +
-  geom_line() +
-  facet_wrap(~ species_id) +
-  theme_bw() +
-  labs(title = "Observed Species Through Time",
-      x = "Year of Observation",
-      y = "Number of Rodents", 
-      color = "Sex") +
-  theme(text = element_text(size = 16))
-    ## sets ALL the text on the plot to be size 16
-```
-
-**Note:**  
-`theme_bw()` is a function for a **specific** theme and `theme()` is a
-generic function for a **variety** of different themes!  
-
-After our manipulations, you may notice that the values on the x-axis are still 
-not properly readable. Let's swap the orientation of the labels, so the reader 
-doesn't have to tilt their head when reading our plot! The `coord_flip()` 
-function easily changes the x- and y-axis. 
-
-```{r flip, fig.height=4, fig.width=6}
-yearly_sex_counts %>% 
-  ggplot(mapping = aes(x = year, y = n, color = sex)) +
-  geom_line() +
-  facet_wrap(~ species_id) +
-  theme_bw() +
-  labs(title = "Observed Species by \n Year of Observation",
-      x = "Year of Observation",
-      y = "Number of Rodents", 
-      color = "Sex") +
-  theme(text = element_text(size = 16)) + 
-  coord_flip()
-    
-```
-
-This definitely makes the reader tilt their head less! But, the text on the 
-x-axis is a bit too large to separate the numbers. We can specify the text size 
-for each element of the plot independently, if we so wish. This would look 
-something like this:  
-
-```{r text-size, fig.height=4, fig.width=6}
-yearly_sex_counts %>% 
-  ggplot(mapping = aes(x = year, y = n, color = sex)) +
-  geom_line() +
-  facet_wrap(~ species_id) +
-  theme_bw() +
-  labs(title = "Observed Species by Year of Observation",
-        x = "",
-        y = "Number of Rodents", 
-        color = "Sex") +
-  theme(axis.text.x = element_text(size = 10), 
-        axis.text.y = element_text(size = 12), 
-        axis.title.x = element_text(size = 14),
-        legend.text = element_text(size = 12),
-        legend.title = element_text(size = 12),
-        plot.title = element_text(size = 16)) + 
-  coord_flip()
-    
-```
-
-
-### Legend Position
-
-By default in `ggplot2` the legend is positioned on the right hand side. 
-However, you are able to change the position of the legend to the left hand 
-side, the top of the plot, or the bottom of the plot. 
-
-This is done by adding a `legend.position` theme to the plot's `theme()`'s. 
-
-```{r legend-pos, fig.height=4, fig.width=6}
-yearly_sex_counts %>% 
-  ggplot(mapping = aes(x = year, y = n, color = sex)) +
-    geom_line() +
-    facet_wrap(~ species_id) +
-    labs(title = "Observed Species by Year of Observation by Sex",
-        x = "Year of Observation",
-        y = "Number of Rodents", 
-        color = "Sex") +
-  theme_bw() +
-  theme(axis.text.x = element_text(size = 10), 
-        axis.text.y = element_text(size = 12), 
-        axis.title.x = element_text(size = 14),
-        legend.text = element_text(size = 12),
-        legend.title = element_text(size = 14),
-        plot.title = element_text(size = 14), 
-        legend.position = "top") + 
-  coord_flip()
-    
-```
-
-
-### Removing Grid Lines 
-
-By default, the background of a `ggplot()` contains both minor and major 
-gridlines. These can make the plot look a bit busy and sometimes difficult for the reader 
-to follow. As you may have guessed, to remove these gridlines, we add another
-theme to our plot. 
-
-This looks like this:
-
-```{r remove-grid, fig.height=4, fig.width=6}
-yearly_sex_counts %>% 
-  ggplot(mapping = aes(x = year, y = n, color = sex)) +
-  geom_line() +
-  facet_wrap(~ species_id) +
-  labs(title = "Observed Species by Year of Observation by Sex",
-      x = "Year of Observation",
-      y = "Number of Rodents", 
-      color = "Sex") +
-  theme(axis.text.x = element_text(size = 10), 
-        axis.text.y = element_text(size = 12), 
-        axis.title.x = element_text(size = 14),
-        legend.text = element_text(size = 12),
-        legend.title = element_text(size = 14),
-        plot.title = element_text(size = 14), 
-        legend.position = "top", 
-        ## New themes for the grid lines
-        axis.line = element_line(color = "black"),
-        ## 
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        panel.border = element_blank(), 
-        panel.background = element_blank()) + 
-  coord_flip()
-    
-```
-
-Let's break these options down!  
-
-- The `axis.line` option declares what color the x- and y-axis lines should be. 
-(Change it to a different color, if you don't believe me!)
-- The `panel.grid.major` removes the major grid (the one associated with the 
-ticks from the x- and y-axis).  
-- The `panel.grid.minor` removes the minor grid (the one *between* the x- and 
-y-axis ticks).  
-- The `panel.border` removes the border around the plot.  
-- The `panel.background` performs a similar action to `theme_bw()`, but it keeps 
-the border around the facet labels.    
-
-
-### Changing Colors 
-
-The built in `ggplot()` color scheme may not be what you were looking for, but 
-don't worry! There are many other color palettes available to use!  
-
-You can change the colors used by `ggplot()` a few different ways.  
-
-#### Manual Specification 
-
-Add the `scale_color_manual()` or `scale_fill_manual()` functions to your 
-plot and directly specify the colors you want to use. You can either:  
-
-- defining a vector of colors right there (e.g. `values = c("blue", "black", "red", "green")`)  
-
-- creating a vector of colors and storing it in an object and calling it 
-(see below)
-
-```{r manual-colors}
-# A color deficient friendly palette with grey:
-cbPalette_grey <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", 
-                    "#0072B2", "#D55E00", "#CC79A7")
-
-# A color deficient friendly palette with black:
-cbPalette_blk <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", 
-                   "#0072B2", "#D55E00", "#CC79A7")
-
-surveys %>% 
-  ggplot(aes(x = species_id, y = hindfoot_length, color = genus)) +
-  geom_boxplot() +
-  scale_color_manual(values = cbPalette_grey)
-
-surveys %>% 
-  ggplot(aes(x = species_id, y = hindfoot_length, color = genus)) +
-  geom_boxplot() +
-  scale_color_manual(values = cbPalette_blk)
-
-
-```
-
-#### Package Specification 
-
-Install a package and use it's available color scales. Popular options 
-include:  
-
-- `RColorBrewer`: using `scale_fill_brewer()` or `scale_color_brewer()` 
-
-- `viridis`: using `scale_color_viridis_d()` for discrete data, 
-`scale_color_viridis_c()` for continuous data, with an inside 
-argument of `option = <COLOR>` for your chosen color scheme  
-
-- `ggsci`: using `scale_color_<PALNAME>()` or `scale_fill_<PALNAME>()`, where
-you specify the name of the palette you wish to use (e.g., `scale_color_aaas()`)
-
-### Challenge 9
-
->
-> With all of this information in hand, please take another five minutes to
-> either improve one of the plots generated in this exercise or create a
-> beautiful graph of your own. Use the RStudio [**`ggplot2`** cheat sheet](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf)
-> for inspiration. Here are some ideas:
->
-> * See if you can change the thickness of the lines.
-> * Try using a different color palette 
-> * Can you find a way to change the name of the legend? What about its labels?
->   (see http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/).
-
-```{r challenge-s2-9}
-## your code for the challenge goes here!
-
-```
-
-## Arranging Plots
-
-Faceting is a great tool for splitting one plot into multiple plots, but 
-sometimes you may want to produce a single figure that contains multiple plots 
-using different variables or even different data frames. The **`gridExtra`** 
-package allows us to combine separate ggplots into a single figure using 
-`grid.arrange()` (make sure to scroll down in the window to see all the code):
-
-```{r arrange, message = FALSE, fig.width = 10, fig.height=6}
-library(gridExtra)
-
-spp_weight_boxplot <- surveys %>% 
-  ggplot(aes(x = genus, y = weight)) +
-  geom_violin() +
-  geom_jitter(color = "tomato", width = 0.2, alpha = 0.2) +
-  scale_y_log10() +
-  ## log (base 10) transforms the y-axis variable
-  ## (helps to make the plot less skewed)
-  labs(x = "", 
-       ## removes the y-axis label
-       y = expression(Log[10](Weight))) +
-       ## Expression creates a mathematical expression in the axis label
-       ## the [10] refers to the subscript next to Log
-  coord_flip() + 
-  theme(axis.text.y = element_text(size = 12), 
-        axis.text.x = element_text(size = 12), 
-        text = element_text(size = 16))
-
-spp_count_plot <- yearly_counts %>% 
-  ggplot(aes(x = year, y = n, color = genus)) +
-  geom_line() + 
-  labs(x = "Year", 
-       y = "Abundance", 
-       color = "Genus") +
-  theme(axis.title.x = element_text(face = "bold", size = 12))
-  ## To make your axis title boldface, this is what you need!
-
-grid.arrange(spp_weight_boxplot, spp_count_plot, ncol = 2, widths = c(4, 6))
-## nrow and ncol specify how many rows/columns you want the arranged plots to be in
-## widths specify what proportion of the overall plotting area each plot takes up
-```
-
-In addition to the `ncol` and `nrow` arguments, used to make simple arrangements,
-there are tools for [constructing more complex layouts](https://cran.r-project.org/web/packages/gridExtra/vignettes/arrangeGrob.html). 
-
-
-For more assistance arranging plots with `grid.arrage()`. We find the following 
-vignette **very** helpful! https://cran.r-project.org/web/packages/egg/vignettes/Ecosystem.html
-
-Another option for combining plots is the [patchwork package](https://patchwork.data-imaginist.com/). It uses a sort of formula interface for defining the layout of multiple plots. For example, you can get two plots side-by-side in a one row, two column array with `p1 + p2` and two plots stacked into two rows and one column with `p1 / p2`. This provides both a quick and powerful way to arrange ggplots you have created.
-						   
-
-```{r arrange2, message = FALSE, fig.width = 10, fig.height=6, exercise = TRUE}
-spp_weight_boxplot / spp_count_plot
-
-```
-
-
-## Exporting Plots 
- 
-
-After creating your plot, you can save it to a file in your favorite format. The
-Export tab in the **Plot** pane in RStudio will save your plots at low 
-resolution, which will not be accepted by many journals and will not scale well 
-for posters. 
-
-Instead, use the `ggsave()` function, which allows you easily change the 
-dimension and resolution of your plot by adjusting the appropriate arguments:  
-
-- `width` and `height`: adjust the total plot size in units ("in", "cm", or "mm")
-  * If units are not specified, default is inches. 
-- `dpi`: adjusts the plot resolution. This accepts a string or numeric input: 
-    * "retina" (320)
-    * "print" (300) 
-    * "screen" (72)
-    
-Make sure you have the `fig/` folder in your working directory. The first line 
-of code checks to see if that folder exists, and if not, creates it.
-
-```{r export, fig.height=4, fig.width=6}
-# Specify where you want figures to be saved relative to current directory
-if(!dir.exists("fig")){dir.create("fig")}
-
-my_plot <- ggplot(data = yearly_sex_counts, 
-                  mapping = aes(x = year, y = n, color = sex)) +
-              geom_line() +
-              facet_wrap(~ species_id) +
-              labs(title = "Observed genera through time",
-                    x = "Year of observation",
-                    y = "Number of individuals") +
-              theme_bw() +
-              coord_flip() + 
-              theme(axis.text.y = element_text(color = "grey20", size = 12),
-                    text = element_text(size = 16))
-
-ggsave("fig/yearly_sex_counts.png", my_plot, width = 15, height = 10)
-
-# This also works for grid.arrange() plots
-combo_plot <- grid.arrange(spp_weight_boxplot, spp_count_plot, 
-                           ncol = 2, widths = c(4, 6))
-
-ggsave("fig/combo_plot_abun_weight.png", combo_plot, width = 10, dpi = 300)
-```
-
-> **Note:** 
-> The parameters `width` and `height` also determine the font size in the 
-> saved plot.
-
-
-### Interactive Graphics (Bonus Material)
-
-
-In certain situations, static displays can limit the sorts of information available and do not allow easy interrogation for information on individual aspects of plots. Obviously, most print journals do not have a way to have readers interact with the printed page, but in digital venues there are some possibilities. Of particular interest here are interactive graphics that can function on websites and in blog posts or even in certain presentation formats. One way to do this that leverages the previous work in making `ggplot`-style graphics is using the `ggplotly` function from the `plotly` R package (Sievert, 2020). You can access the 2020 book that goes into more detail on `plotly`-style graphics at https://plotly-r.com/. 
-
-To use `ggplotly`, we wrap that function around a `ggplot` object and it will render it in an interactive fashion when the viewer hovers over individual plot components. There are also ways of making `plotly` graphs directly using `plot_ly` and that may prove easier for some things, for example for making interactive three-dimensional graphs. 
-
-Here are two examples that we worked with earlier converted into `ggplotly` objects that allow further interrogation of the information displayed:
-
-```{r plotlydemo, message = FALSE, eval=FALSE}
-library(plotly)
-
-spp_weight_boxplot <- surveys %>% 
-  ggplot(aes(x = genus, y = weight)) +
-  geom_violin() +
-  geom_jitter(color = "tomato", width = 0.2, alpha = 0.2) + 
-  scale_y_log10() +
-  ## log (base 10) transforms the y-axis variable
-  ## (helps to make the plot less skewed)
-  labs(x = "", 
-       ## removes the y-axis label
-       y = "log10-Weight") +
-  coord_flip() + #Switches x and y axes
-  theme(axis.text.y = element_text(size = 12), 
-        axis.text.x = element_text(size = 12), 
-        text = element_text(size = 16)) +
-  theme_bw()
-
-spp_count_plot <- yearly_counts %>% 
-  ggplot(aes(x = year, y = n, color = genus)) +
-  geom_line() + 
-  labs(x = "Year", 
-       y = "Abundance", 
-       color = "Genus") +
-  theme(axis.title.x = element_text(face = "bold", size = 12)) +
-  theme_bw()
-
-ggplotly(spp_weight_boxplot);ggplotly(spp_count_plot)
-```
-
-
-
-One note about using `plotly` graphics in R-markdown is that they will not knit into word or PDF formats, only into HTML (in word or PDF, you are stuck with static images but you could incorporate a link to a website containing the interactive version of the plot). You can also interact with plots when working in markdown or running code in the console in RStudio. For presentations, you can also record a video of interactions with plot to remove some challenges of live presentations using this format. But if you are looking to wow your viewers in a digital format, need to dig into some details of what is displayed in a plot quickly, or when static graphics are limiting your story-telling ability, remember that there might be another option!
-
-
-
-
-<!--chapter:end:02-dataViz.Rmd-->
-
-# Coding with Generative AI
-
-\includepdf[pages=-]{Gen AI Workshop - 8 Aug 2025.pdf}
-
-
-<!--chapter:end:03-genAI.Rmd-->
-
-# Data Wrangling in R
-
-
-```{r setup4, include=FALSE}
-library(tidyverse)
-library(lubridate)
-
-surveys <- read_csv("data/surveys2_subset.csv")
-plots <- read_csv("data/plots.csv")
-species <- read_csv("data/species.csv")
-```
-
-
-## Learning Objectives
-
->
-> *  Describe the purpose of the **`dplyr`** and **`tidyr`** packages.
-> *  Select certain columns in a data frame with the **`dplyr`** function 
-> `select`.
-> *  Select certain rows in a data frame according to filtering conditions with 
-> the **`dplyr`** function `filter` .
-> *  Link the output of one **`dplyr`** function to the input of another function
-> with the 'pipe' operator `%>%`.
-> *  Add new columns to a data frame that are functions of existing columns with
-> `mutate`.
-> *  Use the split-apply-combine concept for producing data summaries.
-> *  Use `summarize`, `group_by`, and `count` to split a data frame into groups 
-> of observations, apply summary statistics for each group, and then combine the
-> results.
-> *  Describe the concept of a wide and a long table format and for which 
-> purpose those formats are useful.
-> *  Describe what key-value pairs are.
-> *  Reshape a data frame from long to wide format and back with the 
-> `pivot_wider` and `pivot_longer` commands from the **`tidyr`** package.
-> *  Export a data frame to a .csv file.
-
-
-
-## Data Wrangling using **`dplyr`** & **`tidyr`** Intro
-
-Note that we're not using "data 
-manipulation" for this workshop, but are calling it "data wrangling." To us, "data manipulation" is a term that 
-captures the event where a researcher manipulates their data (e.g., moving 
-columns, deleting rows, merging data files) in a __non-reproducible__ manner. 
-Whereas, with data wrangling, all of these process are done, but in a 
-__reproducible__ manner, such as using an `R` script!
-
-Packages in `R` are basically sets of additional functions that let you do more
-stuff. The functions we've been using so far, like `str()` or `data.frame()`,
-come built into `R`; packages give you access to more of them. Before you use a
-package for the first time you need to install it on your machine, and then you
-should import it in every subsequent `R` session when you need it. You should
-already have installed the **`tidyverse`** package. This is an
-"umbrella-package" that installs several packages useful for data analysis which
-work together well such as **`tidyr`**, **`dplyr`**, **`ggplot2`**, 
-**`tibble`**, etc.
-
-The **`tidyverse`** package tries to address 3 common issues that arise when
-doing data analysis with some of the functions that come with `R`:
-
-1. The results from a base `R` function sometimes depend on the type of data.
-2. Using `R` expressions in a non-standard way, which can be confusing for new
-   learners.
-3. Hidden arguments, having default operations that new learners are not aware
-   of.
-
-We have seen in our previous sessions that when building or importing a data 
-frame, the columns that contain characters (i.e., text) are coerced (=converted)
-into the `factor` data type. We had to set **`stringsAsFactors`** to **`FALSE`**
-to avoid this hidden argument to convert our data type. 
-
-This time we will use the **`tidyverse`** package to read the data and avoid 
-having to set **`stringsAsFactors`** to **`FALSE`**
-
-### What are **`dplyr`** and **`tidyr`**?
-
-The package **`dplyr`** is built to work directly with data frames, with many 
-common tasks optimized by being written in a compiled language (C++). An 
-additional feature is the ability to work directly with data stored in an 
-external database. The benefits of doing this are that the data can be managed 
-natively in a relational database, queries can be conducted on that database, 
-and only the results of the query are returned.
-
-This addresses a common problem with `R` in that all operations are conducted
-in-memory and thus the amount of data you can work with is limited by available
-memory. The database connections essentially remove that limitation in that you
-can connect to a database of many hundreds of GB, conduct queries on it directly,
-and pull back into `R` only what you need for analysis.
-
-The package **`tidyr`** addresses the common problem of wanting to reshape your 
-data for plotting and use by different `R` functions. Sometimes we want datasets 
-where we have one row per measurement. Sometimes we want a data frame where each
-measurement type has its own column, and rows are instead more aggregated groups
-- like plots or aquaria. Moving back and forth between these formats is 
-nontrivial, and **`tidyr`** gives you tools for this and more sophisticated data
-wrangling.
-
-To learn more about **`dplyr`** and **`tidyr`** after the workshop, you may want
-to check out this
-[handy data transformation with **`dplyr`** cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf) and this [cheatsheet about **`tidyr`**](https://raw.githubusercontent.com/rstudio/cheatsheets/main/tidyr.pdf).
-
-### Presentation of the Survey Data (Review from Data Visualization Session)
-
-The data used in this session are a time-series for a small mammal community in southern Arizona. This is part of a project studying the effects of rodents and ants on the plant community that has been running for almost 40 years, but we will focus on the years 1996 to 2002 (_n_=11332 observations). The rodents are sampled on a series of 24 plots, with different experimental manipulations controlling which rodents are allowed to access which plots. This is simplified version of the full dataset that has been used in over 100 publications and was provided by the Data Carpentries (https://datacarpentry.org/ecology-workshop/data/). We are investigating the animal species diversity and weights found within plots in this workshop. The dataset is stored as a comma separated value (CSV) file.
-Each row holds information for a single animal, and the columns represent:
-
-| Column           | Description                        |
-|------------------|------------------------------------|
-| record\_id       | Unique id for the observation      |
-| month            | month of observation               |
-| day              | day of observation                 |
-| year             | year of observation                |
-| plot\_id         | ID of a particular plot            |
-| species\_id      | 2-letter code                      |
-| sex              | sex of animal ("M", "F")           |
-| hindfoot\_length | length of the hindfoot in mm       |
-| weight           | weight of the animal in grams      |
-
-
-We'll read in our data using the `read_csv()` function, from the tidyverse 
-package **`readr`**, instead of `read.csv()`.
-
-```{r load-data4}
-surveys <- read_csv("data/surveys2_subset.csv")
-```
-
-
-You will see the message `Column specification`, followed by each 
-column name and its data type. When you execute `read_csv` on a data file, it 
-looks through the first 1000 rows of each column and guesses the data type for 
-each column as it reads it into `R`. For example, in this dataset, `read_csv` reads
-`weight` as `col_double` (a numeric data type), and `species` as 
-`col_character`. You have the option to specify the data type for a column 
-manually by using the `col_types` argument in `read_csv`.
-
-
-```{r inspect-data4}
-## inspect the data
-glimpse(surveys)
-```
-
-```{r eval=FALSE, echo=TRUE}
-## Preview the data (opens a spreadsheet-like interface in RStudio)
-View(surveys)
-```
-
-```{r echo=FALSE}
-surveys
-```
-
-The dataset is stored as a "tibble". Tibbles tweak some of the behaviors of the 
-data frame objects we introduced previously. The data structure is
-very similar to a data frame. For our purposes the only differences are that:
-
-1. In addition to displaying the data type of each column under its name, it
-   only prints the first few rows of data and only as many columns as fit on one
-   screen.
-2. Columns of class `character` are never converted into factors.
-
-
-We're going to learn some of the most common **`dplyr`** functions:
-
-- `select()`: subset columns
-- `filter()`: subset rows on conditions
-- `mutate()`: create new columns by using information from other columns
-- `group_by()` and `summarize()`: create summary statistics on grouped data
-- `arrange()`: sort results
-- `count()`: count discrete values
-
-## Select, Filter, and Mutate
-
-### Selecting Columns and Filtering Rows
-
-To select columns of a data frame, use `select()`. The first argument
-to this function is the data frame (`surveys`), and the subsequent
-arguments are the columns to keep.
-
-Modify the following code to select the `plot_id`, `species_id`, and `weight` columns from the `survey` dataset:
-
-```{r select-columns}
-select(surveys)
-```
-
-```{r select-columns-solution, include=TRUE}
-select(surveys, plot_id, species_id, weight)
-```
-
-To select all columns *except* certain ones, put a "-" in front of
-the variable to exclude it.
-
-Modify the following code to select all columns *except* `record_id` and `species_id`:
-
-```{r donot-select-columns}
-select(surveys)
-```
-
-```{r donot-select-columns-solution, include=TRUE}
-select(surveys, -record_id, -species_id)
-```
-
-This will select all the variables in `surveys` except `record_id`
-and `species_id`.
-
-To choose rows based on a specific criteria, use `filter()`:
-
-```{r filter-rows-1999}
-filter(surveys, year == 1999)
-```
-
-In the code above `==` keeps all rows where the year is 1999. 
-
-Other filtering options include `!=`, which keeps all rows that are **not** a certain criteria, `,` which means **"and"**, and `|` which means **"or"**. Filter can also do `<` for "less than", `>` for "greater than", `<=` for "less than or equal to", and `>=` for "greater than or equal to". We type these last two options the same way we would typically say them.
-
-1.  `!=` example: 
-
-    ```{r filter-exclude-rows-example}
-    filter(surveys, year != 1999)
-    ```
-    
-    The code above keeps all rows where the year is not 1999. 
-    
-2.  `,` example:
-    
-    ```{r filter-comma-example}
-    filter(surveys, year == 1999 , plot_id == 2)
-    ```
-    
-    The code above keeps all rows where the year is 1999 for plot id 2, i.e., year 1999 and plot 2. The rows meet **both** of these criteria. 
-    
-
-3.  `|` example:
-
-    ```{r filter-or-example}
-    filter(surveys, year == 1999 | plot_id == 2)
-    ```
-    
-    The code above keeps all rows where the year is 1999 **or** is plot id 2, i.e., year 1999 or plot 2. The rows meet **either** of these criteria but not both. 
-    
-
-4.  `<` example:
-
-    ```{r less-than-example}
-    filter(surveys, weight < 8)
-    ```
-    
-    The code above keeps all rows where weight is less than 8. 
-    
-
-5.  `>` example:
-
-    ```{r greater-than-example}
-    filter(surveys, hindfoot_length > 30)
-    ```
-    
-    The code above keeps all rows where hindfoot length is greater than 30.
-    
-
-### Pipes
-
-What if you want to select and filter at the same time? There are three
-ways to do this: use intermediate steps, nested functions, or pipes.
-
-With intermediate steps, you create a temporary data frame and use
-that as input to the next function, like this:
-
-
-
-```{r pipes-example-1}
-surveys2 <- filter(surveys, weight < 6)
-surveys_sml <- select(surveys2, species_id, sex, weight)
-```
-
-This is readable, but can clutter up your workspace with lots of objects that 
-you have to name individually. With multiple steps, that can be hard to keep 
-track of.
-
-You can also nest functions (i.e., one function inside of another), like this:
-
-```{r pipes-example-2}
-surveys_sml <- select(filter(surveys, weight < 6), species_id, sex, weight)
-```
-
-This is handy, but can be difficult to read if too many functions are nested, as
-R evaluates the expression from the inside out (in this case, filtering, then 
-selecting).
-
-The last option are *pipes*. Pipes let you take
-the output of one function and send it directly to the next, which is useful
-when you need to do many things to the same dataset. We saw pipes in the data
-visualization session when piping data into `ggplot()` or summarizing data
-before visualizing.
-
-```{r pipes-example-3}
-surveys %>%
-  filter(weight < 6) %>%
-  select(species_id, sex, weight)
-```
-
-As a refresher, in the above code, we use the pipe to send the `surveys` dataset
-first through `filter()` to keep rows where `weight` is less than 6, then 
-through `select()` to keep only the `species_id`, `sex`, and `weight` columns.
-Since `%>%` takes the object on its left and passes it as the first argument to 
-the function on its right, we don't need to explicitly include the data frame as 
-an argument to the `filter()` and `select()` functions any more.
-
-Some may find it helpful to read the pipe like the word "then". For instance,
-in the above example, we took the data frame `surveys`, *then* we `filter`ed
-for rows with `weight < 6`, *then* we `select`ed columns `species_id`, `sex`,
-and `weight`. The **`dplyr`** functions by themselves are somewhat simple,
-but by combining them into linear workflows with the pipe, we can accomplish
-more complex wrangling of data frames.
-
-If we want to create a new object with this smaller version of the data, we
-can assign it a new name:
-
-
-
-```{r pipe-rename-example}
-surveys_sml <- surveys %>%
-  filter(weight < 6) %>%
-  select(species_id, sex, weight)
-
-surveys_sml
-```
-
-
-
-Note that the final data frame is the leftmost part of this expression.
-
-#### Challenge 1
-
->
->  Using pipes, subset the `surveys` data to include:
->
-  -  animals collected on or after 2001 and 
-  -  retain only the columns `year`, `sex`, and `weight`.
->
-
-```{r challenge-s4-1}
-## Pipes Challenge:
-##  Using pipes, subset the data to include animals collected
-##  on or after 2001, and retain the columns `year`, `sex`, and `weight.`
-```
-
-### Mutate
-
-Frequently you'll want to create new columns based on the values in existing
-columns, for example to do unit conversions, or to find the ratio of values in 
-two columns. For this we'll use `mutate()`.
-
-To create a new column of weight in kg from weight in grams:
-
-```{r create-column}
-surveys %>%
-  mutate(weight_kg = weight / 1000)
-```
-
-
-
-You can also create a second new column based on the first new column within the
-same call of `mutate()`:
-
-
-
-```{r create-two-columns}
-surveys %>%
-  mutate(weight_kg = weight / 1000,
-         weight_lb = weight_kg * 2.2)
-```
-
-
-
-If this runs off your screen and you just want to see the first few rows, you
-can use a pipe to view the `head()` of the data. (Pipes work with non-**`dplyr`**
-functions, too, as long as the **`dplyr`** or `magrittr` package is loaded).
-
-
-
-```{r create-column-head}
-surveys %>%
-  mutate(weight_kg = weight / 1000) %>%
-  head()
-```
-
-
-
-The first few rows of the dataset contain some missing observations (`NA`s). If we wanted to remove any observations where there were missing values on `weight`, we could insert a `filter()` in the chain:
-
-
-
-```{r mutate-filter}
-surveys %>%
-  filter(!is.na(weight)) %>%
-  mutate(weight_kg = weight / 1000) %>%
-  head()
-```
-
-
-
-`is.na()` is a function that determines whether something is an `NA`. The `!`
-symbol negates the result, so in the code above we're asking for every row where weight *is not* 
-an `NA`.
-
-#### Challenge 2
-
->
->  Create a new data frame from the `surveys` data named `surveys_hindfoot_cm` 
-> that meets the following criteria:
->
--  contains only the `species_id` column and 
--  a new column called `hindfoot_cm` containing the `hindfoot_length` values 
-   converted to centimeters (they are in mm).
--  Make sure that you only retain values in the hindfoot_cm column that are not missing (not NA) and are less than 3 cm.
--  Then print out the `head()` of the new data frame.
->
->  **Hint**: think about how the commands should be ordered to produce this data frame!
-> 
-
-
-
-```{r challenge-s4-2} 
-## Mutate Challenge:
-##  Create a new data frame from the `surveys` data named `surveys_hindfoot_cm`
-##  that meets the following criteria: 
-##  * contains only the `species_id` column and 
-##  * a new column called `hindfoot_cm` containing the `hindfoot_length` values 
-##    converted to centimeters.
-##  * Make sure that you only retain values in the hindfoot_cm column that are
-##    not missing (not NA) and are less than 3 cm.
-##  Then print out the head of the new data frame.
-
-##  Hint: think about how the commands should be ordered to produce this data frame!
-
-```
 
 ### Using `lubridate` for Dates 
 
@@ -3115,6 +3056,7 @@ now() # Today's date, with time and timezone!
 ```
 
 ```{r lubridate-example2, message = FALSE}
+surveys <- read_csv("data/surveys2.csv")
 surveys_w_days <- surveys %>% 
   mutate(date = ymd(paste(year,
                           month,
@@ -4003,159 +3945,6 @@ write_csv(surveys_complete_subset, file = "data/surveys_complete_subset.csv")
 
 
 
-
-
-
-<!--chapter:end:04-dataWrangling.Rmd-->
-
-# Appendix {-}
-
-## Terminology Used in Workshop
-
-* *Command*: A command is what `R` executes. In an `R` script file (script.R), 
-commands are automatically implied, as this type of file does not accept text, 
-only in comments. In an Rmd (Markdown) file (report.Rmd), commands are 
-delineated between three ticks on the top (```` ```{r}````) and three 
-ticks (```` ``` ````) on the
-bottom.      
-
-    ````
-    ```{r}`r ''`
-    # Your code goes here
-    ```  
-    ````
-
-* *Comment*: Helpful text added into a script environment. Comments can be used
-to describe functions, processes, a train of thought, so that when you return to
-your code, tomorrow or next year, you are able to understand the purpose of each
-line of code! Comments are preceded by at least on `#` within a code chunk. 
-
-* *Object*: A variable created in `R`, to be used elsewhere in the code. Objects
-can be a variety of things, such as scalars (`x <- 3`), vectors (`x <- c(1, 2, 3, 
-4, 5)`), matrices, and dataframes, to name a few.  
-
-* *Assignment Arrow*: The assignment arrow `<-` is used to assign values on the 
-right to the objects on the left (`x <- 1`). For historical reasons, you can also 
-use `=` for assignments, but not everywhere. Because of these slight 
-differences, it is recommended to *always* use assignment arrows for assignment. 
-
-* *Class*: Most `R` objects have a class attribute, a character vector giving 
-the names of the classes from which the object inherits. Examples of classes are
-numeric, factor, integer, character, dataframe, matrix, list. 
-
-* *Vector*: A vector is a list of entries, all sharing the same class. A vector 
-has only one dimension, so data extraction uses only a single entry in brackets 
-(e.g. `x[3]`). You can create vectors of characters (`c("a", "b", "c")`), vectors of 
-numbers (`c(1, 2, 3)`), to name a few.
-
-* *Matrix*: Similar to what you may have seen in a mathematics class, a matrix 
-is an object with rows and columns, where every entry in the matrix must be a 
-number. 
-
-* *List*: A generic vector, which contains other objects. A list can contain a
-variety of different classes of objects, e.g., characters, vectors, data.frames, 
-matrices, or outputs from a model! A data.frame is a special type of list where
-the components are vectors and they all have the same length. 
-
-* *Dataframe*: A dataframe is a collection of variables. Dataframes share many 
-of the properties of matrices, where you are able to extract elements using 
-bracket (`[]`) notation, and lists, where you are able to extract columns using 
-`$`. Dataframes are used as the fundamental data structure by most of `R`'s 
-statistical modeling software. Note that tibbles have been more recently created as 
-part of the tidyverse and provide a similar but slightly different object where 
-you can store your data.
-
-* *Argument*: Input(s) into a function, so that an output is created. Most 
-functions take named arguments (e.g., `data = BlackfootFish`) and the order of the 
-arguments is assumed to follow the order found in the function's help file. When
-using a named argument in a function, the name comes first, followed by an `=` 
-sign, then the input. 
-
-* *Logical Value*: `TRUE` and `FALSE` value(s) that can be used to turn off/on 
-options in functions and plots, and also to manipulate data. 
-
-## Workshop Materials & Recordings Available:
-
-* email Sara Mannheimer (sara.mannheimer@montana.edu)
-
-* through the MSU Library Data Science website (http://www.montana.edu/datascience/)
-
-## How to Learn More About `R` and `RStudio`
-
-This material is intended to provide you with an introduction to using `R` for 
-scientific analyses of data. The best way for you to continue to learn more 
-about `R` is to use it in your research! This may sound daunting, but writing 
-`R` scripts is the best way to become familiar with the syntax. This will help 
-you progress through more advanced operations, such as cleaning your data, 
-using statistical methods, or creating graphics. 
-
-The best place to start is playing around with the code from today's workshop.
-Change parts of the code and see what happens! Better yet, use the code from the
-workshop to investigate your own data! 
-
-### Clean Code 
-
-Yes, writing code may be completely new to you, but there is a difference between
-code that looks nice and code that does not. Generally, object names should be 
-nouns and function names should be verbs. It is also important that your code 
-looks presentable, so that a friend/college/professor can read it and understand
-what you are doing. For these reasons, there are style guides for writing code 
-in `R`. The two main style guides are Google's
-https://google.github.io/styleguide/Rguide.xml and the slightly 
-more comprehensive  Tidyverse style guide
-https://style.tidyverse.org/. Installing the `styler` package will allow you to highlight code and format it in a more legible way. Visit the tidyverse page https://style.tidyverse.org/ for more information.
-
-### Projects in `RStudio`  
-
-`R` projects provide a way to organize all the code and data in one place and 
-many consider these the best way to work in `R`. We chose to avoid this step 
-and just use a single .Rmd file to expedite your first experience using `R`. 
-A motivation for using projects is that it is important to organize your data
-and script files into the same or related locations and have different 
-locations for different iterations of projects. If you don't do this:
-
-* it is really hard to tell which version of your data is original and what
-versions are modified  
-* things get really messy because all types of files are mixed together  
-* it's probably hard for you to find things and relate the correct files to 
-their respective output  
-
-Ultimately, good project organization will make your life easier! It helps 
-ensure the integrity of your data, makes it simpler to share your code or get
-help with your code, allows for you know exactly what code you used on a 
-paper, and it's easier to pick a project back up. 
-
-It is good code writing and file storage practice to keep a set of all related 
-data, analysis, plots, documents, etc. in the same folder. RStudio makes this 
-process easy with using their projects. In an RStudio project, all of the 
-project's pieces are in the same folder. This allows for a clean 
-workflow and a simple working directory for `R`. When you are executing code for
-a document/script `R` will search for things (such as data) in the 
-\underline{same} folder as the document/script, which is called a 
-_relative path_.
-
-Whenever you start working on a new project in 
-RStudio, go through the following steps:
-
-1. Click on the "File" menu button, then select "New Project"    
-2. Click "New Directory"  
-3. Click "New Project"  
-4. Create a name for your project (make it explanatory!)  
-5. Select where the project should live  
-6. Click the "Create Project" button  
-7. Open the project!
-
-After this process `R` will be searching for objects (such as data) in the 
-\underline{same} folder as the project. This allows for us to keep all of our
-files in a self-contained system. 
- 
-After saving your previous work today, you can try to create a project in a 
-new folder on your computer. After you create the project, you can create a new 
-.Rmd file and copy and paste the text from this document into this file. And 
-move a copy of the BlackfootFish.csv into the project folder you created. 
-Whenever you open this project it will take you directly to the work you have 
-done in that project folder. It may be useful to close the project before 
-exiting RStudio to avoid confusion in later sessions. 
 
 
 <!--chapter:end:05-appendix.Rmd-->
