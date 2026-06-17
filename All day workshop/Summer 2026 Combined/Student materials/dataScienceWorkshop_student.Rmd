@@ -2,7 +2,9 @@
 title: "Montana State University - Data Science Workshop"
 author: "Data Carpentry contributors & MSU Data Science Workshops Team"
 date: "August 14, 2026"
-output: pdf_document
+output:
+  pdf_document:
+    latex_engine: xelatex
 description: "Course materials for the all-day data science workshop where you'll
   learn to \nuse the R programming language for data science applications.\n"
 mainfont: Calibri
@@ -19,6 +21,8 @@ geometry:
 - left=0.75in
 - bindingoffset=0.5in
 - asymmetric
+header-includes:
+   - \usepackage{fontspec}
 ---
 
 # About {-}
@@ -27,9 +31,9 @@ geometry:
 
 Join us for an all-day workshop where you'll learn to use the `R` programming language for data science applications. These concepts will be presented in an interactive format, integrating instruction and computational practice. Montana University system graduate students, undergrads, staff, faculty, and community members are all welcome to join. The full schedule is below.  
 
-**Location:** Montana State University, TBD - with an online option
-**Date:** Friday, August 14, 2025
-**Time:** 9 a.m. - 5 p.m.
+**Location:** Montana State University, TBD - with an online option  
+**Date:** Friday, August 14, 2026  
+**Time:** 9 a.m. - 5 p.m.  
 
 ### Introduction to `R` - 9-10:30am  {-}
 
@@ -101,20 +105,30 @@ cross-platform, so that everyone's versions look and operate the same regardless
 of their operating system! 
 
 For this workshop, we will be making use of the RStudio that you will need to 
-install on your computer. First you will want to go to https://cran.r-project.org/ 
+install on your computer. 
+
+1.  First you will want to go to https://cran.r-project.org/ 
 to download for your specific operating system, run the `R` installer that you 
-downloaded and then go to https://posit.co/download/rstudio-desktop/ to download 
+downloaded and  
+1.  then go to https://posit.co/download/rstudio-desktop/ to download 
 and install RStudio.
 
 For more assistance with getting set up, please check out the instructions 
 provided by Data Carpentries at 
 https://datacarpentry.org/R-ecology-lesson/#install-r-and-rstudio.
 You need to have a computer that is running Linux, Windows, or a somewhat recent 
-macOS. Unfortunately, a Chromebook or iPad are not sufficient for installing and 
-running R.
+macOS. Unfortunately, a Chromebook, iPad, Snapdragon, or other ARM type computers
+are not sufficient for installing and running R. If you have borrowed a computer
+from the library you will also not be able to install the necessary software.
+
+**NOTE:** If you are unable to install the software there are online apps that
+allow you to run RStudio. You can try https://webr.sh to see if that works for you.
 
 However you get to it, RStudio has four default panels, where each can be viewed at the 
-same time and has multiple tabs available.  
+same time and has multiple tabs available. The location of these tabs can be
+adjusted in the **View -> Panes -> Panes Layout...** section of the **Global Options**
+dialog, it is possible that your initial layout may be different than what is shown
+below. The content and function remains the same. (See Figure 1)
 
 - the __Editor__ for your scripts and documents (top-left - will be available once
 an RMD or script file is opened)  
@@ -124,7 +138,7 @@ an RMD or script file is opened)
 
 ![RStudio layout](images/rstudio.png)  
 
-You can use the Tools -> Global Options -> Appearance tab to modify the colors 
+You can use the **Tools -> Global Options -> Appearance** tab to modify the colors 
 and font sizes in RStudio.
 
 ### Projects in `RStudio`  
@@ -173,7 +187,10 @@ files in a self-contained system.
 You can either create a project in a new folder, or the existing folder containing
 the workshop materials.
 
-Go ahead and create your first project!
+### Challenge 1:
+
+Go ahead and create your first project! Create it in the **same directory** as the
+workshop files.
 
 ## Working in `R`  
 
@@ -191,23 +208,15 @@ three single quotes then `{r}` will delineate a code chunk.
 
 You can add these with Insert -> `R` into a .Rmd file. Type all of your code in 
 these code chunks and other documentation and interpretation of results outside 
-of the code chunks (like we are doing here). Although there are more complex ways 
-to work in RStudio, you should start today with saving this .Rmd  file into a 
-folder that also contains any data and other figures you might want to read into 
-this document. When you do that, RStudio will know where to look to read in the 
-data so you do not need to know the path for its physical location on your 
-computer. 
+of the code chunks (like we are doing here). 
 
 Once we are done with our local work, we can also use the `Knit` 
 button to compile our work into HTML, Word (DOCX), or PDF documents. We will
-demonstrate this at the end of the session - but this will only work if all 
+demonstrate this at the end of the workshop - but this will only work if all 
 the code "runs" and what we have provided you has some errors in it. One other
 feature we've come to expect in modern document editors is live spell-checknig - 
 I mean spell-checking - by underlining suspect words, which RStudio does without
-flagging code and variable names. We will also discuss RStudio "Projects" that
-take this one step further in terms of organizing your work built around this
-markdown framework. It is important to understand the various ways to do your 
-work in R using RStudio.
+flagging code and variable names. 
 
 RStudio allows for you to execute commands directly from the code chunk in the 
 document by using the __Ctrl + Enter__ (on Macs, __Cmd + Return__) shortcut. If
@@ -264,7 +273,7 @@ __Remarks:__
 
 * In the above code `<-` is the assignment operator. It assigns values on the 
 right to objects on the left. So, after executing `year <- 6`, the value of 
-`year` is `6`. The arrow can be read as `6` goes into `year`. For historical reasons,
+`year` is `6`. The arrow can be read as "`6` goes into `year`". For historical reasons,
 you can also use `=` for assignments, but not in every context. Because of the 
 slight differences in syntax, it is best practice to always use `<-` for 
 assignments.  
@@ -281,11 +290,11 @@ assignments.
     Think `current_temperature` verses `current_temp`. Do you really want to 
     type out temperature every time?  
     + Finally, you cannot begin any object's name with a number. You can end a 
-    name with a number (e.g. `clean_data2`), but does that give you much 
+    name with a number (e.g., `clean_data2`), but does that give you much 
     information about what is in the contents of `clean_data2` relative to 
     `clean_data`?    
     + The name cannot contain any punctuation symbols, except for `.` and `_` 
-    (`.` is not recommended)  
+    (note `.` is not recommended)  
     + You should not name your object the same as any common functions you may 
     use (`mean`, `sd,` etc.)  
     
@@ -994,7 +1003,7 @@ BlackfootFish_sml
 
 Note that the final data frame is the leftmost part of this expression.
 
-#### Challenge 1
+#### Challenge 2
 
 >
 >  Using pipes, subset the `BlackfootFish` data to include:
@@ -1003,7 +1012,7 @@ Note that the final data frame is the leftmost part of this expression.
   -  retain only the columns `year`, `species`, `length`, and `weight`.
 >
 
-```{r challenge-s4-1}
+```{r challenge-s4-2}
 ## Pipes Challenge:
 ##  Using pipes, subset the data to include animals collected
 ##  on or after 2002, and retain the columns `year`, `species`, `length`, and `weight`
@@ -1065,7 +1074,7 @@ BlackfootFish |>
 symbol negates the result, so in the code above we're asking for every row where weight *is not* 
 an `NA`.
 
-#### Challenge 2
+#### Challenge 3
 
 >
 >  Create a new data frame from the `BlackfootFish` data named `BlackfootFish_length_cm` 
@@ -1082,7 +1091,7 @@ an `NA`.
 
 
 
-```{r challenge-s4-2} 
+```{r challenge-s4-3} 
 ## Mutate Challenge:
 ##  Create a new data frame from the `BlackfootFish` data named `BlackfootFish_length_cm`
 ##  that meets the following criteria: 
@@ -1480,7 +1489,7 @@ different options for plotting:
 Reference for shapes in integers and characters:  
 https://ggplot2.tidyverse.org/articles/ggplot2-specs.html  
 
-### Challenge 1
+### Challenge 4
 
 >
 > Copy and paste the code from the previous code chunk and modify it to assign one of these aesthetics to the 
@@ -1488,7 +1497,7 @@ https://ggplot2.tidyverse.org/articles/ggplot2-specs.html
 >
 >What happened? 
 
-```{r challenge-s2-1}
+```{r challenge-s2-4}
 ## Your ggplot code to answer the challenge goes here!
 
 
@@ -1589,7 +1598,7 @@ BlackfootFish_clean |>
 ```
 
 
-### Challenge 2 (Part 1)
+### Challenge 5 (Part 1)
 
 >
 > Inspect the `geom_point` help file (either go to https://ggplot2.tidyverse.org/reference/geom_point.html or run `?geom_point`) 
@@ -1600,14 +1609,14 @@ BlackfootFish_clean |>
 > categorical/discrete variable?  
 >
 
-```{r challenge-s2-2part1}
+```{r challenge-s2-5part1}
 ## Your ggplot() code for the challenge goes here!
 
 
 ```
 
 
-### Challenge 2 (Part 2)
+### Challenge 5 (Part 2)
 
 >
 > Use what you just learned to create a scatter plot of `weight` over
@@ -1615,7 +1624,7 @@ BlackfootFish_clean |>
 > colors. Is this a good way to show this type of data?
 >
 
-```{r challenge-s2-2part2}
+```{r challenge-s2-2part5}
 ## Your ggplot() code for the challenge goes here!
 
 
@@ -1650,7 +1659,7 @@ BlackfootFish_clean |>
 > change in the code to put the boxplot in front of the points?
 
 
-### Challenge 3 (Part 1) 
+### Challenge 6 (Part 1) 
 
 >
 > Boxplots are useful summaries, but hide details of the *shape* of the
@@ -1662,13 +1671,13 @@ BlackfootFish_clean |>
 > Start with the boxplot we created:
 >
 
-```{r challenge-s2-3part1-example}
+```{r challenge-s2-6part1-example}
 BlackfootFish_clean |>
   ggplot(mapping = aes(x = species, y = weight)) +
   geom_jitter(alpha = 0.2, color = "tomato")
 ```
 
-```{r challenge-s2-3part1}
+```{r challenge-s2-6part1}
 ##  Start with the boxplot we created
 ##  1. Replace the boxplot with a violin plot. For help, see geom_violin().
 ##  You might need to decrease opacity even more to see the violins (try 0.03)
@@ -1677,7 +1686,7 @@ BlackfootFish_clean |>
 
 
 
-### Challenge 3 (Part 2)
+### Challenge 6 (Part 2)
 
 >
 > So far, we've looked at the distribution of weight within species. Let's try 
@@ -1688,7 +1697,7 @@ BlackfootFish_clean |>
 > over a jitter layer that shows the actual measurements.
 >
 
-```{r challenge-s2-3part2}
+```{r challenge-s2-6part2}
 ##  First: create boxplot for length` overlaid on a jitter layer.
 
 ```
@@ -1696,7 +1705,7 @@ BlackfootFish_clean |>
 
 
 
-### Challenge 3 (Part 3)
+### Challenge 6 (Part 3)
 
 >
 > Now, add color to the data points on your boxplot according to the trip 
@@ -1706,7 +1715,7 @@ BlackfootFish_clean |>
 > how would the graph be different?  
 >
 
-```{r challenge-s2-3part3}
+```{r challenge-s2-6part3}
 ## Next: add color to the data points on your boxplot according to the
 ## the fish was captured on (`trip`)).
 
@@ -1809,7 +1818,7 @@ hist(BlackfootFish_clean$weight)
 There is no single right answer for the number of bins. There are some "plug-in" choices for number of bins that can be used, but you are always welcome to explore different numbers of bins to see if features you are seeing persist when you choose more or less bins.  
 
 
-### Challenge 4 
+### Challenge 7 
 
 >
 > Use the `bins` argument in `geom_histogram()` to play around with the number
@@ -1818,7 +1827,7 @@ There is no single right answer for the number of bins. There are some "plug-in"
 >
 
 
-```{r challenge-s2-4}
+```{r challenge-s2-7}
 ## Your code to answer the challenge goes here!
 
 
@@ -1890,7 +1899,7 @@ BlackfootFish_clean |>
 ```
 
 
-### Challenge 5 
+### Challenge 8 
 
 >
 > Why do we need to set `group = 1` in the above proportion bar chart? 
@@ -1929,18 +1938,18 @@ We notice that the color only appears in the outline of the bars. For a bar
 chart, the aesthetic that we are interested in is the `fill` of the bars.  
 
 
-### Challenge 6
+### Challenge 9
 
 >
 > Change the code below so that each bar is filled with a different color. 
 
-```{r challenge-s2-6-example, fig.height=3, fig.width=6}
+```{r challenge-s2-9-example, fig.height=3, fig.width=6}
 BlackfootFish_clean |>
   ggplot(mapping = aes(x = species, color = species)) + 
   geom_bar()
 ```
 
-```{r challenge-s2-6}
+```{r challenge-s2-9}
 
 
 ```
@@ -2115,14 +2124,14 @@ yearly_section_counts |>
 
 
 
-### Challenge 7
+### Challenge 10
 
 >
 > Use what you just learned to create a plot that depicts how the average weight
 > of each species changes through the years. 
 > Play around with which variable you facet by versus plot by!
 
-```{r challenge-s2-7, error=TRUE}
+```{r challenge-s2-10, error=TRUE}
 ## To get you started:  
 yearly_species_weight <- BlackfootFish_clean |>
   group_by(year, species) |>
@@ -2171,13 +2180,13 @@ list of packages that extend the capabilities of **`ggplot2`**, including
 additional themes.
 
 
-### Challenge 8
+### Challenge 11
 
 >
 > Use what you just learned to add the plotting background theme 
 > of your choosing to the plot you made in Challenge 7!
 
-```{r challenge-s2-8}
+```{r challenge-s2-11}
 ## Your ggplot() code for the plot goes here!
 
 ```
@@ -2423,7 +2432,7 @@ argument of `option = <COLOR>` for your chosen color scheme
 - `ggsci`: using `scale_color_<PALNAME>()` or `scale_fill_<PALNAME>()`, where
 you specify the name of the palette you wish to use (e.g., `scale_color_aaas()`)
 
-### Challenge 9
+### Challenge 12
 
 >
 > With all of this information in hand, please take another five minutes to
@@ -2436,7 +2445,7 @@ you specify the name of the palette you wish to use (e.g., `scale_color_aaas()`)
 > * Can you find a way to change the name of the legend? What about its labels?
 >   (see http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/).
 
-```{r challenge-s2-9}
+```{r challenge-s2-12}
 ## your code for the challenge goes here!
 
 ```
@@ -3083,7 +3092,7 @@ surveys_w_days %>%
 
 ```
 
-#### Challenge 3
+#### Challenge 13
 
 >
 -  What dates were unable to be converted? 
@@ -3113,13 +3122,13 @@ look over the
 If we inspect the day of week variable we created in the last code chunk, we'll 
 see that it is an ordered (\<ord\>) factor. 
 
-### Challenge 4
+### Challenge 14
 
 > 
 >  What are the names of the days of the week taken from the dates?  
 
 
-```{r challenge-s4-4}
+```{r challenge-s4-14}
 
 ```
 
@@ -3176,13 +3185,13 @@ surveys_weekday %>%
 
 But, perhaps these days are not in the order that we want them to be in. 
 
-#### Challenge 5
+#### Challenge 15
 
 > 
 > What order did `R` put the days of the week in?
 > What data type is `day_of_week` now? 
 
-```{r challenge-s4-5}
+```{r challenge-s4-15}
 
 
 ```
@@ -3220,12 +3229,12 @@ surveys_edited <- surveys_days_full %>%
 glimpse(surveys_edited$day_of_week)
 ```
 
-#### Challenge 6
+#### Challenge 16
 > 
 > Verify that `R` put the days in the order that you specified! 
 >
 
-```{r challenge-s4-6}
+```{r challenge-s4-16}
 
 
 ```
@@ -3352,7 +3361,7 @@ surveys_edited %>%
   arrange(desc(mean_weight))
 ```
 
-#### Challenge 7 Part 1
+#### Challenge 17 Part 1
 
 >
 > Use `group_by()` and `summarize()` to find the mean, min, and max hindfoot
@@ -3360,11 +3369,11 @@ surveys_edited %>%
 > (HINT: see `?n`.)
 >
 
-```{r challenge-s4-7-1}
+```{r challenge-s4-17-1}
 
 ```
 
-#### Challenge 7 Part 2
+#### Challenge 17 Part 2
 
 >
 > What was the heaviest animal measured in each year?
@@ -3372,7 +3381,7 @@ surveys_edited %>%
 > Return the columns `year` and `weight`.
 >
 
-```{r challenge-s4-7-2}
+```{r challenge-s4-17-2}
 
 ```
 
@@ -3451,13 +3460,13 @@ of the *albigula* species (`species_id` = "NL") for males.
 
 
 
-#### Challenge 8
+#### Challenge 18
 
 >
 > How many animals were caught in each plot (`plot_id`) surveyed?
 >
 
-```{r challenge-s4-8}
+```{r challenge-s4-18}
 ## Count Challenge:
 ##  How many animals were caught in each `plot_type` surveyed?
 
@@ -3708,7 +3717,7 @@ surveys_wide %>%
   head()
 ```
 
-#### Challenge 9
+#### Challenge 19
 
 > 
 > Pivot the `combined` data frame to a wide format, with `year` as columns, 
@@ -3720,7 +3729,7 @@ surveys_wide %>%
 > Save the wide dataset as an object, with an intuitive name! Then use
 > `glimpse` to take a look at the structure.
 
-```{r challenge-s4-9}
+```{r challenge-s4-19}
 ## Make a wide data frame by pivoting on year. 
 ## Fill the values in these columns with the number of genera per plot. 
 ## Make sure to save the new dataset with an intuitive name!
@@ -3779,7 +3788,7 @@ surveys_wide %>%
   head()
 ```
 
-#### Challenge 10
+#### Challenge 20
 
 >
 > Take the `surveys_wide_genera` dataset and use `pivot_longer()` to pivot it to the long 
@@ -3790,7 +3799,7 @@ surveys_wide %>%
 > are variables instead of numbers. 
 >
 
-```{r challenge-s4-10}
+```{r challenge-s4-20}
 ## Now take the surveys_wide_genera dataset, and make it long again, by  
 ## (re)pivoting on the year columns. 
 
@@ -3798,7 +3807,7 @@ names(surveys_wide_genera)
 
 ```
 
-#### Challenge 11 Part 1
+#### Challenge 21 Part 1
 
 > 
 > The `combined` dataset has two measurement columns: `hindfoot_length` and
@@ -3816,7 +3825,7 @@ names(surveys_wide_genera)
 >
 
 
-```{r challenge-s4-11-p-1}
+```{r challenge-s4-21-p-1}
 ## Use pivot_long() to create an even longer dataset.
 ## Create a column called measurement, containing the hindfoot and weight columns
 ## And a value column that takes on the value of either of these measurements 
@@ -3826,7 +3835,7 @@ names(surveys_wide_genera)
 
 ```
 
-#### Challenge 11 Part 2
+#### Challenge 21 Part 2
 
 > 
 > With this new dataset, `combined_longer`, calculate the average of each `measurement` in each
@@ -3839,7 +3848,7 @@ names(surveys_wide_genera)
 >
 
 
-```{r challenge-s4-11-p-2}
+```{r challenge-s4-21-p-2}
 ## With this new very long dataset, calculate the average of each 
 ## measurement in each year for each different plot_type. 
 
@@ -3931,14 +3940,14 @@ write_csv(surveys_complete_subset, file = "data/surveys_complete_subset.csv")
 
 ------
 
-#### Challenge 11 Bonus
+#### Challenge 22 Bonus
 
 > 
 > If you attended the Data Visualization workshop, make a plot of average hindfoot_lengths and weights with colors for the points based on the plot_type.
 >
 
 
-```{r challenge-s4-11-p-3}
+```{r challenge-s4-22-p-3}
 
 
 ```
