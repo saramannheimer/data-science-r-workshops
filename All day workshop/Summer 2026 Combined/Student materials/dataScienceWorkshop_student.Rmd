@@ -3,9 +3,13 @@ title: "Montana State University - Data Science Workshop"
 author: "Data Carpentry contributors & MSU Data Science Workshops Team"
 date: "August 14, 2026"
 output:
-  pdf_document:
+  pdf_document: 
     latex_engine: xelatex
-documentclass: report
+    toc: yes
+    fig_caption: yes
+    number_sections: yes
+    keep_tex: yes
+documentclass: book
 description: "Course materials for the all-day data science workshop where you'll
   learn to \nuse the R programming language for data science applications.\n"
 mainfont: Calibri
@@ -32,7 +36,7 @@ header-includes:
 
 Join us for an all-day workshop where you'll learn to use the `R` programming language for data science applications. These concepts will be presented in an interactive format, integrating instruction and computational practice. Montana University system graduate students, undergrads, staff, faculty, and community members are all welcome to join. The full schedule is below.  
 
-**Location:** Montana State University, TBD - with an online option  
+**Location:** Montana State University, American Indian Hall (AIH) Room 166 - with an online option  
 **Date:** Friday, August 14, 2026  
 **Time:** 9 a.m. - 5 p.m.  
 
@@ -88,6 +92,19 @@ knitr::opts_chunk$set(tidy = TRUE,
 # Introduction to `R`
 
 ## Learning Objectives
+
+>
+> * Understand the RStudio user interface and know where to change default settings.
+> * Know how to create or open an `R` package.
+> * Know how to open an RMD file.
+> * Know how to search for help in RStudio.
+> * Know how to use the command line to use `R` as a calculator.
+> * Load packages and understand the messages that result.
+> * Import data and get a quick summary of the variables.
+> * Describe what faceting is and apply faceting to a ggplot().
+> * Extract, access, mutate, or summarize data from a dataframe.
+> * Save a modified dataset for future use or documentation purposes.
+>
 
 ## Getting Started
 
@@ -266,19 +283,20 @@ These operations, however, are not very interesting. To do more useful things in
 object's name, followed by an assignment arrow (`<-`), and finally the value of 
 the object. This would look something like this:
 
-`x <- 6`
+`year <- 2026`
 
 Once we execute/run this line of code, we notice that a new object appears in 
 our environment window. This window shows all of the objects that you have 
-created during your `R` session. The value of `x` appears next to it, since it 
+created during your `R` session. The value of `year` appears next to it, since it 
 is a scalar (single number as opposed to a set of numbers or a set of a set of
 numbers). 
 
 __Remarks:__  
 
 * In the above code `<-` is the assignment operator. It assigns values on the 
-right to objects on the left. So, after executing `year <- 6`, the value of 
-`year` is `6`. The arrow can be read as "`6` goes into `year`". For historical reasons,
+right to objects on the left. So, after executing `year <- 2026`, the value of 
+`year` is `2026`. The arrow can be read as "`2026` goes into `year`". For 
+historical reasons,
 you can also use `=` for assignments, but not in every context. Because of the 
 slight differences in syntax, it is best practice to always use `<-` for 
 assignments.  
@@ -307,41 +325,41 @@ assignments.
 future self and your collaborators. 
 
 
-## Working with Objects 
+## Order matters and checking values
 
-When you assign a value to an object (like we did previously) `R` does not output
+When you assign a value to an object `R` does not output
 anything by default. Writing the name of the object will output the value of the 
 object you created. 
 
 ```{r}
-x <- 6
+year <- 2026
 
-x
+year
 
 ```
 
-Once the object has been created, you can use it! Run the following lines of code:
+Once the object `year` has been created, you can use it! Run the following lines of code:
 
 ```{r}
-2.2 * x
+2.2 * year
 
-4 + x 
+4 + year 
 
 ```
 
 We can also overwrite an object's value, so that it has a new value. In the code
-below create a new object `y` and then we give `x` a new value of 2. 
+below create a new object `another_year` and then we give `year` a new value of 2030. 
 
 ```{r}
-y <-  x + 6
+another_year <-  year + 6
 
-x <- 2 
+year <- 2030 
 
 ```
 
 ### Exercise 1:
 
-What is the current value of `y`? 12 or 8? 
+What is the current value of `another_year`? 2032 or 2036? 
 
 1.  Create a code chunk (Hint, use __Ctrl + Alt + I__ on Windows, or 
 __Cmd + Option + I__ on Mac, to insert a blank `R` code chunk), and 
@@ -350,122 +368,6 @@ __Cmd + Option + I__ on Mac, to insert a blank `R` code chunk), and
 
 ***Insert your code chunk here.***
 
-## Working with Different Data Types 
-
-A vector is the basic data type in `R`. A vector is a series of values, which 
-can be either numbers or characters, but every entry of the vector must be the 
-same data type. `R` can tell that you are building a vector when you use the 
-`c()` function, which concatenates a series of entries together. 
-
-```{r}
-temps <- c(50, 55, 60, 65)
-temps
-```
-
-To make a vector of characters, you are required to use quotation marks (`" "`) 
-to indicate to `R` that the value you are using is not an object you already 
-created in `R`. 
-
-```{r}
-animals <- c("cat", "dog", "bird", "fish")
-animals
-```
-
-Important features of a vector is the type of data they store. Run the following
-lines of code and decide what type of data the vectors contain. 
-
-```{r}
-class(temps)
-
-class(animals)
-```
-
-### Exercise 2:
-
-1.  Create a vector, named `dec`, that contains three decimal valued numbers. 
-
-2.  Check: What data type does that vector contain?
-
-```{r}
-# Exercise 2 code here!
-
-
-```
-
-Another possible data type is a logical (Boolean) value. This type of data  
-takes on values of `TRUE` and `FALSE`. But, we said that vectors could only be 
-numbers or characters. If `TRUE` and `FALSE` don't have quotations around them,
-then they aren't characters. So, then they must be numbers. What numbers do you 
-think they are?  
-
-```{r}
-logic <- c(TRUE, FALSE, FALSE, TRUE)
-
-class(logic)
-```
-
-### Exercise 3:
-
-What happens when we try to mix different data types into one 
-vector? Speculate what will happen when we run each of the following lines of code:
-
-```{r}
-num_char <- c(1, 2, 3, "a")
-
-num_logic <- c(1, 2, 3, FALSE)
-
-char_logic <- c("a", "b", "c", TRUE)
-
-guess <- c(1, 2, 3, "4")
-```
-
-In each of these vectors, the two types of data were *coerced* into a single 
-data type. This happens in a hierarchy, where some data types get preference 
-over others. Can we draw a diagram of the hierarchy?  
-
-## Lists  
-
-While the elements of vectors have to be of the same data type, a list is a
-special vector in `R` that allows for you to store a variety of types of 
-objects. If you have a vector, a matrix, and/or a character, you can store all 
-of them into one list object!
-
-The arguments to the list function are the components of the list, where the 
-components can be characters, vectors, matrices, or other data structures. 
-Here, we create a list whose components are the three vectors we've been 
-working with:
-
-```{r}
-my_first_list <- list(animals, temps, logic)
-my_first_list
-
-my_first_list[[1]]
-```
-
-We notice that when printing a list, the output looks a bit different. There 
-are a whole bunch of brackets! Let's break them down. I like to think of a list
-as a shelf with cubby holes. The cubby holes are the components of the list, 
-but there are elements in each cubby. See Figure 2.  
-
-* To get to a specific component (cubby) of a list, you use the double brackets
-next to the name of the list (e.g `my_first_list[[1]]`).  
-* To access the elements inside each cubby, you then use single square brackets 
-(e.g. `my_first_list[[1]][2]`). 
-
-![Example of lists](images/list_example.png)
-
-### Named Lists
-
-```{r}
-my_named_list <- list(title = "statistics", 
-                      numbers = 1:10,
-                      data = TRUE)
-my_named_list
-```
-
-We see the output for a named list is slightly different. Instead of double 
-brackets next to each component, there are now `$` and names of the items in the
-list, these can be variables, parameters, or other information. This will help you understand the structure of data.frames (coming up later)!
 
 ## Motivating Research Questions
 
@@ -530,6 +432,14 @@ The following code will load all of the packages in the "tidyverse", please run 
 ```{r packages}
 library(tidyverse)
 ```
+
+### What are these conflicts?
+
+Do not be intimidated by the red color or by the "conflicts". The red color is a feature of the theme in use by RStudio. The "conflicts" just indicate packages that have the same function name, and which package's function will be used when called. 
+
+Here, `dplyr`'s `filter()` will be used instead of the filtering function in the `stats` package.
+
+### Why use the "tidyverse"?
 
 The **`tidyverse`** package tries to address 3 common issues that arise when
 doing data analysis with some of the functions that come with `R`:
@@ -637,6 +547,79 @@ to working in a zipped folder. Fix this by doing the following:
 open in RStudio.
 > 
 
+## Working with Different Data Types 
+
+A vector is the basic data type in `R`. A vector is a series of values, which 
+can be either numbers or characters, but every entry of the vector must be the 
+same data type. `R` can tell that you are building a vector when you use the 
+`c()` function, which concatenates a series of entries together. 
+
+```{r}
+temps <- c(50, 55, 60, 65)
+temps
+```
+
+To make a vector of characters, you are required to use quotation marks (`" "`) 
+to indicate to `R` that the value you are using is not an object you already 
+created in `R`. 
+
+```{r}
+animals <- c("cat", "dog", "bird", "fish")
+animals
+```
+
+Important features of a vector is the type of data they store. Run the following
+lines of code and decide what type of data the vectors contain. 
+
+```{r}
+class(temps)
+
+class(animals)
+```
+
+### Exercise 2:
+
+1.  Create a vector, named `dec`, that contains three decimal valued numbers. 
+
+2.  Check: What data type does that vector contain?
+
+```{r}
+# Exercise 2 code here!
+
+
+```
+
+Another possible data type is a logical (Boolean) value. This type of data  
+takes on values of `TRUE` and `FALSE`. But, we said that vectors could only be 
+numbers or characters. If `TRUE` and `FALSE` don't have quotations around them,
+then they aren't characters. So, then they must be numbers. What numbers do you 
+think they are?  
+
+```{r}
+logic <- c(TRUE, FALSE, FALSE, TRUE)
+
+class(logic)
+```
+
+### Exercise 3:
+
+What happens when we try to mix different data types into one 
+vector? Speculate what will happen when we run each of the following lines of code:
+
+```{r}
+num_char <- c(1, 2, 3, "a")
+
+num_logic <- c(1, 2, 3, FALSE)
+
+char_logic <- c("a", "b", "c", TRUE)
+
+guess <- c(1, 2, 3, "4")
+```
+
+In each of these vectors, the two types of data were *coerced* into a single 
+data type. This happens in a hierarchy, where some data types get preference 
+over others. Can we draw a diagram of the hierarchy?  
+
 ## Structure of Data  
 
 The data we will use is organized into data tables. When you imported the 
@@ -661,6 +644,7 @@ summary(BlackfootFish) ## What is the data type of each variable in our dataset?
 
 typeof(BlackfootFish) ## What is the storage mode of a data.frame?
 ```
+For more information about "lists" see the Appendix.
 
 When we inspect dataframes, or other objects in `R`, there are some general 
 functions that are useful to check the content/structure of the data. 
@@ -1342,6 +1326,268 @@ BlackfootFish_clean <- BlackfootFish |>
   na.omit() 
 ```
 
+## Split-Apply-Combine Data Analysis
+
+Many data analysis tasks can be approached using the *split-apply-combine*
+paradigm: split the data into groups, apply some analysis to each group, and
+then combine the results. **`dplyr`** makes this very easy through the use of the
+`group_by()` function.
+
+
+### The `summarize()` Function
+
+`group_by()` is often used together with `summarize()`, which collapses each
+group into a single-row summary of that group.  `group_by()` takes as arguments
+the column names that contain the **categorical** variables for which you want
+to calculate the summary statistics. So to compute the mean `weight` by sex:
+
+
+
+```{r groupby-example}
+BlackfootFish |>
+  group_by(species) |>
+  summarize(mean_weight = mean(weight, na.rm = TRUE))
+```
+
+
+You can also group by multiple columns:
+
+
+
+```{r groupby-example2}
+BlackfootFish |>
+  group_by(species, section) |>
+  summarize(mean_weight = mean(weight, na.rm = TRUE))
+```
+
+
+
+When grouping both by `species` and `section`, if there were any fish missing either a species or a section, perhaps if a fish
+escaped before their species could be determined, or the person recording forgot to write down the section of river... You would the last column would contain `NaN` (which refers to "Not a
+Number"). While this does not matter for this data, to avoid this, we can remove the missing values for weight before we
+attempt to calculate the summary statistics on weight. Because the missing
+values are removed first, we can omit `na.rm = TRUE` when computing the mean:
+
+
+
+```{r groupby-example3}
+BlackfootFish |>
+  filter(!is.na(weight)) |>
+  group_by(species, section) |>
+  summarize(mean_weight = mean(weight))
+```
+
+
+Once the data are grouped, you can also summarize a variable multiple ways at the same
+time (and not necessarily on the same variable). For instance, we could add a
+column indicating the minimum weight for each species for each section:
+
+
+
+```{r summarize-example1}
+BlackfootFish |>
+  filter(!is.na(weight)) |>
+  group_by(species, section) |>
+  summarize(mean_weight = mean(weight),
+            min_weight = min(weight))
+```
+
+
+
+It is sometimes useful to rearrange the result of a summary to inspect the values.
+For instance, we can sort on `min_weight` to put the lighter species first:
+
+
+
+```{r summarize-example2}
+BlackfootFish |>
+  filter(!is.na(weight)) |>
+  group_by(species, section) |>
+  summarize(mean_weight = mean(weight),
+            min_weight = min(weight)) |>
+  arrange(min_weight)
+```
+
+
+
+To sort in descending order, we need to add the `desc()` function. If we want to
+sort the results by decreasing order of mean weight:
+
+
+
+```{r summarize-example3}
+BlackfootFish |>
+  filter(!is.na(weight)) |>
+  group_by(species, section) |>
+  summarize(mean_weight = mean(weight),
+            min_weight = min(weight)) |>
+  arrange(desc(mean_weight))
+```
+
+#### Challenge 4 Part 1
+
+>
+> Use `group_by()` and `summarize()` to find the mean, min, and max
+> length for each species. Also add the number of observations.
+> (HINT: see `?n`.)
+>
+
+```{r challenge-s1-4-1}
+
+```
+
+#### Challenge 4 Part 2
+
+>
+> What was the heaviest species of fish measured in each year for each section?
+>
+> Return the columns `year` and `weight`.
+>
+
+```{r challenge-s1-4-2}
+
+```
+
+### Counting
+
+When working with data, we often want to know the number of observations found
+for each categorical variable or group of categorical variables. For this task, **`dplyr`** provides
+`count()`. For example, if we wanted to count the number of rows of data for
+each section, we would do:
+
+
+
+```{r count-example1}
+BlackfootFish_clean |>
+    count(section) 
+```
+
+
+
+The `count()` function is shorthand for something we've already seen: grouping 
+by a variable, and summarizing it by counting the number of observations in that
+group. In other words, `BlackfootFish_clean |> count()` is equivalent to:  
+
+
+
+```{r count-example2}
+BlackfootFish_clean |>
+    group_by(section) |>
+    summarize(count = n())
+```
+
+
+
+For convenience, `count()` provides the `sort` argument:  
+
+
+
+```{r count-example3}
+BlackfootFish_clean |>
+    count(section, sort = TRUE) 
+```
+
+
+
+The previous example shows the use of `count()` to count the number of rows/observations 
+for *one* factor (i.e., `section`). 
+If we wanted to count the *combination of factors*, such as `species` and `section`, 
+we would specify the first and the second factor as the arguments of `count()`:
+
+
+
+```{r count-example4}
+BlackfootFish_clean |>
+    count(species, section) 
+```
+
+
+
+With the above code, we can proceed with `arrange()` to sort the table 
+according to a number of criteria so that we have a better way to compare groups. 
+For instance, we might want to arrange the table above in (i) an alphabetical 
+order of the levels of the species and (ii) in descending order of the count:
+
+
+
+```{r count-example5}
+BlackfootFish_clean |>
+    count(species, section) |>
+  arrange(section, desc(n))
+```
+
+
+
+From the table above, we may learn that, for instance, there are 793 observations
+of the Brown Trout species (`species` = "Brown") for fish caught in the Johnsrud section.
+
+
+
+#### Challenge 5
+
+>
+> How many fish were caught in each year of the survey?
+> HINT: You will need to use the "BlackfootFish_mod" data set
+> and the `yearF` variable.
+>
+
+```{r challenge-s1-5}
+## Count Challenge:
+##  How many fish were caught in each section for each year surveyed?
+
+```
+
+
+## Saving data
+
+After you have modified your data, you may wish to share it with
+a collaborator or save it for future use in `R` or a different
+program.
+
+Typically, the most effective way to save a dataframe is the
+nearly the same as how you read in the data, using the `write_csv()` function. Exceptions will be
+discussed below.
+
+The `write_csv()` function has three important parameters:
+
+-  The dataset to save,
+-  The file path to use, and
+-  How NA values should be indicated (by default it is the string "NA").
+
+```{r}
+write_csv(BlackfootFish_mod, # dataframe name
+          "BlackfootFish_mod.csv", # path, can just be the file name if you are using projects,
+          na="NA" # stores missing values with "NA" (default)
+          )
+```
+
+If you wanted to do analysis in another program, such as in Excel,
+directly, you will want the missing values to be just empty cells.
+In the code below the value of missing values has been set to be
+the empty string.
+
+```{r}
+write_csv(BlackfootFish_mod, # dataframe name
+          "BlackfootFis_mod.csv", # path, can just be the file name if you are using projects,
+          na="" # stores missing values with empty cells
+          )
+```
+
+If you have long strings or dates that you want Excel to handle
+properly, you can also create an Excel workbook using the
+`writexl` package (there are others such as `openxlsx2` that can
+create Excel Workbooks, but `writexl` is one of the simplest
+packages to use).
+
+```{r}
+if(!("writexl" %in% rownames(installed.packages()))){install.packages("writexl")}
+
+library(writexl)
+write_xlsx(BlackfootFish_mod, # dataframe name
+          "BlackfootFis_mod.xlsx" # path, can just be the file name if you are using projects,
+          )
+```
+
 
 <!--chapter:end-->
 
@@ -1508,7 +1754,7 @@ different options for plotting:
 Reference for shapes in integers and characters:  
 https://ggplot2.tidyverse.org/articles/ggplot2-specs.html  
 
-### Challenge 4
+### Challenge 6
 
 >
 > Copy and paste the code from the previous code chunk and modify it to assign one of these aesthetics to the 
@@ -1516,7 +1762,7 @@ https://ggplot2.tidyverse.org/articles/ggplot2-specs.html
 >
 >What happened? 
 
-```{r challenge-s2-4}
+```{r challenge-s2-6}
 ## Your ggplot code to answer the challenge goes here!
 
 
@@ -1615,7 +1861,7 @@ BlackfootFish_clean |>
 ```
 
 
-### Challenge 5 (Part 1)
+### Challenge 7 (Part 1)
 
 >
 > Inspect the `geom_point` help file (either go to https://ggplot2.tidyverse.org/reference/geom_point.html or run `?geom_point`) 
@@ -1626,14 +1872,14 @@ BlackfootFish_clean |>
 > categorical/discrete variable?  
 >
 
-```{r challenge-s2-5part1}
+```{r challenge-s2-7part1}
 ## Your ggplot() code for the challenge goes here!
 
 
 ```
 
 
-### Challenge 5 (Part 2)
+### Challenge 7 (Part 2)
 
 >
 > Use what you just learned to create a scatter plot of `weight` over
@@ -1641,7 +1887,7 @@ BlackfootFish_clean |>
 > colors. Is this a good way to show this type of data?
 >
 
-```{r challenge-s2-2part5}
+```{r challenge-s2-7part2}
 ## Your ggplot() code for the challenge goes here!
 
 
@@ -1676,7 +1922,7 @@ BlackfootFish_clean |>
 > change in the code to put the boxplot in front of the points?
 
 
-### Challenge 6 (Part 1) 
+### Challenge 8 (Part 1) 
 
 >
 > Boxplots are useful summaries, but hide details of the *shape* of the
@@ -1688,13 +1934,13 @@ BlackfootFish_clean |>
 > Start with the boxplot we created:
 >
 
-```{r challenge-s2-6part1-example}
+```{r challenge-s2-8part1-example}
 BlackfootFish_clean |>
   ggplot(mapping = aes(x = species, y = weight)) +
   geom_jitter(alpha = 0.2, color = "tomato")
 ```
 
-```{r challenge-s2-6part1}
+```{r challenge-s2-8part1}
 ##  Start with the boxplot we created
 ##  1. Replace the boxplot with a violin plot. For help, see geom_violin().
 ##  You might need to decrease opacity even more to see the violins (try 0.03)
@@ -1703,7 +1949,7 @@ BlackfootFish_clean |>
 
 
 
-### Challenge 6 (Part 2)
+### Challenge 8 (Part 2)
 
 >
 > So far, we've looked at the distribution of weight within species. Let's try 
@@ -1714,7 +1960,7 @@ BlackfootFish_clean |>
 > over a jitter layer that shows the actual measurements.
 >
 
-```{r challenge-s2-6part2}
+```{r challenge-s2-8part2}
 ##  First: create boxplot for length` overlaid on a jitter layer.
 
 ```
@@ -1722,7 +1968,7 @@ BlackfootFish_clean |>
 
 
 
-### Challenge 6 (Part 3)
+### Challenge 8 (Part 3)
 
 >
 > Now, add color to the data points on your boxplot according to the trip 
@@ -1732,7 +1978,7 @@ BlackfootFish_clean |>
 > how would the graph be different?  
 >
 
-```{r challenge-s2-6part3}
+```{r challenge-s2-8part3}
 ## Next: add color to the data points on your boxplot according to the
 ## the fish was captured on (`trip`)).
 
@@ -1760,13 +2006,13 @@ if(!("datasauRus" %in% rownames(installed.packages()))){install.packages("datasa
 library(datasauRus)
 data(box_plots)
 
-box_plots_long <- box_plots %>%
+box_plots_long <- box_plots |>
   pivot_longer(cols=1:5)
   
-box_plots_long <- box_plots_long %>%
+box_plots_long <- box_plots_long |>
   rename(Example=name, Response=value)
 
-box_plots_long <- box_plots_long %>% 
+box_plots_long <- box_plots_long |> 
   mutate(Example = factor(Example))
 
 ggplot(box_plots_long, aes(x=Example, y=Response)) +
@@ -1837,7 +2083,7 @@ hist(BlackfootFish_clean$weight)
 There is no single right answer for the number of bins. There are some "plug-in" choices for number of bins that can be used, but you are always welcome to explore different numbers of bins to see if features you are seeing persist when you choose more or less bins.  
 
 
-### Challenge 7 
+### Challenge 9 
 
 >
 > Use the `bins` argument in `geom_histogram()` to play around with the number
@@ -1846,7 +2092,7 @@ There is no single right answer for the number of bins. There are some "plug-in"
 >
 
 
-```{r challenge-s2-7}
+```{r challenge-s2-9}
 ## Your code to answer the challenge goes here!
 
 
@@ -1918,7 +2164,7 @@ BlackfootFish_clean |>
 ```
 
 
-### Challenge 8 
+### Challenge 10 
 
 >
 > Why do we need to set `group = 1` in the above proportion bar chart? 
@@ -1957,18 +2203,18 @@ We notice that the color only appears in the outline of the bars. For a bar
 chart, the aesthetic that we are interested in is the `fill` of the bars.  
 
 
-### Challenge 9
+### Challenge 11
 
 >
 > Change the code below so that each bar is filled with a different color. 
 
-```{r challenge-s2-9-example, fig.height=3, fig.width=6}
+```{r challenge-s2-11-example, fig.height=3, fig.width=6}
 BlackfootFish_clean |>
   ggplot(mapping = aes(x = species, color = species)) + 
   geom_bar()
 ```
 
-```{r challenge-s2-9}
+```{r challenge-s2-11}
 
 
 ```
@@ -2143,14 +2389,14 @@ yearly_section_counts |>
 
 
 
-### Challenge 10
+### Challenge 12
 
 >
 > Use what you just learned to create a plot that depicts how the average weight
 > of each species changes through the years. 
 > Play around with which variable you facet by versus plot by!
 
-```{r challenge-s2-10, error=TRUE}
+```{r challenge-s2-12, error=TRUE}
 ## To get you started:  
 yearly_species_weight <- BlackfootFish_clean |>
   group_by(year, species) |>
@@ -2199,13 +2445,13 @@ list of packages that extend the capabilities of **`ggplot2`**, including
 additional themes.
 
 
-### Challenge 11
+### Challenge 13
 
 >
 > Use what you just learned to add the plotting background theme 
 > of your choosing to the plot you made in Challenge 7!
 
-```{r challenge-s2-11}
+```{r challenge-s2-13}
 ## Your ggplot() code for the plot goes here!
 
 ```
@@ -2450,7 +2696,7 @@ argument of `option = <COLOR>` for your chosen color scheme
 - `ggsci`: using `scale_color_<PALNAME>()` or `scale_fill_<PALNAME>()`, where
 you specify the name of the palette you wish to use (e.g., `scale_color_aaas()`)
 
-### Challenge 12
+### Challenge 14
 
 >
 > With all of this information in hand, please take another five minutes to
@@ -2463,7 +2709,7 @@ you specify the name of the palette you wish to use (e.g., `scale_color_aaas()`)
 > * Can you find a way to change the name of the legend? What about its labels?
 >   (see http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/).
 
-```{r challenge-s2-12}
+```{r challenge-s2-14}
 ## your code for the challenge goes here!
 
 ```
@@ -2479,7 +2725,7 @@ package allows us to combine separate ggplots into a single figure using
 ```{r arrange, message = FALSE, fig.width = 10, fig.height=6}
 library(gridExtra)
 
-spp_weight_boxplot <- BlackfootFish_clean %>% 
+spp_weight_boxplot <- BlackfootFish_clean |> 
   ggplot(aes(x = species, y = weight)) +
   geom_violin() +
   geom_jitter(color = "tomato", width = 0.2, alpha = 0.2) +
@@ -2496,7 +2742,7 @@ spp_weight_boxplot <- BlackfootFish_clean %>%
         axis.text.x = element_text(size = 12), 
         text = element_text(size = 16))
 
-spp_count_plot <- yearly_counts %>% 
+spp_count_plot <- yearly_counts |> 
   ggplot(aes(x = year, y = n, color = species)) +
   geom_line() + 
   labs(x = "Year", 
@@ -2640,7 +2886,7 @@ One note about using `plotly` graphics in R-markdown is that they will not knit 
 
 <!--chapter:end:04-dataWrangling.Rmd-->
 
-# Appendix {-}
+# Appendix
 
 ## Terminology Used in Workshop
 
@@ -2789,8 +3035,50 @@ Whenever you open this project it will take you directly to the work you have
 done in that project folder. It may be useful to close the project before 
 exiting RStudio to avoid confusion in later sessions. 
 
+## Lists  
 
-## Data Visualization  
+While the elements of vectors have to be of the same data type, a list is a
+special vector in `R` that allows for you to store a variety of types of 
+objects. If you have a vector, a matrix, and/or a character, you can store all 
+of them into one list object!
+
+The arguments to the list function are the components of the list, where the 
+components can be characters, vectors, matrices, or other data structures. 
+Here, we create a list whose components are the three vectors we created in the Introduction to R chapter:
+
+```{r}
+my_first_list <- list(animals, temps, logic)
+my_first_list
+
+my_first_list[[1]]
+```
+
+We notice that when printing a list, the output looks a bit different. There 
+are a whole bunch of brackets! Let's break them down. I like to think of a list
+as a shelf with cubby holes. The cubby holes are the components of the list, 
+but there are elements in each cubby. See Figure 2.  
+
+* To get to a specific component (cubby) of a list, you use the double brackets
+next to the name of the list (e.g `my_first_list[[1]]`).  
+* To access the elements inside each cubby, you then use single square brackets 
+(e.g. `my_first_list[[1]][2]`). 
+
+![Example of lists](images/list_example.png)
+
+### Named Lists
+
+```{r}
+my_named_list <- list(title = "statistics", 
+                      numbers = 1:10,
+                      data = TRUE)
+my_named_list
+```
+
+We see the output for a named list is slightly different. Instead of double 
+brackets next to each component, there are now `$` and names of the items in the
+list, these can be variables, parameters, or other information. This will help you understand the structure of data.frames.
+
+## Data Visualization using Base `R`
 
 There are many different genres of data graphics, with many different variations
 on each genre. Here are some commonly encountered kinds:  
@@ -2963,91 +3251,6 @@ code or re-knitting the file. If you find that you have lots of "stuff" in your
 workspace because you accidentally saved your workspace, just run `rm(list = ls())`. 
 It will delete all the data sets from your workspace.
 
-
-
-## Terminology Used in Workshop
-
-* *Command*: A command is what `R` executes. In an `R` script file (script.R), 
-commands are automatically implied, as this type of file does not accept text, 
-only in comments. In an Rmd (Markdown) file (report.Rmd), commands are 
-delineated between three ticks on the top (```` ```{r}````) and three 
-ticks (```` ``` ````) on the
-bottom.      
-
-    ````
-    ```{r}`r ''`
-    # Your code goes here
-    ```  
-    ````
-
-* *Comment*: Helpful text added into a script environment. Comments can be used
-to describe functions, processes, a train of thought, so that when you return to
-your code, tomorrow or next year, you are able to understand the purpose of each
-line of code! Comments are preceded by at least on `#` within a code chunk. 
-
-* *Object*: A variable created in `R`, to be used elsewhere in the code. Objects
-can be a variety of things, such as scalars (`x <- 3`), vectors (`x <- c(1, 2, 3, 
-4, 5)`), matrices, and dataframes, to name a few.  
-
-* *Assignment Arrow*: The assignment arrow `<-` is used to assign values on the 
-right to the objects on the left (`x <- 1`). For historical reasons, you can also 
-use `=` for assignments, but not everywhere. Because of these slight 
-differences, it is recommended to *always* use assignment arrows for assignment. 
-
-* *Class*: Most `R` objects have a class attribute, a character vector giving 
-the names of the classes from which the object inherits. Examples of classes are
-numeric, factor, integer, character, dataframe, matrix, list. 
-
-* *Vector*: A vector is a list of entries, all sharing the same class. A vector 
-has only one dimension, so data extraction uses only a single entry in brackets 
-(e.g. `x[3]`). You can create vectors of characters (`c("a", "b", "c")`), vectors of 
-numbers (`c(1, 2, 3)`), to name a few.
-
-* *Matrix*: Similar to what you may have seen in a mathematics class, a matrix 
-is an object with rows and columns, where every entry in the matrix must be a 
-number. 
-
-* *List*: A generic vector, which contains other objects. A list can contain a
-variety of different classes of objects, e.g., characters, vectors, data.frames, 
-matrices, or outputs from a model! A data.frame is a special type of list where
-the components are vectors and they all have the same length. 
-
-* *Dataframe*: A dataframe is a collection of variables. Dataframes share many 
-of the properties of matrices, where you are able to extract elements using 
-bracket (`[]`) notation, and lists, where you are able to extract columns using 
-`$`. Dataframes are used as the fundamental data structure by most of `R`'s 
-statistical modeling software. Note that tibbles have been more recently created as 
-part of the tidyverse and provide a similar but slightly different object where 
-you can store your data.
-
-* *Argument*: Input(s) into a function, so that an output is created. Most 
-functions take named arguments (e.g., `data = BlackfootFish`) and the order of the 
-arguments is assumed to follow the order found in the function's help file. When
-using a named argument in a function, the name comes first, followed by an `=` 
-sign, then the input. 
-
-* *Logical Value*: `TRUE` and `FALSE` value(s) that can be used to turn off/on 
-options in functions and plots, and also to manipulate data. 
-
-## Workshop Materials & Recordings Available:
-
-* email Sara Mannheimer (sara.mannheimer@montana.edu)
-
-* through the MSU Library Data Science website (http://www.montana.edu/datascience/)
-
-## How to Learn More About `R` and `RStudio`
-
-This material is intended to provide you with an introduction to using `R` for 
-scientific analyses of data. The best way for you to continue to learn more 
-about `R` is to use it in your research! This may sound daunting, but writing 
-`R` scripts is the best way to become familiar with the syntax. This will help 
-you progress through more advanced operations, such as cleaning your data, 
-using statistical methods, or creating graphics. 
-
-The best place to start is playing around with the code from today's workshop.
-Change parts of the code and see what happens! Better yet, use the code from the
-workshop to investigate your own data! 
-
 ## Additional Data Wrangling Material
 
 ### Clean Code 
@@ -3086,7 +3289,7 @@ now() # Today's date, with time and timezone!
 
 ```{r lubridate-example2, message = FALSE}
 surveys <- read_csv("data/surveys2.csv")
-surveys_w_days <- surveys %>% 
+surveys_w_days <- surveys |> 
   mutate(date = ymd(paste(year,
                           month,
                           day,
@@ -3097,22 +3300,22 @@ surveys_w_days <- surveys %>%
          ## label = TRUE prints the name, not the level! 
          )
 
-surveys_w_days %>%
+surveys_w_days |>
   head()
 
-surveys_w_days %>%
-  select(day_of_week) %>%
+surveys_w_days |>
+  select(day_of_week) |>
   summary()
 
-surveys_w_days %>% 
-  filter(is.na(date) == TRUE) %>% 
-  select(month, day) %>% 
+surveys_w_days |> 
+  filter(is.na(date) == TRUE) |> 
+  select(month, day) |> 
   table()
 
 
 ```
 
-#### Challenge 13
+#### Challenge 15
 
 >
 -  What dates were unable to be converted? 
@@ -3142,13 +3345,13 @@ look over the
 If we inspect the day of week variable we created in the last code chunk, we'll 
 see that it is an ordered (\<ord\>) factor. 
 
-### Challenge 14
+### Challenge 16
 
 > 
 >  What are the names of the days of the week taken from the dates?  
 
 
-```{r challenge-s4-14}
+```{r challenge-s4-16}
 
 ```
 
@@ -3172,7 +3375,7 @@ should be done with these matches.
 Let's look at this in action! 
 
 ```{r caseWhen-example}
-surveys_days_full <- surveys_w_days %>% 
+surveys_days_full <- surveys_w_days |> 
   mutate(day_of_week = case_when(day_of_week == "Mon" ~ "Monday", 
                              day_of_week == "Tue" ~ "Tuesday", 
                              day_of_week == "Wed" ~ "Wednesday", 
@@ -3193,25 +3396,25 @@ glimpse(surveys_days_full$day_of_week)
 ```{r caseWhen-example2}
 # Create a variable weekday that takes on a value of 0 for Saturday/Sunday
 # and 1 otherwise and recodes Friday to missing
-surveys_weekday <- surveys_w_days %>%
+surveys_weekday <- surveys_w_days |>
   mutate(weekday = case_when(day_of_week == "Sat" ~ 0,
                              day_of_week == "Sun" ~ 0,
                              day_of_week == "Fri" ~ as.numeric(NA),
                              TRUE ~ 1))
 
-surveys_weekday %>%
+surveys_weekday |>
   count(weekday)
 ```
 
 But, perhaps these days are not in the order that we want them to be in. 
 
-#### Challenge 15
+#### Challenge 17
 
 > 
 > What order did `R` put the days of the week in?
 > What data type is `day_of_week` now? 
 
-```{r challenge-s4-15}
+```{r challenge-s4-17}
 
 
 ```
@@ -3236,7 +3439,7 @@ The function takes three arguments:
 This process looks like this: 
 
 ```{r relevel-example}
-surveys_edited <- surveys_days_full %>% 
+surveys_edited <- surveys_days_full |> 
   mutate(day_of_week = fct_relevel(day_of_week, 
                                    "Monday", 
                                    "Tuesday", 
@@ -3249,250 +3452,15 @@ surveys_edited <- surveys_days_full %>%
 glimpse(surveys_edited$day_of_week)
 ```
 
-#### Challenge 16
+#### Challenge 18
 > 
 > Verify that `R` put the days in the order that you specified! 
 >
 
-```{r challenge-s4-16}
-
-
-```
-
-
-
-
-## Split-Apply-Combine Data Analysis
-
-Many data analysis tasks can be approached using the *split-apply-combine*
-paradigm: split the data into groups, apply some analysis to each group, and
-then combine the results. **`dplyr`** makes this very easy through the use of the
-`group_by()` function.
-
-
-### The `summarize()` Function
-
-`group_by()` is often used together with `summarize()`, which collapses each
-group into a single-row summary of that group.  `group_by()` takes as arguments
-the column names that contain the **categorical** variables for which you want
-to calculate the summary statistics. So to compute the mean `weight` by sex:
-
-
-
-```{r groupby-example}
-surveys_edited %>%
-  group_by(sex) %>%
-  summarize(mean_weight = mean(weight, na.rm = TRUE))
-```
-
-
-
-One of the advantages of `tbl_df` over data frame is that is provides more compact output, although the current format of these materials makes that hard to see.
-
-You can also group by multiple columns:
-
-
-
-```{r groupby-example2}
-surveys_edited %>%
-  group_by(sex, species_id) %>%
-  summarize(mean_weight = mean(weight, na.rm = TRUE))
-```
-
-
-
-When grouping both by `sex` and `species_id`, the last row is for animals
-that escaped before their sex and body weights could be determined. You may notice
-that the last column does not contain `NA` but `NaN` (which refers to "Not a
-Number"). To avoid this, we can remove the missing values for weight before we
-attempt to calculate the summary statistics on weight. Because the missing
-values are removed first, we can omit `na.rm = TRUE` when computing the mean:
-
-
-
-```{r groupby-example3}
-surveys_edited %>%
-  filter(!is.na(weight)) %>%
-  group_by(sex, species_id) %>%
-  summarize(mean_weight = mean(weight))
-```
-
-
-
-If you want to display more data, you can use the `print()` function
-at the end of your chain with the argument `n` specifying the number of rows to
-display:
-
-
-
-```{r groupby-example4}
-surveys_edited %>%
-  filter(!is.na(weight)) %>%
-  group_by(sex, species_id) %>%
-  summarize(mean_weight = mean(weight)) %>%
-  print(n = 15)
-```
-
-
-
-Once the data are grouped, you can also summarize multiple variables at the same
-time (and not necessarily on the same variable). For instance, we could add a
-column indicating the minimum weight for each species for each sex:
-
-
-
-```{r summarize-example1}
-surveys_edited %>%
-  filter(!is.na(weight)) %>%
-  group_by(sex, species_id) %>%
-  summarize(mean_weight = mean(weight),
-            min_weight = min(weight))
-```
-
-
-
-It is sometimes useful to rearrange the result of a query to inspect the values.
-For instance, we can sort on `min_weight` to put the lighter species first:
-
-
-
-```{r summarize-example2}
-surveys_edited %>%
-  filter(!is.na(weight)) %>%
-  group_by(sex, species_id) %>%
-  summarize(mean_weight = mean(weight),
-            min_weight = min(weight)) %>%
-  arrange(min_weight)
-```
-
-
-
-To sort in descending order, we need to add the `desc()` function. If we want to
-sort the results by decreasing order of mean weight:
-
-
-
-```{r summarize-example3}
-surveys_edited %>%
-  filter(!is.na(weight)) %>%
-  group_by(sex, species_id) %>%
-  summarize(mean_weight = mean(weight),
-            min_weight = min(weight)) %>%
-  arrange(desc(mean_weight))
-```
-
-#### Challenge 17 Part 1
-
->
-> Use `group_by()` and `summarize()` to find the mean, min, and max hindfoot
-> length for each species (using `species_id`). Also add the number of observations.
-> (HINT: see `?n`.)
->
-
-```{r challenge-s4-17-1}
-
-```
-
-#### Challenge 17 Part 2
-
->
-> What was the heaviest animal measured in each year?
->
-> Return the columns `year` and `weight`.
->
-
-```{r challenge-s4-17-2}
-
-```
-
-### Counting
-
-When working with data, we often want to know the number of observations found
-for each factor or combination of factors. For this task, **`dplyr`** provides
-`count()`. For example, if we wanted to count the number of rows of data for
-each sex, we would do:
-
-
-
-```{r count-example1}
-surveys_edited %>%
-    count(sex) 
-```
-
-
-
-The `count()` function is shorthand for something we've already seen: grouping 
-by a variable, and summarizing it by counting the number of observations in that
-group. In other words, `surveys %>% count()` is equivalent to:  
-
-
-
-```{r count-example2}
-surveys_edited %>%
-    group_by(sex) %>%
-    summarize(count = n())
-```
-
-
-
-For convenience, `count()` provides the `sort` argument:  
-
-
-
-```{r count-example3}
-surveys_edited %>%
-    count(sex, sort = TRUE) 
-```
-
-
-
-The previous example shows the use of `count()` to count the number of rows/observations 
-for *one* factor (i.e., `sex`). 
-If we wanted to count the *combination of factors*, such as `sex` and `species`, 
-we would specify the first and the second factor as the arguments of `count()`:
-
-
-
-```{r count-example4}
-surveys_edited %>%
-  count(sex, species_id) 
-```
-
-
-
-With the above code, we can proceed with `arrange()` to sort the table 
-according to a number of criteria so that we have a better way to compare groups. 
-For instance, we might want to arrange the table above in (i) an alphabetical 
-order of the levels of the species and (ii) in descending order of the count:
-
-
-
-```{r count-example5}
-surveys_edited %>%
-  count(sex, species_id) %>%
-  arrange(species_id, desc(n))
-```
-
-
-
-From the table above, we may learn that, for instance, there are 72 observations
-of the *albigula* species (`species_id` = "NL") for males.
-
-
-
-#### Challenge 18
-
->
-> How many animals were caught in each plot (`plot_id`) surveyed?
->
-
 ```{r challenge-s4-18}
-## Count Challenge:
-##  How many animals were caught in each `plot_type` surveyed?
+
 
 ```
-
-
 
 
 ## Relational Data with `dplyr`   
@@ -3638,8 +3606,8 @@ already existing data frame, `surveys_edited`, a left join is the most appropria
 
 
 ```{r joins-example}
-combined <- surveys_edited %>% 
-              left_join(plots, by = "plot_id") %>%  # adding the type of plot  
+combined <- surveys_edited |> 
+              left_join(plots, by = "plot_id") |>  # adding the type of plot  
               left_join(species, by = "species_id") # adding the genus, species, and taxa 
 glimpse(combined)
 ```
@@ -3706,14 +3674,14 @@ before too.
 
 
 ```{r gw-example}
-surveys_gw <- combined %>%
-  filter(!is.na(weight)) %>%
-  group_by(plot_id, genus) %>%
+surveys_gw <- combined |>
+  filter(!is.na(weight)) |>
+  group_by(plot_id, genus) |>
   summarize(mean_weight = mean(weight))
 
 glimpse(surveys_gw)
 
-surveys_gw %>% 
+surveys_gw |> 
   head()
 ```
 
@@ -3728,12 +3696,12 @@ pipes:
 
 
 ```{r pivot-wider-example}
-surveys_wide <- surveys_gw %>%
+surveys_wide <- surveys_gw |>
   pivot_wider(names_from = genus, values_from = mean_weight)
 
 glimpse(surveys_wide)
 
-surveys_wide %>% 
+surveys_wide |> 
   head()
 ```
 
@@ -3783,7 +3751,7 @@ the key variable. Here we drop the `plot_id` column with a minus sign.
 
 
 ```{r pivot-long-example}
-surveys_long <- surveys_wide %>%
+surveys_long <- surveys_wide |>
   pivot_longer(cols = -plot_id, names_to = "genus", values_to = "mean_weight")
 
 glimpse(surveys_long)
@@ -3802,9 +3770,9 @@ row, we don't even need to list them all out - just use the `:` operator!
 
 
 ```{r pivot-long-example2}
-surveys_wide %>%
+surveys_wide |>
   pivot_longer(cols = Chaetodipus:Sigmodon, names_to = "genus", 
-               values_to = "mean_weight") %>%
+               values_to = "mean_weight") |>
   head()
 ```
 
@@ -3913,7 +3881,7 @@ Let's start by removing observations of animals for which `weight` and
 
 
 ```{r data-cleanup-exercise}
-surveys_complete <- surveys_edited %>%
+surveys_complete <- surveys_edited |>
   filter(!is.na(weight),           # remove missing weight
          !is.na(hindfoot_length),  # remove missing hindfoot_length
          !is.na(sex))                # remove missing sex
@@ -3932,12 +3900,12 @@ observations for these more common species:
 
 ```{r data-extract-exercise}
 ## Extract the most common species_id
-species_counts <- surveys_complete %>%
-    count(species_id) %>% 
+species_counts <- surveys_complete |>
+    count(species_id) |> 
     filter(n >= 50)
 
 ## Only keep the most common species
-surveys_complete_subset <- surveys_complete %>%
+surveys_complete_subset <- surveys_complete |>
   filter(species_id %in% species_counts$species_id)
   ## using the relational operator %in% 
 
