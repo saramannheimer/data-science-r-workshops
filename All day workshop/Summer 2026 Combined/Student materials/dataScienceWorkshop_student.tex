@@ -2867,8 +2867,8 @@ variable.
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{saving-data}{%
-\section{Saving data}\label{saving-data}}
+\hypertarget{saving-or-exporting-data}{%
+\section{Saving or ``exporting'' data}\label{saving-or-exporting-data}}
 
 After you have modified your data, you may wish to share it with a
 collaborator or save it for future use in \texttt{R} or a different
@@ -5427,7 +5427,7 @@ as:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "2026-06-29"
+## [1] "2026-07-06"
 \end{verbatim}
 
 \begin{Shaded}
@@ -5437,7 +5437,7 @@ as:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "2026-06-29 16:22:27 MDT"
+## [1] "2026-07-06 15:04:31 MDT"
 \end{verbatim}
 
 \begin{Shaded}
@@ -5559,21 +5559,21 @@ website} or look over the
 cheatsheet}.
 
 \hypertarget{character-wrangling}{%
-\section{Character Wrangling}\label{character-wrangling}}
+\subsection{Character Wrangling}\label{character-wrangling}}
 
 If we inspect the day of week variable we created in the last code
 chunk, we'll see that it is an ordered (\textless ord\textgreater)
 factor.
 
 \hypertarget{challenge-16}{%
-\subsection{Challenge 16}\label{challenge-16}}
+\subsubsection{Challenge 16}\label{challenge-16}}
 
 \begin{quote}
 What are the names of the days of the week taken from the dates?
 \end{quote}
 
 \hypertarget{the-case_when-function}{%
-\subsection{\texorpdfstring{The \texttt{case\_when()}
+\subsubsection{\texorpdfstring{The \texttt{case\_when()}
 Function}{The case\_when() Function}}\label{the-case_when-function}}
 
 We notice that the labels for the days of the week are not necessarily
@@ -5612,8 +5612,7 @@ Let's look at this in action!
 \end{verbatim}
 
 \begin{quote}
-\hypertarget{note}{%
-\subsection{NOTE:}\label{note}}
+NOTE:
 
 If you only want to recode a couple levels of a variable, you can still
 use \texttt{case\_when()} without specifying the behavior for
@@ -5647,7 +5646,7 @@ use \texttt{case\_when()} without specifying the behavior for
 But, perhaps these days are not in the order that we want them to be in.
 
 \hypertarget{challenge-17}{%
-\subsubsection{Challenge 17}\label{challenge-17}}
+\paragraph{Challenge 17}\label{challenge-17}}
 
 \begin{quote}
 What order did \texttt{R} put the days of the week in? What data type is
@@ -5703,14 +5702,14 @@ This process looks like this:
 \end{verbatim}
 
 \hypertarget{challenge-18}{%
-\subsubsection{Challenge 18}\label{challenge-18}}
+\paragraph{Challenge 18}\label{challenge-18}}
 
 \begin{quote}
 Verify that \texttt{R} put the days in the order that you specified!
 \end{quote}
 
 \hypertarget{relational-data-with-dplyr}{%
-\section{\texorpdfstring{Relational Data with
+\subsection{\texorpdfstring{Relational Data with
 \texttt{dplyr}}{Relational Data with dplyr}}\label{relational-data-with-dplyr}}
 
 It is rare that data analyses, especially with longitudinal
@@ -5924,7 +5923,7 @@ Sebastopol, California: O'Reilly.}
 \end{figure}
 
 \hypertarget{joining-relational-data}{%
-\subsection{Joining Relational Data}\label{joining-relational-data}}
+\subsubsection{Joining Relational Data}\label{joining-relational-data}}
 
 The tool that we will be using is called a \emph{mutating join}. A
 mutating join is how we can combine variables from two tables. The join
@@ -5935,7 +5934,7 @@ There are two types of mutating joins, the inner join and the outer
 join.
 
 \hypertarget{inner-join}{%
-\subsection{Inner Join}\label{inner-join}}
+\subsubsection{Inner Join}\label{inner-join}}
 
 The simplest join is an \emph{inner join}, which creates a pair of
 observations whenever their keys are equal. This join will output a new
@@ -5951,7 +5950,7 @@ Sebastopol, California: O'Reilly.}
 \end{figure}
 
 \hypertarget{outer-join}{%
-\subsection{Outer Join}\label{outer-join}}
+\subsubsection{Outer Join}\label{outer-join}}
 
 While an inner join only keeps observations with keys that appear in
 both tables, an \emph{outer join} keeps observations that appear in
@@ -5982,7 +5981,7 @@ contents of \texttt{y}). This join will preserve the contents of
 \texttt{x}, even if there is not a match for them in \texttt{y}.
 
 \hypertarget{joining-surveys_edited-data}{%
-\subsection{\texorpdfstring{Joining \texttt{surveys\_edited}
+\subsubsection{\texorpdfstring{Joining \texttt{surveys\_edited}
 Data}{Joining surveys\_edited Data}}\label{joining-surveys_edited-data}}
 
 To join the \texttt{surveys\_edited} data with the \texttt{plots} data
@@ -6030,7 +6029,7 @@ Or you could mutate the variable names so that they do match prior to
 using \texttt{left\_join}.
 
 \hypertarget{reshaping-data}{%
-\section{Reshaping Data}\label{reshaping-data}}
+\subsection{Reshaping Data}\label{reshaping-data}}
 
 Data Carpentry's
 \href{https://datacarpentry.org/spreadsheet-ecology-lesson/01-format-data/}{spreadsheet
@@ -6197,7 +6196,7 @@ one row for each plot. We again use pipes:
 \end{verbatim}
 
 \hypertarget{challenge-19}{%
-\subsubsection{Challenge 19}\label{challenge-19}}
+\paragraph{Challenge 19}\label{challenge-19}}
 
 \begin{quote}
 Pivot the \texttt{combined} data frame to a wide format, with
@@ -6222,7 +6221,7 @@ Save the wide dataset as an object, with an intuitive name! Then use
 \end{Shaded}
 
 \hypertarget{pivoting-to-a-longer-table}{%
-\subsection{Pivoting to a Longer
+\subsubsection{Pivoting to a Longer
 Table}\label{pivoting-to-a-longer-table}}
 
 The opposing situation could occur if we had been provided with data in
@@ -6317,7 +6316,7 @@ just use the \texttt{:} operator!
 \end{verbatim}
 
 \hypertarget{challenge-20}{%
-\subsubsection{Challenge 20}\label{challenge-20}}
+\paragraph{Challenge 20}\label{challenge-20}}
 
 \begin{quote}
 Take the \texttt{surveys\_wide\_genera} dataset and use
@@ -6345,7 +6344,7 @@ numbers.
 \end{verbatim}
 
 \hypertarget{challenge-21-part-1}{%
-\subsubsection{Challenge 21 Part 1}\label{challenge-21-part-1}}
+\paragraph{Challenge 21 Part 1}\label{challenge-21-part-1}}
 
 \begin{quote}
 The \texttt{combined} dataset has two measurement columns:
@@ -6374,7 +6373,7 @@ format!
 \end{Shaded}
 
 \hypertarget{challenge-21-part-2}{%
-\subsubsection{Challenge 21 Part 2}\label{challenge-21-part-2}}
+\paragraph{Challenge 21 Part 2}\label{challenge-21-part-2}}
 
 \begin{quote}
 With this new dataset, \texttt{combined\_longer}, calculate the average
@@ -6401,139 +6400,6 @@ format!
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{exporting-data}{%
-\section{Exporting Data}\label{exporting-data}}
-
-Now that you have learned how to use \textbf{\texttt{dplyr}} to extract
-information from or summarize your raw data, you may want to export
-these new datasets to share them with your collaborators or for
-archival.
-
-Similar to the \texttt{read\_csv()} function used for reading CSV files
-into \texttt{R}, there is a \texttt{write\_csv()} function that
-generates CSV files from data frames.
-
-Before using \texttt{write\_csv()}, it is good to create a new folder,
-\texttt{data}, in our working directory that will store the generated
-datasets. It is best to avoid writing generated datasets in the same
-directory as our raw data as that may create confusion later about which
-dataset was the source and which was the ``wrangled'' version. So it is
-good practice to keep them separate. The \texttt{data\_raw} folder
-should only contain the raw, unaltered data, and should be left alone to
-make sure we don't delete or modify it. In contrast, our script will
-generate the contents of the \texttt{data} directory, so even if the
-files it contains are deleted, we can always re-generate them.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\ControlFlowTok{if}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{dir.exists}\NormalTok{(}\StringTok{"data"}\NormalTok{))\{}\FunctionTok{dir.create}\NormalTok{(}\StringTok{"data"}\NormalTok{)\}}
-\end{Highlighting}
-\end{Shaded}
-
-For future use, we might want to prepare a cleaned up version of the
-dataset that doesn't include any missing data.
-
-Let's start by removing observations of animals for which
-\texttt{weight} and \texttt{hindfoot\_length} are missing, or the
-\texttt{sex} has not been determined:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{surveys\_complete }\OtherTok{\textless{}{-}}\NormalTok{ surveys\_edited }\SpecialCharTok{|\textgreater{}}
-  \FunctionTok{filter}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(weight),           }\CommentTok{\# remove missing weight}
-         \SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(hindfoot\_length),  }\CommentTok{\# remove missing hindfoot\_length}
-         \SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(sex))                }\CommentTok{\# remove missing sex}
-
-\FunctionTok{glimpse}\NormalTok{(surveys\_complete)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## Rows: 11,332
-## Columns: 15
-## $ record_id       <dbl> 23215, 23216, 23217, 23218, 23220, 23221, 23222, 23223~
-## $ month           <dbl> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ~
-## $ day             <dbl> 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27~
-## $ year            <dbl> 1996, 1996, 1996, 1996, 1996, 1996, 1996, 1996, 1996, ~
-## $ plot_id         <dbl> 21, 1, 17, 17, 2, 18, 1, 2, 17, 2, 1, 12, 21, 18, 17, ~
-## $ species_id      <chr> "PF", "DM", "DM", "DM", "DM", "PF", "DM", "DO", "DM", ~
-## $ sex             <chr> "F", "M", "M", "M", "F", "F", "M", "M", "F", "M", "F",~
-## $ hindfoot_length <dbl> 16, 36, 36, 37, 36, 16, 34, 37, 39, 40, 27, 39, 21, 16~
-## $ weight          <dbl> 7, 27, 25, 25, 47, 9, 27, 66, 49, 54, 38, 51, 16, 9, 5~
-## $ date            <date> 1996-01-27, 1996-01-27, 1996-01-27, 1996-01-27, 1996-~
-## $ day_of_week     <fct> Saturday, Saturday, Saturday, Saturday, Saturday, Satu~
-## $ plot_type       <chr> "Long-term Krat Exclosure", "Spectab exclosure", "Cont~
-## $ genus           <chr> "Perognathus", "Dipodomys", "Dipodomys", "Dipodomys", ~
-## $ species         <chr> "flavus", "merriami", "merriami", "merriami", "merriam~
-## $ taxa            <chr> "Rodent", "Rodent", "Rodent", "Rodent", "Rodent", "Rod~
-\end{verbatim}
-
-If we were interested in plotting how species abundances have changed
-through time, we might also want to remove observations for rare species
-(i.e., that have been observed less than 50 times). We will do this in
-two steps: first we are going to create a dataset that counts how often
-each species has been observed, and filter out the rare species; then,
-we will extract only the observations for these more common species:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\DocumentationTok{\#\# Extract the most common species\_id}
-\NormalTok{species\_counts }\OtherTok{\textless{}{-}}\NormalTok{ surveys\_complete }\SpecialCharTok{|\textgreater{}}
-    \FunctionTok{count}\NormalTok{(species\_id) }\SpecialCharTok{|\textgreater{}} 
-    \FunctionTok{filter}\NormalTok{(n }\SpecialCharTok{\textgreater{}=} \DecValTok{50}\NormalTok{)}
-
-\DocumentationTok{\#\# Only keep the most common species}
-\NormalTok{surveys\_complete\_subset }\OtherTok{\textless{}{-}}\NormalTok{ surveys\_complete }\SpecialCharTok{|\textgreater{}}
-  \FunctionTok{filter}\NormalTok{(species\_id }\SpecialCharTok{\%in\%}\NormalTok{ species\_counts}\SpecialCharTok{$}\NormalTok{species\_id)}
-  \DocumentationTok{\#\# using the relational operator \%in\% }
-
-\FunctionTok{glimpse}\NormalTok{(surveys\_complete\_subset)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## Rows: 11,270
-## Columns: 15
-## $ record_id       <dbl> 23215, 23216, 23217, 23218, 23220, 23221, 23222, 23223~
-## $ month           <dbl> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ~
-## $ day             <dbl> 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27~
-## $ year            <dbl> 1996, 1996, 1996, 1996, 1996, 1996, 1996, 1996, 1996, ~
-## $ plot_id         <dbl> 21, 1, 17, 17, 2, 18, 1, 2, 17, 2, 1, 12, 21, 18, 17, ~
-## $ species_id      <chr> "PF", "DM", "DM", "DM", "DM", "PF", "DM", "DO", "DM", ~
-## $ sex             <chr> "F", "M", "M", "M", "F", "F", "M", "M", "F", "M", "F",~
-## $ hindfoot_length <dbl> 16, 36, 36, 37, 36, 16, 34, 37, 39, 40, 27, 39, 21, 16~
-## $ weight          <dbl> 7, 27, 25, 25, 47, 9, 27, 66, 49, 54, 38, 51, 16, 9, 5~
-## $ date            <date> 1996-01-27, 1996-01-27, 1996-01-27, 1996-01-27, 1996-~
-## $ day_of_week     <fct> Saturday, Saturday, Saturday, Saturday, Saturday, Satu~
-## $ plot_type       <chr> "Long-term Krat Exclosure", "Spectab exclosure", "Cont~
-## $ genus           <chr> "Perognathus", "Dipodomys", "Dipodomys", "Dipodomys", ~
-## $ species         <chr> "flavus", "merriami", "merriami", "merriami", "merriam~
-## $ taxa            <chr> "Rodent", "Rodent", "Rodent", "Rodent", "Rodent", "Rod~
-\end{verbatim}
-
-We can check that \texttt{surveys\_complete\_subset} has 11270 rows and
-15 columns by typing \texttt{dim(surveys\_complete\_subset)} in the
-previous sandbox.
-
-Now that our dataset is ready, we can save it as a CSV file in our
-\texttt{data} folder.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{write\_csv}\NormalTok{(surveys\_complete\_subset, }\AttributeTok{file =} \StringTok{"data/surveys\_complete\_subset.csv"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
-\hypertarget{challenge-22-bonus}{%
-\subsubsection{Challenge 22 Bonus}\label{challenge-22-bonus}}
-
-\begin{quote}
-If you attended the Data Visualization workshop, make a plot of average
-hindfoot\_lengths and weights with colors for the points based on the
-plot\_type.
-\end{quote}
 
 \backmatter
 \end{document}
