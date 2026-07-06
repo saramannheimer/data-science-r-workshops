@@ -75,7 +75,6 @@ knitr::opts_chunk$set(tidy = TRUE,
 > * Know how to use the command line to use `R` as a calculator.
 > * Load packages and understand the messages that result.
 > * Import data and get a quick summary of the variables.
-> * Describe what faceting is and apply faceting to a ggplot().
 > * Extract, access, mutate, or summarize data from a dataframe.
 > * Save a modified dataset for future use or documentation purposes.
 >
@@ -100,7 +99,7 @@ hence both need to be installed on your computer. Both `R` and `RStudio` are
 cross-platform, so that everyone's versions look and operate the same regardless
 of their operating system! 
 
-For this workshop, we will be making use of the RStudio that you will need to 
+For this workshop, we will be making use of RStudio which you will need to 
 install on your computer. 
 
 1.  First you will want to go to https://cran.r-project.org/ 
@@ -825,7 +824,7 @@ when you use those short cuts.
 
 **NOTE:** Generally native operators are preferred over
 those that require packages, although there are many more piping operators available
-in the `magrittr` package for those that are intersested in digging deeper.
+in the `magrittr` package for those that are interested in digging deeper.
 
 One function we used previously was the `summary()` function. This function
 uses a dataset as its only parameter. This is how to call that function when
