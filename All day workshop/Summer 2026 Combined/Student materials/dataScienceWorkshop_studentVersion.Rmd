@@ -887,51 +887,51 @@ two options the same way we would typically say them.
 
 1.  `!=` example: 
 
-    ```{r filter-exclude-rows-example}
-    BlackfootFish |>
-      filter(year!=1998)
-    ```
+```{r filter-exclude-rows-example}
+BlackfootFish |>
+  filter(year!=1998)
+```
     
-    The code above keeps all rows where the year is not 1998. 
+The code above keeps all rows where the year is not 1998. 
     
 2.  `,` example:
     
-    ```{r filter-comma-example}
-    BlackfootFish |>
-      filter(year==1998, species=="WCT") # can also use "&" instead of a comma
-    ```
+```{r filter-comma-example}
+BlackfootFish |>
+  filter(year==1998, species=="WCT") # can also use "&" instead of a comma
+```
     
-    The code above keeps all rows where the year is 1998 for Westslope Cutthroat Trout, i.e., year 1998 and species WCT. The rows meet **both** of these criteria. 
+The code above keeps all rows where the year is 1998 for Westslope Cutthroat Trout, i.e., year 1998 and species WCT. The rows meet **both** of these criteria. 
     
 
 3.  `|` example:
 
-    ```{r filter-or-example}
-    BlackfootFish |>
-      filter(year==1998 | species=="WCT")
-    ```
+```{r filter-or-example}
+BlackfootFish |>
+  filter(year==1998 | species=="WCT")
+```
     
-    The code above keeps all rows where the year is 1998 **or** is a Westslope Cutthroat Trout, i.e., year 1998 or species WCT. The rows meet **either** of these criteria but do not have to meet not both. 
-    
+The code above keeps all rows where the year is 1998 **or** is a Westslope Cutthroat Trout, i.e., year 1998 or species WCT. The rows meet **either** of these criteria but do not have to meet not both. 
+
 
 4.  `<` example:
 
-    ```{r less-than-example}
-    BlackfootFish |>
-      filter(weight < 200)
-    ```
+```{r less-than-example}
+BlackfootFish |>
+  filter(weight < 200)
+```
     
-    The code above keeps all rows where weight is less than 200. 
+The code above keeps all rows where weight is less than 200. 
     
 
 5.  `>` example:
 
-    ```{r greater-than-example}
-    BlackfootFish |>
-      filter(length > 300)
-    ```
+```{r greater-than-example}
+BlackfootFish |>
+  filter(length > 300)
+```
     
-    The code above keeps all rows where length is greater than 300.
+The code above keeps all rows where length is greater than 300.
     
 
 ### Perform multiple functions on the same dataset
