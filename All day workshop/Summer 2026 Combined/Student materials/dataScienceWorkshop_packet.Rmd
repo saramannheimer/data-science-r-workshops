@@ -364,7 +364,10 @@ __Cmd + Option + I__ on Mac, to insert a blank `R` code chunk), and
 
 2.  Write the code to display the value of the object.  
 
-***Insert your code chunk here.***
+```{r}
+another_year
+```
+
 
 
 ## Motivating Research Questions
@@ -582,9 +585,9 @@ class(animals)
 2.  Check: What data type does that vector contain?
 
 ```{r}
-# Exercise 2 code here!
+dec <- c( -0.234, 3.14, 33.3333)
 
-
+class(dec)
 ```
 
 Another possible data type is a logical (Boolean) value. This type of data  
@@ -744,12 +747,23 @@ df
 
 What would be output if you entered: `df[3, ]`?   
 
+```{r}
+df[3,]
+```
+
 
 #### Exercise 5:
 
 What would you input to get an output of `2015`? Can you 
 think of two ways to do it?
 
+```{r}
+# 1st Way:
+df$z[2]
+
+# 2nd Way:
+df[2,3]
+```
 
 ### Accessing Data
 
@@ -812,6 +826,17 @@ names if the rows or columns are named.
 1.  How would you pull off only columns `x` and `y`? 
 2.  What about pulling off only columns `x` and `z`?
 
+```{r}
+# Solution 1:
+
+df[,c("x","y")]
+df |> select(x,y) # alternate solution with piping
+
+# Solution 2:
+df[,c("x","z")]
+df |> select(x,z) # alternate solution with piping
+```
+
 
 #### Exercise 7:
 
@@ -819,9 +844,9 @@ How would you modify the script below, to get an output
 of `[1] 22 24`? 
 
 
-```{r, eval = FALSE}
+```{r}
 s <- c(22, 24, 49, 18, 1, 6)
-s[]
+s[1:2]
 
 ```
 
@@ -830,8 +855,13 @@ s[]
 See what would happen if you entered `s[3, ]`. How can you explain that result?  
 
 ```{r}
-
+# s[3,]
 ```
+
+**You get an error:** "Error in s[3, ] : incorrect number of dimensions"
+
+This is because there is only one dimension for this object and the comma in the square brackets implies multiple dimensions.
+
 
 ### Piping Data In  
 
@@ -1009,6 +1039,10 @@ Note that the final data frame is the leftmost part of this expression.
 ## Pipes Challenge:
 ##  Using pipes, subset the data to include animals collected
 ##  on or after 2002, and retain the columns `year`, `species`, `length`, and `weight`
+
+BlackfootFish_challenge2 <- BlackfootFish |>
+  filter(year >= 2002) |>
+  select(year, species, length, weight)
 ```
 
 ### Mutate
@@ -1096,7 +1130,10 @@ an `NA`.
 ##  Then print out the head of the new data frame.
 
 ##  Hint: think about how the commands should be ordered to produce this data frame!
-
+BlackfootFish_length_cm <- BlackfootFish |>
+  mutate(length_cm = length/10) |>
+  filter(!is.na(length_cm)) |>
+  select(species, length_cm)
 ```
 
 ## Changing Data Type  
@@ -1187,7 +1224,8 @@ Now, verify that `yearF` is viewed as a categorical variable,
 with the same levels as `year`. 
 
 ```{r}
-
+class(BlackfootFish_mod$yearF)
+levels(BlackfootFish_mod$yearF)
 
 ```
 
@@ -1316,11 +1354,11 @@ If we wish to remove all of the `NA`'s from the dataset, we can use the
 object with the new object).
 
 ```{r}
-BlackfootFish_clean <- na.omit(BlackfootFish) 
+BlackfootFish_clean <- na.omit(BlackfootFish_mod) 
 ## Creates a new dataframe, where the NA's have all been removed 
 
 ## Can also use piping
-BlackfootFish_clean <- BlackfootFish |>
+BlackfootFish_clean <- BlackfootFish_mod |>
   na.omit() 
 ```
 
@@ -1431,7 +1469,13 @@ BlackfootFish |>
 >
 
 ```{r challenge-s1-4-1}
-
+BlackfootFish |>
+  filter(!is.na(length)) |>
+  group_by(species, section) |>
+  summarize(mean_length = mean(length),
+            min_length = min(length),
+            max_length = max(length),
+            num_obs = n())
 ```
 
 #### Challenge 4 Part 2
@@ -1439,11 +1483,14 @@ BlackfootFish |>
 >
 > What was the heaviest species of fish measured in each year for each section?
 >
-> Return the columns `year` and `weight`.
->
 
 ```{r challenge-s1-4-2}
-
+BlackfootFish |>
+  filter(!is.na(weight)) |>
+  group_by(species, section, year) |>
+  summarize(mean_weight = mean(weight),
+            min_weight = min(weight)) |>
+  arrange(desc(mean_weight))
 ```
 
 ### Counting
@@ -1532,7 +1579,8 @@ of the Brown Trout species (`species` = "Brown") for fish caught in the Johnsrud
 ```{r challenge-s1-5}
 ## Count Challenge:
 ##  How many fish were caught in each section for each year surveyed?
-
+BlackfootFish_mod |>
+  count(yearF)
 ```
 
 
@@ -1762,8 +1810,9 @@ https://ggplot2.tidyverse.org/articles/ggplot2-specs.html
 
 ```{r challenge-s2-6}
 ## Your ggplot code to answer the challenge goes here!
-
-
+ggplot(data = BlackfootFish_clean, 
+           mapping = aes(x = weight, y = length, shape=species)) +
+    geom_point(alpha = 0.2, color = "blue")
 ```
 
 ### Piping Data In  
@@ -1873,7 +1922,16 @@ BlackfootFish_clean |>
 ```{r challenge-s2-7part1}
 ## Your ggplot() code for the challenge goes here!
 
+BlackfootFish_clean |>  
+  ggplot(mapping = aes(x = weight, y = length)) +
+  geom_jitter(aes(color = species, shape=section), alpha = 0.2) + 
+  geom_smooth()
+  ## one smoothing line -- no color defined globally
 
+BlackfootFish_clean |>  
+  ggplot(mapping = aes(x = weight, y = length)) +
+  geom_jitter(aes(color = year), alpha = 0.2) + 
+  geom_smooth()
 ```
 
 
@@ -1881,14 +1939,17 @@ BlackfootFish_clean |>
 
 >
 > Use what you just learned to create a scatter plot of `weight` over
-> `plot_id` with data from different plot types being showed in different 
+> `year` with data from different years being showed in different 
 > colors. Is this a good way to show this type of data?
 >
 
 ```{r challenge-s2-7part2}
 ## Your ggplot() code for the challenge goes here!
 
-
+BlackfootFish_clean |>  
+  ggplot(mapping = aes(x = year, y = weight)) +
+  geom_jitter(aes(color = yearF), alpha = 0.2) + 
+  geom_smooth()
 ```
 
 
@@ -1942,7 +2003,12 @@ BlackfootFish_clean |>
 ##  Start with the boxplot we created
 ##  1. Replace the boxplot with a violin plot. For help, see geom_violin().
 ##  You might need to decrease opacity even more to see the violins (try 0.03)
-
+BlackfootFish_clean |>
+  ggplot(mapping = aes(x = species, y = weight)) +
+    geom_violin(alpha = 0) + 
+    ## alpha = 0 eliminates the black (possible outlier) points, so they're not plotted twice
+    geom_jitter(alpha = 0.03, color = "tomato")
+    ## alpha = 0.2 decreases the opacity of the points, to not be too busy
 ```
 
 
@@ -1960,7 +2026,12 @@ BlackfootFish_clean |>
 
 ```{r challenge-s2-8part2}
 ##  First: create boxplot for length` overlaid on a jitter layer.
-
+BlackfootFish_clean |>
+  ggplot(mapping = aes(x = species, y = length)) +
+    geom_boxplot(alpha = 0) + 
+    ## alpha = 0 eliminates the black (possible outlier) points, so they're not plotted twice
+    geom_jitter(alpha = 0.03, color = "tomato")
+    ## alpha = 0.2 decreases the opacity of the points, to not be too busy
 ```
 
 
@@ -1982,7 +2053,12 @@ BlackfootFish_clean |>
 
 ## Hint: Check the class for `trip`. If trip was a character instead, 
 ## how would the graph be different? 
-
+BlackfootFish_clean |>
+  ggplot(mapping = aes(x = species, y = length, color=factor(trip))) +
+    geom_boxplot(alpha = 0) + 
+    ## alpha = 0 eliminates the black (possible outlier) points, so they're not plotted twice
+    geom_jitter(alpha = 0.03, position=position_jitterdodge())
+    ## alpha = 0.2 decreases the opacity of the points, to not be too busy
 ```
 
 
@@ -2093,7 +2169,9 @@ There is no single right answer for the number of bins. There are some "plug-in"
 ```{r challenge-s2-9}
 ## Your code to answer the challenge goes here!
 
-
+BlackfootFish_clean |>
+  ggplot(mapping = aes(x = weight)) + 
+  geom_histogram(bins=25)
 ```
 
 
@@ -2177,6 +2255,7 @@ BlackfootFish_clean |>
 
 ```
 
+Each category shows 100% instead of the proportion of the fish in each category.
 
 ### Colored and/or Stacked Bar Charts
 
@@ -2213,7 +2292,9 @@ BlackfootFish_clean |>
 ```
 
 ```{r challenge-s2-11}
-
+BlackfootFish_clean |>
+  ggplot(mapping = aes(x = species, fill = species)) + 
+  geom_bar()
 
 ```
 
@@ -2451,7 +2532,11 @@ additional themes.
 
 ```{r challenge-s2-13}
 ## Your ggplot() code for the plot goes here!
-
+BlackfootFish_clean |>  
+  ggplot(mapping = aes(x = weight, y = length)) +
+  geom_jitter(aes(color = yearF), alpha = 0.2) + 
+  geom_smooth() +
+  theme_bw()
 ```
 
 
@@ -2712,6 +2797,8 @@ you specify the name of the palette you wish to use (e.g., `scale_color_aaas()`)
 
 ```
 
+**Answers will vary.**
+
 ## Arranging Plots
 
 Faceting is a great tool for splitting one plot into multiple plots, but 
@@ -2764,7 +2851,7 @@ vignette **very** helpful! https://cran.r-project.org/web/packages/egg/vignettes
 Another option for combining plots is the [patchwork package](https://patchwork.data-imaginist.com/). It uses a sort of formula interface for defining the layout of multiple plots. For example, you can get two plots side-by-side in a one row, two column array with `p1 + p2` and two plots stacked into two rows and one column with `p1 / p2`. This provides both a quick and powerful way to arrange ggplots you have created.
 						   
 
-```{r arrange2, message = FALSE, fig.width = 10, fig.height=6, exercise = TRUE}
+```{r arrange2, message = FALSE, fig.width = 10, fig.height=6}
 spp_weight_boxplot / spp_count_plot
 
 ```
@@ -3202,9 +3289,10 @@ barplot(yearF_counts,
         main = "Fish Caught by Year",
         las = 1,
         col = "blue",
-        ylim = c(0,2200),
-        )
+        ylim = c(0,2200))
 ```
+
+Year 2000 had the most fish caught.
 
 #### Exercise 12:
 

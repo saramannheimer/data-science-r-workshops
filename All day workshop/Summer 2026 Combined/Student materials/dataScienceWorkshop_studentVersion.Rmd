@@ -1414,8 +1414,7 @@ BlackfootFish |>
 >
 > What was the heaviest species of fish measured in each year for each section?
 >
-> Return the columns `year` and `weight`.
->
+
 
 ```{r challenge-s1-4-2}
 
@@ -1856,7 +1855,7 @@ BlackfootFish_clean |>
 
 >
 > Use what you just learned to create a scatter plot of `weight` over
-> `plot_id` with data from different plot types being showed in different 
+> `year` with data from different years being showed in different 
 > colors. Is this a good way to show this type of data?
 >
 
