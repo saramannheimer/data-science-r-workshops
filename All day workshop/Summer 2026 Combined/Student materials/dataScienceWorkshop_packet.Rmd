@@ -5,9 +5,9 @@ date: "August 14, 2026"
 output:
   pdf_document: 
     latex_engine: xelatex
-    toc: yes
-    fig_caption: yes
-    number_sections: yes
+    toc: true
+    fig_caption: true
+    number_sections: true
 documentclass: book
 description: "Course materials for the all-day data science workshop where you'll
   learn to \nuse the R programming language for data science applications.\n"
@@ -124,6 +124,8 @@ hence both need to be installed on your computer. Both `R` and `RStudio` are
 cross-platform, so that everyone's versions look and operate the same regardless
 of their operating system! 
 
+\newpage
+
 For this workshop, we will be making use of RStudio which you will need to 
 install on your computer. 
 
@@ -212,6 +214,8 @@ the workshop materials.
 Go ahead and create your first project! Create it in the **same directory** as the
 workshop files.
 
+\newpage
+
 ## Working in `R`  
 
 The document we provided for you is an Rmarkdown (.Rmd) document. It allows you 
@@ -270,7 +274,11 @@ in the code chunk, both line by line and all at once.
 1 + 2 
 
 16*9
+```
 
+\newpage
+
+```{r}
 sqrt(2)
 ```
 
@@ -322,6 +330,7 @@ assignments.
 * Using a consistent coding style makes your code clearer to read for your 
 future self and your collaborators. 
 
+\newpage
 
 ## Order matters and checking values
 
@@ -376,6 +385,8 @@ To give context to the workshop we are going to put ourselves in the role of a
 biologist or ecologist studying the health and abundance of fish in the Blackfoot
 river. We've already done the hard work of going out and collecting the data, now
 we are ready to analyze it.
+
+\newpage
 
 ### Research Questions
 
@@ -508,6 +519,8 @@ sections:
 * Value: The object the function returns.      
 * See Also: Any related functions that may be useful.    
 * Examples: Some examples for how to use the function.
+
+\newpage
 
 ## Importing Data  
 
@@ -663,6 +676,7 @@ Here are some:
     + `tail(datasetname)`: last 6 rows  
     + `View(datasetname)`: opens viewer window in separate tab  
     
+\newpage
 
 - names:  
     + `colnames(datasetname)`: column names of dataframe  
@@ -751,6 +765,7 @@ What would be output if you entered: `df[3, ]`?
 df[3,]
 ```
 
+\newpage
 
 #### Exercise 5:
 
@@ -795,6 +810,8 @@ c(3:-1)
 
 When you want adjacent items, using the `a:b` notation is nicer than having to 
 type out all of the values.
+
+\newpage
 
 ***What about non-adjacent items?***
 
@@ -1026,6 +1043,8 @@ BlackfootFish_sml
 
 Note that the final data frame is the leftmost part of this expression.
 
+\newpage
+
 #### Challenge 2
 
 >
@@ -1136,7 +1155,9 @@ BlackfootFish_length_cm <- BlackfootFish |>
   select(species, length_cm)
 ```
 
-## Changing Data Type  
+\newpage
+
+## Changing Data Types  
 
 ### Factor data type
 
@@ -1244,6 +1265,11 @@ year_recover <- as.numeric(BlackfootFish_mod$yearF)
 
 ds <- data.frame(original = BlackfootFish_mod$yearF, 
                  recovered = year_recover)
+```
+
+\newpage
+
+```{r}
 head(ds)
 
 tail(ds)
@@ -1493,6 +1519,8 @@ BlackfootFish |>
   arrange(desc(mean_weight))
 ```
 
+\newpage
+
 ### Counting
 
 When working with data, we often want to know the number of observations found
@@ -1532,7 +1560,7 @@ BlackfootFish_clean |>
     count(section, sort = TRUE) 
 ```
 
-
+\newpage
 
 The previous example shows the use of `count()` to count the number of rows/observations 
 for *one* factor (i.e., `section`). 
@@ -1718,10 +1746,12 @@ x/y positions or characteristics such as size, shape, color, etc.
     # ggplot() knows where the variables live, since you have defined the data to use
     ```
 
+\newpage
+
 3. Add "geoms" -- graphical representations of the data in the plot (points,
   lines, bars). **`ggplot2`** offers many different geoms; we will use some 
   common ones today, including:
-  
+
     * `geom_point()` for scatter plots, dot plots, etc.
     * `geom_boxplot()` for boxplots
     * `geom_bar()` for bar charts
@@ -1730,7 +1760,7 @@ x/y positions or characteristics such as size, shape, color, etc.
     To add a geom to the plot use the `+` operator. Because we have two continuous 
     variables in the data, let's use `geom_point()` first:
 
-    ```{r add-to-plots}
+    ```{r add-to-plots, fig.width=3,fig.height=1.5}
     ggplot(data = BlackfootFish_clean, 
            mapping = aes(x = weight, y = length)) +
       geom_point()
@@ -1744,13 +1774,11 @@ layer. If, instead, the `+` sign is added at the beginning of the line
 containing the new layer, **`ggplot2`** will not add the new layer and will 
 return an error message.
 
-```{r plus-sign, error=TRUE}
-
+```{r plus-sign, error=TRUE, fig.width=3,fig.height=1.5}
 # This will not add the new layer and will return an error message
 ggplot(data = BlackfootFish_clean, 
            mapping = aes(x = weight, y = length)) 
   + geom_point()
-
 ```
 
 
@@ -1777,6 +1805,8 @@ ggplot(data = BlackfootFish_clean,
     ## 0 is fully transparent
     ## 1 is the original opacity
 ```
+
+\newpage
 
 We can also add colors for all the points:
 
@@ -1954,6 +1984,7 @@ BlackfootFish_clean |>
 
 
 
+\newpage
 
 ### Boxplots & Violin Plots
 
@@ -1993,13 +2024,13 @@ BlackfootFish_clean |>
 > Start with the boxplot we created:
 >
 
-```{r challenge-s2-8part1-example}
+```{r challenge-s2-8part1-example, fig.width=4,fig.height=2}
 BlackfootFish_clean |>
   ggplot(mapping = aes(x = species, y = weight)) +
   geom_jitter(alpha = 0.2, color = "tomato")
 ```
 
-```{r challenge-s2-8part1}
+```{r challenge-s2-8part1, fig.width=4,fig.height=2}
 ##  Start with the boxplot we created
 ##  1. Replace the boxplot with a violin plot. For help, see geom_violin().
 ##  You might need to decrease opacity even more to see the violins (try 0.03)
@@ -2024,7 +2055,7 @@ BlackfootFish_clean |>
 > over a jitter layer that shows the actual measurements.
 >
 
-```{r challenge-s2-8part2}
+```{r challenge-s2-8part2, fig.height=3.5}
 ##  First: create boxplot for length` overlaid on a jitter layer.
 BlackfootFish_clean |>
   ggplot(mapping = aes(x = species, y = length)) +
@@ -2035,7 +2066,7 @@ BlackfootFish_clean |>
 ```
 
 
-
+\newpage
 
 ### Challenge 8 (Part 3)
 
@@ -2047,7 +2078,7 @@ BlackfootFish_clean |>
 > how would the graph be different?  
 >
 
-```{r challenge-s2-8part3}
+```{r challenge-s2-8part3, fig.height=3.5}
 ## Next: add color to the data points on your boxplot according to the
 ## the fish was captured on (`trip`)).
 
@@ -2448,7 +2479,7 @@ yearly_section_counts |>
   # One column, facet by rows
 ```
 
-```{r facet5, fig.width = 9.5, fig.height = 5}
+```{r facet5, fig.width = 7}
 yearly_section_counts |>
   ggplot(mapping = aes(x = year, y = n, color = section)) +
     geom_line() +
@@ -2459,7 +2490,7 @@ yearly_section_counts |>
 Now let's use `facet_grid()` to control how panels are organized by both rows 
 and columns:
 
-```{r facet6, fig.width = 9.5}
+```{r facet6, fig.width = 7}
 yearly_section_counts |>
   ggplot(mapping = aes(x = year, y = n, color = section)) +
     geom_line() +
@@ -2807,7 +2838,7 @@ using different variables or even different data frames. The **`gridExtra`**
 package allows us to combine separate ggplots into a single figure using 
 `grid.arrange()` (make sure to scroll down in the window to see all the code):
 
-```{r arrange, message = FALSE, fig.width = 10, fig.height=6}
+```{r arrange, message = FALSE, fig.width = 7}
 library(gridExtra)
 
 spp_weight_boxplot <- BlackfootFish_clean |> 
@@ -2851,7 +2882,7 @@ vignette **very** helpful! https://cran.r-project.org/web/packages/egg/vignettes
 Another option for combining plots is the [patchwork package](https://patchwork.data-imaginist.com/). It uses a sort of formula interface for defining the layout of multiple plots. For example, you can get two plots side-by-side in a one row, two column array with `p1 + p2` and two plots stacked into two rows and one column with `p1 / p2`. This provides both a quick and powerful way to arrange ggplots you have created.
 						   
 
-```{r arrange2, message = FALSE, fig.width = 10, fig.height=6}
+```{r arrange2, message = FALSE, fig.width = 7, fig.height=4}
 spp_weight_boxplot / spp_count_plot
 
 ```
@@ -2970,8 +3001,10 @@ One note about using `plotly` graphics in R-markdown is that they will not knit 
 
 
 <!--chapter:end:04-dataWrangling.Rmd-->
+\backmatter
 
 # Appendix
+\setcounter{page}{117}
 
 ## Terminology Used in Workshop
 
