@@ -1074,7 +1074,7 @@ an `NA`.
 
 ```
 
-## Changing Data Type  
+## Changing Data Types  
 
 ### Factor data type
 
@@ -1540,7 +1540,7 @@ the empty string.
 
 ```{r}
 write_csv(BlackfootFish_mod, # dataframe name
-          "BlackfootFis_mod.csv", # path, can just be the file name if you are using projects,
+          "BlackfootFish_mod.csv", # path, can just be the file name if you are using projects,
           na="" # stores missing values with empty cells
           )
 ```
@@ -1556,7 +1556,7 @@ if(!("writexl" %in% rownames(installed.packages()))){install.packages("writexl")
 
 library(writexl)
 write_xlsx(BlackfootFish_mod, # dataframe name
-          "BlackfootFis_mod.xlsx" # path, can just be the file name if you are using projects,
+          "BlackfootFish_mod.xlsx" # path, can just be the file name if you are using projects,
           )
 ```
 
